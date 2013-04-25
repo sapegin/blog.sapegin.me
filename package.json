@@ -14,7 +14,6 @@
     "docpad-plugin-tagging": "~2.0.1",
     "yamljs": "~0.1.4",
     "moment": "~2.0.0",
-    "docpad-plugin-markdown": "~2.0.3",
     "docpad-plugin-cleanurls": "~2.4.3",
     "richtypo": "~0.1.5"
   }
