@@ -1,0 +1,94 @@
+/* Author: Artem Sapegin, http://sapegin.me, 2012 */
+
+@media print {
+
+	@page {
+		margin:0.5cm;
+	}
+
+
+	nav,
+	.social-likes {
+		display:none;
+	}
+
+	* {
+		font-family:Cambria, Georgia, serif;
+		color:#000 !important;
+		background:transparent !important;
+		float:none !important;
+		width:auto !important;
+		margin-left:0 !important;
+		margin-right:0 !important;
+		padding-left:0 !important;
+		padding-right:0 !important;
+		text-shadow:none !important;
+		-ms-filter:none !important;
+	}
+
+	body {
+		padding-bottom:0;
+	}
+
+	a {
+		border:none !important;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		font-family:Corbel, Verdana, Geneva, sans-serif;
+	}
+
+	a:link:after, a:visited:after {
+		content:" (" attr(href) ")";
+		font-size:.9em;
+	}
+	a[href^="/"]:link:after, a[href^="/"]:visited:after  {
+		//content:(" (http://" + site-domain) attr(href) ")";
+		content:"(" attr(href) ")";
+		font-size:.9em;
+	}
+	a[href^="javascript:"]:after, a[href^="#"]:after, .footer a:after {
+		content:"";
+	}
+
+	.header {
+		margin-bottom:2*spacer;
+		border-bottom:1pt solid #000;
+		height:auto;
+	}
+	.footer {
+		position:static;
+		margin-top:2*spacer;
+		border-top:1pt solid #000;
+		height:auto;
+		a {
+			text-decoration:none;
+		}
+	}
+
+	.logo:before {
+		content:url(/favicon.ico);
+		padding-right:2px;
+		vertical-align:middle;
+	}
+	//.logo a:link:after, .logo a:visited:after {
+	//	content:"В вЂ” " + site-domain;
+	//}
+
+	h1, h2, h3, h4, h5, h6 {
+		page-break-inside:avoid;
+		page-break-after:avoid;
+	}
+	p, blockquote, ul, ol, dl, tr, img {
+		page-break-inside:avoid;
+	}
+	p, h2, h3 {
+		orphans:3;
+		widows:3;
+	}
+
+	ul {
+		margin-left:1.2em !important;
+	}
+
+}

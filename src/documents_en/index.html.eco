@@ -1,0 +1,36 @@
+---
+layout: base
+isPaged: true
+pageOrder: 0
+pagedCollection: posts
+pageSize: 10
+---
+
+<% posts = @getCollection 'posts' %>
+<% for i in [@document.page.startIdx...@document.page.endIdx]: %>
+	<% document = posts.at(i).toJSON() %>
+	<article class="note">
+		<h2 class="note-title"><a href="<%= document.url %>" class="big-link"><%- @rtt document.title %></a></h2>
+		<div class="text">
+			<%- @rt @cuttedContent document.contentRenderedWithoutLayouts %>
+			<% if @hasReadMore document.contentRenderedWithoutLayouts: %>
+				<p class="read-more"><a href="<%= document.url %>"><%= @_ 'Read more…' %></a></p>
+			<% end %>
+		</div>
+		<div class="note-meta">
+			<span class="note-tags">
+				<% for _, tag of document.tags: %>
+					<a href="<%= @getTagUrl tag %>" class="note-tags__tag link"><%= @site.tagNames[tag] %></a>
+				<% end %>
+			</span>
+			<span class="note-published" title="<%= document.date %>"><%= @pubDate document.date %></span>
+		</div>
+	</article>
+<% end %>
+
+<% if @getDocument().hasNextPage(): %>
+	<div class="pages">
+		<span class="keyboard-shortcut">↓</span>
+		<a href="<%= @getDocument().getNextPage() %>" class="link"><%= @_ 'Earlier' %></a>
+	</div>
+<% end %>

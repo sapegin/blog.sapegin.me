@@ -1,0 +1,17 @@
+---
+layout: base
+---
+
+<% documents = @getCollection('posts').toJSON() %>
+<% title = @_ '{num} {posts}', num: documents.length, posts: @plural(documents.length, 'post|posts') %>
+<% @document.title = title.replace /<\/?em>/g, '' %>
+
+<h2 class="page-title"><%- @rtt title %></h2>
+
+<ul>
+	<% for document in documents: %>
+		<li>
+			<a href="<%= document.url %>" class="link"><%= document.title %></a>
+		</li>
+	<% end %>
+</ul>

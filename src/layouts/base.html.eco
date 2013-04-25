@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="<%= @site.lang %>">
+<head>
+	<meta charset="utf-8">
+	<title><%= @pageTitle() %></title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="<%= @pageDescription() %>">
+	<%- @getBlock('meta').toHTML() %>
+
+	<%- @getBlock('styles').add(['/build/styles.css']).toHTML() %>
+	<link href="http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic&amp;subset=latin,cyrillic" rel="stylesheet">
+
+	<script src="/js/libs/modernizr.js"></script>
+</head>
+<body>
+	<header class="header">
+		<% if @document.url is '/': %> 
+			<h1 class="logo">
+				<span class="logo__text">
+					<%= @site.title %>
+				</span>
+				<a class="rss-link link" href="/rss/">RSS</a>
+			</h1>
+		<% else: %>
+			<h2 class="logo">
+				<a href="/" class="logo__text big-link"><%= @site.title %></a>
+				<a class="rss-link link" href="/rss/">RSS</a>
+			</h2>
+		<% end %>
+
+		<form class="search-form" action="<%- @_ 'searchUrl' %>" method="get">
+			<input type="hidden" name="searchid" value="2047351">
+			<input type="hidden" name="web" value="0">
+			<input type="hidden" name="l10n" value="<%= @site.lang %>">
+			<input type="search" class="field search-form__field" name="text" placeholder="<%= @_ 'Search' %>" value="">
+		</form>
+
+		<ul class="tags-list">
+			<% for tag, data of @getTagCloud(): %>
+				<% if tag in @site.visibleTags: %>
+					<% if @document.slug is "tags-#{tag}": %>
+						<li class="tags-list__tag tags-list__tag_marked marked">
+							<%= @site.tagNames[tag] %>
+						</li>
+					<% else: %>
+						<li class="tags-list__tag">
+							<a href="<%= @getTagUrl tag %>" class="link"><%= @site.tagNames[tag] %></a>
+						</li>
+					<% end %>
+				<% end %>
+			<% end %>
+		</ul>
+	</header>
+
+    <%- @content %>
+
+    <footer class="footer group">
+    	<div class="footer-i">
+    		© <a href="<%= @site.copyrightUrl %>" class="link"><%= @site.author %></a>, 2008—<%= (new Date).getFullYear() %>
+    		<div class="engine-info">
+    			<%= @_ 'Powered by' %> <a href="http://docpad.org/" class="link"><%= @_ 'DocPad' %></a>
+    		</div>
+    	</div>
+    </footer>
+
+    <!-- Yandex.Metrika counter --><!--script>(function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter412115 = new Ya.Metrika({id:412115, clickmap:true, trackLinks:true, webvisor:true}); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="//mc.yandex.ru/watch/412115" style="position:absolute; left:-9999px;" alt="" /></div></noscript--><!-- /Yandex.Metrika counter -->
+</body>
+</html>

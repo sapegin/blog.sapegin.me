@@ -1,0 +1,33 @@
+---
+layout: base
+---
+
+<% documents = @getCollection('documents').findAll({tags: '$in': @document.tag}).toJSON() %>
+<% title = @_ '{num} {posts} tagged <em>{tag}</em>', num: documents.length, posts: @plural(documents.length, 'post|posts'), tag: @site.tagNames[@document.tag] %>
+<% @document.title = title.replace /<\/?em>/g, '' %>
+
+<h2 class="page-title"><%- @rtt title %></h2>
+
+<% for document in documents: %>
+	<article class="note">
+		<h2 class="note-title"><a href="<%= document.url %>" class="big-link"><%= document.title %></a></h2>
+		<div class="text">
+			<%- @cuttedContent(document.contentRenderedWithoutLayouts) %>
+			<% if @hasReadMore(document.contentRenderedWithoutLayouts): %>
+				<p class="read-more"><a href="<%= document.url %>"><%= @_('Read more…') %></a></p>
+			<% end %>
+		</div>
+		<div class="note-meta">
+			<span class="note-tags">
+				<% for _, tag of document.tags: %>
+					<% if @document.slug is "tags-#{tag}": %>
+						<span class="note-tags__tag note-tags__tag_marked marked"><%= @site.tagNames[tag] %></span>
+					<% else: %>
+						<a href="<%= @getTagUrl(tag) %>" class="note-tags__tag link"><%= @site.tagNames[tag] %></a>
+					<% end %>
+				<% end %>
+			</span>
+			<span class="note-published" title="<%= document.date %>"><%= @pubDate document.date %></span>
+		</div>
+	</article>
+<% end %>

@@ -1,0 +1,62 @@
+---
+layout: base
+---
+
+<article class="note">
+	<h1 class="note-title"><%- @rtt @document.title %></h1>
+
+	<div class="note-content text">
+		<%- @rt @content %>
+	</div>
+
+	<p class="note-feedback"><%- (@_ 'postFeedback').replace('{url}', "http://prose.io/#sapegin/blog.sapegin.me/edit/master/src/documents_#{@site.lang}/#{@document.relativePath}") %></p>
+
+	<div class="note-meta">
+		<span class="note-tags">
+			<% for _, tag of @document.tags: %>
+				<% if @document.slug is "tags-#{tag}": %>
+					<span class="note-tags__tag note-tags__tag_marked marked"><%= @site.tagNames[tag] %></span>
+				<% else: %>
+					<a href="<%= @getTagUrl tag %>" class="note-tags__tag link"><%= @site.tagNames[tag] %></a>
+				<% end %>
+			<% end %>
+		</span>
+		<time class="note-published" datetime="<%= @document.date %>" pubdate><%= @pubDate @document.date %></time>
+	</div>
+
+	<div class="note-share">
+		<ul class="social-likes social-likes_single" data-single-title="<%= @_ 'Share' %>">
+			<li class="facebook" title="<%= @_ 'Share post on Facebook' %>">Facebook</li>
+			<li class="twitter" <%- @_ 'twitterExtra' %> title="<%= @_ 'Share post on Twitter' %>">Twitter</li>
+			<li class="plusone" data-counter="http://sapegin.ru/api/social-likes/googleplusonecount.php?url={url}&amp;callback=?" title="<%= @_ 'Share post on Google+' %>">Google+</li>
+			<% if @site.lang is 'ru': %>
+				<li class="vkontakte" title="Опубликовать ссылку во Вконтакте">Вконтакте</li>
+				<li class="mailru" title="Опубликовать ссылку в Моём мире">Мой мир</li>
+			<% end %>
+		</ul>
+	</div>
+</article>
+
+<div class="about-author media">
+	<div class="about-author__picture media__img"><img src="/images/userpic.jpg" width="75" height="75" alt="<%= @site.author %>"></div>
+	<div class="media__body text">
+		<%- @rt @site.longDescription %>
+	</div>
+</div>
+
+<div id="disqus_thread"></div>
+<script>
+var disqus_shortname = 'nanoen';
+var disqus_identifier = '<%= @document.disqus_identifier or @document.slug %>';
+var disqus_title = '<%= @addSlashes @document.title %>';
+(function() {
+	var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+	(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink"comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="http://sapegin.ru/api/social-likes/social-likes.min.js"></script>
