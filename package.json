@@ -15,6 +15,7 @@
     "matchdep": "~0.1.2",
     "yamljs": "~0.1.4",
     "moment": "~2.0.0",
-    "richtypo": "~0.1.6"
+    "richtypo": "~0.1.6",
+    "grunt-imgo": "~0.1.0"
   }
 }

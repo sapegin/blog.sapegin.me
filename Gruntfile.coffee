@@ -11,10 +11,13 @@ module.exports = (grunt) ->
 				options:
 					paths: ['src/tamia']
 					'include css': true
+		imgo:
+			all:
+				src: 'src/files/images/*'
 		watch:
 			stylus:
 				files: 'src/styles/**'
 				tasks: 'stylus'
 
-	grunt.registerTask 'default', ['stylus']
+	grunt.registerTask 'default', ['stylus', 'imgo']
 	grunt.registerTask 'deploy', ['stylus']
