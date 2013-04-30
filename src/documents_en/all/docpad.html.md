@@ -20,7 +20,7 @@ So I spent few days to replace Aegea for [DocPad](http://docpad.org/). It was mu
 
 Now I can write text using the simplest format available (Markdown) in the best text editor ([iA Writer](http://www.iawriter.com/mac/)). Then share drafts on [Draft](https://draftin.com/). Then just copy file to local blog repository, add simple YAML header (title, tags, etc.), commit it, push to GitHub and deploy to server (using [Fabric](http://fabfile.org/)).
 
-## Good parts:
+## Good parts
 
 * Markdown everywhere.
 
@@ -37,3 +37,5 @@ Now I can write text using the simplest format available (Markdown) in the best 
 * Very easy to change layout or content (compared to WordPress and Aegea).
 
 * It works exactly as I want.
+
+P. S. Read the [source](https://github.com/sapegin/blog.sapegin.me), Luke!
