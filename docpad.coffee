@@ -79,6 +79,12 @@ docpadConfig = {
 		addSlashes: (s) ->
 			s.replace(/[\\"']/g, '\\$&').replace(/\u0000/g, '\\0')
 
+		prepareFeed: (s) ->
+			s and (s
+				.replace /href="\//g, "href=\"#{@site.url}/"
+				.replace /src="\//g, "src=\"#{@site.url}/"
+			)
+
 	# =================================
 	# Collections
 	# These are special collections that our website makes available to us

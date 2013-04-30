@@ -18,7 +18,7 @@
 			<updated><%= document.date.toISOString() %></updated>
 			<id><%= @site.url %><%= document.url %></id>
 			<content type="html">
-				<%= document.contentRenderedWithoutLayouts %>
+				<%= @prepareFeed document.contentRenderedWithoutLayouts %>
 			</content>
 		</entry>
 	<% end %>
