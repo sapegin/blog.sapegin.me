@@ -14,7 +14,7 @@ In 2012 I became tired of WordPress’s inconvenience to write about coding. You
 
 So I tried [Aegea](http://blogengine.ru/). Aegea has the best blog UI. You can’t imagine better engine if you just want to write and don’t want to think about geeky stuff.
 
-But in 2013 I became tired again. Aegea wasn’t the best engine for coder’s blog. Strange unaccustomed (?) wiki-like text formatting. The same dances with tambourine to add code example. And I became terribly jealous of people who stored their blogs’ content on GitHub in Markdown files and received pull requests with useful fixes.
+But in 2013 I became tired again. Aegea wasn’t the best engine for coder’s blog. Strange archaic wiki-like text formatting. The same dances with tambourine to add code example. And I became terribly jealous of people who stored their blogs’ content on GitHub in Markdown files and received pull requests with useful fixes.
 
 So I spent few days to replace Aegea for [DocPad](http://docpad.org/). It was much simpler than I thought and I like the result very much. DocPad is a static website generator. And it’s much more flexible than WordPress and Aegea.
 
