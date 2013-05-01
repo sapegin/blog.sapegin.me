@@ -100,7 +100,7 @@ mark {
 		font-style:italic;
 	}
 
-	p, pre, ul {
+	p, pre, ul, ol {
 		margin:0 0 2*spacer;
 	}
 	li {
@@ -127,6 +127,13 @@ mark {
 	blockquote {
 		font-size:.8em;
 		padding:0 2em;
+	}
+
+	img[src*="/images/win__"] {
+		margin-left:-13px;
+	}
+	img[src*="/images/mac__"] {
+		margin-left:-56px;
 	}
 }
 @media (max-width:850px) {
@@ -246,6 +253,14 @@ mark {
 	font-weight:normal;
 }
 
+.pages {
+	space(2);
+}
+
+.keyboard-shortcut {
+	color:black(.5);
+}
+
 // Footer
 .footer {
 	font-size:12px;
@@ -263,7 +278,7 @@ mark {
 // Post
 
 .note {
-	margin-bottom:3*spacer;
+	space(4);
 	font-size:19px;
 }
 
@@ -337,6 +352,7 @@ mark {
 	}
 	pre code {
 		box-shadow:inset 0 1px 3px black(.075);
+		text-shadow:0 1px white(1);
 	}
 }
 

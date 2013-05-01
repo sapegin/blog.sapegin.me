@@ -30,7 +30,7 @@ pageSize: 10
 
 <% if @getDocument().hasNextPage(): %>
 	<div class="pages">
-		<span class="keyboard-shortcut">↓</span>
+		<span class="keyboard-shortcut">↧</span>
 		<a href="<%= @getDocument().getNextPage() %>" class="link"><%= @_ 'Earlier' %></a>
 	</div>
 <% end %>
