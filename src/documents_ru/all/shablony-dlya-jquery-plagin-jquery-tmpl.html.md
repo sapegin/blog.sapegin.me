@@ -8,7 +8,7 @@ tags:
   - html
 ---
 
-**Внимание**. Этот пост немного устарел, и есть [более актуальный](http://nano.sapegin.ru/all/shablony-dlya-javascript-dot-js-plagin-dlya-jquery/).
+**Внимание**. Этот пост немного устарел, и есть [более актуальный](http://nano.sapegin.ru/all/shablony-dlya-javascript-dot-js-plagin-dlya-jquery).
 
 Пару дней назад коллега спросил, знаю ли я какой-нибудь шаблонизатор для jQuery. И я вспомнил, что читал о плагинах, разработанных Майкрософтом, среди которых был и шаблонизатор [jQuery Templates](http://api.jquery.com/category/plugins/templates/) (jquery-tmpl). Заодно и сам разобрался, как он работает, и начал использовать в своём проекте. В обмен коллега показал мне удобный способ хранения шаблонов.
 

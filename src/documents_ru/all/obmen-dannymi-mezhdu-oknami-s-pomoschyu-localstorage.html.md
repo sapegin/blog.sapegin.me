@@ -17,6 +17,6 @@ tags:
 
 <iframe style="width: 100%; height: 80px" src="http://jsfiddle.net/sapegin/zkxGB/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
-(Если вместо окна с примером вы видите пустое пространство — откройте [исходный пост](http://nano.sapegin.ru/all/obmen-dannymi-mezhdu-oknami-s-pomoschyu-localstorage/).)
+(Если вместо окна с примером вы видите пустое пространство — откройте [исходный пост](http://nano.sapegin.ru/all/obmen-dannymi-mezhdu-oknami-s-pomoschyu-localstorage).)
 
 Пример должен работать в последних версиях всех браузеров, а так же в Firefox 4, Safari 4 и Opera 10.5. Можно даже заставить его работать в IE8, но там событие storage работает иначе: не передаются key, oldValue и newValue.

@@ -446,4 +446,4 @@ grunt.loadTasks('tasks');  // Загружает все задачи из пап
 - [Upgrading from 0.3 to 0.4](https://github.com/gruntjs/grunt/wiki/upgrading-from-0.3-to-0.4)
 - [Грантфайл jQuery](https://github.com/jquery/jquery/blob/master/Gruntfile.js) (весьма продвинутый)
 - [Подборка шаблонов grunt-init](https://github.com/sapegin/squirrelstrap)
-- [Создание файлов и структуры проекта по шаблонам с помощью Grunt](http://nano.sapegin.ru/all/sozdanie-faylov-i-struktury-proekta-po-shablonam-s-pomoschyu-gru/)
+- [Создание файлов и структуры проекта по шаблонам с помощью Grunt](http://nano.sapegin.ru/all/sozdanie-faylov-i-struktury-proekta-po-shablonam-s-pomoschyu-gru)
