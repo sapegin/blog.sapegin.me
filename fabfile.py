@@ -17,7 +17,7 @@ def deploy():
 			run('git pull')
 			run('grunt deploy')
 			run('docpad generate --env en')
-			#run('docpad generate --env ru')
+			run('docpad generate --env ru')
 	else:
 		fail('%s not found' % DEST)
 
