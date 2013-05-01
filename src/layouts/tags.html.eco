@@ -2,7 +2,7 @@
 layout: base
 ---
 
-<% documents = @getCollection('documents').findAll({tags: '$in': @document.tag}).toJSON() %>
+<% documents = @getCollection('documents').findAllLive({tags: '$in': @document.tag}, [date:-1]).toJSON() %>
 <% title = @_ '{num} {posts} tagged <em>{tag}</em>', num: documents.length, posts: @plural(documents.length, 'post|posts'), tag: @site.tagNames[@document.tag] %>
 <% @document.title = title.replace /<\/?em>/g, '' %>
 
