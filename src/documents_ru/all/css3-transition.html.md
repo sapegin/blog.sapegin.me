@@ -2,7 +2,7 @@
 layout: post
 title: 'CSS3 transition фона: кое-какие детали'
 date: Jun 1, 2011
-disqus_identifier: css3-transition
+disqus_identifier: 284 http://nano.sapegin.ru/?p=284
 tags:
   - html
 ---

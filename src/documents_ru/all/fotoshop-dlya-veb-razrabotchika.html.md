@@ -2,7 +2,7 @@
 layout: post
 title: 'Фотошоп для веб-разработчика'
 date: Mar 31, 2009
-disqus_identifier: fotoshop-dlya-veb-razrabotchika
+disqus_identifier: 96 http://nano.sapegin.ru/?p=96
 tags:
   - html
   - reading

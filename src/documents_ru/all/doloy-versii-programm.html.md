@@ -2,7 +2,7 @@
 layout: post
 title: 'Долой версии программ!'
 date: Feb 8, 2012
-disqus_identifier: doloy-versii-programm
+disqus_identifier: 400 http://nano.sapegin.ru/?p=400
 tags:
   - thoughts
 ---

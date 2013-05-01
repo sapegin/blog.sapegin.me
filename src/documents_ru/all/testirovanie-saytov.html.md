@@ -2,7 +2,7 @@
 layout: post
 title: 'Тестирование сайтов'
 date: Mar 31, 2009
-disqus_identifier: testirovanie-saytov
+disqus_identifier: 92 http://nano.sapegin.ru/?p=92
 tags:
   - tools
 ---

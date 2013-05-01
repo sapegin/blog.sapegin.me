@@ -2,7 +2,7 @@
 layout: post
 title: 'Что важнее: код или продукт, и нужно ли скрывать свой код'
 date: Jan 17, 2012
-disqus_identifier: chto-vazhnee-kod-ili-produkt-i-nuzhno-li-skryvat-svoy-kod
+disqus_identifier: 395 http://nano.sapegin.ru/?p=395
 tags:
   - thoughts
 ---

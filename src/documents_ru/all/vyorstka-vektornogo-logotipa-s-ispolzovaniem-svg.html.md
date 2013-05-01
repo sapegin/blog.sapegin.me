@@ -2,7 +2,7 @@
 layout: post
 title: 'Вёрстка векторного логотипа с использованием SVG'
 date: Jul 27, 2012
-disqus_identifier: vyorstka-vektornogo-logotipa-s-ispolzovaniem-svg
+disqus_identifier: 468 http://nano.sapegin.ru/?p=468
 tags:
   - html
 ---

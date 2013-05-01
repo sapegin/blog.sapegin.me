@@ -2,7 +2,7 @@
 layout: post
 title: 'Вёрстка примеров кода с индикаторами переносов строк'
 date: Apr 27, 2011
-disqus_identifier: vyorstka-primerov-koda-s-indikatorami-perenosov-strok
+disqus_identifier: 269 http://nano.sapegin.ru/?p=269
 tags:
   - html
 ---

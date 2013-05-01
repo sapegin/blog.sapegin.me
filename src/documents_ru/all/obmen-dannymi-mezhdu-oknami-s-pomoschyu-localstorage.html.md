@@ -2,7 +2,7 @@
 layout: post
 title: 'Обмен данными между окнами с помощью localStorage'
 date: Apr 26, 2011
-disqus_identifier: obmen-dannymi-mezhdu-oknami-s-pomoschyu-localstorage
+disqus_identifier: 264 http://nano.sapegin.ru/?p=264
 tags:
   - javascript
 ---

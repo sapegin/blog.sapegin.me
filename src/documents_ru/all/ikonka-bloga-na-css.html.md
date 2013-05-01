@@ -2,7 +2,7 @@
 layout: post
 title: 'Иконка блога на CSS'
 date: Nov 19, 2008
-disqus_identifier: ikonka-bloga-na-css
+disqus_identifier: 24 http://nano.sapegin.ru/?p=24
 tags:
   - html
 ---

@@ -2,7 +2,7 @@
 layout: post
 title: 'Маленький пример использования deferred-объектов в jQuery 1.5'
 date: Feb 2, 2011
-disqus_identifier: malenkiy-primer-ispolzovaniya-deferred-obektov-v-jquery-1-5
+disqus_identifier: 241 http://nano.sapegin.ru/?p=241
 tags:
   - javascript
 ---

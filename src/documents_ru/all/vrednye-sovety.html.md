@@ -2,7 +2,7 @@
 layout: post
 title: 'Вредные советы'
 date: May 20, 2009
-disqus_identifier: vrednye-sovety
+disqus_identifier: 104 http://nano.sapegin.ru/?p=104
 tags:
   - ui
   - reading

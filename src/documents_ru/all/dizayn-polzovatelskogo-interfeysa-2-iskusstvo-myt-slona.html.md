@@ -2,7 +2,7 @@
 layout: post
 title: 'Дизайн пользовательского интерфейса 2. Искусство мыть слона'
 date: Mar 13, 2009
-disqus_identifier: dizayn-polzovatelskogo-interfeysa-2-iskusstvo-myt-slona
+disqus_identifier: 79 http://nano.sapegin.ru/?p=79
 tags:
   - reading
 ---

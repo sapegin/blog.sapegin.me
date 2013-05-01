@@ -2,7 +2,7 @@
 layout: post
 title: 'О простых и сложных инструментах'
 date: Oct 12, 2011
-disqus_identifier: o-prostyh-i-slozhnyh-instrumentah
+disqus_identifier: 365 http://nano.sapegin.ru/?p=365
 tags:
   - thoughts
 ---

@@ -2,7 +2,7 @@
 layout: post
 title: 'Адаптивный, отзывчивый… главное — результат'
 date: Jul 23, 2012
-disqus_identifier: adaptivnyy-otzyvchivyy-glavnoe-rezultat
+disqus_identifier: 465 http://nano.sapegin.ru/?p=465
 tags:
   - html
   - thoughts

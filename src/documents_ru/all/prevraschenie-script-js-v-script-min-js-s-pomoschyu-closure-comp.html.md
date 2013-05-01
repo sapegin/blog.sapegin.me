@@ -2,7 +2,7 @@
 layout: post
 title: 'Превращение script.js в script.min.js с помощью Closure Compiler'
 date: Jan 25, 2011
-disqus_identifier: prevraschenie-script-js-v-script-min-js-s-pomoschyu-closure-comp
+disqus_identifier: 217 http://nano.sapegin.ru/?p=217
 tags:
   - javascript
   - tools

@@ -2,7 +2,7 @@
 layout: post
 title: 'Аватарки из ЖЖ в Wordpress'
 date: Nov 10, 2009
-disqus_identifier: avatarki-iz-zhzh-v-wordpress
+disqus_identifier: 162 http://nano.sapegin.ru/?p=162
 tags:
   - wordpress
 ---

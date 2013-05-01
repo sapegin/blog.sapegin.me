@@ -2,7 +2,7 @@
 layout: post
 title: 'Запуск TortoiseGit из командной строки'
 date: Apr 26, 2012
-disqus_identifier: zapusk-tortoisegit-iz-komandnoy-stroki
+disqus_identifier: 430 http://nano.sapegin.ru/?p=430
 tags:
   - windows
   - tools

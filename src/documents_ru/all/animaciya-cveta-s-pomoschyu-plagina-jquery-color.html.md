@@ -2,7 +2,7 @@
 layout: post
 title: 'Анимация цвета с помощью плагина jQuery.Color()'
 date: Jun 22, 2011
-disqus_identifier: animaciya-cveta-s-pomoschyu-plagina-jquery-color
+disqus_identifier: 334 http://nano.sapegin.ru/?p=334
 tags:
   - javascript
 ---

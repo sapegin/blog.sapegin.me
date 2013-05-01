@@ -2,7 +2,7 @@
 layout: post
 title: 'Самое тупое сообщение об ошибке на свете'
 date: Feb 3, 2011
-disqus_identifier: samoe-tupoe-soobschenie-ob-oshibke-na-svete
+disqus_identifier: 249 http://nano.sapegin.ru/?p=249
 tags:
   - ui
 ---

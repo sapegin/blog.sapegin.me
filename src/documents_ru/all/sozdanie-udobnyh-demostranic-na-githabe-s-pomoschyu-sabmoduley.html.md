@@ -2,7 +2,7 @@
 layout: post
 title: 'Создание удобных демостраниц на Гитхабе с помощью сабмодулей'
 date: Feb 8, 2012
-disqus_identifier: sozdanie-udobnyh-demostranic-na-githabe-s-pomoschyu-sabmoduley
+disqus_identifier: 404 http://nano.sapegin.ru/?p=404
 tags:
   - tools
 ---

@@ -2,7 +2,7 @@
 layout: post
 title: 'Откуда подключать jQuery'
 date: Dec 9, 2009
-disqus_identifier: otkuda-podklyuchat-jquery
+disqus_identifier: 177 http://nano.sapegin.ru/?p=177
 tags:
   - javascript
 ---

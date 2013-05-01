@@ -2,7 +2,7 @@
 layout: post
 title: 'Проверка русской орфографии в Opera 10'
 date: May 28, 2009
-disqus_identifier: proverka-russkoy-orfografii-v-opera-10
+disqus_identifier: 113 http://nano.sapegin.ru/?p=113
 tags:
   - tools
 ---

@@ -2,7 +2,7 @@
 layout: post
 title: 'Хранение данных в CSS-файлах'
 date: Feb 16, 2012
-disqus_identifier: hranenie-dannyh-v-css-faylah
+disqus_identifier: 415 http://nano.sapegin.ru/?p=415
 tags:
   - javascript
   - html

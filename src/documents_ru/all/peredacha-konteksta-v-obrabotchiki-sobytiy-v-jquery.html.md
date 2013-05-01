@@ -2,7 +2,7 @@
 layout: post
 title: 'Передача контекста в обработчики событий в jQuery'
 date: Jan 13, 2011
-disqus_identifier: peredacha-konteksta-v-obrabotchiki-sobytiy-v-jquery
+disqus_identifier: 212 http://nano.sapegin.ru/?p=212
 tags:
   - javascript
 ---

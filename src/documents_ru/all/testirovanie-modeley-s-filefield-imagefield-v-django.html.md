@@ -2,7 +2,7 @@
 layout: post
 title: 'Тестирование моделей с FileField/ImageField в Django'
 date: Jul 13, 2011
-disqus_identifier: testirovanie-modeley-s-filefield-imagefield-v-django
+disqus_identifier: 354 http://nano.sapegin.ru/?p=354
 tags:
   - django
   - python

@@ -2,7 +2,7 @@
 layout: post
 title: 'Подсветка кода в WordPress с помощью highlight.js'
 date: Jun 7, 2011
-disqus_identifier: podsvetka-koda-v-wordpress-s-pomoschyu-highlight-js
+disqus_identifier: 307 http://nano.sapegin.ru/?p=307
 tags:
   - javascript
   - wordpress
@@ -29,7 +29,7 @@ hljs.initHighlightingOnLoad();
 
 Делаем табуляцию в 4 пробела — добавляем в CSS следующее:
 
-```html
+```css
 .indent {
 	display: inline-block;
 	width: 2.2em;

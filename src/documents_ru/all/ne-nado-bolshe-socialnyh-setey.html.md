@@ -2,7 +2,7 @@
 layout: post
 title: 'Не надо больше социальных сетей'
 date: Nov 28, 2011
-disqus_identifier: ne-nado-bolshe-socialnyh-setey
+disqus_identifier: 383 http://nano.sapegin.ru/?p=383
 tags:
   - thoughts
 ---

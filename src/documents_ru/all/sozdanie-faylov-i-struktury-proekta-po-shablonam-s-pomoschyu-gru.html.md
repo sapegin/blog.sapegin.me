@@ -2,7 +2,7 @@
 layout: post
 title: 'Создание файлов и структуры проекта по шаблонам с помощью Grunt'
 date: Apr 28, 2012
-disqus_identifier: sozdanie-faylov-i-struktury-proekta-po-shablonam-s-pomoschyu-gru
+disqus_identifier: 437 http://nano.sapegin.ru/?p=437
 tags:
   - tools
 ---

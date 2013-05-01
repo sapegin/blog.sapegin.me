@@ -2,7 +2,7 @@
 layout: post
 title: 'Шаблоны для jQuery (плагин jquery-tmpl)'
 date: Jan 26, 2011
-disqus_identifier: shablony-dlya-jquery-plagin-jquery-tmpl
+disqus_identifier: 224 http://nano.sapegin.ru/?p=224
 tags:
   - javascript
   - html

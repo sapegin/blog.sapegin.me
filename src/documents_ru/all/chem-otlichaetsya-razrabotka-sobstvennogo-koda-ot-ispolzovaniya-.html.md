@@ -2,7 +2,7 @@
 layout: post
 title: 'Чем отличается разработка собственного кода от использования чужой библиотеки?'
 date: Jul 20, 2011
-disqus_identifier: chem-otlichaetsya-razrabotka-sobstvennogo-koda-ot-ispolzovaniya-
+disqus_identifier: 361 http://nano.sapegin.ru/?p=361
 tags:
   - thoughts
 ---

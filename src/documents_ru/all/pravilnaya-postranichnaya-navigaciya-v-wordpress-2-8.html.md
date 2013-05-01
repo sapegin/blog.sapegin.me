@@ -2,7 +2,7 @@
 layout: post
 title: 'Правильная постраничная навигация в WordPress 2.8'
 date: Jun 16, 2009
-disqus_identifier: pravilnaya-postranichnaya-navigaciya-v-wordpress-2-8
+disqus_identifier: 128 http://nano.sapegin.ru/?p=128
 tags:
   - wordpress
 ---

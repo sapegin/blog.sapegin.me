@@ -2,7 +2,7 @@
 layout: post
 title: 'Как отключить обратную связь планшета в Windows 7'
 date: May 15, 2010
-disqus_identifier: kak-otklyuchit-obratnuyu-svyaz-plansheta-v-windows-7
+disqus_identifier: 193 http://nano.sapegin.ru/?p=193
 tags:
   - windows
 ---

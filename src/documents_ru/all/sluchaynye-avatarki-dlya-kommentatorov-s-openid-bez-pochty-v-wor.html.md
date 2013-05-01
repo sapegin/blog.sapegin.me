@@ -2,7 +2,7 @@
 layout: post
 title: 'Случайные аватарки для комментаторов с OpenID без почты в Wordpress'
 date: Nov 3, 2009
-disqus_identifier: sluchaynye-avatarki-dlya-kommentatorov-s-openid-bez-pochty-v-wor
+disqus_identifier: 150 http://nano.sapegin.ru/?p=150
 tags:
   - wordpress
 ---

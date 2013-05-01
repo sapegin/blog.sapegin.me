@@ -2,7 +2,7 @@
 layout: post
 title: 'Книга «Разгони свой сайт. Методы клиентской оптимизации веб-страниц»'
 date: Mar 30, 2009
-disqus_identifier: kniga-razgoni-svoy-sayt-metody-klientskoy-optimizacii-veb-strani
+disqus_identifier: 90 http://nano.sapegin.ru/?p=90
 tags:
   - html
   - reading

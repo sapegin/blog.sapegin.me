@@ -2,7 +2,7 @@
 layout: post
 title: 'Что внутри у сайта?'
 date: Feb 11, 2011
-disqus_identifier: chto-vnutri-u-sayta
+disqus_identifier: 257 http://nano.sapegin.ru/?p=257
 tags:
   - tools
 ---

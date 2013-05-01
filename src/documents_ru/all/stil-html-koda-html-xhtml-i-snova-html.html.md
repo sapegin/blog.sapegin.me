@@ -2,7 +2,7 @@
 layout: post
 title: 'Стиль HTML-кода: HTML, XHTML и снова HTML'
 date: Oct 25, 2011
-disqus_identifier: stil-html-koda-html-xhtml-i-snova-html
+disqus_identifier: 374 http://nano.sapegin.ru/?p=374
 tags:
   - html
 ---

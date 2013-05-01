@@ -2,7 +2,7 @@
 layout: post
 title: 'Хочу быть блондинкой, или Почему я использую фреймворки и виртуальный хостинг'
 date: May 5, 2010
-disqus_identifier: hochu-byt-blondinkoy-ili-pochemu-ya-ispolzuyu-freymvorki-i-virtu
+disqus_identifier: 189 http://nano.sapegin.ru/?p=189
 tags:
   - javascript
   - python

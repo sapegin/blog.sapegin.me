@@ -2,7 +2,7 @@
 layout: post
 title: 'Курс по подготовке идиотов (цитаты из книги «Искусство оформления сайта»)'
 date: Jul 4, 2011
-disqus_identifier: kurs-po-podgotovke-idiotov-citaty-iz-knigi-iskusstvo-oformleniya
+disqus_identifier: 345 http://nano.sapegin.ru/?p=345
 tags:
   - reading
 ---

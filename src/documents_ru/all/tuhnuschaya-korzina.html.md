@@ -2,7 +2,7 @@
 layout: post
 title: 'Тухнущая корзина'
 date: Dec 8, 2008
-disqus_identifier: tuhnuschaya-korzina
+disqus_identifier: 52 http://nano.sapegin.ru/?p=52
 tags:
   - 
 ---
