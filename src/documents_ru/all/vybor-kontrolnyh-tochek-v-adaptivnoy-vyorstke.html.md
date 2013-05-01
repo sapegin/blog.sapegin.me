@@ -14,6 +14,6 @@ tags:
 
 Помогает мне в этом расширение для Хрома [Window Size](https://chrome.google.com/webstore/detail/window-size/gocemkoelbpknmanpfcabkbeppbbigio), которое показывает текущие размеры окна браузера сразу после их изменения:
 
-![Window Size](/images/WindowSize.png)
+![Window Size](/images/windowsize.png)
 
 P. S. Недавно на Смешинг Мэгазине появилась хорошая (хоть и очень длинная) [статья на эту тему](http://mobile.smashingmagazine.com/2012/10/24/beyond-common-media-query-breakpoints/). Кроме выбора контрольных точек по контенту, там советуют следить за расположением контента в порядке важности на всех разрешениях.
