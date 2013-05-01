@@ -1,0 +1,42 @@
+lang: ru
+url: http://nano.sapegin.ru
+title: Наноблог Артёма Сапегина
+description: Blog of font-end developer from Moscow, Russia. He works at Badoo, shooting photos and making something awesome on the Internet.
+longDescription: |
+  <p>Меня зовут Тёма. Я живу в Москве и работаю JavaScript-программистом в Badoo, а в свободное время фотографирую и делаю всякие штуки в интернете. А ещё люблю читать книги, гладить своих собак и пить кофе.</p>
+  <p><a href="http://sapegin.ru/about">Обо мне на моём сайте</a>. А ещё у меня есть <a href="http://sapegin.ru/">сайт</a>, <a href="http://birdwatcher.ru/">блог о фотографии</a>, <a href="http://twitter.com/sapegin">твитер</a> и <a href="https://github.com/sapegin">гитхаб</a>.</p>
+author: Артём Сапегин
+email: artem@sapegin.ru
+copyrightUrl: http://sapegin.ru
+disqusShortname: nanosapegin
+visibleTags:
+  - javascript
+  - wordpress
+  - html
+  - tools
+tagNames:
+  tools: Инструменты
+  reading: Почитать
+  ui: Интерфейс
+  thoughts: Мысли
+  html: Вёрстка
+  javascript: JavaScript
+  wordpress: WordPress
+  python: Python
+  django: Django
+  stylus: Stylus
+  windows: Windows
+  mac: Mac
+twitterExtra: data-via="sapegin" data-related="Landscapists:Мой проект «Пейзажисты России»"
+postFeedback: Вы можете улучшить этот пост, <a href="{url}" class="link">отредактировав его</a> на prose.io.
+Powered by: Работает на
+DocPad: Докпаде
+Search: Поиск по блогу
+post|posts: пост|поста|постов
+'{num} {posts} tagged <em>{tag}</em>': '{num} {posts} с тегом <em>{tag}</em>'
+Share: Поделиться
+Share post on Facebook: Поделиться постом на Фейсбуке
+Share post on Twitter: Поделиться постом в Твиттере
+Share post on Google+: Поделиться постом в Гугл-плюсе
+Read more…: Читать дальше…
+Earlier: Ранее

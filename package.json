@@ -6,7 +6,6 @@
     "grunt": "~0.4.1",
     "grunt-contrib-stylus": "~0.5.0",
     "grunt-contrib-watch": "~0.3.1",
-    "docpad-plugin-marked": "~2.1.1",
     "docpad-plugin-eco": "~2.0.2",
     "docpad-plugin-paged": "~2.1.4",
     "docpad-plugin-highlightjs": "~2.1.6",
@@ -16,6 +15,7 @@
     "yamljs": "~0.1.4",
     "moment": "~2.0.0",
     "richtypo": "~0.1.6",
-    "grunt-imgo": "~0.1.0"
+    "grunt-imgo": "~0.1.0",
+    "docpad-plugin-robotskirt": "~2.0.3"
   }
 }

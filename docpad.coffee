@@ -105,7 +105,15 @@ docpadConfig = {
 		ru:
 			documentsPaths: ['documents_ru']
 			outPath: 'htdocs_ru'
-	
+
+	plugins:
+		highlightjs:
+			aliases:
+				yaml: 'python'
+		robotskirt:
+			robotskirtOptions:
+				EXT_AUTOLINK: false
+
 	# =================================
 	# DocPad Events
 
