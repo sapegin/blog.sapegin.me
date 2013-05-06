@@ -11,7 +11,9 @@ copyrightUrl: http://sapegin.me
 disqusShortname: nanoen
 visibleTags:
   - tools 
+  - html
 tagNames:
   tools: Tools
+  html: HTML
 twitterExtra: data-via="iamsapegin"
 postFeedback: I'll be happy if you help me to improve this post. You can <a href="{url}" class="link">edit it</a> on prose.io.
