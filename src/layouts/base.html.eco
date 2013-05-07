@@ -29,7 +29,7 @@
 			</h2>
 		<% end %>
 
-		<form class="search-form" action="<%- @_ 'searchUrl' %>" method="get">
+		<form class="search-form" action="http://yandex.ru/sitesearch" method="get">
 			<input type="hidden" name="searchid" value="2047351">
 			<input type="hidden" name="web" value="0">
 			<input type="hidden" name="l10n" value="<%= @site.lang %>">
