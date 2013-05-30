@@ -350,7 +350,7 @@ $ tree
 
 Свои задачи делать довольно просто. Для примера сделаем задачу, которая будет запускать из Гранта консольный оптимизатор веб-графики [imgo](https://github.com/imgo/imgo).
 
-*Стоит рассматривать эту задачу только как пример. Для реальной работы лучше использовать [grunt-imgo](https:*github.com/sapegin/grunt-imgo) или [grunt-contrib-imagemin](https://github.com/gruntjs/grunt-contrib-imagemin).*
+*Стоит рассматривать эту задачу только как пример. Для реальной работы лучше использовать [grunt-imgo](https://github.com/sapegin/grunt-imgo) или [grunt-contrib-imagemin](https://github.com/gruntjs/grunt-contrib-imagemin).*
 
 ### Конфиг
 
