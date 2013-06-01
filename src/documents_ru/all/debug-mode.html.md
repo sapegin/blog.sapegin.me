@@ -1,13 +1,15 @@
 ---
+published: "false"
 layout: post
-title: 'Условная компиляция (отладочная версия) JavaScript и Stylus с помощью Grunt.js'
-date: Mar 6, 2013
-disqus_identifier: debug-mode
-tags:
+title: Условная компиляция (отладочная версия) JavaScript и Stylus с помощью Grunt.js
+date: "Mar 6, 2013"
+disqus_identifier: "debug-mode"
+tags: 
   - javascript
   - stylus
   - html
   - tools
+
 ---
 
 Почти в любом проекте есть какой-то код, который используется только для отладки, и было бы удобно, если бы такой код автоматически удалялся при публикации.
@@ -55,7 +57,7 @@ if (typeof DEBUG === 'undefined') DEBUG = true;
 
 	// …
 	if (DEBUG) {
-		alert('Это сообщение появится только в отадочном режиме');
+		alert('Это сообщение появится только в отладочном режиме');
 	}
 	// …
 
