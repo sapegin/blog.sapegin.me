@@ -10,6 +10,7 @@
 
 	<%- @getBlock('styles').add(['/build/styles.css']).toHTML() %>
 	<link href="http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic&amp;subset=latin,cyrillic" rel="stylesheet">
+	<link href="/atom.xml" rel="alternate" type="application/rss+xml" title="<%= @site.title %>">
 
 	<script src="/js/libs/modernizr.js"></script>
 </head>
