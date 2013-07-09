@@ -29,8 +29,6 @@ tagNames:
   mac: Mac
 twitterExtra: data-via="sapegin" data-related="Landscapists:Мой проект «Пейзажисты России»"
 postFeedback: Вы можете улучшить этот пост, <a href="{url}" class="link">отредактировав его</a> на prose.io.
-Powered by: Работает на
-DocPad: Докпаде
 Search: Поиск по блогу
 post|posts: пост|поста|постов
 '{num} {posts} tagged <em>{tag}</em>': '{num} {posts} с тегом <em>{tag}</em>'
@@ -40,3 +38,4 @@ Share post on Twitter: Поделиться постом в Твиттере
 Share post on Google+: Поделиться постом в Гугл-плюсе
 Read more…: Читать дальше…
 Earlier: Ранее
+poweredBy: Работает на <a href="{dp}" class="link">Докпаде</a>, живёт на <a href="{do}" class="link">Диджиталоушене</a>
