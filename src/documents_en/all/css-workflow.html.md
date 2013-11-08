@@ -31,7 +31,7 @@ module.exports = (grunt) ->
 					define:
 						DEBUG: debug
 					use: [
-						() -> require('autoprefixer-stylus')('last 2 versions', 'ie 8')
+						() -> require('autoprefixer-stylus')('last 2 versions', 'ie 8', 'ie 9')
 						debug or require('csso-stylus')
 					]
 				compile:
