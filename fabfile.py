@@ -15,18 +15,10 @@ def deploy():
 		with cd(DEST):
 			run('git checkout master')
 			run('git pull')
-			run('grunt deploy')
-			run('docpad generate --env en')
-			run('docpad generate --env ru')
+			run('npm install')
+			run('node -e "require(\'grunt\').cli()" _ deploy')
+			run('./node_modules/.bin/docpad generate --env en')
+			run('./node_modules/.bin/docpad generate --env ru')
 	else:
 		fail('%s not found' % DEST)
 
-
-@task
-def upgrade():
-	with cd(DEST):
-		run('git checkout master')
-		run('git pull')
-		run('npm update -g grunt-cli')
-		run('npm update -g docpad')
-		run('npm install')
