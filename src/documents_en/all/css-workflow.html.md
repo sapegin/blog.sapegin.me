@@ -9,7 +9,7 @@ tags:
 
 I used to use [Nib](http://visionmedia.github.io/nib/) to manage CSS vendor prefixes in Stylus. But it has a big problem: it adds a lot of superfluous prefixes for everything.
 
-Now I found a better way: [Autoprefixer](https://github.com/ai/autoprefixer). It adds all needed vendor prefixes for all browsers you chose to support using data from [caniuse.com](http://caniuse.com/).
+Now I found a better way: [Autoprefixer](https://github.com/ai/autoprefixer). It adds all needed vendor prefixes for all browsers, you chose to support, using data from [caniuse.com](http://caniuse.com/).
 
 Here is my `Gruntfile.coffee`:
 
