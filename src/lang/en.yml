@@ -12,9 +12,11 @@ disqusShortname: nanoen
 visibleTags:
   - tools 
   - html
+  - css
 tagNames:
   tools: Tools
   html: HTML
+  css: CSS
 twitterExtra: data-via="iamsapegin"
 postFeedback: I’ll be happy if you help me to improve this post. You can <a href="{url}" class="link">edit it</a> on prose.io.
 poweredBy: Powered by <a href="{dp}" class="link">DocPad</a>, hosted on <a href="{do}" class="link">DigitalOcean</a>

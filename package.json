@@ -4,18 +4,18 @@
   "dependencies": {},
   "devDependencies": {
     "grunt": "~0.4.1",
-    "grunt-contrib-stylus": "~0.5.0",
-    "grunt-contrib-watch": "~0.3.1",
+    "grunt-contrib-stylus": "~0.10.0",
+    "grunt-contrib-watch": "~0.5.3",
     "docpad-plugin-eco": "~2.0.2",
-    "docpad-plugin-paged": "~2.1.4",
-    "docpad-plugin-highlightjs": "~2.1.6",
-    "docpad-plugin-tagging": "~2.0.1",
-    "docpad-plugin-cleanurls": "~2.4.3",
-    "matchdep": "~0.1.2",
+    "docpad-plugin-paged": "~2.2.3",
+    "docpad-plugin-highlightjs": "~2.1.8",
+    "docpad-plugin-tagging": "~2.0.2",
+    "docpad-plugin-cleanurls": "~2.5.1",
+    "docpad-plugin-robotskirt": "~2.0.3",
+    "matchdep": "~0.3.0",
     "yamljs": "~0.1.4",
-    "moment": "~2.0.0",
-    "richtypo": "~0.1.6",
-    "grunt-imgo": "~0.1.0",
-    "docpad-plugin-robotskirt": "~2.0.3"
+    "moment": "~2.4.0",
+    "richtypo": "~0.1.8",
+    "grunt-imgo": "~0.1.1"
   }
 }
