@@ -47,6 +47,7 @@ layout: base
 <div id="disqus_thread"></div>
 <script>
 var disqus_shortname = '<%= @addSlashes @site.disqusShortname %>';
+var disqus_url = '<%= @site.url %><%= @document.url %>';
 var disqus_identifier = '<%= @document.disqus_identifier or @document.slug %>';
 var disqus_title = '<%= @addSlashes @document.title %>';
 (function() {
