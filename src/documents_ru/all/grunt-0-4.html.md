@@ -303,13 +303,13 @@ grunt.registerTask('debug', ['concat']);
 Писать для каждого плагина `grunt.loadNpmTasks('имяплагина')` быстро надоест, поэтому лучше сразу заменить все вызовы loadNpmTasks одной строчкой:
 
 ```javascript
-require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
+require('load-grunt-tasks')(grunt);
 ```
 
-И установить [matchdep](https://github.com/tkellen/node-matchdep):
+И установить [load-grunt-tasks](https://github.com/sindresorhus/load-grunt-tasks):
 
 ```bash
-$ npm install matchdep --save-dev
+$ npm install load-grunt-tasks --save-dev
 ```
 
 Это заклинание вызовет loadNpmTasks для всех плагинов установленных с ключом `--save-dev`.

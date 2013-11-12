@@ -19,7 +19,7 @@ tags:
 module.exports = (grunt) ->
 	'use strict'
 
-	require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks)
+	require('load-grunt-tasks')(grunt)
 
 	debug = !!grunt.option('debug')
 
@@ -50,7 +50,7 @@ module.exports = (grunt) ->
 И зависимости:
 
 ```bash
-$ npm install --save-dev grunt grunt-contrib-stylus grunt-contrib-watch autoprefixer-stylus autoprefixer-csso matchdep
+$ npm install --save-dev grunt load-grunt-tasks grunt-contrib-stylus grunt-contrib-watch autoprefixer-stylus autoprefixer-csso
 ```
 
 Я использую [autoprefixer](https://github.com/jenius/autoprefixer-stylus) и [csso](https://github.com/sapegin/csso-stylus) в виде плагинов для Стилуса. То же самое можно было бы сделать и плагинами [autoprefixer](https://github.com/nDmitry/grunt-autoprefixer) и [csso](https://github.com/t32k/grunt-csso) для Гранта, но плагины для Гранта работают с файлами на диске, а плагины для Стилуса — с переменными в памяти. Это позволяет избежать двух лишних операций записи на диск и сильно упрощает грантфайл.

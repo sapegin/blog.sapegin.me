@@ -1,7 +1,9 @@
 # gruntjs.com
 
 module.exports = (grunt) ->
-	require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks)
+	'use strict'
+
+	require('load-grunt-tasks')(grunt)
 
 	grunt.initConfig
 		stylus:

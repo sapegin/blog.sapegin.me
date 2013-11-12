@@ -12,11 +12,11 @@
     "docpad-plugin-tagging": "~2.0.2",
     "docpad-plugin-cleanurls": "~2.5.1",
     "docpad-plugin-robotskirt": "~2.0.3",
-    "matchdep": "~0.3.0",
     "yamljs": "~0.1.4",
     "moment": "~2.4.0",
     "richtypo": "~0.1.8",
     "grunt-imgo": "~0.1.1",
-    "docpad": "~6.54.5"
+    "docpad": "~6.54.5",
+    "load-grunt-tasks": "~0.2.0"
   }
 }

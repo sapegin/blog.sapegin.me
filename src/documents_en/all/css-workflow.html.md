@@ -19,7 +19,7 @@ Here is my `Gruntfile.coffee`:
 module.exports = (grunt) ->
 	'use strict'
 
-	require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks)
+	require('load-grunt-tasks')(grunt)
 
 	debug = !!grunt.option('debug')
 
@@ -50,7 +50,7 @@ module.exports = (grunt) ->
 And all dependencies:
 
 ```bash
-$ npm install --save-dev grunt grunt-contrib-stylus grunt-contrib-watch autoprefixer-stylus autoprefixer-csso matchdep
+$ npm install --save-dev grunt load-grunt-tasks grunt-contrib-stylus grunt-contrib-watch autoprefixer-stylus autoprefixer-csso
 ```
 
 I use [autoprefixer](https://github.com/jenius/autoprefixer-stylus) and [csso](https://github.com/sapegin/csso-stylus) as Stylus plugins. I could achieve the same with [autoprefixer](https://github.com/nDmitry/grunt-autoprefixer) and [csso](https://github.com/t32k/grunt-csso) plugins for Grunt but Grunt plugins work with files while Stylus plugins work with variables in memory. So we have just one disk write operation instead of three and configuration is also much simpler.
