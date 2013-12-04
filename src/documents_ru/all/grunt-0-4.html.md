@@ -125,7 +125,7 @@ concat: {
 	options: {
 		separator: ';'
 	},
-	libs {
+	libs: {
 		src: 'js/libs/**/*.js',
 		dest: 'build/libs.js'
 	},
