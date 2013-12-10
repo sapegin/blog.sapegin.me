@@ -91,7 +91,9 @@ docpadConfig = {
 
 	collections:
 		posts: (database) ->
-			database.findAllLive({relativeOutDirPath: 'all'}, [date:-1])
+			database.findAllLive({relativeOutDirPath: 'all', unpublished: $exists: false}, [date:-1])
+		drafts: (database) ->
+			database.findAllLive({relativeOutDirPath: 'all', unpublished: $exists: true}, [date:-1])
 
 	# =================================
 	# Environments
