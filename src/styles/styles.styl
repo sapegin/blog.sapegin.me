@@ -1,13 +1,13 @@
 /* Author: Artem Sapegin, http://sapegin.me, 2012 */
 
 body {
-	background:bg-color;
-	color:base-color;
+	background:bg_color;
+	color:base_color;
 	line-height:1.5;
 	margin-left:auto;
 	margin-right:auto;
 	font-size:16px;
-	max-width:max-width;
+	max-width:max_width;
 }
 body,
 .footer-i {
@@ -24,7 +24,7 @@ body,
 }
 
 body { font-family:"PT Serif", Georgia, serif; }
-simple-font = "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", sans-serif;
+simple_font = "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", sans-serif;
 
 
 // Links
@@ -36,24 +36,24 @@ simple-font = "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", sans-serif;
 	&,	
 	&:link,
 	&:visited {
-		color:base-color;
+		color:base_color;
 	}
 	&:hover,
 	&:active,
 	&:focus {
-		color:hover-color;
+		color:hover_color;
 	}
 }
 
-text-selection(base-color, #faedb1);
+text-selection(base_color, #faedb1);
 
 
 // Forms
 .field {
 	padding:.2em .4em;
-	font-family:simple-font;
+	font-family:simple_font;
 	line-height:1;
-	color:base-color;
+	color:base_color;
 	background:#fff;
 	background:white(.7);
 	border:1px solid #ccc;
@@ -198,9 +198,6 @@ mark {
 			width:100%;
 		}
 	}
-	#e2-form-search:target {
-		display:block;
-	}
 }
 
 .logo {
@@ -281,12 +278,12 @@ mark {
 
 	a:link,
 	a:visited {
-		color:base-color;
+		color:base_color;
 	}
 	a:hover,
 	a:active,
 	a:focus {
-		color:hover-color;
+		color:hover_color;
 	}
 }
 
@@ -359,7 +356,7 @@ mark {
 	margin-bottom:3*spacer;
 	padding-top:spacer;
 	border:solid #ccc;
-	border-color:hslaa(base-color,.25);
+	border-color:rgba(base_color,.25);
 	border-width:1px 0;
 	font-size:15px;
 	line-height:1.4;

@@ -1,11 +1,28 @@
 // Tâmia © 2013 Artem Sapegin http://sapegin.me
 // Misc functions and mixins
 
-// Easings
-// More here: https://github.com/thoughtbot/bourbon/blob/master/app/assets/stylesheets/addons/_timing-functions.scss
+/// Colors for debug() function.
+_debug_colors = cyan magenta orange green blue red
 
-// Easing: ease out quint.
+//
+// Easings
+//
+
+/// More here: https://github.com/thoughtbot/bourbon/blob/master/app/assets/stylesheets/addons/_timing-functions.scss
+
+// Ease in sine.
+ease-in-sine = cubic-bezier(0.47, 0, 0.745, 0.715)
+
+// Ease out quint.
 ease-out-quint = cubic-bezier(0.23,1,0.32,1)
+
+// Ease out back.
+ease-out-back = cubic-bezier(0.175,0.885,0.32,1.275)
+
+
+//
+// Typography and text
+//
 
 // Ellipsis text overflow.
 ellipsis()
@@ -13,9 +30,10 @@ ellipsis()
 	text-overflow: ellipsis
 	white-space: nowrap
 
-// Tweak inverted text (light on dark) for webkit.
+// Tweak inverted text (light on dark) for OS X.
 tweak-inverted-text()
 	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
 
 // Enables ligatures in text.
 enable-ligatures()
@@ -49,6 +67,25 @@ placeholder-color(color)
 	&:-ms-input-placeholder
 		color: color
 
+// Disables text selection.
+no-select()
+	-webkit-touch-callout: none
+	user-select: none
+
+
+//
+// Misc.
+//
+
+// Clearfix.
+clearfix()
+	&:before
+	&:after
+		content: ""
+		display: table
+	&:after
+		clear: both
+
 // Disables columns.
 no-cols()
 	position: static
@@ -62,43 +99,19 @@ no-cols()
 //
 // imp - Important? (default: false).
 no-transition(imp=false)
-	// It is the shortest crossbrowser way
+	/// It is the shortest crossbrowser way
 	if imp
 		transition 0s !important
 	else
 		transition 0s
 
-// Disables text selection.
-no-select()
-	-webkit-touch-callout: none
-	user-select: none
-
-// Sticky footer wrapper.
-//
-// h - Footer height.
-sticky-footer-wrapper(h)
-	position: relative
-	min-height: 100%
-	margin-bottom: h
-
-// Sticky footer.
-//
-// h - Footer height.
-sticky-footer(h)
-	position: absolute
-	left: 0
-	right: 0
-	bottom: 0
-	height: h
-
 // Draws triangle.
-//
-// Borrowed from https://github.com/jenius/roots-css/blob/master/roots-css/utilities.styl.
 //
 // direction - Triangle direction (up, down, left, right).
 // size - Size (default: 10px).
 // color - Color (default: black).
 triangle(direction=up, size=10px, color=#000)
+	/// Borrowed from https://github.com/jenius/roots-css/blob/master/roots-css/utilities.styl.
 	width: 0
 	height: 0
 	if direction is up
@@ -118,9 +131,33 @@ triangle(direction=up, size=10px, color=#000)
 		border-bottom: size solid transparent
 		border-left: size solid color
 
+
+
 // Draws color outline around an element.
 //
 // Works only when DEBUG == true.
-_debug-colors = cyan magenta orange green blue red
 debug()
-	outline: 1px solid pop(_debug-colors) if DEBUG
+	outline: 1px solid pop(_debug_colors) if DEBUG
+
+
+///
+/// Internal stuff
+///
+
+/// Sticky footer wrapper.
+///
+/// h - Footer height.
+sticky-footer-wrapper(h)
+	position: relative
+	min-height: 100%
+	margin-bottom: h
+
+/// Sticky footer.
+///
+/// h - Footer height.
+sticky-footer(h)
+	position: absolute
+	left: 0
+	right: 0
+	bottom: 0
+	height: h

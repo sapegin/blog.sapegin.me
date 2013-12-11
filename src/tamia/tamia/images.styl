@@ -1,18 +1,27 @@
 // Tâmia © 2013 Artem Sapegin http://sapegin.me
 // Images, sprites, Retina support
 
+//
+// Configuration
+//
+
 // Enable Retina support (default: false).
-retina ?= false
+retinafy ?= false
 
 // Path to calculate file system image path based on CSS path (default: .).
-images-relative-root ?= '.'
+images_relative_root ?= '.'
 
 // Default sprite image file (default: ../build/sprite.png).
-sprite-image ?= '../build/sprite.png';
+sprite_image ?= '../build/sprite.png';
+sprite_image = sprite_image + '?' + sprite_fingerprint  if sprite_fingerprint
 
 // Sprite step size (default: 20px).
-sprite-step ?= 20px;
+sprite_step ?= 20px;
 
+
+//
+// Functions
+//
 
 // background-image with Retina variant.
 //
@@ -21,14 +30,14 @@ sprite-step ?= 20px;
 // y - background-position y (default: 0).
 //
 // Retina image file should be named path@2x.png.
-if retina
+if retinafy
 	image(path, x=0, y=0)
 		background: url(path) x y
-		@media (-webkit-min-device-pixel-ratio:1.5), (min-resolution:144dpi)
+		+retina()
 			ext = extname(path)
 			hdpath = dirname(path) + '/' + basename(path, ext) + '@2x' + ext
 			background: url(hdpath) x y
-			background-size: image-size(pathjoin(images-relative-root, path))
+			background-size: image-size(pathjoin(images_relative_root, path))
 else
 	image(path, x=0, y=0)
 		background: url(path) x y
@@ -45,19 +54,24 @@ else
 // w - Sprite width, pixels.
 // h - sprite height, pixels.
 //
-// Example
+// Example:
+//
 //   .elem
 //     sprite(sprite_pony);
+//
 //   .elem2
 //     sprite(5, 6, 36, 22);
 sprite(img)
-	content: ""
+	if not @content and match(":(before|after)", selector())
+		content: ""
+	if not @display
+		display: inline-block
 	if length(img) > 1
-		image(sprite-image, img[0], img[1])
+		image(sprite_image, img[0], img[1])
 		width: img[2]
 		height: img[3]
 	else
-		image(sprite-image, sprite-x(arguments[0]), sprite-y(arguments[1]))
+		image(sprite_image, sprite-x(arguments[0]), sprite-y(arguments[1]))
 		width: arguments[2]
 		height: arguments[3]
 
@@ -67,7 +81,7 @@ sprite(img)
 //
 // Returns pixels.
 sprite-x(x)
-	(-((x - 1)*sprite-step+1));
+	(-((x - 1)*sprite_step+1));
 
 // Vertical position of sprite image.
 //
@@ -75,18 +89,19 @@ sprite-x(x)
 //
 // Returns pixels.
 sprite-y(y)
-	(-((y - 1)*sprite-step+1));
+	(-((y - 1)*sprite_step+1));
 
 // background-position for sprite.
 //
 // x - Horizontal position in sprite grid.
 // y - Vertical position in sprite grid.
 //
-// Example
-//  .elem
-//    sprite-bg()
-//    sprite-pos(5,6)
-//    sprite-pos(sprite_pony-hover)
+// Example:
+//
+//   .elem
+//     sprite-bg()
+//     sprite-pos(5,6)
+//     sprite-pos(sprite_pony-hover)
 sprite-pos(img)
 	if length(img) > 1
 		background-position: img[0] img[1]
@@ -102,4 +117,31 @@ sprite-pos(img)
 // x - Horizontal position in sprite grid (default: 0).
 // y - Vertical position in sprite grid (default: 0).
 sprite-bg(x=0, y=0)
-	image(sprite-image, x, x)
+	image(sprite_image, x, x)
+
+// Element width for sprite.
+//
+// Returns pixels
+sprite-width(img)
+	img[2]
+
+// Element height for sprite.
+//
+// Returns pixels
+sprite-height(img)
+	img[3]
+
+// Element width/height for sprite.
+//
+// Example:
+//
+//   .elem
+//     sprite-size(sprite_pony);
+sprite-size(img)
+	width: sprite-width(img)
+	height: sprite-height(img)
+
+// Shifts element half height to top
+//
+sprite-shift-top(img)
+	margin-top: (-(round(sprite-height(img)/2)))

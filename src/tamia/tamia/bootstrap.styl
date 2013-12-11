@@ -32,22 +32,20 @@ html
 	// Prevent iOS text size adjust on device orientation change, without disabling user zoom: h5bp.com/g
 	-webkit-text-size-adjust: 100%
 	    -ms-text-size-adjust: 100%
-	// maxvoltar.com/archive/-webkit-font-smoothing
-	-webkit-font-smoothing: subpixel-antialiased
-	if sticky-footer-height
+	if sticky_footer_height
 		position: relative
 		min-height: 100%
 
 // Sticky footer: mystrd.at/modern-clean-css-sticky-footer/.
-if sticky-footer-height
+if sticky_footer_height
 	body
-		padding-bottom: sticky-footer-height
+		padding-bottom: sticky_footer_height
 	.footer
-		sticky-footer(sticky-footer-height)
+		sticky-footer(sticky_footer_height)
 		padding: 0 spacer
-		if max-width
+		if max_width
 			&-i
-				max-width: max-width
+				max-width: max_width
 				margin-left: auto
 				margin-right: auto
 
@@ -61,7 +59,7 @@ input[type="submit"],
 input[type="image"],
 button
 	cursor: pointer
-button[disabled]
+button[disabled],
 input[disabled]
 	cursor: default
 
@@ -82,7 +80,7 @@ input[type="submit"]
 	-webkit-appearance: button
 input[type="search"]
 	-webkit-appearance: textfield
-input[type="search"]::-webkit-search-decoration
+input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button
 	-webkit-appearance: none
 button::-moz-focus-inner,
@@ -112,13 +110,13 @@ a:active
 	outline: 0
 
 // Text selection and iOS tap highlighting.
-if light(bg-color)
-	selection-color = rgba(darken(bg-color,60),.5)
+if light(bg_color)
+	_selection_color = rgba(darken(bg_color,60),.5)
 else
-	selection-color = rgba(lighten(bg-color,60),.5)
-text-selection(base-color, selection-color)
+	_selection_color = rgba(lighten(bg_color,60),.5)
+text-selection(base_color, _selection_color)
 a:link
-	-webkit-tap-highlight-color: rgba(selection-color,.25)
+	-webkit-tap-highlight-color: rgba(_selection_color,.25)
 
 // Hide phone links from desktop browsers.
 .no-touch a[href^="tel"]
@@ -134,22 +132,7 @@ a:link
 		background-image: none
 		cursor: default
 
-// Image replacement.
-.ir
-	background-color: transparent
-	border: 0
-	overflow: hidden
-	&:before
-		content: ""
-		display: block
-		width: 0
-		height: 150%
-
-// Clearfix.
-.group
-	clearfix()
-
-if content-max-width
+if content_max_width
 	.content
-		max-width: content-max-width
+		max-width: content_max_width
 		margin: 0 auto
