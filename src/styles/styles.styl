@@ -128,12 +128,19 @@ mark {
 		font-size:.8em;
 		padding:0 2em;
 	}
-
-	img[src*="/images/win__"] {
-		margin-left:-13px;
-	}
-	img[src*="/images/mac__"] {
-		margin-left:-51px;
+}
+.screenshot_win {
+	margin-left:-13px;
+	margin-right:-13px;
+}
+.screenshot_mac {
+	margin-left:-56px;
+	margin-right:-56px;
+}
+@media (max-width:900px) {
+	.screenshot {
+		margin-left:auto;
+		margin-right:auto;
 	}
 }
 @media (max-width:850px) {

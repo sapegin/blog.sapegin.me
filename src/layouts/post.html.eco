@@ -10,7 +10,7 @@ layout: base
 	<% end %>
 
 	<div class="note-content text">
-		<%- @rt @content %>
+		<%- @rt @fixMd @content %>
 	</div>
 
 	<p class="note-feedback"><%- (@_ 'postFeedback').replace('{url}', "http://prose.io/#sapegin/blog.sapegin.me/edit/master/src/documents_#{@site.lang}/#{@document.relativePath}") %></p>
