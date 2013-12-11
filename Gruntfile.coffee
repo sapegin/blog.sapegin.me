@@ -5,14 +5,20 @@ module.exports = (grunt) ->
 
 	require('load-grunt-tasks')(grunt)
 
+	debug = !!grunt.option('debug')
+
 	grunt.initConfig
 		stylus:
 			compile:
-				files:
-					'src/files/build/styles.css': 'src/styles/index.styl'
 				options:
 					paths: ['src/tamia']
 					'include css': true
+					use: [
+						() -> (require 'autoprefixer-stylus')('last 2 versions', 'ie 9')
+						debug or (require 'csso-stylus')
+					]
+				files:
+					'src/files/build/styles.css': 'src/styles/index.styl'
 		imagemin:
 			options:
 				pngquant: true
@@ -34,6 +40,8 @@ module.exports = (grunt) ->
 						dest: 'src/files/images/'
 				]
 		watch:
+			options:
+				livereload: true
 			stylus:
 				files: 'src/styles/**'
 				tasks: 'stylus'

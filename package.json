@@ -18,6 +18,8 @@
     "docpad": "~6.54.5",
     "load-grunt-tasks": "~0.2.0",
     "grunt-contrib-imagemin": "~0.4.0",
-    "grunt-svgmin": "~0.3.0"
+    "grunt-svgmin": "~0.3.0",
+    "csso-stylus": "0.0.3",
+    "autoprefixer-stylus": "0.0.3"
   }
 }
