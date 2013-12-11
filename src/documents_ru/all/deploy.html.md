@@ -38,13 +38,13 @@ Host myhost
 
 Избавимся от необходимости вводить пароль при каждом заходе и дадим возможность хостингу ходить на Гитхаб или Битбакет:
 
-```
-ssh myhost 'mkdir -p .ssh && cat >> ~/.ssh/authorized_keys' < ~/.ssh/id_rsa.pub
+```bash
+$ ssh myhost 'mkdir -p .ssh && cat >> ~/.ssh/authorized_keys' < ~/.ssh/id_rsa.pub
 ```
 
 Теперь вы можете заходить на хостинг набирая:
 
-```
+```bash
 $ ssh myhost
 ```
 
@@ -62,14 +62,14 @@ $ ssh myhost
 
 Для деплоя я создаю специальную задачу `deploy`, где нет оптимизации картинок, тестирования и других долгих задач, не имеющих значения при сборке сайта.
 
-```
+```js
 grunt.registerTask('default', ['jshint', 'concat', 'stylus', 'imagemin']);
 grunt.registerTask('deploy', ['concat', 'stylus']);
 ```
 
 Плагины для Гранта я всегда устанавливаю с ключом `--save-dev`, чтобы сохранять ссылки на их конкретные версии в `package.json`. Он должен выглядеть примерно так:
 
-```
+```json
 {
   "name": "example",
   "version": "0.0.0",
@@ -91,7 +91,7 @@ grunt.registerTask('deploy', ['concat', 'stylus']);
 
 Добавим в локальный репозиторий ссылку на удалённый (на Гитхабе или Битбакете) и запушим код:
 
-```
+```bash
 $ git remote add origin git@github.com:sapegin/example.git
 $ git push -u origin master
 ```
@@ -100,7 +100,7 @@ $ git push -u origin master
 
 Клонируем репозиторий сайта на хостинг:
 
-```
+```bash
 $ ssh myhost
 $ git clone git@github.com:sapegin/example.git ~/sites/example.com
 $ logout
@@ -112,7 +112,7 @@ $ logout
 
 Шипит устанавливается одной строкой:
 
-```
+```bash
 $ path=/usr/local/bin/shipit; curl -o $path https://raw.github.com/sapegin/shipit/master/bin/shipit; chmod +x $path; unset path
 ```
 
