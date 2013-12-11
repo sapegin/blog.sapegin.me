@@ -1,8 +1,7 @@
 ---
-unpublished: true
 layout: post
 title: 'Простой деплой сайта на хостинг из Git-репозитория'
-date: Dec 10, 2013
+date: Dec 11, 2013
 tags:
   - tools
 ---
