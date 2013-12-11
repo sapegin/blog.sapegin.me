@@ -155,7 +155,7 @@ node -e "require('grunt').cli()" _ deploy
 Всё, теперь можно разложить сайт одной командой, не считая коммита и пуша изменений:
 
 ```bash
-$ git commit -a -m "$(curl -s http://whatthecommit.com/index.txt)"
+$ git commit -a -m "Make ponies pink."
 $ git push
 $ shipit
 ```
