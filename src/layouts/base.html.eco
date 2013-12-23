@@ -35,21 +35,32 @@
 		<input type="search" class="field search-form__field" name="text" placeholder="<%= @_ 'Search' %>" value="">
 	</form>
 
-	<ul class="tags-list">
-		<% for tag, data of @getTagCloud(): %>
-			<% if tag in @site.visibleTags: %>
-				<% if @document.slug is "tags-#{tag}": %>
-					<li class="tags-list__tag tags-list__tag_marked marked">
-						<%= @site.tagNames[tag] %>
-					</li>
-				<% else: %>
-					<li class="tags-list__tag">
-						<a href="<%= @getTagUrl tag %>" class="link"><%= @site.tagNames[tag] %></a>
-					</li>
+	<div class="l-row">
+
+		<div class="l-left">
+			<ul class="tags-list">
+				<% for tag, data of @getTagCloud(): %>
+					<% if tag in @site.visibleTags: %>
+						<% if @document.slug is "tags-#{tag}": %>
+							<li class="tags-list__tag tags-list__tag_marked marked">
+								<%= @site.tagNames[tag] %>
+							</li>
+						<% else: %>
+							<li class="tags-list__tag">
+								<a href="<%= @getTagUrl tag %>" class="link"><%= @site.tagNames[tag] %></a>
+							</li>
+						<% end %>
+					<% end %>
 				<% end %>
-			<% end %>
-		<% end %>
-	</ul>
+			</ul>
+		</div>
+
+		<div class="l-right">
+			<a href="<%= @translationUrl() %>" class="link"><%= @_ 'translation' %></a>
+		</div>
+
+	</div>
+
 </header>
 
     <%- @content %>

@@ -1,5 +1,6 @@
 # docpad.org
 
+fs = require 'fs'
 YAML = require 'yamljs'
 moment = require 'moment'
 richtypo = require 'richtypo'
@@ -90,6 +91,13 @@ docpadConfig = {
 				.replace /href="\//g, "href=\"#{@site.url}/"
 				.replace /src="\//g, "src=\"#{@site.url}/"
 			)
+
+		translationUrl: ->
+			if fs.existsSync "src/documents_#{@site.transLang}/#{@document.relativePath}"
+				"#{@site.transUrl}#{@document.url}"
+			else
+				"/"
+
 
 	# =================================
 	# Collections
