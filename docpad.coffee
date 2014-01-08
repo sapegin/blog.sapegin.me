@@ -58,7 +58,7 @@ docpadConfig = {
 
 		# Localized date
 		pubDate: (date) ->
-			moment(date).format('LL')
+			moment(date).format('LL')  # December 23 2013
 
 		# Translated string
 		_: (s, params=null) ->
@@ -71,27 +71,33 @@ docpadConfig = {
 		plural: (n, s) ->
 			((@_ s).split '|')[pluralTypes[@site.lang](n)]
 
+		# Richtypo.js
 		rt: (s) ->
 			s and (richtypo.rich s)
 
+		# Richtypo.js: title
 		rtt: (s) ->
 			s and (richtypo.title s)
 
+		# Tweak blog layout
 		fixMd: (s) ->
 			s and (s
 				# Screenshots: /images/mac__shipit.png or /images/win__shipit.png
 				.replace(/<p><img src="\/images\/(\w+)__([^"]+)" alt="([^"]*)"\/><\/p>/g, '<p class="screenshot screenshot_$1"><img src="/images/$1__$2" alt="$3"/></p>')
 			)
 
+		# Escape URL
 		addSlashes: (s) ->
 			s.replace(/[\\"']/g, '\\$&').replace(/\u0000/g, '\\0')
 
+		# Prepare RSS feed
 		prepareFeed: (s) ->
 			s and (s
 				.replace /href="\//g, "href=\"#{@site.url}/"
 				.replace /src="\//g, "src=\"#{@site.url}/"
 			)
-
+		
+		# URL of a page in other language
 		translationUrl: ->
 			if fs.existsSync "src/documents_#{@site.transLang}/#{@document.relativePath}"
 				"#{@site.transUrl}#{@document.url}"
@@ -113,7 +119,7 @@ docpadConfig = {
 	# Environments
 	# Language specific configuration
 	# $ docpad run --env en
-	# $ docpad generate --env en,ru
+	# $ docpad generate --env en
 	environments:
 		en:
 			documentsPaths: ['documents_en']
@@ -137,9 +143,13 @@ docpadConfig = {
 	# You can find a full listing of events on the DocPad Wiki
 	events:
 		generateBefore: (opts) ->
+			# Get current language from DocPad environment
 			lang = @docpad.config.env
+			# Load translated strings for current language
 			@docpad.getConfig().templateData.site = (YAML.load "src/lang/#{lang}.yml")
+			# Configure Moment.js
 			moment.lang(lang)
+			# Configure Richtypo.js
 			richtypo.lang(lang)
 
 		# Server Extend
