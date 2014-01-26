@@ -33,7 +33,7 @@ layout: base
 			<ul class="social-likes social-likes_single" data-single-title="<%= @_ 'Share' %>">
 				<li class="facebook" title="<%= @_ 'Share post on Facebook' %>">Facebook</li>
 				<li class="twitter" <%- @_ 'twitterExtra' %> title="<%= @_ 'Share post on Twitter' %>">Twitter</li>
-				<li class="plusone" data-counter="http://sapegin.ru/api/social-likes/googleplusonecount.php?url={url}&amp;callback=?" title="<%= @_ 'Share post on Google+' %>">Google+</li>
+				<li class="plusone" title="<%= @_ 'Share post on Google+' %>">Google+</li>
 				<% if @site.lang is 'ru': %>
 					<li class="vkontakte" title="Поделиться постом во Вконтакте">Вконтакте</li>
 					<li class="mailru" title="Поделиться постом в Моём мире">Мой мир</li>
