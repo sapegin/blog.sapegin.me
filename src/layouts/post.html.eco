@@ -30,7 +30,7 @@ layout: base
 
 	<% if not @document.unpublished: %>
 		<div class="note-share">
-			<ul class="social-likes social-likes_light" data-title="<% @document.title %>" data-single-title="<%= @_ 'Share' %>">
+			<ul class="social-likes social-likes_light" data-title="<%= @document.title %>" data-single-title="<%= @_ 'Share' %>">
 				<li class="facebook" title="<%= @_ 'Share post on Facebook' %>"><%= @_ 'Facebook' %></li>
 				<li class="twitter" <%- @_ 'twitterExtra' %> title="<%= @_ 'Share post on Twitter' %>"><%= @_ 'Twitter' %></li>
 				<li class="plusone" title="<%= @_ 'Share post on Google+' %>"><%= @_ 'Google+' %></li>
