@@ -33,8 +33,11 @@ Search: Поиск по блогу
 post|posts: пост|поста|постов
 '{num} {posts} tagged <em>{tag}</em>': '{num} {posts} с тегом <em>{tag}</em>'
 Share: Поделиться
+Facebook: Фейсбук
+Twitter: Твитер
+Google+: Гугл+
 Share post on Facebook: Поделиться постом на Фейсбуке
-Share post on Twitter: Поделиться постом в Твиттере
+Share post on Twitter: Поделиться постом в Твитере
 Share post on Google+: Поделиться постом в Гугл-плюсе
 Read more…: Читать дальше…
 Earlier: Ранее

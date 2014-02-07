@@ -1,0 +1,8 @@
+{
+  "name": "blog.sapegin.me",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "social-likes": "~3.0.1"
+  }
+}

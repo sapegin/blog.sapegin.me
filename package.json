@@ -20,6 +20,8 @@
     "grunt-contrib-imagemin": "~0.4.0",
     "grunt-svgmin": "~0.3.0",
     "csso-stylus": "0.0.3",
-    "autoprefixer-stylus": "0.0.3"
+    "autoprefixer-stylus": "0.0.3",
+    "bower": "~1.2.8",
+    "grunt-bower-concat": "~0.2.4"
   }
 }

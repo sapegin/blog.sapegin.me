@@ -1,4 +1,5 @@
 htdocs_en
 htdocs_ru
 node_modules
+bower_components
 src/files/build

@@ -30,13 +30,12 @@ layout: base
 
 	<% if not @document.unpublished: %>
 		<div class="note-share">
-			<ul class="social-likes social-likes_single" data-single-title="<%= @_ 'Share' %>">
-				<li class="facebook" title="<%= @_ 'Share post on Facebook' %>">Facebook</li>
-				<li class="twitter" <%- @_ 'twitterExtra' %> title="<%= @_ 'Share post on Twitter' %>">Twitter</li>
-				<li class="plusone" title="<%= @_ 'Share post on Google+' %>">Google+</li>
+			<ul class="social-likes social-likes_light" data-title="<% @document.title %>" data-single-title="<%= @_ 'Share' %>">
+				<li class="facebook" title="<%= @_ 'Share post on Facebook' %>"><%= @_ 'Facebook' %></li>
+				<li class="twitter" <%- @_ 'twitterExtra' %> title="<%= @_ 'Share post on Twitter' %>"><%= @_ 'Twitter' %></li>
+				<li class="plusone" title="<%= @_ 'Share post on Google+' %>"><%= @_ 'Google+' %></li>
 				<% if @site.lang is 'ru': %>
 					<li class="vkontakte" title="Поделиться постом во Вконтакте">Вконтакте</li>
-					<li class="mailru" title="Поделиться постом в Моём мире">Мой мир</li>
 				<% end %>
 			</ul>
 		</div>
@@ -67,5 +66,10 @@ layout: base
 	<a href="http://disqus.com" class="dsq-brlink"comments powered by <span class="logo-disqus">Disqus</span></a>
 <% end %>
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="http://sapegin.ru/api/social-likes/social-likes.min.js"></script>
+<!--[if lt IE 9]>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<![endif]-->
+<!--[if gte IE 9]><!-->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+<!--<![endif]-->
+<script src="/build/scripts.js"></script>

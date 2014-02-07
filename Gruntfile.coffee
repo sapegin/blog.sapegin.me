@@ -8,6 +8,13 @@ module.exports = (grunt) ->
 	debug = !!grunt.option('debug')
 
 	grunt.initConfig
+		bower_concat:
+			main:
+				dest: 'src/files/build/scripts.js'
+				exclude: [
+					'jquery'
+					'modernizr'
+				]
 		stylus:
 			compile:
 				options:
@@ -46,5 +53,5 @@ module.exports = (grunt) ->
 				files: 'src/styles/**'
 				tasks: 'stylus'
 
-	grunt.registerTask 'default', ['stylus', 'imagemin', 'svgmin']
-	grunt.registerTask 'deploy', ['stylus']
+	grunt.registerTask 'default', ['bower_concat', 'stylus', 'imagemin', 'svgmin']
+	grunt.registerTask 'deploy', ['bower_concat', 'stylus']
