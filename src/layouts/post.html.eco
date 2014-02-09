@@ -49,23 +49,6 @@ layout: base
 	</div>
 </div>
 
-<% if not @document.unpublished: %>
-	<div id="disqus_thread"></div>
-	<script>
-	var disqus_shortname = '<%= @addSlashes @site.disqusShortname %>';
-	var disqus_url = '<%= @site.url %><%= @document.url %>';
-	var disqus_identifier = '<%= @document.disqus_identifier or @document.slug %>';
-	var disqus_title = '<%= @addSlashes @document.title %>';
-	(function() {
-		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-	})();
-	</script>
-	<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-	<a href="http://disqus.com" class="dsq-brlink"comments powered by <span class="logo-disqus">Disqus</span></a>
-<% end %>
-
 <!--[if lt IE 9]>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <![endif]-->
