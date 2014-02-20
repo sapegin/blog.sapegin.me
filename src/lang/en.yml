@@ -18,6 +18,7 @@ tagNames:
   html: HTML
   css: CSS
   thoughts: Thoughts
+twitterName: iamsapegin
 twitterExtra: data-via="iamsapegin"
 postFeedback: I’ll be happy if you help me to improve this post. You can <a href="{url}" class="link">edit it</a> on GitHub.
 poweredBy: Powered by <a href="{dp}" class="link">DocPad</a>, hosted on <a href="{do}" class="link">DigitalOcean</a>

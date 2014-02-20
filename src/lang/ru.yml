@@ -27,6 +27,7 @@ tagNames:
   stylus: Stylus
   windows: Windows
   mac: Mac
+twitterName: sapegin
 twitterExtra: data-via="sapegin" data-related="Landscapists:Мой проект «Пейзажисты России»"
 postFeedback: Вы можете улучшить этот пост, <a href="{url}" class="link">отредактировав его</a> на Гитхабе.
 Search: Поиск по блогу
