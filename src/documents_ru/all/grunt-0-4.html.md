@@ -350,7 +350,7 @@ $ tree
 
 Свои задачи делать довольно просто. Для примера сделаем задачу, которая будет запускать из Гранта консольный оптимизатор веб-графики [imgo](https://github.com/imgo/imgo).
 
-*Стоит рассматривать эту задачу только как пример. Для реальной работы лучше использовать [grunt-imgo](https://github.com/sapegin/grunt-imgo) или [grunt-contrib-imagemin](https://github.com/gruntjs/grunt-contrib-imagemin).*
+*Стоит рассматривать эту задачу только как пример. Для реальной работы лучше использовать [grunt-contrib-imagemin](https://github.com/gruntjs/grunt-contrib-imagemin).*
 
 ### Конфиг
 
@@ -429,6 +429,7 @@ grunt.loadTasks('tasks');  // Загружает все задачи из пап
   - [jshint](https://github.com/gruntjs/grunt-contrib-jshint) — проверка JS (JSHint);
   - [watch](https://github.com/gruntjs/grunt-contrib-watch) — отслеживание изменений в файлах;
   - [connect](https://github.com/gruntjs/grunt-contrib-connect) — простой веб-сервер для статики;
+  - [imagemin](https://github.com/gruntjs/grunt-contrib-imagemin) — оптимизация картинок;
   - CSS-препроцессоры: [sass](https://github.com/gruntjs/grunt-contrib-sass), [less](https://github.com/gruntjs/grunt-contrib-less), [stylus](https://github.com/gruntjs/grunt-contrib-stylus);
   - тестовые фреймворки: [qunit](https://github.com/gruntjs/grunt-contrib-qunit), [jasmine](https://github.com/gruntjs/grunt-contrib-jasmine);
 - Ещё полезные плагины:
@@ -438,7 +439,7 @@ grunt.loadTasks('tasks');  // Загружает все задачи из пап
   - [string-replace](https://github.com/erickrdch/grunt-string-replace) — замена строк в файлах;
 - Мои плагины:
   - [webfont](https://github.com/sapegin/grunt-webfont) — сборка веб-шрифта из набора SVG-файлов;
-  - [imgo](https://github.com/sapegin/grunt-imgo) — оптимизация картинок;
+  - [bower-concat](https://github.com/sapegin/grunt-bower-concat) — автоматическая склейка Bower-компонентов;
   - [fingerprint](https://github.com/sapegin/grunt-fingerprint) — версии (для сброса кэша) статических файлов;
   - [shower-markdown](https://github.com/sapegin/grunt-shower-markdown) — генератор презентаций Shower из Markdown;
 - [Сайт Grunt, документация, плагины](http://gruntjs.com/)
