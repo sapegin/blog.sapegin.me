@@ -93,8 +93,8 @@ docpadConfig = {
 		# Prepare RSS feed
 		prepareFeed: (s) ->
 			s and (s
-				.replace /href="\//g, "href=\"#{@site.url}/"
-				.replace /src="\//g, "src=\"#{@site.url}/"
+				.replace(/href="\//g, "href=\"#{@site.url}/")
+				.replace(/src="\//g, "src=\"#{@site.url}/")
 			)
 		
 		# URL of a page in other language
