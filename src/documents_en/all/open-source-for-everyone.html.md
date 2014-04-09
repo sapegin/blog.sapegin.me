@@ -7,9 +7,9 @@ tags:
   - tools
 ---
 
-Everyone can help an open source project. You don’t have to be a programmer or a terminal guru. There are other stuff besides code in open source projects: documentation, for example. And there are a lot of projects without code at all: [books](https://github.com/showcases/writing) and some others.
+Everyone can help an open source project: you don’t have to be a programmer or a terminal guru. There are other stuff besides code in open source projects: documentation, for example. And there are a lot of projects without code at all: [books](https://github.com/showcases/writing) and some others.
 
-But not everybody know that it’s possible using only a browser.
+But not everybody knows that it’s possible using only a browser.
 
 Find a file you want to edit on [GitHub](https://github.com/) (you need to be logged in) and press Edit button:
 
@@ -23,4 +23,4 @@ Just after saving you’ll be prompted to send a pull request:
 
 Describe your changes and press Send pull request button.
 
-That’s all, you‘ve made the world a bit better.
+That’s all, you’ve made the world a bit better.
