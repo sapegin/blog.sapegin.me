@@ -1,8 +1,7 @@
 ---
-unpublished: true
 layout: post
 title: 'Нельзя просто взять и сделать блог на английском'
-date: Apr 9, 2014
+date: Apr  9, 2014
 tags:
   - thoughts
 ---
