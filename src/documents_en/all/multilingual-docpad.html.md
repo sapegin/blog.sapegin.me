@@ -149,7 +149,7 @@ And few to `docpad.coffee`:
 docpadConfig = {
 	templateData:
 		...
-		# URL of a page in other language or homepege if there’s no translation of that page
+		# URL of a page in other language or homepage if there’s no translation of that page
 		translationUrl: ->
 			if fs.existsSync "src/documents_#{@site.transLang}/#{@document.relativePath}"
 				"#{@site.transUrl}#{@document.url}"
@@ -167,4 +167,4 @@ Add a link to a template:
 
 ## Sever configuration
 
-The last thing you need is to point your server to the right folders with published files. I use different hosts for each language but you could use subfolders but is’t beyond the scope of this blog post.
+The last thing you need is to point your server to the right folders with published files. I use different hosts for each language but you could use subfolders but it’s beyond the scope of this blog post.
