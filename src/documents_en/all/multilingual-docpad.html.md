@@ -1,5 +1,4 @@
 ---
-unpublished: true
 layout: post
 title: 'Multilingual blog on DocPad'
 date: Apr 14, 2014
@@ -7,7 +6,7 @@ tags:
   - tools
 ---
 
-I write my blog in two languages. But they’re just two builds of the same DocPad installation with different settings.
+I write my blog in two languages. But they’re just two builds of the same [DocPad](http://docpad.org/) installation with different settings.
 
 You can use this blog’s [source code](https://github.com/sapegin/blog.sapegin.me) as an example of this technique. Below I’ll describe all necessary steps to translate your blog’s content and user interface.
 
