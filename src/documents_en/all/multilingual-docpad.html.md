@@ -109,8 +109,7 @@ Install libraries used in above code from npm:
 $ npm install --save yamljs moment
 ```
 
-You can find plural functions for you language in [polyglot.js
-](https://github.com/airbnb/polyglot.js/blob/master/lib/polyglot.js).
+You can find plural functions for you language in [polyglot.js](https://github.com/airbnb/polyglot.js/blob/master/lib/polyglot.js).
 
 Now you need to replace all local specific data in your [templates](https://github.com/sapegin/blog.sapegin.me/tree/master/src/layouts) with this helpers.
 

@@ -107,8 +107,7 @@ docpadConfig = {
 $ npm install --save yamljs moment
 ```
 
-Правила преобразования числительных можно найти в [polyglot.js
-](https://github.com/airbnb/polyglot.js/blob/master/lib/polyglot.js).
+Правила преобразования числительных можно найти в [polyglot.js](https://github.com/airbnb/polyglot.js/blob/master/lib/polyglot.js).
 
 Теперь нужно заменить в [шаблонах](https://github.com/sapegin/blog.sapegin.me/tree/master/src/layouts) все зависящие от языка данные на вызовы функций `@_`, `@plural` и `@pubDate`.
 
