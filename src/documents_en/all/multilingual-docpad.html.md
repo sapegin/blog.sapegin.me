@@ -162,7 +162,7 @@ docpadConfig = {
 Add a link to a template:
 
 ```html
-<a href="<%= @translationUrl() %>" class="link"><%= @_ 'translation' %></a>
+<a href="<%= @translationUrl() %>"><%= @_ 'translation' %></a>
 ```
 
 ## Sever configuration
