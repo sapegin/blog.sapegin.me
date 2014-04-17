@@ -102,7 +102,7 @@ docpadConfig = {
 			if fs.existsSync "src/documents_#{@site.transLang}/#{@document.relativePath}"
 				"#{@site.transUrl}#{@document.url}"
 			else
-				"/"
+				@site.transUrl
 
 
 	# =================================
