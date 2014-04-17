@@ -1,7 +1,7 @@
 ---
 published: "false"
 layout: post
-title: Условная компиляция (отладочная версия) JavaScript и Stylus с помощью Grunt.js
+title: Условная компиляция (отладочная версия) JavaScript и Stylus с помощью Grunt
 date: "Mar 6, 2013"
 disqus_identifier: "debug-mode"
 tags: 
