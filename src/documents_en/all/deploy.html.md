@@ -1,5 +1,4 @@
 ---
-published: false
 layout: post
 title: 'Simple site deploy from Git'
 date: Apr 24, 2014
