@@ -49,7 +49,7 @@ $ ssh myhost
 
 ## Подготовка проекта
 
-Для сборки я использую Грант. Если вы не используете Грант, можете пропустить этот раздел.
+Для сборки я использую [Грант](http://nano.sapegin.ru/all/grunt-0-4). Если вы не используете Грант, можете пропустить этот раздел.
 
 Есть два способа соборки и деплоя сайта:
 
@@ -112,7 +112,7 @@ $ logout
 Шипит устанавливается одной строкой:
 
 ```bash
-$ path=/usr/local/bin/shipit; curl -o $path https://raw.github.com/sapegin/shipit/master/bin/shipit; chmod +x $path; unset path
+$ pathtoshipit=/usr/local/bin/shipit; curl -o $pathtoshipit https://raw.github.com/sapegin/shipit/master/bin/shipit; chmod +x $pathtoshipit; unset pathtoshipit
 ```
 
 ## Настройка деплоя
