@@ -2,7 +2,7 @@
 published: false
 layout: post
 title: 'Simple site deploy from Git'
-date: Dec 11, 2013
+date: Apr 24, 2014
 tags:
   - tools
 ---
