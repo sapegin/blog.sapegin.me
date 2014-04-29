@@ -12,4 +12,4 @@ $ docpad generate --env ru
 
 ## License
 
-You can use code (HTML/JS/CoffeeScript) of this website, but you *can’t* use design, Stylus/CSS, images and content.
+You can use code (HTML/JS/CoffeeScript) of this site, but you *can’t* use design, Stylus/CSS, images and content.

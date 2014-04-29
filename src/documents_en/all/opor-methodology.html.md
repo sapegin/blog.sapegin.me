@@ -1,12 +1,12 @@
 ---
 layout: post
-title: 'My front-end methodology: OPOR (One Page of Rules), or BEM for small websites'
+title: 'My front-end methodology: OPOR (One Page of Rules), or BEM for small sites'
 date: May 6, 2013
 tags:
   - html
 ---
 
-I like BEM. But I’m not Yandex, Google or any other huge company that builds all the Internet so I found BEM is too strict for me.
+I like BEM. But I’m not Yandex, Google or any other huge company that builds all the internet so I found BEM is too strict for me.
 
 The point of OPOR (One Page of Rules) is that all rules and recommendations are contained on a single page. It combines best parts of [BEM](http://en.bem.info/), [SMACSS](http://smacss.com/) and [OOCSS](http://coding.smashingmagazine.com/2011/12/12/an-introduction-to-object-oriented-css-oocss/). It’s not a religion and it’s suitable for any small to medium project.
 

@@ -16,7 +16,7 @@ So I tried [Aegea](http://blogengine.ru/). Aegea has the best blog UI. You can�
 
 But in 2013 I became tired again. Aegea wasn’t the best engine for coder’s blog. Strange archaic wiki-like text formatting. The same dances with tambourine to add code example. And I became terribly jealous of people who stored their blogs’ content on GitHub in Markdown files and received pull requests with useful fixes.
 
-So I spent few days to replace Aegea for [DocPad](http://docpad.org/). It was much simpler than I thought and I like the result very much. DocPad is a static website generator. And it’s much more flexible than WordPress and Aegea.
+So I spent few days to replace Aegea for [DocPad](http://docpad.org/). It was much simpler than I thought and I like the result very much. DocPad is a static site generator. And it’s much more flexible than WordPress and Aegea.
 
 Now I can write text using the simplest format available (Markdown) in the best text editor ([iA Writer](http://www.iawriter.com/mac/)). Then share drafts on [Draft](https://draftin.com/). Then just copy file to local blog repository, add simple YAML header (title, tags, etc.), commit it, push to GitHub and deploy to server (using [Fabric](http://fabfile.org/)).
 
