@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'GitHub vs. Dropbox. Why “versus”?'
-date: Jan 15, 2014
+date: Apr 30, 2014
 tags:
   - tools
   - thoughts
