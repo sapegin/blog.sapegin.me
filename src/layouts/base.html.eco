@@ -39,14 +39,14 @@
 		</h2>
 	<% end %>
 
-	<form class="search-form" action="http://yandex.ru/sitesearch" method="get">
+	<form class="search-form no-print" action="http://yandex.ru/sitesearch" method="get">
 		<input type="hidden" name="searchid" value="2047351">
 		<input type="hidden" name="web" value="0">
 		<input type="hidden" name="l10n" value="<%= @site.lang %>">
 		<input type="search" class="field search-form__field" name="text" placeholder="<%= @_ 'Search' %>" value="">
 	</form>
 
-	<div class="l-row">
+	<div class="l-row no-print">
 
 		<div class="l-left">
 			<ul class="tags-list">
@@ -79,7 +79,7 @@
 	<footer class="footer group">
 		<div class="footer-i">
 			© <a href="<%= @site.copyrightUrl %>" class="link"><%= @site.author %></a>, 2008—<%= (new Date).getFullYear() %>
-    		<div class="engine-info">
+    		<div class="engine-info no-print">
     			<%- (@_ 'poweredBy').replace('{dp}', 'http://docpad.org/').replace('{do}', 'https://www.digitalocean.com/?refcode=bb49cbe65bb4') %>
     		</div>
     	</div>

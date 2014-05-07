@@ -13,7 +13,7 @@ layout: base
 		<%- @rt @fixMd @content %>
 	</div>
 
-	<p class="note-feedback"><%- (@_ 'postFeedback').replace('{url}', "https://github.com/sapegin/blog.sapegin.me/edit/master/src/documents_#{@site.lang}/#{@document.relativePath}") %></p>
+	<p class="note-feedback no-print"><%- (@_ 'postFeedback').replace('{url}', "https://github.com/sapegin/blog.sapegin.me/edit/master/src/documents_#{@site.lang}/#{@document.relativePath}") %></p>
 
 	<div class="note-meta">
 		<span class="note-tags">
@@ -42,7 +42,7 @@ layout: base
 	<% end %>
 </article>
 
-<div class="about-author media">
+<div class="about-author media no-print">
 	<div class="about-author__picture media__img"><img src="/images/userpic.jpg" width="75" height="75" alt="<%= @site.author %>"></div>
 	<div class="media__body text">
 		<%- @rt @site.longDescription %>
