@@ -167,3 +167,5 @@ Add a link to a template:
 ## Sever configuration
 
 The last thing you need is to point your server to the right folders with published files. I use different hosts for each language but you could use subfolders but it’s beyond the scope of this blog post.
+
+P. S. Here is [another approach](http://nylnook.com/en/blog/docpad-i18n) by Camille Bissuel.
