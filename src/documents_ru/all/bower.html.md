@@ -275,7 +275,7 @@ concat: {
 Вот теперь можно регистрировать пакет:
 
 ```bash
-❯ bower register juqery-awesomeplugin git://github.com/sapegin/juqery-awesomeplugin.git
+❯ bower register jquery-awesomeplugin git://github.com/sapegin/jquery-awesomeplugin.git
 ```
 
 Дальше Бовер сам будет проверять обновления пакета, главное не забывать создавать гит-тег для каждой новой версии.
