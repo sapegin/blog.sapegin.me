@@ -189,7 +189,7 @@ bower_concat: {
 concat: {
 	main: {
 		src: [
-			'build/_bower.js’,
+			'build/_bower.js',
 			'scripts/*.js'  // Скрипты вашего сайта
 		],
 		dest: 'build/scripts.js'
