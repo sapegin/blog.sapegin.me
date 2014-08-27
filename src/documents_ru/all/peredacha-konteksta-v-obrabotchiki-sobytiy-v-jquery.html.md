@@ -26,13 +26,13 @@ obj.init();
 В jQuery есть *правильный* способ это сделать — метод [jQuery.proxy()](http://api.jquery.com/jQuery.proxy/):
 
 ```javascript
-$('.button').click($.proxy(function(){ this.handler(42) }, this));
+$('.button').click($.proxy(function(){ obj.handler(42) }, this));
 ```
 
 Однако, если в метод нужно передать параметры, то короче от этого не станет, всё равно придётся создавать замыкание. Вот если бы параметров не было, получилось бы просто и красиво:
 
 ```javascript
-$('.button').click($.proxy(this.handler, this));
+$('.button').click($.proxy(obj.handler, this));
 ```
 
 Но есть и более краткий способ передать и контекст, и параметры — через параметр data методов [eventname()](http://api.jquery.com/click/):
