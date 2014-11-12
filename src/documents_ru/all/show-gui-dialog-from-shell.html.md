@@ -1,5 +1,4 @@
 ---
-unpublished: true
 layout: post
 title: 'Как показать графический диалог из шелл-скрипта на маке'
 date: Nov 12, 2014
