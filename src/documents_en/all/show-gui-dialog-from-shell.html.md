@@ -27,7 +27,7 @@ EOT
 error "Not enough cheese!" 
 ```
 
-![AppleScript error message](/images/shell_dialog_error.png)
+![AppleScript error message](/images/mac__shell_dialog_error.png)
 
 (You can use `note` or `stop` instead of `caution` to show a different icon.)
 
@@ -48,7 +48,7 @@ EOT
 value="$(prompt 'Enter:' '42')"
 ```
 
-![AppleScript prompt](/images/shell_dialog_prompt.png)
+![AppleScript prompt](/images/mac__shell_dialog_prompt.png)
 
 Or you can just download [dlg-error](https://github.com/sapegin/dotfiles/blob/master/bin/dlg-error) and [dlg-prompt](https://github.com/sapegin/dotfiles/blob/master/bin/dlg-prompt) and put them somewhere in `$PATH`:
 
