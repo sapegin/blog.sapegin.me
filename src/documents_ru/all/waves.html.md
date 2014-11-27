@@ -1,5 +1,4 @@
 ---
-unpublished: true
 layout: post
 title: 'Работа волнами'
 date: Nov 27, 2014
