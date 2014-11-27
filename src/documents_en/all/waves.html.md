@@ -1,5 +1,4 @@
 ---
-unpublished: true
 layout: post
 title: 'Going wavy'
 date: Nov 27, 2014
