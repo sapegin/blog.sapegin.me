@@ -1,71 +1,67 @@
-(function() {
-  'use strict';
-  var $, Loader, _loaderTmpl, _ref, _shadeSelector, _wrapperClass,
-    __hasProp = {}.hasOwnProperty,
-    __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
+// Tâmia © 2014 Artem Sapegin http://sapegin.me
+// Spinner
 
-  $ = jQuery;
+/*global tamia:false*/
+;(function(window, $, undefined) {
+	'use strict';
 
-  _wrapperClass = 'loader-wrapper';
+	var _wrapperClass = 'loader-wrapper';
+	var _shadeSelector = '.loader-shade';
 
-  _shadeSelector = '.loader-shade';
+	tamia.Loader = tamia.extend(tamia.Component, {
+		displayName: 'tamia.Loader',
+		template: {
+			block: 'loader-shade',
+			content: {
+				block: 'l-center',
+				content: {
+					block: 'l-center',
+					inner: true,
+					content: {
+						block: 'spinner',
+						mods: 'big'
+					}
+				}
+			}
+		},
 
-  _loaderTmpl = '<div class="loader-shade">\n	<div class="l-center">\n		<div class="l-center-i">\n			<div class="spinner spinner_big"></div>\n		</div>\n	</div>\n</div>';
+		init: function() {
+			tamia.delay(this.elem.addState, this.elem, 0, 'loading');
+		},
 
-  Loader = (function(_super) {
-    __extends(Loader, _super);
+		destroy: function() {
+			tamia.delay(function() {
+				this.elem.removeState('loading');
+				this.elem.find(_shadeSelector).afterTransition(function() {
+					this.elem.removeClass(_wrapperClass);
+					this.loader.remove();
+				}.bind(this));
+			}, this, 0);
+		},
 
-    function Loader() {
-      _ref = Loader.__super__.constructor.apply(this, arguments);
-      return _ref;
-    }
+		initHtml: function() {
+			this.elem.addClass(_wrapperClass);
+			this.loader = tamia.oporNode(this.template);
+			this.elem.append(this.loader);
+		}
+	});
 
-    Loader.prototype.init = function() {
-      var _this = this;
-      this.initHtml();
-      return setTimeout((function() {
-        return _this.addState('loading');
-      }), 0);
-    };
 
-    Loader.prototype.destroy = function() {
-      var _this = this;
-      this.removeState('loading');
-      return this.elem.find(_shadeSelector).afterTransition(function() {
-        _this.elem.removeClass(_wrapperClass);
-        return _this.loader.remove();
-      });
-    };
+	// Events
+	tamia.registerEvents({
+		'loading-start': function(elem) {
+			var container = $(elem);
+			if (container.data('loader')) return;
+			container.data('loader', new tamia.Loader(elem));
+		},
 
-    Loader.prototype.initHtml = function() {
-      this.elem.addClass(_wrapperClass);
-      this.loader = $(_loaderTmpl);
-      return this.elem.append(this.loader);
-    };
+		'loading-stop': function(elem) {
+			var container = $(elem);
+			var loader = container.data('loader');
+			if (!loader) return;
+			loader.destroy();
+			container.removeData('loader');
+		},
+	});
 
-    return Loader;
-
-  })(Component);
-
-  tamia.registerEvents({
-    'loading-start': function(elem) {
-      var container;
-      container = $(elem);
-      if (container.data('loader')) {
-        return;
-      }
-      return container.data('loader', new Loader(elem));
-    },
-    'loading-stop': function(elem) {
-      var container, loader;
-      container = $(elem);
-      loader = container.data('loader');
-      if (!loader) {
-        return;
-      }
-      loader.destroy();
-      return container.removeData('loader');
-    }
-  });
-
-}).call(this);
+}(window, jQuery));

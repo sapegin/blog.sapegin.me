@@ -52,7 +52,7 @@ if modules_default_skin or switcher_default_skin
 		&__input:checked + &__label,
 		&__input:not(:checked) + &__label
 			height: 2em
-			padding: .5em 1em
+			padding: .4em 1em .6em
 			background: #f4f4f4
 			background: linear-gradient(to bottom, #fefefe, #f4f4f4)
 			border: 1px solid #bbb
@@ -61,9 +61,9 @@ if modules_default_skin or switcher_default_skin
 			transition: border-color .1s ease-in-out, box-shadow .1s ease-in-out
 
 		&__label:nth-of-type(1)
-			border-radius: .15em 0 0 .15em
+			border-radius: form_border_radius 0 0 form_border_radius
 		&__label:nth-last-of-type(1)
-			border-radius: 0 .15em .15em 0
+			border-radius: 0 form_border_radius form_border_radius 0
 
 		&__input:checked + &__label
 			background: #ccc

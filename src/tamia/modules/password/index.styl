@@ -7,11 +7,13 @@
 .password
 	position: relative
 	display: block
-	width: 100%
+
+	&_inline
+		display: inline-block
 
 	&__field
 		position:relative;
-		width: inherit
+		width: 100%
 		z-index: 90
 
 	&__toggle
@@ -34,6 +36,10 @@
 	&.is-disabled &__toggle
 		opacity: .4
 
+	// Hide IE10 password visibility toggle
+	&::-ms-reveal
+		size: 0  // Not display:none because: http://bit.ly/1h3UlAH
+
 
 // Default skin
 
@@ -43,8 +49,12 @@ password_default_skin ?= false
 if modules_default_skin or password_default_skin
 	.password
 		&.is-ok &__toggle
-			width: 20px
+			width: 1.8em
 			&:before
-				content: "a"
+				tweak-inverted-text()
+				content: "abc"
+				font-size: .75em
+				letter-spacing: .1ex
 		&.is-ok.is-unlocked &__toggle:before
-			content: "●"
+			content: "●●●"
+			letter-spacing: 0

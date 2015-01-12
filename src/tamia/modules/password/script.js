@@ -1,64 +1,94 @@
-(function() {
-  'use strict';
-  var $, Password, supported, _ref,
-    __hasProp = {}.hasOwnProperty,
-    __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
+// Tâmia © 2014 Artem Sapegin http://sapegin.me
+// Password field with toggle to show characters
 
-  $ = jQuery;
+/*global tamia:false*/
+;(function(window, $, undefined) {
+	'use strict';
 
-  supported = void 0;
+	var _unlockedState = 'unlocked';
+	var _disabledState = 'disabled';
+	var _inputSyncEvent = 'input.sync.password';
 
-  Password = (function(_super) {
-    __extends(Password, _super);
+	tamia.Password = tamia.extend(tamia.Component, {
+		displayName: 'tamia.Password',
+		binded: 'toggle focus',
+		template: {
+			block: 'password',
+			node: 'root',
+			content: [
+				{
+					block: 'password',
+					elem: 'toggle',
+					link: 'toggleElem'
+				},
+				{
+					block: 'password',
+					elem: 'field',
+					mix: {
+						block: 'field'
+					},
+					node: '.js-field',
+					link: 'fieldElem',
+					attrs: {
+						autocapitalize: 'off',
+						autocomplete: 'off',
+						autocorrect: 'off',
+						spellcheck: 'false'
+					}
+				}
+			]
+		},
 
-    function Password() {
-      _ref = Password.__super__.constructor.apply(this, arguments);
-      return _ref;
-    }
+		init: function() {
+			// Mousedown instead of click to catch focused field
+			this.toggleElem.on('mousedown', this.toggle_);
 
-    Password.prototype.init = function() {
-      this.types = {
-        locked: 'password',
-        unlocked: 'text'
-      };
-      this.fieldElem = this.find('field');
-      this.toggleElem = this.find('toggle');
-      return this.on('mousedown', 'toggle', this.toggle);
-    };
+			if (this.elem.hasState(_disabledState)) {
+				this.fieldElem.prop(_disabledState, true);
+			}
+		},
 
-    Password.prototype.isSupported = function() {
-      if (supported !== void 0) {
-        return supported;
-      }
-      supported = $('<!--[if lte IE 8]><i></i><![endif]-->').find('i').length !== 1;
-      return supported;
-    };
+		toggle: function() {
+			var focused = document.activeElement === this.fieldElem[0];
+			var locked = !this.isLocked();
 
-    Password.prototype.toggle = function() {
-      var fieldType, focused, locked,
-        _this = this;
-      focused = document.activeElement === this.fieldElem[0];
-      locked = this.hasState('unlocked');
-      fieldType = this.fieldElem.attr('type');
-      this.toggleState('unlocked');
-      if (fieldType === this.types.locked && !locked) {
-        this.fieldElem.attr('type', this.types.unlocked);
-      } else if (fieldType === this.types.unlocked && locked) {
-        this.fieldElem.attr('type', this.types.locked);
-      }
-      if (focused) {
-        return setTimeout((function() {
-          return _this.fieldElem.focus();
-        }), 0);
-      }
-    };
+			this.elem.toggleState(_unlockedState);
 
-    return Password;
+			// Create hidden input[type=password] element to invoke password saving in browser
+			if (!locked) {
+				this.cloneElem = this.fieldElem.clone();
+				this.cloneElem.hide();
+				this.fieldElem.after(this.cloneElem);
+				this.fieldElem.name = '';
+				this.fieldElem.on(_inputSyncEvent, this.syncWith.bind(this, this.cloneElem));
+				this.cloneElem.on(_inputSyncEvent, this.syncWith.bind(this, this.fieldElem));
+			}
+			else if (this.cloneElem) {
+				this.fieldElem.off(_inputSyncEvent);
+				this.fieldElem.name = this.cloneElem.name;
+				this.cloneElem.remove();
+			}
 
-  })(Component);
+			this.fieldElem.attr('type', locked ? 'password' : 'text');
 
-  tamia.initComponents({
-    password: Password
-  });
+			if (focused) {
+				setTimeout(this.focus_, 0);
+			}
+		},
 
-}).call(this);
+		focus: function() {
+			this.fieldElem.focus();
+		},
+
+		isLocked: function() {
+			return !this.elem.hasState(_unlockedState);
+		},
+
+		syncWith: function(receiver, event) {
+			receiver.val(event.target.value);
+		}
+	});
+
+	tamia.initComponents({password: tamia.Password});
+
+}(window, jQuery));

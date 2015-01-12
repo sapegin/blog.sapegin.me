@@ -14,10 +14,13 @@ _debug_colors = cyan magenta orange green blue red
 ease-in-sine = cubic-bezier(0.47, 0, 0.745, 0.715)
 
 // Ease out quint.
-ease-out-quint = cubic-bezier(0.23,1,0.32,1)
+ease-out-quint = cubic-bezier(0.23, 1, 0.32, 1)
 
 // Ease out back.
-ease-out-back = cubic-bezier(0.175,0.885,0.32,1.275)
+ease-out-back = cubic-bezier(0.175, 0.885, 0.32, 1.275)
+
+// Ease in out cubic.
+ease-in-out-cubic = cubic-bezier(0.645, 0.045, 0.355, 1)
 
 
 //
@@ -42,35 +45,24 @@ enable-ligatures()
 	-moz-font-feature-settings: "liga=1, dlig=1"
 	font-feature-settings: "liga", "dlig"
 
-// Text selection style.
-//
-// color - Text color.
-// background - Background color.
-text-selection(color, background)
-	::-moz-selection
-		color: color
-		background: background
-		text-shadow: none
-	::selection
-		color: color
-		background: background
-		text-shadow: none
-
-// Input placeholder color.
-//
-// color - Placeholder color.
-placeholder-color(color)
-	&::-webkit-input-placeholder
-		color: color
-	&::-moz-placeholder
-		color: color
-	&:-ms-input-placeholder
-		color: color
-
 // Disables text selection.
 no-select()
 	-webkit-touch-callout: none
 	user-select: none
+
+// Enables text selection.
+enable-select()
+	-webkit-touch-callout: default
+	user-select: all
+
+// Hides text (for image replacement).
+hide-text()
+	/// https://github.com/h5bp/html5-boilerplate/commit/aa0396eae757
+	font: "0/0" a
+	color: transparent
+	text-shadow: none
+	background-color: transparent
+	border: 0
 
 
 //
@@ -85,6 +77,17 @@ clearfix()
 		display: table
 	&:after
 		clear: both
+
+// Set element width and height.
+//
+// width - Width.
+// [height] - Height (the same as width if not passed).
+size(width, height=null)
+	width: width
+	if height
+		height: height
+	else
+		height: width
 
 // Disables columns.
 no-cols()

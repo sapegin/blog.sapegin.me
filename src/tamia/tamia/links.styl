@@ -5,9 +5,10 @@
 // Configuration
 //
 
-// Link style (default: underline).
+// Link underline style (default: underline).
 //
 // Values:
+// - none - no underline.
 // - underline - text-decoration:underline.
 // - border - border-bottom:1px solid.
 // - gradient - Uses CSS gradients to position line under text (cannot change line color on hover).
@@ -35,8 +36,8 @@ hover_underline_color ?= rgba(hover_color,.4)
 link_underline_position ?= 80%
 link_underline_position = 76.5% if link_style == "underline"
 
-// Pressable links (shifts down by 1px, default: true).
-link_pressable ?= true
+// Pressable links (shifts down by 1px, default: false).
+link_pressable ?= false
 
 
 //
@@ -56,31 +57,30 @@ link-fake-underline(color)
 // :hover, :active and :focus states of the link.
 //
 // Example:
+//
 // 	 +link-hovers()
 //	 	color: #bada55
-link-hovers() {
+link-hovers()
 	&:hover,
 	&:active,
-	&:focus {
+	&:focus
 		{block}
-	}
-}
+
 
 // All states of the link.
 //
 // Example:
+//
 // 	 +link-all-states()
 //	 	color: @color
-link-all-states() {
+link-all-states()
 	&,
 	&:link,
 	&:visited,
 	&:hover,
 	&:active,
-	&:focus {
+	&:focus
 		{block}
-	}
-}
 
 
 //
@@ -110,12 +110,7 @@ link-all-states() {
 
 // Remove underline.
 .no-underline
-	&,
-	&:link,
-	&:visited,
-	&:hover,
-	&:active,
-	&:focus
+	+link-all-states()
 		text-decoration: none
 		border-bottom: 0
 		background-image: none

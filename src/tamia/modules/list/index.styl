@@ -10,6 +10,8 @@ list_inside ?= false
 		position: relative
 		padding-left: 1.3em
 		margin-left: -1.3em unless list_inside
+	&_inside > li
+		margin-left: 0
 	> li:before
 		position: absolute
 		left: 0
@@ -26,8 +28,11 @@ list_inside ?= false
 	ul
 		@extend .list
 
-if not list_inside and max_width
-	+below(max_width)
+list_max_width ?= max_width or content_max_width
+
+if not list_inside and list_max_width
+	+below(list_max_width)
 		.list > li,
 		.text ul > li
 			margin-left: 0
+

@@ -22,6 +22,7 @@ grid_columns ?= 12
 grid-row()
 	clearfix()
 	grid-wrapper()
+	content: "tamia__grid-row"  if DEBUG
 
 // Column (grid).
 //
@@ -31,7 +32,10 @@ grid-row()
 //
 // Example:
 //
-//   .row>.col1+.col2
+//   <div class="row">
+//	   <div class="col1"></div>
+//	   <div class="col2"></div>
+//   </div>
 //
 //   .row
 //     grid-row()
@@ -44,33 +48,46 @@ grid-col(position=1, span=1, context=null)
 	_grid-float()
 	grid-padding()
 
-// Single column.
+// Column and wrapper for nested columns (grid).
 //
 // position - Start column number (default: 1).
 // span - Width, in culumns (default: 1).
 // context - Width of parent column (default: null).
-grid-one(position=1, span=1, context=null)
-	_grid-column(position, span, context)
-	grid-padding()
-
-// Single column (without padding, wrapper for child columns).
 //
-// position - Start column number (default: 1).
-// span - Width, in culumns (default: 1).
-// context - Width of parent column (default: null).
-grid-one-container(position=1, span=1, context=null)
-	clearfix()
+// Example:
+//
+//   <div class="row">
+//	   <div class="col1">
+//	     <div class="col3"></div>
+//	     <div class="col4"></div>
+//	   </div>
+//	   <div class="col2"></div>
+//   </div>
+//
+//   .row
+//     grid-row()
+//   .col1
+//     grid-col-row(1,8)
+//   .col2, .col3, .col4
+//     grid-col(...)
+grid-col-row(position=1, span=1, context=null)
 	_grid-column(position, span, context)
 
 // Gutter size negative margin to make column with different background.
-// You should adjust padding depending on content.
-grid-explode()
-	margin: (-(grid_gutter))
+//
+// full - Explode to all sides if true, left/right otherwise (default: false).
+grid-explode(full=false)
+	grid-padding(full)
+	if full
+		margin: -(grid_gutter)
+	else
+		margin-left: -(grid_gutter)
+		margin-right: -(grid_gutter)
 
 // Width of column, in percent.
 //
-// position - Start column number (default: 1).
 // span - Width, in culumns (default: 1).
+// context - Width of parent column (default: null).
 //
 // Returns percent.
 grid-width(span=1, context=null)
@@ -100,6 +117,7 @@ _grid-column(position=1, span=1, context=null)
 	unit-width = 100% / context
 	width: span * unit-width
 	margin-left: (position - 1) * unit-width
+	content: "tamia__grid-col"  if DEBUG
 
 _grid-float()
 	float: left
@@ -115,10 +133,11 @@ layout-row()
 	grid-wrapper()
 	display: flex
 	flex-flow: row wrap
-	// flex-direction: row
 	/// IE8-9
-	.no-flexbox &
+	.no-flexbox.no-flexboxlegacy &
+		display: block
 		letter-spacing: -0.31em
+	content: "tamia__layout-row"  if DEBUG
 
 // Column (simple layout).
 //
@@ -126,12 +145,15 @@ layout-row()
 //
 // Example:
 //
-//   .row>.col+.col
+//   <div class="row">
+//     <div class="col"></div>
+//     <div class="col"></div>
+//   </div>
 //
 //   .row
 //     layout-row()
 //   .col
-//     layout-nth(2)  // Half
+//     layout-nth(1/2)  // Half
 layout-nth(part)
 	_layout-col()
 	_layout-part(part)
@@ -151,15 +173,39 @@ layout-stop()
 	_layout-part(1)
 
 _layout-col()
+	display: block
 	grid-padding()
-	// IE8-9
-	.no-flexbox &
+	/// IE8-9
+	.no-flexbox.no-flexboxlegacy &
 		display: inline-block
 		vertical-align: top
 		letter-spacing: normal
+	content: "tamia__layout-col"  if DEBUG
 
 _layout-part(part)
-	width: (100% / part)
+	width: (100% / (1 / part))
+
+
+//
+// Misc
+//
+
+// Center element with specified width and hegith.
+//
+// width - Width of an element.
+// height - Height of an element (default: null).
+//
+// Example:
+//
+//   .checkbox:before
+//     center(.8em, .65em)
+//     background-image: url("check.svg")
+center(width, height=null)
+	size(width, height)
+	left: 50%
+	top: 50%
+	margin-left: (-(@width / 2))
+	margin-top: (-(@height / 2))
 
 
 //
@@ -167,60 +213,84 @@ _layout-part(part)
 //
 
 // Column wrapper.
+//
+// - l-row_flat - Disable negative left/right margins.
 .l-row
 	layout-row()
+	&_flat
+		margin-left: 0
+		margin-right: 0
 
 .l-sixth,
 .l-quarter,
 .l-third,
 .l-half,
 .l-three-quarters,
-.l-two-thirds,
-.l-left,
-.l-right
+.l-two-thirds
 	_layout-col()
 
 // Sixth (to use inside .l-row).
 .l-sixth
-	_layout-part(6)
+	_layout-part(1/6)
 
 // Quarter (to use inside .l-row).
 .l-quarter
-	_layout-part(4)
+	_layout-part(1/4)
 
 // Three quarters (to use inside .l-row).
 .l-three-quarters
-	_layout-part(4/3)
+	_layout-part(3/4)
 
 // Third (to use inside .l-row).
 .l-third
-	_layout-part(3)
+	_layout-part(1/3)
 
 // Two thirds (to use inside .l-row).
 .l-two-thirds
-	_layout-part(3/2)
+	_layout-part(2/3)
 
 // Half (to use inside .l-row).
 .l-half
-	_layout-part(2)
+	_layout-part(1/2)
 
-// Flexible columns with left (.l-left) and right (.l-right) text alignment (to use inside .l-row).
+// Flexible columns with left text alignment (to use inside .l-row).
+//
+// Example:
+//
+//   <div class="l-row l-row_flat">
+//     <div class="l-left">Left</div>
+//     <div class="l-right">Left</div>
+//   </div>
 .l-left,
+// Flexible columns with right text alignment (to use inside .l-row).
 .l-right
 	flex: 1
 .l-right
 	text-align: right
-.no-flexbox
+.no-flexbox.no-flexboxlegacy
 	.l-left
 		float: left
 	.l-right
 		float: right
 
+// Pull left (float: left).
+.l-pull-left
+	float: left !important
+
+// Pull right (float: right).
+.l-pull-right
+	float: right !important
+
 // Centered content (vertically and horizontally).
 //
 // Example:
 //
-//   .l-center>.l-center-i>span
+//   <div class="l-center">
+//     <div class="l-center-i">
+//       <span>Centered content</span>
+//       <!--div class="l-center__wrap">Centered content</span-->
+//     </div>
+//   </div>
 .l-center
 	display: table
 	width: 100%
@@ -229,7 +299,18 @@ _layout-part(part)
 		display: table-cell
 		text-align: center
 		vertical-align: middle
+	&__wrap
+		display: inline-block
 
+// Horizontally centered block.
+.l-centered
+	display: block
+	margin-left: auto
+	margin-right: auto
+
+// Centered text.
+.l-text-centered
+	text-align: center
 
 //
 // Spacing
@@ -257,31 +338,99 @@ space(rows=1)
 .l-quad-space
 	space(4)
 
+// Quintuple bottom margin.
+.l-quint-space
+	space(5)
+
+// Sextuple bottom margin.
+.l-sext-space
+	space(6)
 
 ///
 /// Debug stuff
 ///
 
 if DEBUG
-	.g-debug-col
-		grid-padding()
-		float: left
-		width: grid-width()
+	.tamia__show-help
+		overflow: hidden
 
-	.g-debug-helper
+	.tamia__help
+		display: flex
+		align-items: center
+		justify-content: center
+		position: fixed
+		left: 0
+		top: 0
+		right: 0
+		bottom: 0
+		*
+			background: #fff
+			color: #000
+			text-shadow: none
+			font: 16px/20px "Helvetica Neue", Arial, sans-serif
+		ul
+			padding: 2*spacer 2*spacer spacer
+			border-radius: .25em
+			box-shadow: 0 .2em .1em black(.15)
+		li
+			margin-bottom: spacer
+		kbd
+			display: inline-block
+			margin-right: .3em
+			padding: .1em .3em
+			background: #ccc
+			border-radius: .3em
+			text-shadow: 0 1px 0 white(.4)
+
+	.tamia__show-layout-outlines
+		.tamia__grid-col,
+		.tamia__layout-col
+			transition: outline .15s ease-in-out
+		.tamia__grid-col
+			outline: 1px solid #fc6 !important
+		.tamia__layout-col
+			outline: 1px solid #6cc !important
+
+	.tamia__show-all-outlines
+		*:before,
+		*:after
+			outline: 1px solid #d381c3 !important
+		*
+			outline: 1px solid #fb0120 !important
+			*
+				outline: 1px solid #fc6d24 !important
+				*
+					outline: 1px solid #fda331 !important
+					*
+						outline: 1px solid #a1c659 !important
+						*
+							outline: 1px solid #76c7b7 !important
+							*
+								outline: 1px solid #6fb3d2 !important
+								*
+									outline: 1px solid #be643c !important
+
+	.tamia__grid-row,
+	.tamia__layout-row
+		position: relative
+
+	.tamia__grid-debugger
 		position: absolute
 		left: 0
 		right: 0
-		height: 100%
-		min-height: 3000px
 		z-index: 10000
 		overflow: hidden
 		pointer-events: none
-		*
-			height: 100%
-		[data-component="grid"]
-			grid-wrapper()
-		.g-debug-col:before
+		transition: opacity .15s ease-in-out
+		&.is-hidden
+			opacity: 0
+
+	.tamia__grid-debugger-col
+		grid-padding()
+		float: left
+		width: grid-width()
+		height: inherit
+		&:before
 			content: ""
 			display: block
 			height: inherit
