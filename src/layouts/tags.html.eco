@@ -23,7 +23,7 @@ layout: base
 					<% if @document.slug is "tags-#{tag}": %>
 						<span class="note-tags__tag note-tags__tag_marked marked"><%= @site.tagNames[tag] %></span>
 					<% else: %>
-						<a href="<%= @getTagUrl(tag) %>" class="note-tags__tag link"><%= @site.tagNames[tag] %></a>
+						<a href="<%= @tagUrl tag %>" class="note-tags__tag link"><%= @site.tagNames[tag] %></a>
 					<% end %>
 				<% end %>
 			</span>

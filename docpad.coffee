@@ -1,6 +1,7 @@
 # docpad.org
 
 fs = require 'fs'
+_ = require 'lodash'
 YAML = require 'yamljs'
 moment = require 'moment'
 richtypo = require 'richtypo'
@@ -104,6 +105,9 @@ docpadConfig = {
 			else
 				@site.transUrl
 
+		tagUrl: (tag) ->
+			"/tags/#{tag}"
+
 
 	# =================================
 	# Collections
@@ -129,7 +133,14 @@ docpadConfig = {
 			outPath: 'htdocs_ru'
 
 	plugins:
+		tags:
+			extension: '.html'
+			injectDocumentHelper: (document) ->
+				document.setMeta(
+					layout: 'tags'
+				)
 		highlightjs:
+			replaceTab: null
 			aliases:
 				yaml: 'python'
 				shell: 'bash'
@@ -145,11 +156,12 @@ docpadConfig = {
 	events:
 		generateBefore: (opts) ->
 			# Get current language from DocPad environment
-			lang = @docpad.config.env
+			lang = @docpad.getConfig().env
 			# Load translated strings for current language
-			@docpad.getConfig().templateData.site = (YAML.load "src/lang/#{lang}.yml")
+			strings = YAML.load("src/lang/#{lang}.yml")
+			_.merge(@docpad.getTemplateData().site, strings)
 			# Configure Moment.js
-			moment.lang(lang)
+			moment.locale(lang)
 			# Configure Richtypo.js
 			richtypo.lang(lang)
 

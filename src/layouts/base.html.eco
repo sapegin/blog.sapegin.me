@@ -23,7 +23,7 @@
 	<link href="http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic&amp;subset=latin,cyrillic" rel="stylesheet">
 	<link href="/atom.xml" rel="alternate" type="application/rss+xml" title="<%= @site.title %>">
 
-	<script src="/js/libs/modernizr.js"></script>
+	<script src="/build/modernizr.js"></script>
 </head>
 <body>
 <header class="header">
@@ -58,7 +58,7 @@
 							</li>
 						<% else: %>
 							<li class="tags-list__tag">
-								<a href="<%= @getTagUrl tag %>" class="link"><%= @site.tagNames[tag] %></a>
+								<a href="<%= @tagUrl tag %>" class="link"><%= @site.tagNames[tag] %></a>
 							</li>
 						<% end %>
 					<% end %>

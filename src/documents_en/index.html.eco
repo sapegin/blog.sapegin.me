@@ -20,7 +20,7 @@ pageSize: 10
 		<div class="note-meta">
 			<span class="note-tags">
 				<% for _, tag of document.tags: %>
-					<a href="<%= @getTagUrl tag %>" class="note-tags__tag link"><%= @site.tagNames[tag] %></a>
+					<a href="<%= @tagUrl tag %>" class="note-tags__tag link"><%= @site.tagNames[tag] %></a>
 				<% end %>
 			</span>
 			<span class="note-published" title="<%= document.date %>"><%= @pubDate document.date %></span>

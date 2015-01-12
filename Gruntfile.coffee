@@ -3,55 +3,27 @@
 module.exports = (grunt) ->
 	'use strict'
 
-	require('load-grunt-tasks')(grunt)
-
 	debug = !!grunt.option('debug')
 
-	grunt.initConfig
-		bower_concat:
+	require('tamia-grunt')(grunt, {
+		tamia:
+			author: 'Artem Sapegin, http://sapegin.me'
+			src: 'src'
+			dest: 'src/files'
+			imagesSrc: 'src/files/images_src'
+			imagesDest: 'src/files/images'
+			stylobuild:
+				autoprefixer:
+					browsers: 'last 2 versions, ie 9'
+				pixrem: true
+		concat:
 			main:
-				dest: 'src/files/build/scripts.js'
-				exclude: [
-					'jquery'
-					'modernizr'
+				nonull: true
+				src: [
+					'<%= bower_concat.main.dest %>'
 				]
-		stylus:
-			compile:
-				options:
-					paths: ['src/tamia']
-					'include css': true
-					use: [
-						() -> (require 'autoprefixer-stylus')('last 2 versions', 'ie 9')
-						debug or (require 'csso-stylus')
-					]
-				files:
-					'src/files/build/styles.css': 'src/styles/index.styl'
-		imagemin:
-			options:
-				pngquant: true
-			main:
-				files: [
-						expand: true
-						cwd: 'src/files/images_src/'
-						src: '**/*.{png,jpg,jpeg,gif}'
-						dest: 'src/files/images/'
-				]
-		svgmin:
-			options:
-				pngquant: true
-			main:
-				files: [
-						expand: true
-						cwd: 'src/files/images_src/'
-						src: '**/*.svg'
-						dest: 'src/files/images/'
-				]
-		watch:
-			options:
-				livereload: true
-			stylus:
-				files: 'src/styles/**'
-				tasks: 'stylus'
+				dest: '<%= tamia.dest %>/build/scripts.js'
+	})
 
-	grunt.registerTask 'default', ['bower_concat', 'stylus', 'imagemin', 'svgmin']
-	grunt.registerTask 'deploy', ['bower_concat', 'stylus']
+	grunt.registerTask 'default', ['scripts', 'styles', 'images']
+	grunt.registerTask 'deploy', ['scripts', 'styles']
