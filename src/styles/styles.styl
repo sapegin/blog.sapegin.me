@@ -1,380 +1,110 @@
-/* Author: Artem Sapegin, http://sapegin.me, 2012 */
+// Author: Artem Sapegin, http://sapegin.me, 2015
 
 body {
+	margin-side:auto;
+	padding-top:2*spacer;
+	padding-side:spacer;
 	background:bg_color;
 	color:base_color;
 	line-height:1.5;
-	margin-left:auto;
-	margin-right:auto;
 	font-size:16px;
 	max-width:max_width;
 }
-body,
-.footer-i {
-	padding-left:spacer;
-	padding-right:spacer;
-}
-@media (max-width:550px) {
-	body {
-		padding-left:(spacer/2);
-		padding-right:(spacer/2);
-		line-height:1.4;
-		font-size:14px;
++below(550px) {
+	body,
+	.footer-i {
+		padding-side:(spacer/2);
 	}
 }
 
-body { font-family:"PT Serif", Georgia, serif; }
-simple_font = "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", sans-serif;
+
+// Fonts
+
+body {
+	font-family:"PT Serif", Georgia, serif;
+}
 
 
 // Links
 
-.big-link {
-	@extend .pressable;
+.blind-link {
 	transition:border .1s ease-in-out, color .2s ease-in-out, background .2s ease-in-out;
 
-	&,	
-	&:link,
-	&:visited {
+	+link-non-hovers() {
 		color:base_color;
 	}
-	&:hover,
-	&:active,
-	&:focus {
+	+link-hovers() {
 		color:hover_color;
 	}
 }
 
-text-selection(base_color, #faedb1);
-
-
-// Forms
-.field {
-	padding:.2em .4em;
-	font-family:simple_font;
-	line-height:1;
-	color:base_color;
-	background:#fff;
-	background:white(.7);
-	border:1px solid #ccc;
-	border:1px solid black(.25);
-	border-radius:3px;
-	box-shadow:inset 0 1px 3px black(.075);
-
-	&:focus {
-		outline:0;
-		background:#fff;
-		border-color:#ffc671;
-		box-shadow:0 0 3px orange;
-	}
-}
-
-// Misc
-.marked,
-mark {
-	margin:0 -.5ex;
-	padding:.25ex .5ex;
-	border-radius:.3em;
-	background:#fff833 !important;
-	background:hsla(58,100%,60%,.6) !important;
-	box-shadow:inset 0 2px 2px black(.075);
-}
+// Text
 
 .text {
 	a {
 		@extend .link;
 	}
 
-	h2, h3 {
-		margin-top:3*spacer;
-		margin-bottom:spacer;
+	h2,
+	h3 {
 		font-size:1em;
 	}
-
 	h2 {
 		font-weight:bold;
 	}
-
 	h3 {
 		font-weight:normal;
 		font-style:italic;
 	}
 
-	p, pre, ul, ol {
-		margin:0 0 2*spacer;
+	pre code {
+		border:solid lighter_color;
+		border-width:1px 0;
+		border-radius:0;
 	}
-	li {
-		margin:0 0 (spacer/2);
-	}
-
-	ul li {
-		list-style:none;
-
-		&:before {
-			position:absolute;
-			margin-left:-1.3em;
-			content:"\2014\a0";
-		}
-	}
-	ul ul {
-		margin-left:1.3em;
-	}
-	ul li > ul,
-	ul li > ol {
-		margin-bottom:0;
-	}
-
-	blockquote {
-		font-size:.8em;
-		padding:0 2em;
-	}
-
+	
 	.screenshot_win {
-		margin-left:-13px;
-		margin-right:-13px;
+		margin-side:-13px;
 	}
 	.screenshot_mac {
 		margin:-20px -56px;
 	}
-}
-@media (max-width:900px) {
-	.text {
+	
+	+below(max_width) {
+		pre code {
+			margin-side:-(spacer);
+		}
 		.screenshot {
 			margin:auto;
 		}
 	}
-}
-@media (max-width:850px) {
-	.text {
-		ul, ol {
-			margin-left:1.3em;
-		}
-	}
-}
-@media (max-width:550px) {
-	.text {
+	+below(550px) {
 		line-height:1.5;
 	}
 }
 
 
-// Header
-
-.header {
-	position:relative;
-	margin-top:spacer;
-	margin-bottom:3*spacer;
-}
-@media (max-width:550px) {
-	.header {
-		margin-top:(spacer/2);
-		text-align:center;
-	}
-}
-
-
-.search-form {
-	position:absolute;
-	top:3px;
-	right:0;
-
-	&__field {
-		width:10em;
-		transition:width .4s cubic-bezier(0.230, 1.000, 0.320, 1.000);
-
-		&:focus {
-			width:20em;
-		}
-	}
-}
-@media (max-width:550px) {
-	.search-form {
-		display:none;
-		position:static;
-		&__field,
-		&__field:focus {
-			width:100%;
-		}
-	}
-}
-
-.logo {
-	font-size:22px;
-	line-height:1.3;
-	margin-bottom:5px;
-
-	a {
-		display:inline-block;
-		line-height:1.3;
-	}
-
-	&__text {
-		font-size:22px;
-		font-weight:normal;
-	}
-}
-
-
-// Tags
-.tags-list {
-	margin:0;
-	padding:0;
-	list-style-type:none;
-
-	&__tag {
-		display:inline;
-		margin-right:.5em;
-	}
-
-}
-@media (min-width:551px) {
-	.search-link {
-		display:none;
-	}
-}
+// Misc
 
 .page-title {
-	margin-bottom:2*spacer;
-	font-size:22px;	
-	font-weight:normal;
-}
-
-.pages {
 	space(2);
-}
-
-.keyboard-shortcut {
-	color:black(.5);
-}
-
-// Footer
-.footer {
-	font-size:12px;
-}
-.copyrights {
-	float:left;
-}
-.engine-info {
-	float:right;
-}
-.ampcopy {
-	cursor:default;
-}
-
-// Post
-
-.note {
-	space(4);
-	font-size:19px;
-}
-
-.note-title {
-	margin-bottom:2*spacer;
-	font-size:28px;
+	font-size:1.4rem;	
 	font-weight:normal;
-	line-height:1.3;
-
-	a:link,
-	a:visited {
-		color:base_color;
-	}
-	a:hover,
-	a:active,
-	a:focus {
-		color:hover_color;
-	}
 }
 
-.note-content {
-	margin-bottom:2*spacer;
+.marked {
+	margin:0 -.5ex;
+	padding:.25ex .5ex;
+	border-radius:.3em;
+	background:hsla(52,96%,67%,.6) !important;
 }
 
-.note-meta {
-	margin-bottom:2*spacer;
-	font-size:13px;
-}
 
+// Tweak Social Likes
+
+.social-likes {
+	margin-side:-.26em;
+}
 .social-likes__widget {
-	margin-left:.26em;
-	margin-right:.26em;
-}
-
-.note-tags {
-	&__tag {
-		margin-right:.8em;
-	}
-}
-
-.note-published {
-	color:black(.5);
-}
-
-.note-share {
-	margin-bottom:2*spacer;
-}
-
-.note-feedback {
-	margin-bottom:2*spacer;
-	font-size:15px;
-	font-style:italic;
-	
-	a {
-		white-space:nowrap;
-	}
-}
-
-.note-draft {
-	margin-bottom:2*spacer;
-	font-weight:bold;
-	color:hsla(0,56%,39%,.8);
-}
-
-@media (max-width:550px) {
-	.note {
-		font-size:17px;
-		line-height:1.4;
-	}
-	.note-title {
-		font-size:24px;
-	}
-}
-
-
-// Code
-
-.text {
-	pre {
-		margin-top:5px;
-		margin-bottom:20px;
-	}
-	pre code {
-		box-shadow:inset 0 1px 3px black(.075);
-		text-shadow:0 1px white(1);
-	}
-}
-
-// About
-
-.about-author {
-	margin-bottom:3*spacer;
-	padding-top:spacer;
-	border:solid #ccc;
-	border-color:rgba(base_color,.25);
-	border-width:1px 0;
-	font-size:15px;
-	line-height:1.4;
-
-	&__picture {
-		margin-top:.25em;
-	}
-
-	p {
-		margin-bottom:spacer;
-	}
-}
-@media (max-width:320px) {
-	.about-author__picture {
-		float:none;
-		text-align:center;
-	}
+	margin-side:.26em;
 }

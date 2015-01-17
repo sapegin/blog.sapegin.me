@@ -29,57 +29,43 @@
 <header class="header">
 	<% if @document.url is '/': %> 
 		<h1 class="logo">
-			<span class="logo__text">
-				<%= @site.title %>
-			</span>
+			<%= @site.title %>
 		</h1>
 	<% else: %>
-		<h2 class="logo">
-			<a href="/" class="logo__text big-link"><%= @site.title %></a>
-		</h2>
+		<div class="logo">
+			<a href="/" class="logo__link blind-link"><%= @site.title %></a>
+		</div>
 	<% end %>
 
-	<form class="search-form no-print" action="http://yandex.ru/sitesearch" method="get">
+	<nav class="nav">
+		<div class="nav__item">
+			<a href="/all" class="nav__link"><%= @_ 'All posts' %></a>
+		</div>
+		<div class="nav__item">
+			<a href="#search" class="nav__link"><%= @_ 'Search' %></a>
+		</div>
+		<div class="nav__item">
+			<a href="<%= @translationUrl() %>" class="nav__link"><%= @_ 'translation' %></a>
+		</div>
+	</nav>
+
+	<form id="search" class="search-form no-print" action="http://yandex.ru/sitesearch" method="get">
 		<input type="hidden" name="searchid" value="2047351">
 		<input type="hidden" name="web" value="0">
 		<input type="hidden" name="l10n" value="<%= @site.lang %>">
-		<input type="search" class="field search-form__field" name="text" placeholder="<%= @_ 'Search' %>" value="">
+		<input type="search" class="search-form__field" name="text" placeholder="<%= @_ 'Search' %>" value="">
 	</form>
-
-	<div class="l-row no-print">
-
-		<div class="l-left">
-			<ul class="tags-list">
-				<% for tag, data of @getTagCloud(): %>
-					<% if tag in @site.visibleTags: %>
-						<% if @document.slug is "tags-#{tag}": %>
-							<li class="tags-list__tag tags-list__tag_marked marked">
-								<%= @site.tagNames[tag] %>
-							</li>
-						<% else: %>
-							<li class="tags-list__tag">
-								<a href="<%= @tagUrl tag %>" class="link"><%= @site.tagNames[tag] %></a>
-							</li>
-						<% end %>
-					<% end %>
-				<% end %>
-			</ul>
-		</div>
-
-		<div class="l-right">
-			<a href="<%= @translationUrl() %>" class="link"><%= @_ 'translation' %></a>
-		</div>
-
-	</div>
 
 </header>
 
     <%- @rt @fixMd @content %>
 
-	<footer class="footer group">
+	<footer class="footer">
 		<div class="footer-i">
-			© <a href="<%= @site.copyrightUrl %>" class="link"><%= @site.author %></a>, 2008—<%= (new Date).getFullYear() %>
-    		<div class="engine-info no-print">
+			<div class="footer__copyrights">
+				© <a href="<%= @site.copyrightUrl %>" class="link"><%= @site.author %></a>, 2008—<%= (new Date).getFullYear() %>
+			</div>
+    		<div class="footer__info no-print">
     			<%- (@_ 'poweredBy').replace('{dp}', 'http://docpad.org/').replace('{do}', 'https://www.digitalocean.com/?refcode=bb49cbe65bb4') %>
     		</div>
     	</div>

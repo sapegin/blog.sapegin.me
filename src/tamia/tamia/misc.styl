@@ -78,7 +78,7 @@ clearfix()
 	&:after
 		clear: both
 
-// Set element width and height.
+// Set element’s width and height.
 //
 // width - Width.
 // [height] - Height (the same as width if not passed).
@@ -88,6 +88,16 @@ size(width, height=null)
 		height: height
 	else
 		height: width
+		
+// Set element’s left and right margins.
+margin-side(width)
+	margin-left: width
+	margin-right: width
+
+// Set element’s left and right paddings.
+padding-side(width)
+	padding-left: width
+	padding-right: width
 
 // Disables columns.
 no-cols()

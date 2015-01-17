@@ -1,0 +1,62 @@
+// Author: Artem Sapegin, http://sapegin.me, 2015
+
+.note {
+	space(6);
+	font-size:1.2rem;
+}
+
+.note-title {
+	space(2);
+	line-height:1.3;
+	font-size:1.8rem;
+	font-weight:normal;
+}
+
+.note-content {
+	space(2);
+}
+
+.note-meta {
+	space(2);
+	font-size:.8rem;
+}
+
+.note-tags {
+	&__tag {
+		margin-right:.8em;
+	}
+}
+
+.note-published {
+	color:light_color;
+}
+
+.note-share {
+	space(2);
+}
+
+.note-feedback {
+	space(2);
+	font-size:.95rem;
+	font-style:italic;
+	
+	a {
+		white-space:nowrap;
+	}
+}
+
+.note-draft {
+	space(2);
+	font-weight:bold;
+	color:hsla(0,56%,39%,.8);
+}
+
++below(550px) {
+	.note {
+		font-size:1.05rem;
+		line-height:1.4;
+	}
+	.note-title {
+		font-size:1.5rem;
+	}
+}

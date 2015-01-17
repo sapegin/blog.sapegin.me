@@ -10,7 +10,7 @@ layout: base
 
 <% for document in documents: %>
 	<article class="note">
-		<h2 class="note-title"><a href="<%= document.url %>" class="big-link"><%= document.title %></a></h2>
+		<h2 class="note-title"><a href="<%= document.url %>" class="blind-link"><%= document.title %></a></h2>
 		<div class="text">
 			<%- @cuttedContent(document.contentRenderedWithoutLayouts) %>
 			<% if @hasReadMore(document.contentRenderedWithoutLayouts): %>

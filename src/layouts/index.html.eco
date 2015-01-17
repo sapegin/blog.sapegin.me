@@ -1,3 +1,31 @@
 ---
 layout: base
 ---
+
+<% posts = @getCollection 'posts' %>
+<% for i in [@document.page.startIdx...@document.page.endIdx]: %>
+	<% document = posts.at(i).toJSON() %>
+	<article class="note">
+		<h2 class="note-title"><a href="<%= document.url %>" class="blind-link"><%- @rtt document.title %></a></h2>
+		<div class="text">
+			<%- @rt @cuttedContent document.contentRenderedWithoutLayouts %>
+			<% if @hasReadMore document.contentRenderedWithoutLayouts: %>
+				<p class="read-more"><a href="<%= document.url %>"><%= @_ 'Read more…' %></a></p>
+			<% end %>
+		</div>
+		<div class="note-meta">
+			<span class="note-tags">
+				<% for _, tag of document.tags: %>
+					<a href="<%= @tagUrl tag %>" class="note-tags__tag link"><%= @site.tagNames[tag] %></a>
+				<% end %>
+			</span>
+			<span class="note-published" title="<%= document.date %>"><%= @pubDate document.date %></span>
+		</div>
+	</article>
+<% end %>
+
+<% if @hasNextPage(): %>
+	<div class="l-quad-space">
+		<a href="<%= @getNextPage() %>" class="link link_quoted">↧ <u><%= @_ 'Earlier' %></u></a>
+	</div>
+<% end %>

@@ -15,7 +15,6 @@ module.exports = (grunt) ->
 			stylobuild:
 				autoprefixer:
 					browsers: 'last 2 versions, ie 9'
-				pixrem: true
 		concat:
 			main:
 				nonull: true

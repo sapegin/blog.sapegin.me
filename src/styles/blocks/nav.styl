@@ -1,0 +1,17 @@
+// Author: Artem Sapegin, http://sapegin.me, 2015
+
+.nav {
+	_padding = spacer*1.5;
+	space(1);
+	margin-side:-(_padding);
+	text-align:center;
+	
+	&__item {
+		display:inline-block;
+		margin-side:_padding;
+	}
+	
+	&__link {
+		@extend .blind-link;
+	}
+}

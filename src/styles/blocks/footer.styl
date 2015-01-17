@@ -1,0 +1,28 @@
+// Author: John Smith, http://example.com, 2015
+
+.footer {
+	font-size:.75rem;
+
+	&-i {
+		layout-wrapper();
+	}
+	
+	&__copyrights {
+		layout-left();
+	}
+
+	&__info {
+		layout-right();
+	}
+
+	+below(550px) {
+		&-i {
+			display:block;
+		}
+		&__copyrights,
+		&__info {
+			space();
+			text-align:center;
+		}
+	}
+}
