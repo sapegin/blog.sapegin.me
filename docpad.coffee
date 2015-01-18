@@ -108,6 +108,9 @@ docpadConfig = {
 		tagUrl: (tag) ->
 			"/tags/#{tag}"
 
+		embedFile: _.memoize (filepath) ->
+			fs.readFileSync("src/files/#{filepath}", encoding: 'utf8')
+
 
 	# =================================
 	# Collections
