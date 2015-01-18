@@ -28,7 +28,7 @@
     "moment": "~2.9.0",
     "richtypo": "~0.1.8",
     "stylobuild": "~0.6.0",
-    "tamia-grunt": "~0.1.8",
+    "tamia-grunt": "~0.2.0",
     "yamljs": "~0.2.1"
   }
 }
