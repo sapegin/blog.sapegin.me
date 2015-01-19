@@ -49,4 +49,4 @@ layout: base
 	</div>
 </div>
 
-<script src="/build/scripts.js"></script>
+<script src="/build/scripts.js" async></script>
