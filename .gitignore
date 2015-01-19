@@ -2,4 +2,6 @@ htdocs_en
 htdocs_ru
 node_modules
 bower_components
-src/files/build
+src/files/build/*
+!src/files/build/jquery.js
+!src/files/build/jquery.min.js

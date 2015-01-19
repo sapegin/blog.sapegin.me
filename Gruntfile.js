@@ -23,6 +23,9 @@ module.exports = function(grunt) {
 			main: {
 				nonull: true,
 				src: [
+					// Custom jQuery build:
+					// grunt custom:-ajax/xhr,-deprecated,-effects,-event/alias,-offset,-core/ready,-exports/amd,-sizzle
+					'<%= tamia.dest %>/build/jquery.js',
 					'<%= bower_concat.main.dest %>'
 				],
 				dest: '<%= tamia.dest %>/build/scripts.js',
@@ -81,7 +84,7 @@ module.exports = function(grunt) {
 			if (!fontsCss[fontFormat]) {
 				fontsCss[fontFormat] = [];
 			}
-			fontsCss[fontFormat].push(css);			
+			fontsCss[fontFormat].push(css);
 		});
 
 		// Write CSS files

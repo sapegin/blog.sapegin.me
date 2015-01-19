@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "social-likes": "~3.0.10",
+    "social-likes": "~3.0.12",
     "jquery": "~2.1.3"
   }
 }
