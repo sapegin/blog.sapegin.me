@@ -12,12 +12,7 @@ module.exports = function(grunt) {
 			dest: 'src/files',
 			imagesSrc: 'src/files/images_src',
 			imagesDest: 'src/files/images',
-			modernizr: false,
-			stylobuild: {
-				autoprefixer: {
-					browsers: 'last 2 versions, ie 9'
-				}
-			}
+			modernizr: false
 		},
 		concat: {
 			main: {

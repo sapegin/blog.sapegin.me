@@ -28,8 +28,8 @@
     "lodash": "~2.4.1",
     "moment": "~2.9.0",
     "richtypo": "~0.1.8",
-    "stylobuild": "~0.6.0",
-    "tamia-grunt": "~0.2.0",
+    "stylobuild": "~0.7.0",
+    "tamia-grunt": "~0.3.0",
     "yamljs": "~0.2.1"
   }
 }
