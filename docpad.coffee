@@ -61,6 +61,10 @@ docpadConfig = {
 		pubDate: (date) ->
 			moment(date).format('LL')  # December 23 2013
 
+		# Year
+		pubYear: (date) ->
+			moment(date).format('YYYY')
+
 		# Translated string
 		_: (s, params=null) ->
 			params ?= []

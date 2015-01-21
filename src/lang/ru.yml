@@ -33,6 +33,7 @@ postFeedback: Вы можете улучшить этот пост, <a href="{ur
 Search: Поиск по блогу
 post|posts: пост|поста|постов
 '{num} {posts} tagged <em>{tag}</em>': '{num} {posts} с тегом <em>{tag}</em>'
+'All {num} {posts}': 'Все {num} {posts}'
 Share: Поделиться
 Facebook: Фейсбук
 Twitter: Твитер

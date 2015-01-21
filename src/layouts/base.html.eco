@@ -28,7 +28,7 @@
 </head>
 <body>
 <header class="header">
-	<% if @document.url is '/': %> 
+	<% if @document.url is '/': %>
 		<h1 class="logo">
 			<%= @site.title %>
 		</h1>
@@ -40,7 +40,11 @@
 
 	<nav class="nav">
 		<div class="nav__item">
-			<a href="/all" class="nav__link"><%= @_ 'All posts' %></a>
+			<% if @document.url is '/all': %>
+				<%= @_ 'All posts' %>
+			<% else: %>
+				<a href="/all" class="nav__link"><%= @_ 'All posts' %></a>
+			<% end %>
 		</div>
 		<div class="nav__item">
 			<a id="search-link" href="#search" class="nav__link"><%= @_ 'Search' %></a>
