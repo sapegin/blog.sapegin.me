@@ -8,15 +8,19 @@
 	<meta name="twitter:card" content="summary">
 	<meta name="twitter:site" content="@<%= @_ 'twitterName' %>">
 	<meta name="twitter:creator" content="@<%= @_ 'twitterName' %>">
-	<% if @document.url is '/': %> 
+	<% if @document.url is '/': %>
 		<meta name="description" content="<%= @pageDescription() %>">
+		<meta property="og:title" content="<%= @pageTitle() %>">
+		<meta property="og:type" content="site">
+		<meta property="og:url" content="<%= @_ 'url' %>">
 	<% end %>
 	<% if /\/all\//.test(@document.url): %>
 		<meta property="og:type" content="article">
 		<meta property="og:url" content="<%= @_ 'url' %><%= @document.url %>">
 		<meta property="og:title" content="<%- @document.title %>">
 	<% end %>
-	<% if @document.noindex: %> 
+	<meta property="og:image" content="<%= @_ 'url' %>/images/userpic.jpg">
+	<% if @document.noindex: %>
 		<meta name="robots" content="noindex follow">
 	<% end %>
 	<%- @getBlock('meta').toHTML() %>
