@@ -16,7 +16,9 @@
 		<meta property="og:url" content="<%= @_ 'url' %><%= @document.url %>">
 		<meta property="og:title" content="<%- @document.title %>">
 	<% end %>
-
+	<% if @document.noindex: %> 
+		<meta name="robots" content="noindex follow">
+	<% end %>
 	<%- @getBlock('meta').toHTML() %>
 
 	<script><%- @embedFile 'build/inlines/fontloader.js' %>

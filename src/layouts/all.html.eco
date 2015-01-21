@@ -5,6 +5,7 @@ layout: base
 <% documents = @getCollection('posts').toJSON() %>
 <% title = @_ '{num} {posts}', num: documents.length, posts: @plural(documents.length, 'post|posts') %>
 <% @document.title = title.replace /<\/?em>/g, '' %>
+<% @document.noindex = true %>
 
 <h2 class="page-title"><%- @rtt title %></h2>
 
