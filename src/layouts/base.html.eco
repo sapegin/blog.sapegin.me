@@ -43,19 +43,20 @@
 			<a href="/all" class="nav__link"><%= @_ 'All posts' %></a>
 		</div>
 		<div class="nav__item">
-			<a href="#search" class="nav__link"><%= @_ 'Search' %></a>
+			<a id="search-link" href="#search" class="nav__link"><%= @_ 'Search' %></a>
 		</div>
 		<div class="nav__item">
 			<a href="<%= @translationUrl() %>" class="nav__link"><%= @_ 'translation' %></a>
 		</div>
 	</nav>
 
-	<form id="search" class="search-form no-print" action="<%- @site.searchAction %>" method="get">
+	<form id="search" class="search-form no-print is-hidden" action="<%- @site.searchAction %>" method="get">
 		<input type="hidden" name="searchid" value="<%- @site.searchId %>">
 		<input type="hidden" name="l10n" value="<%= @site.lang %>">
-		<input type="search" class="search-form__field" name="text" placeholder="<%= @_ 'Search' %>" value="">
+		<input type="search" class="search-form__field js-field" name="text" placeholder="<%= @_ 'Search' %>" value="">
 	</form>
 
+	<script><%- @embedFile 'build/inlines/search-form.js' %></script>
 </header>
 
     <%- @rt @fixMd @content %>
