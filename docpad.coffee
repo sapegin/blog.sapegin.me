@@ -154,9 +154,6 @@ docpadConfig = {
 			aliases:
 				yaml: 'python'
 				shell: 'bash'
-		robotskirt:
-			robotskirtOptions:
-				EXT_AUTOLINK: false
 
 	# =================================
 	# DocPad Events
