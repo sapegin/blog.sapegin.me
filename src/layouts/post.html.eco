@@ -49,4 +49,4 @@ layout: base
 	</div>
 </div>
 
-<script src="/build/scripts.js" async></script>
+<script src="<%- @fingerprint '/build/scripts.js' %>" async></script>

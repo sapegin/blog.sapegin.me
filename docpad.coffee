@@ -115,6 +115,9 @@ docpadConfig = {
 		embedFile: _.memoize (filepath) ->
 			fs.readFileSync("src/files/#{filepath}", encoding: 'utf8')
 
+		fingerprint: _.memoize (filepath) ->
+			datetime = fs.statSync("src/files#{filepath}").mtime.getTime()
+			"#{filepath}?#{datetime}"
 
 	# =================================
 	# Collections
