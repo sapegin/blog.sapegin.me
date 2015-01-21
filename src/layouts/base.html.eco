@@ -50,9 +50,8 @@
 		</div>
 	</nav>
 
-	<form id="search" class="search-form no-print" action="http://yandex.ru/sitesearch" method="get">
-		<input type="hidden" name="searchid" value="2047351">
-		<input type="hidden" name="web" value="0">
+	<form id="search" class="search-form no-print" action="<%- @site.searchAction %>" method="get">
+		<input type="hidden" name="searchid" value="<%- @site.searchId %>">
 		<input type="hidden" name="l10n" value="<%= @site.lang %>">
 		<input type="search" class="search-form__field" name="text" placeholder="<%= @_ 'Search' %>" value="">
 	</form>
