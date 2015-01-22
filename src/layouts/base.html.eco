@@ -69,18 +69,18 @@
 	<script><%- @embedFile 'build/inlines/search-form.js' %></script>
 </header>
 
-    <%- @content %>
+	<%- @content %>
 
 	<footer class="footer">
 		<div class="footer-i">
 			<div class="footer__copyrights">
 				© <a href="<%= @site.copyrightUrl %>" class="link"><%= @site.author %></a>, 2008—<%= (new Date).getFullYear() %>
 			</div>
-    		<div class="footer__info no-print">
-    			<%- (@_ 'poweredBy').replace('{dp}', 'http://docpad.org/').replace('{do}', 'https://www.digitalocean.com/?refcode=bb49cbe65bb4') %>
-    		</div>
-    	</div>
-    </footer>
+			<div class="footer__info no-print">
+				<%- (@_ 'poweredBy').replace('{dp}', 'http://docpad.org/').replace('{do}', 'https://www.digitalocean.com/?refcode=bb49cbe65bb4') %>
+			</div>
+		</div>
+	</footer>
 
 	<script type="text/javascript">(function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter412115 = new Ya.Metrika({id:412115, webvisor:true, clickmap:true, trackLinks:true}); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script>
  </body>
