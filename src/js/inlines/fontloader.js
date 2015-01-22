@@ -18,7 +18,7 @@ function loadFont(fontName, fontUrlBase) {
 	catch (ex) {
 	}
 
-	var localStoragePrefix = 'x-font-' + fontName;
+	var localStoragePrefix = 'font-' + fontName;
 	var localStorageUrlKey = localStoragePrefix + 'url';
 	var localStorageCssKey = localStoragePrefix + 'css';
 	var storedFontUrlBase = loSto[localStorageUrlKey];

@@ -20,7 +20,7 @@
     "grunt-contrib-stylus": "~0.20.0",
     "grunt-contrib-uglify": "~0.7.0",
     "grunt-contrib-watch": "~0.6.1",
-    "grunt-fontoptim": "0.0.1",
+    "grunt-fontoptim": "0.1.0",
     "grunt-newer": "~1.1.0",
     "lodash": "~2.4.1",
     "moment": "~2.9.0",
