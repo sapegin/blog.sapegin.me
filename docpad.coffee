@@ -88,7 +88,7 @@ docpadConfig = {
 		fixMd: (s) ->
 			s and (s
 				# Screenshots: /images/mac__shipit.png or /images/win__shipit.png
-				.replace(/<p><img src="\/images\/(\w+)__([^"]+)" alt="([^"]*)"\/><\/p>/g, '<p class="screenshot screenshot_$1"><img src="/images/$1__$2" alt="$3"/></p>')
+				.replace(/<p><img src="\/images\/(\w+)__([^"]+)" alt="([^"]*)"><\/p>/g, '<p class="screenshot screenshot_$1"><img src="/images/$1__$2" alt="$3"></p>')
 			)
 
 		# Escape URL
