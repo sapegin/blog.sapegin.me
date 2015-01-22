@@ -8,7 +8,7 @@ layout: base
 	<article class="note">
 		<h2 class="note-title"><a href="<%= document.url %>" class="blind-link"><%- @rtt document.title %></a></h2>
 		<div class="text">
-			<%- @rt @cuttedContent document.contentRenderedWithoutLayouts %>
+			<%- @rt @fixMd @cuttedContent document.contentRenderedWithoutLayouts %>
 			<% if @hasReadMore document.contentRenderedWithoutLayouts: %>
 				<p class="read-more"><a href="<%= document.url %>"><%= @_ 'Read more…' %></a></p>
 			<% end %>

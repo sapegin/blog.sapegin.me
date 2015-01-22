@@ -16,7 +16,7 @@ layout: base
 		<% titleYear = year %>
 	<% end %>
 	<li class="posts-list__item">
-		<a href="<%= document.url %>" class="posts-list__link link"><%= document.title %></a>
+		<a href="<%= document.url %>" class="posts-list__link link"><%- @rt document.title %></a>
 	</li>
 <% end %>
 </ul>
