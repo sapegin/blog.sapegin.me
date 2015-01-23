@@ -2,21 +2,27 @@
 layout: base
 ---
 
-<% documents = @getCollection('posts').toJSON() %>
-<% @document.title = @_ 'All {num} {posts}', num: documents.length, posts: @plural(documents.length, 'post|posts') %>
-<% @document.noindex = true %>
+<%
+all = @getCollection('posts').toJSON()
+@document.title = @_ 'All {num} {posts}', num: all.length, posts: @plural(all.length, 'post|posts')
+@document.noindex = true
 
-<% titleYear = null %>
-<% for document in documents: %>
-	<% year = @pubYear document.date %>
-	<% if year isnt titleYear: %>
-		<% if titleYear: %></ul><% end %>
-		<h2 class="page-title"><%= year %></h2>
-		<ul class="posts-list">
-		<% titleYear = year %>
+years = []
+documents = {}
+for document in all
+	year = @pubYear document.date
+	years.push year unless year in years
+	documents[year] ?= []
+	documents[year].push document
+%>
+
+<% for year in years: %>
+	<h2 class="page-title"><%= year %></h2>
+	<ul class="posts-list">
+	<% for document in documents[year]: %>
+		<li class="posts-list__item">
+			<a href="<%= document.url %>" class="posts-list__link link"><%- @rt document.title %></a>
+		</li>
 	<% end %>
-	<li class="posts-list__item">
-		<a href="<%= document.url %>" class="posts-list__link link"><%- @rt document.title %></a>
-	</li>
+	</ul>
 <% end %>
-</ul>

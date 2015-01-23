@@ -2,20 +2,23 @@
 layout: base
 ---
 
-<% documents = @getCollection('documents').findAllLive({tags: '$in': @document.tag}, [date:-1]).toJSON() %>
-<% title = @_ '{num} {posts} tagged <em>{tag}</em>', num: documents.length, posts: @plural(documents.length, 'post|posts'), tag: @site.tagNames[@document.tag] %>
-<% @document.title = title.replace /<\/?em>/g, '' %>
-<% @document.noindex = true %>
+<%
+documents = @getCollection('documents').findAllLive({tags: '$in': @document.tag}, [date:-1]).toJSON()
+title = @_ '{num} {posts} tagged <em>{tag}</em>', num: documents.length, posts: @plural(documents.length, 'post|posts'), tag: @site.tagNames[@document.tag]
+@document.title = title.replace /<\/?em>/g, ''
+@document.noindex = true
+%>
 
 <h2 class="page-title"><%- @rtt title %></h2>
 
 <% for document in documents: %>
+	<% text = document.contentRenderedWithoutLayouts %>
 	<article class="note">
 		<h2 class="note-title"><a href="<%= document.url %>" class="blind-link"><%= document.title %></a></h2>
 		<div class="text">
-			<%- @rt @fixMd @cuttedContent(document.contentRenderedWithoutLayouts) %>
-			<% if @hasReadMore(document.contentRenderedWithoutLayouts): %>
-				<p class="read-more"><a href="<%= document.url %>"><%= @_('Read more…') %></a></p>
+			<%- @rt @fixMd @cuttedContent text %>
+			<% if @hasReadMore text: %>
+				<p><a href="<%= document.url %>"><%= @_('Read more…') %></a></p>
 			<% end %>
 		</div>
 		<div class="note-meta">

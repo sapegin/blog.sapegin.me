@@ -2,15 +2,23 @@
 layout: base
 ---
 
-<% posts = @getCollection 'posts' %>
-<% for i in [@document.page.startIdx...@document.page.endIdx]: %>
-	<% document = posts.at(i).toJSON() %>
+<%
+all = @getCollection 'posts'
+documents = []
+for pageIdx in [@document.page.startIdx...@document.page.endIdx]
+	documents.push all.at(pageIdx).toJSON()
+%>
+
+<% for document in documents: %>
+	<% text = document.contentRenderedWithoutLayouts %>
 	<article class="note">
-		<h2 class="note-title"><a href="<%= document.url %>" class="blind-link"><%- @rtt document.title %></a></h2>
+		<h2 class="note-title">
+			<a href="<%= document.url %>" class="blind-link"><%- @rtt document.title %></a>
+		</h2>
 		<div class="text">
-			<%- @rt @fixMd @cuttedContent document.contentRenderedWithoutLayouts %>
-			<% if @hasReadMore document.contentRenderedWithoutLayouts: %>
-				<p class="read-more"><a href="<%= document.url %>"><%= @_ 'Read more…' %></a></p>
+			<%- @rt @fixMd @cuttedContent text %>
+			<% if @hasReadMore text: %>
+				<p><a href="<%= document.url %>"><%= @_ 'Read more…' %></a></p>
 			<% end %>
 		</div>
 		<div class="note-meta">
