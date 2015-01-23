@@ -7,7 +7,7 @@
     "bower": "~1.3.12",
     "docpad": "~6.69.2",
     "docpad-plugin-cleanurls": "~2.7.0",
-    "docpad-plugin-eco": "~2.1.0",
+    "docpad-plugin-ect": "^2.0.1",
     "docpad-plugin-highlightjs": "~2.3.0",
     "docpad-plugin-htmlmin": "^2.4.0",
     "docpad-plugin-marked": "^2.2.1",
