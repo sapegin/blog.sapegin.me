@@ -26,16 +26,16 @@ The main difference between npm and Bower is the approach for installing package
 
 To work with Bower you’ll need Node.js and git. Installation:
 
-```shell
-> npm install -g bower
+```bash
+$ npm install -g bower
 ```
 
 ## Working with Packages
 
 Let’s try to install something, for example jQuery:
 
-```shell
-> bower install --save jquery  # or bower i -S jquery
+```bash
+$ bower install --save jquery  # or bower i -S jquery
 ```
 
 This command will download the latest version of jQuery into the `bower_components/jquery` folder.
@@ -44,8 +44,8 @@ The `--save` flag tells Bower that it should save the package name and its versi
 
 We don’t have a file like that yet, which is what the line “No bower.json file to save to, use bower init to create one” in the log is about. Let’s create it:
 
-```shell
-> bower init
+```bash
+$ bower init
 ```
 
 Bower will ask many questions, but until we want to register our package, answers to most of them don’t matter, you can just press Enter.
@@ -54,14 +54,14 @@ The question “Set currently installed components as dependencies?” should be
 
 Let’s install a few more packages:
 
-```shell
-> bower install --save social-likes jquery-icheck fotorama
+```bash
+$ bower install --save social-likes jquery-icheck fotorama
 ```
 
 And take a look at what we got:
 
-```
-> bower list
+```bash
+$ bower list
 bower check-new     Checking for new versions of the project dependencies..
 bowertest#0.0.0 /Users/admin/bowertest
 ├─┬ fotorama#4.5.1
@@ -77,8 +77,8 @@ The `bower list` command shows a list of all installed packages. Here we see tha
 
 In the file system it looks like this:
 
-```
-> tree -L 2
+```bash
+$ tree -L 2
 .
 ├── bower.json
 └── bower_components
@@ -94,14 +94,14 @@ Each package is installed into its own folder, there are no nested packages, and
 
 For uninstalling packages the `bower uninstall` command is used:
 
-```shell
-> bower uninstall --save jquery-icheck  # Или bower un -S jquery-icheck
+```bash
+$ bower uninstall --save jquery-icheck  # Или bower un -S jquery-icheck
 ```
 
 You can confidently delete the `bower_components` directory or add it to your `.gitignore`. The `bower install` (without additional parameters) command will return everything to the way it was:
 
-```shell
-> bower install
+```bash
+$ bower install
 ```
 
 ### Deploying the Project
@@ -125,14 +125,14 @@ Bower has a `bower update` command, but it updates packages with respect to the 
 
 To update packages (and `bower.json`) to the truly latest version you can use the [bower-update](https://github.com/sapegin/bower-update) utility. Installation:
 
-```shell
-> npm install -g bower-update
+```bash
+$ npm install -g bower-update
 ```
 
 Launch:
 
-```shell
-> bower-update
+```bash
+$ bower-update
 ```
 
 ## Searching for Packages
@@ -141,8 +141,8 @@ There are two methods for finding packages with Bower: geeky and normal.
 
 Geeky:
 
-```shell
-> bower search jquery
+```bash
+$ bower search jquery
 Search results:
 
         jquery git://github.com/jquery/jquery.git
@@ -208,8 +208,8 @@ To make your library available to be installed with Bower it has to be registere
 
 To create the manifest file the `bower init` command is used:
 
-```shell
-> bower init
+```bash
+$ bower init
 [?] name: awesomelib
 [?] version: 0.0.1
 [?] description: My awesome jQuery plugin.
@@ -263,17 +263,17 @@ And, although it’s mandatory to fill in the `name` field, other fields are als
 
 Now we need to commit the `bower.json` file, create a git tag with the latest version and push it to the remote repo:
 
-```shell
-> git add bower.json
-> git commit -m "Add bower.json"
-> git tag "v0.0.1"
-> git push origin --tags
+```bash
+$ git add bower.json
+$ git commit -m "Add bower.json"
+$ git tag "v0.0.1"
+$ git push origin --tags
 ```
 
 Now you can register your package:
 
-```shell
-> bower register jquery-awesomeplugin git://github.com/sapegin/jquery-awesomeplugin.git
+```bash
+$ bower register jquery-awesomeplugin git://github.com/sapegin/jquery-awesomeplugin.git
 ```
 
 From now on, Bower will check package updates, you just have to create git tags for each new version.

@@ -27,7 +27,7 @@ tags:
 Для работы с Бовером вам потребуются Node.js и Git. Установка:
 
 ```bash
-❯ npm install -g bower
+$ npm install -g bower
 ```
 
 ## Работа с пакетами
@@ -35,7 +35,7 @@ tags:
 Попробуем что-нибудь установить, например, jQuery:
 
 ```bash
-❯ bower install --save jquery  # Или bower i -S jquery
+$ bower install --save jquery  # Или bower i -S jquery
 ```
 
 Эта команда скачает jQuery последней версии в папку `bower_components/jquery`.
@@ -45,7 +45,7 @@ tags:
 У нас такого файла ещё нет, о чём и говорит строчка «No bower.json file to save to, use bower init to create one» в логе. Создадим его:
 
 ```bash
-❯ bower init
+$ bower init
 ```
 
 Бовер будет задавать много вопросов, но до тех пор пока мы не захотим зарегистрировать свой пакет, ответы на большинство из них не имеют значения, можно просто нажимать Enter.
@@ -55,13 +55,13 @@ tags:
 Поставим ещё несколько пакетов:
 
 ```bash
-❯ bower install --save social-likes jquery-icheck fotorama
+$ bower install --save social-likes jquery-icheck fotorama
 ```
 
 И посмотрим, что у нас получилось:
 
 ```bash
-❯ bower list
+$ bower list
 bower check-new     Checking for new versions of the project dependencies..
 bowertest#0.0.0 /Users/admin/bowertest
 ├─┬ fotorama#4.5.1
@@ -78,7 +78,7 @@ bowertest#0.0.0 /Users/admin/bowertest
 На файловой системе это выглядит вот так:
 
 ```bash
-❯ tree -L 2
+$ tree -L 2
 .
 ├── bower.json
 └── bower_components
@@ -95,13 +95,13 @@ bowertest#0.0.0 /Users/admin/bowertest
 Для удаления пакетов используется команда `bower uninstall`:
 
 ```bash
-❯ bower uninstall --save jquery-icheck  # Или bower un -S jquery-icheck
+$ bower uninstall --save jquery-icheck  # Или bower un -S jquery-icheck
 ```
 
 Вы можете спокойно удалять папку `bower_components` или добавить  её в ваш `.gitignore`. Команда `bower install` (без дополнительных параметров) вернёт всё как было:
 
 ```bash
-❯ bower install
+$ bower install
 ```
 
 ## Развёртывание проекта
@@ -127,13 +127,13 @@ bowertest#0.0.0 /Users/admin/bowertest
 Для обновления пакетов (и `bower.json`) до действительно последних версий можно воспользоваться утилитой [bower-update](https://github.com/sapegin/bower-update). Устанавливаем:
 
 ```bash
-❯ npm install -g bower-update
+$ npm install -g bower-update
 ```
 
 Запускаем:
 
 ```bash
-❯ bower-update
+$ bower-update
 ```
 
 ## Поиск пакетов
@@ -143,7 +143,7 @@ bowertest#0.0.0 /Users/admin/bowertest
 Гиковский:
 
 ```bash
-❯ bower search jquery
+$ bower search jquery
 Search results:
 
 		jquery git://github.com/jquery/jquery.git
@@ -208,7 +208,7 @@ concat: {
 Для создания файла файла-манифеста снова воспользуемся командой `bower init`:
 
 ```bash
-❯ bower init
+$ bower init
 [?] name: awesomelib
 [?] version: 0.0.1
 [?] description: My awesome jQuery plugin.
@@ -266,16 +266,16 @@ concat: {
 Теперь нужно закоммитить `bower.json`, создать гит-тег с последней версией и запушить всё в удалённый репозиторий:
 
 ```bash
-❯ git add bower.json
-❯ git commit -m "Add bower.json."
-❯ git tag "v0.0.1"
-❯ git push origin --tags
+$ git add bower.json
+$ git commit -m "Add bower.json."
+$ git tag "v0.0.1"
+$ git push origin --tags
 ```
 
 Вот теперь можно регистрировать пакет:
 
 ```bash
-❯ bower register jquery-awesomeplugin git://github.com/sapegin/jquery-awesomeplugin.git
+$ bower register jquery-awesomeplugin git://github.com/sapegin/jquery-awesomeplugin.git
 ```
 
 Дальше Бовер сам будет проверять обновления пакета, главное не забывать создавать гит-тег для каждой новой версии.
