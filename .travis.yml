@@ -1,0 +1,8 @@
+language: node_js
+node_js:
+  - "0.10"
+before_script:
+- ./node_modules/.bin/bower install
+- node -e "require('grunt').cli()" _ deploy
+- ./node_modules/.bin/docpad generate --env en
+- ./node_modules/.bin/docpad generate --env ru
