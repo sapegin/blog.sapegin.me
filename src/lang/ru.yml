@@ -30,7 +30,8 @@ tagNames:
 twitterName: sapegin
 twitterExtra: data-via="sapegin" data-related="Landscapists:Мой проект «Пейзажисты России»"
 postFeedback: Вы можете улучшить этот пост, <a href="{url}" class="link">отредактировав его</a> на Гитхабе.
-Search: Поиск по блогу
+Search: Поиск
+All posts: Все посты
 post|posts: пост|поста|постов
 '{num} {posts} tagged <em>{tag}</em>': '{num} {posts} с тегом <em>{tag}</em>'
 'All {num} {posts}': 'Все {num} {posts}'
