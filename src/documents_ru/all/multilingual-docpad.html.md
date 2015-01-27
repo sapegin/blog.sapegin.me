@@ -63,6 +63,7 @@ tagNames:
 ```coffee
 YAML = require 'yamljs'
 moment = require 'moment'
+_ = require 'lodash'
 
 pluralTypes =
 	en: (n) -> (if n isnt 1 then 1 else 0)
@@ -91,12 +92,13 @@ docpadConfig = {
 	events:
 		generateBefore: (opts) ->
 			# Достаём текущий язык из окружения Докпада
-			lang = @docpad.config.env
+			lang = @docpad.getConfig().env
 			# Загружаем строки для нужного языка
-			@docpad.getConfig().templateData.site = (YAML.load "src/lang/#{lang}.yml")
+			strings = YAML.load("src/lang/#{lang}.yml")
+			_.merge(@docpad.getTemplateData().site, strings)
 			# Настраиваем языка для Moment.js
-			moment.lang(lang)
-
+			moment.locale(lang)
+		
 		...
 }
 ```
@@ -104,7 +106,7 @@ docpadConfig = {
 Установим библиотеки, которые использовались в предыдущем отрывке кода:
 
 ```
-$ npm install --save yamljs moment
+$ npm install --save-dev yamljs moment lodash
 ```
 
 Правила преобразования числительных можно найти в [polyglot.js](https://github.com/airbnb/polyglot.js/blob/master/lib/polyglot.js).

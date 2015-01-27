@@ -65,6 +65,7 @@ You’ll also need few helper functions, so add them to DocPad config file:
 ```coffee
 YAML = require 'yamljs'
 moment = require 'moment'
+_ = require 'lodash'
 
 pluralTypes =
 	en: (n) -> (if n isnt 1 then 1 else 0)
@@ -93,9 +94,10 @@ docpadConfig = {
 	events:
 		generateBefore: (opts) ->
 			# Get current language from DocPad’s environment
-			lang = @docpad.config.env
+			lang = @docpad.getConfig().env
 			# Load translated strings for current language
-			@docpad.getConfig().templateData.site = (YAML.load "src/lang/#{lang}.yml")
+			strings = YAML.load("src/lang/#{lang}.yml")
+			_.merge(@docpad.getTemplateData().site, strings)
 			# Configure Moment.js
 			moment.lang(lang)
 
@@ -106,7 +108,7 @@ docpadConfig = {
 Install libraries used in above code from npm:
 
 ```
-$ npm install --save yamljs moment
+$ npm install --save-dev yamljs moment lodash
 ```
 
 You can find plural functions for you language in [polyglot.js](https://github.com/airbnb/polyglot.js/blob/master/lib/polyglot.js).
