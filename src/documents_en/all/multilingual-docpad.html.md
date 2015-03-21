@@ -166,7 +166,7 @@ Add a link to a template:
 <a href="<%= @translationUrl() %>"><%= @_ 'translation' %></a>
 ```
 
-## Sever configuration
+## Server configuration
 
 The last thing you need is to point your server to the right folders with published files. I use different hosts for each language but you could use subfolders but it’s beyond the scope of this blog post.
 
