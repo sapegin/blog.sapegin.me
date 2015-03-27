@@ -1,13 +1,12 @@
 ---
-unpublished: true
 layout: post
 title: 'Loading framework’s plugins with RequireJS'
-date: Mar 24, 2015
+date: Mar 27, 2015
 tags:
   - javascript
 ---
 
-In a big project, you often use framework extensions or plugins: things that extend your framework’s namespace but do not export any modules themselves. For example I use Backbone and React with [Backbone.localStorage](https://github.com/jeromegn/Backbone.localStorage), [react.backbone](https://github.com/clayallsopp/react.backbone) and [my own React mixins](https://github.com/sapegin/kurush/blob/6f3ac4a38bada39a59cce0fce33d97f8b12c812c/web/app/util/react-extras.js).
+In big project, you often use framework extensions or plugins: things that extend your framework’s namespace but do not export any modules themselves. For example I use Backbone and React with [Backbone.localStorage](https://github.com/jeromegn/Backbone.localStorage), [react.backbone](https://github.com/clayallsopp/react.backbone) and [my own React mixins](https://github.com/sapegin/kurush/blob/6f3ac4a38bada39a59cce0fce33d97f8b12c812c/web/app/util/react-extras.js).
 
 I’m trying to find the best way to include such modules with RequireJS. Most of them can be used for polyfills too.
 
