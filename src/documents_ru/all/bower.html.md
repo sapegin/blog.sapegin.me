@@ -50,7 +50,7 @@ $ bower init
 
 Бовер будет задавать много вопросов, но до тех пор пока мы не захотим зарегистрировать свой пакет, ответы на большинство из них не имеют значения, можно просто нажимать Enter.
 
-На вопрос «set currently installed components as dependencies?» нужно ответить «Yes» — все ране установленные компоненты (в нашем случае это jQuery) автоматически попадут в созданный JSON-файл. А на вопрос «would you like to mark this package as private which prevents it from being accidentally published to the registry?» — тоже «Yes» — это предотвратит случайную регистрацию пакета в реестре Бовере.
+На вопрос «set currently installed components as dependencies?» нужно ответить «Yes» — все ранее установленные компоненты (в нашем случае это jQuery) автоматически попадут в созданный JSON-файл. А на вопрос «would you like to mark this package as private which prevents it from being accidentally published to the registry?» — тоже «Yes» — это предотвратит случайную регистрацию пакета в реестре Бовере.
 
 Поставим ещё несколько пакетов:
 
@@ -251,7 +251,7 @@ $ bower init
 [?] Looks good? Yes
 ```
 
-И, хотя обязательное нужно заполнить только имя пакета (поле `name`), остальные поля тоже очень полезны:
+И хотя обязательно нужно заполнить только имя пакета (поле `name`), остальные поля тоже очень полезны:
 
 * `description` и `keywords` помогут пользователям найти вашу библиотеку через интерфейс поиска пакетов.
 
