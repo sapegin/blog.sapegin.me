@@ -22,7 +22,7 @@ tags:
 Но пока подключение таких картинок фоном в CSS работает только в Файрфоксе. Зато через тег object — везде. (Лучше было бы использовать тег img, но это не работет в вебките). А значит мы можем сделать так:
 
 ```html
-<pre><code><div class="logo">
+<div class="logo">
 	<object data="logo.svg#normal" type="image/svg+xml" class="logo__image"></object>
 	<a href="/" class="logo__link">Oleg Breslavtsev</a>
 </div>
