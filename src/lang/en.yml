@@ -1,14 +1,13 @@
 lang: en
 url: http://blog.sapegin.me
 title: Artem Sapegin’s Blog
-description: Blog of font-end developer from Moscow, Russia. He works at Badoo, shooting photos and making something awesome on the internet.
+description: Blog of a Berlin based font-end developer. He works at Here, shooting photos and making something awesome on the internet.
 longDescription: |
-  <p>I’m front-end developer from Moscow, Russia. I work at Badoo, and in my spare time I love shooting photos and making something awesome on the internet. I also like reading books and stroking my dogs and drinking coffee.</p>
-  <p>Read <a href="http://sapegin.me/about">more about me</a> on my site or follow me <a href="http://twitter.com/iamsapegin">on Twitter</a> or take a look at my projects <a href="https://github.com/sapegin">on GitHub</a>.</p>
+  <p>I’m a front-end developer living in Berlin, Germany. I work at <a href="https://www.here.com/">Here</a>, and in my spare time I love shooting photos and making something awesome on the internet. I also like reading books and stroking my dogs and drinking coffee.</p>
+  <p>Find out <a href="http://sapegin.me/">more about me</a> on my site or follow me <a href="http://twitter.com/iamsapegin">on Twitter</a>.</p>
 author: Artem Sapegin
 email: artem@sapegin.me
 copyrightUrl: http://sapegin.me
-disqusShortname: nanoen
 tagNames:
   tools: Tools
   html: HTML
