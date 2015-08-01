@@ -12,7 +12,8 @@ module.exports = function(grunt) {
 			dest: 'src/files',
 			imagesSrc: 'src/files/images_src',
 			imagesDest: 'src/files/images',
-			modernizr: false
+			modernizr: false,
+			pngquant: false
 		},
 		concat: {
 			main: {
