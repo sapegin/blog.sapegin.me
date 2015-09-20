@@ -6,7 +6,4 @@ git checkout master
 git pull
 npm install
 npm prune
-./node_modules/.bin/bower install
-node -e "require('grunt').cli()" _ deploy
-./node_modules/.bin/docpad generate --env en
-./node_modules/.bin/docpad generate --env ru
+npm run deploy
