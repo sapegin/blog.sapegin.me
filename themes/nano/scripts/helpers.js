@@ -4,6 +4,10 @@ var fs = require('fs');
 var path = require('path');
 var _ = require('lodash');
 var richtypo = require('richtypo');
+var minimist = require('minimist');
+
+var argv = minimist(process.argv.slice(2));
+var isSingleDomain = argv['single-domain'];  // --single-domain
 
 // Borrowed from https://github.com/airbnb/polyglot.js/blob/master/lib/polyglot.js
 var pluralTypes = {
@@ -39,11 +43,17 @@ helpers.page_title = function(suffix) {
 
 // Proper page URL
 helpers.page_url = function(path, options) {
-	return this.url_for(path, options)
-		.replace(new RegExp('/(' + this.config.language.join('|') + ')/'), '/')
+	var url = this.url_for(path, options)
 		.replace(/index\.html$/, '')
 		.replace(/\/$/, '')
 	;
+
+	if (!isSingleDomain) {
+		// Remove language
+		url = url.replace(new RegExp('/(' + this.config.language.join('|') + ')/'), '/');
+	}
+
+	return url;
 };
 
 // URL to a page in another language
