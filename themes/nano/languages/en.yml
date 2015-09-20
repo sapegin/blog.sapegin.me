@@ -1,0 +1,39 @@
+lang: en
+url: http://blog.sapegin.me
+title: Artem Sapegin’s Blog
+description: Blog of a Berlin based font-end developer who works at Here, shoot photos and make something awesome on the internet.
+long_description: |
+  <p>I’m a front-end developer living in Berlin, Germany. I work at <a href="https://www.here.com/">Here</a>, and in my spare time I love shooting photos and making something awesome on the internet. I also like reading books and stroking my dogs and drinking coffee.</p>
+  <p>Find out <a href="http://sapegin.me/">more about me</a> on my site or follow me <a href="http://twitter.com/iamsapegin">on Twitter</a>.</p>
+author: Artem Sapegin
+email: artem@sapegin.me
+copyright_url: http://sapegin.me
+tag_names:
+  tools: Tools
+  html: HTML
+  css: CSS
+  javascript: JavaScript
+  thoughts: Thoughts
+twitter_name: iamsapegin
+twitter_extra: data-via="iamsapegin"
+post_feedback: 'I’ll be happy if you help me to improve this post. You can <a href="{url}" class="link">edit it</a> on GitHub.'
+search: Search
+all_posts: All posts
+all_posts_tagged: '{num} {posts} tagged <em>{tag}</em>'
+all_num_posts: 'All {num} {posts}'
+posts_plural: post|posts
+share: Share
+facebook: Facebook
+twitter: Twitter
+gplus: Google+
+share_on_facebook: Share post on Facebook
+share_on_twitter: Share post on Twitter
+share_on_gplus: Share post on Google+
+read_more: Read more…
+earlier: Earlier
+powered_by: 'Powered by <a href="{hx}" class="link">Hexo</a>, hosted on <a href="{do}" class="link">DigitalOcean</a>'
+trans_lang: ru
+trans_url: http://nano.sapegin.ru/
+translation: По-русски
+search_action: https://yandex.com/sitesearch
+search_id: '2196758'

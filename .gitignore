@@ -1,9 +1,9 @@
-htdocs_en
-htdocs_ru
 node_modules
 bower_components
-src/files/build/*
-!src/files/build/jquery.js
-!src/files/build/jquery.min.js
-!src/files/build/ptserif.woff.css
-!src/files/build/ptserif.woff2.css
+public
+themes/nano/source/build/*
+!themes/nano/source/build/jquery.js
+!themes/nano/source/build/jquery.min.js
+!themes/nano/source/build/ptserif.woff.css
+!themes/nano/source/build/ptserif.woff2.css
+db.json

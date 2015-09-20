@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="<%= @config.lang %>">
+<head>
+	<meta charset="utf-8">
+	<title><%= @page_title() %></title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<%- @meta_tags({title: @page_title(false), twitter_id: @config.twitter}) %>
+
+	<script><%- @embed_file 'build/inlines/fontloader.js' %>
+	loadFont('PT Serif','/build/ptserif')</script>
+	
+	<link href="<%- @fingerprint '/build/styles.css' %>" rel="stylesheet">
+
+	<link href="/atom.xml" rel="alternate" type="application/rss+xml" title="<%= @__ 'title' %>">
+</head>
+<body>
+<header class="header">
+	<% if @is_home(): %>
+		<h1 class="logo">
+			<%= @__ 'title' %>
+		</h1>
+	<% else: %>
+		<div class="logo">
+			<a href="/" class="logo__link blind-link"><%= @__ 'title' %></a>
+		</div>
+	<% end %>
+
+	<nav class="nav">
+		<div class="nav__item">
+			<% if @page.url is '/all': %>
+				<%= @__ 'all_posts' %>
+			<% else: %>
+				<a href="/all" class="nav__link"><%= @__ 'all_posts' %></a>
+			<% end %>
+		</div>
+		<div class="nav__item">
+			<a id="search-link" href="#search" class="nav__link"><%= @__ 'search' %></a>
+		</div>
+		<div class="nav__item">
+			<a href="<%= @translation_url() %>" class="nav__link"><%= @__ 'translation' %></a>
+		</div>
+	</nav>
+
+	<form id="search" class="search-form no-print is-hidden" action="<%- @__ 'search_action' %>" method="get">
+		<input type="hidden" name="searchid" value="<%- @__ 'search_id' %>">
+		<input type="hidden" name="l10n" value="<%= @config.lang %>">
+		<input type="search" class="search-form__field js-field" name="text" placeholder="<%= @__ 'search' %>" value="">
+	</form>
+	<script><%- @embed_file 'build/inlines/search-form.js' %></script>
+</header>
+
+	<% content %>
+
+	<footer class="footer">
+		<div class="footer-i">
+			<div class="footer__copyrights">
+				© <a href="<%= @__ 'copyright_url' %>" class="link"><%= @__ 'author' %></a>, 2008—<%= (new Date).getFullYear() %>
+			</div>
+			<div class="footer__info no-print">
+				<%- (@__ 'powered_by').replace('{hx}', 'http://hexo.io/').replace('{do}', 'https://www.digitalocean.com/?refcode=bb49cbe65bb4') %>
+			</div>
+		</div>
+	</footer>
+
+	<script>(function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter412115 = new Ya.Metrika({id:412115, webvisor:true, clickmap:true, trackLinks:true}); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script>
+ </body>
+ </html>

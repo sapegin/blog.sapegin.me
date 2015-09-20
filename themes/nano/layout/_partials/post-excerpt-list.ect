@@ -1,0 +1,5 @@
+<% @page.posts and @page.posts.each (post) => if 1: %>
+	<%- @partial '_partials/post-excerpt', {post: post} %>
+<% end %>
+
+<%- @partial '_partials/pagination-blog' %>

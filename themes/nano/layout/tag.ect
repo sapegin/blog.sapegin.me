@@ -1,0 +1,12 @@
+<% extend '_base' %>
+
+<%
+posts_number = @page.posts.length
+title = @___ 'all_posts_tagged', num: posts_number, posts: @plural(posts_number, 'posts_plural'), tag: @__('tag_names.' + @page.tag)
+@page.title = title.replace /<\/?em>/g, ''
+@page.noindex = true
+%>
+
+<h2 class="page-title"><%- @rtt title %></h2>
+
+<%- @partial '_partials/post-excerpt-list' %>

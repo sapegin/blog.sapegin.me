@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+	<title xml:lang="<%= @__ 'lang' %>"><%= @__ 'title' %></title>
+	<subtitle xml:lang="<%= @__ 'lang' %>"><%= @__ 'description' %></subtitle>
+	<link href="<%= @__ 'url' %>/atom.xml" rel="self" />
+	<link href="<%= @__ 'url' %>" />
+	<updated><%= @page.posts.sort('-updated').first().updated.toISOString() %></updated>
+	<id><%= @__ 'url' %></id>
+	<author>
+		<name><%= @__ 'author' %></name>
+	</author>
+
+	<% @page.posts and @page.posts.each (post) => if 1: %>
+		<entry>
+			<title xml:lang="<%= @__ 'lang' %>"><%- post.title %></title>
+			<link href="<%= @__ 'url' %><%= @page_url post.path %>" />
+			<id><%= @__ 'url' %><%= @page_url post.path %></id>
+			<published><%= post.date.toISOString() %></published>
+			<updated><%= post.updated.toISOString() %></updated>
+			<content type="html" xml:lang="<%= @__ 'lang' %>">
+				<%= @prepare_feed post.content %>
+			</content>
+		</entry>
+	<% end %>
+</feed>

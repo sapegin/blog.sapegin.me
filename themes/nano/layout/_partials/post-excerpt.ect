@@ -1,0 +1,12 @@
+<article class="note">
+	<h2 class="note-title">
+		<a href="<%= @page_url @post.path %>" class="blind-link"><%- @rtt @post.title %></a>
+	</h2>
+	<div class="text">
+		<%- @rt (@post.excerpt or @post.content) %>
+		<% if @post.excerpt: %>
+			<p><a href="<%= @page_url @post.path %>"><%= @_ 'Read more…' %></a></p>
+		<% end %>
+	</div>
+	<%- @partial '_partials/post-meta', {post: @post} %>
+</article>
