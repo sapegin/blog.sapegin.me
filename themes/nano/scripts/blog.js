@@ -62,13 +62,17 @@ function all(locals) {
 			return posts;
 		}, {});
 
+		var years = Object.keys(postsByYear);
+		years.sort();
+		years.reverse();
+
 		return generated.concat({
 		  path: lang + '/all/',
 		  layout: 'all',
 		  data: {
 		  	posts_by_year: postsByYear,
 		  	posts_number: languagePosts.length,
-		  	years: Object.keys(postsByYear)
+		  	years: years
 		  }
 		});
 	}, []);
