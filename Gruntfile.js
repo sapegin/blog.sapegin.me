@@ -8,10 +8,10 @@ module.exports = function(grunt) {
 	require('tamia-grunt')(grunt, {
 		tamia: {
 			author: 'Artem Sapegin, http://sapegin.me',
-			src: 'src',
-			dest: 'src/files',
-			imagesSrc: 'src/files/images_src',
-			imagesDest: 'src/files/images',
+			src: 'themes/nano',
+			dest: 'themes/nano/source',
+			imagesSrc: 'themes/nano/images_src',
+			imagesDest: 'themes/nano/source/images',
 			modernizr: false,
 			pngquant: false
 		},
