@@ -2,6 +2,7 @@
 
 var marked = require('marked');
 var hljs = require('highlight.js');
+var filters = require('./filters');
 
 var MarkedRenderer = marked.Renderer;
 
@@ -27,7 +28,8 @@ Renderer.prototype.heading = function(text, level, raw) {
 };
 
 function renderer(data, options) {
-	return marked(data.text, {
+	var text = filters.unescape(data.text);
+	text = marked(text, {
 		renderer: new Renderer(),
 		highlight: function(code, lang) {
 			if (lang) {
@@ -38,6 +40,7 @@ function renderer(data, options) {
 			}
 		}
 	});
+	return filters.escape(text);
 };
 
 hexo.extend.renderer.register('md', 'html', renderer, true);
