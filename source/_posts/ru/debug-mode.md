@@ -1,5 +1,4 @@
 ---
-published: "false"
 layout: post
 lang: ru
 title: Условная компиляция (отладочная версия) JavaScript и Stylus с помощью Grunt
