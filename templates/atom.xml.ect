@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+	<title xml:lang="<%= @lang %>"><%= @option 'title' %></title>
+	<subtitle xml:lang="<%= @lang %>"><%= @option 'description' %></subtitle>
+	<link href="<%= @option 'url' %>/atom.xml" rel="self" />
+	<link href="<%= @option 'url' %>" />
+	<updated><%= @documents[0].date.toISOString() %></updated>
+	<id><%= @option 'url' %></id>
+	<author>
+		<name><%= @option 'author' %></name>
+	</author>
+
+	<%  for i, post of @documents: %>
+		<entry>
+			<title xml:lang="<%= @lang %>"><%- post.title %></title>
+			<link href="<%= @absolutizeUrl post.url %>" />
+			<id><%= @absolutizeUrl post.url %></id>
+			<published><%= post.date.toISOString() %></published>
+			<content type="html" xml:lang="<%= @lang %>">
+				<%= @absolutizeLinks post.content %>
+			</content>
+		</entry>
+	<% end %>
+</feed>

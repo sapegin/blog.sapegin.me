@@ -1,0 +1,14 @@
+<article class="note">
+	<h2 class="note-title">
+		<a href="<%= @post.url %>" class="blind-link"><%- @rtt @post.title %></a>
+	</h2>
+	
+	<div class="text">
+		<%- @rt (@post.excerpt or @post.content) %>
+		<% if @post.more: %>
+			<p><a href="<%= @post.url %>"><%= @__ 'readMore' %></a></p>
+		<% end %>
+	</div>
+
+	<%- include '_partials/post-meta' %>
+</article>

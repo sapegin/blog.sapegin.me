@@ -2,41 +2,31 @@
   "name": "nano",
   "version": "0.0.0",
   "private": true,
-  "hexo": {
-    "version": "3.1.1"
-  },
-  "dependencies": {
-    "hexo": "~3.1.1",
-    "hexo-pagination": "0.0.2",
-    "hexo-renderer-ect": "~0.1.0",
-    "hexo-server": "~0.1.2",
-    "highlight.js": "~8.8.0",
-    "lodash": "~3.10.1",
-    "marked": "~0.3.5",
-    "minimist": "~1.2.0",
-    "richtypo": "~0.1.8"
-  },
   "devDependencies": {
-    "bower": "~1.5.2",
+    "babel": "~5.8.23",
+    "bower": "~1.6.5",
     "grunt": "~0.4.5",
-    "grunt-bower-concat": "~0.5.0",
+    "grunt-bower-concat": "~0.6.0",
     "grunt-browser-sync": "~2.1.3",
     "grunt-cli": "~0.1.13",
     "grunt-contrib-concat": "~0.5.1",
     "grunt-contrib-imagemin": "~0.9.4",
     "grunt-contrib-jshint": "~0.11.2",
-    "grunt-contrib-stylus": "~0.21.0",
-    "grunt-contrib-uglify": "~0.9.1",
+    "grunt-contrib-stylus": "~0.22.0",
+    "grunt-contrib-uglify": "~0.10.0",
     "grunt-contrib-watch": "~0.6.1",
     "grunt-fontoptim": "0.1.0",
     "grunt-newer": "~1.1.1",
-    "lodash": "~3.10.1",
+    "http-server": "~0.8.5",
     "stylobuild": "~0.7.0",
+    "sweet2": "~1.0.0",
     "tamia-grunt": "~0.5.1"
   },
   "scripts": {
-    "start": "hexo server --single-domain",
-    "generate": "hexo generate",
-    "deploy": "bower install && grunt deploy && npm run generate"
+    "build": "babel-node lib",
+    "start-en": "http-server public/en -p 4242 -o",
+    "start-ru": "http-server public/ru -p 4243 -o",
+    "deploy": "bower install && grunt deploy && npm run build",
+    "make-debug-symlinks": "ln -s ../images public/en/images; ln -s ../build public/en/build; ln -s ../images public/ru/images; ln -s ../build public/ru/build;"
   }
 }

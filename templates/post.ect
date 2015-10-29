@@ -1,0 +1,40 @@
+<% extend '_base' %>
+
+<article class="note">
+	<h1 class="note-title"><%- @rtt @title %></h1>
+
+	<% if @unpublished: %>
+		<p class="note-draft">This is a draft post, please don’t share it until it’s published.</p>
+	<% end %>
+
+	<div class="note-content text">
+		<%- @rt @content %>
+	</div>
+
+	<p class="note-feedback no-print"><%- @__ 'postFeedback', url: "https://github.com/sapegin/blog.sapegin.me/edit/master/source/#{@sourcePath}" %></p>
+
+	<% @post = this %>
+	<%- include '_partials/post-meta' %>
+
+	<% unless @unpublished: %>
+		<div class="note-share">
+			<ul class="social-likes social-likes_light" data-title="<%= @title %>" data-single-title="<%= @__ 'share' %>">
+				<li class="facebook" title="<%= @__ 'shareOnFacebook' %>"><%= @__ 'facebook' %></li>
+				<li class="twitter" <%- @__ 'twitterExtra' %> title="<%= @__ 'shareOnTwitter' %>"><%= @__ 'twitter' %></li>
+				<li class="plusone" title="<%= @__ 'shareOnGplus' %>"><%= @__ 'gplus' %></li>
+				<% if @lang is 'ru': %>
+					<li class="vkontakte" title="Поделиться постом во Вконтакте">Вконтакте</li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+</article>
+
+<div class="about-author media no-print">
+	<div class="about-author__picture media__img"><img src="/images/userpic.jpg" width="75" height="75" alt="<%= @option 'author' %>"></div>
+	<div class="media__body text">
+		<%- @rt @__ 'longDescription' %>
+	</div>
+</div>
+
+<script src="<%- @fingerprint '/build/scripts.js' %>" async></script>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="<%= @lang %>">
+<head>
+	<meta charset="utf-8">
+	<title><%= @getPageTitle() %></title>
+
+	<%- @getMetaTags() %>
+
+	<script><%- @embedFile 'build/inlines/fontloader.js' %>
+	loadFont('PT Serif','/build/ptserif')</script>
+
+	<link href="<%- @fingerprint '/build/styles.css' %>" rel="stylesheet">
+
+	<link href="/atom.xml" rel="alternate" type="application/rss+xml" title="<%= @option 'title' %>">
+</head>
+<body>
+	<header class="header">
+		<% if @isHome(): %>
+			<h1 class="logo">
+				<%= @option 'title' %>
+			</h1>
+		<% else: %>
+			<div class="logo">
+				<a href="/" class="logo__link blind-link"><%= @option 'title' %></a>
+			</div>
+		<% end %>
+
+		<nav class="nav">
+			<div class="nav__item">
+				<% if @url is '/all': %>
+					<%= @__ 'allPosts' %>
+				<% else: %>
+					<a href="/all" class="nav__link"><%= @__ 'allPosts' %></a>
+				<% end %>
+			</div>
+			<div class="nav__item">
+				<a id="search-link" href="#search" class="nav__link"><%= @__ 'search' %></a>
+			</div>
+			<div class="nav__item">
+				<a href="<%= @option 'translationHost' %><%= if @translation then @url else '' %>" class="nav__link"><%= @__ 'translation' %></a>
+			</div>
+		</nav>
+
+		<form id="search" class="search-form no-print is-hidden" action="<%- @option 'searchAction' %>" method="get">
+			<input type="hidden" name="searchid" value="<%- @option 'searchId' %>">
+			<input type="hidden" name="l10n" value="<%= @lang %>">
+			<input type="search" class="search-form__field js-field" name="text" placeholder="<%= @__ 'search' %>" value="">
+		</form>
+		<script><%- @embedFile 'build/inlines/search-form.js' %></script>
+	</header>
+
+	<% content %>
+
+	<footer class="footer">
+		<div class="footer-i">
+			<div class="footer__copyrights">
+				© <a href="<%= @option 'copyrightUrl' %>" class="link"><%= @option 'author' %></a>, 2008—<%= (new Date).getFullYear() %>
+			</div>
+			<div class="footer__info no-print">
+				<%- @__ 'poweredBy' %>
+			</div>
+		</div>
+	</footer>
+
+	<%- include '_partials/counter' %>
+</body>
+</html>

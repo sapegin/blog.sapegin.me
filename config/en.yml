@@ -1,0 +1,36 @@
+url: http://blog.sapegin.me
+title: Artem Sapegin’s Blog
+description: 'Blog of a Berlin based font-end developer who works at Here, shoot photos and make something awesome on the internet.'
+longDescription: |
+  <p>I’m a front-end developer living in Berlin, Germany. I work at <a href="https://www.here.com/">Here</a>, and in my spare time I love shooting photos and making something awesome on the internet. I also like reading books and stroking my dogs and drinking coffee.</p>
+  <p>Find out <a href="http://sapegin.me/">more about me</a> on my site or follow me <a href="http://twitter.com/iamsapegin">on Twitter</a>.</p>
+author: Artem Sapegin
+email: artem@sapegin.me
+copyrightUrl: http://sapegin.me
+tagNames:
+  css: CSS
+  html: HTML
+  javascript: JavaScript
+  thoughts: Thoughts
+  tools: Tools
+twitterName: iamsapegin
+twitterExtra: data-via="iamsapegin"
+postFeedback: 'I’ll be happy if you help me to improve this post. You can <a href="{url}" class="link">edit it</a> on GitHub.'
+search: Search
+allPosts: All posts
+allPostsTagged: '{num, plural, =1{One post} other{# posts}} tagged <em>{tag}</em>'
+allNumPosts: 'All {num, plural, one{# post} other{# posts}}'
+share: Share
+facebook: Facebook
+twitter: Twitter
+gplus: Google+
+shareOnFacebook: Share post on Facebook
+shareOnTwitter: Share post on Twitter
+shareOnGplus: Share post on Google+
+readMore: Read more…
+earlier: Earlier
+poweredBy: 'Powered by <a href="https://github.com/sapegin/sweet2" class="link">Sweet2</a>, hosted on <a href="https://www.digitalocean.com/?refcode=bb49cbe65bb4" class="link">DigitalOcean</a>'
+translationHost: http://nano.sapegin.ru
+translation: По-русски
+searchAction: https://yandex.com/sitesearch
+searchId: '2196758'

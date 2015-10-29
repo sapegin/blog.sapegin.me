@@ -2,16 +2,8 @@
 
 [![Build Status](https://travis-ci.org/sapegin/blog.sapegin.me.png)](https://travis-ci.org/sapegin/blog.sapegin.me)
 
-Powered by [DocPad](http://docpad.org/). Read [why I move](http://blog.sapegin.me/all/docpad) from Wordpress and Aegea to DocPad.
-
-```
-$ docpad run --env en
-$ docpad run --env ru
-
-$ docpad generate --env en
-$ docpad generate --env ru
-```
+[WordPress](https://wordpress.org/) (2008) → [Aegea](http://blogengine.ru/) (2012) → [DocPad](http://docpad.org/) (2013) → [Hexo](https://hexo.io/) (2015, unpublished) → Sweet2 (2015).
 
 ## License
 
-You can use code (HTML/JS/CoffeeScript) of this site, but you *can’t* use design, Stylus/CSS, images and content.
+You can use code (HTML/JS) of this site, but you *can’t* use design, Stylus/CSS, images and content.

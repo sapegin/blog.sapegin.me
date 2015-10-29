@@ -1,0 +1,16 @@
+<% extend '_base' %>
+
+<%
+@title = @__ 'allNumPosts', num: @postsTotal
+%>
+
+<% for year in @years: %>
+	<h2 class="page-title"><%= year %></h2>
+	<ul class="posts-list">
+		<% for post in @postsByYear[year]: %>
+			<li class="posts-list__item">
+				<a href="<%= post.url %>" class="posts-list__link link"><%- @rt post.title %></a>
+			</li>
+		<% end %>
+	</ul>
+<% end %>

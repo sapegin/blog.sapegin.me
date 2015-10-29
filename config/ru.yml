@@ -1,0 +1,44 @@
+url: http://nano.sapegin.ru
+title: Наноблог Артёма Сапегина
+description: 'Блог фронтенд-разработчика, который живёт в Берлине, работает в Хире, фотографирует и делает всякие штуки в интернете.'
+longDescription: |
+  <p>Меня зовут Тёма. Я живу в Берлине и работаю фронтенд-разработчиком в <a href="https://www.here.com/">Хире</a>, а в свободное время фотографирую и делаю всякие штуки в интернете. А ещё люблю читать книги, гладить своих собак и пить кофе.</p>
+  <p>Читайте обо мне и моих проектах <a href="http://sapegin.me/">на моём сайте</a>. А ещё у меня есть <a href="http://birdwatcher.ru/">блог о фотографии</a>, <a href="http://twitter.com/sapegin">твитер</a> и <a href="https://github.com/sapegin">гитхаб</a>.</p>
+author: Артём Сапегин
+email: artem@sapegin.ru
+copyrightUrl: http://sapegin.ru
+tagNames:
+  css: CSS
+  django: Django
+  html: Вёрстка
+  javascript: JavaScript
+  mac: Mac
+  python: Python
+  reading: Почитать
+  stylus: Stylus
+  thoughts: Мысли
+  tools: Инструменты
+  ui: Интерфейс
+  windows: Windows
+  wordpress: WordPress
+twitterName: sapegin
+twitterExtra: data-via="sapegin"
+postFeedback: 'Вы можете улучшить этот пост, <a href="{url}" class="link">отредактировав его</a> на Гитхабе.'
+search: Поиск
+allPosts: Все посты
+allPostsTagged: '{num, plural, one{# пост} few{# поста} many{# постов} other{# поста}} с тегом <em>{tag}</em>'
+allNumPosts: 'Все {num, plural, one{# пост} few{# поста} many{# постов} other{# поста}}'
+share: Поделиться
+facebook: Фейсбук
+twitter: Твитер
+gplus: Гугл+
+shareOnFacebook: Поделиться постом на Фейсбуке
+shareOnTwitter: Поделиться постом в Твитере
+shareOnGplus: Поделиться постом в Гугл-плюсе
+readMore: Читать дальше…
+earlier: Ранее
+poweredBy: 'Работает на <a href="https://github.com/sapegin/sweet2" class="link">Свите-2</a>, живёт на <a href="https://www.digitalocean.com/?refcode=bb49cbe65bb4" class="link">Диджиталоушене</a>'
+translationHost: http://blog.sapegin.me
+translation: In English
+searchAction: https://yandex.ru/sitesearch
+searchId: '2047351'

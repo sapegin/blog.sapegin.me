@@ -1,8 +1,0 @@
-<footer class="note-meta">
-	<span class="note-tags">
-		<% @post.tags.forEach (tag, index) => if 1: %>
-			<a href="<%= @page_url tag.path %>" class="note-tags__tag link"><%= @__('tag_names.' + tag.name) %></a>
-		<% end %>
-	</span>
-	<time class="note-published" datetime="<%= @post.date %>"><%= @date @post.date %></time>
-</footer>
