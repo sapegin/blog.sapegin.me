@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/sapegin/blog.sapegin.me.png)](https://travis-ci.org/sapegin/blog.sapegin.me)
 
-[WordPress](https://wordpress.org/) (2008) → [Aegea](http://blogengine.ru/) (2012) → [DocPad](http://docpad.org/) (2013) → [Hexo](https://hexo.io/) (2015, unpublished) → Sweet2 (2015).
+[WordPress](https://wordpress.org/) (2008) → [Aegea](http://blogengine.ru/) (2012) → [DocPad](http://docpad.org/) (2013) → [Hexo](https://hexo.io/) (2015, unpublished) → [Sweet2](https://github.com/sapegin/sweet2) (2015).
 
 ## License
 
