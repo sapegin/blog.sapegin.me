@@ -2,7 +2,7 @@ node_modules
 bower_components
 public/ru
 public/en
-public/build
+public/build/*
 !public/build/jquery.js
 !public/build/jquery.min.js
 !public/build/ptserif.woff.css
