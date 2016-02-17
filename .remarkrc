@@ -12,9 +12,9 @@
         "html",
         "javascript",
         "json",
+        "markdown",
         "php",
         "python",
-        "text",
         "xml",
         "yaml"
       ],

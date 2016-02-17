@@ -25,7 +25,7 @@ You can read how to make an SSH key in [GitHub](https://help.github.com/articles
 
 You can save another few keystrokes by adding an SSH alias which you will use instead of host/login combination. Add this lines to your `~/.ssh/config` file:
 
-```text
+```markdown
 Host myhost
   HostName 113.113.13.13
   User tema
