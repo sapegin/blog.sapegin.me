@@ -15,7 +15,7 @@ I’m trying to find the best way to include such modules with RequireJS. Most o
 
 Just require everything in all modules.
 
-```js
+```javascript
 // mymodule.js
 define(['backbone', 'react', 'backboneLocalStorage', 'reactBackbone', 'util/react-extras'], function(Backbone, React) {
     …
@@ -35,7 +35,7 @@ Cons:
 
 Require everything in the main module.
 
-```js
+```javascript
 // main.js
 require(['router', 'backbone', 'backboneLocalStorage', 'reactBackbone', 'util/react-extras'], function(Router, Backbone) {
     …
@@ -55,7 +55,7 @@ Cons:
 
 Put all the extensions in a separate module and require it from your main module and from tests.
 
-```js
+```javascript
 // main.js
 require(['bootstrap', 'router', 'backbone'], function(_, Router, Backbone) {
     …
@@ -84,7 +84,7 @@ Cons:
 
 Bundle is a special module, which you create with [the RequieJS optimizer](http://requirejs.org/docs/optimization.html). Any time you require one of the modules inside the bundle RequireJS will load the bundle instead.
 
-```js
+```javascript
 // config.js
 require.config({
     bundles: {
@@ -110,7 +110,7 @@ Cons:
 
 Create a separate module that requires an original framework with all needed extensions and returns framework back. Do it for all your frameworks that you want to extend.
 
-```js
+```javascript
 // config.js
 require.config({
     paths: {

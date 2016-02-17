@@ -18,12 +18,12 @@ tags:
 add_filter('get_avatar', 'bw_get_avatar', 10, 4);
 
 function bw_get_avatar($avatar, $id_or_email, $size, $default) {
-	if (is_object($id_or_email) && empty($id_or_email->comment_author_email)) {
-		$id_or_email->comment_author_email = $id_or_email->comment_author_url;
-		return get_avatar($id_or_email, $size);
-	}
+  if (is_object($id_or_email) && empty($id_or_email->comment_author_email)) {
+    $id_or_email->comment_author_email = $id_or_email->comment_author_url;
+    return get_avatar($id_or_email, $size);
+  }
 
-	return $avatar;
+  return $avatar;
 }
 ```
 

@@ -33,7 +33,7 @@ tags:
 Установим [консольную утилиту grunt](https://github.com/gruntjs/grunt-cli/) (ключ `-g` означает, что пакет будет установлен глобально), которая будет запускать Грант, установленный в папке вашего проекта. Таким образом у каждого проекта будут свои версии Гранта и плагинов — можно не бояться, что при обновлении сборка поломается.
 
 ```bash
-$ npm install grunt-cli -g
+npm install grunt-cli -g
 ```
 
 *Вероятно, вам понадобится запустить npm через sudo или открыть консоль под администратором.*
@@ -42,9 +42,8 @@ $ npm install grunt-cli -g
 
 Теперь нужно создать в папке проекта два файла:
 
-- package.json — описание проекта для npm. Содержит список зависимостей (в нашем случае это Грант и его плагины) и позволяет потом устанавливать их все одной командой.
-
-- Gruntfile.js или Gruntfile.coffee — файл конфигурации Гранта (грантфайл). (До версии 0.4 этот файл назывался grunt.js.)
+* package.json — описание проекта для npm. Содержит список зависимостей (в нашем случае это Грант и его плагины) и позволяет потом устанавливать их все одной командой.
+* Gruntfile.js или Gruntfile.coffee — файл конфигурации Гранта (грантфайл). (До версии 0.4 этот файл назывался grunt.js.)
 
 (Примеры к статье есть в [репозитории на Гитхабе](https://github.com/sapegin/grunt-article-examples).)
 
@@ -54,21 +53,21 @@ package.json можно создать вручную или командой `n
 
 ```json
 {
-	"name": "MyProject",
-	"version": "0.0.0"
+  "name": "MyProject",
+  "version": "0.0.0"
 }
 ```
 
 Теперь нужно установить (и добавить в package.json) зависимости нашего проекта. [Грант](https://github.com/gruntjs/grunt/):
 
 ```bash
-$ npm install grunt --save-dev
+npm install grunt --save-dev
 ```
 
 И все необходимые плагины:
 
 ```bash
-$ npm install grunt-contrib-concat grunt-contrib-uglify --save-dev
+npm install grunt-contrib-concat grunt-contrib-uglify --save-dev
 ```
 
 Ключ `--save-dev` в дополнение к установке добавляет ссылку на пакет в package.json. Установить все зависимости, уже перечисленные в файле, можно командой npm install.
@@ -81,35 +80,35 @@ $ npm install grunt-contrib-concat grunt-contrib-uglify --save-dev
 // Обязательная обёртка
 module.exports = function(grunt) {
 
-	// Задачи
-	grunt.initConfig({
-		// Склеиваем
-		concat: {
-			main: {
-				src: [
-					'js/libs/jquery.js',
-					'js/mylibs/**/*.js'  // Все JS-файлы в папке
-				],
-				dest: 'build/scripts.js'
-			}
-		},
-		// Сжимаем
-		uglify: {
-			main: {
-				files: {
-					// Результат задачи concat
-					'build/scripts.min.js': '<%= concat.main.dest %>'
-				}
-			}
-		}
-	});
-	
-	// Загрузка плагинов, установленных с помощью npm install
-	grunt.loadNpmTasks('grunt-contrib-concat');
-	grunt.loadNpmTasks('grunt-contrib-uglify');
-	
-	// Задача по умолчанию
-	grunt.registerTask('default', ['concat', 'uglify']);
+  // Задачи
+  grunt.initConfig({
+    // Склеиваем
+    concat: {
+      main: {
+        src: [
+          'js/libs/jquery.js',
+          'js/mylibs/**/*.js'  // Все JS-файлы в папке
+        ],
+        dest: 'build/scripts.js'
+      }
+    },
+    // Сжимаем
+    uglify: {
+      main: {
+        files: {
+          // Результат задачи concat
+          'build/scripts.min.js': '<%= concat.main.dest %>'
+        }
+      }
+    }
+  });
+
+  // Загрузка плагинов, установленных с помощью npm install
+  grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+
+  // Задача по умолчанию
+  grunt.registerTask('default', ['concat', 'uglify']);
 };
 ```
 
@@ -123,20 +122,20 @@ module.exports = function(grunt) {
 
 ```javascript
 concat: {
-	options: {
-		separator: ';'
-	},
-	libs: {
-		src: 'js/libs/**/*.js',
-		dest: 'build/libs.js'
-	},
-	main: {
-		src: [
-			'js/mylibs/*.js',
-			'js/main.js'
-		],
-		dest: 'build/scripts.js'
-	}
+  options: {
+    separator: ';'
+  },
+  libs: {
+    src: 'js/libs/**/*.js',
+    dest: 'build/libs.js'
+  },
+  main: {
+    src: [
+      'js/mylibs/*.js',
+      'js/main.js'
+    ],
+    dest: 'build/scripts.js'
+  }
 }
 ```
 
@@ -162,18 +161,18 @@ concat:libs и concat:main — это подзадачи, они позволя�
 
 ```javascript
 concat: {
-	main: {
-		src: 'js/*.js',
-		dest: 'build/scripts.js'
-	}
+  main: {
+    src: 'js/*.js',
+    dest: 'build/scripts.js'
+  }
 },
 uglify: {
-	main: {
-		files: {
-			// "Копируем" другой параметр конфига. Добавляем текущую дату в имя файла
-			'build.<%= grunt.template.today("m-d-yyyy") %>.js': '<%= concat.main.dest %>'
-		}
-	}
+  main: {
+    files: {
+      // "Копируем" другой параметр конфига. Добавляем текущую дату в имя файла
+      'build.<%= grunt.template.today("m-d-yyyy") %>.js': '<%= concat.main.dest %>'
+    }
+  }
 }
 ```
 
@@ -183,22 +182,22 @@ uglify: {
 pkg: grunt.file.readJSON('package.json'),
 banner: '/* <%= pkg.name %> v<%= pkg.version %> */'
 uglify: {
-	main: {
-		files: {
-			'<%= pkg.name %>.min.js': '<%= pkg.name %>.js'
-		}
-	}
+  main: {
+    files: {
+      '<%= pkg.name %>.min.js': '<%= pkg.name %>.js'
+    }
+  }
 }
 ```
 
 ## Запуск
 
 ```bash
-$ grunt  # Задача default
-$ grunt concat  # Задача concat
-$ grunt concat:main  # Подзадача concat:main
+grunt  # Задача default
+grunt concat  # Задача concat
+grunt concat:main  # Подзадача concat:main
 
-$ grunt --debug
+grunt --debug
 ```
 
 Во время разработки удобно запускать Грант с ключом `--debug`. Задачи могут использовать его по-разному. Например, [grunt-contrib-stylus](https://github.com/gruntjs/grunt-contrib-stylus) в отладочном режиме не сжимает CSS-код.
@@ -211,16 +210,16 @@ $ grunt --debug
 
 ```javascript
 concat: {
-	main: {
-		src: 'js/*.js',
-		dest: 'build/scripts.js'
-	}
+  main: {
+    src: 'js/*.js',
+    dest: 'build/scripts.js'
+  }
 }
 watch: {
-	concat: {
-		files: '<%= concat.main.src %>',
-		tasks: 'concat'  // Можно несколько: ['lint', 'concat']
-	}
+  concat: {
+    files: '<%= concat.main.src %>',
+    tasks: 'concat'  // Можно несколько: ['lint', 'concat']
+  }
 }
 ```
 
@@ -233,7 +232,7 @@ grunt.loadNpmTasks('grunt-contrib-watch');
 И установить соответствующий пакет из npm:
 
 ```bash
-$ npm install grunt-contrib-watch --save-dev
+npm install grunt-contrib-watch --save-dev
 ```
 
 ## Веб-сервер
@@ -242,19 +241,19 @@ $ npm install grunt-contrib-watch --save-dev
 
 ```javascript
 connect: {
-	test: {
-		options: {
-			port: 8000,
-			base: '.'
-		}
-	}
+  test: {
+    options: {
+      port: 8000,
+      base: '.'
+    }
+  }
 }
 ```
 
 Запускается так:
 
 ```bash
-$ grunt connect
+grunt connect
 ```
 
 Теперь ваш сайт доступен по адресу [http://localhost:8000/](http://localhost:8000/).
@@ -265,10 +264,10 @@ $ grunt connect
 
 ```javascript
 jshint: {
-	options: {
-		jshintrc: '.jshintrc'
-	},
-	files: 'js/**/*.js'
+  options: {
+    jshintrc: '.jshintrc'
+  },
+  files: 'js/**/*.js'
 }
 ```
 
@@ -278,17 +277,17 @@ jshint: {
 
 ```javascript
 concat: {
-	main: {
-		src: 'js/*.js',
-		dest: 'build/scripts.js'
-	}
+  main: {
+    src: 'js/*.js',
+    dest: 'build/scripts.js'
+  }
 },
 uglify: {
-	main: {
-		files: {
-			'<%= concat.main.dest %>': '<%= concat.main.dest %>'
-		}
-	}
+  main: {
+    files: {
+      '<%= concat.main.dest %>': '<%= concat.main.dest %>'
+    }
+  }
 }
 ...
 grunt.registerTask('default', ['concat', 'uglify']);
@@ -310,7 +309,7 @@ require('load-grunt-tasks')(grunt);
 И установить [load-grunt-tasks](https://github.com/sindresorhus/load-grunt-tasks):
 
 ```bash
-$ npm install load-grunt-tasks --save-dev
+npm install load-grunt-tasks --save-dev
 ```
 
 Это заклинание вызовет loadNpmTasks для всех плагинов установленных с ключом `--save-dev`.
@@ -319,21 +318,21 @@ $ npm install load-grunt-tasks --save-dev
 
 Утилита [grunt-init](https://github.com/gruntjs/grunt-init) упрощает инициализацию проектов (в английском для обозначения этого процесса есть удобное слово scaffolding):
 
-- создаёт файлы и структуру папок;
-- позволяет использовать шаблоны везде, где только можно;
-- переименовывает файлы при копировании;
-- задаёт пользователю уточняющие вопросы.
+* создаёт файлы и структуру папок;
+* позволяет использовать шаблоны везде, где только можно;
+* переименовывает файлы при копировании;
+* задаёт пользователю уточняющие вопросы.
 
 Устанавливается отдельно:
 
 ```bash
-$ npm install grunt-init -g
+npm install grunt-init -g
 ```
 
 Из коробки есть шаблоны для грантфайлов, jQuery-плагинов, проектов на Node.js и другие (полный список можно посмотреть набрав `grunt-init --help`). Например, если выполнить `grunt-init node`, то получится вот такое [дерево файлов](https://github.com/gruntjs/grunt-init-node-sample/tree/generated):
 
 ```bash
-$ tree
+tree
 .
 ├── Gruntfile.js
 ├── LICENSE-MIT
@@ -359,9 +358,9 @@ $ tree
 
 ```javascript
 imgo: {
-	images: {
-		src: 'images/**'
-	}
+  images: {
+    src: 'images/**'
+  }
 }
 ```
 
@@ -375,19 +374,19 @@ imgo: {
 ```javascript
 // Добавляем задачу imgo
 grunt.registerMultiTask('imgo', 'Optimize images using imgo', function() {
-	// Говорит о том, что вся задача асинхронная
-	var done = this.async();
+  // Говорит о том, что вся задача асинхронная
+  var done = this.async();
 
-	// Обрабатываем каждый файл (тоже асинхронно, потому что spawn() асинхронный).
-	// В this.filesSrc находится список файлов текущей подзадачи с уже развёрнутыми масками.
-	// (Другие параметры были бы в this.data.)
-	grunt.util.async.forEach(this.filesSrc, function(file, next) {
-		// Создаём процесс imgo, передаём ему имя текущего файла
-		grunt.util.spawn({
-			cmd: 'imgo',
-			args: [file]
-		}, next);
-	}, done);
+  // Обрабатываем каждый файл (тоже асинхронно, потому что spawn() асинхронный).
+  // В this.filesSrc находится список файлов текущей подзадачи с уже развёрнутыми масками.
+  // (Другие параметры были бы в this.data.)
+  grunt.util.async.forEach(this.filesSrc, function(file, next) {
+    // Создаём процесс imgo, передаём ему имя текущего файла
+    grunt.util.spawn({
+      cmd: 'imgo',
+      args: [file]
+    }, next);
+  }, done);
 });
 
 ```
@@ -406,9 +405,9 @@ grunt.registerMultiTask('imgo', 'Optimize images using imgo', function() {
 
 ```javascript
 module.exports = function(grunt) {
-	grunt.registerMultiTask('imgo', 'Optimize images using imgo', function() {
-		/* ... */
-	});
+  grunt.registerMultiTask('imgo', 'Optimize images using imgo', function() {
+    /* ... */
+  });
 };
 ```
 
@@ -423,29 +422,41 @@ grunt.loadTasks('tasks');  // Загружает все задачи из пап
 
 ## Ссылки
 
-- [Код примеров к статье](https://github.com/sapegin/grunt-article-examples)
-- Плагины из коллекции contrib (поддерживаются разработчиками Гранта):
-  - [concat](https://github.com/gruntjs/grunt-contrib-concat) — склеивание файлов;
-  - [uglify](https://github.com/gruntjs/grunt-contrib-uglify) — минификация JS (UglifyJS);
-  - [jshint](https://github.com/gruntjs/grunt-contrib-jshint) — проверка JS (JSHint);
-  - [watch](https://github.com/gruntjs/grunt-contrib-watch) — отслеживание изменений в файлах;
-  - [connect](https://github.com/gruntjs/grunt-contrib-connect) — простой веб-сервер для статики;
-  - [imagemin](https://github.com/gruntjs/grunt-contrib-imagemin) — оптимизация картинок;
-  - CSS-препроцессоры: [sass](https://github.com/gruntjs/grunt-contrib-sass), [less](https://github.com/gruntjs/grunt-contrib-less), [stylus](https://github.com/gruntjs/grunt-contrib-stylus);
-  - тестовые фреймворки: [qunit](https://github.com/gruntjs/grunt-contrib-qunit), [jasmine](https://github.com/gruntjs/grunt-contrib-jasmine);
-- Ещё полезные плагины:
-  - [exec](https://github.com/jharding/grunt-exec) — запуск исполняемых файлов;
-  - [csso](https://github.com/t32k/grunt-csso) — оптимизация CSS;
-  - [remove-logging](https://github.com/ehynds/grunt-remove-logging) — удаляет из JS вызовы console.log();
-  - [string-replace](https://github.com/erickrdch/grunt-string-replace) — замена строк в файлах;
-- Мои плагины:
-  - [webfont](https://github.com/sapegin/grunt-webfont) — сборка веб-шрифта из набора SVG-файлов;
-  - [bower-concat](https://github.com/sapegin/grunt-bower-concat) — автоматическая склейка Bower-компонентов;
-  - [fingerprint](https://github.com/sapegin/grunt-fingerprint) — версии (для сброса кэша) статических файлов;
-  - [shower-markdown](https://github.com/sapegin/grunt-shower-markdown) — генератор презентаций Shower из Markdown;
-- [Сайт Grunt, документация, плагины](http://gruntjs.com/)
-- [Getting Started With Grunt](http://gruntjs.com/getting-started)
-- [Upgrading from 0.3 to 0.4](https://github.com/gruntjs/grunt/wiki/upgrading-from-0.3-to-0.4)
-- [Грантфайл jQuery](https://github.com/jquery/jquery/blob/master/Gruntfile.js) (весьма продвинутый)
-- [Подборка шаблонов grunt-init](https://github.com/sapegin/squirrelstrap)
-- [Создание файлов и структуры проекта по шаблонам с помощью Grunt](http://nano.sapegin.ru/all/sozdanie-faylov-i-struktury-proekta-po-shablonam-s-pomoschyu-gru)
+* [Код примеров к статье](https://github.com/sapegin/grunt-article-examples)
+
+* Плагины из коллекции contrib (поддерживаются разработчиками Гранта):
+
+  * [concat](https://github.com/gruntjs/grunt-contrib-concat) — склеивание файлов;
+  * [uglify](https://github.com/gruntjs/grunt-contrib-uglify) — минификация JS (UglifyJS);
+  * [jshint](https://github.com/gruntjs/grunt-contrib-jshint) — проверка JS (JSHint);
+  * [watch](https://github.com/gruntjs/grunt-contrib-watch) — отслеживание изменений в файлах;
+  * [connect](https://github.com/gruntjs/grunt-contrib-connect) — простой веб-сервер для статики;
+  * [imagemin](https://github.com/gruntjs/grunt-contrib-imagemin) — оптимизация картинок;
+  * CSS-препроцессоры: [sass](https://github.com/gruntjs/grunt-contrib-sass), [less](https://github.com/gruntjs/grunt-contrib-less), [stylus](https://github.com/gruntjs/grunt-contrib-stylus);
+  * тестовые фреймворки: [qunit](https://github.com/gruntjs/grunt-contrib-qunit), [jasmine](https://github.com/gruntjs/grunt-contrib-jasmine);
+
+* Ещё полезные плагины:
+
+  * [exec](https://github.com/jharding/grunt-exec) — запуск исполняемых файлов;
+  * [csso](https://github.com/t32k/grunt-csso) — оптимизация CSS;
+  * [remove-logging](https://github.com/ehynds/grunt-remove-logging) — удаляет из JS вызовы console.log();
+  * [string-replace](https://github.com/erickrdch/grunt-string-replace) — замена строк в файлах;
+
+* Мои плагины:
+
+  * [webfont](https://github.com/sapegin/grunt-webfont) — сборка веб-шрифта из набора SVG-файлов;
+  * [bower-concat](https://github.com/sapegin/grunt-bower-concat) — автоматическая склейка Bower-компонентов;
+  * [fingerprint](https://github.com/sapegin/grunt-fingerprint) — версии (для сброса кэша) статических файлов;
+  * [shower-markdown](https://github.com/sapegin/grunt-shower-markdown) — генератор презентаций Shower из Markdown;
+
+* [Сайт Grunt, документация, плагины](http://gruntjs.com/)
+
+* [Getting Started With Grunt](http://gruntjs.com/getting-started)
+
+* [Upgrading from 0.3 to 0.4](https://github.com/gruntjs/grunt/wiki/upgrading-from-0.3-to-0.4)
+
+* [Грантфайл jQuery](https://github.com/jquery/jquery/blob/master/Gruntfile.js) (весьма продвинутый)
+
+* [Подборка шаблонов grunt-init](https://github.com/sapegin/squirrelstrap)
+
+* [Создание файлов и структуры проекта по шаблонам с помощью Grunt](http://nano.sapegin.ru/all/sozdanie-faylov-i-struktury-proekta-po-shablonam-s-pomoschyu-gru)

@@ -16,9 +16,9 @@ doT.js — это очень простой, маленький и быстры�
 
 ```html
 <script type="text/plain" id="tmpl_photo">
-	<div class="sh-photo jstree-draggable" data-id="{{=it.id}}">
-		<img src="{{=it.image}}" width="{{=it.width}}" height="{{=it.height}}" alt="{{=it.title}}">
-	</div>
+  <div class="sh-photo jstree-draggable" data-id="{{=it.id}}">
+    <img src="{{=it.image}}" width="{{=it.width}}" height="{{=it.height}}" alt="{{=it.title}}">
+  </div>
 </script>
 ```
 
@@ -28,8 +28,8 @@ doT.js — это очень простой, маленький и быстры�
 
 ```javascript
 var photos = [
-	{id: 1, image: 'photo1.jpg', title: 'Photo 1', width: 100, height: 100},
-	{id: 1, image: 'photo1.jpg', title: 'Photo 2', width: 100, height: 100}
+  {id: 1, image: 'photo1.jpg', title: 'Photo 1', width: 100, height: 100},
+  {id: 1, image: 'photo1.jpg', title: 'Photo 2', width: 100, height: 100}
 ];
 ```
 
@@ -44,16 +44,16 @@ $('#container').html(tmpl(photos[0]));
 
 ```javascript
 $.fn.tmpl = function(tmplId, data) {
-	var tmpl = doT.template($('#tmpl_' + tmplId).text());
-	if (!$.isArray(data)) data = [data];
+  var tmpl = doT.template($('#tmpl_' + tmplId).text());
+  if (!$.isArray(data)) data = [data];
 
-	return this.each(function() {
-		var html = '';
-		for (var itemIdx = 0; itemIdx < data.length; itemIdx++) {
-			html += tmpl(data[itemIdx]);
-		}
-		$(this).html(html);
-	});
+  return this.each(function() {
+    var html = '';
+    for (var itemIdx = 0; itemIdx < data.length; itemIdx++) {
+      html += tmpl(data[itemIdx]);
+    }
+    $(this).html(html);
+  });
 };
 ```
 

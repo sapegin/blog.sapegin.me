@@ -19,36 +19,36 @@ tags:
 
 ```coffee
 docpadConfig = {
-	...
-	environments:
-		en:
-			documentsPaths: ['documents_en']
-			outPath: 'htdocs_en'
-		ru:
-			documentsPaths: ['documents_ru']
-			outPath: 'htdocs_ru'
-	...
+  ...
+  environments:
+    en:
+      documentsPaths: ['documents_en']
+      outPath: 'htdocs_en'
+    ru:
+      documentsPaths: ['documents_ru']
+      outPath: 'htdocs_ru'
+  ...
 }
 ```
 
 Теперь можно собирать блог на нужном языке:
 
-```
-$ docpad run --env en  # Запустить локальный сервер с английской версией
-$ docpad generate --env ru  # Собрать русскую версию
+```bash
+docpad run --env en  # Запустить локальный сервер с английской версией
+docpad generate --env ru  # Собрать русскую версию
 ```
 
 ## Перевод интерфейса
 
 Создадим YAML-файлы для каждого языка. Например, [`src/lang/en.yml`](https://github.com/sapegin/blog.sapegin.me/blob/master/src/lang/en.yml):
 
-```
+```bash
 lang: en
 url: http://blog.sapegin.me
 title: Artem Sapegin’s Blog
 poweredBy: Powered by <a href="{dp}" class="link">DocPad</a>
 visibleTags:
-  - tools 
+  - tools
   - html
   - css
 tagNames:
@@ -67,47 +67,47 @@ moment = require 'moment'
 _ = require 'lodash'
 
 pluralTypes =
-	en: (n) -> (if n isnt 1 then 1 else 0)
-	ru: (n) -> (if n % 10 is 1 and n % 100 isnt 11 then 0 else (if n % 10 >= 2 and n % 10 <= 4 and (n % 100 < 10 or n % 100 >= 20) then 1 else 2))
+  en: (n) -> (if n isnt 1 then 1 else 0)
+  ru: (n) -> (if n % 10 is 1 and n % 100 isnt 11 then 0 else (if n % 10 >= 2 and n % 10 <= 4 and (n % 100 < 10 or n % 100 >= 20) then 1 else 2))
 
 docpadConfig = {
-	templateData:
-		...
-		# Локализованная дата
-		pubDate: (date) ->
-			moment(date).format('LL')  # December 23 2013
+  templateData:
+    ...
+    # Локализованная дата
+    pubDate: (date) ->
+      moment(date).format('LL')  # December 23 2013
 
-		# Перевод строки
-		# Вернёт исходную строку, если перевод не будет найден
-		# Есть простейший шаблонизатор: @_ 'Lorem {num} ipsum', num: 42
-		_: (s, params=null) ->
-			params ?= []
-			s = @site[s] or s
-			s.replace /\{([^\}]+)\}/g, (m, key) ->
-				params[key] or m
+    # Перевод строки
+    # Вернёт исходную строку, если перевод не будет найден
+    # Есть простейший шаблонизатор: @_ 'Lorem {num} ipsum', num: 42
+    _: (s, params=null) ->
+      params ?= []
+      s = @site[s] or s
+      s.replace /\{([^\}]+)\}/g, (m, key) ->
+        params[key] or m
 
-		# Числительные: @plural(3, 'dog|dogs')
-		plural: (n, s) ->
-			((@_ s).split '|')[pluralTypes[@site.lang](n)]
+    # Числительные: @plural(3, 'dog|dogs')
+    plural: (n, s) ->
+      ((@_ s).split '|')[pluralTypes[@site.lang](n)]
 
-	events:
-		generateBefore: (opts) ->
-			# Достаём текущий язык из окружения Докпада
-			lang = @docpad.getConfig().env
-			# Загружаем строки для нужного языка
-			strings = YAML.load("src/lang/#{lang}.yml")
-			_.merge(@docpad.getTemplateData().site, strings)
-			# Настраиваем языка для Moment.js
-			moment.locale(lang)
-		
-		...
+  events:
+    generateBefore: (opts) ->
+      # Достаём текущий язык из окружения Докпада
+      lang = @docpad.getConfig().env
+      # Загружаем строки для нужного языка
+      strings = YAML.load("src/lang/#{lang}.yml")
+      _.merge(@docpad.getTemplateData().site, strings)
+      # Настраиваем языка для Moment.js
+      moment.locale(lang)
+
+    ...
 }
 ```
 
 Установим библиотеки, которые использовались в предыдущем отрывке кода:
 
-```
-$ npm install --save-dev yamljs moment lodash
+```bash
+npm install --save-dev yamljs moment lodash
 ```
 
 Правила преобразования числительных можно найти в [polyglot.js](https://github.com/airbnb/polyglot.js/blob/master/lib/polyglot.js).
@@ -147,14 +147,14 @@ translation: По-русски
 
 ```coffee
 docpadConfig = {
-	templateData:
-		...
-		# URL текущей страницы на другом языке или главной страницы, если для текущей страницы нет перевода
-		translationUrl: ->
-			if fs.existsSync "src/documents_#{@site.transLang}/#{@document.relativePath}"
-				"#{@site.transUrl}#{@document.url}"
-			else
-				@site.transUrl
+  templateData:
+    ...
+    # URL текущей страницы на другом языке или главной страницы, если для текущей страницы нет перевода
+    translationUrl: ->
+      if fs.existsSync "src/documents_#{@site.transLang}/#{@document.relativePath}"
+        "#{@site.transUrl}#{@document.url}"
+      else
+        @site.transUrl
     ...
 }
 ```

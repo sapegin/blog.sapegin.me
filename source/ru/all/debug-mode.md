@@ -4,7 +4,7 @@ lang: ru
 title: Условная компиляция (отладочная версия) JavaScript и Stylus с помощью Grunt
 date: "Mar 6, 2013"
 disqus_identifier: "debug-mode"
-tags: 
+tags:
   - javascript
   - stylus
   - html
@@ -24,24 +24,24 @@ var debug = !!grunt.option('debug');
 
 ## JavaScript
 
-В Углифае есть возможность задавать глобальные переменные — что-то вроде препроцессора: переменная в коде заменяется значением, а образовавшийся мёртвый код (`if (false) { /* Например, такой */ }`) удаляется. 
+В Углифае есть возможность задавать глобальные переменные — что-то вроде препроцессора: переменная в коде заменяется значением, а образовавшийся мёртвый код (`if (false) { /* Например, такой */ }`) удаляется.
 
 Переменные можно задавать из [командной строки](https://github.com/mishoo/UglifyJS#usage) или через грантфайл:
 
 ```javascript
 uglify: {
-	options: {
-		compress: {
-			global_defs: {
-				DEBUG: debug  // Та самая переменная
-			}
-		}
-	},
-	main: {
-		files: {
-			"build/scripts.js": "build/scripts.js"
-		}
-	}
+  options: {
+    compress: {
+      global_defs: {
+        DEBUG: debug  // Та самая переменная
+      }
+    }
+  },
+  main: {
+    files: {
+      "build/scripts.js": "build/scripts.js"
+    }
+  }
 }
 ```
 
@@ -53,13 +53,13 @@ uglify: {
 if (typeof DEBUG === 'undefined') DEBUG = true;
 
 ;(function() {
-	'use strict';
+  'use strict';
 
-	// …
-	if (DEBUG) {
-		alert('Это сообщение появится только в отладочном режиме');
-	}
-	// …
+  // …
+  if (DEBUG) {
+    alert('Это сообщение появится только в отладочном режиме');
+  }
+  // …
 
 }());
 ```
@@ -70,16 +70,16 @@ if (typeof DEBUG === 'undefined') DEBUG = true;
 
 ```javascript
 stylus: {
-	options: {
-		define: {
-			DEBUG: debug
-		}
-	},
-	compile: {
-		files: {
-			"build/styles.css": "styles/index.styl"
-		}
-	}
+  options: {
+    define: {
+      DEBUG: debug
+    }
+  },
+  compile: {
+    files: {
+      "build/styles.css": "styles/index.styl"
+    }
+  }
 }
 ```
 
@@ -89,5 +89,5 @@ stylus: {
 DEBUG ?= true
 
 div
-	outline: 1px solid #c0ffee if DEBUG
+  outline: 1px solid #c0ffee if DEBUG
 ```

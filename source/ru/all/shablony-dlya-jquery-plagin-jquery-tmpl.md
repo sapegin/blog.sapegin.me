@@ -18,7 +18,7 @@ tags:
 ```html
 <script type="text/plain" id="tmpl_photo">
 <div class="sh-photo jstree-draggable" data-id="${id}">
-	<img src="${image}" width="${width}" height="${height}" alt="${title}">
+  <img src="${image}" width="${width}" height="${height}" alt="${title}">
 </div>
 </script>
 ```
@@ -35,8 +35,8 @@ $.template('photo', $('#tmpl_photo').html());
 
 ```javascript
 var photos = [
-	{id: 1, image: 'photo1.jpg', title: 'Photo 1', width: 100, height: 100},
-	{id: 1, image: 'photo1.jpg', title: 'Photo 2', width: 100, height: 100}
+  {id: 1, image: 'photo1.jpg', title: 'Photo 1', width: 100, height: 100},
+  {id: 1, image: 'photo1.jpg', title: 'Photo 2', width: 100, height: 100}
 ];
 
 $.tmpl('photo', photos).appendTo('#container');
@@ -46,11 +46,11 @@ $.tmpl('photo', photos).appendTo('#container');
 
 ```javascript
 $.fn.tmplTo = function(tmpl, data) {
-	return this.each(function(){
-		var elem = $(this);
-		elem.empty();
-		$.tmpl(tmpl, data).appendTo(elem);
-	});
+  return this.each(function(){
+    var elem = $(this);
+    elem.empty();
+    $.tmpl(tmpl, data).appendTo(elem);
+  });
 };
 ```
 

@@ -25,11 +25,11 @@ You can read how to make an SSH key in [GitHub](https://help.github.com/articles
 
 You can save another few keystrokes by adding an SSH alias which you will use instead of host/login combination. Add this lines to your `~/.ssh/config` file:
 
-```
+```text
 Host myhost
-	HostName 113.113.13.13
-	User tema
-	IdentityFile ~/.ssh/id_rsa
+  HostName 113.113.13.13
+  User tema
+  IdentityFile ~/.ssh/id_rsa
 ```
 
 Use your own host, login and key which you made on a previous step.
@@ -39,13 +39,13 @@ Use your own host, login and key which you made on a previous step.
 Upload SSH key to your hosting:
 
 ```bash
-$ ssh myhost 'mkdir -p .ssh && cat >> ~/.ssh/authorized_keys' < ~/.ssh/id_rsa.pub
+ssh myhost 'mkdir -p .ssh && cat >> ~/.ssh/authorized_keys' < ~/.ssh/id_rsa.pub
 ```
 
 Now you can open SSH connection with your hosting by typing just that:
 
 ```bash
-$ ssh myhost
+ssh myhost
 ```
 
 ## Project preparation
@@ -55,14 +55,13 @@ I use [Grunt](http://gruntjs.com/) to build my projects. If you don’t you can 
 There are two ways to build and deploy sites:
 
 1. Commit built files and deploy with simple `git pull`.
-
 2. Commit only source code and build on deploy.
 
 I usually use the latter. It makes repository more tidy and diffs cleaner. But one have to setup site building on a server. However it’s not a problem with Grunt.
 
 I have a `deploy` task in my Gruntfiles which does everything except image optimization, testing and other long running processes that aren’t necessary to build a site.
 
-```js
+```javascript
 grunt.registerTask('default', ['jshint', 'concat', 'stylus', 'imagemin']);
 grunt.registerTask('deploy', ['concat', 'stylus']);
 ```
@@ -92,16 +91,16 @@ Thus I can be sure that build willn’t break if a wrong version of some plugin 
 Link our local Git repository with a remote one and push it:
 
 ```bash
-$ git remote add origin git@github.com:sapegin/example.git
-$ git push -u origin master
+git remote add origin git@github.com:sapegin/example.git
+git push -u origin master
 ```
 
 ## Clone repository onto a hosting
 
 ```bash
-$ ssh myhost
-$ git clone git@github.com:sapegin/example.git ~/sites/example.com
-$ logout
+ssh myhost
+git clone git@github.com:sapegin/example.git ~/sites/example.com
+logout
 ```
 
 It shouldn’t ask you any passwords.
@@ -111,7 +110,7 @@ It shouldn’t ask you any passwords.
 Use this one-liner to install shipit:
 
 ```bash
-$ pathtoshipit=/usr/local/bin/shipit; curl -o $pathtoshipit https://raw.github.com/sapegin/shipit/master/bin/shipit; chmod +x $pathtoshipit; unset pathtoshipit
+pathtoshipit=/usr/local/bin/shipit; curl -o $pathtoshipit https://raw.github.com/sapegin/shipit/master/bin/shipit; chmod +x $pathtoshipit; unset pathtoshipit
 ```
 
 ## Deploy setup
@@ -146,6 +145,7 @@ git pull
 npm install
 node -e "require('grunt').cli()" _ deploy
 ```
+
 And save it as `.shipit` in a project root folder.
 
 Shipit is very simple: it just connects to a server via SSH, goes to a project folder and runs all commands contained after `[deploy]` line. (In fact it’s [much more flexible](https://github.com/sapegin/shipit/blob/master/Readme.md).)
@@ -153,9 +153,9 @@ Shipit is very simple: it just connects to a server via SSH, goes to a project f
 That’s all, now deploy is as easy as this:
 
 ```bash
-$ git commit -a -m "Make ponies pink."
-$ git push
-$ shipit
+git commit -a -m "Make ponies pink."
+git push
+shipit
 ```
 
 ![Shipit](/images/mac__shipit.png)

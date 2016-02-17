@@ -10,11 +10,11 @@ tags:
 
 Задача — сверстать логотип так, чтобы:
 
-- Он был векторным.
-- Менял цвет при наведении.
-- Делал это плавно.
-- Умещался в одном файле.
-- Работал во всех браузерах (с откатом на PNG в случае необходимости).
+* Он был векторным.
+* Менял цвет при наведении.
+* Делал это плавно.
+* Умещался в одном файле.
+* Работал во всех браузерах (с откатом на PNG в случае необходимости).
 
 <!-- cut -->
 
@@ -24,8 +24,8 @@ tags:
 
 ```html
 <div class="logo">
-	<object data="logo.svg#normal" type="image/svg+xml" class="logo__image"></object>
-	<a href="/" class="logo__link">Oleg Breslavtsev</a>
+  <object data="logo.svg#normal" type="image/svg+xml" class="logo__image"></object>
+  <a href="/" class="logo__link">Oleg Breslavtsev</a>
 </div>
 ```
 
@@ -33,57 +33,57 @@ tags:
 
 ```css
 .logo, .logo__link, .logo__image {
-	display:block;
-	width:260px;
-	height:48px;
-	}
+  display:block;
+  width:260px;
+  height:48px;
+  }
 .logo {
-	position:relative;
-	}
+  position:relative;
+  }
 .logo__link, .logo__image {
-	position:absolute;
-	left:0;
-	top:0;
-	transition:all .4s cubic-bezier(0.230, 1.000, 0.320, 1.000);
-	}
+  position:absolute;
+  left:0;
+  top:0;
+  transition:all .4s cubic-bezier(0.230, 1.000, 0.320, 1.000);
+  }
 .logo__link {
-	background:url(logo.svg) no-repeat;
-	text-indent:100%;
-	white-space:nowrap;
-	overflow:hidden;
-	background-size:auto;
-	opacity:0;
-	}
+  background:url(logo.svg) no-repeat;
+  text-indent:100%;
+  white-space:nowrap;
+  overflow:hidden;
+  background-size:auto;
+  opacity:0;
+  }
 .logo:hover .logo__link {
-	opacity:1;
-	}
+  opacity:1;
+  }
 .logo:hover .logo__image {
-	opacity:0;
-	}
+  opacity:0;
+  }
 .no-svg .logo__image {
-	display:none;
-	}
+  display:none;
+  }
 .no-svg .logo__link {
-	opacity:1;
-	background:url(logo.png);
-	}
+  opacity:1;
+  background:url(logo.png);
+  }
 ```
 
 Теперь у нас только обычный вариант логотипа использует псевдокласс :target, а значит подсвеченный мы можем подключить CSS-фоном. Для старых браузеров используется PNG, класс no-svg добавляет [Modernizr](http://modernizr.com/). Теперь остаётся подготовить SVG-файл:
 
 ```html
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 48">
-	<g id="normal">
-		<!-- собственно, логотип -->
-	</g>
-	<style>
-	g {
-		fill:#c399cc;
-		}
-	g:target {
-		fill:#222;
-		}
-	</style>
+  <g id="normal">
+    <!-- собственно, логотип -->
+  </g>
+  <style>
+  g {
+    fill:#c399cc;
+    }
+  g:target {
+    fill:#222;
+    }
+  </style>
 </svg>
 ```
 

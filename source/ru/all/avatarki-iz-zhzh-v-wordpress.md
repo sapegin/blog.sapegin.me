@@ -14,37 +14,37 @@ tags:
 add_filter('get_avatar', 'bw_get_avatar', 10, 4);
 
 function bw_get_avatar($avatar, $id_or_email, $size, $default) {
-	if (is_object($id_or_email) && !empty($id_or_email->comment_author_url)) {
-		if ('.livejournal.com/' == substr($id_or_email->comment_author_url, -17)) {
-			return get_avatar('', $size, get_livejournal_userpic($id_or_email->comment_author_url));
-		}
-	}
+  if (is_object($id_or_email) && !empty($id_or_email->comment_author_url)) {
+    if ('.livejournal.com/' == substr($id_or_email->comment_author_url, -17)) {
+      return get_avatar('', $size, get_livejournal_userpic($id_or_email->comment_author_url));
+    }
+  }
 
-	return $avatar;
+  return $avatar;
 }
 
 function get_livejournal_userpic($url) {
-	$md5 = md5($url);
-	$filename = "{$_SERVER['DOCUMENT_ROOT']}/wp-content/cache/avatars/$md5";
-	
-	* уже есть в кэше
-	if (file_exists($filename)) {
-		return "http:*{$_SERVER['HTTP_HOST']}/wp-content/cache/avatars/$md5";
-	}
-	
-	// загружаем User Info
-	$userinfo = file_get_contents("{$url}profile/");
+  $md5 = md5($url);
+  $filename = "{$_SERVER['DOCUMENT_ROOT']}/wp-content/cache/avatars/$md5";
 
-	$m = array();
-	if (preg_match('%>img src=\'([^\']+)\'[^<]+class=\'user_pic\'%', $userinfo, $m)) {
-		$avatar = file_get_contents($m[1]);
-		if ($avatar) {	
-			file_put_contents($filename, $avatar);
-			return $m[1];
-		}
-	}
+  * уже есть в кэше
+  if (file_exists($filename)) {
+    return "http:*{$_SERVER['HTTP_HOST']}/wp-content/cache/avatars/$md5";
+  }
 
-	return includes_url('images/blank.gif');
+  // загружаем User Info
+  $userinfo = file_get_contents("{$url}profile/");
+
+  $m = array();
+  if (preg_match('%>img src=\'([^\']+)\'[^<]+class=\'user_pic\'%', $userinfo, $m)) {
+    $avatar = file_get_contents($m[1]);
+    if ($avatar) {
+      file_put_contents($filename, $avatar);
+      return $m[1];
+    }
+  }
+
+  return includes_url('images/blank.gif');
 }
 ```
 
