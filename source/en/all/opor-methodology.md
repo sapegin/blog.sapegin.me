@@ -19,25 +19,25 @@ Almost the same style as in BEM. Blocks are `.block`, elements are `.block__elem
 
 Allowed for:
 
-- To define context. E. g. block should look differently on light and dark backgrounds: it can be achieved by using a modifier or using a cascade (adding context class to body tag or to parent block).
+* To define context. E. g. block should look differently on light and dark backgrounds: it can be achieved by using a modifier or using a cascade (adding context class to body tag or to parent block).
 
 ```css
 .logo {
-	color:saddlebrown;
-	}
+  color:saddlebrown;
+  }
 .page_about .logo {
-	color:ghostwhite;
-	}
+  color:ghostwhite;
+  }
 ```
 
-- To use semantic classless tags in user-generated content (articles, comments, etc.).
+* To use semantic classless tags in user-generated content (articles, comments, etc.).
 
 ```css
 .text ul {}
 .text p {}
 ```
 
-- (Very rarely) when you are sure you will never put nested block with the same tag.
+* (Very rarely) when you are sure you will never put nested block with the same tag.
 
 ```html
 .social-button i { /* Icon */ }
@@ -79,8 +79,8 @@ Don’t imply any semantics, use it for appearance only.
 
 ```html
 <div class="header">
-	<div class="header-i">
-	</div>
+  <div class="header-i">
+  </div>
 </div>
 ```
 
@@ -94,17 +94,17 @@ Don’t imply any semantics, use it for appearance only.
 
 ## Other methodologies
 
-- [BEM](http://en.bem.info/)
-- [SMACSS](http://smacss.com/)
-- [OOCSS](http://coding.smashingmagazine.com/2011/12/12/an-introduction-to-object-oriented-css-oocss/)
-- [MCSS](https://github.com/operatino/MCSS)
+* [BEM](http://en.bem.info/)
+* [SMACSS](http://smacss.com/)
+* [OOCSS](http://coding.smashingmagazine.com/2011/12/12/an-introduction-to-object-oriented-css-oocss/)
+* [MCSS](https://github.com/operatino/MCSS)
 
 ## Links
 
-- [About HTML semantics and front-end architecture](http://nicolasgallagher.com/about-html-semantics-front-end-architecture/)
-- [Code smells in CSS](http://csswizardry.com/2012/11/code-smells-in-css/)
-- [Pragmatic, practical font sizing in CSS](http://csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css/)
-- [Single-direction margin declarations](http://csswizardry.com/2012/06/single-direction-margin-declarations/)
-- [The media object saves hundreds of lines of code](http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/)
-- [Writing the best CSS when building with HTML5](http://toddmotto.com/writing-the-best-css-when-building-with-html5/)
-- [My Stylus framework](https://github.com/sapegin/tamia)
+* [About HTML semantics and front-end architecture](http://nicolasgallagher.com/about-html-semantics-front-end-architecture/)
+* [Code smells in CSS](http://csswizardry.com/2012/11/code-smells-in-css/)
+* [Pragmatic, practical font sizing in CSS](http://csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css/)
+* [Single-direction margin declarations](http://csswizardry.com/2012/06/single-direction-margin-declarations/)
+* [The media object saves hundreds of lines of code](http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/)
+* [Writing the best CSS when building with HTML5](http://toddmotto.com/writing-the-best-css-when-building-with-html5/)
+* [My Stylus framework](https://github.com/sapegin/tamia)

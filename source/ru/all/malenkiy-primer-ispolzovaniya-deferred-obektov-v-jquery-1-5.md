@@ -12,32 +12,32 @@ tags:
 
 ```javascript
 function doAjax() {
-	return $.getJSON('http://ws.geonames.org/timezoneJSON?lat=55.755786&lng=37.617633&callback=?');
+  return $.getJSON('http://ws.geonames.org/timezoneJSON?lat=55.755786&lng=37.617633&callback=?');
 }
 
 function doAjax2() {
-	return $.getJSON('http://api.twitter.com/1/statuses/user_timeline.json?screen_name=sapegin&count=1&callback=?');
+  return $.getJSON('http://api.twitter.com/1/statuses/user_timeline.json?screen_name=sapegin&count=1&callback=?');
 }
 
 function doTimer() {
-	var deferred = $.Deferred();
-	setTimeout(deferred.resolve, 3000);
-	return deferred.promise();
+  var deferred = $.Deferred();
+  setTimeout(deferred.resolve, 3000);
+  return deferred.promise();
 }
 
 $('button#mypony').click(function(){
-	var elem = $(this);
-	elem.data('label', elem.html())
-		.attr('disabled', true)
-		.html('Loading&hellip;')
-		.blur();
+  var elem = $(this);
+  elem.data('label', elem.html())
+    .attr('disabled', true)
+    .html('Loading&hellip;')
+    .blur();
 
-	$.when(doAjax(), doAjax2(), doTimer())
-		.then(function(geonames, twitter){
-			elem.html(elem.data('label'))
-				.attr('disabled', false);
-			alert(geonames[0].timezoneId + '\n' + twitter[0][0].text);
-		});
+  $.when(doAjax(), doAjax2(), doTimer())
+    .then(function(geonames, twitter){
+      elem.html(elem.data('label'))
+        .attr('disabled', false);
+      alert(geonames[0].timezoneId + '\n' + twitter[0][0].text);
+    });
 });
 ```
 

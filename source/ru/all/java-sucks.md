@@ -3,7 +3,7 @@ layout: post
 lang: ru
 title: Почему я не люблю Java и нестандартные интерфейсы
 date: "Nov 22, 2006"
-tags: 
+tags:
   - thoughts
 
 ---

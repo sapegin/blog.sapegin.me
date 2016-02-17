@@ -4,7 +4,7 @@ lang: ru
 title: 'Bower: зачем фронтенду нужен менеджер пакетов'
 date: Jun 23, 2014
 tags:
-	- tools
+  - tools
 ---
 
 *Статья впервые была опубликована в [майском номере](http://www.xakep.ru/xa/?id=184) журнала Хакер. В журнал вошла сильно сокращённая версия; ниже — полная.*
@@ -28,7 +28,7 @@ tags:
 Для работы с Бовером вам потребуются Node.js и Git. Установка:
 
 ```bash
-$ npm install -g bower
+npm install -g bower
 ```
 
 ## Работа с пакетами
@@ -36,7 +36,7 @@ $ npm install -g bower
 Попробуем что-нибудь установить, например, jQuery:
 
 ```bash
-$ bower install --save jquery  # Или bower i -S jquery
+bower install --save jquery  # Или bower i -S jquery
 ```
 
 Эта команда скачает jQuery последней версии в папку `bower_components/jquery`.
@@ -46,7 +46,7 @@ $ bower install --save jquery  # Или bower i -S jquery
 У нас такого файла ещё нет, о чём и говорит строчка «No bower.json file to save to, use bower init to create one» в логе. Создадим его:
 
 ```bash
-$ bower init
+bower init
 ```
 
 Бовер будет задавать много вопросов, но до тех пор пока мы не захотим зарегистрировать свой пакет, ответы на большинство из них не имеют значения, можно просто нажимать Enter.
@@ -56,13 +56,13 @@ $ bower init
 Поставим ещё несколько пакетов:
 
 ```bash
-$ bower install --save social-likes jquery-icheck fotorama
+bower install --save social-likes jquery-icheck fotorama
 ```
 
 И посмотрим, что у нас получилось:
 
 ```bash
-$ bower list
+bower list
 bower check-new     Checking for new versions of the project dependencies..
 bowertest#0.0.0 /Users/admin/bowertest
 ├─┬ fotorama#4.5.1
@@ -71,7 +71,7 @@ bowertest#0.0.0 /Users/admin/bowertest
 ├─┬ jquery-icheck#1.0.2
 │ └── jquery#2.1.0 (2.1.1-beta1 available)
 └─┬ social-likes#3.0.2
-	└── jquery#2.1.0
+  └── jquery#2.1.0
 ```
 
 Команда `bower list` показывает список всех установленных пакетов. Тут мы видим, что все пакеты зависят от jQuery, и что Бовер смог найти подходящую всем версию — jQuery 2.1.0.
@@ -79,14 +79,14 @@ bowertest#0.0.0 /Users/admin/bowertest
 На файловой системе это выглядит вот так:
 
 ```bash
-$ tree -L 2
+tree -L 2
 .
 ├── bower.json
 └── bower_components
-		├── fotorama
-		├── jquery
-		├── jquery-icheck
-		└── social-likes
+    ├── fotorama
+    ├── jquery
+    ├── jquery-icheck
+    └── social-likes
 
 5 directories, 1 file
 ```
@@ -96,13 +96,13 @@ $ tree -L 2
 Для удаления пакетов используется команда `bower uninstall`:
 
 ```bash
-$ bower uninstall --save jquery-icheck  # Или bower un -S jquery-icheck
+bower uninstall --save jquery-icheck  # Или bower un -S jquery-icheck
 ```
 
 Вы можете спокойно удалять папку `bower_components` или добавить  её в ваш `.gitignore`. Команда `bower install` (без дополнительных параметров) вернёт всё как было:
 
 ```bash
-$ bower install
+bower install
 ```
 
 ## Развёртывание проекта
@@ -110,7 +110,6 @@ $ bower install
 Есть два подхода к развёртыванию проектов:
 
 1. В репозиторий добавляется только файл-манифест и все пакеты устанавливаются во время развёртывания проекта. Так в репозитории не хранится ничего лишнего, но если во время развёртывания упадёт Гитхаб или другой сервер, с которого устанавливаются пакеты, будут проблемы.
-
 2. В репозиторий добавляется не только `bower.json`, но папка `bower_components`. Так развёртывание не зависит от внешних серверов, но репозиторий раздувается десятками (а то и сотнями) лишних файлов.
 
 ## Семантические версии (semver)
@@ -128,13 +127,13 @@ $ bower install
 Для обновления пакетов (и `bower.json`) до действительно последних версий можно воспользоваться утилитой [bower-update](https://github.com/sapegin/bower-update). Устанавливаем:
 
 ```bash
-$ npm install -g bower-update
+npm install -g bower-update
 ```
 
 Запускаем:
 
 ```bash
-$ bower-update
+bower-update
 ```
 
 ## Поиск пакетов
@@ -144,57 +143,57 @@ $ bower-update
 Гиковский:
 
 ```bash
-$ bower search jquery
+bower search jquery
 Search results:
 
-		jquery git://github.com/jquery/jquery.git
-		jquery-ui git://github.com/components/jqueryui
-		...
+    jquery git://github.com/jquery/jquery.git
+    jquery-ui git://github.com/components/jqueryui
+    ...
 ```
 
 Обычный: открыть в браузере [bower.io/search](http://bower.io/search/).
 
 ## Автоматическая сборка
 
-Бовер перекладывает проблемы сборки установленных пакетов на плечи разработчика. Самый простой способ — просто склеить JS-файлы Грантом, Галпом или любой другой системой сборки, которой вы пользуетесь. 
+Бовер перекладывает проблемы сборки установленных пакетов на плечи разработчика. Самый простой способ — просто склеить JS-файлы Грантом, Галпом или любой другой системой сборки, которой вы пользуетесь.
 
 Я пользуюсь Грантом, поэтому расскажу, как склеивать пакеты Грантом. О том как пользоваться Грантом была [большая статья](http://nano.sapegin.ru/all/grunt-0-4) в июльском номере прошлого года, поэтому покажу сразу конфиг плагина `grunt-contrib-concat`:
 
-```
+```javascript
 concat: {
-	main: {
-		src: [
-			'bower_components/jquery/jquery.min.js',
-			'bower_components/fotorama/….js',
-			'bower_components/jquery-icheck/….js',
-			'bower_components/social-likes/social-likes.min.js’,
-			'scripts/*.js'  // Скрипты вашего сайта
-		],
-		dest: 'build/scripts.js'
-	}
+  main: {
+    src: [
+      'bower_components/jquery/jquery.min.js',
+      'bower_components/fotorama/….js',
+      'bower_components/jquery-icheck/….js',
+      'bower_components/social-likes/social-likes.min.js’,
+      'scripts/*.js'  // Скрипты вашего сайта
+    ],
+    dest: 'build/scripts.js'
+  }
 }
 ```
 
 У этого способа есть много недостатков: вам нужно смотреть имена файлов для каждого пакета; следить, чтобы файлы собирались в правильном порядке (например, jQuery должен быть выше, чем скрипты, зависящие от него). Плагин [grunt-bower-concat](https://github.com/sapegin/grunt-bower-concat) может делать это сам: он автоматически склеивает все установленные зависимости в правильном порядке в один файл:
 
-```
+```javascript
 bower_concat: {
-	all: {
-		dest: 'build/_bower.js',  // Склеенный файл
-		exclude: [  // Пакеты, которые нужно исключить из сборки
-				'jquery',  // Если jQuery подключается с CDN Гугла
-				'modernizr'  // Если подключаем скрипты в конце страницы; Modernizr нужно подключать в <head>
-		]
-	}
+  all: {
+    dest: 'build/_bower.js',  // Склеенный файл
+    exclude: [  // Пакеты, которые нужно исключить из сборки
+        'jquery',  // Если jQuery подключается с CDN Гугла
+        'modernizr'  // Если подключаем скрипты в конце страницы; Modernizr нужно подключать в <head>
+    ]
+  }
 },
 concat: {
-	main: {
-		src: [
-			'build/_bower.js',
-			'scripts/*.js'  // Скрипты вашего сайта
-		],
-		dest: 'build/scripts.js'
-	}
+  main: {
+    src: [
+      'build/_bower.js',
+      'scripts/*.js'  // Скрипты вашего сайта
+    ],
+    dest: 'build/scripts.js'
+  }
 }
 ```
 
@@ -209,7 +208,7 @@ concat: {
 Для создания файла файла-манифеста снова воспользуемся командой `bower init`:
 
 ```bash
-$ bower init
+bower init
 [?] name: awesomelib
 [?] version: 0.0.1
 [?] description: My awesome jQuery plugin.
@@ -223,30 +222,30 @@ $ bower init
 [?] would you like to mark this package as private which prevents it from being accidentally published to the registry? No
 
 {
-	name: 'awesomelib',
-	version: '0.0.1',
-	description: 'My awesome jQuery plugin.',
-	main: 'jquery.awesomeplugin.js',
-	keywords: [
-		'jquery',
-		'awesome',
-		'yay'
-	],
-	authors: [
-		'Artem Sapegin <artem@sapegin.ru>'
-	],
-	license: 'MIT',
-	homepage: 'https://github.com/sapegn/jquery.awesomeplugin',
-	ignore: [
-		'**/.*',
-		'node_modules',
-		'bower_components',
-		'test',
-		'tests'
-	],
-	"dependencies": {
-		"jquery": "~2.1.0"
-	}
+  name: 'awesomelib',
+  version: '0.0.1',
+  description: 'My awesome jQuery plugin.',
+  main: 'jquery.awesomeplugin.js',
+  keywords: [
+    'jquery',
+    'awesome',
+    'yay'
+  ],
+  authors: [
+    'Artem Sapegin <artem@sapegin.ru>'
+  ],
+  license: 'MIT',
+  homepage: 'https://github.com/sapegn/jquery.awesomeplugin',
+  ignore: [
+    '**/.*',
+    'node_modules',
+    'bower_components',
+    'test',
+    'tests'
+  ],
+  "dependencies": {
+    "jquery": "~2.1.0"
+  }
 }
 
 [?] Looks good? Yes
@@ -255,28 +254,24 @@ $ bower init
 И хотя обязательно нужно заполнить только имя пакета (поле `name`), остальные поля тоже очень полезны:
 
 * `description` и `keywords` помогут пользователям найти вашу библиотеку через интерфейс поиска пакетов.
-
 * `main` определяет главный файл пакета. Это поле может быть использовано автоматическими сборщиками, такими как grunt-bower-concat.
-
 * `license` — всегда указывайте лицензию: она говорит потенциальному пользователю вашего пакета, сможет ли он использовать его в своём проекте. Например, лицензия GPL требует, чтобы любой использующий её проект тоже распространялся по этой лицензии, что не всегда возможно.
-
 * `ignore` — по умолчанию Бовер скачивает весь репозиторий, что, во-первых, увеличивает время установки, а, во-вторых, добавляет в проект лишние файлы. Лучше всего исключить всё, кроме необходимых для работы пакета файлов (главный JS-файл, CSS и так далее), лицензии и ридми.
-
 * `dependencies` — все пакеты, от которых зависит ваш пакет.
 
 Теперь нужно закоммитить `bower.json`, создать гит-тег с последней версией и запушить всё в удалённый репозиторий:
 
 ```bash
-$ git add bower.json
-$ git commit -m "Add bower.json."
-$ git tag "v0.0.1"
-$ git push origin --tags
+git add bower.json
+git commit -m "Add bower.json."
+git tag "v0.0.1"
+git push origin --tags
 ```
 
 Вот теперь можно регистрировать пакет:
 
 ```bash
-$ bower register jquery-awesomeplugin git://github.com/sapegin/jquery-awesomeplugin.git
+bower register jquery-awesomeplugin git://github.com/sapegin/jquery-awesomeplugin.git
 ```
 
 Дальше Бовер сам будет проверять обновления пакета, главное не забывать создавать гит-тег для каждой новой версии.

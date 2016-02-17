@@ -25,7 +25,7 @@ tags:
 
 Чтобы не набирать каждый раз имя хоста и логин, можно создать псевдоним. Для этого добавим в файл `~/.ssh/config`:
 
-```
+```text
 Host myhost
   HostName 113.113.13.13
   User tema
@@ -39,13 +39,13 @@ Host myhost
 Избавимся от необходимости вводить пароль при каждом заходе:
 
 ```bash
-$ ssh myhost 'mkdir -p .ssh && cat >> ~/.ssh/authorized_keys' < ~/.ssh/id_rsa.pub
+ssh myhost 'mkdir -p .ssh && cat >> ~/.ssh/authorized_keys' < ~/.ssh/id_rsa.pub
 ```
 
 Теперь вы можете заходить на хостинг набирая:
 
 ```bash
-$ ssh myhost
+ssh myhost
 ```
 
 ## Подготовка проекта
@@ -55,14 +55,13 @@ $ ssh myhost
 Есть два способа сборки и деплоя сайта:
 
 1. Коммитить собранные файлы, деплоить простым `git pull`.
-
 2. Коммитить только исходный код, собирать при деплое.
 
 Я обычно использую второй. Репозиторий получается аккуратнее, диффы чище, работать удобнее. Но приходится настраивать на сервере сборку. Однако с Грантом это не проблема.
 
 Для деплоя я создаю специальную задачу `deploy`, где нет оптимизации картинок, тестирования и других долгих задач, не имеющих значения при сборке сайта.
 
-```js
+```javascript
 grunt.registerTask('default', ['jshint', 'concat', 'stylus', 'imagemin']);
 grunt.registerTask('deploy', ['concat', 'stylus']);
 ```
@@ -92,8 +91,8 @@ grunt.registerTask('deploy', ['concat', 'stylus']);
 Добавим в локальный репозиторий ссылку на удалённый (на Гитхабе или Битбакете) и запушим код:
 
 ```bash
-$ git remote add origin git@github.com:sapegin/example.git
-$ git push -u origin master
+git remote add origin git@github.com:sapegin/example.git
+git push -u origin master
 ```
 
 ## Клонирование репозитория на хостинг
@@ -101,9 +100,9 @@ $ git push -u origin master
 Клонируем репозиторий сайта на хостинг:
 
 ```bash
-$ ssh myhost
-$ git clone git@github.com:sapegin/example.git ~/sites/example.com
-$ logout
+ssh myhost
+git clone git@github.com:sapegin/example.git ~/sites/example.com
+logout
 ```
 
 Никаких паролей запрашиваться уже не должно.
@@ -113,7 +112,7 @@ $ logout
 Шипит устанавливается одной строкой:
 
 ```bash
-$ pathtoshipit=/usr/local/bin/shipit; curl -o $pathtoshipit https://raw.github.com/sapegin/shipit/master/bin/shipit; chmod +x $pathtoshipit; unset pathtoshipit
+pathtoshipit=/usr/local/bin/shipit; curl -o $pathtoshipit https://raw.github.com/sapegin/shipit/master/bin/shipit; chmod +x $pathtoshipit; unset pathtoshipit
 ```
 
 ## Настройка деплоя
@@ -156,9 +155,9 @@ node -e "require('grunt').cli()" _ deploy
 Всё, теперь можно разложить сайт одной командой, не считая коммита и пуша изменений:
 
 ```bash
-$ git commit -a -m "Make ponies pink."
-$ git push
-$ shipit
+git commit -a -m "Make ponies pink."
+git push
+shipit
 ```
 
 ![Shipit](/images/mac__shipit.png)

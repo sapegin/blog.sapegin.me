@@ -12,14 +12,14 @@ tags:
 
 ```javascript
 var obj = {
-	message: 'Hullo!',
-	init: function() {
-		var this_ = this;
-		$('.button').click(function(){ this_.handler(42) });
-	},
-	handler: function(num) {
-		alert(this.message + "\n" + num);
-	}
+  message: 'Hullo!',
+  init: function() {
+    var this_ = this;
+    $('.button').click(function(){ this_.handler(42) });
+  },
+  handler: function(num) {
+    alert(this.message + "\n" + num);
+  }
 };
 obj.init();
 ```

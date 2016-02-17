@@ -30,30 +30,30 @@ exports.description = 'Create a simple HTML5 file.';
 
 exports.template = function(grunt, init, done) {
 
-	grunt.helper('prompt', {}, [
-		// Пользовательские параметры
-		// Имя файла (такой запрос уже есть в Гранте, поэтому нужно вызывать его с помощью grunt.helper)
-		// index -- значение по умолчанию
-		grunt.helper('prompt_for', 'name', 'index'),
-		// Язык (такого запроса в Гранте нет, поэтому нам нужно описать все параметры)
-		{
-			name: 'lang',
-			message: 'Document language',
-			default: 'en'
-		},
-	], function(err, props) {
-		// Достаём параметры по умолчанию (находятся в файле defaults.json)
-		grunt.utils._.defaults(props, init.defaults);
+  grunt.helper('prompt', {}, [
+    // Пользовательские параметры
+    // Имя файла (такой запрос уже есть в Гранте, поэтому нужно вызывать его с помощью grunt.helper)
+    // index -- значение по умолчанию
+    grunt.helper('prompt_for', 'name', 'index'),
+    // Язык (такого запроса в Гранте нет, поэтому нам нужно описать все параметры)
+    {
+      name: 'lang',
+      message: 'Document language',
+      default: 'en'
+    },
+  ], function(err, props) {
+    // Достаём параметры по умолчанию (находятся в файле defaults.json)
+    grunt.utils._.defaults(props, init.defaults);
 
-		// Список файлов для копирования
-		var files = init.filesToCopy(props);
+    // Список файлов для копирования
+    var files = init.filesToCopy(props);
 
-		// Список файлов для копирования
-		init.copyAndProcess(files, props);
+    // Список файлов для копирования
+    init.copyAndProcess(files, props);
 
-		// Готово :)
-		done();
-	});
+    // Готово :)
+    done();
+  });
 
 };
 ```
@@ -64,9 +64,9 @@ exports.template = function(grunt, init, done) {
 <!DOCTYPE html>
 <html lang="{%= lang %}">
 <head>
-	<meta charset="utf-8">
-	<title></title>
-	<meta name="copyright" content="© {%= grunt.template.today('yyyy') %} {%= author_name %}">
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="copyright" content="© {%= grunt.template.today('yyyy') %} {%= author_name %}">
 </head><body>
 </body></html>
 ```
@@ -75,7 +75,7 @@ exports.template = function(grunt, init, done) {
 
 ```json
 {
-	"name.html": "{%= name %}.html"
+  "name.html": "{%= name %}.html"
 }
 ```
 
@@ -85,7 +85,7 @@ exports.template = function(grunt, init, done) {
 
 Что ещё посмотреть про Грант:
 
-- [Репозиторий на Гитхабе](https://github.com/cowboy/grunt) ([стандартные шаблоны](https://github.com/cowboy/grunt/tree/master/tasks/init), [описание команды init](https://github.com/cowboy/grunt/blob/master/docs/task_init.md)).
-- [Набор моих шаблонов](https://github.com/sapegin/squirrelstrap).
-- Статья автора Гранта [Introducing Grunt](http://weblog.bocoup.com/introducing-grunt/).
-- Статья [Meet Grunt: The Build Tool for JavaScript](http://net.tutsplus.com/tutorials/javascript-ajax/meeting-grunt-the-build-tool-for-javascript/) на Nettuts+.
+* [Репозиторий на Гитхабе](https://github.com/cowboy/grunt) ([стандартные шаблоны](https://github.com/cowboy/grunt/tree/master/tasks/init), [описание команды init](https://github.com/cowboy/grunt/blob/master/docs/task_init.md)).
+* [Набор моих шаблонов](https://github.com/sapegin/squirrelstrap).
+* Статья автора Гранта [Introducing Grunt](http://weblog.bocoup.com/introducing-grunt/).
+* Статья [Meet Grunt: The Build Tool for JavaScript](http://net.tutsplus.com/tutorials/javascript-ajax/meeting-grunt-the-build-tool-for-javascript/) на Nettuts+.

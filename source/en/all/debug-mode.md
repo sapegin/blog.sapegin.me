@@ -3,7 +3,7 @@ layout: post
 lang: en
 title: JavaScript and Stylus conditional compilation (debug mode) in Grunt
 date: Apr 17, 2014
-tags: 
+tags:
   - css
   - tools
 
@@ -27,18 +27,18 @@ You can define such variables via [command line](https://github.com/mishoo/Uglif
 
 ```javascript
 uglify: {
-	options: {
-		compress: {
-			global_defs: {
-				DEBUG: debug  // That very variable
-			}
-		}
-	},
-	main: {
-		files: {
-			"build/scripts.js": "build/scripts.js"
-		}
-	}
+  options: {
+    compress: {
+      global_defs: {
+        DEBUG: debug  // That very variable
+      }
+    }
+  },
+  main: {
+    files: {
+      "build/scripts.js": "build/scripts.js"
+    }
+  }
 }
 ```
 
@@ -50,13 +50,13 @@ Variable usage in JavaScript:
 if (typeof DEBUG === 'undefined') DEBUG = true;
 
 ;(function() {
-	'use strict';
+  'use strict';
 
-	// …
-	if (DEBUG) {
-		alert('This alert will be shown only in debug mode');
-	}
-	// …
+  // …
+  if (DEBUG) {
+    alert('This alert will be shown only in debug mode');
+  }
+  // …
 
 }());
 ```
@@ -67,16 +67,16 @@ if (typeof DEBUG === 'undefined') DEBUG = true;
 
 ```javascript
 stylus: {
-	options: {
-		define: {
-			DEBUG: debug
-		}
-	},
-	compile: {
-		files: {
-			"build/styles.css": "styles/index.styl"
-		}
-	}
+  options: {
+    define: {
+      DEBUG: debug
+    }
+  },
+  compile: {
+    files: {
+      "build/styles.css": "styles/index.styl"
+    }
+  }
 }
 ```
 
@@ -86,5 +86,5 @@ And example:
 DEBUG ?= true
 
 div
-	outline: 1px solid #c0ffee if DEBUG
+  outline: 1px solid #c0ffee if DEBUG
 ```

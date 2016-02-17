@@ -14,44 +14,44 @@ tags:
 
 Вот мой грантфайл (`Gruntfile.coffee`):
 
-```coffeescript
+```coffee
 # gruntjs.com
 
 module.exports = (grunt) ->
-	'use strict'
+  'use strict'
 
-	require('load-grunt-tasks')(grunt)
+  require('load-grunt-tasks')(grunt)
 
-	debug = !!grunt.option('debug')
+  debug = !!grunt.option('debug')
 
-	grunt.initConfig
-		banner: '/* Author: Artem Sapegin, http://sapegin.me, <%= grunt.template.today("yyyy") %> */\n'
-		stylus:
-				options:
-					banner: '<%= banner %>'
-					define:
-						DEBUG: debug
-					use: [
-						() -> require('autoprefixer-stylus')('last 2 versions', 'ie 8', 'ie 9')
-						debug or require('csso-stylus')
-					]
-				compile:
-					files:
-						'build/styles.css': 'styles/index.styl'
-		watch:
-			options:
-				livereload: true
-			stylus:
-				files: 'styles/**'
-				tasks: 'stylus'
+  grunt.initConfig
+    banner: '/* Author: Artem Sapegin, http://sapegin.me, <%= grunt.template.today("yyyy") %> */\n'
+    stylus:
+        options:
+          banner: '<%= banner %>'
+          define:
+            DEBUG: debug
+          use: [
+            () -> require('autoprefixer-stylus')('last 2 versions', 'ie 8', 'ie 9')
+            debug or require('csso-stylus')
+          ]
+        compile:
+          files:
+            'build/styles.css': 'styles/index.styl'
+    watch:
+      options:
+        livereload: true
+      stylus:
+        files: 'styles/**'
+        tasks: 'stylus'
 
-	grunt.registerTask 'default', ['stylus']
+  grunt.registerTask 'default', ['stylus']
 ```
 
 И зависимости:
 
 ```bash
-$ npm install --save-dev grunt load-grunt-tasks grunt-contrib-stylus grunt-contrib-watch autoprefixer-stylus csso-stylus
+npm install --save-dev grunt load-grunt-tasks grunt-contrib-stylus grunt-contrib-watch autoprefixer-stylus csso-stylus
 ```
 
 Я использую [autoprefixer](https://github.com/jenius/autoprefixer-stylus) и [csso](https://github.com/sapegin/csso-stylus) в виде плагинов для Стилуса. То же самое можно было бы сделать и плагинами [autoprefixer](https://github.com/nDmitry/grunt-autoprefixer) и [csso](https://github.com/t32k/grunt-csso) для Гранта, но плагины для Гранта работают с файлами на диске, а плагины для Стилуса — с переменными в памяти. Это позволяет избежать двух лишних операций записи на диск и сильно упрощает грантфайл.

@@ -21,18 +21,18 @@ tags:
 
 ```css
 #pony {
-	display: none;
-	content: 'Pink';
-	font-family: 'Pink';
-	}
+  display: none;
+  content: 'Pink';
+  font-family: 'Pink';
+  }
 ```
 
 Теперь мы можем легко достать нашу строку:
 
 ```javascript
 function getCssString(elem) {
-	var value = elem.css('content') || elem.css('font-family');
-	return value && value.replace(/"/g, '');
+  var value = elem.css('content') || elem.css('font-family');
+  return value && value.replace(/"/g, '');
 }
 
 alert(getCssString($('#pony')));

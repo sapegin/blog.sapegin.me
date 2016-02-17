@@ -14,8 +14,8 @@ tags:
 
 ```javascript
 (function animate() {
-	var block = $('#c1');
-	block.animate({backgroundColor: $.Color(block.css('backgroundColor')).hue('+=179')}, 3000, animate);
+  var block = $('#c1');
+  block.animate({backgroundColor: $.Color(block.css('backgroundColor')).hue('+=179')}, 3000, animate);
 })();
 ```
 
@@ -23,10 +23,10 @@ tags:
 
 ```javascript
 $('#c2').click(function(e) {
-	var block = $(e.target);
-	var color = $.Color(block.css('backgroundColor'));
-	block.animate({backgroundColor: color.lightness('+=0.4')}, 300, function() {
-		block.animate({backgroundColor: color}, 300);
-	});
+  var block = $(e.target);
+  var color = $.Color(block.css('backgroundColor'));
+  block.animate({backgroundColor: color.lightness('+=0.4')}, 300, function() {
+    block.animate({backgroundColor: color}, 300);
+  });
 });
 ```

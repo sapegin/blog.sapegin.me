@@ -19,23 +19,23 @@ Then add this code to your DocPad config ([`docpad.coffee`](https://github.com/s
 
 ```coffee
 docpadConfig = {
-	...
-	environments:
-		en:
-			documentsPaths: ['documents_en']
-			outPath: 'htdocs_en'
-		ru:
-			documentsPaths: ['documents_ru']
-			outPath: 'htdocs_ru'
-	...
+  ...
+  environments:
+    en:
+      documentsPaths: ['documents_en']
+      outPath: 'htdocs_en'
+    ru:
+      documentsPaths: ['documents_ru']
+      outPath: 'htdocs_ru'
+  ...
 }
 ```
 
 Now you can run or generate blog in desired language:
 
-```
-$ docpad run --env en  # Run local server with English version
-$ docpad generate --env ru  # Generate files for Russian version
+```bash
+docpad run --env en  # Run local server with English version
+docpad generate --env ru  # Generate files for Russian version
 ```
 
 ## Translating unser interface
@@ -44,13 +44,13 @@ Create YAML files for every language.
 
 For example, [`src/lang/en.yml`](https://github.com/sapegin/blog.sapegin.me/blob/master/src/lang/en.yml):
 
-```
+```yaml
 lang: en
 url: http://blog.sapegin.me
 title: Artem Sapegin’s Blog
 poweredBy: Powered by <a href="{dp}" class="link">DocPad</a>
 visibleTags:
-  - tools 
+  - tools
   - html
   - css
 tagNames:
@@ -69,47 +69,47 @@ moment = require 'moment'
 _ = require 'lodash'
 
 pluralTypes =
-	en: (n) -> (if n isnt 1 then 1 else 0)
-	ru: (n) -> (if n % 10 is 1 and n % 100 isnt 11 then 0 else (if n % 10 >= 2 and n % 10 <= 4 and (n % 100 < 10 or n % 100 >= 20) then 1 else 2))
+  en: (n) -> (if n isnt 1 then 1 else 0)
+  ru: (n) -> (if n % 10 is 1 and n % 100 isnt 11 then 0 else (if n % 10 >= 2 and n % 10 <= 4 and (n % 100 < 10 or n % 100 >= 20) then 1 else 2))
 
 docpadConfig = {
-	templateData:
-		...
-		# Localized date
-		pubDate: (date) ->
-			moment(date).format('LL')  # December 23 2013
+  templateData:
+    ...
+    # Localized date
+    pubDate: (date) ->
+      moment(date).format('LL')  # December 23 2013
 
-		# Translated string
-		# Will return input string if thanslation not found
-		# You can use simple templates: @_ 'Lorem {num} ipsum', num: 42
-		_: (s, params=null) ->
-			params ?= []
-			s = @site[s] or s
-			s.replace /\{([^\}]+)\}/g, (m, key) ->
-				params[key] or m
+    # Translated string
+    # Will return input string if thanslation not found
+    # You can use simple templates: @_ 'Lorem {num} ipsum', num: 42
+    _: (s, params=null) ->
+      params ?= []
+      s = @site[s] or s
+      s.replace /\{([^\}]+)\}/g, (m, key) ->
+        params[key] or m
 
-		# Plural form: @plural(3, 'dog|dogs')
-		plural: (n, s) ->
-			((@_ s).split '|')[pluralTypes[@site.lang](n)]
+    # Plural form: @plural(3, 'dog|dogs')
+    plural: (n, s) ->
+      ((@_ s).split '|')[pluralTypes[@site.lang](n)]
 
-	events:
-		generateBefore: (opts) ->
-			# Get current language from DocPad’s environment
-			lang = @docpad.getConfig().env
-			# Load translated strings for current language
-			strings = YAML.load("src/lang/#{lang}.yml")
-			_.merge(@docpad.getTemplateData().site, strings)
-			# Configure Moment.js
-			moment.lang(lang)
+  events:
+    generateBefore: (opts) ->
+      # Get current language from DocPad’s environment
+      lang = @docpad.getConfig().env
+      # Load translated strings for current language
+      strings = YAML.load("src/lang/#{lang}.yml")
+      _.merge(@docpad.getTemplateData().site, strings)
+      # Configure Moment.js
+      moment.lang(lang)
 
-		...
+    ...
 }
 ```
 
 Install libraries used in above code from npm:
 
-```
-$ npm install --save-dev yamljs moment lodash
+```bash
+npm install --save-dev yamljs moment lodash
 ```
 
 You can find plural functions for you language in [polyglot.js](https://github.com/airbnb/polyglot.js/blob/master/lib/polyglot.js).
@@ -149,14 +149,14 @@ And few to `docpad.coffee`:
 
 ```coffee
 docpadConfig = {
-	templateData:
-		...
-		# URL of a page in other language or homepage if there’s no translation of that page
-		translationUrl: ->
-			if fs.existsSync "src/documents_#{@site.transLang}/#{@document.relativePath}"
-				"#{@site.transUrl}#{@document.url}"
-			else
-				@site.transUrl
+  templateData:
+    ...
+    # URL of a page in other language or homepage if there’s no translation of that page
+    translationUrl: ->
+      if fs.existsSync "src/documents_#{@site.transLang}/#{@document.relativePath}"
+        "#{@site.transUrl}#{@document.url}"
+      else
+        @site.transUrl
     ...
 }
 ```

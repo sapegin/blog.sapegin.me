@@ -24,19 +24,12 @@ Now I can write text using the simplest format available (Markdown) in the best 
 ## Good parts
 
 * Markdown everywhere.
-
 * The simplest code examples posting.
-
 * “Read more” (was impossible in Aegea).
-
 * Single repository for both English and Russian languages.
-
 * All content can be edited [on GitHub](https://github.com/sapegin/blog.sapegin.me) or [prose.io](http://prose.io/#sapegin/blog.sapegin.me).
-
 * Static HTML: extremely fast, can be hosted everywhere.
-
 * Very easy to change layout or content (compared to WordPress and Aegea).
-
 * It works exactly as I want.
 
 P. S. Read the [source](https://github.com/sapegin/blog.sapegin.me), Luke!

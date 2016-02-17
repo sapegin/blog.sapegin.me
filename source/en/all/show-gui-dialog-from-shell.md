@@ -16,15 +16,15 @@ Show error message:
 
 # error "Message"
 function error() {
-	osascript <<EOT
-		tell app "System Events"
-			display dialog "$1" buttons {"OK"} default button 1 with icon caution with title "$(basename $0)"
-			return  -- Suppress result
-		end tell
+  osascript <<EOT
+    tell app "System Events"
+      display dialog "$1" buttons {"OK"} default button 1 with icon caution with title "$(basename $0)"
+      return  -- Suppress result
+    end tell
 EOT
 }
 
-error "Not enough cheese!" 
+error "Not enough cheese!"
 ```
 
 ![AppleScript error message](/images/mac__shell_dialog_error.png)
@@ -38,10 +38,10 @@ Ask question:
 
 # prompt "Question" "Default value"
 function prompt() {
-	osascript <<EOT
-		tell app "System Events"
-			text returned of (display dialog "$1" default answer "$2" buttons {"OK"} default button 1 with title "$(basename $0)")
-		end tell
+  osascript <<EOT
+    tell app "System Events"
+      text returned of (display dialog "$1" default answer "$2" buttons {"OK"} default button 1 with title "$(basename $0)")
+    end tell
 EOT
 }
 

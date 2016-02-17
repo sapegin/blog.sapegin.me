@@ -19,5 +19,4 @@ I push all my code to GitHub or Bitbucket so it’s not a big deal if Dropbox bl
 There are two more reasons:
 
 1. Previous versions recovery. Finished code could be overwritten just before committing and that happened to me. Dropbox saved me.
-
 2. Repository is a part of a project like, for example, PSD mockups. It’s convenient to store everything in one place. And for me this place is Dropbox.

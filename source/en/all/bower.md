@@ -28,7 +28,7 @@ The main difference between npm and Bower is the approach for installing package
 To work with Bower you’ll need Node.js and git. Installation:
 
 ```bash
-$ npm install -g bower
+npm install -g bower
 ```
 
 ## Working with Packages
@@ -36,7 +36,7 @@ $ npm install -g bower
 Let’s try to install something, for example jQuery:
 
 ```bash
-$ bower install --save jquery  # or bower i -S jquery
+bower install --save jquery  # or bower i -S jquery
 ```
 
 This command will download the latest version of jQuery into the `bower_components/jquery` folder.
@@ -46,7 +46,7 @@ The `--save` flag tells Bower that it should save the package name and its versi
 We don’t have a file like that yet, which is what the line “No bower.json file to save to, use bower init to create one” in the log is about. Let’s create it:
 
 ```bash
-$ bower init
+bower init
 ```
 
 Bower will ask many questions, but until we want to register our package, answers to most of them don’t matter, you can just press Enter.
@@ -56,13 +56,13 @@ The question “Set currently installed components as dependencies?” should be
 Let’s install a few more packages:
 
 ```bash
-$ bower install --save social-likes jquery-icheck fotorama
+bower install --save social-likes jquery-icheck fotorama
 ```
 
 And take a look at what we got:
 
 ```bash
-$ bower list
+bower list
 bower check-new     Checking for new versions of the project dependencies..
 bowertest#0.0.0 /Users/admin/bowertest
 ├─┬ fotorama#4.5.1
@@ -79,14 +79,14 @@ The `bower list` command shows a list of all installed packages. Here we see tha
 In the file system it looks like this:
 
 ```bash
-$ tree -L 2
+tree -L 2
 .
 ├── bower.json
 └── bower_components
-        ├── fotorama
-        ├── jquery
-        ├── jquery-icheck
-        └── social-likes
+    ├── fotorama
+    ├── jquery
+    ├── jquery-icheck
+    └── social-likes
 
 5 directories, 1 file
 ```
@@ -96,13 +96,13 @@ Each package is installed into its own folder, there are no nested packages, and
 For uninstalling packages the `bower uninstall` command is used:
 
 ```bash
-$ bower uninstall --save jquery-icheck  # Или bower un -S jquery-icheck
+bower uninstall --save jquery-icheck  # Или bower un -S jquery-icheck
 ```
 
 You can confidently delete the `bower_components` directory or add it to your `.gitignore`. The `bower install` (without additional parameters) command will return everything to the way it was:
 
 ```bash
-$ bower install
+bower install
 ```
 
 ### Deploying the Project
@@ -127,13 +127,13 @@ Bower has a `bower update` command, but it updates packages with respect to the 
 To update packages (and `bower.json`) to the truly latest version you can use the [bower-update](https://github.com/sapegin/bower-update) utility. Installation:
 
 ```bash
-$ npm install -g bower-update
+npm install -g bower-update
 ```
 
 Launch:
 
 ```bash
-$ bower-update
+bower-update
 ```
 
 ## Searching for Packages
@@ -143,7 +143,7 @@ There are two methods for finding packages with Bower: geeky and normal.
 Geeky:
 
 ```bash
-$ bower search jquery
+bower search jquery
 Search results:
 
         jquery git://github.com/jquery/jquery.git
@@ -159,7 +159,7 @@ Bower puts the problem of project builds on the shoulders of the developer. The 
 
 I use Grunt, so I’ll describe how to concatenate the packages with Grunt. There was a [big article](http://nano.sapegin.ru/all/grunt-0-4) on using Grunt in the June issue of last year, so I’ll show my config of the `grunt-contrib-concat` plugin right away:
 
-```js
+```javascript
 concat: {
     main: {
         src: [
@@ -177,8 +177,7 @@ concat: {
 This method has many downsides: you have to watch the files for each package, make sure that the files are assembled in the right order (for example, jQuery has to be higher than scripts depending on it). The [grunt-bower-concat](https://github.com/sapegin/grunt-bower-concat) plugin
  can do this for you: it automatically concatenates all installed dependencies in the right order into a single file:
 
-
-```js
+```javascript
 bower_concat: {
     all: {
         dest: "build/_bower.js",  // Concatenated file
@@ -203,14 +202,14 @@ concat: {
 
 To make your library available to be installed with Bower it has to be registered. To do this:
 
-- at the root of a project there should be a `bower.json` manifest file.
-- the project should be a git repository (for example on GitHub)
-- the project should use semantic versioning and the repository should have a git tag for the latest version
+* at the root of a project there should be a `bower.json` manifest file.
+* the project should be a git repository (for example on GitHub)
+* the project should use semantic versioning and the repository should have a git tag for the latest version
 
 To create the manifest file the `bower init` command is used:
 
 ```bash
-$ bower init
+bower init
 [?] name: awesomelib
 [?] version: 0.0.1
 [?] description: My awesome jQuery plugin.
@@ -256,25 +255,25 @@ $ bower init
 
 And, although it’s mandatory to fill in the `name` field, other fields are also very useful:
 
-- `description` and `keywords` will help users find your library through the package search interface.
-- `main` determines the main file of the package. Thie field can be used by automatic build systems like `grunt-bower-concat`.
-- `license`—always specify a license: it tells a potential user of your package whether they can use it in their project. For example, the `GPL` license required that every project using it is also released with the same license, which isn’t always possible.
-- `ignore`—by default Bower will download the whole repository, which, firstly, will increase installation time, and, secondly, will add unnecessary files to the project. It’s best to exclude everything except the files required for the package to work (main JS file, CSS, etc.), license and README.
-- `dependencies`—all packages on which your package depends.
+* `description` and `keywords` will help users find your library through the package search interface.
+* `main` determines the main file of the package. Thie field can be used by automatic build systems like `grunt-bower-concat`.
+* `license`—always specify a license: it tells a potential user of your package whether they can use it in their project. For example, the `GPL` license required that every project using it is also released with the same license, which isn’t always possible.
+* `ignore`—by default Bower will download the whole repository, which, firstly, will increase installation time, and, secondly, will add unnecessary files to the project. It’s best to exclude everything except the files required for the package to work (main JS file, CSS, etc.), license and README.
+* `dependencies`—all packages on which your package depends.
 
 Now we need to commit the `bower.json` file, create a git tag with the latest version and push it to the remote repo:
 
 ```bash
-$ git add bower.json
-$ git commit -m "Add bower.json"
-$ git tag "v0.0.1"
-$ git push origin --tags
+git add bower.json
+git commit -m "Add bower.json"
+git tag "v0.0.1"
+git push origin --tags
 ```
 
 Now you can register your package:
 
 ```bash
-$ bower register jquery-awesomeplugin git://github.com/sapegin/jquery-awesomeplugin.git
+bower register jquery-awesomeplugin git://github.com/sapegin/jquery-awesomeplugin.git
 ```
 
 From now on, Bower will check package updates, you just have to create git tags for each new version.

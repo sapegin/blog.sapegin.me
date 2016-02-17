@@ -13,7 +13,7 @@ tags:
 
 ```python
 class MagicPony(models.Model):
-	photo = models.ImageField(_('Photo'), upload_to='uploads/ponies')
+  photo = models.ImageField(_('Photo'), upload_to='uploads/ponies')
 ```
 
 При загрузке файла через HTML-форму проблем не возникает, но, чтобы загрузить изображение с диска, нужно дополнительно обернуть наш файл в объект [File](https://docs.djangoproject.com/en/dev/ref/files/file/):
@@ -22,11 +22,11 @@ class MagicPony(models.Model):
 from django.core.files import File
 
 class PonyTest(TestCase):
-	def test_magic_power(self):
-		file = open('pony.jpg', 'rb')
-		file = File(file)
-		pony = MagicPony.objects.create(photo=file)
-		
-		# Теперь можно писать любые проверки (наличие магической силы,
-		# количество копыт и т. п.)
+  def test_magic_power(self):
+    file = open('pony.jpg', 'rb')
+    file = File(file)
+    pony = MagicPony.objects.create(photo=file)
+
+    # Теперь можно писать любые проверки (наличие магической силы,
+    # количество копыт и т. п.)
 ```
