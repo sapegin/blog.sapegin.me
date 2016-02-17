@@ -15,6 +15,7 @@ tagNames:
   tools: Tools
 twitterName: iamsapegin
 twitterExtra: data-via="iamsapegin"
+postComments: '<a href="{url}" class="link">Leave your comments</a> on Medium.'
 postFeedback: 'You can improve this post <a href="{url}" class="link">by editing it on GitHub</a>.'
 search: Search
 allPosts: All posts

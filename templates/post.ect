@@ -11,6 +11,10 @@
 		<%- @rt @content %>
 	</div>
 
+	<% if @medium: %>
+		<p class="note-feedback no-print"><%- @__ 'postComments', url: "https://medium.com/@sapegin/#{@medium}" %></p>
+	<% end %>
+
 	<p class="note-feedback no-print"><%- @__ 'postFeedback', url: "https://github.com/sapegin/blog.sapegin.me/edit/master/source/#{@sourcePath}" %></p>
 
 	<% @post = this %>
