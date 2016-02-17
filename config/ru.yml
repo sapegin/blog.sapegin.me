@@ -1,9 +1,9 @@
 url: http://nano.sapegin.ru
 title: Наноблог Артёма Сапегина
-description: 'Блог фронтенд-разработчика, который живёт в Берлине, работает в Хире, фотографирует и делает всякие штуки в интернете.'
+description: 'Блог фронтенд-разработчика, который живёт в Берлине, работает в Хире, фотографирует, пишет, гладит собак и пьёт кофе.'
 longDescription: |
-  <p>Меня зовут Тёма. Я живу в Берлине и работаю фронтенд-разработчиком в <a href="https://www.here.com/">Хире</a>, а в свободное время фотографирую и делаю всякие штуки в интернете. А ещё люблю читать книги, гладить своих собак и пить кофе.</p>
-  <p>Читайте обо мне и моих проектах <a href="http://sapegin.me/">на моём сайте</a>. А ещё у меня есть <a href="http://birdwatcher.ru/">блог о фотографии</a>, <a href="http://twitter.com/sapegin">твитер</a> и <a href="https://github.com/sapegin">гитхаб</a>.</p>
+  <p>Я живу в Берлине и работаю фронтенд-разработчиком в <a href="https://www.here.com/">Хире</a>, а в свободное время фотографирую, пишу, глажу своих собак и пью кофе.</p>
+  <p>Читайте обо мне <a href="http://sapegin.me/">на моём сайте</a> и подпишитесь <a href="http://birdwatcher.ru/">на мой блог о фотографии</a> и <a href="http://twitter.com/sapegin">твитер</a>.</p>
 author: Артём Сапегин
 email: artem@sapegin.ru
 copyrightUrl: http://sapegin.ru
@@ -23,7 +23,7 @@ tagNames:
   wordpress: WordPress
 twitterName: sapegin
 twitterExtra: data-via="sapegin"
-postFeedback: 'Вы можете улучшить этот пост, <a href="{url}" class="link">отредактировав его</a> на Гитхабе.'
+postFeedback: 'Вы можете улучшить этот пост, <a href="{url}" class="link">отредактировав его на Гитхабе</a>.'
 search: Поиск
 allPosts: Все посты
 allPostsTagged: '{num, plural, one{# пост} few{# поста} many{# постов} other{# поста}} с тегом <em>{tag}</em>'

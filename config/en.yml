@@ -1,9 +1,9 @@
 url: http://blog.sapegin.me
 title: Artem Sapegin’s Blog
-description: 'Blog of a Berlin based font-end developer who works at Here, shoots photos and makes something awesome on the internet.'
+description: 'Blog of a Berlin based font-end developer who works at Here, makes photos, writes, strokes his dogs and drinks coffee.'
 longDescription: |
-  <p>I’m a front-end developer living in Berlin, Germany. I work at <a href="https://www.here.com/">Here</a>, and in my spare time I love shooting photos and making something awesome on the internet. I also like reading books and stroking my dogs and drinking coffee.</p>
-  <p>Find out <a href="http://sapegin.me/">more about me</a> on my site or follow me <a href="http://twitter.com/iamsapegin">on Twitter</a>.</p>
+  <p>I’m a front-end developer living in Berlin, Germany. I work at <a href="https://www.here.com/">Here</a>, and in my spare time I love making photos, writing, stroking my dogs and drinking coffee.</p>
+  <p>Find out <a href="http://sapegin.me/">more about me</a> on my site or <a href="http://twitter.com/iamsapegin">follow me on Twitter</a>.</p>
 author: Artem Sapegin
 email: artem@sapegin.me
 copyrightUrl: http://sapegin.me
@@ -15,7 +15,7 @@ tagNames:
   tools: Tools
 twitterName: iamsapegin
 twitterExtra: data-via="iamsapegin"
-postFeedback: 'I’ll be happy if you help me to improve this post. You can <a href="{url}" class="link">edit it</a> on GitHub.'
+postFeedback: 'You can improve this post <a href="{url}" class="link">by editing it on GitHub</a>.'
 search: Search
 allPosts: All posts
 allPostsTagged: '{num, plural, =1{One post} other{# posts}} tagged <em>{tag}</em>'
