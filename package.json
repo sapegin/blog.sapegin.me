@@ -20,12 +20,15 @@
     "grunt-fontoptim": "0.1.0",
     "grunt-newer": "~1.1.1",
     "http-server": "~0.8.5",
+    "remark": "~4.1.0",
+    "remark-lint": "~3.0.0",
     "stylobuild": "~0.7.0",
     "sweet2": "~2.0.0",
     "tamia-grunt": "~0.5.1"
   },
   "scripts": {
     "build": "babel-node lib",
+    "lint": "remark --silent source",
     "start-en": "http-server public/en -p 4242 -o",
     "start-ru": "http-server public/ru -p 4243 -o",
     "deploy": "bower install && grunt deploy && npm run build",
