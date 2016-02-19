@@ -12,7 +12,7 @@ Here is a list of the best articles, books and talks about the libraries and too
 
 You can start from [a very good introduction](http://reactkungfu.com/2015/07/the-hitchhikers-guide-to-modern-javascript-tooling/) to modern front-end tooling.
 
-### ECMAScript 6
+## ECMAScript 6
 
 Thanks to [Babel](http://babeljs.io/) we can write in ES6 (official name is ECMAScript 2015).
 
@@ -21,7 +21,7 @@ Thanks to [Babel](http://babeljs.io/) we can write in ES6 (official name is ECMA
 * 📖 [Understanding ECMAScript 6](https://leanpub.com/understandinges6/read/) by Nicholas C. Zakas.
 * 📖 [Exploring ES6](http://exploringjs.com/es6/) by Dr. Axel Rauschmayer.
 
-### React
+## React
 
 Our view layer is [React](https://facebook.github.io/react/).
 
@@ -33,7 +33,7 @@ Our view layer is [React](https://facebook.github.io/react/).
 * [Removing user interface complexity, or why React is awesome](http://jlongster.com/Removing-User-Interface-Complexity,-or-Why-React-is-Awesome) by James Long.
 * [React cheat sheet](http://reactcheatsheet.com/).
 
-### Redux
+## Redux
 
 [Redux](https://github.com/rackt/redux) is an app state container. It means that we store the whole application state (data from server and UI state) in a single immutable tree.
 
@@ -50,7 +50,7 @@ Redux was inspired by the original Facebook’s [Flux architecture](https://fac
 * [Flux for stupid people](http://blog.andrewray.me/flux-for-stupid-people/) by Andrew Ray.
 * [The evolution of Flux frameworks](https://medium.com/@dan_abramov/the-evolution-of-flux-frameworks-6c16ad26bb31) by Dan Abramov.
 
-### Immutable.js
+## Immutable.js
 
 Redux requires that all the data in the store should be immutable. [Immutable.js](https://facebook.github.io/immutable-js/) makes work with immutable data structures easier and (potentially) faster.
 
@@ -58,21 +58,21 @@ Redux requires that all the data in the store should be immutable. [Immutable.js
 * [Immutable data structures and JavaScript](http://jlongster.com/Using-Immutable-Data-Structures-in-JavaScript) by James Long.
 * 📺 [Immutable data and React](https://youtu.be/I7IdS-PbEgI) by Lee Byron, React.js Conf 2015.
 
-### CSS Modules
+## CSS Modules
 
 CSS modules are like [BEM](http://getbem.com/) but they provide real class names uniqueness. And you don’t need to write long class names manually. We use CSS modules with [Sass](http://sass-lang.com/) and [Autoprefixer](https://github.com/postcss/autoprefixer).
 
 * [CSS Modules: welcome to the future](http://glenmaddern.com/articles/css-modules) by Glen Maddern.
 * 📺 [Interoperable CSS](https://youtu.be/aIyhhHTmsXE) by Glen Maddern, CSSconf EU 2015.
 
-### Webpack
+## Webpack
 
 [Webpack](http://webpack.github.io/) allows us to use ES6/JSX syntax (including ES6 modules), import modules from npm and use hot reloading to debug front-end code.
 
 * [A cookbook for using Webpack with React JS](https://christianalfoni.github.io/react-webpack-cookbook/) by Christian Alfoni and Juho Vepsäläinen.
 * 📖 [SurviveJS: Webpack and React](http://survivejs.com/webpack_react/introduction/) by Juho Vepsäläinen.
 
-### Testing
+## Testing
 
 To test React components we use [Mocha](https://mochajs.org/), [Chai](http://chaijs.com/) and React’s [shallow rendering](https://facebook.github.io/react/docs/test-utils.html#shallow-rendering).
 
@@ -83,7 +83,7 @@ And a couple of libraries to make work with shallow rendering easier:
 * [react-shallow-testutils](https://github.com/sheepsteak/react-shallow-testutils), replacement for TestUtils when using React’s shallow rendering.
 * [expect-react-shallow](https://github.com/sapegin/expect-react-shallow), JSX assertions with Chai-like API.
 
-### Other Useful Libraries
+## Other Useful Libraries
 
 Unfortunately, I haven’t found any good articles about these libraries.
 
@@ -92,7 +92,7 @@ Unfortunately, I haven’t found any good articles about these libraries.
 * [React Intl](http://formatjs.io/react/), internationalization for React.
 * [Reselect](https://github.com/rackt/reselect), memoized and composable selectors for Redux.
 
-### Developer Tools
+## Developer Tools
 
 These tools are as useful as all the resources mentioned above.
 
