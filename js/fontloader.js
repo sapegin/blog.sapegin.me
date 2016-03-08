@@ -1,6 +1,6 @@
 // Based on http://bdadam.com/blog/better-webfont-loading-with-localstorage-and-woff2.html
 // This script must be placed in the HEAD above all external stylesheet declarations (link[rel=stylesheet])
-function loadFont(fontName, fontUrlBase) {
+window.loadFont = function(fontName, fontUrlBase) {
 	// 0. Many unsupported browsers should stop here
 	var ua = navigator.userAgent;
 	var noSupport = !window.addEventListener ||  // IE8 and below
@@ -34,7 +34,7 @@ function loadFont(fontName, fontUrlBase) {
 	// 3. Checking whether the font data is already in localStorage and up-to-date
 	if (storedFontCss && storedFontUrlBase === fontUrlBase) {
 		// the css is still in the localStorage AND it was loaded from one of the current URLs
-		
+
 		// 4. Applying the font style sheet
 		styleElement.textContent = storedFontCss;
 	}

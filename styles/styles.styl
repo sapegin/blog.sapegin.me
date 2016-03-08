@@ -44,10 +44,6 @@ body {
 // Text
 
 .text {
-	a {
-		@extend .link;
-	}
-
 	h2,
 	h3 {
 		font-size:1em;
@@ -71,14 +67,14 @@ body {
 		border:solid lighter_color;
 		border-width:0 0 1px;
 	}
-	
+
 	.screenshot_win {
 		margin-side:-13px;
 	}
 	.screenshot_mac {
 		margin:-10px -56px -20px;
 	}
-	
+
 	+below(max_width) {
 		pre code {
 			margin-side:-(spacer);
@@ -97,7 +93,7 @@ body {
 
 .page-title {
 	space(2);
-	font-size:1.4rem;	
+	font-size:1.4rem;
 	font-weight:normal;
 }
 
