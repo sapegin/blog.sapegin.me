@@ -1,7 +1,7 @@
 language: node_js
 node_js:
   - "5"
-after_script:
+before_script:
   - npm run bundle
   - npm run compile
   - npm run build
