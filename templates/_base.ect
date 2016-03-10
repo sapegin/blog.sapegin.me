@@ -6,7 +6,7 @@
 
 	<%- @getMetaTags() %>
 
-	<script><%- @embedFile 'build/inlines/fontloader.js' %>
+	<script><%- @inlineFile 'build/fontloader.js' %>
 	loadFont('PT Serif','/build/ptserif')</script>
 
 	<link href="<%- @fingerprint '/build/styles.css' %>" rel="stylesheet">
@@ -46,7 +46,7 @@
 			<input type="hidden" name="l10n" value="<%= @lang %>">
 			<input type="search" class="search-form__field js-field" name="text" placeholder="<%= @__ 'search' %>" value="">
 		</form>
-		<script><%- @embedFile 'build/inlines/search-form.js' %></script>
+		<script><%- @inlineFile 'build/search-form.js' %></script>
 	</header>
 
 	<% content %>
