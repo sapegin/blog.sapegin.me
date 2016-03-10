@@ -21,7 +21,7 @@
 			</h1>
 		<% else: %>
 			<div class="logo">
-				<a href="/" class="logo__link blind-link"><%= @option 'title' %></a>
+				<a href="/" class="logo__link link"><%= @option 'title' %></a>
 			</div>
 		<% end %>
 
@@ -30,14 +30,14 @@
 				<% if @url is '/all': %>
 					<%= @__ 'allPosts' %>
 				<% else: %>
-					<a href="/all" class="nav__link"><%= @__ 'allPosts' %></a>
+					<a href="/all" class="nav__link link"><%= @__ 'allPosts' %></a>
 				<% end %>
 			</div>
 			<div class="nav__item">
-				<a id="search-link" href="#search" class="nav__link"><%= @__ 'search' %></a>
+				<a id="search-link" href="#search" class="nav__link link"><%= @__ 'search' %></a>
 			</div>
 			<div class="nav__item">
-				<a href="<%= @option 'translationHost' %><%= if @translation then @url else '' %>" class="nav__link"><%= @__ 'translation' %></a>
+				<a href="<%= @option 'translationHost' %><%= if @translation then @url else '' %>" class="nav__link link"><%= @__ 'translation' %></a>
 			</div>
 		</nav>
 
