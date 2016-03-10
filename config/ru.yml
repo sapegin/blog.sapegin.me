@@ -38,7 +38,7 @@ shareOnTwitter: Поделиться постом в Твитере
 shareOnGplus: Поделиться постом в Гугл-плюсе
 readMore: Читать дальше…
 earlier: Ранее
-poweredBy: 'Работает на <a href="https://github.com/sapegin/sweet2" class="link">Свите-2</a>, живёт на <a href="https://www.digitalocean.com/?refcode=bb49cbe65bb4" class="link">Диджиталоушене</a>'
+poweredBy: 'Работает на <a href="https://github.com/sapegin/fledermaus" class="link">Фледермаусе</a>, живёт на <a href="https://www.digitalocean.com/?refcode=bb49cbe65bb4" class="link">Диджиталоушене</a>'
 translationHost: http://blog.sapegin.me
 translation: In English
 searchAction: https://yandex.ru/sitesearch

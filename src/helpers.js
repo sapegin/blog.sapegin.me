@@ -4,7 +4,7 @@ import {
 	getFirstParagraph,
 	getFirstImage,
 	cleanHtml
-} from 'sweet2/lib/util';
+} from 'fledermaus/lib/util';
 
 // Page title
 export function getPageTitle(suffix) {

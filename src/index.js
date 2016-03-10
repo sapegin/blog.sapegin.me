@@ -10,8 +10,8 @@ import {
 	createMarkdownRenderer,
 	createTemplateRenderer,
 	helpers as defaultHelpers
-} from 'sweet2';
-import { MarkdownRenderer } from 'sweet2/lib/renderers/markdown';
+} from 'fledermaus';
+import visit from 'unist-util-visit';
 import * as customHelpers from './helpers';
 
 start('Building blog...');
@@ -19,19 +19,22 @@ start('Building blog...');
 let config = loadConfig('config');
 let options = config.base;
 
-class CustomMarkdownRenderer extends MarkdownRenderer {
-	// Screenshots: /images/mac__shipit.png or /images/win__shipit.png
-	paragraph(text) {
-		let m = text.match(/<img src="\/images\/(\w+)__/);
-		if (m) {
-			return `<div class="screenshot screenshot_${m[1]}">${text}</div>\n`;
+function remarkScreenshot(processor) {
+	return ast => visit(ast, 'paragraph', node => {
+		// Screenshots: /images/mac__shipit.png or /images/win__shipit.png
+		let child = node.children && node.children[0];
+		if (child && child.type === 'image') {
+			let m = child.url.match(/\/(\w+)__/);
+			if (m) {
+				node.children = null;
+				node.type = 'html';
+				node.value = `<div class="screenshot screenshot_${m[1]}"><img src="${child.url}" alt="${child.title || ''}"></div>`;
+			}
 		}
-		return `<p>${text}</p>\n`;
-	}
+	});
 }
-
 let renderMarkdown = createMarkdownRenderer({
-	renderer: CustomMarkdownRenderer
+	plugins: [remarkScreenshot]
 });
 
 let renderTemplate = createTemplateRenderer({

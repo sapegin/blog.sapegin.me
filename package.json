@@ -9,16 +9,17 @@
     "chokidar-cli": "~1.2.0",
     "eslint": "~1.10.3",
     "eslint-config-tamia": "~1.1.0",
+    "fledermaus": "~4.1.0",
     "minimist": "~1.2.0",
     "remark": "~4.1.2",
     "remark-lint": "~3.0.0",
-    "sweet2": "~2.0.0"
+    "unist-util-visit": "~1.0.1"
   },
   "scripts": {
     "start": "tamia server --lang en & npm run build:watch",
     "start:ru": "tamia server --lang ru & npm run build:watch",
     "test": "npm run lint:js && npm run lint:md",
-    "lint:js": "eslint js lib",
+    "lint:js": "eslint js src",
     "lint:md": "remark --quiet source",
     "bundle": "tamia bundle",
     "build": "node lib",
