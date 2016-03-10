@@ -3,8 +3,10 @@ import {
 	meta,
 	getFirstParagraph,
 	getFirstImage,
-	cleanHtml
+	cleanHtml,
 } from 'fledermaus/lib/util';
+
+/* eslint-disable no-invalid-this */
 
 // Page title
 export function getPageTitle(suffix) {
@@ -17,15 +19,13 @@ export function getPageTitle(suffix) {
 		}
 		return cleanHtml(this.title) + (suffix || '');
 	}
-	else {
-		return this.option('title');
-	}
+	return this.option('title');
 }
 
 // OG, Twitter Card and other meta tags
 export function getMetaTags() {
 	let tags = [
-		meta('viewport', 'width=device-width, initial-scale=1.0')
+		meta('viewport', 'width=device-width, initial-scale=1.0'),
 	];
 
 	if (this.noindex) {

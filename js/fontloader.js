@@ -2,13 +2,19 @@
 // This script must be placed in the HEAD above all external stylesheet declarations (link[rel=stylesheet])
 window.loadFont = function(fontName, fontUrlBase) {
 	// 0. Many unsupported browsers should stop here
-	var ua = navigator.userAgent;
-	var noSupport = !window.addEventListener ||  // IE8 and below
-			(ua.match(/(Android (2|3|4.0|4.1|4.2|4.3))|(Opera (Mini|Mobi))/) && !ua.match(/Chrome/)); // Android Stock Browser below 4.4 and Opera Mini
-	if (noSupport) return;
+	let ua = navigator.userAgent;
+	let noSupport =
+		// IE8 and below
+		!window.addEventListener ||
+		// Android Stock Browser below 4.4 and Opera Mini
+		(ua.match(/(Android (2|3|4.0|4.1|4.2|4.3))|(Opera (Mini|Mobi))/) && !ua.match(/Chrome/))
+	;
+	if (noSupport) {
+		return;
+	}
 
 	// 1. Setting up localStorage
-	var loSto = {};
+	let loSto = {};
 	try {
 		// We set up a proxy variable to help with localStorage, e.g. when cookies are disabled
 		// and the browser prevents us accessing it.
@@ -16,17 +22,17 @@ window.loadFont = function(fontName, fontUrlBase) {
 		loSto = localStorage || {};
 	}
 	catch (ex) {
+		/* */
 	}
 
-	var localStoragePrefix = 'font-' + fontName;
-	var localStorageUrlKey = localStoragePrefix + 'url';
-	var localStorageCssKey = localStoragePrefix + 'css';
-	var storedFontUrlBase = loSto[localStorageUrlKey];
-	var storedFontCss = loSto[localStorageCssKey];
-
+	let localStoragePrefix = 'font-' + fontName;
+	let localStorageUrlKey = localStoragePrefix + 'url';
+	let localStorageCssKey = localStoragePrefix + 'css';
+	let storedFontUrlBase = loSto[localStorageUrlKey];
+	let storedFontCss = loSto[localStorageCssKey];
 
 	// 2. Setting up the <style> element, that we are using to apply the base64 encoded font data
-	var styleElement = document.createElement('style');
+	let styleElement = document.createElement('style');
 	styleElement.rel = 'stylesheet';
 	document.head.appendChild(styleElement);
 	// Setting styleElement.textContent must be after this line, because of IE9 errors
@@ -43,10 +49,10 @@ window.loadFont = function(fontName, fontUrlBase) {
 		// So we have to load it again
 
 		// 5. Checking for WOFF2 support to know which URL we should use
-		var url = fontUrlBase + '.woff' + (hasWoff2() ? '2' : '') + '.css';
+		let url = fontUrlBase + '.woff' + (hasWoff2() ? '2' : '') + '.css';
 
 		// 6. Fetching the font data from the server
-		var request = new XMLHttpRequest();
+		let request = new XMLHttpRequest();
 		request.open('GET', url);
 		request.onload = function() {
 			if (request.status >= 200 && request.status < 400) {
@@ -64,9 +70,9 @@ window.loadFont = function(fontName, fontUrlBase) {
 			return false;
 		}
 
-		var f = new FontFace('t', 'url("data:application/font-woff2,") format("woff2")', {});
+		let f = new FontFace('t', 'url("data:application/font-woff2,") format("woff2")', {});
 		f.load();
 
 		return f.status === 'loading';
 	}
-}
+};

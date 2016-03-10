@@ -9,7 +9,7 @@ import {
 	groupDocuments,
 	createMarkdownRenderer,
 	createTemplateRenderer,
-	helpers as defaultHelpers
+	helpers as defaultHelpers,
 } from 'fledermaus';
 import visit from 'unist-util-visit';
 import * as customHelpers from './helpers';
@@ -19,7 +19,7 @@ start('Building blog...');
 let config = loadConfig('config');
 let options = config.base;
 
-function remarkScreenshot(processor) {
+function remarkScreenshot() {
 	return ast => visit(ast, 'paragraph', node => {
 		// Screenshots: /images/mac__shipit.png or /images/win__shipit.png
 		let child = node.children && node.children[0];
@@ -28,36 +28,37 @@ function remarkScreenshot(processor) {
 			if (m) {
 				node.children = null;
 				node.type = 'html';
-				node.value = `<div class="screenshot screenshot_${m[1]}"><img src="${child.url}" alt="${child.title || ''}"></div>`;
+				node.value =
+					`<div class="screenshot screenshot_${m[1]}"><img src="${child.url}" alt="${child.title || ''}"></div>`;
 			}
 		}
 	});
 }
 let renderMarkdown = createMarkdownRenderer({
-	plugins: [remarkScreenshot]
+	plugins: [remarkScreenshot],
 });
 
 let renderTemplate = createTemplateRenderer({
-	root: options.templatesFolder
+	root: options.templatesFolder,
 });
 
-let helpers = {...defaultHelpers, ...customHelpers};
+let helpers = { ...defaultHelpers, ...customHelpers };
 
 let documents = loadSourceFiles(options.sourceFolder, options.sourceTypes, {
 	renderers: {
-		md: renderMarkdown
+		md: renderMarkdown,
 	},
 	// Custom front matter field parsers
 	fieldParsers: {
 		// Save `date` field as a timestamp
 		timestamp: (timestamp, attrs) => Date.parse(attrs.date),
 		// Convert `date` field to a Date object
-		date: (date, attrs) => new Date(Date.parse(date)),
+		date: date => new Date(Date.parse(date)),
 		// Strip language (`en` or `ru`) from the URL (filename)
-		url: url => url.replace(/(en|ru)\//, '')
+		url: url => url.replace(/(en|ru)\//, ''),
 	},
 	// Cut separator
-	cutTag: options.cutTag
+	cutTag: options.cutTag,
 });
 
 // Oder by date, newest first
@@ -75,11 +76,11 @@ documents = languages.reduce((result, lang) => {
 	let translationLang = lang === 'ru' ? 'en' : 'ru';
 	let hasTranslation = (url) => {
 		return !!documentsByLanguage[translationLang].find(doc => doc.url === url);
-	}
+	};
 	docs = docs.map((doc) => {
 		return {
 			...doc,
-			translation: hasTranslation(doc.url)
+			translation: hasTranslation(doc.url),
 		};
 	});
 
@@ -96,7 +97,7 @@ documents = languages.reduce((result, lang) => {
 		postsTotal: docs.length,
 		postsByYear,
 		years,
-		lang
+		lang,
 	});
 
 	// Pagination
@@ -107,8 +108,8 @@ documents = languages.reduce((result, lang) => {
 		layout: 'index',
 		index: true,
 		extra: {
-			lang
-		}
+			lang,
+		},
 	}));
 
 	// Tags
@@ -123,8 +124,8 @@ documents = languages.reduce((result, lang) => {
 			layout: 'tag',
 			extra: {
 				lang,
-				tag
-			}
+				tag,
+			},
 		});
 		return [...tagsResult, ...tagsNewDocs];
 	}, []));
@@ -135,12 +136,12 @@ documents = languages.reduce((result, lang) => {
 		url: `/atom.xml`,
 		layout: 'atom.xml',
 		documents: docs.slice(0, options.postsInFeed),
-		lang
+		lang,
 	});
 
 	return [...result, ...docs, ...newDocs];
 }, []);
 
-let pages = generatePages(documents, config, helpers, {ect: renderTemplate});
+let pages = generatePages(documents, config, helpers, { ect: renderTemplate });
 
 savePages(pages, options.publicFolder);
