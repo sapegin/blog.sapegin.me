@@ -3,5 +3,6 @@ path='sites/blog.sapegin.me'
 
 [deploy:local]
 npm test
+npm run bundle
 npm run build
 rsync --archive --compress --force --delete public/ $SSH_HOST:$SSH_PATH/public
