@@ -1,5 +1,6 @@
-import 'tamia';
 import '../styles/index.styl';
+
+import 'social-likes';
 
 import 'tamia/lib/modules/media';
 import 'tamia/lib/modules/text';

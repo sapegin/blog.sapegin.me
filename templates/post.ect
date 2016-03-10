@@ -22,23 +22,23 @@
 
 	<% unless @unpublished: %>
 		<div class="note-share">
-			<ul class="social-likes social-likes_light" data-title="<%= @title %>" data-single-title="<%= @__ 'share' %>">
-				<li class="facebook" title="<%= @__ 'shareOnFacebook' %>"><%= @__ 'facebook' %></li>
-				<li class="twitter" <%- @__ 'twitterExtra' %> title="<%= @__ 'shareOnTwitter' %>"><%= @__ 'twitter' %></li>
-				<li class="plusone" title="<%= @__ 'shareOnGplus' %>"><%= @__ 'gplus' %></li>
+			<div class="social-likes" data-title="<%= @title %>" data-single-title="<%= @__ 'share' %>">
+				<div data-service="facebook" title="<%= @__ 'shareOnFacebook' %>"><%= @__ 'facebook' %></div>
+				<div data-service="twitter" <%- @__ 'twitterExtra' %> title="<%= @__ 'shareOnTwitter' %>"><%= @__ 'twitter' %></div>
+				<div data-service="plusone" title="<%= @__ 'shareOnGplus' %>"><%= @__ 'gplus' %></div>
 				<% if @lang is 'ru': %>
-					<li class="vkontakte" title="Поделиться постом во Вконтакте">Вконтакте</li>
+					<div data-service="vkontakte" title="Поделиться постом во Вконтакте">Вконтакте</div>
 				<% end %>
-			</ul>
+			</div>
 		</div>
 	<% end %>
 </article>
 
 <div class="about-author media no-print">
 	<div class="about-author__picture media__img"><img src="/images/userpic.jpg" width="75" height="75" alt="<%= @option 'author' %>"></div>
-	<div class="media__body text">
+	<div class="media__body">
 		<%- @rt @__ 'longDescription' %>
 	</div>
 </div>
 
-<script src="<%- @fingerprint '/build/scripts.js' %>" async></script>
+<script src="<%- @fingerprint '/build/main.js' %>" async></script>

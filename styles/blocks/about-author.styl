@@ -13,21 +13,24 @@
 		margin-top:.25em;
 		margin-right:spacer*1.5;
 	}
-	
+
 	p {
 		space();
 	}
 
-	+below(max_width) {
-		margin-side:-(spacer);
-		padding-side:spacer;
+	+below(550px) {
+		margin-side:-(2*spacer);
+		padding-side:2*spacer;
 	}
-	+below(320px) {
+	+below(375px) {
+		&.media {
+			display:block;
+		}
+
 		&__picture {
-			space();
+			space(1.5);
 			margin-top:0;
 			margin-left:0;
-			float:none;
 			text-align:center;
 		}
 	}

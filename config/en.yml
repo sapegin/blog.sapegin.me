@@ -2,8 +2,8 @@ url: http://blog.sapegin.me
 title: Artem Sapegin’s Blog
 description: 'Blog of a Berlin based font-end developer who works at Here, makes photos, writes, strokes his dogs and drinks coffee.'
 longDescription: |
-  <p>I’m a front-end developer living in Berlin, Germany. I work at <a href="https://www.here.com/">Here</a>, and in my spare time I love making photos, writing, stroking my dogs and drinking coffee.</p>
-  <p>Find out <a href="http://sapegin.me/">more about me</a> on my site or <a href="http://twitter.com/iamsapegin">follow me on Twitter</a>.</p>
+  <p>I’m a front-end developer living in Berlin, Germany. I work at <a class="link" href="https://www.here.com/">Here</a>, and in my spare time I love making photos, writing, stroking my dogs and drinking coffee.</p>
+  <p>Find out <a class="link" href="http://sapegin.me/">more about me</a> on my site or <a class="link" href="http://twitter.com/iamsapegin">follow me on Twitter</a>.</p>
 author: Artem Sapegin
 email: artem@sapegin.me
 copyrightUrl: http://sapegin.me

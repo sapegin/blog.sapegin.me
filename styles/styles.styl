@@ -3,19 +3,18 @@
 body {
 	margin-side:auto;
 	padding-top:2*spacer;
-	padding-side:3*spacer;
 	background:bg_color;
 	color:base_color;
 	line-height:1.5;
 	font-size:16px;
 	max-width:max_width;
 }
+body,
 .footer-i {
 	padding-side:3*spacer;
 }
 +below(550px) {
-	body,
-	.footer-i {
+	body {
 		padding-side:2*spacer;
 	}
 }
@@ -44,14 +43,18 @@ body {
 // Text
 
 .text {
+	h1,
 	h2,
 	h3 {
-		font-size:1em;
+		margin-top:4*spacer;
+		margin-bottom:2*spacer;
 	}
 	h2 {
+		font-size:1em;
 		font-weight:bold;
 	}
 	h3 {
+		font-size:1em;
 		font-weight:normal;
 		font-style:italic;
 	}

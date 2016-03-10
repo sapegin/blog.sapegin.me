@@ -3,21 +3,20 @@
   "version": "0.0.0",
   "private": true,
   "devDependencies": {
-    "babel-cli": "~6.5.1",
+    "babel-cli": "~6.6.5",
     "babel-eslint": "~5.0.0",
     "babel-preset-tamia": "~6.5.0",
-    "bower": "~1.6.5",
     "chokidar-cli": "~1.2.0",
     "eslint": "~1.10.3",
     "eslint-config-tamia": "~1.1.0",
-    "remark": "~4.1.1",
+    "minimist": "~1.2.0",
+    "remark": "~4.1.2",
     "remark-lint": "~3.0.0",
-    "stylobuild": "~0.7.0",
     "sweet2": "~2.0.0"
   },
   "scripts": {
-    "start": "tamia server -l en & npm run build:watch",
-    "start:ru": "tamia server -l ru & npm run build:watch",
+    "start": "tamia server --lang en & npm run build:watch",
+    "start:ru": "tamia server --lang ru & npm run build:watch",
     "test": "npm run lint:js && npm run lint:md",
     "lint:js": "eslint js lib",
     "lint:md": "remark --quiet source",
@@ -29,6 +28,6 @@
     "make-debug-symlinks": "ln -s ../images public/en/images; ln -s ../build public/en/build; ln -s ../images public/ru/images; ln -s ../build public/ru/build;"
   },
   "dependencies": {
-    "tamia": "~2.0.1"
+    "tamia": "~2.0.2"
   }
 }
