@@ -26,8 +26,7 @@
     "build": "node lib",
     "build:watch": "chokidar templates source -c 'node lib'",
     "compile": "babel -d lib src",
-    "compile:watch": "babel --watch -d lib src",
-    "make-debug-symlinks": "ln -s ../images public/en/images; ln -s ../build public/en/build; ln -s ../images public/ru/images; ln -s ../build public/ru/build;"
+    "compile:watch": "babel --watch -d lib src"
   },
   "dependencies": {
     "social-likes-next": "~1.0.0-rc",
