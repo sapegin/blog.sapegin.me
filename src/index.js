@@ -91,7 +91,7 @@ documents = languages.reduce((result, lang) => {
 	years.reverse();
 	newDocs.push({
 		sourcePath: `${lang}/all`,
-		url: `/all`,
+		url: '/all',
 		translation: true,
 		layout: 'all',
 		postsTotal: docs.length,
@@ -133,7 +133,7 @@ documents = languages.reduce((result, lang) => {
 	// Atom feed
 	newDocs.push({
 		sourcePath: `${lang}/atom.xml`,
-		url: `/atom.xml`,
+		url: '/atom.xml',
 		layout: 'atom.xml',
 		documents: docs.slice(0, options.postsInFeed),
 		lang,
