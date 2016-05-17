@@ -28,13 +28,10 @@ search: Поиск
 allPosts: Все посты
 allPostsTagged: '{num, plural, one{# пост} few{# поста} many{# постов} other{# поста}} с тегом <em>{tag}</em>'
 allNumPosts: 'Все {num, plural, one{# пост} few{# поста} many{# постов} other{# поста}}'
-share: Поделиться
-facebook: Фейсбук
-twitter: Твитер
-gplus: Гугл+
+facebook: Поделиться
+twitter: Твитнуть
 shareOnFacebook: Поделиться постом на Фейсбуке
 shareOnTwitter: Поделиться постом в Твитере
-shareOnGplus: Поделиться постом в Гугл-плюсе
 readMore: Читать дальше…
 earlier: Ранее
 poweredBy: 'Работает на <a href="https://github.com/sapegin/fledermaus" class="link">Фледермаусе</a>, живёт на <a href="https://www.digitalocean.com/?refcode=bb49cbe65bb4" class="link">Диджиталоушене</a>'
