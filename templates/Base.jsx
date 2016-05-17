@@ -1,6 +1,6 @@
 export default function($, children) {
 	const { lang, title, url, translation } = $;
-	const { getPageTitle, getMetaTags, Style, Script, option, __ } = $;
+	const { getPageTitle, getMetaTags, Style, Script, safe, option, __ } = $;
 	return (
 		<html lang={lang}>
 			<head>
@@ -14,7 +14,7 @@ export default function($, children) {
 
 				<Style src="/build/styles.css" />
 				<Script src="/build/fontloader.js" inline />
-				<script>loadFont('PT Serif','/build/ptserif')</script>
+				<script>{safe("loadFont('PT Serif','/build/ptserif')")}</script>
 			</head>
 			<body>
 				<header class="header">
