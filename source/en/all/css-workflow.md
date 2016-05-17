@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: en
 title: 'My new CSS workflow: Stylus, Autoprefixer, CSSO and Grunt'
 date: Nov 8, 2013

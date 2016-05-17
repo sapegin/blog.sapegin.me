@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: ru
 title: 'Самое тупое сообщение об ошибке на свете'
 date: Feb 3, 2011

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: ru
 title: 'Вёрстка векторного логотипа с использованием SVG'
 date: Jul 27, 2012

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: en
 title: 'WordPress → Aegea → DocPad'
 date: Apr 30, 2013

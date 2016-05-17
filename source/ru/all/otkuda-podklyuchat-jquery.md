@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: ru
 title: 'Откуда подключать jQuery'
 date: Dec 9, 2009

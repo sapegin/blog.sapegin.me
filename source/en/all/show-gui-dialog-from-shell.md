@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: en
 title: 'How to show GUI dialog window from shell script on a Mac'
 date: Nov 12, 2014

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: ru
 title: 'Запуск TortoiseGit из командной строки'
 date: Apr 26, 2012

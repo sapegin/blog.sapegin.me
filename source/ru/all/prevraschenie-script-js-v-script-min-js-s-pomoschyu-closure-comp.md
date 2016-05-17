@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: ru
 title: 'Превращение script.js в script.min.js с помощью Closure Compiler'
 date: Jan 25, 2011

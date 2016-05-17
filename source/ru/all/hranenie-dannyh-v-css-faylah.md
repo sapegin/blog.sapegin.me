@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: ru
 title: 'Хранение данных в CSS-файлах'
 date: Feb 16, 2012

@@ -1,4 +1,10 @@
 {
 	"parser": "babel-eslint",
-	"extends": "tamia"
+	"extends": "tamia/react",
+	"rules": {
+		"no-confusing-arrow": 0,
+		"react/react-in-jsx-scope": 0,
+		"react/no-unknown-property": 0,
+		"react/prop-types": 0
+	}
 }

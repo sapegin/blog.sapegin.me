@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: en
 title: 'Going wavy'
 date: Nov 27, 2014

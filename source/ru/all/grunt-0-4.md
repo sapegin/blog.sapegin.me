@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: ru
 title: 'Grunt 0.4: система сборки для фронтенд-разработчиков'
 date: Feb 19, 2013

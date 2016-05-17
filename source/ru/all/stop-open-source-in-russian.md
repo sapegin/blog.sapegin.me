@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: ru
 title: 'Опенсорса на русском языке не существует'
 date: Jul 17, 2014

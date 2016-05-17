@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: ru
 title: 'CSS3 transition фона: кое-какие детали'
 date: Jun 1, 2011

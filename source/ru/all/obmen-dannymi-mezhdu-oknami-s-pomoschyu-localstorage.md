@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: ru
 title: 'Обмен данными между окнами с помощью localStorage'
 date: Apr 26, 2011

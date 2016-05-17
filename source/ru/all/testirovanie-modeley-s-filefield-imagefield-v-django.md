@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: ru
 title: 'Тестирование моделей с FileField/ImageField в Django'
 date: Jul 13, 2011

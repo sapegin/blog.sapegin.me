@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: ru
 title: 'Анимация цвета с помощью плагина jQuery.Color()'
 date: Jun 22, 2011

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: ru
 title: 'Квадратные миниатюрки в Python'
 date: Jan 13, 2011

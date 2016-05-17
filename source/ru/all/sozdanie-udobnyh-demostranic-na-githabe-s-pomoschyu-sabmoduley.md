@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: ru
 title: 'Создание удобных демостраниц на Гитхабе с помощью сабмодулей'
 date: Feb 8, 2012

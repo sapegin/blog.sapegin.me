@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: ru
 title: 'Правильная постраничная навигация в WordPress 2.8'
 date: Jun 16, 2009

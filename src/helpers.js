@@ -3,24 +3,9 @@ import {
 	meta,
 	getFirstParagraph,
 	getFirstImage,
-	cleanHtml,
 } from 'fledermaus/lib/util';
 
 /* eslint-disable no-invalid-this */
-
-// Page title
-export function getPageTitle(suffix) {
-	if (this.pageTitle) {
-		return this.pageTitle;
-	}
-	if (this.title) {
-		if (suffix === undefined) {
-			suffix = ' — ' + this.option('title');
-		}
-		return cleanHtml(this.title) + (suffix || '');
-	}
-	return this.option('title');
-}
 
 // OG, Twitter Card and other meta tags
 export function getMetaTags() {
@@ -28,13 +13,13 @@ export function getMetaTags() {
 		meta('viewport', 'width=device-width, initial-scale=1.0'),
 	];
 
-	if (this.noindex) {
+	if (this.noIndex) {
 		tags.push(meta('robots', 'noindex follow'));
 	}
 
 	let twType;
 	let ogType;
-	if (this.isHome()) {
+	if (this.url === '/') {
 		ogType = 'website';
 	}
 	else if (this.layout === 'post') {
@@ -43,7 +28,7 @@ export function getMetaTags() {
 	}
 
 	if (!twType && !ogType) {
-		return tags.join('\n');
+		return tags;
 	}
 
 	let title = this.getPageTitle(false) || this.title || this.option('title');
@@ -94,5 +79,5 @@ export function getMetaTags() {
 		);
 	}
 
-	return tags.join('\n');
+	return tags;
 }

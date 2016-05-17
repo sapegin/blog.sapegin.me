@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: ru
 title: 'Шаблоны для jQuery (плагин jquery-tmpl)'
 date: Jan 26, 2011

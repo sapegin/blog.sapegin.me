@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: ru
 title: 'Автоматизация запуска тестов с помощью Travis CI'
 date: Apr 19, 2013

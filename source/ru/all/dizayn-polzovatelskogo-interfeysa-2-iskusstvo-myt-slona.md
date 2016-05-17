@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: ru
 title: 'Дизайн пользовательского интерфейса 2. Искусство мыть слона'
 date: Mar 13, 2009

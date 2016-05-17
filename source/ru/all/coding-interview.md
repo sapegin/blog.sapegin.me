@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: ru
 title: 'Заметки о собеседованиях для веб-разработчиков'
 date: Aug  7, 2015

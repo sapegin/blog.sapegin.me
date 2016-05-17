@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: ru
 title: 'Создание файлов и структуры проекта по шаблонам с помощью Grunt'
 date: Apr 28, 2012

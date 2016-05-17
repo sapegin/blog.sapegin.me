@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: ru
 title: 'Наноблог 2.0: теперь лимонный'
 date: Aug 7, 2012

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: ru
 title: 'Тухнущая корзина'
 date: Dec 8, 2008

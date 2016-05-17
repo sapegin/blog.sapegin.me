@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: ru
 title: 'Фотошоп для веб-разработчика'
 date: Mar 31, 2009

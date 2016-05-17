@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: en
 title: 'Open source for everyone'
 date: Apr  9, 2014

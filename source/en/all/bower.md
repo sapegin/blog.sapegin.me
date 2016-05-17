@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: en
 title: 'Bower: Why Front-End Needs a Package Manager'
 date: Jul 24, 2014

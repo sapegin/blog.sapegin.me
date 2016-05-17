@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: en
 title: 'Read less tech books'
 date: Feb 20, 2014

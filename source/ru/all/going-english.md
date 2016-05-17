@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: ru
 title: 'Нельзя просто взять и сделать блог на английском'
 date: Apr  9, 2014

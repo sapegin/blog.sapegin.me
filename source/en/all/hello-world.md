@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: en
 title: "alert('Hello world!');"
 date: Apr 11, 2013

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: ru
 title: 'WordPress → Эгея → DocPad'
 date: May 7, 2013

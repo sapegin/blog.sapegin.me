@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: ru
 title: 'Как отключить обратную связь планшета в Windows 7'
 date: May 15, 2010

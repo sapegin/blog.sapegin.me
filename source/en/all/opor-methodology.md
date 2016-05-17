@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: en
 title: 'My front-end methodology: OPOR (One Page of Rules), or BEM for small sites'
 date: May 6, 2013

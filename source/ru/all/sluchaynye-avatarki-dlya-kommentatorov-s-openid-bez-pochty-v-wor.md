@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: ru
 title: 'Случайные аватарки для комментаторов с OpenID без почты в Wordpress'
 date: Nov 3, 2009

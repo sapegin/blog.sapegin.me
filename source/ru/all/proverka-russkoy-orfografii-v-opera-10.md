@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: ru
 title: 'Проверка русской орфографии в Opera 10'
 date: May 28, 2009

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 title: 'Don’t Touch jQuery'
 date: Feb 12, 2016
 lang: en

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: ru
 title: 'Стиль HTML-кода: HTML, XHTML и снова HTML'
 date: Oct 25, 2011

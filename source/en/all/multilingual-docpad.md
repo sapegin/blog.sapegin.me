@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: en
 title: 'Multilingual blog on DocPad'
 date: Apr 14, 2014

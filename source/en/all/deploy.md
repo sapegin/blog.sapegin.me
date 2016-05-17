@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: en
 title: 'Simple site deploy from Git'
 date: Apr 24, 2014

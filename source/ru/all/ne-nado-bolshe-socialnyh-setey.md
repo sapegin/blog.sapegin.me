@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: ru
 title: 'Не надо больше социальных сетей'
 date: Nov 28, 2011

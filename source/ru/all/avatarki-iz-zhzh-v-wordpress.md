@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: ru
 title: 'Аватарки из ЖЖ в Wordpress'
 date: Nov 10, 2009

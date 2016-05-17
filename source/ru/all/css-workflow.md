@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: ru
 title: 'Как я работаю с CSS: Stylus, Autoprefixer, CSSO и Grunt'
 date: Nov 11, 2013

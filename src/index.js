@@ -1,3 +1,5 @@
+import find from 'lodash/find';
+import visit from 'unist-util-visit';
 import {
 	start,
 	loadConfig,
@@ -11,7 +13,6 @@ import {
 	createTemplateRenderer,
 	helpers as defaultHelpers,
 } from 'fledermaus';
-import visit from 'unist-util-visit';
 import * as customHelpers from './helpers';
 
 start('Building blog...');
@@ -93,7 +94,7 @@ documents = languages.reduce((result, lang) => {
 		sourcePath: `${lang}/all`,
 		url: '/all',
 		translation: true,
-		layout: 'all',
+		layout: 'All',
 		postsTotal: docs.length,
 		postsByYear,
 		years,
@@ -105,7 +106,7 @@ documents = languages.reduce((result, lang) => {
 		sourcePathPrefix: lang,
 		urlPrefix: '/',
 		documentsPerPage: options.postsPerPage,
-		layout: 'index',
+		layout: 'Index',
 		index: true,
 		extra: {
 			lang,
@@ -121,7 +122,7 @@ documents = languages.reduce((result, lang) => {
 			sourcePathPrefix: `${lang}/tags/${tag}`,
 			urlPrefix: `/tags/${tag}`,
 			documentsPerPage: options.postsPerPage,
-			layout: 'tag',
+			layout: 'Tag',
 			extra: {
 				lang,
 				tag,
@@ -130,18 +131,22 @@ documents = languages.reduce((result, lang) => {
 		return [...tagsResult, ...tagsNewDocs];
 	}, []));
 
-	// Atom feed
+	// RSS feed
 	newDocs.push({
 		sourcePath: `${lang}/atom.xml`,
 		url: '/atom.xml',
-		layout: 'atom.xml',
-		documents: docs.slice(0, options.postsInFeed),
+		layout: 'RSS',
+		items: docs.slice(0, options.postsInFeed),
+		title: config[lang].title,
+		description: config[lang].description,
+		copyright: config[lang].author,
+		imageUrl: '/images/userpic.jpg',
 		lang,
 	});
 
 	return [...result, ...docs, ...newDocs];
 }, []);
 
-let pages = generatePages(documents, config, helpers, { ect: renderTemplate });
+let pages = generatePages(documents, config, helpers, { jsx: renderTemplate });
 
 savePages(pages, options.publicFolder);

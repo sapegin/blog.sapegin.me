@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: ru
 title: 'Маленький пример использования deferred-объектов в jQuery 1.5'
 date: Feb 2, 2011

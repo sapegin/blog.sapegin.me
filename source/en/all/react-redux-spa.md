@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 title: 'React and Redux Single Page Applications Resources'
 date: Jan 14, 2016
 lang: en

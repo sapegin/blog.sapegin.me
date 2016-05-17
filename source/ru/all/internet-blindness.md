@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: ru
 title: 'Как не ослепнуть в интернете'
 date: Jul 15, 2014

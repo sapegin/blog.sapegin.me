@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: ru
 title: 'Что внутри у сайта?'
 date: Feb 11, 2011

@@ -5,11 +5,14 @@
   "devDependencies": {
     "babel-cli": "~6.8.0",
     "babel-eslint": "~6.0.4",
+    "babel-plugin-transform-react-jsx": "~6.8.0",
     "babel-preset-tamia": "~6.5.0",
     "chokidar-cli": "~1.2.0",
     "eslint": "~2.9.0",
     "eslint-config-tamia": "~2.0.0",
-    "fledermaus": "~4.1.0",
+    "eslint-plugin-react": "~5.1.1",
+    "fledermaus": "~5.0.0",
+    "lodash": "~4.12.0",
     "minimist": "~1.2.0",
     "remark": "~4.2.0",
     "remark-lint": "~3.2.0",
@@ -20,14 +23,11 @@
     "start": "tamia server --lang en & npm run build:watch",
     "start:ru": "tamia server --lang ru & npm run build:watch",
     "test": "npm run lint:js && npm run lint:md",
-    "lint:js": "eslint js src",
+    "lint:js": "eslint js src templates",
     "lint:md": "remark --quiet source",
     "bundle": "tamia bundle",
-    "build": "node lib",
-    "build:es": "babel-node src",
-    "build:watch": "chokidar templates source -c 'node lib'",
-    "compile": "babel -d lib src",
-    "compile:watch": "babel --watch -d lib src"
+    "build": "babel-node src",
+    "build:watch": "chokidar templates source src -c 'babel-node src'"
   },
   "dependencies": {
     "social-likes-next": "~1.0.0",

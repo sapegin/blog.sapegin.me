@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: ru
 title: 'Микрометодология вёрстки OPOR'
 date: Nov 27, 2012

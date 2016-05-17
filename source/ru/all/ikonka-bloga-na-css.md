@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: ru
 title: 'Иконка блога на CSS'
 date: Nov 19, 2008

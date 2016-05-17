@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: ru
 title: 'Шаблоны в JavaScript (doT.js + плагин для jQuery)'
 date: Aug 16, 2012

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: ru
 title: 'О простых и сложных инструментах'
 date: Oct 12, 2011

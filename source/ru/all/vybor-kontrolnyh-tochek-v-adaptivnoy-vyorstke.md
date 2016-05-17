@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: ru
 title: 'Выбор контрольных точек в адаптивной вёрстке'
 date: Oct 30, 2012

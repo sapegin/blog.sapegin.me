@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: ru
 title: 'Вёрстка примеров кода с индикаторами переносов строк'
 date: Apr 27, 2011

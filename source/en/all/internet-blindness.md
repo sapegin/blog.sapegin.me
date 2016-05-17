@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: en
 title: 'How not to go blind on the internet'
 date: Jul 16, 2014

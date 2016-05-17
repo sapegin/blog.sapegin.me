@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: ru
 title: 'Фреймворки, бутстрапы и другие друзья разработчика'
 date: Apr 17, 2013

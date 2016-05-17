@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 title: 'A few notes about web developer’s interviews'
 date: Sep 1, 2015
 lang: en

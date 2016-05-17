@@ -22,7 +22,6 @@ tagNames:
   windows: Windows
   wordpress: WordPress
 twitterName: sapegin
-twitterExtra: data-via="sapegin"
 goingEnglish: Вероятнее всего новые посты будут выходить только <a href="http://blog.sapegin.me/" class="link">на английском языке</a>.
 postFeedback: 'Вы можете улучшить этот пост, <a href="{url}" class="link">отредактировав его на Гитхабе</a>.'
 search: Поиск

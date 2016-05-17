@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: ru
 title: 'Опенсорс для всех'
 date: Mar 31, 2014
@@ -21,6 +21,6 @@ tags:
 
 ![GitHub: отправка пулреквеста](/images/github_pull_request.png)
 
-Описываете ваши изменения и нажимаете кнопку Send pull request. 
+Описываете ваши изменения и нажимаете кнопку Send pull request.
 
 Всё, вы сделали мир чуть-чуть лучше.

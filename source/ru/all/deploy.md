@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: ru
 title: 'Простой деплой сайта на хостинг из Git-репозитория'
 date: Dec 11, 2013

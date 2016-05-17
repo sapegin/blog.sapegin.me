@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: en
 title: 'Making frameworks, bootstraps and other developer’s friends'
 date: Apr 18, 2013

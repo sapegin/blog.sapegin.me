@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: ru
 title: 'Тестирование сайтов'
 date: Mar 31, 2009

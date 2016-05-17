@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 title: 'Importance of the developer experience in the modern front-end'
 date: Nov 21, 2015
 lang: en

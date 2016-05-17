@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: ru
 title: 'Bower: зачем фронтенду нужен менеджер пакетов'
 date: Jun 23, 2014

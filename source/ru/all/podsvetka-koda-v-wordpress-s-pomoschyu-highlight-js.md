@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: ru
 title: 'Подсветка кода в WordPress с помощью highlight.js'
 date: Jun 7, 2011

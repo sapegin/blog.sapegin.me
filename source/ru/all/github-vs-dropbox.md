@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: ru
 title: 'Гитхаб или Дропбокс. Откуда вообще взялось «или»?'
 date: Jan 15, 2014

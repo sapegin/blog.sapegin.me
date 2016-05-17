@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: ru
 title: 'Поиск бесплатных иконок'
 date: Nov 19, 2008

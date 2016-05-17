@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: ru
 title: Почему я не люблю Java и нестандартные интерфейсы
 date: "Nov 22, 2006"

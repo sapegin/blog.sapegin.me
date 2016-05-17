@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: ru
 title: 'Что важнее: код или продукт, и нужно ли скрывать свой код'
 date: Jan 17, 2012

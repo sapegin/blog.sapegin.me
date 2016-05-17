@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: ru
 title: 'Адаптивный, отзывчивый… главное — результат'
 date: Jul 23, 2012

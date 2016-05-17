@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: ru
 title: 'Долой версии программ!'
 date: Feb 8, 2012

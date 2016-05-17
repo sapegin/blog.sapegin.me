@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 lang: ru
 title: 'Передача контекста в обработчики событий в jQuery'
 date: Jan 13, 2011
