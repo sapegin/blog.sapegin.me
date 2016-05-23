@@ -3,5 +3,4 @@ node_js:
   - "5"
 before_script:
   - npm run bundle
-  - npm run compile
   - npm run build
