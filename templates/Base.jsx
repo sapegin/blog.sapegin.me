@@ -30,7 +30,7 @@ export default function($, children) {
 
 					<nav class="nav">
 						<div class="nav__item">
-							{url === '/' ? (
+							{url === '/all' ? (
 								__('allPosts')
 							) : (
 								<a href="/all" class="nav__link link">{__('allPosts')}</a>
