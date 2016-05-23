@@ -1,4 +1,3 @@
-import find from 'lodash/find';
 import visit from 'unist-util-visit';
 import {
 	start,

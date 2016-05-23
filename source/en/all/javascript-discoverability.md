@@ -16,8 +16,8 @@ But as user of these small libraries I always struggle with finding the right pa
 1. [npm has almost 250 000 packages](https://www.npmjs.com/) and most of them are bad: no tests, no license, no docs, readme in Chinese, even no code sometimes.
 2. Many packages do the same thing and even have almost identical code.
 3. Many packages were abandoned: no updates, author doesn’t use them either.
-3. People still publish their packages on Bower only.
-4. Sometimes it’s hard to understand what to search: what the right thing to outsource is and what could possibly have been done before.
+4. People still publish their packages on Bower only.
+5. Sometimes it’s hard to understand what to search: what the right thing to outsource is and what could possibly have been done before.
 
 Juho Vepsäläinen has [a list of npm search tools](http://www.nixtu.info/2016/02/discovery-and-quality-services-for-npm.html) but they don’t solve the problem.
 
