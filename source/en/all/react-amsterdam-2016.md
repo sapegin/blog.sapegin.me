@@ -3,6 +3,7 @@ layout: post
 title: 'React Amsterdam 2016'
 date: Apr 20, 2016
 lang: en
+medium: react-amsterdam-2016-20e1052b09f1
 tags:
   - javascript
   - education
