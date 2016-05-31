@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 title: 'Why I wrote another static site generator'
 date: May 26, 2016
 lang: en
@@ -8,7 +8,7 @@ tags:
   - tools
 ---
 
-For many years I was struggling every time I was using a someone else’s engine to build one of my sites. I’ve tried [WordPress](https://wordpress.com/), [Koken](http://koken.me/), [Aegea](http://blogengine.ru/), [Django](https://www.djangoproject.com/), [DocPad](http://docpad.org/) and [Hexo](https://hexo.io/). Now all my personal sites (this blog, [homepage](http://sapegin.me/) and [photo portfolio](http://morning.photos/)) works on my own static site generator — [Fledermaus](https://github.com/sapegin/fledermaus) — and I’ve never been more happy.
+For many years I was struggling every time I was using a someone else’s engine to build one of my sites. I’ve tried [WordPress](https://wordpress.com/), [Koken](http://koken.me/), [Aegea](http://blogengine.ru/), [Django](https://www.djangoproject.com/), [DocPad](http://docpad.org/) and [Hexo](https://hexo.io/). Now all my personal sites (this blog, [homepage](http://sapegin.me/) and [photo portfolio](http://morning.photos/)) work on my own static site generator — [Fledermaus](https://github.com/sapegin/fledermaus) — and I’ve never been more happy.
 
 It’s not my first engine:
 
@@ -18,9 +18,9 @@ It’s not my first engine:
 * Springhare: Python based gallery engine, unfinished (the project was too big for one developer with limited time).
 * Others that I don’t remember.
 
-Experience with other engines have taught me how an engine shouldn’t be implemented.
+Experience with other engines has taught me how an engine shouldn’t be implemented.
 
-Usual site engine is a massive piece of code that’s optimized for a few the most popular use cases. But if you want anything else you have to suffer. It’s either too hard or not possible at all. Often you end up with an ugly unstable code that breaks after every engine update.
+Usual site engine is a massive piece of code that’s optimized for a few the most popular use cases. But if you want something else you have to suffer: it’s either too hard or not possible at all. Often you end up with an ugly unstable code that breaks after every engine update.
 
 It’s like in Joe Armstrong’s [famous saying](http://www.johndcook.com/blog/2011/07/19/you-wanted-banana/) about object-oriented programming:
 
