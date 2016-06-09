@@ -118,7 +118,7 @@ An unusual but interesting talk about using making games with React.
 
 Two lightning talks.
 
-[Robert Haritonov](https://twitter.com/operatino), Liberty Global. [Slides](https://speakerdeck.com/operatino/the-developers-guide-to-the-react-component-libraries).
+[Robert Haritonov](https://twitter.com/operatino), Liberty Global. [Video](https://youtu.be/cvsp7vLAIUk), [slides](https://speakerdeck.com/operatino/the-developers-guide-to-the-react-component-libraries).
 
 * “React is a library to build reusable UI components.” [Christopher Chedeau](https://twitter.com/vjeux)
 * Build independent reusable components.
@@ -127,14 +127,14 @@ Two lightning talks.
   * [React Storybook](https://github.com/kadirahq/react-storybook),
   * [SourceJS](https://sourcejs.com/).
 
-[Denis Radin](https://twitter.com/pixelscommander), Liberty Global.
+[Denis Radin](https://twitter.com/pixelscommander), Liberty Global. [Video](https://youtu.be/2E7JYEOqAyw), [slides](https://speakerdeck.com/reactamsterdam/denis-radin-liberty-global-amsterdam-connect-discover-be-free).
 
 * Abstracting your component rendering lets you render your app in any environment.
 * WebGL instead of DOM because DOM requires too much memory and slower.
 
 ### Testing React Applications
 
-[Jack Franklin](https://twitter.com/jack_franklin), Pusher. [Slides](https://speakerdeck.com/jackfranklin/testing-react-applications-react-amsterdam-2016).
+[Jack Franklin](https://twitter.com/jack_franklin), Pusher. [Video](https://youtu.be/KBhHsYlF4mQ), [slides](https://speakerdeck.com/jackfranklin/testing-react-applications-react-amsterdam-2016).
 
 A good introduction to testing in React.
 
@@ -146,13 +146,13 @@ A good introduction to testing in React.
 
 ### Introducing and Implementing React at Coolblue
 
-[Paul van Dam](https://github.com/pcvandamcb), Coolblue.
+[Paul van Dam](https://github.com/pcvandamcb), Coolblue. [Video](https://youtu.be/3aHCYceqOrU), [slides](https://speakerdeck.com/reactamsterdam/paul-van-dam-coolblue-rotterdam-introducing-and-implementing-react-at-coolblue).
 
 * “The biggest advantage of using React is the refactorability. It’s easy to refactor and iterate on.” [Leland Richardson](https://twitter.com/intelligibabble).
 
 ### Transparent Reactive Programming and Mutable Data Structures
 
-[Michel Weststrate](https://twitter.com/mweststrate). [Slides](https://docs.google.com/presentation/d/1tP0VWjproXsZex3R8zWCA7Bra7RtMcu4daJXCUbs8pc/edit?usp=sharing).
+[Michel Weststrate](https://twitter.com/mweststrate). [Video](https://youtu.be/ApmSsu3qnf0), [slides](https://docs.google.com/presentation/d/1tP0VWjproXsZex3R8zWCA7Bra7RtMcu4daJXCUbs8pc/edit?usp=sharing).
 
 Redux fatigue talk about the [MobX](https://github.com/mobxjs/mobx).
 
@@ -179,7 +179,7 @@ Redux fatigue talk about the [MobX](https://github.com/mobxjs/mobx).
 
 ### Solving a Tooling Problem for React Native
 
-[Alexey Kureev](https://twitter.com/kureevalexey), [Mike Grabowski](https://twitter.com/grabbou). [Slides](https://speakerdeck.com/grabbou/solving-a-react-native-tooling-problem).
+[Alexey Kureev](https://twitter.com/kureevalexey), [Mike Grabowski](https://twitter.com/grabbou). [Video](https://youtu.be/iF6lNtqFLKY), [slides](https://speakerdeck.com/grabbou/solving-a-react-native-tooling-problem).
 
 Talk about [rnpm](https://github.com/rnpm/rnpm), package manager for React Native. I’m not very interested in the subject but the guys were very well prepared.
 
