@@ -19,24 +19,7 @@ start('Building blog...');
 let config = loadConfig('config');
 let options = config.base;
 
-function remarkScreenshot() {
-	return ast => visit(ast, 'paragraph', node => {
-		// Screenshots: /images/mac__shipit.png or /images/win__shipit.png
-		let child = node.children && node.children[0];
-		if (child && child.type === 'image') {
-			let m = child.url.match(/\/(\w+)__/);
-			if (m) {
-				node.children = null;
-				node.type = 'html';
-				node.value =
-					`<div class="screenshot screenshot_${m[1]}"><img src="${child.url}" alt="${child.title || ''}"></div>`;
-			}
-		}
-	});
-}
-let renderMarkdown = createMarkdownRenderer({
-	plugins: [remarkScreenshot],
-});
+let renderMarkdown = createMarkdownRenderer();
 
 let renderTemplate = createTemplateRenderer({
 	root: options.templatesFolder,
