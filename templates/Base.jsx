@@ -40,7 +40,7 @@ export default function($, children) {
 							<a id="search-link" href="#search" class="nav__link link">{__('search')}</a>
 						</div>
 						<div class="nav__item">
-							<a href={option('translationHost') + translation ? url : ''} class="nav__link link">
+							<a href={option('translationHost') + (translation ? url : '')} class="nav__link link">
 								{__('translation')}
 							</a>
 						</div>
