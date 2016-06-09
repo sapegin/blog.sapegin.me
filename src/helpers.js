@@ -56,7 +56,7 @@ export function getMetaTags() {
 			image = firstImage;
 		}
 	}
-	if (!image) {
+	if (image) {
 		image = this.absolutizeUrl('/images/userpic.jpg');
 	}
 
