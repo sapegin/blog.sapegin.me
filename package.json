@@ -11,7 +11,7 @@
     "eslint": "~2.10.2",
     "eslint-config-tamia": "~2.0.1",
     "eslint-plugin-react": "~5.1.1",
-    "fledermaus": "~5.0.1",
+    "fledermaus": "~5.0.2",
     "lodash": "~4.13.1",
     "minimist": "~1.2.0",
     "remark": "~4.2.2",

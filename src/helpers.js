@@ -56,8 +56,8 @@ export function getMetaTags() {
 			image = firstImage;
 		}
 	}
-	if (image) {
-		image = this.absolutizeUrl('/images/userpic.jpg');
+	if (!image) {
+		image = '/images/userpic.jpg';
 	}
 
 	tags.push(
@@ -67,7 +67,7 @@ export function getMetaTags() {
 		og('og:url', this.absolutizeUrl(this.url)),
 		og('og:site_name', this.option('title')),
 		og('og:description', description),
-		og('og:image', image)
+		og('og:image', this.absolutizeUrl(image))
 	);
 
 	if (twType) {
