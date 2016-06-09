@@ -1,7 +1,7 @@
 ---
 layout: Post
 lang: en
-title: 'Read less tech books'
+title: 'Read Less Tech Books'
 date: Feb 20, 2014
 tags:
   - thoughts

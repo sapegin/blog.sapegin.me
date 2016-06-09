@@ -1,7 +1,7 @@
 ---
 layout: Post
 lang: en
-title: 'Multilingual blog on DocPad'
+title: 'Multilingual Blog on DocPad'
 date: Apr 14, 2014
 tags:
   - tools

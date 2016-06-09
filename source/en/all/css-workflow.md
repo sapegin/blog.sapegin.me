@@ -1,7 +1,7 @@
 ---
 layout: Post
 lang: en
-title: 'My new CSS workflow: Stylus, Autoprefixer, CSSO and Grunt'
+title: 'My new CSS Workflow: Stylus, Autoprefixer, CSSO and Grunt'
 date: Nov 8, 2013
 tags:
   - tools

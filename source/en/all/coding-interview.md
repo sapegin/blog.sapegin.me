@@ -1,6 +1,6 @@
 ---
 layout: Post
-title: 'A few notes about web developer’s interviews'
+title: 'A Few Notes about Web Developer’s Interviews'
 date: Sep 1, 2015
 lang: en
 medium: a-few-notes-about-web-developer-s-interviews-6ddc9f500152

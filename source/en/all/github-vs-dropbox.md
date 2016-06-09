@@ -1,7 +1,7 @@
 ---
 layout: Post
 lang: en
-title: 'GitHub vs. Dropbox. Why “versus”?'
+title: 'GitHub vs. Dropbox. Why “Versus”?'
 date: Apr 30, 2014
 tags:
   - tools

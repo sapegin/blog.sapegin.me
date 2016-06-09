@@ -1,7 +1,7 @@
 ---
 layout: Post
 lang: en
-title: 'Making frameworks, bootstraps and other developer’s friends'
+title: 'Making Frameworks, Bootstraps and other Developer’s Friends'
 date: Apr 18, 2013
 tags:
   - tools
