@@ -7,3 +7,4 @@ npm run bundle
 npm run build
 echo "Syncing blog..."
 rsync --archive --compress --force --delete public/ $SSH_HOST:$SSH_PATH/public
+git push origin master
