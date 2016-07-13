@@ -1,5 +1,5 @@
 sourceFolder: source
-sourceTypes: 
+sourceTypes:
   - md
   - html
 templatesFolder: templates
@@ -8,4 +8,4 @@ publicFolder: public
 
 postsPerPage: 10
 postsInFeed: 15
-cutTag: <!-- cut -->
+cutTag: <!--more-->

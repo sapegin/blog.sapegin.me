@@ -10,7 +10,7 @@ tags:
 
 **Задача**: сверстать примеры кода с переносами строк и индикаторами переноса в конце строк. Без картинок и JavaScript.
 
-<!-- cut -->
+<!--more-->
 
 <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/sapegin/fZPdb/embedded/result,css,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
