@@ -38,7 +38,7 @@ Mostly just retelling of the docs (which are hard to read). Watch if you don’t
 
 ## [React Testing Cookbook](https://egghead.io/series/react-testing-cookbook) by Trevor Miller
 
-Short and very basic. Covers shallow rendering, chai-jsx and Redux.
+Short and very basic. Covers shallow rendering, expect-jsx and Redux.
 
 ## [React: Flux Architecture (ES6)](https://egghead.io/series/react-flux-architecture-es6) by Joe Maddalone
 
