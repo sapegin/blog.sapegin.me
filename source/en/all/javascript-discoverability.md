@@ -27,3 +27,5 @@ This is still an unsolved question for me and I hope we’ll see more sophistica
 [JS.coach](https://js.coach/) is very close to that but they only have modules for React, Webpack, Babel, etc.
 
 And I believe it will decrease the number of almost identical libraries because authors will be able to easily find what’s already available.
+
+**Update.** Looks like the search problem is pretty much solved by the new [npms.io](https://npms.io/). It’s really awesome!
