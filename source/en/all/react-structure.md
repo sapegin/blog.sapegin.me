@@ -171,7 +171,7 @@ export default class FeatureNameView extends Component {
         ) : (
           <FeatureNameLayout
             {...this.props}
-            onSomethingCool={what => handleSomethingCool(what)}
+            onSomethingCool={what => this.handleSomethingCool(what)}
           />
         )}
       </div>
