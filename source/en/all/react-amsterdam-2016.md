@@ -7,6 +7,7 @@ medium: react-amsterdam-2016-20e1052b09f1
 tags:
   - javascript
   - education
+  - events
 ---
 
 [React Amsterdam](http://react.amsterdam/) is the first conference about React in Amsterdam, Netherlands.

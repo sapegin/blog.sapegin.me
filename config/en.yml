@@ -9,11 +9,12 @@ email: artem@sapegin.me
 copyrightUrl: http://sapegin.me
 tagNames:
   css: CSS
+  education: Education
+  events: Events
   html: HTML
   javascript: JavaScript
-  tools: Tools
   thoughts: Thoughts
-  education: Education
+  tools: Tools
 twitterName: iamsapegin
 postComments: '<a href="{url}" class="link">Leave your comments</a> on Medium.'
 postFeedback: 'You can improve this post <a href="{url}" class="link">by editing it on GitHub</a>.'
