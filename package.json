@@ -3,21 +3,21 @@
   "version": "0.0.0",
   "private": true,
   "devDependencies": {
-    "babel-cli": "~6.9.0",
-    "babel-eslint": "~6.0.4",
+    "babel-cli": "~6.18.0",
+    "babel-eslint": "~7.1.1",
     "babel-plugin-transform-react-jsx": "~6.8.0",
     "babel-preset-tamia": "~6.8.0",
     "chokidar-cli": "~1.2.0",
-    "eslint": "~2.10.2",
-    "eslint-config-tamia": "~2.0.1",
-    "eslint-plugin-react": "~5.1.1",
-    "fledermaus": "~5.0.2",
-    "lodash": "~4.13.1",
+    "eslint": "~3.10.2",
+    "eslint-config-tamia": "~3.3.0",
+    "eslint-plugin-react": "~6.7.1",
+    "fledermaus": "~5.0.4",
+    "lodash": "~4.17.2",
     "minimist": "~1.2.0",
     "remark": "~4.2.2",
     "remark-lint": "~3.2.1",
     "tamia-build": "~0.4.0",
-    "unist-util-visit": "~1.1.0"
+    "unist-util-visit": "~1.1.1"
   },
   "scripts": {
     "start": "tamia server --lang en & npm run build:watch",
@@ -31,6 +31,6 @@
   },
   "dependencies": {
     "social-likes-next": "~1.1.0",
-    "tamia": "~2.0.6"
+    "tamia": "~2.0.7"
   }
 }

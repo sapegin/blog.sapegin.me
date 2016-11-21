@@ -2,8 +2,8 @@
 // This script must be placed in the HEAD above all external stylesheet declarations (link[rel=stylesheet])
 window.loadFont = function(fontName, fontUrlBase) {
 	// 0. Many unsupported browsers should stop here
-	let ua = navigator.userAgent;
-	let noSupport =
+	const ua = navigator.userAgent;
+	const noSupport =
 		// IE8 and below
 		!window.addEventListener ||
 		// Android Stock Browser below 4.4 and Opera Mini
@@ -25,14 +25,14 @@ window.loadFont = function(fontName, fontUrlBase) {
 		/* */
 	}
 
-	let localStoragePrefix = 'font-' + fontName;
-	let localStorageUrlKey = localStoragePrefix + 'url';
-	let localStorageCssKey = localStoragePrefix + 'css';
-	let storedFontUrlBase = loSto[localStorageUrlKey];
-	let storedFontCss = loSto[localStorageCssKey];
+	const localStoragePrefix = 'font-' + fontName;
+	const localStorageUrlKey = localStoragePrefix + 'url';
+	const localStorageCssKey = localStoragePrefix + 'css';
+	const storedFontUrlBase = loSto[localStorageUrlKey];
+	const storedFontCss = loSto[localStorageCssKey];
 
 	// 2. Setting up the <style> element, that we are using to apply the base64 encoded font data
-	let styleElement = document.createElement('style');
+	const styleElement = document.createElement('style');
 	styleElement.rel = 'stylesheet';
 	document.head.appendChild(styleElement);
 	// Setting styleElement.textContent must be after this line, because of IE9 errors
@@ -49,10 +49,10 @@ window.loadFont = function(fontName, fontUrlBase) {
 		// So we have to load it again
 
 		// 5. Checking for WOFF2 support to know which URL we should use
-		let url = fontUrlBase + '.woff' + (hasWoff2() ? '2' : '') + '.css';
+		const url = fontUrlBase + '.woff' + (hasWoff2() ? '2' : '') + '.css';
 
 		// 6. Fetching the font data from the server
-		let request = new XMLHttpRequest();
+		const request = new XMLHttpRequest();
 		request.open('GET', url);
 		request.onload = function() {
 			if (request.status >= 200 && request.status < 400) {
@@ -70,7 +70,7 @@ window.loadFont = function(fontName, fontUrlBase) {
 			return false;
 		}
 
-		let f = new FontFace('t', 'url("data:application/font-woff2,") format("woff2")', {});
+		const f = new FontFace('t', 'url("data:application/font-woff2,") format("woff2")', {});
 		f.load();
 
 		return f.status === 'loading';

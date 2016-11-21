@@ -9,7 +9,7 @@ import {
 
 // OG, Twitter Card and other meta tags
 export function getMetaTags() {
-	let tags = [
+	const tags = [
 		meta('viewport', 'width=device-width, initial-scale=1.0'),
 	];
 
@@ -31,15 +31,15 @@ export function getMetaTags() {
 		return tags;
 	}
 
-	let title = this.getPageTitle(false) || this.title || this.option('title');
+	const title = this.getPageTitle(false) || this.title || this.option('title');
 	let description = this.description;
-	let content = this.content;
+	const content = this.content;
 
 	let image;
 
 	if (!description) {
 		if (content) {
-			let firstParagraph = getFirstParagraph(content);
+			const firstParagraph = getFirstParagraph(content);
 			if (firstParagraph) {
 				description = firstParagraph;
 			}
@@ -50,7 +50,7 @@ export function getMetaTags() {
 	}
 
 	if (content) {
-		let firstImage = getFirstImage(content);
+		const firstImage = getFirstImage(content);
 		if (firstImage) {
 			twType = 'summary_large_image';
 			image = firstImage;

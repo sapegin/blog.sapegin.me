@@ -15,16 +15,16 @@ import * as customHelpers from './helpers';
 
 start('Building blog...');
 
-let config = loadConfig('config');
-let options = config.base;
+const config = loadConfig('config');
+const options = config.base;
 
-let renderMarkdown = createMarkdownRenderer();
+const renderMarkdown = createMarkdownRenderer();
 
-let renderTemplate = createTemplateRenderer({
+const renderTemplate = createTemplateRenderer({
 	root: options.templatesFolder,
 });
 
-let helpers = { ...defaultHelpers, ...customHelpers };
+const helpers = { ...defaultHelpers, ...customHelpers };
 
 let documents = loadSourceFiles(options.sourceFolder, options.sourceTypes, {
 	renderers: {
@@ -47,16 +47,16 @@ let documents = loadSourceFiles(options.sourceFolder, options.sourceTypes, {
 documents = orderDocuments(documents, ['-timestamp']);
 
 // Group posts by language
-let documentsByLanguage = groupDocuments(documents, 'lang');
-let languages = Object.keys(documentsByLanguage);
+const documentsByLanguage = groupDocuments(documents, 'lang');
+const languages = Object.keys(documentsByLanguage);
 
 documents = languages.reduce((result, lang) => {
 	let docs = documentsByLanguage[lang];
-	let newDocs = [];
+	const newDocs = [];
 
 	// Translations
-	let translationLang = lang === 'ru' ? 'en' : 'ru';
-	let hasTranslation = (url) => {
+	const translationLang = lang === 'ru' ? 'en' : 'ru';
+	const hasTranslation = (url) => {
 		return !!documentsByLanguage[translationLang].find(doc => doc.url === url);
 	};
 	docs = docs.map((doc) => {
@@ -67,8 +67,8 @@ documents = languages.reduce((result, lang) => {
 	});
 
 	// All posts page
-	let postsByYear = groupDocuments(docs, doc => doc.date.getFullYear());
-	let years = Object.keys(postsByYear);
+	const postsByYear = groupDocuments(docs, doc => doc.date.getFullYear());
+	const years = Object.keys(postsByYear);
 	years.sort();
 	years.reverse();
 	newDocs.push({
@@ -95,11 +95,11 @@ documents = languages.reduce((result, lang) => {
 	}));
 
 	// Tags
-	let postsByTag = groupDocuments(docs, 'tags');
-	let tags = Object.keys(postsByTag);
+	const postsByTag = groupDocuments(docs, 'tags');
+	const tags = Object.keys(postsByTag);
 	newDocs.push(...tags.reduce((tagsResult, tag) => {
-		let tagDocs = postsByTag[tag];
-		let tagsNewDocs = paginate(tagDocs, {
+		const tagDocs = postsByTag[tag];
+		const tagsNewDocs = paginate(tagDocs, {
 			sourcePathPrefix: `${lang}/tags/${tag}`,
 			urlPrefix: `/tags/${tag}`,
 			documentsPerPage: options.postsPerPage,
@@ -128,6 +128,6 @@ documents = languages.reduce((result, lang) => {
 	return [...result, ...docs, ...newDocs];
 }, []);
 
-let pages = generatePages(documents, config, helpers, { jsx: renderTemplate });
+const pages = generatePages(documents, config, helpers, { jsx: renderTemplate });
 
 savePages(pages, options.publicFolder);
