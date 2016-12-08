@@ -32,6 +32,7 @@ Our view layer is [React](https://facebook.github.io/react/).
 * [React tips and best practices](http://aeflash.com/2015-02/react-tips-and-best-practices.html) by Alexander Early.
 * [Removing user interface complexity, or why React is awesome](http://jlongster.com/Removing-User-Interface-Complexity,-or-Why-React-is-Awesome) by James Long.
 * [React cheat sheet](http://reactcheatsheet.com/).
+* 📖 [SurviveJS: React](http://survivejs.com/react/introduction/) by Juho Vepsäläinen.
 
 ## Redux
 
@@ -70,7 +71,7 @@ CSS modules are like [BEM](http://getbem.com/) but they provide real class names
 [Webpack](http://webpack.github.io/) allows us to use ES6/JSX syntax (including ES6 modules), import modules from npm and use hot reloading to debug front-end code.
 
 * [A cookbook for using Webpack with React JS](https://christianalfoni.github.io/react-webpack-cookbook/) by Christian Alfoni and Juho Vepsäläinen.
-* 📖 [SurviveJS: Webpack and React](http://survivejs.com/webpack_react/introduction/) by Juho Vepsäläinen.
+* 📖 [SurviveJS: Webpack](http://survivejs.com/webpack/introduction/) by Juho Vepsäläinen.
 
 ## Testing
 
