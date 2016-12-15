@@ -31,6 +31,6 @@
   },
   "dependencies": {
     "social-likes-next": "~1.1.0",
-    "tamia": "~2.0.7"
+    "tamia": "~2.0.8"
   }
 }
