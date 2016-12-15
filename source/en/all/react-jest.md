@@ -32,7 +32,7 @@ For example this component:
 
 ```javascript
 const ButtonWithIcon = ({icon, children}) => (
-	<button><Icon icon={icon} />{children}</button>
+  <button><Icon icon={icon} />{children}</button>
 );
 ```
 
@@ -40,8 +40,8 @@ Will be rendered by React this:
 
 ```html
 <button>
-	<i class="icon icon_coffee"></i>
-	Hello Jest!
+  <i class="icon icon_coffee"></i>
+  Hello Jest!
 </button>
 ```
 
@@ -49,8 +49,8 @@ But like this with shallow rendering:
 
 ```html
 <button>
-	<Icon icon="coffee" />
-	Hello Jest!
+  <Icon icon="coffee" />
+  Hello Jest!
 </button>
 ```
 
@@ -138,9 +138,9 @@ global.mount = mount;
 
 // Skip createElement warnings but fail tests on any other warning
 console.error = message => {
-    if (!/(React.createElement: type should not be null)/.test(message)) {
-        throw new Error(message);
-    }
+  if (!/(React.createElement: type should not be null)/.test(message)) {
+    throw new Error(message);
+  }
 };
 ```
 
@@ -166,24 +166,24 @@ That’s enough for most non-interactive components:
 
 ```javascript
 it('should render a label', () => {
-    const wrapper = shallow(
-        <Label>Hello Jest!</Label>
-    );
-    expect(wrapper).toMatchSnapshot();
+  const wrapper = shallow(
+    <Label>Hello Jest!</Label>
+  );
+  expect(wrapper).toMatchSnapshot();
 });
 
 it('should render a small label', () => {
-    const wrapper = shallow(
-        <Label small>Hello Jest!</Label>
-    );
-    expect(wrapper).toMatchSnapshot();
+  const wrapper = shallow(
+    <Label small>Hello Jest!</Label>
+  );
+  expect(wrapper).toMatchSnapshot();
 });
 
 it('should render a grayish label', () => {
-    const wrapper = shallow(
-        <Label light>Hello Jest!</Label>
-    );
-    expect(wrapper).toMatchSnapshot();
+  const wrapper = shallow(
+    <Label light>Hello Jest!</Label>
+  );
+  expect(wrapper).toMatchSnapshot();
 });
 ```
 
@@ -193,17 +193,17 @@ Sometimes you want to be more explicit and see real values in tests. In that cas
 
 ```javascript
 it('should render a document title', () => {
-    const wrapper = shallow(
-        <DocumentTitle title="Events" />
-    );
-    expect(wrapper.prop('title')).toEqual('Events');
+  const wrapper = shallow(
+    <DocumentTitle title="Events" />
+  );
+  expect(wrapper.prop('title')).toEqual('Events');
 });
 
 it('should render a document title and a parent title', () => {
-    const wrapper = shallow(
-        <DocumentTitle title="Events" parent="Event Radar" />
-    );
-    expect(wrapper.prop('title')).toEqual('Events — Event Radar');
+  const wrapper = shallow(
+    <DocumentTitle title="Events" parent="Event Radar" />
+  );
+  expect(wrapper.prop('title')).toEqual('Events — Event Radar');
 });
 ```
 
@@ -211,10 +211,10 @@ In some cases you just can’t use snapshots. For example if you have random IDs
 
 ```javascript
 it('should render a popover with a random ID', () => {
-    const wrapper = shallow(
-        <Popover>Hello Jest!</Popover>
-    );
-    expect(wrapper.prop('id')).toMatch(/Popover\d+/);
+  const wrapper = shallow(
+    <Popover>Hello Jest!</Popover>
+  );
+  expect(wrapper.prop('id')).toMatch(/Popover\d+/);
 });
 ```
 
@@ -224,15 +224,15 @@ You can simulate an event like `click` or `change` and then compare component to
 
 ```javascript
 it('should render Markdown in preview mode', () => {
-    const wrapper = shallow(
-        <MarkdownEditor value="*Hello* Jest!" />
-    );
+  const wrapper = shallow(
+    <MarkdownEditor value="*Hello* Jest!" />
+  );
 
-    expect(wrapper).toMatchSnapshot();
+  expect(wrapper).toMatchSnapshot();
 
-    wrapper.find('[name="toggle-preview"]').simulate('click');
+  wrapper.find('[name="toggle-preview"]').simulate('click');
 
-    expect(wrapper).toMatchSnapshot();
+  expect(wrapper).toMatchSnapshot();
 });
 ```
 
@@ -240,15 +240,15 @@ Sometimes you want to interact with an element in a child component to test effe
 
 ```javascript
 it('should open a code editor', () => {
-	const wrapper = mount(
-		<Playground code={code} />
-	);
+  const wrapper = mount(
+    <Playground code={code} />
+  );
 
-	expect(wrapper.find('.ReactCodeMirror')).toHaveLength(0);
+  expect(wrapper.find('.ReactCodeMirror')).toHaveLength(0);
 
-	wrapper.find('button').simulate('click');
+  wrapper.find('button').simulate('click');
 
-	expect(wrapper.find('.ReactCodeMirror')).toHaveLength(1);
+  expect(wrapper.find('.ReactCodeMirror')).toHaveLength(1);
 });
 ```
 
@@ -258,19 +258,19 @@ Similar to events testing but instead of testing component’s rendered output w
 
 ```javascript
 it('should pass a selected value to the onChange handler', () => {
-    const value = '2';
-    const onChange = jest.fn();
-    const wrapper = shallow(
-        <Select items={ITEMS} onChange={onChange} />
-    );
+  const value = '2';
+  const onChange = jest.fn();
+  const wrapper = shallow(
+    <Select items={ITEMS} onChange={onChange} />
+  );
 
-    expect(wrapper).toMatchSnapshot();
+  expect(wrapper).toMatchSnapshot();
 
-		wrapper.find('select').simulate('change', {
-        target: { value },
-    });
+  wrapper.find('select').simulate('change', {
+    target: { value },
+  });
 
-    expect(onChange).toBeCalledWith(value);
+  expect(onChange).toBeCalledWith(value);
 });
 ```
 
@@ -280,18 +280,18 @@ Jest snapshots work with JSON so you can test any function that returns JSON the
 
 ```javascript
 it('should accept custom properties', () => {
-    const wrapper = shallow(
-        <Layout
-            flexBasis={0}
-            flexGrow={1}
-            flexShrink={1}
-            flexWrap="wrap"
-            justifyContent="flex-end"
-            alignContent="center"
-            alignItems="center"
-        />
-    );
-    expect(wrapper.prop('style')).toMatchSnapshot();
+  const wrapper = shallow(
+    <Layout
+      flexBasis={0}
+      flexGrow={1}
+      flexShrink={1}
+      flexWrap="wrap"
+      justifyContent="flex-end"
+      alignContent="center"
+      alignItems="center"
+    />
+  );
+  expect(wrapper.prop('style')).toMatchSnapshot();
 });
 ```
 
