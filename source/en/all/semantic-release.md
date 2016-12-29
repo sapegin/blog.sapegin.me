@@ -127,7 +127,7 @@ Semantic-release uses this tags to find all important commits for the release (`
 
 ## Write changelog for MINOR or MAJOR release
 
-I wrote [a script](https://github.com/sapegin/dotfiles/blob/master/bin/sr-changelog) to help me with changelogs.
+I wrote [a script](https://github.com/tamiadev/semantic-release-tamia#release-process) to help me with changelogs.
 
 First run `sr-changelog`. It will create a file with all important commits for the release grouped by type (breaking changes, new features and bugfixes) and open it in your default editor.
 
@@ -154,8 +154,7 @@ Now you need to `git push` your changes and make some coffee.
 ## Links
 
 * [semantic-release](https://github.com/semantic-release/semantic-release)
-* [My plugins for semantic-release](https://github.com/tamiadev/semantic-release-tamia)
-* [My changelog draft generator](https://github.com/sapegin/dotfiles/blob/master/bin/sr-changelog)
+* [My plugins and scripts for semantic-release](https://github.com/tamiadev/semantic-release-tamia)
 * [My commit message conventions](https://github.com/tamiadev/semantic-release-tamia/blob/master/Convention.md)
 * [AngularJS commit message conventions](https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit#)
 * [How to Write an Open Source JavaScript Library Egghead course](https://egghead.io/lessons/javascript-how-to-write-a-javascript-library-automating-releases-with-semantic-release)
