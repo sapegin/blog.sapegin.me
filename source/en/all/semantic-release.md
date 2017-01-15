@@ -56,7 +56,7 @@ Enter your npm and GitHub credentials. Choose “Create no `.travis.yml`” if y
 
 ![Semantic-release setup](/images/semantic-release.png)
 
-Add these lines to your `travis.yml` if you test in a single Node version:
+Add these lines to your `travis.yml`:
 
 ```yaml
 after_success:
@@ -66,20 +66,7 @@ branches:
     - /^v\d+\.\d+\.\d+$/
 ```
 
-Or these for multiple Node versions:
-
-```yaml
-after_success:
-  - 'curl -Lo travis_after_all.py https://git.io/vXXtr'
-  - python travis_after_all.py
-  - export $(cat .to_export_back) &> /dev/null
-  - npm run semantic-release
-branches:
-  except:
-    - /^v\d+\.\d+\.\d+$/
-```
-
-## Customize semantic-relese
+## Customize semantic-release
 
 You can change semantic-release behavior with plugins: detect release type, check release requirements (like a changelog), generate changelog, etc. I made a [package with all plugins](https://github.com/tamiadev/semantic-release-tamia) I need to support my workflow.
 
