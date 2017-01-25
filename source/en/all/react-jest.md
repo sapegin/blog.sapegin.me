@@ -36,7 +36,7 @@ const ButtonWithIcon = ({icon, children}) => (
 );
 ```
 
-Will be rendered by React this:
+Will be rendered by React like this:
 
 ```html
 <button>
