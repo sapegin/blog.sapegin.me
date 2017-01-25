@@ -13,7 +13,7 @@ Some people say that testing React components is useless and in many cases it is
 
 * component libraries,
 * open source projects,
-* integration with 3rd party components,
+* integration with third-party components,
 * bugs, to prevent regressions.
 
 I’ve tried many tools and finally have found a combination that I like enough to suggest to other developers:
