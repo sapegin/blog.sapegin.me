@@ -1,36 +1,41 @@
 {
-  "name": "nano",
+  "name": "blog.sapegin.me",
   "version": "0.0.0",
   "private": true,
-  "devDependencies": {
-    "babel-cli": "~6.18.0",
-    "babel-eslint": "~7.1.1",
-    "babel-plugin-transform-react-jsx": "~6.8.0",
-    "babel-preset-tamia": "~6.8.0",
-    "chokidar-cli": "~1.2.0",
-    "eslint": "~3.10.2",
-    "eslint-config-tamia": "~3.3.0",
-    "eslint-plugin-react": "~6.7.1",
-    "fledermaus": "~5.0.4",
-    "lodash": "~4.17.2",
-    "minimist": "~1.2.0",
-    "remark": "~4.2.2",
-    "remark-lint": "~3.2.1",
-    "tamia-build": "~0.4.0",
-    "unist-util-visit": "~1.1.1"
-  },
+  "license": "See license in <Readme.md>",
   "scripts": {
     "start": "tamia server --lang en & npm run build:watch",
     "start:ru": "tamia server --lang ru & npm run build:watch",
-    "test": "npm run lint:js && npm run lint:md",
-    "lint:js": "eslint js src templates",
+    "pretest": "npm run lint && npm run lint:css && npm run lint:md",
+    "lint:js": "eslint . --fix --ext .js,.jsx",
+    "lint:css": "stylelint '**/*.pcss'",
     "lint:md": "remark --quiet source",
     "bundle": "tamia bundle",
-    "build": "babel-node src",
-    "build:watch": "chokidar templates source src -c 'babel-node src'"
+    "build": "BABEL_DISABLE_CACHE=1 babel-node src",
+    "build:watch": "chokidar source 'templates/**/*.jsx' -c 'BABEL_DISABLE_CACHE=1 babel-node src'"
   },
   "dependencies": {
-    "social-likes-next": "~1.1.0",
-    "tamia": "~2.0.8"
+    "social-share-services": "^1.0.0",
+    "tamia": "3.0.0-aplha.4"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.23.0",
+    "babel-eslint": "^7.1.1",
+    "chokidar-cli": "^1.2.0",
+    "classnames": "^2.2.5",
+    "eslint": "^3.16.1",
+    "eslint-config-tamia": "^3.3.2",
+    "eslint-plugin-react": "^6.10.0",
+    "fledermaus": "^6.0.0",
+    "lodash": "^4.17.4",
+    "remark-cli": "^3.0.0",
+    "remark-lint": "^6.0.0",
+    "stylelint": "^7.9.0",
+    "stylelint-config-standard": "^16.0.0",
+    "tamia-build": "^1.1.0",
+    "unist-util-visit": "^1.1.1"
+  },
+  "engines": {
+    "node": ">=7"
   }
 }

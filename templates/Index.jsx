@@ -1,15 +1,22 @@
+import { Gamma } from 'tamia/lib/components/Text';
+import Block from 'tamia/lib/components/Block';
 import Base from './Base';
-import PostExcerptList from './components/PostExcerptList';
+import PostList from './components/PostList';
 
-export default function($) {
-	const { lang, nextUrl } = $;
-	const { __ } = $;
+export default function({ lang, years, postsByYear, __ }) {
 	return (
-		<Base {...$} noIndex={!!nextUrl}>
+		<Base>
 			{lang === 'ru' &&
-				<div class="blog-intro">{__('goingEnglish')}</div>
+				<Block bottom={3} class="text">
+					<em>{__('goingEnglish')}</em>
+				</Block>
 			}
-			<PostExcerptList {...$} />
+			{years.map(year => (
+				<div>
+					<Gamma component="h2">{year}</Gamma>
+					<PostList posts={postsByYear[year]} />
+				</div>
+			))}
 		</Base>
 	);
 }

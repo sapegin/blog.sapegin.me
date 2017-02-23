@@ -1,10 +1,10 @@
+import { sortBy } from 'lodash';
 import {
 	start,
 	loadConfig,
 	loadSourceFiles,
 	generatePages,
 	savePages,
-	paginate,
 	orderDocuments,
 	groupDocuments,
 	createMarkdownRenderer,
@@ -14,6 +14,8 @@ import {
 import * as customHelpers from './helpers';
 
 start('Building blog...');
+
+const MAX_RELATED = 5;
 
 const config = loadConfig('config');
 const options = config.base;
@@ -25,6 +27,22 @@ const renderTemplate = createTemplateRenderer({
 });
 
 const helpers = { ...defaultHelpers, ...customHelpers };
+
+function getRelated(docs, doc) {
+	const weighted = docs
+		.filter(d => d.url !== doc.url)
+		.map(d => {
+			const common = d.tags.filter(t => doc.tags.includes(t));
+			return {
+				...d,
+				weight: common.length * d.timestamp,
+			};
+		})
+		.filter(d => d.weight > 0)
+	;
+	const sorted = sortBy(weighted, 'weight');
+	return sorted.slice(0, MAX_RELATED);
+}
 
 let documents = loadSourceFiles(options.sourceFolder, options.sourceTypes, {
 	renderers: {
@@ -38,9 +56,9 @@ let documents = loadSourceFiles(options.sourceFolder, options.sourceTypes, {
 		date: date => new Date(Date.parse(date)),
 		// Strip language (`en` or `ru`) from the URL (filename)
 		url: url => url.replace(/(en|ru)\//, ''),
+		// Ensure tags is array
+		tags: tags => tags || [],
 	},
-	// Cut separator
-	cutTag: options.cutTag,
 });
 
 // Oder by date, newest first
@@ -54,63 +72,34 @@ documents = languages.reduce((result, lang) => {
 	let docs = documentsByLanguage[lang];
 	const newDocs = [];
 
-	// Translations
+	// Translations and related posts
 	const translationLang = lang === 'ru' ? 'en' : 'ru';
 	const hasTranslation = (url) => {
 		return !!documentsByLanguage[translationLang].find(doc => doc.url === url);
 	};
-	docs = docs.map((doc) => {
+	docs = docs.map(doc => {
 		return {
 			...doc,
 			translation: hasTranslation(doc.url),
+			related: getRelated(docs, doc),
 		};
 	});
 
-	// All posts page
+	// Index page
 	const postsByYear = groupDocuments(docs, doc => doc.date.getFullYear());
 	const years = Object.keys(postsByYear);
 	years.sort();
 	years.reverse();
 	newDocs.push({
-		sourcePath: `${lang}/all`,
-		url: '/all',
+		sourcePath: `${lang}/index`,
+		url: '/',
 		translation: true,
-		layout: 'All',
+		layout: 'Index',
 		postsTotal: docs.length,
 		postsByYear,
 		years,
 		lang,
 	});
-
-	// Pagination
-	newDocs.push(...paginate(docs, {
-		sourcePathPrefix: lang,
-		urlPrefix: '/',
-		documentsPerPage: options.postsPerPage,
-		layout: 'Index',
-		index: true,
-		extra: {
-			lang,
-		},
-	}));
-
-	// Tags
-	const postsByTag = groupDocuments(docs, 'tags');
-	const tags = Object.keys(postsByTag);
-	newDocs.push(...tags.reduce((tagsResult, tag) => {
-		const tagDocs = postsByTag[tag];
-		const tagsNewDocs = paginate(tagDocs, {
-			sourcePathPrefix: `${lang}/tags/${tag}`,
-			urlPrefix: `/tags/${tag}`,
-			documentsPerPage: options.postsPerPage,
-			layout: 'Tag',
-			extra: {
-				lang,
-				tag,
-			},
-		});
-		return [...tagsResult, ...tagsNewDocs];
-	}, []));
 
 	// RSS feed
 	newDocs.push({

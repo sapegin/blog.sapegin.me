@@ -1,5 +1,4 @@
-module.exports = function(options) {
-	var argv = require('minimist')(process.argv.slice(2));
+module.exports = function(options, argv) {
 	if (argv.lang) {
 		// Redirect HTML pages to local folder
 		options.rewrites = [

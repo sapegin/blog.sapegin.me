@@ -1,0 +1,18 @@
+:root {
+	--padding: calc(var(--spacer) * 1.5);
+}
+
+.root {
+	margin-bottom: var(--spacer);
+	text-align: center;
+}
+
+.item {
+	display: inline-block;
+	margin-left: var(--padding);
+	margin-right: var(--padding);
+}
+
+:global(.is-active) {
+	background-image: none;
+}

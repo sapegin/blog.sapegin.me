@@ -1,10 +1,5 @@
 {
-	"presets": [
-		"tamia"
-	],
-	"plugins": [
-		["transform-react-jsx", {
-			"pragma": "vdo"
-		}]
-	]
+  "presets": [
+    "./node_modules/tamia-build/config/babel-preset"
+  ]
 }

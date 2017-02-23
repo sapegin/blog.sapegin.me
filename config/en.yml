@@ -1,34 +1,22 @@
 url: http://blog.sapegin.me
 title: Artem Sapegin’s Blog
-description: 'Blog of a Berlin based font-end developer who works at Here, makes photos, writes, strokes his dogs and drinks coffee.'
+description: 'Blog of a Berlin based frontend developer who works at Here, makes photos, writes, strokes his dogs and drinks coffee.'
 longDescription: |
-  <p>I’m a front-end developer living in Berlin, Germany. I work at <a class="link" href="https://www.here.com/">Here</a>, and in my spare time I love making photos, writing, stroking my dogs and drinking coffee.</p>
-  <p>Find out <a class="link" href="http://sapegin.me/">more about me</a> on my site or <a class="link" href="http://twitter.com/iamsapegin">follow me on Twitter</a>.</p>
+  <p>I’m a frontend developer living in Berlin, Germany. I work at <a href="https://www.here.com/">Here</a>, and in my spare time I love making photos, writing, hanging out with my dogs and drinking lots of coffee.</p>
+  <p><a href="http://sapegin.me/">Check out</a> my projects and <a href="http://twitter.com/iamsapegin">follow me</a> on Twitter.</p>
 author: Artem Sapegin
 email: artem@sapegin.me
 copyrightUrl: http://sapegin.me
-tagNames:
-  css: CSS
-  education: Education
-  events: Events
-  html: HTML
-  javascript: JavaScript
-  thoughts: Thoughts
-  tools: Tools
 twitterName: iamsapegin
-postComments: '<a href="{url}" class="link">Leave your comments</a> on Medium.'
-postFeedback: 'You can improve this post <a href="{url}" class="link">by editing it on GitHub</a>.'
+postComments: '<a href="{url}">Leave your comments</a> on Medium.'
+postFeedback: 'You can improve this post <a href="{url}">by editing it on GitHub</a>.'
+aboutTitle: About me
+relatedTitle: Read also
 search: Search
 allPosts: All posts
-allPostsTagged: '{num, plural, =1{One post} other{# posts}} tagged <em>{tag}</em>'
-allNumPosts: 'All {num, plural, one{# post} other{# posts}}'
 facebook: Share
 twitter: Tweet
-shareOnFacebook: Share post on Facebook
-shareOnTwitter: Share post on Twitter
-readMore: Read more…
-earlier: Earlier
-poweredBy: 'Powered by <a href="https://github.com/sapegin/fledermaus" class="link">Fledermaus</a>, hosted on <a href="https://www.digitalocean.com/?refcode=bb49cbe65bb4" class="link">DigitalOcean</a>'
+poweredBy: 'Powered by <a href="https://github.com/sapegin/fledermaus">Fledermaus</a>, hosted on <a href="https://www.digitalocean.com/?refcode=bb49cbe65bb4">DigitalOcean</a>'
 translationHost: http://nano.sapegin.ru
 translation: По-русски
 searchAction: https://yandex.com/sitesearch

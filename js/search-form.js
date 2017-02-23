@@ -1,12 +1,8 @@
 const link = document.getElementById('search-link');
-link.addEventListener('click', function(event) {
-	event.preventDefault();
+link.addEventListener('click', () => {
+	link.classList.toggle('is-active');
 
 	const form = document.getElementById('search');
 	form.classList.toggle('is-hidden');
-
-	link.classList.toggle('is-active');
-	link.blur();
-
 	form.querySelector('.js-field').focus();
 });

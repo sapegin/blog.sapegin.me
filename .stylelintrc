@@ -1,0 +1,14 @@
+{
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "indentation": "tab",
+    "selector-pseudo-class-no-unknown": [
+      true,
+      {
+        "ignorePseudoClasses": [
+          "global"
+        ]
+      }
+    ]
+  }
+}
