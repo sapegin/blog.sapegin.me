@@ -1,18 +1,26 @@
-:root {
-	--padding: calc(var(--spacer) * 1.5);
-}
-
 .root {
-	margin-bottom: var(--spacer);
 	text-align: center;
 }
 
 .item {
 	display: inline-block;
-	margin-left: var(--padding);
-	margin-right: var(--padding);
+	margin-left: 0.5em;
+	margin-right: 0.5em;
+	font-size: inherit;
+	font-weight: inherit;
 }
 
 :global(.is-active) {
 	background-image: none;
+}
+
+@media (--small) {
+	.root {
+		font-size: var(--bigFontSize);
+	}
+
+	.item {
+		margin-left: 0.65em;
+		margin-right: 0.65em;
+	}
 }
