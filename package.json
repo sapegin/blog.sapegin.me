@@ -6,7 +6,7 @@
   "scripts": {
     "start": "tamia server --lang en & npm run build:watch",
     "start:ru": "tamia server --lang ru & npm run build:watch",
-    "pretest": "npm run lint && npm run lint:css && npm run lint:md",
+    "pretest": "npm run lint:js && npm run lint:css && npm run lint:md",
     "lint:js": "eslint . --fix --ext .js,.jsx",
     "lint:css": "stylelint '**/*.pcss'",
     "lint:md": "remark --quiet source",
