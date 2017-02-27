@@ -1,7 +1,7 @@
 ---
 layout: Post
 lang: en
-title: 'Simple Site Deploy from Git'
+title: 'Simple site deploy from Git'
 date: Apr 24, 2014
 tags:
   - tools

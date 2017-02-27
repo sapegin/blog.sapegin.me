@@ -1,6 +1,6 @@
 ---
 layout: Post
-title: 'Don’t Touch jQuery'
+title: 'Don’t touch jQuery'
 date: Feb 12, 2016
 lang: en
 medium: don-t-touch-jquery-12c928c79f19

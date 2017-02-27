@@ -1,7 +1,7 @@
 ---
 layout: Post
 lang: en
-title: 'How Not to Go Blind on the Internet'
+title: 'How not to go blind on the internet'
 date: Jul 16, 2014
 tags:
   - tools

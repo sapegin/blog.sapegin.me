@@ -1,6 +1,6 @@
 ---
 layout: Post
-title: 'React and Redux Single Page Applications Resources'
+title: 'React and Redux single page applications resources'
 date: Jan 14, 2016
 lang: en
 medium: react-and-redux-single-page-applications-resources-22cd859b0c1d
@@ -84,7 +84,7 @@ And a couple of libraries to make work with shallow rendering easier:
 * [react-shallow-testutils](https://github.com/sheepsteak/react-shallow-testutils), replacement for TestUtils when using React’s shallow rendering.
 * [expect-react-shallow](https://github.com/sapegin/expect-react-shallow), JSX assertions with Chai-like API.
 
-## Other Useful Libraries
+## Other useful libraries
 
 Unfortunately, I haven’t found any good articles about these libraries.
 
@@ -93,7 +93,7 @@ Unfortunately, I haven’t found any good articles about these libraries.
 * [React Intl](http://formatjs.io/react/), internationalization for React.
 * [Reselect](https://github.com/rackt/reselect), memoized and composable selectors for Redux.
 
-## Developer Tools
+## Developer tools
 
 These tools are as useful as all the resources mentioned above.
 

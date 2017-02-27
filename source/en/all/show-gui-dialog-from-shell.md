@@ -1,7 +1,7 @@
 ---
 layout: Post
 lang: en
-title: 'How to Show GUI Dialog Window from Shell Script on a Mac'
+title: 'How to show GUI dialog window from shell script on a Mac'
 date: Nov 12, 2014
 tags:
   - tools

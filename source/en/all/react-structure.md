@@ -1,6 +1,6 @@
 ---
 layout: Post
-title: "Structuring React and Redux Applications"
+title: "Structuring React and Redux applications"
 date: Jun 17, 2016
 lang: en
 medium: structuring-react-and-redux-applications-255361d24f84

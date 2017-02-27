@@ -1,7 +1,7 @@
 ---
 layout: Post
 lang: en
-title: JavaScript and Stylus Conditional Compilation (Debug Mode) in Grunt
+title: JavaScript and Stylus conditional compilation (debug mode) in Grunt
 date: Apr 17, 2014
 tags:
   - css

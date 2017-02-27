@@ -1,6 +1,6 @@
 ---
 layout: Post
-title: 'Why I Wrote Another Static Site Generator'
+title: 'Why I wrote another static site generator'
 date: May 26, 2016
 lang: en
 medium: why-i-wrote-another-static-site-generator-47274c7bdf23

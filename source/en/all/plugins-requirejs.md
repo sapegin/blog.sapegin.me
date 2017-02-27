@@ -1,7 +1,7 @@
 ---
 layout: Post
 lang: en
-title: 'Loading Framework’s Plugins with RequireJS'
+title: 'Loading framework’s plugins with RequireJS'
 date: Mar 27, 2015
 tags:
   - javascript

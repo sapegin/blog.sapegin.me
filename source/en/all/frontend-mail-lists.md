@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Front-end Development Mail Lists'
+title: 'Frontend development mail lists'
 date: Mar 23, 2016
 lang: en
 medium: development-mail-lists-bc55cf894b1e
@@ -34,7 +34,7 @@ But there are more that could interest you:
 - [Mobile Web Weekly](http://mobilewebweekly.co/)
 - [Node Weekly](http://nodeweekly.com/)
 - [Sass News](http://sassnews.com/)
-- [StatusCode](http://statuscode.org/) 
+- [StatusCode](http://statuscode.org/)
 - [Sublime Text Tips](http://sublimetexttips.com/)
 - [SVG Weekly](https://svgweekly.com/)
 - [UI Animation Newsletter](http://uianimationnewsletter.com)

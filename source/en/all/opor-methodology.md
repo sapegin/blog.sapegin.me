@@ -1,7 +1,7 @@
 ---
 layout: Post
 lang: en
-title: 'My Front-end Methodology: OPOR (One Page of Rules), or BEM for Small Sites'
+title: 'My frontend methodology: OPOR (One Page of Rules), or BEM for small sites'
 date: May 6, 2013
 tags:
   - html

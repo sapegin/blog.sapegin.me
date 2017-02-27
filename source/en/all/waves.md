@@ -1,7 +1,7 @@
 ---
 layout: Post
 lang: en
-title: 'Going Wavy'
+title: 'Going wavy'
 date: Nov 27, 2014
 tags:
   - thoughts

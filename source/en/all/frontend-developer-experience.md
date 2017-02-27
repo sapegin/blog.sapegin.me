@@ -1,6 +1,6 @@
 ---
 layout: Post
-title: 'Importance of the Developer Experience in the Modern Front-end'
+title: 'Importance of the developer experience in the modern frontend'
 date: Nov 21, 2015
 lang: en
 medium: importance-of-the-developer-experience-in-the-modern-front-end-bff4155d4cb8

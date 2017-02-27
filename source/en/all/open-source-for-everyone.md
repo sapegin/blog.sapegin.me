@@ -1,7 +1,7 @@
 ---
 layout: Post
 lang: en
-title: 'Open Source for Everyone'
+title: 'Open source for everyone'
 date: Apr 9, 2014
 tags:
   - tools

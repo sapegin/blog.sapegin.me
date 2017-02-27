@@ -1,6 +1,6 @@
 ---
 layout: Post
-title: "Add the Fucking Change Log"
+title: "Add the fucking change log"
 date: Sep 19, 2016
 lang: en
 medium: add-the-fucking-change-log-3d82d758d8b0

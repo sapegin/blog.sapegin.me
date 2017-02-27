@@ -34,7 +34,7 @@ Unfortunately I haven’t won a cool t-shirt. Maybe next year.
 
 ## Talks
 
-### Migrating Safely to React
+### Migrating safely to React
 
 [Jamis Charles](https://twitter.com/jamischarles), PayPal. [Video](https://youtu.be/sXDZBxbRRag), [slides](https://speakerdeck.com/jamischarles/react-amsterdam-migrating-safely-to-react).
 
@@ -46,7 +46,7 @@ A talk about migrating PayPal from Backbone to React.
 * We will have to move away from React one day.
 * Solve real problems.
 
-### Building Loveable UIs
+### Building loveable UIs
 
 [Henrique Alves](https://twitter.com/healves82), DADI+. [Video](https://youtu.be/rbtmCqBEYpg), [slides](https://speakerdeck.com/henriquea/building-loveable-uis).
 
@@ -70,7 +70,7 @@ A talk about [JSS](https://github.com/jsstyles/jss) and problems of CSS by the J
 * JSS itself doesn’t depend on React.
 * Don’t be religious. Keep an open mind. Use tools that solve your problems!
 
-### Mastering Server-rendered Apps
+### Mastering server-rendered apps
 
 [Sven Anders Robbestad](https://twitter.com/svenardocom), Inmeta Consulting. [Video](https://youtu.be/tlysAZSd45k), [slides](https://speakerdeck.com/reactamsterdam/sven-anders-robbestad-inmeta-consulting-as-oslo-mastering-server-rendered-apps).
 
@@ -85,7 +85,7 @@ Why and how to user server rendering with React.
 * Cons: complicated server code, relies on a `fetch` method before render, relatively slow.
 * [react-dom-stream](https://github.com/aickin/react-dom-stream): sends the first byte much faster than `renderToString` — better perceived performance.
 
-### React Native Architecture Overview
+### React Native architecture overview
 
 [Tadeu Zagallo](https://twitter.com/tadeuzagallo), Facebook. [Video](https://youtu.be/Ah2qNbI40vE), [slides](http://www.slideshare.net/TadeuZagallo/react-native-internals).
 
@@ -94,7 +94,7 @@ I’d prefer a simpler overview, looks like I’m not a target audience for this
 * No web view, no HTML, no CSS. It’s only JavaScript.
 * React Native uses lots of clever techniques.
 
-### Building Reactive GraphQL Apps with Apollo
+### Building Reactive GraphQL apps with Apollo
 
 [Martijn Walraven](https://twitter.com/martijnwalraven), Meteor. [Video](https://youtu.be/1Dgt691lXhs), [slides](https://speakerdeck.com/martijnwalraven/apollo-react-amsterdam-2016).
 
@@ -105,7 +105,7 @@ I’d prefer a simpler overview, looks like I’m not a target audience for this
 * They are trying to improve GraphQL developer experience.
 * [Apollo, the data stack for modern apps](https://medium.com/apollo-stack/apollo-8b7215bcab1c#.yc7ys5o8z).
 
-### React for Game Development
+### React for game development
 
 [Johannes Stein](https://twitter.com/frostney_), Toptal. [Video](https://youtu.be/JaK-RrYPPRk), [slides](http://frostney.github.io/talks/react-for-game-development/).
 
@@ -115,7 +115,7 @@ An unusual but interesting talk about using making games with React.
 * Many things in game development are easy with React.
 * Almost 100% code reuse across platforms in React Native because native components are not used.
 
-### React Component Library and React WebGL in Liberty Global
+### React component library and React WebGL in Liberty Global
 
 Two lightning talks.
 
@@ -133,7 +133,7 @@ Two lightning talks.
 * Abstracting your component rendering lets you render your app in any environment.
 * WebGL instead of DOM because DOM requires too much memory and slower.
 
-### Testing React Applications
+### Testing React applications
 
 [Jack Franklin](https://twitter.com/jack_franklin), Pusher. [Video](https://youtu.be/KBhHsYlF4mQ), [slides](https://speakerdeck.com/jackfranklin/testing-react-applications-react-amsterdam-2016).
 
@@ -145,7 +145,7 @@ A good introduction to testing in React.
 * Use [Enzyme](https://github.com/airbnb/enzyme) instead of React TestUtils.
 * Blog post: [Testing React Applications](http://12devsofxmas.co.uk/2015/12/day-2-testing-react-applications/).
 
-### Introducing and Implementing React at Coolblue
+### Introducing and implementing React at Coolblue
 
 [Paul van Dam](https://github.com/pcvandamcb), Coolblue. [Video](https://youtu.be/3aHCYceqOrU), [slides](https://speakerdeck.com/reactamsterdam/paul-van-dam-coolblue-rotterdam-introducing-and-implementing-react-at-coolblue).
 
@@ -178,7 +178,7 @@ Redux fatigue talk about the [MobX](https://github.com/mobxjs/mobx).
   * architectural freedom,
   * third party friendly.
 
-### Solving a Tooling Problem for React Native
+### Solving a tooling problem for React Native
 
 [Alexey Kureev](https://twitter.com/kureevalexey), [Mike Grabowski](https://twitter.com/grabbou). [Video](https://youtu.be/iF6lNtqFLKY), [slides](https://speakerdeck.com/grabbou/solving-a-react-native-tooling-problem).
 
@@ -187,7 +187,7 @@ Talk about [rnpm](https://github.com/rnpm/rnpm), package manager for React Nativ
 * React Native modules contains not only JavaScript but also platform code and assets.
 * rnpm will be part of React Native soon.
 
-### The React Native Playground
+### The React Native playground
 
 [Joshua Sierles](https://twitter.com/jsierles). [Video](https://youtu.be/fN3AVJuxMIc), [slides](https://speakerdeck.com/reactamsterdam/joshua-sierles-freelance-sevilla-the-react-native-playground).
 

@@ -1,7 +1,7 @@
 ---
 layout: Post
 lang: en
-title: 'Bower: Why Front-End Needs a Package Manager'
+title: 'Bower: Why frontend needs a package manager'
 date: Jul 24, 2014
 tags:
   - tools
@@ -21,7 +21,7 @@ Bower is not the standard package manager for client-side JavaScript, but the mo
 
 Bower doesn’t prescribe to the user its own build system, or to the developer a method of including  libraries (AMD, CommonJS, etc.) All Bower does is install the right versions of the packages that the project needs and their dependencies. In other words: it downloads source files for the right libraries and everything they need into a special folder. Everything else is up to the developer.
 
-## Why Not npm
+## Why not npm
 
 The main difference between npm and Bower is the approach for installing package dependencies. npm installs dependencies for each package separately, and as a result makes a big package dependency tree (`node_modules/grunt/node_modules/glob/node_modules/...`), where there could be several version of the same package. For client-side JavaScript this is unacceptable: you can’t add two different version for jQuery or any other library to a page. With Bower each package is installed once (jQuery will always be in the `bower_components/jquery` folder, regardless of how many packages depend on it) and in the case of a dependency conflict, Bower simply won’t install the package incompatible with one that’s already installed.
 
@@ -33,7 +33,7 @@ To work with Bower you’ll need Node.js and git. Installation:
 npm install -g bower
 ```
 
-## Working with Packages
+## Working with packages
 
 Let’s try to install something, for example jQuery:
 
@@ -98,7 +98,7 @@ Each package is installed into its own folder, there are no nested packages, and
 For uninstalling packages the `bower uninstall` command is used:
 
 ```bash
-bower uninstall --save jquery-icheck  # Или bower un -S jquery-icheck
+bower uninstall --save jquery-icheck  # Or bower un -S jquery-icheck
 ```
 
 You can confidently delete the `bower_components` directory or add it to your `.gitignore`. The `bower install` (without additional parameters) command will return everything to the way it was:
@@ -107,14 +107,14 @@ You can confidently delete the `bower_components` directory or add it to your `.
 bower install
 ```
 
-### Deploying the Project
+### Deploying the project
 
 There are two approaches for deploying a project:
 
 1. Only the manifest file is added to the repo and all packages are installed during deployment. This way there is nothing unnecessary in the repo, but if GitHub crashes during deployment or another server from which packages are installed crashes, there will be problems.
 2. The `bower_components` folder as well as `bower.json` are added to the repository. This way deployment doesn’t depend on external servers, but the repository blows up with hundreds (if not thousands) of extra files.
 
-### Semantic Versions (semver)
+### Semantic versions (semver)
 
 [Semver](http://semver.org/) is, first-of-all, an approach to versioning libraries: a format for version numbers MAJOR.MINOR.PATCH and rules, which have to be followed when incrementing each number.
 
@@ -122,7 +122,7 @@ Secondly, it’s a method of describing necessary dependencies, which is used by
 
 While installing with the `--save` flag, package version are added to `bower.json` like `~1.0.1`. The tilde at the beginning means that during installation version 1.0.1 will be chosen, or a version with a larger last number (PATCH) if it’s available. This way the installed version will have the latest bug fixes, but will be fully compatible with the one specified in the manifest file.
 
-## Updating Dependencies
+## Updating dependencies
 
 Bower has a `bower update` command, but it updates packages with respect to the demands of the manifest file. For example, if it lists jQuery ~2.0.0 Bower can update jQuery to version 2.0.9, but 2.1.0 won’t be installed because it doesn’t satisfy the ~2.0.0 formula.
 
@@ -138,7 +138,7 @@ Launch:
 bower-update
 ```
 
-## Searching for Packages
+## Searching for packages
 
 There are two methods for finding packages with Bower: geeky and normal.
 
@@ -155,7 +155,7 @@ Search results:
 
 Normal: open [bower.io/search](http://bower.io/search/) in a browser.
 
-## Automatic Builds
+## Automatic builds
 
 Bower puts the problem of project builds on the shoulders of the developer. The simplest method is just to concatenate the JS files with Grunt, Gulp or any other task runner that you use.
 
@@ -200,7 +200,7 @@ concat: {
 }
 ```
 
-## Registering Your Packages
+## Registering your packages
 
 To make your library available to be installed with Bower it has to be registered. To do this:
 

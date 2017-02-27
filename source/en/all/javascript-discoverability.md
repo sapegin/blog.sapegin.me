@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'On Discoverability of JavaScript Packages'
+title: 'On discoverability of JavaScript packages'
 date: Mar 14, 2016
 lang: en
 medium: javascript-packages-fatigue-md-c6be26f016b1
