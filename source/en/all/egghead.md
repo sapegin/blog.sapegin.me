@@ -5,7 +5,10 @@ date: Jun 15, 2016
 medium: egghead-courses-review-5594348c4adf
 lang: en
 tags:
+  - education
   - javascript
+  - react
+  - oss
 ---
 
 Most courses are good but very basic. They are very good to get to know a new technology. Only the Redux course I can recommend to any developer: no matter if you just starting with Redux, already fluent or not going to use it at all.

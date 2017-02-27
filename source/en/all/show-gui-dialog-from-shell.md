@@ -5,6 +5,8 @@ title: 'How to show GUI dialog window from shell script on a Mac'
 date: Nov 12, 2014
 tags:
   - tools
+  - shell
+  - mac
 ---
 
 When you run a shell script from a GUI app (from Alfred workflow, for example) you want to show an error and ask questions via GUI too. You can do it [with AppleScript](https://developer.apple.com/library/mac/documentation/AppleScript/Conceptual/AppleScriptLangGuide/reference/ASLR_cmds.html#//apple_ref/doc/uid/TP40000983-CH216-SW12).

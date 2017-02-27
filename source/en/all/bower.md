@@ -5,6 +5,7 @@ title: 'Bower: Why frontend needs a package manager'
 date: Jul 24, 2014
 tags:
   - tools
+  - build
 ---
 
 *This article was written in 2014, when npm 2 was the latest, and wasn’t popular among fronted developers because of the issues described in the article. Now use [Yarn](https://yarnpkg.com/) or [npm](https://www.npmjs.com/), and consider this article historical.*

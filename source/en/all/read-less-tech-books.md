@@ -5,6 +5,7 @@ title: 'Read less tech books'
 date: Feb 20, 2014
 tags:
   - thoughts
+  - education
 ---
 
 Vladimir Starkov [suggests](http://vstarkov.com/monthbook/) to read at least two technical books a month.

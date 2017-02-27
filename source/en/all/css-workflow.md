@@ -6,6 +6,7 @@ date: Nov 8, 2013
 tags:
   - tools
   - css
+  - stylus
 ---
 
 I used to use [Nib](http://visionmedia.github.io/nib/) to manage CSS vendor prefixes in [Stylus](http://learnboost.github.io/stylus/). But it has a big problem: it adds a lot of superfluous prefixes for everything.

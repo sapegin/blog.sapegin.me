@@ -7,6 +7,7 @@ medium: what-to-learn-in-2017-if-youre-a-frontend-developer-b6cfef46effd
 tags:
   - education
   - javascript
+  - writing
 ---
 
 With our fast-paced ecosystem we tend to spend our time trying the latest inventions and arguing about them on the internet. I’m not saying we shouldn’t do that, but probably we should slow down a bit and take a look at things that don’t change much: they could greatly improve quality and value of our work, and understanding of those new tools.

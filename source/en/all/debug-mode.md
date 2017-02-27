@@ -4,9 +4,11 @@ lang: en
 title: JavaScript and Stylus conditional compilation (debug mode) in Grunt
 date: Apr 17, 2014
 tags:
-  - css
   - tools
-
+  - css
+  - stylus
+  - javascript
+  - grunt
 ---
 
 Often you want some code to be executed only in development environment but not in production. It’d be convenient to have a tool that will remove such code on deploy.

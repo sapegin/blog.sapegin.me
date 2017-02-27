@@ -5,6 +5,8 @@ title: 'Multilingual blog on DocPad'
 date: Apr 14, 2014
 tags:
   - tools
+  - docpad
+  - blog
 ---
 
 I write my blog in two languages. But they’re just two builds of the same [DocPad](http://docpad.org/) installation with different settings.

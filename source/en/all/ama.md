@@ -6,6 +6,8 @@ lang: en
 medium: ask-me-anything-is-a-new-way-of-blogging-2653220e32db
 tags:
   - thoughts
+  - blog
+  - internet
 ---
 
 AMA is a GitHub repository where anyone can file an issue with any question and author will reply in a comment. It was [started by Sindre Sorhus](https://blog.sindresorhus.com/answering-anything-678ce5623798#.vnlpiwx8y) in July 2015 and now there are [more than 100 AMAs](https://github.com/sindresorhus/amas).

@@ -5,6 +5,8 @@ title: 'My frontend methodology: OPOR (One Page of Rules), or BEM for small site
 date: May 6, 2013
 tags:
   - html
+  - css
+  - projects
 ---
 
 I like BEM. But I’m not Yandex, Google or any other huge company that builds all the internet so I found BEM is too strict for me.

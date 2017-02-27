@@ -8,6 +8,7 @@ tags:
   - javascript
   - education
   - events
+  - react
 ---
 
 [React Amsterdam](http://react.amsterdam/) is the first conference about React in Amsterdam, Netherlands.

@@ -5,6 +5,8 @@ title: 'Simple site deploy from Git'
 date: Apr 24, 2014
 tags:
   - tools
+  - build
+  - projects
 ---
 
 A long time ago I used to upload sites to the internet via an FTP client. Then internet became faster and cheaper and I started to edit pages inside FTP client because necessity of uploading files after every edit was very frustrating.

@@ -6,6 +6,8 @@ lang: en
 medium: automate-npm-releases-with-semantic-release-and-human-written-change-logs-2adb1dce487
 tags:
   - tools
+  - oss
+  - projects
 ---
 
 Making new releases is one of the most boring and tedious tasks in open source.

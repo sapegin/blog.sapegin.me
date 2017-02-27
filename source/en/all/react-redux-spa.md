@@ -6,6 +6,9 @@ lang: en
 medium: react-and-redux-single-page-applications-resources-22cd859b0c1d
 tags:
   - javascript
+  - react
+  - redux
+  - education
 ---
 
 Here is a list of the best articles, books and talks about the libraries and tools we use at the [Here](https://company.here.com/) product tools team.

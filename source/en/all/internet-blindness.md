@@ -4,7 +4,8 @@ lang: en
 title: 'How not to go blind on the internet'
 date: Jul 16, 2014
 tags:
-  - tools
+  - internet
+  - grumbles
 ---
 
 You often visit someone’s blog and see this:

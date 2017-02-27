@@ -6,6 +6,8 @@ lang: en
 medium: structuring-react-and-redux-applications-255361d24f84
 tags:
   - javascript
+  - react
+  - redux
 ---
 
 There’s no idiomatic way to structure Redux applications yet. And I believe there’s no The Only True Project Structure but I’ll describe what works for me.

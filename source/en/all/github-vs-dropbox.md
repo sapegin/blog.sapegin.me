@@ -6,6 +6,7 @@ date: Apr 30, 2014
 tags:
   - tools
   - thoughts
+  - github
 ---
 
 People wonder when I tell them that I store all my code at Dropbox. They wonder more when I tell them that I store all my Git repositories in Dropbox too. They explain to me that it’s wrong and I’ll definitely have problems.

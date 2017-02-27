@@ -3,6 +3,8 @@ layout: Post
 lang: en
 title: "alert('Hello world!');"
 date: Apr 11, 2013
+tags:
+  - blog
 ---
 
 Hi! I’m Artem and I’m JavaScript developer at Badoo in Moscow, Russia. I do some [freelance](http://sapegin.me/portfolio) and [open source](https://github.com/sapegin) too. I’m also a passionate [photographer](http://decisivemoment.ru/index_en.html) who lives with beautiful wife and two awesome (though a bit crazy) dogs.

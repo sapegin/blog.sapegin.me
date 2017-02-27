@@ -7,6 +7,9 @@ medium: testing-react-components-with-jest-and-enzyme-41d592c174f
 tags:
   - tools
   - javascript
+  - jest
+  - react
+  - testing
 ---
 
 Some people say that testing React components is useless and in many cases it is, but there are a few cases when I think it’s useful:

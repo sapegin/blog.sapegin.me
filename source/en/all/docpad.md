@@ -5,6 +5,8 @@ title: 'WordPress → Aegea → DocPad'
 date: Apr 30, 2013
 tags:
   - tools
+  - blog
+  - docpad
 ---
 
 Recently I’ve remade this blog for the third time.

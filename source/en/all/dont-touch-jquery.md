@@ -7,6 +7,8 @@ medium: don-t-touch-jquery-12c928c79f19
 tags:
   - javascript
   - thoughts
+  - grumbles
+  - jquery
 ---
 
 Most of 2015 front-end developers spent arguing about the best Flux implementation and whether we need jQuery or not.
