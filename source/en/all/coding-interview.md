@@ -66,7 +66,7 @@ For sure they will show you snippets of code on pieces of paper and ask the resu
 * [Cracking The Coding Interview: 12 Things You Need To Know](https://simpleprogrammer.com/2015/01/19/cracking-the-coding-interview/).
 * [A Guide to the frontend Interview Process](https://ashleynolan.co.uk/blog/a-guide-to-front-end-interviews).
 * [Job Search Retrospective](http://juliepagano.com/blog/2015/08/15/job-search-retrospective/).
-* [What happens when...](https://github.com/alex/what-happens-when).
+* [What happens when…](https://github.com/alex/what-happens-when).
 * [JavaScript Garden](http://bonsaiden.github.io/JavaScript-Garden/).
 * [How to Gracefully Turn Down a Job Offer](https://www.themuse.com/advice/how-to-gracefully-turn-down-a-job-offer)
 * [Soft Skills: The Software Developer’s Life Manual](https://www.amazon.com/gp/product/1617292397/?tag=artesapesphot-20).
