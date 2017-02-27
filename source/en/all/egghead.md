@@ -57,7 +57,7 @@ Very basic and very short course. If you’re already using React Router in a pr
 
 ## [React fundamentals](https://egghead.io/courses/react-fundamentals) by Joe Maddalone
 
-Watch the free [React fundamentals course](http://courses.reactjsprogram.com/courses/reactjsfundamentals) by Tyler McGinnis instead (yeah, the name is the same but it’s a different course by a different author).
+Watch the free [React fundamentals course](https://reacttraining.com/online/react-fundamentals) by Tyler McGinnis instead (yeah, the name is the same but it’s a different course by a different author).
 
 ## [Introduction to Reactive Programming](https://egghead.io/courses/introduction-to-reactive-programming) by André Staltz
 

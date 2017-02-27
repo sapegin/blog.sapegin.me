@@ -10,7 +10,7 @@ tags:
   - internet
 ---
 
-AMA is a GitHub repository where anyone can file an issue with any question and author will reply in a comment. It was [started by Sindre Sorhus](https://blog.sindresorhus.com/answering-anything-678ce5623798#.vnlpiwx8y) in July 2015 and now there are [more than 100 AMAs](https://github.com/sindresorhus/amas).
+AMA is a GitHub repository where anyone can file an issue with any question and author will reply in a comment. It was [started by Sindre Sorhus](https://blog.sindresorhus.com/answering-anything-678ce5623798) in July 2015 and now there are [more than 100 AMAs](https://github.com/sindresorhus/amas).
 
 Some of the questions are [really interesting](https://github.com/sindresorhus/ama/issues/10). Basically to answer a question one has to write a tiny (and sometimes not so tiny) blog post. For me it’s something between Twitter and a blog but directed by the readers.
 

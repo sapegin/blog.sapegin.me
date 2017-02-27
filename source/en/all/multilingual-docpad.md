@@ -15,9 +15,9 @@ You can use this blog’s [source code](https://github.com/sapegin/blog.sapegin.
 
 ## Translating posts
 
-Create separate folders for each language’s blog content. In my case it’s [`src/documents_en`](https://github.com/sapegin/blog.sapegin.me/tree/master/src/documents_en) and [`src/documents_ru`](https://github.com/sapegin/blog.sapegin.me/tree/master/src/documents_ru) (for English and Russian correspondingly).
+Create separate folders for each language’s blog content. In my case it’s `src/documents_en` and `src/documents_ru` (for English and Russian correspondingly).
 
-Then add this code to your DocPad config ([`docpad.coffee`](https://github.com/sapegin/blog.sapegin.me/blob/master/docpad.coffee)):
+Then add this code to your DocPad config (`docpad.coffee`):
 
 ```coffee
 docpadConfig = {
@@ -44,7 +44,7 @@ docpad generate --env ru  # Generate files for Russian version
 
 Create YAML files for every language.
 
-For example, [`src/lang/en.yml`](https://github.com/sapegin/blog.sapegin.me/blob/master/src/lang/en.yml):
+For example, `src/lang/en.yml`:
 
 ```yaml
 lang: en
@@ -114,9 +114,9 @@ Install libraries used in above code from npm:
 npm install --save-dev yamljs moment lodash
 ```
 
-You can find plural functions for you language in [polyglot.js](https://github.com/airbnb/polyglot.js/blob/master/lib/polyglot.js).
+You can find plural functions for you language in [polyglot.js](https://github.com/airbnb/polyglot.js).
 
-Now you need to replace all local specific data in your [templates](https://github.com/sapegin/blog.sapegin.me/tree/master/src/layouts) with this helpers.
+Now you need to replace all local specific data in your templates with this helpers.
 
 Regular strings:
 

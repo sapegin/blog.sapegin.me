@@ -20,9 +20,9 @@ Most of our work isn’t in writing new code but modifying existing code. That m
 
 I recommend reading these three amazing books — in this order, from shortest to longest:
 
-* [The Art of Readable Code](https://www.amazon.com/gp/product/0596802293/) by Dustin Boswell
-* [Clean Code: A Handbook of Agile Software Craftsmanship](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882/) by Robert C. Martin
-* [Code Complete: A Practical Handbook of Software Construction](https://www.amazon.com/Code-Complete-Practical-Handbook-Construction/dp/0735619670/) by Steve McConnell
+* [The Art of Readable Code](https://www.amazon.com/gp/product/0596802293/?tag=artesapesphot-20) by Dustin Boswell
+* [Clean Code: A Handbook of Agile Software Craftsmanship](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882/?tag=artesapesphot-20) by Robert C. Martin
+* [Code Complete: A Practical Handbook of Software Construction](https://www.amazon.com/Code-Complete-Practical-Handbook-Construction/dp/0735619670/?tag=artesapesphot-20) by Steve McConnell
 
 ## Learn JavaScript deeper
 
@@ -44,11 +44,11 @@ For years we wanted classes in JavaScript. Now we finally have them but don’t 
 
 As frontend developers we’re closer to users than anybody else in the team, maybe even closer than designers. And if designers have to verify every pixel you put on screen, you’re doing something wrong.
 
-* Design for Hackers: [a book](https://www.amazon.com/Design-Hackers-Reverse-Engineering-Beauty-ebook/dp/B005J578EW) and [a free course](https://designforhackers.com/).
+* Design for Hackers: [a book](https://www.amazon.com/Design-Hackers-Reverse-Engineering-Beauty-ebook/dp/B005J578EW/?tag=artesapesphot-20) and [a free course](https://designforhackers.com/).
 * [Design for Non-Designers](https://youtu.be/ZbrzdMaumNk) talk by Tracy Osborn.
 * [Design of Web Applications](http://nathanbarry.com/webapps/) book by Nathan Barry.
 * [On Web Typography](https://abookapart.com/products/on-web-typography) book by Jason Santa Maria.
-* [The Inmates Are Running the Asylum: Why High Tech Products Drive Us Crazy and How to Restore the Sanity](https://www.amazon.com/Inmates-Are-Running-Asylum-Products-ebook/dp/B000OZ0N62/) by Alan Cooper
+* [The Inmates Are Running the Asylum: Why High Tech Products Drive Us Crazy and How to Restore the Sanity](https://www.amazon.com/Inmates-Are-Running-Asylum-Products-ebook/dp/B000OZ0N62/?tag=artesapesphot-20) by Alan Cooper
 * A few articles on animation in UI: [How to Use Animation to Improve UX](http://babich.biz/how-to-use-animation-to-improve-ux/), [Transitional Interfaces](https://medium.com/@pasql/transitional-interfaces-926eb80d64e3#.igcwawszz).
 
 ## Learn how to work with humans
@@ -57,9 +57,9 @@ Some of us come to programming because we prefer to interact with computers more
 
 We rarely work in isolation: we have to talk to other developers, designers, managers and sometimes even users. That’s hard but it’s very important if you want to really understand what you’re doing and why, because that's where the value in what we do lies.
 
-* [Soft Skills: The software developer’s life manual](https://www.amazon.com/Soft-Skills-software-developers-manual/dp/1617292397/) by John Sonmez.
-* [The Clean Coder: A Code of Conduct for Professional Programmers](https://www.amazon.com/Clean-Coder-Conduct-Professional-Programmers/dp/0137081073/) by Robert C. Martin.
-* [Start with No: The Negotiating Tools that the Pros Don't Want You to Know](https://www.amazon.com/Start-No-Negotiating-Tools-that-ebook/dp/B003EY7JEE/) by Jim Camp.
+* [Soft Skills: The software developer’s life manual](https://www.amazon.com/Soft-Skills-software-developers-manual/dp/1617292397/?tag=artesapesphot-20) by John Sonmez.
+* [The Clean Coder: A Code of Conduct for Professional Programmers](https://www.amazon.com/Clean-Coder-Conduct-Professional-Programmers/dp/0137081073/?tag=artesapesphot-20) by Robert C. Martin.
+* [Start with No: The Negotiating Tools that the Pros Don't Want You to Know](https://www.amazon.com/Start-No-Negotiating-Tools-that-ebook/dp/B003EY7JEE/?tag=artesapesphot-20) by Jim Camp.
 
 ## Learn how to write for humans
 
@@ -67,8 +67,8 @@ A big portion of communication with our colleagues and other people are textual:
 
 Imagine how much time people spend reading and understanding all that. If you can reduce this time by writing more clearly and concisely, the world will be a better place to work.
 
-* [On Writing Well: The Classic Guide to Writing Nonfiction](https://www.amazon.com/gp/product/0060891548/) by William Zinsser
-* [The Elements of Style](https://www.amazon.com/Elements-Style-4th-William-Strunk/dp/0205313426/) by William Strunk and E. B. White.
+* [On Writing Well: The Classic Guide to Writing Nonfiction](https://www.amazon.com/gp/product/0060891548/?tag=artesapesphot-20) by William Zinsser
+* [The Elements of Style](https://www.amazon.com/Elements-Style-4th-William-Strunk/dp/0205313426/?tag=artesapesphot-20) by William Strunk and E. B. White.
 * [Orwell’s rules on writing](http://www.economist.com/blogs/prospero/2013/07/george-orwell-writing)
 * In Russian: awesome [Glavred course](http://maximilyahov.ru/glvrd-pro/).
 

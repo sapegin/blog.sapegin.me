@@ -69,7 +69,7 @@ For sure they will show you snippets of code on pieces of paper and ask the resu
 * [What happens when...](https://github.com/alex/what-happens-when).
 * [JavaScript Garden](http://bonsaiden.github.io/JavaScript-Garden/).
 * [How to Gracefully Turn Down a Job Offer](https://www.themuse.com/advice/how-to-gracefully-turn-down-a-job-offer)
-* [Soft Skills: The Software Developer’s Life Manual](http://www.amazon.com/gp/product/1617292397/?tag=artesapesphot-20).
+* [Soft Skills: The Software Developer’s Life Manual](https://www.amazon.com/gp/product/1617292397/?tag=artesapesphot-20).
 * [You don’t know JavaScript](https://github.com/getify/You-Dont-Know-JS) book series.
 * [JavaScript & DOM Tips, Tricks, and Techniques](https://www.impressivewebs.com/javascript-dom-tips-tricks-techniques-ebook/).
 * Something about design patterns (I haven’t read anything yet, so I can’t suggest anything particular).
