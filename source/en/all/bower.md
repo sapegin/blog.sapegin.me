@@ -1,7 +1,7 @@
 ---
 layout: Post
 lang: en
-title: 'Bower: Why frontend needs a package manager'
+title: 'Bower: why frontend needs a package manager'
 date: Jul 24, 2014
 tags:
   - tools
