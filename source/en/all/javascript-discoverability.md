@@ -26,7 +26,7 @@ Juho Vepsäläinen has [a list of npm search tools](http://www.nixtu.info/2016/0
 
 This is still an unsolved question for me and I hope we’ll see more sophisticated search tools that will consider many parameters to rank search results: npm installs in the last month, GitHub stars, latest release date, opened issues, test coverage, etc.
 
-[JS.coach](https://js.coach/) is very close to that but they only have modules for React, Webpack, Babel, etc.
+[JS.coach](https://js.coach/) is very close to that but they only have modules for React, webpack, Babel, etc.
 
 And I believe it will decrease the number of almost identical libraries because authors will be able to easily find what’s already available.
 

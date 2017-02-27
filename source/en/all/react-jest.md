@@ -323,7 +323,7 @@ Try to replace arrow function component with regular function:
 
 * [Testing React Applications](https://youtu.be/59Ndb3YkLKA) by Max Stoiber
 * [Migrating to Jest](https://medium.com/@kentcdodds/migrating-to-jest-881f75366e7e#.pc4s5ut6z) by Kent C. Dodds
-* [Migrating Ava to Jest](http://browniefed.com/blog/migrating-ava-to-jest/) by Jason Brown
+* [Migrating AVA to Jest](http://browniefed.com/blog/migrating-ava-to-jest/) by Jason Brown
 
 ***
 

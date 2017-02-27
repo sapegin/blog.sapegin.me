@@ -11,7 +11,7 @@ tags:
 
 I like BEM. But I’m not Yandex, Google or any other huge company that builds all the internet so I found BEM is too strict for me.
 
-The point of OPOR (One Page of Rules) is that all rules and recommendations are contained on a single page. It combines best parts of [BEM](http://en.bem.info/), [SMACSS](http://smacss.com/) and [OOCSS](http://coding.smashingmagazine.com/2011/12/12/an-introduction-to-object-oriented-css-oocss/). It’s not a religion and it’s suitable for any small to medium project.
+The point of OPOR (One Page of Rules) is that all rules and recommendations are contained on a single page. It combines best parts of [BEM](https://en.bem.info/), [SMACSS](https://smacss.com/) and [OOCSS](https://www.smashingmagazine.com/2011/12/an-introduction-to-object-oriented-css-oocss/). It’s not a religion and it’s suitable for any small to medium project.
 
 ## CSS classes names
 
@@ -96,17 +96,17 @@ Don’t imply any semantics, use it for appearance only.
 
 ## Other methodologies
 
-* [BEM](http://en.bem.info/)
-* [SMACSS](http://smacss.com/)
-* [OOCSS](http://coding.smashingmagazine.com/2011/12/12/an-introduction-to-object-oriented-css-oocss/)
+* [BEM](https://en.bem.info/)
+* [SMACSS](https://smacss.com/)
+* [OOCSS](https://www.smashingmagazine.com/2011/12/an-introduction-to-object-oriented-css-oocss/)
 * [MCSS](https://github.com/operatino/MCSS)
 
 ## Links
 
-* [About HTML semantics and front-end architecture](http://nicolasgallagher.com/about-html-semantics-front-end-architecture/)
-* [Code smells in CSS](http://csswizardry.com/2012/11/code-smells-in-css/)
-* [Pragmatic, practical font sizing in CSS](http://csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css/)
-* [Single-direction margin declarations](http://csswizardry.com/2012/06/single-direction-margin-declarations/)
+* [About HTML semantics and frontend architecture](http://nicolasgallagher.com/about-html-semantics-front-end-architecture/)
+* [Code smells in CSS](https://csswizardry.com/2012/11/code-smells-in-css/)
+* [Pragmatic, practical font sizing in CSS](https://csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css/)
+* [Single-direction margin declarations](https://csswizardry.com/2012/06/single-direction-margin-declarations/)
 * [The media object saves hundreds of lines of code](http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/)
-* [Writing the best CSS when building with HTML5](http://toddmotto.com/writing-the-best-css-when-building-with-html5/)
-* [My Stylus framework](https://github.com/sapegin/tamia)
+* [Writing the best CSS when building with HTML5](https://toddmotto.com/writing-the-best-css-when-building-with-html5/)
+* [My Stylus framework](https://github.com/tamiadev/tamia)

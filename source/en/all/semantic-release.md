@@ -12,13 +12,13 @@ tags:
 
 Making new releases is one of the most boring and tedious tasks in open source.
 
-There are many tools that try to automate publishing and one of the most interesting is [semantic-release](https://github.com/semantic-release/semantic-release). I was avoiding it for a long time because it makes publishing fully automated with changelogs generated from commit messages, and I believe that [changelogs must be written by humans](http://blog.sapegin.me/all/changelog).
+There are many tools that try to automate publishing and one of the most interesting is [semantic-release](https://github.com/semantic-release/semantic-release). I was avoiding it for a long time because it makes publishing fully automated with change logs generated from commit messages, and I believe that [change logs must be written by humans](http://blog.sapegin.me/all/changelog).
 
 But actually it’s very flexible and I was able to customize it to do exactly what I want:
 
-* Publish a new PATCH version to npm as soon as a fix commit merged to the `master` branch, generate changelog from commit messages.
-* Postpone MINOR and MAJOR release until a proper changelog is written by a project maintainer.
-* Generate changelog draft: Markdown file with all important commits since the latest release grouped into three sections: breaking changes, new features and bugfixes.
+* Publish a new PATCH version to npm as soon as a fix commit merged to the `master` branch, generate change log from commit messages.
+* Postpone MINOR and MAJOR release until a proper change log is written by a project maintainer.
+* Generate change log draft: Markdown file with all important commits since the latest release grouped into three sections: breaking changes, new features and bugfixes.
 
 Below I’ll describe my own set of scripts that implements this workflow.
 
@@ -30,15 +30,15 @@ Below I’ll describe my own set of scripts that implements this workflow.
 
 3. It determines a release type (PATCH, MINOR or MAJOR) by analyzing commit messages (more on that later).
 
-4. It generates a changelog:
+4. It generates a change log:
 
    a. If the release type is PATCH: from commit messages.
 
-   b. If the release type is MINOR or MAJOR and the latest commit is a changelog: uses body of that commit as a changelog.
+   b. If the release type is MINOR or MAJOR and the latest commit is a change log: uses body of that commit as a change log.
 
 5. Publishes a new version to npm.
 
-6. Publishes changelog to GitHub Releases page.
+6. Publishes change log to GitHub Releases page.
 
 ## Install semantic-release
 
@@ -70,7 +70,7 @@ branches:
 
 ## Customize semantic-release
 
-You can change semantic-release behavior with plugins: detect release type, check release requirements (like a changelog), generate changelog, etc. I made a [package with all plugins](https://github.com/tamiadev/semantic-release-tamia) I need to support my workflow.
+You can change semantic-release behavior with plugins: detect release type, check release requirements (like a change log), generate change log, etc. I made a [package with all plugins](https://github.com/tamiadev/semantic-release-tamia) I need to support my workflow.
 
 First install the plugins:
 
@@ -114,15 +114,15 @@ Each commit message consists of:
 
 Semantic-release uses this tags to find all important commits for the release (`Fix` is important, `Docs` is not) and determine which version (MAJOR, MINOR or PATCH) should be released.
 
-## Write changelog for MINOR or MAJOR release
+## Write change log for MINOR or MAJOR release
 
-I wrote [a script](https://github.com/tamiadev/semantic-release-tamia#release-process) to help me with changelogs.
+I wrote [a script](https://github.com/tamiadev/semantic-release-tamia#release-process) to help me with change logs.
 
 First run `sr-changelog`. It will create a file with all important commits for the release grouped by type (breaking changes, new features and bugfixes) and open it in your default editor.
 
-Now you can rewrite your changelog to make it useful and easy to read for your users.
+Now you can rewrite your change log to make it useful and easy to read for your users.
 
-Then run `sr-changelog commit`. It will make a commit without changes (`git commit --allow-empty`) of type `Changelog` and changelog in the commit message body.
+Then run `sr-changelog commit`. It will make a commit without changes (`git commit --allow-empty`) of type `Changelog` and change log in the commit message body.
 
 ## Publish new release
 
@@ -147,6 +147,6 @@ Now you need to `git push` your changes and make some coffee.
 * [My commit message conventions](https://github.com/tamiadev/semantic-release-tamia/blob/master/Convention.md)
 * [AngularJS commit message conventions](https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit#)
 * [How to Write an Open Source JavaScript Library Egghead course](https://egghead.io/lessons/javascript-how-to-write-a-javascript-library-automating-releases-with-semantic-release)
-* [Why you need to write changelogs yourself](http://blog.sapegin.me/all/changelog)
-* [Keep a CHANGELOG: Don’t let your friends dump git logs into CHANGELOGs](http://keepachangelog.com/)
+* [Why you need to write change logs yourself](http://blog.sapegin.me/all/changelog)
+* [Keep a CHANGELOG: Don’t let your friends dump git logs into change logs](http://keepachangelog.com/)
 * [Semantic Versioning](http://semver.org/)

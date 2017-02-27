@@ -15,7 +15,7 @@ Easy: there’s always some unfinished code that isn’t ready for committing.
 
 I can write such code for a few weeks on different computers even if there are only dozen of lines of code. Dropbox perfectly syncs that code between my computers.
 
-I push all my code to GitHub or Bitbucket so it’s not a big deal if Dropbox blows up my `.git` folder. And few “conflicts” could be [easily](https://coderwall.com/p/tzjorw) [fixed](https://github.com/sapegin/dotfiles/blob/master/bin/cleandropbox).
+I push all my code to GitHub or Bitbucket so it’s not a big deal if Dropbox blows up my `.git` folder. And few “conflicts” could be [easily](https://coderwall.com/p/tzjorw/get-rid-of-dropbox-conflicted-copies) [fixed](https://github.com/sapegin/dotfiles/blob/master/bin/cleandropbox).
 
 There are two more reasons:
 

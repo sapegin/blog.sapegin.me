@@ -201,7 +201,7 @@ It allows you to do `import configureStore from './store/configureStore` and hav
 
 ## Other approaches
 
-* [Structuring React Projects](http://survivejs.com/webpack_react/structuring_react_projects/), a chapter from SurviveJS book.
-* [A Better File Structure For React/Redux Applications](http://marmelab.com/blog/2015/12/17/react-directory-structure.html)
+* [Structuring React Projects](https://survivejs.com/webpack_react/structuring_react_projects/), a chapter from SurviveJS book.
+* [A Better File Structure For React/Redux Applications](https://marmelab.com/blog/2015/12/17/react-directory-structure.html)
 * [Organizing Large React Applications](http://engineering.kapost.com/2016/01/organizing-large-react-applications/)
 * [How to better organize your React applications](https://medium.com/@alexmngn/how-to-better-organize-your-react-applications-2fd3ea1920f1#.sbykc54ta)

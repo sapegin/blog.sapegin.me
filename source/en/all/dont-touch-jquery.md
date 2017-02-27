@@ -11,7 +11,7 @@ tags:
   - jquery
 ---
 
-Most of 2015 front-end developers spent arguing about the best Flux implementation and whether we need jQuery or not.
+Most of 2015 frontend developers spent arguing about the best Flux implementation and whether we need jQuery or not.
 
 Leave jQuery alone. Rewriting your project not to use jQuery won’t solve any real problem.
 

@@ -9,7 +9,7 @@ tags:
   - oss
 ---
 
-In the past front-end developer could spend years mastering the same set of tools. Now we don’t have this luxury. We have to adapt to constantly changing ecosystem. We’ve replaced Grunt with Gulp, JSHint with ESLint, Bower with npm and everything with React.
+In the past frontend developer could spend years mastering the same set of tools. Now we don’t have this luxury. We have to adapt to constantly changing ecosystem. We’ve replaced Grunt with Gulp, JSHint with ESLint, Bower with npm and everything with React.
 
 It requires us to develop new skills:
 
@@ -17,9 +17,9 @@ It requires us to develop new skills:
 * quickly decide what to learn and what to use;
 * debug frameworks and libraries.
 
-Only last month gave us [Babel 6](http://babeljs.io/blog/2015/10/29/6.0.0/), [React Router 1.0](https://github.com/rackt/react-router/releases/tag/v1.0.0) and [React 0.14](https://facebook.github.io/react/blog/2015/10/07/react-v0.14.html) (a bit earlier) as well as betas of [React Intl 2.0](https://github.com/yahoo/react-intl/releases/tag/v2.0.0-beta-1) and [Webpack 2](https://github.com/webpack/webpack/pull/861). All with breaking changes.
+Only last month gave us [Babel 6](http://babeljs.io/blog/2015/10/29/6.0.0/), [React Router 1.0](https://github.com/ReactTraining/react-router/releases/tag/v1.0.0) and [React 0.14](https://facebook.github.io/react/blog/2015/10/07/react-v0.14.html) (a bit earlier) as well as betas of [React Intl 2.0](https://github.com/yahoo/react-intl/releases/tag/v2.0.0-beta-1) and [Webpack 2](https://github.com/webpack/webpack/pull/861). All with breaking changes.
 
-It makes developer experience much more important than ever. In the past few months I spent many hours debugging strange issues with Webpack, Babel and other libraries. I believe that we can do better.
+It makes developer experience much more important than ever. In the past few months I spent many hours debugging strange issues with webpack, Babel and other libraries. I believe that we can do better.
 
 ## What we, as tools developers, can do
 
@@ -35,9 +35,9 @@ Bad: [Immutable.js](https://facebook.github.io/immutable-js/docs/), [Webpack](ht
 
 ### Describe breaking changes and how to upgrade
 
-Good: [Rackt](https://github.com/rackt) projects like [React Router](https://github.com/rackt/react-router/releases/tag/v1.0.0) or [Redux](https://github.com/rackt/redux/releases/tag/v2.0.0). Detailed descriptions of breaking changes and upgrade instructions.
+Good: [Rackt](https://github.com/rackt) projects like [React Router](https://github.com/ReactTraining/react-router/releases/tag/v1.0.0) or [Redux](https://github.com/rackt/redux/releases/tag/v2.0.0). Detailed descriptions of breaking changes and upgrade instructions.
 
-Bad: [almost](https://github.com/sindresorhus/gulp-imagemin) [any](https://github.com/floatdrop/gulp-plumber) [Gulp](https://github.com/contra/gulp-concat) [plugin](https://github.com/robrich/gulp-if). No changelogs at all.
+Bad: [almost](https://github.com/sindresorhus/gulp-imagemin) [any](https://github.com/floatdrop/gulp-plumber) [Gulp](https://github.com/contra/gulp-concat) [plugin](https://github.com/robrich/gulp-if). No change logs at all.
 
 ### Improve error handling
 

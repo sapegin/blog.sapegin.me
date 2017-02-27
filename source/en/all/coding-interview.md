@@ -60,18 +60,18 @@ For sure they will show you snippets of code on pieces of paper and ask the resu
 
 ## What to read
 
-* [Front-end Job Interview Questions](https://github.com/h5bp/Front-end-Developer-Interview-Questions).
+* [Frontend Job Interview Questions](https://github.com/h5bp/Front-end-Developer-Interview-Questions).
 * [Questions to ask your future web dev employer](https://medium.com/@edwardog/questions-to-ask-your-future-web-dev-employer-f7a161b5bc70).
-* [How to get a job in the tech industry](https://medium.com/@riklomas/how-to-get-a-job-in-the-tech-industry-9b3ca6d5ee88).
-* [Cracking The Coding Interview: 12 Things You Need To Know](http://simpleprogrammer.com/2015/01/19/cracking-the-coding-interview/).
-* [A Guide to the Front-End Interview Process](http://ashleynolan.co.uk/blog/a-guide-to-front-end-interviews).
+* [How to get a job in the tech industry](https://medium.com/superhi/how-to-get-a-job-in-the-tech-industry-9b3ca6d5ee88).
+* [Cracking The Coding Interview: 12 Things You Need To Know](https://simpleprogrammer.com/2015/01/19/cracking-the-coding-interview/).
+* [A Guide to the frontend Interview Process](https://ashleynolan.co.uk/blog/a-guide-to-front-end-interviews).
 * [Job Search Retrospective](http://juliepagano.com/blog/2015/08/15/job-search-retrospective/).
 * [What happens when...](https://github.com/alex/what-happens-when).
 * [JavaScript Garden](http://bonsaiden.github.io/JavaScript-Garden/).
 * [How to Gracefully Turn Down a Job Offer](https://www.themuse.com/advice/how-to-gracefully-turn-down-a-job-offer)
 * [Soft Skills: The Software Developer’s Life Manual](http://www.amazon.com/gp/product/1617292397/?tag=artesapesphot-20).
 * [You don’t know JavaScript](https://github.com/getify/You-Dont-Know-JS) book series.
-* [JavaScript & DOM Tips, Tricks, and Techniques](http://www.impressivewebs.com/javascript-dom-tips-tricks-techniques-ebook/).
+* [JavaScript & DOM Tips, Tricks, and Techniques](https://www.impressivewebs.com/javascript-dom-tips-tricks-techniques-ebook/).
 * Something about design patterns (I haven’t read anything yet, so I can’t suggest anything particular).
 
 But, please, don’t use all that new trickery you’ve learned in  real code. We write code for other people and making your code more cowboyish won’t make them happy.
@@ -80,7 +80,7 @@ But, please, don’t use all that new trickery you’ve learned in  real code. W
 
 * [Grammarly](https://www.grammarly.com/) — find mistakes in your English texts.
 * [Canned Emails](http://www.cannedemails.com/) — prewritten emails for any occasion.
-* [Codewars](http://www.codewars.com/) — small tasks for programmers.
+* [Codewars](https://www.codewars.com/) — small tasks for programmers.
 
 ## Attend an interview
 

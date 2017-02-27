@@ -44,7 +44,7 @@ For years we wanted classes in JavaScript. Now we finally have them but don’t 
 
 As frontend developers we’re closer to users than anybody else in the team, maybe even closer than designers. And if designers have to verify every pixel you put on screen, you’re doing something wrong.
 
-* Design for Hackers: [a book](https://www.amazon.com/Design-Hackers-Reverse-Engineering-Beauty-ebook/dp/B005J578EW) and [a free course](http://designforhackers.com/).
+* Design for Hackers: [a book](https://www.amazon.com/Design-Hackers-Reverse-Engineering-Beauty-ebook/dp/B005J578EW) and [a free course](https://designforhackers.com/).
 * [Design for Non-Designers](https://youtu.be/ZbrzdMaumNk) talk by Tracy Osborn.
 * [Design of Web Applications](http://nathanbarry.com/webapps/) book by Nathan Barry.
 * [On Web Typography](https://abookapart.com/products/on-web-typography) book by Jason Santa Maria.
@@ -87,4 +87,4 @@ What would you recommend? What are you going to learn in 2017?
 
 ***
 
-Thanks to [Henrique Alves](http://alves.im/), [Nicolás Bevacqua](https://ponyfoo.com/), [Alexander Burtsev](http://burtsev.me/), [Nataliya Karatkova](https://twitter.com/meuwka), [Oliver Turner](https://twitter.com/oliverturner), [Juho Vepsäläinen](http://survivejs.com/) and [Anton Zhiyanov](http://antonz.ru/) for feedback and suggestions.
+Thanks to [Henrique Alves](http://alves.im/), [Nicolás Bevacqua](https://ponyfoo.com/), [Alexander Burtsev](http://burtsev.me/), [Nataliya Karatkova](https://twitter.com/meuwka), [Oliver Turner](https://twitter.com/oliverturner), [Juho Vepsäläinen](https://survivejs.com/) and [Anton Zhiyanov](https://antonz.ru/) for feedback and suggestions.

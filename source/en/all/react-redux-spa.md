@@ -11,16 +11,16 @@ tags:
   - education
 ---
 
-Here is a list of the best articles, books and talks about the libraries and tools we use at the [Here](https://company.here.com/) product tools team.
+Here is a list of the best articles, books and talks about the libraries and tools we use at the [Here](https://here.com/en) product tools team.
 
-You can start from [a very good introduction](http://reactkungfu.com/2015/07/the-hitchhikers-guide-to-modern-javascript-tooling/) to modern front-end tooling.
+You can start from [a very good introduction](http://reactkungfu.com/2015/07/the-hitchhikers-guide-to-modern-javascript-tooling/) to modern frontend tooling.
 
 ## ECMAScript 6
 
 Thanks to [Babel](http://babeljs.io/) we can write in ES6 (official name is ECMAScript 2015).
 
-* [Learn ES2015](http://babeljs.io/docs/learn-es2015/).
-* [An intro to using npm and ES6 modules for front end development](http://wesbos.com/javascript-modules/) by Wes Bos.
+* [Learn ES6](http://babeljs.io/docs/learn-es2015/).
+* [An intro to using npm and ES6 modules for frontend development](http://wesbos.com/javascript-modules/) by Wes Bos.
 * 📖 [Understanding ECMAScript 6](https://leanpub.com/understandinges6/read/) by Nicholas C. Zakas.
 * 📖 [Exploring ES6](http://exploringjs.com/es6/) by Dr. Axel Rauschmayer.
 
@@ -35,7 +35,7 @@ Our view layer is [React](https://facebook.github.io/react/).
 * [React tips and best practices](http://aeflash.com/2015-02/react-tips-and-best-practices.html) by Alexander Early.
 * [Removing user interface complexity, or why React is awesome](http://jlongster.com/Removing-User-Interface-Complexity,-or-Why-React-is-Awesome) by James Long.
 * [React cheat sheet](http://reactcheatsheet.com/).
-* 📖 [SurviveJS: React](http://survivejs.com/react/introduction/) by Juho Vepsäläinen.
+* 📖 [SurviveJS: React](https://survivejs.com/react/introduction/) by Juho Vepsäläinen.
 
 ## Redux
 
@@ -45,7 +45,7 @@ Our view layer is [React](https://facebook.github.io/react/).
 * [Redux best practices](https://medium.com/lexical-labs-engineering/redux-best-practices-64d59775802e) by Will Becker.
 * [Single State Tree + Flux](http://merrickchristensen.com/articles/single-state-tree.html) by Merrick Christensen.
 * [Querying a Redux store](https://medium.com/@adamrackis/querying-a-redux-store-37db8c7f3b0f) by Adam Rackis.
-* 🖥 [Getting started with Redux](https://egghead.io/series/getting-started-with-redux) by Dan Abramov.
+* 🖥 [Getting started with Redux](https://egghead.io/courses/getting-started-with-redux) by Dan Abramov.
 * 📺 [Live React: Hot Reloading with Time Travel](https://youtu.be/xsSnOQynTHs) by Dan Abramov, ReactEurope 2015.
 * [Redux documentation](http://redux.js.org/).
 
@@ -58,23 +58,23 @@ Redux was inspired by the original Facebook’s [Flux architecture](https://fac
 
 Redux requires that all the data in the store should be immutable. [Immutable.js](https://facebook.github.io/immutable-js/) makes work with immutable data structures easier and (potentially) faster.
 
-* [The React.js way: Flux architecture with Immutable.js](https://blog.risingstack.com/the-react-js-way-flux-architecture-with-immutable-js/) by Péter Márton.
+* [The React way: Flux architecture with Immutable.js](https://blog.risingstack.com/the-react-js-way-flux-architecture-with-immutable-js/) by Péter Márton.
 * [Immutable data structures and JavaScript](http://jlongster.com/Using-Immutable-Data-Structures-in-JavaScript) by James Long.
-* 📺 [Immutable data and React](https://youtu.be/I7IdS-PbEgI) by Lee Byron, React.js Conf 2015.
+* 📺 [Immutable data and React](https://youtu.be/I7IdS-PbEgI) by Lee Byron, React Conf 2015.
 
 ## CSS Modules
 
 CSS modules are like [BEM](http://getbem.com/) but they provide real class names uniqueness. And you don’t need to write long class names manually. We use CSS modules with [Sass](http://sass-lang.com/) and [Autoprefixer](https://github.com/postcss/autoprefixer).
 
-* [CSS Modules: welcome to the future](http://glenmaddern.com/articles/css-modules) by Glen Maddern.
+* [CSS Modules: welcome to the future](https://glenmaddern.com/articles/css-modules) by Glen Maddern.
 * 📺 [Interoperable CSS](https://youtu.be/aIyhhHTmsXE) by Glen Maddern, CSSconf EU 2015.
 
 ## Webpack
 
-[Webpack](http://webpack.github.io/) allows us to use ES6/JSX syntax (including ES6 modules), import modules from npm and use hot reloading to debug front-end code.
+[Webpack](http://webpack.github.io/) allows us to use ES6/JSX syntax (including ES6 modules), import modules from npm and use hot reloading to debug frontend code.
 
-* [A cookbook for using Webpack with React JS](https://christianalfoni.github.io/react-webpack-cookbook/) by Christian Alfoni and Juho Vepsäläinen.
-* 📖 [SurviveJS: Webpack](http://survivejs.com/webpack/introduction/) by Juho Vepsäläinen.
+* [A cookbook for using webpack with React](https://christianalfoni.github.io/react-webpack-cookbook/) by Christian Alfoni and Juho Vepsäläinen.
+* 📖 [SurviveJS: webpack](https://survivejs.com/webpack/introduction/) by Juho Vepsäläinen.
 
 ## Testing
 
@@ -91,10 +91,10 @@ And a couple of libraries to make work with shallow rendering easier:
 
 Unfortunately, I haven’t found any good articles about these libraries.
 
-* [React Router](https://github.com/rackt/react-router), client-side routing.
-* [redux-simple-router](https://github.com/rackt/redux-simple-router), simple bindings to keep React Router and Redux in sync.
-* [React Intl](http://formatjs.io/react/), internationalization for React.
-* [Reselect](https://github.com/rackt/reselect), memoized and composable selectors for Redux.
+* [React Router](https://github.com/ReactTraining/react-router), client-side routing.
+* [redux-simple-router](https://github.com/reactjs/react-router-redux), simple bindings to keep React Router and Redux in sync.
+* [React Intl](https://github.com/yahoo/react-intl), internationalization for React.
+* [Reselect](https://github.com/reactjs/reselect), memoized and composable selectors for Redux.
 
 ## Developer tools
 
@@ -109,4 +109,4 @@ These tools are as useful as all the resources mentioned above.
 
 Let me know if I’ve missed something, I highly appreciate any additions to this list.
 
-P. S. Check out my latest open source project: [React Styleguidist](https://github.com/sapegin/react-styleguidist), a component style guide generator with a hot reload dev server.
+P. S. Check out my latest open source project: [React Styleguidist](https://github.com/styleguidist/react-styleguidist), a component style guide generator with a hot reload dev server.

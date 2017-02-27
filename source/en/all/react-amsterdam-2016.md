@@ -11,7 +11,7 @@ tags:
   - react
 ---
 
-[React Amsterdam](http://react.amsterdam/) is the first conference about React in Amsterdam, Netherlands.
+[React Amsterdam](https://react.amsterdam/) is the first conference about React in Amsterdam, Netherlands.
 
 ![My friends and speakers at React Amsterdam 2016](/images/react-amsterdam-2016.jpg)
 
@@ -62,7 +62,7 @@ A talk about migrating PayPal from Backbone to React.
 
 [Oleg Slobodskoi](https://twitter.com/oleg008), Chatgrape. [Video](https://youtu.be/BI4frdqSBY4), [slides](http://slides.com/kof/javascript-style-sheets#/).
 
-A talk about [JSS](https://github.com/jsstyles/jss) and problems of CSS by the JSS author. I still think that CSS Modules are more convenient but the talk was very interesting.
+A talk about [JSS](https://github.com/cssinjs/jss) and problems of CSS by the JSS author. I still think that CSS Modules are more convenient but the talk was very interesting.
 
 * React for components, CSS for documents.
 * Problems with CSS: global namespace, dependencies, dead code elimination, minification, sharing constants, non-deterministic resolution, isolation.
@@ -99,7 +99,7 @@ I’d prefer a simpler overview, looks like I’m not a target audience for this
 
 [Martijn Walraven](https://twitter.com/martijnwalraven), Meteor. [Video](https://youtu.be/1Dgt691lXhs), [slides](https://speakerdeck.com/martijnwalraven/apollo-react-amsterdam-2016).
 
-[Apollo](https://github.com/apollostack/apollo) is an interesting project, awesome slides.
+[Apollo](https://github.com/apollographql/apollo) is an interesting project, awesome slides.
 
 * Apollo stack is completely separated from Meteor.
 * GraphQL with any backend, any client, any language.
@@ -125,8 +125,8 @@ Two lightning talks.
 * “React is a library to build reusable UI components.” [Christopher Chedeau](https://twitter.com/vjeux)
 * Build independent reusable components.
 * Tools:
-  * [React Styleguidist](https://github.com/sapegin/react-styleguidist),
-  * [React Storybook](https://github.com/kadirahq/react-storybook),
+  * [React Styleguidist](https://github.com/styleguidist/react-styleguidist),
+  * [React Storybook](https://github.com/storybooks/react-storybook),
   * [SourceJS](https://sourcejs.com/).
 
 [Denis Radin](https://twitter.com/pixelscommander), Liberty Global. [Video](https://youtu.be/2E7JYEOqAyw), [slides](https://speakerdeck.com/reactamsterdam/denis-radin-liberty-global-amsterdam-connect-discover-be-free).
@@ -192,7 +192,7 @@ Talk about [rnpm](https://github.com/rnpm/rnpm), package manager for React Nativ
 
 [Joshua Sierles](https://twitter.com/jsierles). [Video](https://youtu.be/fN3AVJuxMIc), [slides](https://speakerdeck.com/reactamsterdam/joshua-sierles-freelance-sevilla-the-react-native-playground).
 
-Talk about [React Native Playground](http://rnplay.org). Lots of wisdom in this talk even if you’re not interested in React Native.
+Talk about [React Native Playground](https://rnplay.org/). Lots of wisdom in this talk even if you’re not interested in React Native.
 
 * React Native docs will have a playground for each component.
 

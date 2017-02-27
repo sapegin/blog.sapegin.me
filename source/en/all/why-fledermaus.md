@@ -16,7 +16,7 @@ It’s not my first engine:
 
 * fjSiter, 2002: PHP, MySQL, XSLT based content management system.
 * Custom PHP based generator for my photo gallery, 2008.
-* Sweet, 2011: Node.js based static site generator.
+* Sweet, 2011: Node based static site generator.
 * Springhare: Python based gallery engine, unfinished (the project was too big for one developer with limited time).
 * Others that I don’t remember.
 
@@ -24,7 +24,7 @@ Experience with other engines has taught me how an engine shouldn’t be impleme
 
 Usual site engine is a massive piece of code that’s optimized for a few the most popular use cases. But if you want something else you have to suffer: it’s either too hard or not possible at all. Often you end up with an ugly unstable code that breaks after every engine update.
 
-It’s like in Joe Armstrong’s [famous saying](http://www.johndcook.com/blog/2011/07/19/you-wanted-banana/) about object-oriented programming:
+It’s like in Joe Armstrong’s [famous saying](https://www.johndcook.com/blog/2011/07/19/you-wanted-banana/) about object-oriented programming:
 
 > You wanted a banana but what you got was a gorilla holding the banana and the entire jungle.
 
@@ -34,7 +34,7 @@ With the Fledermaus I took a different approach. Actually it’s just a collecti
 
 You can combine them any way you want, add custom processing at any step, generate pages yourself. For example, in my photo gallery I read EXIF meta data from JPEG files and generate [pages](http://morning.photos/albums/dogs/2013-08-03-3733) and [albums](http://morning.photos/albums/dogs) based on this data.
 
-It’s based on fancy modern things like ES2015, JSX, Markdown and Intl.
+It’s based on fancy modern things like ES6, JSX, Markdown and Intl.
 
 And it’s very small and fast:
 

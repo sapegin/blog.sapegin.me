@@ -61,4 +61,4 @@ dlg-error "Not enough cheese!"
 value="$(dlg-prompt 'Enter:' '42')"
 ```
 
-P. S. You can show notifications in the Notification Center using [terminal-notifier](https://github.com/alloy/terminal-notifier).
+P. S. You can show notifications in the Notification Center using [terminal-notifier](https://github.com/julienXX/terminal-notifier).

@@ -15,14 +15,14 @@ tags:
 
 ## First day talks
 
-**Opening keynote: State of the web** by [Hadley Beeman](http://twitter.com/@hadleybeeman). [Slides](http://www.slideshare.net/DanielleAVincent/hadley-beeman-the-state-of-the-web). [Video](https://www.youtube.com/watch?v=fZGD6zHH5uQ).
+**Opening keynote: State of the web** by [Hadley Beeman](https://twitter.com/@hadleybeeman). [Slides](http://www.slideshare.net/DanielleAVincent/hadley-beeman-the-state-of-the-web). [Video](https://www.youtube.com/watch?v=fZGD6zHH5uQ).
 
 * The future isn’t built yet.
 * We don’t all agree what the future should be.
 * We need you to help create the future.
 * The rules are fluid, because we make them. We have the ability to shape the web. What should it be?
 
-**Design for non-designers** by [Tracy Osborn](http://twitter.com/@limedaring). [Slides](https://speakerdeck.com/limedaring/design-for-non-designers-pygotham). [Video](https://www.youtube.com/watch?v=lsPrhA_m6ss).
+**Design for non-designers** by [Tracy Osborn](https://twitter.com/@limedaring). [Slides](https://speakerdeck.com/limedaring/design-for-non-designers-pygotham). [Video](https://www.youtube.com/watch?v=lsPrhA_m6ss).
 
 * Developers can’t escape at least some designing: site for open source project or just a home page.
 * Fastest way for better looking designs: cut down on clutter.
@@ -36,7 +36,7 @@ tags:
 * [A Simple Web Developer’s Guide To Color](https://www.smashingmagazine.com/2016/04/web-developer-guide-color/).
 * [Upcoming book](https://hellowebapp.com/web-design/) about web design.
 
-**Inclusive markup: you don’t need a framework for that** by [Estelle Weyl](http://twitter.com/@estellevw). [Slides](http://instartlogic.github.io/p/overkill/berliin.html). [Video](https://www.youtube.com/watch?v=FN3g39bnSRA).
+**Inclusive markup: you don’t need a framework for that** by [Estelle Weyl](https://twitter.com/@estellevw). [Slides](http://instartlogic.github.io/p/overkill/berliin.html). [Video](https://www.youtube.com/watch?v=FN3g39bnSRA).
 
 * Original purpose of frameworks is normalization of browser features like `addEventListener`: not relevant anymore.
 * Frameworks are good: faster, optimized and readable code.
@@ -45,7 +45,7 @@ tags:
 * Frameworks don’t guarantee accessibility: you need to understand the output you’re generating.
 * Semantic markup is one of the core principles of an accessible web. For example, different `input` types.
 * Average web page size has grown by 351% since 2010.
-* Front end requirements: progressive enhancement, accessibility, performance, security, user experience and design, good taste, social skills, communication and writing, teaching, debate, documentation…
+* Frontend requirements: progressive enhancement, accessibility, performance, security, user experience and design, good taste, social skills, communication and writing, teaching, debate, documentation…
 * [Resume Driven Development](http://rdd.io/) (RDD).
 
 **You might not need a CSS framework** by [Belen Albeza](https://twitter.com/ladybenko) from Mozilla. [Slides](https://belen-albeza.github.io/talk-css-frameworks/). [Video](https://www.youtube.com/watch?v=5FdHqVDlXu0).
@@ -58,7 +58,7 @@ tags:
 * Use Flexbox for layouts today. Use CSS Grid for layouts tomorrow.
 * Don’t include a whole framework if you just need a grid or a few UI components.
 
-**Node.js versions: how do they work?** by [Myles Borins](http://twitter.com/@thealphanerd) from IBM. [Slides](https://kni.sh/view-source-2016/). [Video](https://www.youtube.com/watch?v=JOR2ne84QQg).
+**Node versions: how do they work?** by [Myles Borins](https://twitter.com/@thealphanerd) from IBM. [Slides](https://kni.sh/view-source-2016/). [Video](https://www.youtube.com/watch?v=JOR2ne84QQg).
 
 * Versions are confusing but you don’t have to understand everything to contribute in a meaningful way.
 * Stop using Node 0.10 and 0.12 because OpenSSL used in these versions will stop updating in December.
@@ -67,7 +67,7 @@ tags:
 * Smoke testing: run tests for the most popular npm modules to ensure no breaking changes.
 * Tools: [branch-diff](https://github.com/rvagg/branch-diff), [changelog-maker](https://github.com/rvagg/changelog-maker).
 
-**Type is your right! Performance and web typography** by [Helen Holmes](http://twitter.com/@helenvholmes) from Mozilla. [Slides](http://www.slideshare.net/DanielleAVincent/helen-v-holmes-type-is-your-right). [Video](https://www.youtube.com/watch?v=emLfXChvVPQ).
+**Type is your right! Performance and web typography** by [Helen Holmes](https://twitter.com/@helenvholmes) from Mozilla. [Slides](http://www.slideshare.net/DanielleAVincent/helen-v-holmes-type-is-your-right). [Video](https://www.youtube.com/watch?v=emLfXChvVPQ).
 
 You can read about most of these things in Helen’s article [What is Beautiful Web Typography](http://helenvholmes.com/writing/type-is-your-right).
 
@@ -80,7 +80,7 @@ You can read about most of these things in Helen’s article [What is Beautiful 
 * Load regular, italic and bold separately.
 * Tools: [fontfaceonload](https://github.com/zachleat/fontfaceonload), [utility-opentype](https://github.com/kennethormandy/utility-opentype), [Normalize-OpenType.css](http://kennethormandy.com/journal/normalize-opentype-css).
 
-**Things you can do in ES6 that can’t be done in ES5** by [Dan Shappir](http://twitter.com/@danshappir) from Wix.com. [Slides](https://docs.google.com/presentation/d/1rBV0tPiJVqvRsnxscNk_axf-I7IS2pyiR82M6Xp5mDw/edit). [Video](https://www.youtube.com/watch?v=GbVAMgU3Jj0).
+**Things you can do in ES6 that can’t be done in ES5** by [Dan Shappir](https://twitter.com/@danshappir) from Wix.com. [Slides](https://docs.google.com/presentation/d/1rBV0tPiJVqvRsnxscNk_axf-I7IS2pyiR82M6Xp5mDw/edit). [Video](https://www.youtube.com/watch?v=GbVAMgU3Jj0).
 
 * ES6 is mostly syntactic sugar: arrow functions, destructuring, default function parameters, template strings, classes, etc.
 * It’s good: you want the syntax to be friendly.
@@ -88,18 +88,18 @@ You can read about most of these things in Helen’s article [What is Beautiful 
 * Map can be emulated in ES5 but much slower.
 * WeakMap and Proxy can’t be emulated in ES5.
 
-**Closing keynote: Resilience** by [Jeremy Keith](http://twitter.com/@adactio). [Slides](http://www.slideshare.net/DanielleAVincent/jeremy-keith-resilience). [Video](https://www.youtube.com/watch?v=W7wj7EDrSko).
+**Closing keynote: Resilience** by [Jeremy Keith](https://twitter.com/@adactio). [Slides](http://www.slideshare.net/DanielleAVincent/jeremy-keith-resilience). [Video](https://www.youtube.com/watch?v=W7wj7EDrSko).
 
 * First version of HTML had 21 tag, HTML 5 has 121.
 * HTML and CSS have loose error handling. Show content, skip tags and properties they don’t understand. Browser doesn’t stop parsing when it finds an error.
-* [The first website](http://info.cern.ch/hypertext/WWW/TheProject.html) still works in modern browsers.
+* [The first site](http://info.cern.ch/hypertext/WWW/TheProject.html) still works in modern browsers.
 * HTML and CSS are declarative and resilient, JavaScript is imperative and fragile.
 * Make core functionality available using the simplest technology, then enhance.
 * Developer convenience shouldn’t be more important than user needs.
 
 ## Second day talks
 
-**Opening keynote: existing in tech** by [Lena Reinhard](http://twitter.com/@lrnrd) from Travis CI. [Slides](http://www.slideshare.net/DanielleAVincent/lena-reinhard-existing-in-tech). [Video](https://www.youtube.com/watch?v=vpUY_ryWtc8).
+**Opening keynote: existing in tech** by [Lena Reinhard](https://twitter.com/@lrnrd) from Travis CI. [Slides](http://www.slideshare.net/DanielleAVincent/lena-reinhard-existing-in-tech). [Video](https://www.youtube.com/watch?v=vpUY_ryWtc8).
 
 * The tech industry is not hospitable to humans.
 * How to survive in tech:
@@ -115,7 +115,7 @@ You can read about most of these things in Helen’s article [What is Beautiful 
   - know there’s a spaceship, you can leave;
   - support others.
 
-**Laying out the future with Grid and Flexbox** by [Rachel Andrew](http://twitter.com/@rachelandrew). [Slides](http://www.slideshare.net/rachelandrew/laying-out-the-future-66003922). [Video](https://www.youtube.com/watch?v=ibeF6rbzD70).
+**Laying out the future with Grid and Flexbox** by [Rachel Andrew](https://twitter.com/@rachelandrew). [Slides](http://www.slideshare.net/rachelandrew/laying-out-the-future-66003922). [Video](https://www.youtube.com/watch?v=ibeF6rbzD70).
 
 * CSS wasn’t designed for layouts: floats, `inline-block`, `display: table`, absolute and relative positioning, lots of frameworks.
 * Hopes for the future: [Flexbox](https://drafts.csswg.org/css-flexbox/), [CSS Grid Layout](https://drafts.csswg.org/css-grid/), [Box Alignment](https://drafts.csswg.org/css-align/).
@@ -130,7 +130,7 @@ You can read about most of these things in Helen’s article [What is Beautiful 
 * Vendor prefixes didn’t work because developers used unfinished features in production and got upset when that features changed.
 * Try unfinished features and give feedback: it can be included in the spec.
 
-**Progressive Web Apps is the new Ajax** by [Chris Wilson](http://twitter.com/@cwilso) from Google. [Slides](http://www.slideshare.net/DanielleAVincent/chris-wilson-progressive-web-apps). [Video](https://www.youtube.com/watch?v=EErueQdEXMA).
+**Progressive Web Apps is the new Ajax** by [Chris Wilson](https://twitter.com/@cwilso) from Google. [Slides](http://www.slideshare.net/DanielleAVincent/chris-wilson-progressive-web-apps). [Video](https://www.youtube.com/watch?v=EErueQdEXMA).
 
 * The most exciting time in web development.
 * Average user installs zero app per month.
@@ -142,7 +142,7 @@ You can read about most of these things in Helen’s article [What is Beautiful 
 * [The offline cookbook](https://jakearchibald.com/2014/offline-cookbook/).
 * A promise to the user: works offline, consistent experience, the users is engaged.
 
-**Revolutionize your page: real art direction on the web** by [Jen Simmons](http://twitter.com/@jensimmons) from Mozilla. [Slides](http://jensimmons.com/presentation/revolutionize-your-page-real-art-direction-web). [Video](https://www.youtube.com/watch?v=5Z7lSSMwRgo).
+**Revolutionize your page: real art direction on the web** by [Jen Simmons](https://twitter.com/@jensimmons) from Mozilla. [Slides](http://jensimmons.com/presentation/revolutionize-your-page-real-art-direction-web). [Video](https://www.youtube.com/watch?v=5Z7lSSMwRgo).
 
 * Paper magazines use layout to communicate an idea of a story, web articles all look the same.
 * Many modern sites use same layouts dictated by our tools.
@@ -167,7 +167,7 @@ You can read about most of these things in Helen’s article [What is Beautiful 
 * Test in pre-release versions of browsers: [Firefox](https://www.mozilla.org/en-US/firefox/developer/), [Edge](https://insider.windows.com/), [Safari](https://developer.apple.com/safari/technology-preview/), [Chrome](https://www.google.com/chrome/browser/canary.html), [Opera](http://www.opera.com/computer/beta).
 * Report bugs to browsers: [Firefox](https://bugzilla.mozilla.org/), [Edge](https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/), [Safari](https://bugs.webkit.org/), [Chrome](https://bugs.chromium.org/p/chromium/issues/list), [Opera](https://bugs.opera.com/wizard/desktop) or [webcompat.com](https://webcompat.com/).
 
-**I’m offline, cool! What now?** by [Ola Gasidlo](http://twitter.com/@misprintedtype) from Styla. [Slides](http://www.slideshare.net/DanielleAVincent/ola-gasidlo-cool-what-now-im-offline). [Video](https://www.youtube.com/watch?v=ksIEPbdpuYQ).
+**I’m offline, cool! What now?** by [Ola Gasidlo](https://twitter.com/@misprintedtype) from Styla. [Slides](http://www.slideshare.net/DanielleAVincent/ola-gasidlo-cool-what-now-im-offline). [Video](https://www.youtube.com/watch?v=ksIEPbdpuYQ).
 
 * Network is progressive enhancement.
 * SVG over IMG, base64 over IMG (but base64 is expensive and heavy).
@@ -177,12 +177,12 @@ You can read about most of these things in Helen’s article [What is Beautiful 
 * Rethink how to use technology, by thinking about the issue. Not about the tools.
 * Tools: [jakecache](https://github.com/kenchris/jakecache), [CouchDB](http://couchdb.apache.org/), [PouchDB](https://pouchdb.com/).
 
-**Web, meet virtual reality** by [Dominique Hazael-Massieux](http://twitter.com/@dontcallmeDOM) from W3C. [Slides](https://www.w3.org/2016/Talks/dhm-vr-viewsource/#/title). [Video](https://www.youtube.com/watch?v=DSzfFCrCrmk).
+**Web, meet virtual reality** by [Dominique Hazael-Massieux](https://twitter.com/@dontcallmeDOM) from W3C. [Slides](https://www.w3.org/2016/Talks/dhm-vr-viewsource/#/title). [Video](https://www.youtube.com/watch?v=DSzfFCrCrmk).
 
 * VR is not just visual: WebGL, WebVR, Gamepad API, Web Audio, 3D camera and computer vision.
 * [A-Frame](https://aframe.io/): create virtual reality using markup.
 
-**Closing keynote: the future of the web — progressive web apps and beyond** by [Robert Nyman](http://twitter.com/@robertnyman) from Google. [Slides](http://www.slideshare.net/robnyman/the-future-of-the-web-cold-front-conference-2016). [Video](https://www.youtube.com/watch?v=2vu5TucZVUw).
+**Closing keynote: the future of the web — progressive web apps and beyond** by [Robert Nyman](https://twitter.com/@robertnyman) from Google. [Slides](http://www.slideshare.net/robnyman/the-future-of-the-web-cold-front-conference-2016). [Video](https://www.youtube.com/watch?v=2vu5TucZVUw).
 
 * Web declared dead in 2010. Web very much alive in 2016!
 * 800 Million users of mobile Chrome in November 2015 → 1 Billion in May 2016.
@@ -190,7 +190,7 @@ You can read about most of these things in Helen’s article [What is Beautiful 
 * What about the future?
 * Automatic sign-in.
 * Paying for things on the web.
-* 66% of purchases on mobile are on web, 66% fewer conversions on mobile websites vs. desktop.
+* 66% of purchases on mobile are on web, 66% fewer conversions on mobile sites vs. desktop.
 * Checkout forms today: manual, tedious, slow, many taps.
 * Autofill fills web forms with a single click: 25% increase in conversion rate.
 * Checkout with Autofill: automatic, simple, still slow, still many taps.
@@ -201,7 +201,7 @@ You can read about most of these things in Helen’s article [What is Beautiful 
 
 ## Discussion corners
 
-**Sustainable Open-Source Projects** with [Jan Lehnardt](http://twitter.com/@janl).
+**Sustainable Open-Source Projects** with [Jan Lehnardt](https://twitter.com/@janl).
 
 Based on [Jan’s article](http://writing.jan.io/2015/11/20/sustainable-open-source.html).
 
@@ -216,7 +216,7 @@ Based on [Jan’s article](http://writing.jan.io/2015/11/20/sustainable-open-sou
 * APIs: easy to use but limited or harder to use but allow anything?
 * Any standard is a very long process: making things possible is more important then a nice API.
 * Browsers have to support all past technologies.
-* People maintaining documentation (like [MDN](https://developer.mozilla.org/)) have to constantly update documentation to reflect changing specs, but they also have to maintain documentation to all past technologies.
+* People maintaining documentation (like [MDN](https://developer.mozilla.org/en-US/)) have to constantly update documentation to reflect changing specs, but they also have to maintain documentation to all past technologies.
 
 **Why developers need to learn Design** with [Emanuele Libralato](https://twitter.com/iamtenko).
 
@@ -238,5 +238,5 @@ I’ve enjoyed the conference very much. I like that it wasn’t about just tech
 
 ## Links
 
-* [My photos](http://artemsapegin.pixieset.com/viewsource2016/).
+* [My photos](https://artemsapegin.pixieset.com/viewsource2016/).
 * [Official photos](https://www.flickr.com/photos/viewsourceconf/).

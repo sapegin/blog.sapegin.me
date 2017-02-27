@@ -10,17 +10,17 @@ tags:
 
 *This article was written in 2014, when npm 2 was the latest, and wasn’t popular among fronted developers because of the issues described in the article. Now use [Yarn](https://yarnpkg.com/) or [npm](https://www.npmjs.com/), and consider this article historical.*
 
-*This article was first published in the [May 2014 issue](http://www.xakep.ru/xa/?id=184) of Russian “Hacker” magazine. The article in the magazine is a shortened version; the full one is below. Article was [translated](http://frontendbabel.info/articles/bower-why-frontend-package-manager/) by [George Gritsouk](http://gggritso.com/) for [Frontend Babel](http://frontendbabel.info/).*
+*This article was first published in the [May 2014 issue](https://xakep.ru/issues/xa/?id=184) of Russian “Hacker” magazine. The article in the magazine is a shortened version; the full one is below. Article was [translated](http://frontendbabel.info/articles/bower-why-frontend-package-manager/) by [George Gritsouk](http://gggritso.com/) for [Frontend Babel](http://frontendbabel.info/).*
 
 Package managers simplify installing and updating project dependencies, which are libraries that it uses: jQuery, Fotorama, everything that is used on your site and isn’t written by you.
 
-Browsing all the library websites, downloading and unpacking the archives, copying files into the projects—all of this is replaced with a few commands in the terminal.
+Browsing all the library sites, downloading and unpacking the archives, copying files into the projects—all of this is replaced with a few commands in the terminal.
 
 Many programming languages have standard package managers, which developers use to install all libraries: gem for Ruby, pip for Python and others. For server-side JavaScript there is npm (reasons why it’s not suitable for client-side are below), but client-side JavaScript until recently didn’t have anything. There were many different package managers (Jam, Component, Volo, Ender), but the majority of them never became popular, and there is little sense in package managers that can’t install the right packages.
 
 Bower is not the standard package manager for client-side JavaScript, but the most popular one: currently there are more than sixteen thousand packages.
 
-Bower doesn’t prescribe to the user its own build system, or to the developer a method of including  libraries (AMD, CommonJS, etc.) All Bower does is install the right versions of the packages that the project needs and their dependencies. In other words: it downloads source files for the right libraries and everything they need into a special folder. Everything else is up to the developer.
+Bower doesn’t prescribe to the user its own build tool, or to the developer a method of including  libraries (AMD, CommonJS, etc.) All Bower does is install the right versions of the packages that the project needs and their dependencies. In other words: it downloads source files for the right libraries and everything they need into a special folder. Everything else is up to the developer.
 
 ## Why not npm
 
@@ -28,7 +28,7 @@ The main difference between npm and Bower is the approach for installing package
 
 ## Installing Bower
 
-To work with Bower you’ll need Node.js and git. Installation:
+To work with Bower you’ll need Node and git. Installation:
 
 ```bash
 npm install -g bower
@@ -112,7 +112,7 @@ bower install
 
 There are two approaches for deploying a project:
 
-1. Only the manifest file is added to the repo and all packages are installed during deployment. This way there is nothing unnecessary in the repo, but if GitHub crashes during deployment or another server from which packages are installed crashes, there will be problems.
+1. Only the manifest file is added to the repository and all packages are installed during deployment. This way there is nothing unnecessary in the repository, but if GitHub crashes during deployment or another server from which packages are installed crashes, there will be problems.
 2. The `bower_components` folder as well as `bower.json` are added to the repository. This way deployment doesn’t depend on external servers, but the repository blows up with hundreds (if not thousands) of extra files.
 
 ### Semantic versions (semver)
@@ -154,7 +154,7 @@ Search results:
         ...
 ```
 
-Normal: open [bower.io/search](http://bower.io/search/) in a browser.
+Normal: open [bower.io/search](https://bower.io/search/) in a browser.
 
 ## Automatic builds
 
@@ -259,12 +259,12 @@ bower init
 And, although it’s mandatory to fill in the `name` field, other fields are also very useful:
 
 * `description` and `keywords` will help users find your library through the package search interface.
-* `main` determines the main file of the package. Thie field can be used by automatic build systems like `grunt-bower-concat`.
+* `main` determines the main file of the package. Thie field can be used by automatic build tools like `grunt-bower-concat`.
 * `license`—always specify a license: it tells a potential user of your package whether they can use it in their project. For example, the `GPL` license required that every project using it is also released with the same license, which isn’t always possible.
 * `ignore`—by default Bower will download the whole repository, which, firstly, will increase installation time, and, secondly, will add unnecessary files to the project. It’s best to exclude everything except the files required for the package to work (main JS file, CSS, etc.), license and README.
 * `dependencies`—all packages on which your package depends.
 
-Now we need to commit the `bower.json` file, create a git tag with the latest version and push it to the remote repo:
+Now we need to commit the `bower.json` file, create a git tag with the latest version and push it to the remote repository:
 
 ```bash
 git add bower.json

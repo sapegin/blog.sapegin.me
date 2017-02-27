@@ -13,7 +13,7 @@ A long time ago I used to upload sites to the internet via an FTP client. Then i
 
 Today all my sites are in Git repositories on GitHub or Bitbucket, so I can easily deploy sites from Git: make changes, commit them, type a command, and a minute later my users see new version on my site.
 
-I use my very own shell script [shipit](https://github.com/sapegin/shipit): it’s a simple tool to run shell commands on a remote server via SSH. I used to use [Fabric](http://fabfile.org/) but shipit is much simpler and more convenient.
+I use my very own shell script [shipit](https://github.com/sapegin/shipit): it’s a simple tool to run shell commands on a remote server via SSH. I used to use [Fabric](http://www.fabfile.org/) but shipit is much simpler and more convenient.
 
 ## Authentication setup
 
@@ -21,7 +21,7 @@ First you need to set up SSH keys to be able to log in to your server without ty
 
 ### SSH key creation
 
-You can read how to make an SSH key in [GitHub](https://help.github.com/articles/generating-ssh-keys) or [Bitbucket](https://confluence.atlassian.com/pages/viewpage.action?pageId=270827678) help. You need to do it on your local computer and on your hosting to make possible connection of your hosting with GitHub or Bitbucket.
+You can read how to make an SSH key in [GitHub](https://help.github.com/articles/generating-ssh-keys/) or [Bitbucket](https://confluence.atlassian.com/pages/viewpage.action?pageId=270827678) help. You need to do it on your local computer and on your hosting to make possible connection of your hosting with GitHub or Bitbucket.
 
 ### Connection alias creation
 
