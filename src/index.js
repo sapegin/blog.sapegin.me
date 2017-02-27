@@ -40,7 +40,7 @@ function getRelated(docs, doc) {
 		})
 		.filter(d => d.weight > 0)
 	;
-	const sorted = sortBy(weighted, 'weight');
+	const sorted = sortBy(weighted, 'weight').reverse();
 	return sorted.slice(0, MAX_RELATED);
 }
 
