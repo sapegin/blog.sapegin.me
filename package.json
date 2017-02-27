@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "social-share-services": "^1.0.0",
-    "tamia": "3.0.0-aplha.4"
+    "tamia": "3.0.0-aplha.5"
   },
   "devDependencies": {
     "babel-cli": "^6.23.0",
