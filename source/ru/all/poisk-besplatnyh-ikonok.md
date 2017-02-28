@@ -8,7 +8,7 @@ tags:
   - tools
 ---
 
-Пара поисковиков бесплатных иконок: [Iconfinder](http://www.iconfinder.net/) и [Iconlet](http://www.iconlet.com/).
+Пара поисковиков бесплатных иконок: [Iconfinder](https://www.iconfinder.com/) и [Iconlet](http://www.iconlet.com/).
 
 В первом мало, но есть большие. Во втором, похоже, только маленькие, но много.
 

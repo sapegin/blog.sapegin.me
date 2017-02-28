@@ -57,16 +57,16 @@ tags:
 
 ## Что почитать
 
-* [Front-end Job Interview Questions](https://github.com/h5bp/Front-end-Developer-Interview-Questions).
+* [Frontend Job Interview Questions](https://github.com/h5bp/Front-end-Developer-Interview-Questions).
 * [Questions to ask your future web dev employer](https://medium.com/@edwardog/questions-to-ask-your-future-web-dev-employer-f7a161b5bc70).
-* [How to get a job in the tech industry](https://medium.com/@riklomas/how-to-get-a-job-in-the-tech-industry-9b3ca6d5ee88).
-* [Cracking The Coding Interview: 12 Things You Need To Know](http://simpleprogrammer.com/2015/01/19/cracking-the-coding-interview/).
+* [How to get a job in the tech industry](https://medium.com/superhi/how-to-get-a-job-in-the-tech-industry-9b3ca6d5ee88).
+* [Cracking The Coding Interview: 12 Things You Need To Know](https://simpleprogrammer.com/2015/01/19/cracking-the-coding-interview/).
 * [What happens when...](https://github.com/alex/what-happens-when).
 * [JavaScript Garden](http://bonsaiden.github.io/JavaScript-Garden/).
 * [How to Gracefully Turn Down a Job Offer](https://www.themuse.com/advice/how-to-gracefully-turn-down-a-job-offer)
 * [Soft Skills: The Software Developer’s Life Manual](http://www.amazon.com/gp/product/1617292397/?tag=artesapesphot-20).
 * Серия книг [You don’t know JavaScript](https://github.com/getify/You-Dont-Know-JS).
-* [JavaScript & DOM Tips, Tricks, and Techniques](http://www.impressivewebs.com/javascript-dom-tips-tricks-techniques-ebook/).
+* [JavaScript & DOM Tips, Tricks, and Techniques](https://www.impressivewebs.com/javascript-dom-tips-tricks-techniques-ebook/).
 * Что-нибудь о паттернах проектирования (я так ничего и не прочитал, поэтому не могу посоветовать что-то конкретное).
 
 Главное, не начать после всего этого пользоваться полученными знаниями при написании повседневного кода. Всё-таки мы пишем его для людей, и такое ковбойство ни к чему хорошему не приведёт.
@@ -76,7 +76,7 @@ tags:
 * [Grammarly](https://www.grammarly.com/) — проверка английского языка.
 * [Главред](https://glvrd.ru/) — чистка текста от словесного мусора.
 * [Canned Emails](http://www.cannedemails.com/) — шаблоны писем на все случаи жизни.
-* [Codewars](http://www.codewars.com/) — маленькие задачки для программистов.
+* [Codewars](https://www.codewars.com/) — маленькие задачки для программистов.
 
 ## Сходите на собеседование
 

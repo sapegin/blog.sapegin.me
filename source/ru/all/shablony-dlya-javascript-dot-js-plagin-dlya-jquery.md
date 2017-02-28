@@ -8,7 +8,7 @@ tags:
   - html
 ---
 
-Полтора года назад я [уже писал](http://nano.sapegin.ru/all/shablony-dlya-jquery-plagin-jquery-tmpl) про шаблоны для jQuery. Однако плагин jquery-tmpl больше не разрабатывается, и недавно я стал использовать вместо него [doT.js](http://olado.github.com/doT/).
+Полтора года назад я [уже писал](http://nano.sapegin.ru/all/shablony-dlya-jquery-plagin-jquery-tmpl) про шаблоны для jQuery. Однако плагин jquery-tmpl больше не разрабатывается, и недавно я стал использовать вместо него [doT.js](http://olado.github.io/doT/).
 
 doT.js — это очень простой, маленький и быстрый шаблонизатор. Он в два раза меньше jquery-tmpl и не имеет никаких зависимостей.
 

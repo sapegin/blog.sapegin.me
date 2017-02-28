@@ -9,7 +9,7 @@ tags:
   - tools
 ---
 
-Вслед за «[хомяком](http://sapegin.ru/)» пришла пора избавиться от 9-летнего дизайна и в наноблоге.
+Вслед за «[хомяком](http://sapegin.me/)» пришла пора избавиться от 9-летнего дизайна и в наноблоге.
 
 ## Эгея
 
@@ -21,7 +21,7 @@ tags:
 
 ## Stylus
 
-Тема блога собирается в единый CSS-файл препроцессором [Stylus](http://learnboost.github.com/stylus/). Сюда входят: [мой бутстрап](https://github.com/sapegin/tamia), кусок стандартной темы Эгеи (я оставил только нужные мне части — админку, комментарии и кое-что ещё — чтобы постоянно не переопределять базовые стили), тема для highlight.js и [мои социальные кнопки](https://github.com/sapegin/social-likes).
+Тема блога собирается в единый CSS-файл препроцессором [Stylus](http://learnboost.github.io/stylus/). Сюда входят: [мой бутстрап](https://github.com/tamiadev/tamia), кусок стандартной темы Эгеи (я оставил только нужные мне части — админку, комментарии и кое-что ещё — чтобы постоянно не переопределять базовые стили), тема для highlight.js и [мои социальные кнопки](https://github.com/sapegin/social-likes).
 
 ## Grunt
 
@@ -29,7 +29,7 @@ tags:
 
 ## Подсветка кода
 
-Код, как и раньше, раскрашивается [highlight.js](http://softwaremaniacs.org/soft/highlight/), но новой прекрасной темой [Tomorrow](https://github.com/chriskempson/tomorrow-theme/). Её же я теперь использую во всех редакторах вместо [Solarized](http://ethanschoonover.com/solarized).
+Код, как и раньше, раскрашивается [highlight.js](https://highlightjs.org/), но новой прекрасной темой [Tomorrow](https://github.com/chriskempson/tomorrow-theme/). Её же я теперь использую во всех редакторах вместо [Solarized](http://ethanschoonover.com/solarized).
 
 ## В планах
 

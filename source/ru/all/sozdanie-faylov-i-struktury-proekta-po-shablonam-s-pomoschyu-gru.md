@@ -16,7 +16,7 @@ tags:
 
 Шаблон состоит из:
 
-1. Файла templatename.js. В нём можно описать, что должен ввести пользователь; как эти параметры будут преобразованы и т. п. Тут доступны любые возможности JavaScript и Node.js.
+1. Файла templatename.js. В нём можно описать, что должен ввести пользователь; как эти параметры будут преобразованы и т. п. Тут доступны любые возможности JavaScript и Node.
 2. Папки templatename/root со всеми файлами, которые будут скопированы при выполнении шаблона.
 3. Файла templatename/rename.json с описанием правил переименования файлов.
 
@@ -87,5 +87,5 @@ exports.template = function(grunt, init, done) {
 
 * [Репозиторий на Гитхабе](https://github.com/cowboy/grunt) ([стандартные шаблоны](https://github.com/cowboy/grunt/tree/master/tasks/init), [описание команды init](https://github.com/cowboy/grunt/blob/master/docs/task_init.md)).
 * [Набор моих шаблонов](https://github.com/sapegin/squirrelstrap).
-* Статья автора Гранта [Introducing Grunt](http://weblog.bocoup.com/introducing-grunt/).
-* Статья [Meet Grunt: The Build Tool for JavaScript](http://net.tutsplus.com/tutorials/javascript-ajax/meeting-grunt-the-build-tool-for-javascript/) на Nettuts+.
+* Статья автора Гранта [Introducing Grunt](https://bocoup.com/blog/introducing-grunt).
+* Статья [Meet Grunt: The Build Tool for JavaScript](https://code.tutsplus.com/tutorials/meet-grunt-the-build-tool-for-javascript--net-24856) на Nettuts+.

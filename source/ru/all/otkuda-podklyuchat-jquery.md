@@ -8,7 +8,7 @@ tags:
   - javascript
 ---
 
-Размышляю о том, откуда лучше подключать JavaScript-библиотеки (главным образом jQuery): со своего хостинга, с [CDN Гугла](http://code.google.com/apis/ajaxlibs/) или с Яндекса.
+Размышляю о том, откуда лучше подключать JavaScript-библиотеки (главным образом jQuery): со своего хостинга, с [CDN Гугла](https://developers.google.com/speed/libraries/?csw=1) или с Яндекса.
 
 Денис Филонов [пишет](http://dvf.su/2009/12/09/pochemu-gruzit-tolko-so-svoego-servera/), что лучше подключать со своего хостинга, но я с ним немного не согласен.
 

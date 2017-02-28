@@ -44,7 +44,7 @@ $('.button').click(this, function(e){ e.data.handler(42) });
 
 К сожалению, этот способ работает начиная с jQuery 1.4.3, в более раниих версиях нужно использовать [bind()](http://api.jquery.com/bind/), что несколько длиннее и не так красиво.
 
-**Дополнение**. Когда-нибудь наступит светлое будущее, и можно будет пользоваться нативным методом [bind](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function/bind). Вот так:
+**Дополнение**. Когда-нибудь наступит светлое будущее, и можно будет пользоваться нативным методом [bind](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind). Вот так:
 
 ```javascript
 $('.button').click(this.handler.bind(this));
@@ -56,4 +56,4 @@ $('.button').click(this.handler.bind(this));
 $('.button').click(this.handler.bind(this, 42));
 ```
 
-Уже сейчас метод bind работает в последних версиях всех браузеров (включая IE9). Полифил для старых браузеров есть на MDN по ссылке выше. А если вы используете [Modernizr](http://modernizr.com/), то полифил у вас уже есть.
+Уже сейчас метод bind работает в последних версиях всех браузеров (включая IE9). Полифил для старых браузеров есть на MDN по ссылке выше. А если вы используете [Modernizr](https://modernizr.com/), то полифил у вас уже есть.

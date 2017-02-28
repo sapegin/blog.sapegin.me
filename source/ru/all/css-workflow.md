@@ -10,7 +10,7 @@ tags:
 
 Раньше я использовал [Ниб](http://visionmedia.github.io/nib/) для добавления CSS-префиксов в [Стилусе](http://learnboost.github.io/stylus/). Но этот способ был неидеальным: Ниб добавлял кучу лишних префиксов.
 
-Теперь я использую [Автопрефиксер](https://github.com/ai/autoprefixer). Он добавляет только нужные префиксы для тех браузеров, которые вы поддерживате, используя данные [caniuse.com](http://caniuse.com/).
+Теперь я использую [Автопрефиксер](https://github.com/postcss/autoprefixer). Он добавляет только нужные префиксы для тех браузеров, которые вы поддерживате, используя данные [caniuse.com](http://caniuse.com/).
 
 Вот мой грантфайл (`Gruntfile.coffee`):
 
@@ -54,6 +54,6 @@ module.exports = (grunt) ->
 npm install --save-dev grunt load-grunt-tasks grunt-contrib-stylus grunt-contrib-watch autoprefixer-stylus csso-stylus
 ```
 
-Я использую [autoprefixer](https://github.com/jenius/autoprefixer-stylus) и [csso](https://github.com/sapegin/csso-stylus) в виде плагинов для Стилуса. То же самое можно было бы сделать и плагинами [autoprefixer](https://github.com/nDmitry/grunt-autoprefixer) и [csso](https://github.com/t32k/grunt-csso) для Гранта, но плагины для Гранта работают с файлами на диске, а плагины для Стилуса — с переменными в памяти. Это позволяет избежать двух лишних операций записи на диск и сильно упрощает грантфайл.
+Я использую [autoprefixer](https://github.com/jescalan/autoprefixer-stylus) и [csso](https://github.com/sapegin/csso-stylus) в виде плагинов для Стилуса. То же самое можно было бы сделать и плагинами [autoprefixer](https://github.com/nDmitry/grunt-autoprefixer) и [csso](https://github.com/t32k/grunt-csso) для Гранта, но плагины для Гранта работают с файлами на диске, а плагины для Стилуса — с переменными в памяти. Это позволяет избежать двух лишних операций записи на диск и сильно упрощает грантфайл.
 
 [CSSO](https://github.com/css/csso) нужен, потому что Автопрефиксер не сжимает код при сохранении. А для того, чтобы код не сжимался во время отладки, используется переменная `debug`: просто запускаете `grunt watch --debug` и можно работать.

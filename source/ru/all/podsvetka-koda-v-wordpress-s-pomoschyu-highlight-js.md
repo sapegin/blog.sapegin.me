@@ -10,9 +10,9 @@ tags:
   - html
 ---
 
-Решил заменить в блоге серверную подсветку кода (плагин [wp-syntax](http://wordpress.org/extend/plugins/wp-syntax/)) на клиентскую ([highlight.js](http://softwaremaniacs.org/soft/highlight/)). Знаю, что для последнего уже есть несколько [плагинов для Вордпресса](http://softwaremaniacs.org/soft/highlight/addons/), но мне показалось, что проще самому написать 10 строк кода.
+Решил заменить в блоге серверную подсветку кода (плагин [wp-syntax](https://wordpress.org/plugins/wp-syntax/)) на клиентскую ([highlight.js](https://highlightjs.org/)). Знаю, что для последнего уже есть несколько [плагинов для Вордпресса](http://softwaremaniacs.org/soft/), но мне показалось, что проще самому написать 10 строк кода.
 
-Итак, подключаем highlight.js. В header.php темы блога подключаем CSS с выбранной [цветовой схемой](http://softwaremaniacs.org/media/soft/highlight/test.html):
+Итак, подключаем highlight.js. В header.php темы блога подключаем CSS с выбранной [цветовой схемой](https://highlightjs.org/static/demo/):
 
 ```html
 <link rel="stylesheet" href="//yandex.st/highlightjs/6.0/styles/zenburn.min.css">
