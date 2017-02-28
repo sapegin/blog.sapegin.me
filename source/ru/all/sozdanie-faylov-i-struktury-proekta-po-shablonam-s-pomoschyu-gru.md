@@ -58,7 +58,7 @@ exports.template = function(grunt, init, done) {
 };
 ```
 
-В папке html/root лежит один файл name.html. (Шаблон вымышленный, чтобы показать возможности Гранта. [Настоящий](https://github.com/sapegin/squirrelstrap/tree/master/grunt/tasks/init/html/root) есть в репозитории.)
+В папке html/root лежит один файл name.html. (Шаблон вымышленный, чтобы показать возможности Гранта.
 
 ```html
 <!DOCTYPE html>

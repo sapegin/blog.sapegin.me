@@ -13,9 +13,9 @@ tags:
 
 ## Перевод постов
 
-Создадим отдельные папки для постов каждого языка. В моём случае это [`src/documents_en`](https://github.com/sapegin/blog.sapegin.me/tree/master/src/documents_en) и [`src/documents_ru`](https://github.com/sapegin/blog.sapegin.me/tree/master/src/documents_ru) (для русского и английского языков).
+Создадим отдельные папки для постов каждого языка. В моём случае это `src/documents_en` и `src/documents_ru` (для русского и английского языков).
 
-И добавим вот такой код в конфиг Докпада ([`docpad.coffee`](https://github.com/sapegin/blog.sapegin.me/blob/master/docpad.coffee)):
+И добавим вот такой код в конфиг Докпада (`docpad.coffee`):
 
 ```coffee
 docpadConfig = {
@@ -40,7 +40,7 @@ docpad generate --env ru  # Собрать русскую версию
 
 ## Перевод интерфейса
 
-Создадим YAML-файлы для каждого языка. Например, [`src/lang/en.yml`](https://github.com/sapegin/blog.sapegin.me/blob/master/src/lang/en.yml):
+Создадим YAML-файлы для каждого языка. Например, `src/lang/en.yml`:
 
 ```bash
 lang: en
@@ -112,7 +112,7 @@ npm install --save-dev yamljs moment lodash
 
 Правила преобразования числительных можно найти в [polyglot.js](https://github.com/airbnb/polyglot.js/blob/master/lib/polyglot.js).
 
-Теперь нужно заменить в [шаблонах](https://github.com/sapegin/blog.sapegin.me/tree/master/src/layouts) все зависящие от языка данные на вызовы функций `@_`, `@plural` и `@pubDate`.
+Теперь нужно заменить в шаблонах все зависящие от языка данные на вызовы функций `@_`, `@plural` и `@pubDate`.
 
 Обычные строки:
 
