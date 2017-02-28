@@ -11,7 +11,7 @@ tags:
 
 Recently I’ve remade this blog for the third time.
 
-The first version was made on WordPress in 2008. I used my homepage's design and was just experimenting with blogging.
+The first version was made on WordPress in 2008. I used my homepage’s design and was just experimenting with blogging.
 
 In 2012 I became tired of WordPress’s inconvenience to write about coding. You have to use HTML to markup simple text and inserting code examples is even harder.
 

@@ -38,7 +38,7 @@ When every week we have a new JavaScript framework that’s better than any olde
 For years we wanted classes in JavaScript. Now we finally have them but don’t want to use them anymore: functions are all we want! We even write HTML using functions (JSX).
 
 * [Functional-Light JavaScript](https://github.com/getify/Functional-Light-JS) by Kyle Simpson.
-* Professor Frisby‘s [Mostly adequate guide to functional programming ebook](https://github.com/MostlyAdequate/mostly-adequate-guide) and [his free course](https://egghead.io/courses/professor-frisby-introduces-composable-functional-javascript).
+* Professor Frisby’s [Mostly adequate guide to functional programming ebook](https://github.com/MostlyAdequate/mostly-adequate-guide) and [his free course](https://egghead.io/courses/professor-frisby-introduces-composable-functional-javascript).
 
 ## Learn design basics
 
@@ -55,11 +55,11 @@ As frontend developers we’re closer to users than anybody else in the team, ma
 
 Some of us come to programming because we prefer to interact with computers more than with humans — unfortunately that’s not how it works.
 
-We rarely work in isolation: we have to talk to other developers, designers, managers and sometimes even users. That’s hard but it’s very important if you want to really understand what you’re doing and why, because that's where the value in what we do lies.
+We rarely work in isolation: we have to talk to other developers, designers, managers and sometimes even users. That’s hard but it’s very important if you want to really understand what you’re doing and why, because that’s where the value in what we do lies.
 
 * [Soft Skills: The software developer’s life manual](https://www.amazon.com/Soft-Skills-software-developers-manual/dp/1617292397/?tag=artesapesphot-20) by John Sonmez.
 * [The Clean Coder: A Code of Conduct for Professional Programmers](https://www.amazon.com/Clean-Coder-Conduct-Professional-Programmers/dp/0137081073/?tag=artesapesphot-20) by Robert C. Martin.
-* [Start with No: The Negotiating Tools that the Pros Don't Want You to Know](https://www.amazon.com/Start-No-Negotiating-Tools-that-ebook/dp/B003EY7JEE/?tag=artesapesphot-20) by Jim Camp.
+* [Start with No: The Negotiating Tools that the Pros Don’t Want You to Know](https://www.amazon.com/Start-No-Negotiating-Tools-that-ebook/dp/B003EY7JEE/?tag=artesapesphot-20) by Jim Camp.
 
 ## Learn how to write for humans
 
