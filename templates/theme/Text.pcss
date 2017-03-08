@@ -31,8 +31,12 @@
 }
 
 :global(.text) hr {
-	max-width: 25%;
 	margin: calc(var(--spacer) * 4) auto;
-	border: solid var(--baseColor);
-	border-width: 0 0 1px;
+	text-align: center;
+	border: none;
+}
+
+:global(.text) hr::after {
+  content: "···";
+  letter-spacing: 0.7em;
 }
