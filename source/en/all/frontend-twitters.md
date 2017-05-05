@@ -19,14 +19,14 @@ I think Twitter is the best social network for a developer. I always find awesom
 * [Mattias P Johansson](https://twitter.com/mpjme) — author of my favorite podcast: [FunFunFunction] (https://www.youtube.com/channel/UCO1cgjhGzsSYb1rsB4bFe4Q).
 * [Sean T. Larkin](https://twitter.com/TheLarkInn) — [Webpack](https://webpack.js.org/) core team.
 * [Jason Miller](https://twitter.com/_developit) — creator of [Preact](https://preactjs.com/).
-* [Andrey Okonetchnikov](https://twitter.com/okonetchnikov) — co-creator of [ColorSnapper](https://twitter.com/colorsnapper), co-organizer of [React Vienna](https://twitter.com/reactvienna), creator of [react-dropzone](http://okonet.ru/react-dropzone/) and * [lint-staged](https://github.com/okonet/lint-staged).
+* [Andrey Okonetchnikov](https://twitter.com/okonetchnikov) — co-creator of [ColorSnapper](https://twitter.com/colorsnapper), co-organizer of [React Vienna](https://twitter.com/reactvienna), creator of [react-dropzone](http://okonet.ru/react-dropzone/) and [lint-staged](https://github.com/okonet/lint-staged).
 * [Addy Osmani](https://twitter.com/addyosmani) — works at Google on Chrome.
 * [Christoph Pojer](https://twitter.com/cpojer) — works at Facebook on [Jest](https://facebook.github.io/jest/) and [Yarn] (https://yarnpkg.com/).
-* [Andrey Popp](https://twitter.com/andreypopp) — [react-textarea-autosize](https://github.com/andreypopp/react-textarea-autosize) * author.
+* [Andrey Popp](https://twitter.com/andreypopp) — [react-textarea-autosize](https://github.com/andreypopp/react-textarea-autosize) author.
 * [Ekaterina Prigara](https://twitter.com/katyaprigara) — product marketing manager at JetBrains, works with WebStorm.
 * [Axel Rauschmayer](https://twitter.com/rauschma) — [author](http://exploringjs.com/) of “Speaking JavaScript” and “Exploring ES6”.
 * [Oleg Slobodskoi](https://twitter.com/oleg008) — creator of [JSS](https://github.com/cssinjs/jss).
-* [Sindre Sorhus](https://twitter.com/sindresorhus) — creator of [AVA](https://github.com/avajs/ava), [Yeoman](http://yeoman.io/) * and almost any other open source library.
+* [Sindre Sorhus](https://twitter.com/sindresorhus) — creator of [AVA](https://github.com/avajs/ava), [Yeoman](http://yeoman.io/) and almost any other open source library.
 * [Max Stoiber](https://twitter.com/mxstbr) — creator of [styled-components](https://styled-components.com/) and [react-boilerplate] (http://www.reactboilerplate.com/).
 * [Maxime Thirouin](https://twitter.com/MoOx) — creator of [cssnext](http://cssnext.io/) and [Phenomic](https://phenomic.io/).
 * [Juho Vepsäläinen](https://twitter.com/bebraw) — author of [SurviveJS](https://survivejs.com/) books series.
