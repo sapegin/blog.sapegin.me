@@ -31,12 +31,10 @@ export function getMetaTags() {
 		return tags;
 	}
 
-	const title = this.getPageTitle(false) || this.title || this.option('title');
-	let description = this.description;
+	const title = this.getPageTitle({ suffix: false });
 	const content = this.content;
 
-	let image;
-
+	let description = this.description;
 	if (!description) {
 		if (content) {
 			const firstParagraph = getFirstParagraph(content);
@@ -49,6 +47,7 @@ export function getMetaTags() {
 		}
 	}
 
+	let image;
 	if (content) {
 		const firstImage = getFirstImage(content);
 		if (firstImage) {
