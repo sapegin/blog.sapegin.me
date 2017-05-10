@@ -22,7 +22,7 @@ export function getMetaTags() {
 	if (this.url === '/') {
 		ogType = 'website';
 	}
-	else if (this.layout === 'post') {
+	else if (this.layout === 'Post') {
 		twType = 'summary';
 		ogType = 'article';
 	}
