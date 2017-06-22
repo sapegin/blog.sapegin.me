@@ -30,7 +30,7 @@ When every week we have a new JavaScript framework that’s better than any olde
 
 * A great start is Kyle Simpson’s book series [You Don’t Know JavaScript](https://github.com/getify/You-Dont-Know-JS) which you can read online for free.
 * Eric Elliott has a huge list of [JavaScript topics to learn in 2017](https://medium.com/javascript-scene/top-javascript-frameworks-topics-to-learn-in-2017-700a397b711#.zhnbn4rvg).
-* Henrique Alves has a list of [things you should know before using React](http://alves.im/blog/before-dive-into-react.html) (actually any framework).
+* Henrique Alves has a list of [things you should know before using React](http://henriquea.github.io/blog/before-dive-into-react.html) (actually any framework).
 * [JavaScript Developers: Watch Your Language](https://bocoup.com/weblog/javascript-developers-watch-your-language) by Mike Pennisi — understand TC-39 process for new ECMAScript features.
 
 ## Learn functional programming
