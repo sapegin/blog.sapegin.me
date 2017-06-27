@@ -1,7 +1,7 @@
 ---
 unpublished: true
 layout: Post
-title: "Who to follow on Twitter if you’re a frontend developer"
+title: "Whom to follow on Twitter if you’re a frontend developer"
 date: Dec 2, 2016
 lang: en
 medium: who-to-follow-on-twitter-if-youre-a-frontend-developer-b7873e787480
