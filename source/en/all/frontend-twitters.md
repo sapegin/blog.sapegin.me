@@ -13,7 +13,7 @@ tags:
 I think Twitter is the best social network for a developer. I always find awesome fresh links or interesting discussions in my feed. Here are some of my favorite authors:
 
 * [Dan Abramov](https://twitter.com/dan_abramov) — creator of [Redux](http://redux.js.org/), [React Hot Loader] (http://gaearon.github.io/react-hot-loader/) and [react-dnd](http://gaearon.github.io/react-dnd/); works at Facebook on [Create React App](https://github.com/facebookincubator/create-react-app).
-* [Henrique Alves](https://twitter.com/healves82) — JavaScript developer at Fathom London.
+* [Henrique Alves](https://twitter.com/healves82) — Freelance JavaScript developer.
 * [Nicolás Bevacqua](https://twitter.com/nzgb) and [Pony Foo](https://twitter.com/ponyfoo) — author of [Modular JavaScript](https://twitter.com/mjavascript) book series and [Pony Foo](https://ponyfoo.com/) blog, creator of [Dragula](https://github.com/bevacqua/dragula).
 * [Mark Dalgleish](https://twitter.com/markdalgleish) — co-creator of [CSS Modules](https://github.com/css-modules/css-modules), [MelbJS](https://twitter.com/MelbJS) organizer.
 * [John-David Dalton](https://twitter.com/jdalton) — creator of [Lodash](https://lodash.com/).
