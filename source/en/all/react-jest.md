@@ -12,6 +12,8 @@ tags:
   - testing
 ---
 
+**October 2017: the article was updated to React 16 and Enzyme 3.**
+
 Some people say that testing React components is useless and in many cases it is, but there are a few cases when I think it’s useful:
 
 * component libraries,
@@ -104,13 +106,13 @@ Jest stores snapshots besides your tests in files like `__snapshots__/Label.spec
 
 ## Setting up
 
-I use Babel and CSS Modules so you’ll see them in the examples below but both are optional.
-
 First install all the dependencies including peer dependencies:
 
 ```bash
-npm install --save-dev jest babel-jest react-addons-test-utils enzyme enzyme-to-json
+npm install --save-dev jest react-test-renderer enzyme enzyme-adapter-react-16 enzyme-to-json
 ```
+
+You’ll also need [babel-jest](https://github.com/facebook/jest/tree/master/packages/babel-jest) for Babel and [ts-jest](https://github.com/kulshekhar/ts-jest) for TypeScript.
 
 Update your `package.json`:
 
@@ -122,15 +124,13 @@ Update your `package.json`:
 },
 "jest": {
   "setupFiles": ["./test/jestsetup.js"],
-  "snapshotSerializers": [
-    "<rootDir>/node_modules/enzyme-to-json/serializer"
-  ]
+  "snapshotSerializers": ["enzyme-to-json/serializer"]
 }
 ```
 
 `snapshotSerializers` allows you to pass Enzyme wrappers directly to Jest’s snapshot matcher, without converting them manually by calling enzyme-to-json’s `toJson` function.
 
-Create a `jestsetup.js` file to customize Jest environment (see `setupFiles` above):
+Create a `test/jestsetup.js` file to customize Jest environment (see `setupFiles` above):
 
 ```javascript
 // Make Enzyme functions available in all test files without importing
