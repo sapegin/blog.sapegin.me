@@ -26,12 +26,12 @@ Thanks to [Babel](http://babeljs.io/) we can write in ES6 (official name is ECMA
 
 ## React
 
-Our view layer is [React](https://facebook.github.io/react/).
+Our view layer is [React](https://reactjs.org/).
 
 * [React tutorial](https://reactjs.org/tutorial/tutorial.html).
-* [Thinking in React](https://facebook.github.io/react/docs/thinking-in-react.html).
-* [ReactJS for stupid people](http://blog.andrewray.me/reactjs-for-stupid-people/) by Andrew Ray.
-* [Smart and dumb components](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0) by Dan Abramov.
+* [Thinking in React](https://reactjs.org/docs/thinking-in-react.html).
+* [ReactJS for beginners](http://blog.andrewray.me/reactjs-for-stupid-people/) by Andrew Ray.
+* [Presentational and container components](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0) by Dan Abramov.
 * [React tips and best practices](http://aeflash.com/2015-02/react-tips-and-best-practices.html) by Alexander Early.
 * [Removing user interface complexity, or why React is awesome](http://jlongster.com/Removing-User-Interface-Complexity,-or-Why-React-is-Awesome) by James Long.
 * [React cheat sheet](http://reactcheatsheet.com/).
@@ -39,7 +39,7 @@ Our view layer is [React](https://facebook.github.io/react/).
 
 ## Redux
 
-[Redux](https://github.com/rackt/redux) is an app state container. It means that we store the whole application state (data from server and UI state) in a single immutable tree.
+[Redux](http://redux.js.org/) is an app state container. It means that we store the whole application state (data from server and UI state) in a single immutable tree.
 
 * [A cartoon intro to Redux](https://code-cartoons.com/a-cartoon-intro-to-redux-3afb775501a6) by Lin Clark.
 * [Redux best practices](https://medium.com/lexical-labs-engineering/redux-best-practices-64d59775802e) by Will Becker.
@@ -51,7 +51,7 @@ Our view layer is [React](https://facebook.github.io/react/).
 
 Redux was inspired by the original Facebook’s [Flux architecture](https://facebook.github.io/flux/):
 
-* [Flux for stupid people](http://blog.andrewray.me/flux-for-stupid-people/) by Andrew Ray.
+* [Flux for beginners](http://blog.andrewray.me/flux-for-stupid-people/) by Andrew Ray.
 * [The evolution of Flux frameworks](https://medium.com/@dan_abramov/the-evolution-of-flux-frameworks-6c16ad26bb31) by Dan Abramov.
 
 ## Immutable.js
@@ -71,9 +71,8 @@ CSS modules are like [BEM](http://getbem.com/) but they provide real class names
 
 ## Webpack
 
-[Webpack](http://webpack.github.io/) allows us to use ES6/JSX syntax (including ES6 modules), import modules from npm and use hot reloading to debug frontend code.
+[Webpack](https://webpack.js.org/) allows us to use ES6/JSX syntax (including ES6 modules), import modules from npm and use hot reloading to debug frontend code.
 
-* [A cookbook for using webpack with React](https://christianalfoni.github.io/react-webpack-cookbook/) by Christian Alfoni and Juho Vepsäläinen.
 * 📖 [SurviveJS: webpack](https://survivejs.com/webpack/introduction/) by Juho Vepsäläinen.
 
 ## Testing
