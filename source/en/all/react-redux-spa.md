@@ -11,7 +11,9 @@ tags:
   - education
 ---
 
-Here is a list of the best articles, books and talks about the libraries and tools we use at the [Here](https://here.com/en) product tools team.
+**October 2017: added more links and possible alternatives.**
+
+Here is a list of the best articles, books and talks about the libraries and tools we use at the [Here](https://www.here.com/en) product tools team.
 
 You can start from [a very good introduction](http://reactkungfu.com/2015/07/the-hitchhikers-guide-to-modern-javascript-tooling/) to modern frontend tooling.
 
@@ -19,10 +21,12 @@ You can start from [a very good introduction](http://reactkungfu.com/2015/07/the
 
 Thanks to [Babel](http://babeljs.io/) we can write in ES6 (official name is ECMAScript 2015).
 
-* [Learn ES6](http://babeljs.io/docs/learn-es2015/).
+* [Learn ES6](http://babeljs.io/learn-es2015/).
 * [An intro to using npm and ES6 modules for frontend development](http://wesbos.com/javascript-modules/) by Wes Bos.
 * 📖 [Understanding ECMAScript 6](https://leanpub.com/understandinges6/read/) by Nicholas C. Zakas.
 * 📖 [Exploring ES6](http://exploringjs.com/es6/) by Dr. Axel Rauschmayer.
+
+*Consider using [TypeScript](https://www.typescriptlang.org/).*
 
 ## React
 
@@ -30,11 +34,12 @@ Our view layer is [React](https://reactjs.org/).
 
 * [React tutorial](https://reactjs.org/tutorial/tutorial.html).
 * [Thinking in React](https://reactjs.org/docs/thinking-in-react.html).
-* [ReactJS for beginners](http://blog.andrewray.me/reactjs-for-stupid-people/) by Andrew Ray.
+* [ReactJS for beginners](https://blog.andrewray.me/reactjs-for-stupid-people/) by Andrew Ray.
 * [Presentational and container components](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0) by Dan Abramov.
 * [React tips and best practices](http://aeflash.com/2015-02/react-tips-and-best-practices.html) by Alexander Early.
 * [Removing user interface complexity, or why React is awesome](http://jlongster.com/Removing-User-Interface-Complexity,-or-Why-React-is-Awesome) by James Long.
-* [React cheat sheet](http://reactcheatsheet.com/).
+* [Structuring React and Redux applications](http://blog.sapegin.me/all/react-structure).
+* [React cheat sheet](https://reactcheatsheet.com/).
 * 📖 [SurviveJS: React](https://survivejs.com/react/introduction/) by Juho Vepsäläinen.
 
 ## Redux
@@ -51,8 +56,10 @@ Our view layer is [React](https://reactjs.org/).
 
 Redux was inspired by the original Facebook’s [Flux architecture](https://facebook.github.io/flux/):
 
-* [Flux for beginners](http://blog.andrewray.me/flux-for-stupid-people/) by Andrew Ray.
+* [Flux for beginners](https://blog.andrewray.me/flux-for-stupid-people/) by Andrew Ray.
 * [The evolution of Flux frameworks](https://medium.com/@dan_abramov/the-evolution-of-flux-frameworks-6c16ad26bb31) by Dan Abramov.
+
+*After using Redux for a while, I feel that it’s too low level and requires you to write a lot of code. Consider using [MobX](https://mobx.js.org/).*
 
 ## Immutable.js
 
@@ -62,6 +69,8 @@ Redux requires that all the data in the store should be immutable. [Immutable.js
 * [Immutable data structures and JavaScript](http://jlongster.com/Using-Immutable-Data-Structures-in-JavaScript) by James Long.
 * 📺 [Immutable data and React](https://youtu.be/I7IdS-PbEgI) by Lee Byron, React Conf 2015.
 
+*After using Immutable for a while, I feel that it makes more problems than it solves. Consider using [seamless-immutable](https://github.com/rtfeldman/seamless-immutable).*
+
 ## CSS Modules
 
 CSS modules are like [BEM](http://getbem.com/) but they provide real class names uniqueness. And you don’t need to write long class names manually. We use CSS modules with [Sass](http://sass-lang.com/) and [Autoprefixer](https://github.com/postcss/autoprefixer).
@@ -69,31 +78,29 @@ CSS modules are like [BEM](http://getbem.com/) but they provide real class names
 * [CSS Modules: welcome to the future](https://glenmaddern.com/articles/css-modules) by Glen Maddern.
 * 📺 [Interoperable CSS](https://youtu.be/aIyhhHTmsXE) by Glen Maddern, CSSconf EU 2015.
 
+*Consider using CSS in JS library, like [JSS](http://cssinjs.org/) or [Styled Components](https://www.styled-components.com/).*
+
 ## Webpack
 
-[Webpack](https://webpack.js.org/) allows us to use ES6/JSX syntax (including ES6 modules), import modules from npm and use hot reloading to debug frontend code.
+[Webpack](https://webpack.js.org/) allows us to use ES6/JSX syntax (including ES6 modules), import modules from npm and use hot reloading to debug frontend code. To simplify webpack configuration and share it between projects we use [webpack-blocks](https://github.com/andywer/webpack-blocks).
 
 * 📖 [SurviveJS: webpack](https://survivejs.com/webpack/introduction/) by Juho Vepsäläinen.
 
 ## Testing
 
-To test React components we use [Mocha](https://mochajs.org/), [Chai](http://chaijs.com/) and React’s [shallow rendering](https://facebook.github.io/react/docs/test-utils.html#shallow-rendering).
+To test React components we use [Jest](https://facebook.github.io/jest/) (a test runner) and [Enzyme](http://airbnb.io/enzyme/) (a testing utility for React).
 
 * [Approaches to testing React components — an overview](http://reactkungfu.com/2015/07/approaches-to-testing-react-components-an-overview/) by Marcin Grzywaczewski.
-
-And a couple of libraries to make work with shallow rendering easier:
-
-* [react-shallow-testutils](https://github.com/sheepsteak/react-shallow-testutils), replacement for TestUtils when using React’s shallow rendering.
-* [expect-react-shallow](https://github.com/sapegin/expect-react-shallow), JSX assertions with Chai-like API.
+* [Testing React components with Jest and Enzyme](http://blog.sapegin.me/all/react-jest).
 
 ## Other useful libraries
 
 Unfortunately, I haven’t found any good articles about these libraries.
 
 * [React Router](https://github.com/ReactTraining/react-router), client-side routing.
-* [redux-simple-router](https://github.com/reactjs/react-router-redux), simple bindings to keep React Router and Redux in sync.
 * [React Intl](https://github.com/yahoo/react-intl), internationalization for React.
 * [Reselect](https://github.com/reactjs/reselect), memoized and composable selectors for Redux.
+* [React components I recommend](https://github.com/sapegin/react-components)
 
 ## Developer tools
 
@@ -103,6 +110,8 @@ These tools are as useful as all the resources mentioned above.
 * [Redux DevTools](https://github.com/gaearon/redux-devtools).
 * [React plugin for ESLint](https://github.com/yannickcr/eslint-plugin-react), React specific linting rules.
 * [React Developer Tools](https://github.com/facebook/react-devtools) for Chrome and Firefox.
+
+We also use [lint-staged](https://github.com/okonet/lint-staged) and [husky](https://github.com/typicode/husky) to run linters on precommit hook.
 
 ***
 
