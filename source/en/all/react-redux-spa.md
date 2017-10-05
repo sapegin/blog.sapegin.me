@@ -28,7 +28,7 @@ Thanks to [Babel](http://babeljs.io/) we can write in ES6 (official name is ECMA
 
 Our view layer is [React](https://facebook.github.io/react/).
 
-* [React tutorial](https://facebook.github.io/react/docs/tutorial.html).
+* [React tutorial](https://reactjs.org/tutorial/tutorial.html).
 * [Thinking in React](https://facebook.github.io/react/docs/thinking-in-react.html).
 * [ReactJS for stupid people](http://blog.andrewray.me/reactjs-for-stupid-people/) by Andrew Ray.
 * [Smart and dumb components](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0) by Dan Abramov.
