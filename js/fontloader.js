@@ -45,7 +45,8 @@ window.loadFont = function(fontName, fontUrlBase) {
 			if (request.status >= 200 && request.status < 400) {
 				// Updating localStorage with the fresh data and applying the font data
 				storage[localStorageUrlKey] = fontUrlBase;
-				storage[localStorageCssKey] = styleElement.textContent = request.responseText;
+				storage[localStorageCssKey] = request.responseText;
+				styleElement.textContent = request.responseText;
 			}
 		};
 		request.send();
