@@ -92,6 +92,7 @@ To test React components we use [Jest](https://facebook.github.io/jest/) (a test
 
 * [Approaches to testing React components — an overview](http://reactkungfu.com/2015/07/approaches-to-testing-react-components-an-overview/) by Marcin Grzywaczewski.
 * [Testing React components with Jest and Enzyme](http://blog.sapegin.me/all/react-jest).
+* [Jest Cheat Sheet](https://github.com/sapegin/jest-cheat-sheet).
 
 ## Other useful libraries
 
