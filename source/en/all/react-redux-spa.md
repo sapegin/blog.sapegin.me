@@ -51,6 +51,7 @@ Our view layer is [React](https://reactjs.org/).
 * [Single State Tree + Flux](http://merrickchristensen.com/articles/single-state-tree.html) by Merrick Christensen.
 * [Querying a Redux store](https://medium.com/@adamrackis/querying-a-redux-store-37db8c7f3b0f) by Adam Rackis.
 * 🖥 [Getting started with Redux](https://egghead.io/courses/getting-started-with-redux) by Dan Abramov.
+* 🖥 [Building React Applications with Idiomatic Redux](https://egghead.io/courses/building-react-applications-with-idiomatic-redux) by Dan Abramov.
 * 📺 [Live React: Hot Reloading with Time Travel](https://youtu.be/xsSnOQynTHs) by Dan Abramov, ReactEurope 2015.
 * [Redux documentation](http://redux.js.org/).
 
