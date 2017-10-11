@@ -87,6 +87,8 @@ CSS modules are like [BEM](http://getbem.com/) but they provide real class names
 
 * 📖 [SurviveJS: webpack](https://survivejs.com/webpack/introduction/) by Juho Vepsäläinen.
 
+*Consider using [Create React App](https://github.com/facebookincubator/create-react-app) to bootstrap your app.
+
 ## Testing
 
 To test React components we use [Jest](https://facebook.github.io/jest/) (a test runner) and [Enzyme](http://airbnb.io/enzyme/) (a testing utility for React).
@@ -108,6 +110,7 @@ Unfortunately, I haven’t found any good articles about these libraries.
 
 These tools are as useful as all the resources mentioned above.
 
+* [React Styleguidist](https://react-styleguidist.js.org/), Isolated component development environment and a living style guide.
 * React hot loader (now [React Transform](https://github.com/gaearon/react-transform-boilerplate)).
 * [Redux DevTools](https://github.com/gaearon/redux-devtools).
 * [React plugin for ESLint](https://github.com/yannickcr/eslint-plugin-react), React specific linting rules.
@@ -118,5 +121,3 @@ We also use [lint-staged](https://github.com/okonet/lint-staged) and [husky](htt
 ***
 
 Let me know if I’ve missed something, I highly appreciate any additions to this list.
-
-P. S. Check out my latest open source project: [React Styleguidist](https://github.com/styleguidist/react-styleguidist), a component style guide generator with a hot reload dev server.
