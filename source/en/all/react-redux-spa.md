@@ -1,6 +1,6 @@
 ---
 layout: Post
-title: 'React and Redux single page applications resources'
+title: 'React single page applications resources'
 date: Jan 14, 2016
 lang: en
 medium: react-and-redux-single-page-applications-resources-22cd859b0c1d
