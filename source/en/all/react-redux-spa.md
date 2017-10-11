@@ -87,7 +87,7 @@ CSS modules are like [BEM](http://getbem.com/) but they provide real class names
 
 * 📖 [SurviveJS: webpack](https://survivejs.com/webpack/introduction/) by Juho Vepsäläinen.
 
-*Consider using [Create React App](https://github.com/facebookincubator/create-react-app) to bootstrap your app.
+*Consider using [Create React App](https://github.com/facebookincubator/create-react-app) to bootstrap your app.*
 
 ## Testing
 
