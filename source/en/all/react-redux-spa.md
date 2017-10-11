@@ -110,7 +110,7 @@ Unfortunately, I haven’t found any good articles about these libraries.
 
 These tools are as useful as all the resources mentioned above.
 
-* [React Styleguidist](https://react-styleguidist.js.org/), Isolated component development environment and a living style guide.
+* [React Styleguidist](https://react-styleguidist.js.org/), isolated component development environment and a living style guide.
 * React hot loader (now [React Transform](https://github.com/gaearon/react-transform-boilerplate)).
 * [Redux DevTools](https://github.com/gaearon/redux-devtools).
 * [React plugin for ESLint](https://github.com/yannickcr/eslint-plugin-react), React specific linting rules.
