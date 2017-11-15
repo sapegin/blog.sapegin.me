@@ -20,4 +20,4 @@ There are only two valid reasons to tear out jQuery from existing project:
 1. You are bored. Absolutely valid reason but if you’re bored at work you’d better spend your time updating your CV.
 2. You are making a library. jQuery is not a default-library-for-every-project anymore so avoiding it in your library will increase the number of potential users.
 
-Other case is starting a new project. *Maybe* it’s the right time not to use jQuery. For example there’s no need for it if you’re using React.
+Other case is starting a new project. _Maybe_ it’s the right time not to use jQuery. For example there’s no need for it if you’re using React.

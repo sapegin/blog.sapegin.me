@@ -32,41 +32,44 @@ tags:
 И вот так:
 
 ```css
-.logo, .logo__link, .logo__image {
-  display:block;
-  width:260px;
-  height:48px;
-  }
+.logo,
+.logo__link,
+.logo__image {
+  display: block;
+  width: 260px;
+  height: 48px;
+}
 .logo {
-  position:relative;
-  }
-.logo__link, .logo__image {
-  position:absolute;
-  left:0;
-  top:0;
-  transition:all .4s cubic-bezier(0.230, 1.000, 0.320, 1.000);
-  }
+  position: relative;
+}
+.logo__link,
+.logo__image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
 .logo__link {
-  background:url(logo.svg) no-repeat;
-  text-indent:100%;
-  white-space:nowrap;
-  overflow:hidden;
-  background-size:auto;
-  opacity:0;
-  }
+  background: url(logo.svg) no-repeat;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  background-size: auto;
+  opacity: 0;
+}
 .logo:hover .logo__link {
-  opacity:1;
-  }
+  opacity: 1;
+}
 .logo:hover .logo__image {
-  opacity:0;
-  }
+  opacity: 0;
+}
 .no-svg .logo__image {
-  display:none;
-  }
+  display: none;
+}
 .no-svg .logo__link {
-  opacity:1;
-  background:url(logo.png);
-  }
+  opacity: 1;
+  background: url(logo.png);
+}
 ```
 
 Теперь у нас только обычный вариант логотипа использует псевдокласс :target, а значит подсвеченный мы можем подключить CSS-фоном. Для старых браузеров используется PNG, класс no-svg добавляет [Modernizr](https://modernizr.com/). Теперь остаётся подготовить SVG-файл:

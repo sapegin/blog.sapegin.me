@@ -27,7 +27,7 @@ You can read how to make an SSH key in [GitHub](https://help.github.com/articles
 
 You can save another few keystrokes by adding an SSH alias which you will use instead of host/login combination. Add this lines to your `~/.ssh/config` file:
 
-```markdown
+```
 Host myhost
   HostName 113.113.13.13
   User tema
@@ -64,7 +64,12 @@ I usually use the latter. It makes repository more tidy and diffs cleaner. But o
 I have a `deploy` task in my Gruntfiles which does everything except image optimization, testing and other long running processes that aren’t necessary to build a site.
 
 ```javascript
-grunt.registerTask('default', ['jshint', 'concat', 'stylus', 'imagemin']);
+grunt.registerTask('default', [
+  'jshint',
+  'concat',
+  'stylus',
+  'imagemin'
+]);
 grunt.registerTask('deploy', ['concat', 'stylus']);
 ```
 
@@ -133,7 +138,7 @@ It means:
 3. Install/update npm packages.
 4. Build site using Grunt.
 
-In the latter step I run `deploy` task in a locally installed (`npm install` without `-g` switch) Grunt. In that case all deploy dependencies can be installed with a single command: `npm install` and don’t require `sudo`.
+In the latter step I run `deploy` task in a locally installed (`npm install` without `-g` switch) Grunt. In that case all deploy dependencies can be installed with a single command: `npm install` and don’t require `sudo`.
 
 Make a shipit script:
 

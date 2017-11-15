@@ -20,13 +20,19 @@ tags:
 
 * Для задания контекста. Например, блок по-разному выглядит на тёмном и светлом фоне — это можно сделать как модификатором, так и каскадом (задавая класс-контекст body или родительскому блоку).
 
+<!-- prettier-ignore -->
 ```css
-.logo { color:saddlebrown; }
-.page_about .logo { color:ghostwhite; }
+.logo {
+  color:saddlebrown;
+  }
+.page_about .logo {
+  color:ghostwhite;
+  }
 ```
 
 * Для семантических тегов в пользовательском контенте (статьи, комментарии).
 
+<!-- prettier-ignore -->
 ```css
 .text ul {}
 .text p {}
@@ -98,4 +104,4 @@ a.fake
 * [Pragmatic, practical font sizing in CSS](https://csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css/)
 * [Single-direction margin declarations](https://csswizardry.com/2012/06/single-direction-margin-declarations/)
 * [The media object saves hundreds of lines of code](http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/)
-* [Мой Stylus-бутстрап — основа для всех проектов](https://github.com/tamiadev/tamia)
+* [Мой Stylus-бутстрап — основа для всех проектов](https://github.com/tamiadev/tamia)

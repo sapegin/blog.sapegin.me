@@ -26,7 +26,7 @@ Thanks to [Babel](http://babeljs.io/) we can write in ES6 (official name is ECMA
 * 📖 [Understanding ECMAScript 6](https://leanpub.com/understandinges6/read/) by Nicholas C. Zakas.
 * 📖 [Exploring ES6](http://exploringjs.com/es6/) by Dr. Axel Rauschmayer.
 
-*Consider using [TypeScript](https://www.typescriptlang.org/).*
+_Consider using [TypeScript](https://www.typescriptlang.org/)._
 
 ## React
 
@@ -52,15 +52,15 @@ Our view layer is [React](https://reactjs.org/).
 * [Querying a Redux store](https://medium.com/@adamrackis/querying-a-redux-store-37db8c7f3b0f) by Adam Rackis.
 * 🖥 [Getting started with Redux](https://egghead.io/courses/getting-started-with-redux) by Dan Abramov.
 * 🖥 [Building React Applications with Idiomatic Redux](https://egghead.io/courses/building-react-applications-with-idiomatic-redux) by Dan Abramov.
-* 📺 [Live React: Hot Reloading with Time Travel](https://youtu.be/xsSnOQynTHs) by Dan Abramov, ReactEurope 2015.
+* 📺 [Live React: Hot Reloading with Time Travel](https://youtu.be/xsSnOQynTHs) by Dan Abramov, ReactEurope 2015.
 * [Redux documentation](http://redux.js.org/).
 
-Redux was inspired by the original Facebook’s [Flux architecture](https://facebook.github.io/flux/):
+Redux was inspired by the original Facebook’s [Flux architecture](https://facebook.github.io/flux/):
 
 * [Flux for beginners](https://blog.andrewray.me/flux-for-stupid-people/) by Andrew Ray.
 * [The evolution of Flux frameworks](https://medium.com/@dan_abramov/the-evolution-of-flux-frameworks-6c16ad26bb31) by Dan Abramov.
 
-*After using Redux for a while, I feel that it’s too low level and requires you to write a lot of code. Consider using [MobX](https://mobx.js.org/).*
+_After using Redux for a while, I feel that it’s too low level and requires you to write a lot of code. Consider using [MobX](https://mobx.js.org/)._
 
 ## Immutable.js
 
@@ -70,7 +70,7 @@ Redux requires that all the data in the store should be immutable. [Immutable.js
 * [Immutable data structures and JavaScript](http://jlongster.com/Using-Immutable-Data-Structures-in-JavaScript) by James Long.
 * 📺 [Immutable data and React](https://youtu.be/I7IdS-PbEgI) by Lee Byron, React Conf 2015.
 
-*After using Immutable for a while, I feel that it makes more problems than it solves. Consider using [seamless-immutable](https://github.com/rtfeldman/seamless-immutable).*
+_After using Immutable for a while, I feel that it makes more problems than it solves. Consider using [seamless-immutable](https://github.com/rtfeldman/seamless-immutable)._
 
 ## CSS Modules
 
@@ -79,7 +79,7 @@ CSS modules are like [BEM](http://getbem.com/) but they provide real class names
 * [CSS Modules: welcome to the future](https://glenmaddern.com/articles/css-modules) by Glen Maddern.
 * 📺 [Interoperable CSS](https://youtu.be/aIyhhHTmsXE) by Glen Maddern, CSSconf EU 2015.
 
-*Consider using CSS in JS library, like [JSS](http://cssinjs.org/) or [Styled Components](https://www.styled-components.com/).*
+_Consider using CSS in JS library, like [JSS](http://cssinjs.org/) or [Styled Components](https://www.styled-components.com/)._
 
 ## Webpack
 
@@ -87,7 +87,7 @@ CSS modules are like [BEM](http://getbem.com/) but they provide real class names
 
 * 📖 [SurviveJS: webpack](https://survivejs.com/webpack/introduction/) by Juho Vepsäläinen.
 
-*Consider using [Create React App](https://github.com/facebookincubator/create-react-app) to bootstrap your app.*
+_Consider using [Create React App](https://github.com/facebookincubator/create-react-app) to bootstrap your app._
 
 ## Testing
 
@@ -118,6 +118,6 @@ These tools are as useful as all the resources mentioned above.
 
 We also use [lint-staged](https://github.com/okonet/lint-staged) and [husky](https://github.com/typicode/husky) to run linters on precommit hook.
 
-***
+---
 
 Let me know if I’ve missed something, I highly appreciate any additions to this list.

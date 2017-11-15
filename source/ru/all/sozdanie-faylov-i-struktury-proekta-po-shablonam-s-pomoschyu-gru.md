@@ -8,7 +8,7 @@ tags:
   - tools
 ---
 
-[Grunt](https://github.com/cowboy/grunt) — это набор инструментов командной строки, облегчающих разработку на JavaScript. Он умеет [склеивать](https://github.com/cowboy/grunt/blob/master/docs/task_concat.md) и [минифицировать](https://github.com/cowboy/grunt/blob/master/docs/task_min.md) JS-файлы, [запускать тесты](https://github.com/cowboy/grunt/blob/master/docs/task_qunit.md) и [JSHint](https://github.com/cowboy/grunt/blob/master/docs/task_lint.md), запускать задачи при изменении файлов и даже содержит простейший веб-сервер. Но самое интересное для меня — команда [init](https://github.com/cowboy/grunt/blob/master/docs/task_init.md), создающая файлы (или структуру папок) по шаблону.
+[Grunt](https://github.com/cowboy/grunt) — это набор инструментов командной строки, облегчающих разработку на JavaScript. Он умеет [склеивать](https://github.com/cowboy/grunt/blob/master/docs/task_concat.md) и [минифицировать](https://github.com/cowboy/grunt/blob/master/docs/task_min.md) JS-файлы, [запускать тесты](https://github.com/cowboy/grunt/blob/master/docs/task_qunit.md) и [JSHint](https://github.com/cowboy/grunt/blob/master/docs/task_lint.md), запускать задачи при изменении файлов и даже содержит простейший веб-сервер. Но самое интересное для меня — команда [init](https://github.com/cowboy/grunt/blob/master/docs/task_init.md), создающая файлы (или структуру папок) по шаблону.
 
 В репозитории Гранта уже есть [полдюжины шаблонов](https://github.com/cowboy/grunt/tree/master/tasks/init), но мне они были не слишком полезны, поэтому я сделал [пачку своих](https://github.com/sapegin/squirrelstrap).
 
@@ -29,32 +29,35 @@ tags:
 exports.description = 'Create a simple HTML5 file.';
 
 exports.template = function(grunt, init, done) {
+  grunt.helper(
+    'prompt',
+    {},
+    [
+      // Пользовательские параметры
+      // Имя файла (такой запрос уже есть в Гранте, поэтому нужно вызывать его с помощью grunt.helper)
+      // index -- значение по умолчанию
+      grunt.helper('prompt_for', 'name', 'index'),
+      // Язык (такого запроса в Гранте нет, поэтому нам нужно описать все параметры)
+      {
+        name: 'lang',
+        message: 'Document language',
+        default: 'en'
+      }
+    ],
+    function(err, props) {
+      // Достаём параметры по умолчанию (находятся в файле defaults.json)
+      grunt.utils._.defaults(props, init.defaults);
 
-  grunt.helper('prompt', {}, [
-    // Пользовательские параметры
-    // Имя файла (такой запрос уже есть в Гранте, поэтому нужно вызывать его с помощью grunt.helper)
-    // index -- значение по умолчанию
-    grunt.helper('prompt_for', 'name', 'index'),
-    // Язык (такого запроса в Гранте нет, поэтому нам нужно описать все параметры)
-    {
-      name: 'lang',
-      message: 'Document language',
-      default: 'en'
-    },
-  ], function(err, props) {
-    // Достаём параметры по умолчанию (находятся в файле defaults.json)
-    grunt.utils._.defaults(props, init.defaults);
+      // Список файлов для копирования
+      var files = init.filesToCopy(props);
 
-    // Список файлов для копирования
-    var files = init.filesToCopy(props);
+      // Список файлов для копирования
+      init.copyAndProcess(files, props);
 
-    // Список файлов для копирования
-    init.copyAndProcess(files, props);
-
-    // Готово :)
-    done();
-  });
-
+      // Готово :)
+      done();
+    }
+  );
 };
 ```
 

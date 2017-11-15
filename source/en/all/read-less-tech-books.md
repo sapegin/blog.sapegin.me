@@ -10,7 +10,7 @@ tags:
 
 Vladimir Starkov [suggests](http://vstarkov.com/monthbook/) to read at least two technical books a month.
 
-It’s very important to be up-to-date with latest trends, especially in so fast changing industry as frontend development. But there are so many interesting subjects besides  programming languages and new frameworks.
+It’s very important to be up-to-date with latest trends, especially in so fast changing industry as frontend development. But there are so many interesting subjects besides programming languages and new frameworks.
 
 I love to [read](http://bibla.ru/sapegin/read/) about design, typography, photography (more about philosophy than technique), languages, writing, people and other subjects.
 

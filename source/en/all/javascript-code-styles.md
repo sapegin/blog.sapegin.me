@@ -63,7 +63,7 @@ Survey results:
 
 ## Conclusion
 
-I was expecting to see numbers closer to 50% for the first two questions. But I was surprised by actual popularity of spaces for indentation in JavaScript: tabs are almost non-existent. Same for semicolons: not as many people aren’t using them as you can imagine reading Twitter.
+I was expecting to see numbers closer to 50% for the first two questions. But I was surprised by actual popularity of spaces for indentation in JavaScript: tabs are almost non-existent. Same for semicolons: not as many people aren’t using them as you can imagine reading Twitter.
 
 The results show less diversity in code style of popular open source projects: more than half use 2 spaces with semicolons. Many still don’t use any tooling to validate code style.
 
@@ -71,6 +71,6 @@ It could also be because many popular open source projects are old but in the su
 
 So if you’re starting a new JavaScript project [AirBnb preset](https://github.com/airbnb/javascript) (2 spaces, semicolons, etc.) will be a good choice: your code style will be familiar for many developers.
 
-*Note: two projects of 100 are written in CoffeeScript. CoffeeScript itself is one of them. They and one with only native code were excluded from the results.*
+_Note: two projects of 100 are written in CoffeeScript. CoffeeScript itself is one of them. They and one with only native code were excluded from the results._
 
-*All data and chart sources are [on GitHub](https://github.com/sapegin/jscodestyle).*
+_All data and chart sources are [on GitHub](https://github.com/sapegin/jscodestyle)._

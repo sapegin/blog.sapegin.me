@@ -36,8 +36,11 @@ Shallow rendering renders only component itself without its children. So if you 
 For example this component:
 
 ```javascript
-const ButtonWithIcon = ({icon, children}) => (
-  <button><Icon icon={icon} />{children}</button>
+const ButtonWithIcon = ({ icon, children }) => (
+  <button>
+    <Icon icon={icon} />
+    {children}
+  </button>
 );
 ```
 
@@ -97,7 +100,7 @@ Jest stores snapshots besides your tests in files like `__snapshots__/Label.spec
 * Mocks and spies.
 * Coverage report with a single command line switch.
 * Active development.
-* Impossible to write silently wrong asserts like `expect(foo).to.be.a.function` instead of `expect(foo).to.be.a('function')` in Chai because it’s the only natural thing to write after (correct) `expect(foo).to.be.true`.
+* Impossible to write silently wrong asserts like `expect(foo).to.be.a.function` instead of `expect(foo).to.be.a('function')` in Chai because it’s the only natural thing to write after (correct) `expect(foo).to.be.true`.
 
 ## Why Enzyme
 
@@ -112,7 +115,7 @@ First install all the dependencies including peer dependencies:
 npm install --save-dev jest react-test-renderer enzyme enzyme-adapter-react-16 enzyme-to-json
 ```
 
-You’ll also need [babel-jest](https://github.com/facebook/jest/tree/master/packages/babel-jest) for Babel and [ts-jest](https://github.com/kulshekhar/ts-jest) for TypeScript.
+You’ll also need [babel-jest](https://github.com/facebook/jest/tree/master/packages/babel-jest) for Babel and [ts-jest](https://github.com/kulshekhar/ts-jest) for TypeScript.
 
 Update your `package.json`:
 
@@ -167,23 +170,17 @@ That’s enough for most non-interactive components:
 
 ```javascript
 test('render a label', () => {
-  const wrapper = shallow(
-    <Label>Hello Jest!</Label>
-  );
+  const wrapper = shallow(<Label>Hello Jest!</Label>);
   expect(wrapper).toMatchSnapshot();
 });
 
 test('render a small label', () => {
-  const wrapper = shallow(
-    <Label small>Hello Jest!</Label>
-  );
+  const wrapper = shallow(<Label small>Hello Jest!</Label>);
   expect(wrapper).toMatchSnapshot();
 });
 
 test('render a grayish label', () => {
-  const wrapper = shallow(
-    <Label light>Hello Jest!</Label>
-  );
+  const wrapper = shallow(<Label light>Hello Jest!</Label>);
   expect(wrapper).toMatchSnapshot();
 });
 ```
@@ -194,9 +191,7 @@ Sometimes you want to be more explicit and see real values in tests. In that cas
 
 ```javascript
 test('render a document title', () => {
-  const wrapper = shallow(
-    <DocumentTitle title="Events" />
-  );
+  const wrapper = shallow(<DocumentTitle title="Events" />);
   expect(wrapper.prop('title')).toEqual('Events');
 });
 
@@ -212,9 +207,7 @@ In some cases you just can’t use snapshots. For example if you have random IDs
 
 ```javascript
 test('render a popover with a random ID', () => {
-  const wrapper = shallow(
-    <Popover>Hello Jest!</Popover>
-  );
+  const wrapper = shallow(<Popover>Hello Jest!</Popover>);
   expect(wrapper.prop('id')).toMatch(/Popover\d+/);
 });
 ```
@@ -225,9 +218,7 @@ You can simulate an event like `click` or `change` and then compare component to
 
 ```javascript
 test('render Markdown in preview mode', () => {
-  const wrapper = shallow(
-    <MarkdownEditor value="*Hello* Jest!" />
-  );
+  const wrapper = shallow(<MarkdownEditor value="*Hello* Jest!" />);
 
   expect(wrapper).toMatchSnapshot();
 
@@ -237,13 +228,11 @@ test('render Markdown in preview mode', () => {
 });
 ```
 
-Sometimes you want to interact with an element in a child component to test effect in your component. For that you need a proper DOM rendering with Enzyme’s `mount` method:
+Sometimes you want to interact with an element in a child component to test effect in your component. For that you need a proper DOM rendering with Enzyme’s `mount` method:
 
 ```javascript
 test('open a code editor', () => {
-  const wrapper = mount(
-    <Playground code={code} />
-  );
+  const wrapper = mount(<Playground code={code} />);
 
   expect(wrapper.find('.ReactCodeMirror')).toHaveLength(0);
 
@@ -268,7 +257,7 @@ test('pass a selected value to the onChange handler', () => {
   expect(wrapper).toMatchSnapshot();
 
   wrapper.find('select').simulate('change', {
-    target: { value },
+    target: { value }
   });
 
   expect(onChange).toBeCalledWith(value);
@@ -305,7 +294,7 @@ const wrapper = shallow(/*~*/);
 console.log(wrapper.debug());
 ```
 
-When your tests fail with `--coverage` flag with diff like this:
+When your tests fail with `--coverage` flag with diff like this:
 
 ```diff
 -<Button
@@ -326,6 +315,6 @@ Try to replace arrow function component with regular function:
 * [Migrating to Jest](https://medium.com/@kentcdodds/migrating-to-jest-881f75366e7e#.pc4s5ut6z) by Kent C. Dodds
 * [Migrating AVA to Jest](http://browniefed.com/blog/migrating-ava-to-jest/) by Jason Brown
 
-***
+---
 
 Thanks to [Chris Pojer](http://cpojer.net/), [Max Stoiber](http://mxstbr.com/) and Anna Gerus for proofreading and comments.

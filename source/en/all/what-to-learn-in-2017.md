@@ -16,7 +16,7 @@ This post is a mix of my experience and my wishes for the New Year. I want to he
 
 ## Learn how to write readable code
 
-Most of our work isn’t in writing new code but modifying existing code. That means you read code much more often then write it, so you need to optimize you code for *the next programmer*, not for the interpreter.
+Most of our work isn’t in writing new code but modifying existing code. That means you read code much more often then write it, so you need to optimize you code for _the next programmer_, not for the interpreter.
 
 I recommend reading these three amazing books — in this order, from shortest to longest:
 
@@ -26,7 +26,7 @@ I recommend reading these three amazing books — in this order, from shortest t
 
 ## Learn JavaScript deeper
 
-When every week we have a new JavaScript framework that’s better than any older framework, it’s easy to spend most of your time learning frameworks rather than the language itself. If you’re using a framework but don’t understand how it works, *stop and start learning the language until you understand how tools you use work*.
+When every week we have a new JavaScript framework that’s better than any older framework, it’s easy to spend most of your time learning frameworks rather than the language itself. If you’re using a framework but don’t understand how it works, _stop and start learning the language until you understand how tools you use work_.
 
 * A great start is Kyle Simpson’s book series [You Don’t Know JavaScript](https://github.com/getify/You-Dont-Know-JS) which you can read online for free.
 * Eric Elliott has a huge list of [JavaScript topics to learn in 2017](https://medium.com/javascript-scene/top-javascript-frameworks-topics-to-learn-in-2017-700a397b711#.zhnbn4rvg).
@@ -81,10 +81,10 @@ This, however, means that it’s time to learn from all wisdom that non-frontend
 * [Learn To Think Like A Computer Scientist](https://www.coursera.org/specializations/algorithms) course at Coursera.
 * [The five programming books that meant most to me](https://signalvnoise.com/posts/3375-the-five-programming-books-that-meant-most-to-me) by David Heinemeier Hansson.
 
-***
+---
 
 What would you recommend? What are you going to learn in 2017?
 
-***
+---
 
 Thanks to [Henrique Alves](http://alves.im/), [Nicolás Bevacqua](https://ponyfoo.com/), [Alexander Burtsev](http://burtsev.me/), [Nataliya Karatkova](https://twitter.com/meuwka), [Oliver Turner](https://twitter.com/oliverturner), [Juho Vepsäläinen](https://survivejs.com/) and [Anton Zhiyanov](https://antonz.ru/) for feedback and suggestions.

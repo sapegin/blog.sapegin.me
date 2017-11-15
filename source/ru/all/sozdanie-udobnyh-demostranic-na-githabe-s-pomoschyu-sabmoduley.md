@@ -10,7 +10,7 @@ tags:
 
 Если вы используете [гитхаб-страницы](https://pages.github.com/) для демонстрации своих проектов, и вам надоело копировать исходные файлы из основной ветки в ветку gh-pages, то есть простой способ этого избежать.
 
-Можно добавить ветку master как сабмодуль в ветку gh-pages *(адрес репозитория должен быть именно [в таком формате](https://help.github.com/articles/using-submodules-with-pages/), иначе страница перестанет обновляться)*:
+Можно добавить ветку master как сабмодуль в ветку gh-pages _(адрес репозитория должен быть именно [в таком формате](https://help.github.com/articles/using-submodules-with-pages/), иначе страница перестанет обновляться)_:
 
 ```bash
 git submodule add https://github.com/sapegin/social-likes.git src

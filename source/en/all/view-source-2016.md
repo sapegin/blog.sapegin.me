@@ -103,17 +103,17 @@ You can read about most of these things in Helen’s article [What is Beautiful 
 
 * The tech industry is not hospitable to humans.
 * How to survive in tech:
-  - remember that you matter;
-  - use the power of language;
-  - practice self care;
-  - do only one thing, but do the one thing;
-  - get professional help;
-  - set and enforce boundaries;
-  - learn to recognize warning signs;
-  - be open about your experiences;
-  - remember that you’re not alone;
-  - know there’s a spaceship, you can leave;
-  - support others.
+  * remember that you matter;
+  * use the power of language;
+  * practice self care;
+  * do only one thing, but do the one thing;
+  * get professional help;
+  * set and enforce boundaries;
+  * learn to recognize warning signs;
+  * be open about your experiences;
+  * remember that you’re not alone;
+  * know there’s a spaceship, you can leave;
+  * support others.
 
 **Laying out the future with Grid and Flexbox** by [Rachel Andrew](https://twitter.com/@rachelandrew). [Slides](http://www.slideshare.net/rachelandrew/laying-out-the-future-66003922). [Video](https://www.youtube.com/watch?v=ibeF6rbzD70).
 

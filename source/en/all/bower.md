@@ -8,9 +8,9 @@ tags:
   - build
 ---
 
-*This article was written in 2014, when npm 2 was the latest, and wasn’t popular among fronted developers because of the issues described in the article. Now use [Yarn](https://yarnpkg.com/) or [npm](https://www.npmjs.com/), and consider this article historical.*
+_This article was written in 2014, when npm 2 was the latest, and wasn’t popular among fronted developers because of the issues described in the article. Now use [Yarn](https://yarnpkg.com/) or [npm](https://www.npmjs.com/), and consider this article historical._
 
-*This article was first published in the [May 2014 issue](https://xakep.ru/issues/xa/?id=184) of Russian “Hacker” magazine. The article in the magazine is a shortened version; the full one is below. Article was [translated](http://frontendbabel.info/articles/bower-why-frontend-package-manager/) by [George Gritsouk](http://gggritso.com/) for [Frontend Babel](http://frontendbabel.info/).*
+_This article was first published in the [May 2014 issue](https://xakep.ru/issues/xa/?id=184) of Russian “Hacker” magazine. The article in the magazine is a shortened version; the full one is below. Article was [translated](http://frontendbabel.info/articles/bower-why-frontend-package-manager/) by [George Gritsouk](http://gggritso.com/) for [Frontend Babel](http://frontendbabel.info/)._
 
 Package managers simplify installing and updating project dependencies, which are libraries that it uses: jQuery, Fotorama, everything that is used on your site and isn’t written by you.
 
@@ -20,7 +20,7 @@ Many programming languages have standard package managers, which developers use 
 
 Bower is not the standard package manager for client-side JavaScript, but the most popular one: currently there are more than sixteen thousand packages.
 
-Bower doesn’t prescribe to the user its own build tool, or to the developer a method of including  libraries (AMD, CommonJS, etc.) All Bower does is install the right versions of the packages that the project needs and their dependencies. In other words: it downloads source files for the right libraries and everything they need into a special folder. Everything else is up to the developer.
+Bower doesn’t prescribe to the user its own build tool, or to the developer a method of including libraries (AMD, CommonJS, etc.) All Bower does is install the right versions of the packages that the project needs and their dependencies. In other words: it downloads source files for the right libraries and everything they need into a special folder. Everything else is up to the developer.
 
 ## Why not npm
 
@@ -177,8 +177,7 @@ concat: {
 }
 ```
 
-This method has many downsides: you have to watch the files for each package, make sure that the files are assembled in the right order (for example, jQuery has to be higher than scripts depending on it). The [grunt-bower-concat](https://github.com/sapegin/grunt-bower-concat) plugin
- can do this for you: it automatically concatenates all installed dependencies in the right order into a single file:
+This method has many downsides: you have to watch the files for each package, make sure that the files are assembled in the right order (for example, jQuery has to be higher than scripts depending on it). The [grunt-bower-concat](https://github.com/sapegin/grunt-bower-concat) plugin can do this for you: it automatically concatenates all installed dependencies in the right order into a single file:
 
 ```javascript
 bower_concat: {

@@ -65,9 +65,8 @@ Looks like the example project is not very good to learn reactive programming. T
 
 ## [Step-by-Step async JavaScript with RxJS](https://egghead.io/courses/step-by-step-async-javascript-with-rxjs) by John Lindquist
 
-This course is much better than the previous one. But it’s still not very useful if you want to understand *when* to use reactive programming in real projects. Watch if you want to see how reactive programming with RxJS looks like.
+This course is much better than the previous one. But it’s still not very useful if you want to understand _when_ to use reactive programming in real projects. Watch if you want to see how reactive programming with RxJS looks like.
 
 ## [React Native fundamentals](https://egghead.io/courses/react-native-fundamentals) by Tyler McGinnis
 
 I didn’t know much about React Native and wanted to know how it looks. This course was good for that. Through the course the author develops an app for displaying GitHub profiles so in the end you have an idea of how to make an app with React Native.
-

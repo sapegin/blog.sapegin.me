@@ -6,10 +6,11 @@
   "scripts": {
     "start": "tamia server --lang en & npm run build:watch",
     "start:ru": "tamia server --lang ru & npm run build:watch",
-    "test": "npm run lint:js && npm run lint:css && npm run lint:md",
+    "test": "npm run lint:js && npm run lint:css && npm run lint:md && npm run format:md",
     "lint:js": "eslint . --fix --ext .js,.jsx",
     "lint:css": "stylelint '**/*.pcss'",
     "lint:md": "remark --quiet source",
+    "format:md": "prettier --write 'source/**/*.md'",
     "bundle": "tamia bundle",
     "build": "BABEL_DISABLE_CACHE=1 babel-node src",
     "build:watch": "chokidar source 'templates/**/*.jsx' -c 'BABEL_DISABLE_CACHE=1 babel-node src'"

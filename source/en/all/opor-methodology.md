@@ -25,15 +25,16 @@ Allowed for:
 
 ```css
 .logo {
-  color:saddlebrown;
-  }
+  color: saddlebrown;
+}
 .page_about .logo {
-  color:ghostwhite;
-  }
+  color: ghostwhite;
+}
 ```
 
 * To use semantic classless tags in user-generated content (articles, comments, etc.).
 
+<!-- prettier-ignore -->
 ```css
 .text ul {}
 .text p {}

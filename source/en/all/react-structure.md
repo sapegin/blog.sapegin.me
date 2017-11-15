@@ -96,7 +96,7 @@ const DO_SOMETHING_COOL = 'myapp/feature-name/DO_SOMETHING_COOL';
 
 export function doSomethingCool(what) {
   return {
-    type: DO_SOMETHING_COOL,
+    type: DO_SOMETHING_COOL
     // ...
   };
 }
@@ -104,16 +104,20 @@ export function doSomethingCool(what) {
 // Reducers
 
 function cookiesReducer(state, action) {
-   switch (action.type) {
-     case DO_SOMETHING_COOL:
-       return {/*_*/};
-     default:
-       return {/*_*/};
-   }
+  switch (action.type) {
+    case DO_SOMETHING_COOL:
+      return {
+        /*_*/
+      };
+    default:
+      return {
+        /*_*/
+      };
+  }
 }
 
 export default combineReducers({
-  cookies: cookiesReducer,
+  cookies: cookiesReducer
   // ...
 });
 
@@ -124,7 +128,7 @@ const cookies = state => state.data.cookies;
 
 export const selector = createStructuredSelector({
   isFetching,
-  cookies,
+  cookies
 });
 ```
 
@@ -135,7 +139,7 @@ import { combineReducers } from 'redux';
 import featureName from '../features/feature-name/duck';
 
 export default combineReducers({
-  featureName,
+  featureName
   // ...
 });
 ```
@@ -149,9 +153,12 @@ import { connect } from 'react-redux';
 import * as duck from '../duck';
 import FeatureNameLayout from './FeatureNameLayout';
 
-@connect(state => duck.selector(state.featureName), dispatch => ({
-    actions: bindActionCreators(duck, dispatch),
-}))
+@connect(
+  state => duck.selector(state.featureName),
+  dispatch => ({
+    actions: bindActionCreators(duck, dispatch)
+  })
+)
 export default class FeatureNameView extends Component {
   /*
   Here you have:
@@ -191,8 +198,7 @@ For example, `configureStore.development.js` and `configureStore.production.js` 
 ```javascript
 if (process.env.NODE_ENV === 'production') {
   module.exports = require('./configureStore.production');
-}
-else {
+} else {
   module.exports = require('./configureStore.development');
 }
 ```

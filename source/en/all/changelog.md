@@ -29,6 +29,6 @@ A good change log is:
 * Written for humans, not computers.
 * Understandable by users, not just contributors.
 * Not a Git commit log.
-* Written by a project maintainer — don’t ask for a pull request.
+* Written by a project maintainer — don’t ask for a pull request.
 
 You should read this [awesome guide](http://keepachangelog.com/) and add a change log to your open source project today.

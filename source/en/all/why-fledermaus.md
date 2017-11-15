@@ -10,7 +10,7 @@ tags:
   - projects
 ---
 
-For many years I was struggling every time I was using a someone else’s engine to build one of my sites. I’ve tried [WordPress](https://wordpress.com/), [Koken](http://koken.me/), [Aegea](http://blogengine.ru/), [Django](https://www.djangoproject.com/), [DocPad](http://docpad.org/) and [Hexo](https://hexo.io/). Now all my personal sites (this blog, [homepage](http://sapegin.me/) and [photo portfolio](http://morning.photos/)) work on my own static site generator — [Fledermaus](https://github.com/sapegin/fledermaus) — and I’ve never been more happy.
+For many years I was struggling every time I was using a someone else’s engine to build one of my sites. I’ve tried [WordPress](https://wordpress.com/), [Koken](http://koken.me/), [Aegea](http://blogengine.ru/), [Django](https://www.djangoproject.com/), [DocPad](http://docpad.org/) and [Hexo](https://hexo.io/). Now all my personal sites (this blog, [homepage](http://sapegin.me/) and [photo portfolio](http://morning.photos/)) work on my own static site generator — [Fledermaus](https://github.com/sapegin/fledermaus) — and I’ve never been more happy.
 
 It’s not my first engine:
 
@@ -38,20 +38,11 @@ It’s based on fancy modern things like ES6, JSX, Markdown and Intl.
 
 And it’s very small and fast:
 
-**Engine code**<br>
-Docpad: 10300 lines (without 6 required plugins)<br>
-Hexo: 7800 lines (without 2 required plugins)<br>
-Fledermaus: 1300 lines
+**Engine code**<br>Docpad: 10300 lines (without 6 required plugins)<br>Hexo: 7800 lines (without 2 required plugins)<br>Fledermaus: 1300 lines
 
-**Blog code**<br>
-Docpad: 211 lines<br>
-Hexo: 361 lines<br>
-Fledermaus: 159 lines
+**Blog code**<br>Docpad: 211 lines<br>Hexo: 361 lines<br>Fledermaus: 159 lines
 
-**Build time**<br>
-Docpad: 77,49s (version 6.78.4)<br>
-Hexo: 4,60s (version 3.1.1)<br>
-Fledermaus: 3,80s (version 5.0.1, including Babel transpilation)
+**Build time**<br>Docpad: 77,49s (version 6.78.4)<br>Hexo: 4,60s (version 3.1.1)<br>Fledermaus: 3,80s (version 5.0.1, including Babel transpilation)
 
 It builds my whole photo gallery (2000 HTML pages) in 35 seconds on my 2011 MacBook Pro.
 

@@ -51,7 +51,7 @@ Variable usage in JavaScript:
 // Debug mode enabled by default (you can do the opposite too)
 if (typeof DEBUG === 'undefined') DEBUG = true;
 
-;(function() {
+(function() {
   'use strict';
 
   // …
@@ -59,8 +59,7 @@ if (typeof DEBUG === 'undefined') DEBUG = true;
     alert('This alert will be shown only in debug mode');
   }
   // …
-
-}());
+})();
 ```
 
 ## Stylus
@@ -84,7 +83,7 @@ stylus: {
 
 And example:
 
-```css
+```sass
 DEBUG ?= true
 
 div

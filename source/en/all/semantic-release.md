@@ -107,12 +107,12 @@ By default semantic-release uses [AngularJS conventions](https://docs.google.com
 
 Each commit message consists of:
 
-1. Type: `Feat` for new feature, `Fix` for bug fix, etc.
+1. Type: `Feat` for new feature, `Fix` for bug fix, etc.
 2. Subject: short change description.
 3. Body (optional): long change description.
 4. Footer (optional): breaking changes, GitHub issues references, etc.
 
-Semantic-release uses this tags to find all important commits for the release (`Fix` is important, `Docs` is not) and determine which version (MAJOR, MINOR or PATCH) should be released.
+Semantic-release uses this tags to find all important commits for the release (`Fix` is important, `Docs` is not) and determine which version (MAJOR, MINOR or PATCH) should be released.
 
 ## Write change log for MINOR or MAJOR release
 
@@ -132,7 +132,7 @@ Now you need to `git push` your changes and make some coffee.
 
 ## Caveats
 
-* Do not *merge* pull requests, *squash* them into a single commit with a proper message.
+* Do not _merge_ pull requests, _squash_ them into a single commit with a proper message.
 
 * If you forget to do that and want to make a PATCH release:
 

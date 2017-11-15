@@ -74,11 +74,11 @@ For sure they will show you snippets of code on pieces of paper and ask the resu
 * [JavaScript & DOM Tips, Tricks, and Techniques](https://www.impressivewebs.com/javascript-dom-tips-tricks-techniques-ebook/).
 * Something about design patterns (I haven’t read anything yet, so I can’t suggest anything particular).
 
-But, please, don’t use all that new trickery you’ve learned in  real code. We write code for other people and making your code more cowboyish won’t make them happy.
+But, please, don’t use all that new trickery you’ve learned in real code. We write code for other people and making your code more cowboyish won’t make them happy.
 
 ## Links
 
-* [Grammarly](https://www.grammarly.com/) — find mistakes in your English texts.
+* [Grammarly](https://www.grammarly.com/) — find mistakes in your English texts.
 * [Canned Emails](http://www.cannedemails.com/) — prewritten emails for any occasion.
 * [Codewars](https://www.codewars.com/) — small tasks for programmers.
 

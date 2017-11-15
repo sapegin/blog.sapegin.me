@@ -5,7 +5,6 @@ title: Почему я не люблю Java и нестандартные инт
 date: "Nov 22, 2006"
 tags:
   - thoughts
-
 ---
 
 В этой заметке я не скажу ничего нового, просто запишу свои мысли на эту тему.
@@ -20,7 +19,7 @@ tags:
 
 И тут начинаются проблемы.
 
-Интерфейс программ на Java не является интерфейсом Windows. Это главная проблема. В Java можно нарисовать *похожий* интерфейс. Который будет *похож* на Windows, но не будет Windows.
+Интерфейс программ на Java не является интерфейсом Windows. Это главная проблема. В Java можно нарисовать _похожий_ интерфейс. Который будет _похож_ на Windows, но не будет Windows.
 
 Рассмотрим несколько примеров. Первых пришедших в голову. На самом деле их намного больше.
 
@@ -104,7 +103,7 @@ Firefox похож на Safari, Opera 8 похожа на Safari, Internet Explo
 
 ![Internet Explorer 7](/images/java/Internet_Explorer_7.png)
 
-*Изображение с [WikiPedia](http://en.wikipedia.org/wiki/Image:Internet_Explorer_7.png).*
+_Изображение с [WikiPedia](http://en.wikipedia.org/wiki/Image:Internet_Explorer_7.png)._
 
 ![Safari](/images/java/safari.png)
 

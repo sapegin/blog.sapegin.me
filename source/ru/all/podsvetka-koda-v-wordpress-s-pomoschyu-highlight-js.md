@@ -34,7 +34,7 @@ hljs.initHighlightingOnLoad();
 .indent {
   display: inline-block;
   width: 2.2em;
-  }
+}
 pre {
   -moz-tab-size: 4;
   -o-tab-size: 4;
@@ -43,7 +43,7 @@ pre {
   white-space: pre-wrap;
   white-space: pre-line;
   word-wrap: break-word;
-  }
+}
 ```
 
 Параметр tab-size нужен, чтобы при загрузки страницы не было заметно, как уменьшаются отступы. К сожалению, работает это пока только в Файрфоксе и Опере. А white-space позволяет длинным строкам переноситься.
