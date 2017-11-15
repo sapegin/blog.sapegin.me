@@ -143,11 +143,6 @@ Enzyme.configure({ adapter: new Adapter() });
 global.shallow = shallow;
 global.render = render;
 global.mount = mount;
-
-// Fail tests on any warning
-console.error = message => {
-  throw new Error(message);
-};
 ```
 
 For CSS Modules also add to `jest` section in your `package.json`:
