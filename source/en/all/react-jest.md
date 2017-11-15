@@ -160,7 +160,7 @@ For CSS Modules also add to `jest` section in your `package.json`:
 }
 ```
 
-And run `npm istall --save-dev identity-obj-proxy`.
+And run `npm install --save-dev identity-obj-proxy`.
 
 Note that [identity-obj-proxy](https://github.com/keyanzhang/identity-obj-proxy) requires `node --harmony-proxies` flag for Node 4 and 5.
 
