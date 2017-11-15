@@ -83,9 +83,10 @@ stylus: {
 
 И пример использования:
 
-```sass
-DEBUG ?= true
+```css
+DEBUG ?= true;
 
-div
-  outline: 1px solid #c0ffee if DEBUG
+div {
+  outline: 1px solid #c0ffee if DEBUG;
+}
 ```
