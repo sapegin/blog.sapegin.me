@@ -1,17 +1,10 @@
-import {
-	og,
-	meta,
-	getFirstParagraph,
-	getFirstImage,
-} from 'fledermaus/lib/util';
+import { og, meta, getFirstParagraph, getFirstImage } from 'fledermaus/lib/util';
 
 /* eslint-disable no-invalid-this */
 
 // OG, Twitter Card and other meta tags
 export function getMetaTags() {
-	const tags = [
-		meta('viewport', 'width=device-width, initial-scale=1.0'),
-	];
+	const tags = [meta('viewport', 'width=device-width, initial-scale=1.0')];
 
 	if (this.noIndex) {
 		tags.push(meta('robots', 'noindex follow'));
@@ -21,8 +14,7 @@ export function getMetaTags() {
 	let ogType;
 	if (this.url === '/') {
 		ogType = 'website';
-	}
-	else if (this.layout === 'Post') {
+	} else if (this.layout === 'Post') {
 		twType = 'summary';
 		ogType = 'article';
 	}

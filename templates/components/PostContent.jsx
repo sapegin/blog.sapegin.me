@@ -5,7 +5,11 @@ import PostFeedback from './PostFeedback';
 import Share from './Share';
 import s from './PostContent.pcss';
 
-export default function({ title, content, medium, sourcePath, date }, children, { typo, typoTitle }) {
+export default function(
+	{ title, content, medium, sourcePath, date },
+	children,
+	{ typo, typoTitle }
+) {
 	return (
 		<Block component="article" bottom={6} class={s.root}>
 			<Alpha>{typoTitle(title)}</Alpha>

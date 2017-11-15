@@ -6,11 +6,11 @@ import PostList from './components/PostList';
 export default function({ lang, years, postsByYear, __ }) {
 	return (
 		<Base>
-			{lang === 'ru' &&
+			{lang === 'ru' && (
 				<Block bottom={3} class="text">
 					<em>{__('goingEnglish')}</em>
 				</Block>
-			}
+			)}
 			{years.map(year => (
 				<div>
 					<Gamma component="h2">{year}</Gamma>

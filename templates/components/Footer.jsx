@@ -6,12 +6,11 @@ export default function(props, children, { option, __ }) {
 	return (
 		<footer class={s.root}>
 			<div class={s.copyright}>
-				© <Link href={option('copyrightUrl')}>{__('author')}</Link>{', '}
-				2008—{(new Date()).getFullYear()}
+				© <Link href={option('copyrightUrl')}>{__('author')}</Link>
+				{', '}
+				2008—{new Date().getFullYear()}
 			</div>
-			<div class={cx(s.powered, 'text')}>
-				{__('poweredBy')}
-			</div>
+			<div class={cx(s.powered, 'text')}>{__('poweredBy')}</div>
 		</footer>
 	);
 }

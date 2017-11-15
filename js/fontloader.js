@@ -12,8 +12,7 @@ window.loadFont = function(fontName, fontUrlBase) {
 		// We set up a proxy variable to help with localStorage, e.g. when cookies are disabled and the browser prevents
 		// us accessing it. Otherwise some exceptions can be thrown which completely prevent font loading.
 		storage = localStorage || {};
-	}
-	catch (err) {
+	} catch (err) {
 		/* */
 	}
 
@@ -33,8 +32,7 @@ window.loadFont = function(fontName, fontUrlBase) {
 
 		// Applying the font style sheet
 		styleElement.textContent = storedFontCss;
-	}
-	else {
+	} else {
 		// The data was not present, or loaded from an obsolete URL
 		// So we have to load it again
 

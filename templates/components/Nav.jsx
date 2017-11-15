@@ -9,7 +9,9 @@ export default function(props, children, { url, translation, option, __ }) {
 			{url === '/' ? (
 				<h1 class={s.item}>{__('title')}</h1>
 			) : (
-				<Link class={s.item} href="/">{__('title')}</Link>
+				<Link class={s.item} href="/">
+					{__('title')}
+				</Link>
 			)}
 			<Link class={s.item} id="search-link" component="button" type="button">
 				{__('search')}

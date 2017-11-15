@@ -38,8 +38,7 @@ function getRelated(docs, doc) {
 				weight: common.length * d.timestamp,
 			};
 		})
-		.filter(d => d.weight > 0)
-	;
+		.filter(d => d.weight > 0);
 	const sorted = sortBy(weighted, 'weight').reverse();
 	return sorted.slice(0, MAX_RELATED);
 }
@@ -74,7 +73,7 @@ documents = languages.reduce((result, lang) => {
 
 	// Translations and related posts
 	const translationLang = lang === 'ru' ? 'en' : 'ru';
-	const hasTranslation = (url) => {
+	const hasTranslation = url => {
 		return !!documentsByLanguage[translationLang].find(doc => doc.url === url);
 	};
 	docs = docs.map(doc => {
