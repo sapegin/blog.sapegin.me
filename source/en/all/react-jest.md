@@ -166,21 +166,21 @@ Note that [identity-obj-proxy](https://github.com/keyanzhang/identity-obj-proxy)
 That’s enough for most non-interactive components:
 
 ```javascript
-it('should render a label', () => {
+test('render a label', () => {
   const wrapper = shallow(
     <Label>Hello Jest!</Label>
   );
   expect(wrapper).toMatchSnapshot();
 });
 
-it('should render a small label', () => {
+test('render a small label', () => {
   const wrapper = shallow(
     <Label small>Hello Jest!</Label>
   );
   expect(wrapper).toMatchSnapshot();
 });
 
-it('should render a grayish label', () => {
+test('render a grayish label', () => {
   const wrapper = shallow(
     <Label light>Hello Jest!</Label>
   );
@@ -193,14 +193,14 @@ it('should render a grayish label', () => {
 Sometimes you want to be more explicit and see real values in tests. In that case use Enzyme API with regular Jest assertions:
 
 ```javascript
-it('should render a document title', () => {
+test('render a document title', () => {
   const wrapper = shallow(
     <DocumentTitle title="Events" />
   );
   expect(wrapper.prop('title')).toEqual('Events');
 });
 
-it('should render a document title and a parent title', () => {
+test('render a document title and a parent title', () => {
   const wrapper = shallow(
     <DocumentTitle title="Events" parent="Event Radar" />
   );
@@ -211,7 +211,7 @@ it('should render a document title and a parent title', () => {
 In some cases you just can’t use snapshots. For example if you have random IDs or something like that:
 
 ```javascript
-it('should render a popover with a random ID', () => {
+test('render a popover with a random ID', () => {
   const wrapper = shallow(
     <Popover>Hello Jest!</Popover>
   );
@@ -224,7 +224,7 @@ it('should render a popover with a random ID', () => {
 You can simulate an event like `click` or `change` and then compare component to a snapshot:
 
 ```javascript
-it('should render Markdown in preview mode', () => {
+test('render Markdown in preview mode', () => {
   const wrapper = shallow(
     <MarkdownEditor value="*Hello* Jest!" />
   );
@@ -240,7 +240,7 @@ it('should render Markdown in preview mode', () => {
 Sometimes you want to interact with an element in a child component to test effect in your component. For that you need a proper DOM rendering with Enzyme’s `mount` method:
 
 ```javascript
-it('should open a code editor', () => {
+test('open a code editor', () => {
   const wrapper = mount(
     <Playground code={code} />
   );
@@ -258,7 +258,7 @@ it('should open a code editor', () => {
 Similar to events testing but instead of testing component’s rendered output with a snapshot use Jest’s mock function to test an event handler itself:
 
 ```javascript
-it('should pass a selected value to the onChange handler', () => {
+test('pass a selected value to the onChange handler', () => {
   const value = '2';
   const onChange = jest.fn();
   const wrapper = shallow(
@@ -280,7 +280,7 @@ it('should pass a selected value to the onChange handler', () => {
 Jest snapshots work with JSON so you can test any function that returns JSON the same way you test your components:
 
 ```javascript
-it('should accept custom properties', () => {
+test('accept custom properties', () => {
   const wrapper = shallow(
     <Layout
       flexBasis={0}
