@@ -136,4 +136,4 @@ At first I had a lot of “Ugh, that’s ugly” moments with Prettier. But when
 
 ![Prettier](https://d3vv6lp55qjaqc.cloudfront.net/items/0m1G3V2G3r0t1Z3A0Q3D/Screen%20Recording%202017-06-25%20at%2012.45%20PM.gif)
 
-Read how to [set up Prettier](https://github.com/survivejs/maintenance-book/blob/master/manuscript/code-quality/02-code-formatting.md) in your project.
+Read how to [set up Prettier](https://survivejs.com/maintenance/code-quality/code-formatting/) in your project.
