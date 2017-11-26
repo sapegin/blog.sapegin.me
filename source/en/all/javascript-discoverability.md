@@ -10,6 +10,7 @@ tags:
   - grumbles
   - tools
   - build
+  - npm
 ---
 
 I really like the idea of extracting tiny tasks to separate libraries like [David Clark suggests](http://davidtheclark.com/modular-approach-to-interface-components/) or like [master of one-line modules](https://github.com/sindresorhus/ama/issues/10) [Sindre Sorhus do](https://www.npmjs.com/~sindresorhus).

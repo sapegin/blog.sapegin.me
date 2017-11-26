@@ -10,6 +10,7 @@ tags:
   - typescript
   - javascript
   - css
+  - css modules
   - webpack
 ---
 

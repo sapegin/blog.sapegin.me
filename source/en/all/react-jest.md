@@ -8,6 +8,7 @@ tags:
   - tools
   - javascript
   - jest
+  - enzyme
   - react
   - testing
 ---

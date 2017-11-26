@@ -7,6 +7,7 @@ medium: what-javascript-code-style-is-the-most-popular-5a3f5bec1f6f
 tags:
   - tools
   - javascript
+  - code style
 ---
 
 There are two big holy war questions about code style in JavaScript: tabs vs. spaces and semicolons vs. no semicolons. Of course there are more, like where to put a comma in a multiline array declaration, but these two are causing the most casualties.
