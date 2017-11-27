@@ -1,6 +1,6 @@
 ---
 layout: Post
-title: "What JavaScript code style is the most popular"
+title: "Which JavaScript code style is the most popular"
 date: Jan 30, 2017
 lang: en
 medium: what-javascript-code-style-is-the-most-popular-5a3f5bec1f6f
