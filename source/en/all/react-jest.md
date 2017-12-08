@@ -288,12 +288,16 @@ test('accept custom properties', () => {
 
 ## Debugging and troubleshooting
 
+### Debugging shallow renderer output
+
 Use Enzyme’s `debug` method to print shallow renderer’s output:
 
 ```javascript
 const wrapper = shallow(/*~*/);
 console.log(wrapper.debug());
 ```
+
+### Failing tests with enabled coverage
 
 When your tests fail with `--coverage` flag with diff like this:
 
@@ -307,6 +311,22 @@ Try to replace arrow function component with regular function:
 ```diff
 - export default const Button = ({ children }) => {
 + export default function Button({ children }) {
+```
+
+### requestAnimationFrame error
+
+You may see an error like this when you run your tests:
+
+```
+console.error node_modules/fbjs/lib/warning.js:42
+  Warning: React depends on requestAnimationFrame. Make sure that you load a polyfill in older browsers. http://fb.me/react-polyfills
+```
+
+React 16 [depends on `requestAnimationFrame`](https://reactjs.org/docs/javascript-environment-requirements.html), so you need to add [a polyfill](https://github.com/chrisdickinson/raf) to your tests:
+
+```js
+// test/jestsetup.js
+import 'raf/polyfill';
 ```
 
 ## Resources
