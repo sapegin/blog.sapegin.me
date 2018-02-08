@@ -1,7 +1,7 @@
 ---
 layout: Post
 title: "No complaints policy in open source"
-date: Jav 27, 2018
+date: Jan 27, 2018
 lang: en
 medium: no-complaints-policy-b5a537b86aec
 tags:
