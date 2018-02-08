@@ -11,6 +11,8 @@ tags:
   - javascript
 ---
 
+_[Watch my talk](https://www.youtube.com/watch?v=5tHfAf4bRcM) with the same name at React Open Source meetup._
+
 We use many tools, like linters, test runners and continuous integration, to make our life as developers easier. But maintaining configuration for these tools is far from easy, especially if you want up-to-date configs in all your projects. [Mrm](https://github.com/sapegin/mrm) tries to solve this problem.
 
 ## What’s the problem

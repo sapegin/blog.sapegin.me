@@ -14,6 +14,8 @@ tags:
   - webpack
 ---
 
+_[Watch this lesson on Egghead](https://egghead.io/lessons/webpack-import-css-modules-with-typescript-and-webpack)._
+
 Using CSS Modules with TypeScript is not as obvious as with JavaScript. The reason is that TypeScript has special treatment for `import`s and if you try to use CSS Modules the same way you did in JavaScript:
 
 ```js
