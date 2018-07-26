@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 title: 'Frontend development mail lists'
 date: Mar 23, 2016
 lang: en

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 title: 'React Amsterdam 2016'
 date: Apr 20, 2016
 lang: en

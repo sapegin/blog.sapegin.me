@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: Post
 title: 'On discoverability of JavaScript packages'
 date: Mar 14, 2016
 lang: en
