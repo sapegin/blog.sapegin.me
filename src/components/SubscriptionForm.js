@@ -22,6 +22,7 @@ const EmailInput = styled.input`
 	background-color: ${themeGet('colors.bg')};
 	color: ${themeGet('colors.base')};
 	border: 2px solid ${themeGet('colors.primary')};
+	border-radius: 0;
 	font-size: ${themeGet('fontSizes.m')};
 	font-family: ${themeGet('fonts.base')};
 	appearance: none;

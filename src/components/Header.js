@@ -6,7 +6,7 @@ import { title } from '../strings';
 
 const Container = styled.header`
 	text-align: center;
-	font-size: ${themeGet('fontSizes.s')};
+	font-size: ${themeGet('fontSizes.m')};
 	@media (min-width: ${themeGet('breakpoints.small')}) {
 		font-size: ${themeGet('fontSizes.l')};
 	}
