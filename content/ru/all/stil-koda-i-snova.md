@@ -10,27 +10,14 @@ tags:
 
 Лет 10 назад, когда я [только-только начал](http://museum.sapegin.ru/) заниматься веб-разработкой, то считал, что чем короче код, тем он круче (мы же в интернете, фигли). Да и вообще любил всякое ковбойство. Код я писал примерно такой:
 
+<!-- prettier-ignore -->
 ```html
-<html>
-  <head>
-    <title>general protection fault group</title>
-    <meta
-      http-equiv="Content-Type"
-      content="text/html;charset=windows-1251"
-    />
-    <link rel=STYLESHEET type=text/css href=styles/styles.css>
-  </head>
-  <body
-    bgcolor="#666666"
-    text="#333333"
-    leftmargin="0"
-    topmargin="0"
-    rightmargin="0"
-    bottommargin="0"
-    marginheight="0"
-    marginwidth="0"
-  ></body>
-</html>
+<html><head>
+<title>general protection fault group</title>
+<meta http-equiv="Content-Type" content="text/html;charset=windows-1251" />
+<link rel=STYLESHEET type=text/css href=styles/styles.css>
+</head>
+<body bgcolor=#666666 text=#333333 leftmargin=0 topmargin=0 rightmargin=0 bottommargin=0 marginheight=0 marginwidth=0>
 ```
 
 Яваскрипт не отставал: односимвольные имена переменных, никаких комментариев и всё такое.
