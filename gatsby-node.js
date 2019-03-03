@@ -53,12 +53,13 @@ export const onCreateNode = ({
 	actions: { createNodeField },
 }) => {
 	if (node.internal.type === 'MarkdownRemark') {
+		const slug = createFilePath({ node, getNode, trailingSlash: false });
+
 		// Typography
 		if (!slug.startsWith('/albums/')) {
 			node.rawMarkdownBody = typo(node.rawMarkdownBody);
 		}
 
-		const slug = createFilePath({ node, getNode, trailingSlash: false });
 		createNodeField({
 			node,
 			name: 'slug',
