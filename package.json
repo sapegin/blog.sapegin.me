@@ -1,44 +1,89 @@
 {
   "name": "blog.sapegin.me",
-  "version": "0.0.0",
   "private": true,
   "license": "See license in <Readme.md>",
   "scripts": {
-    "start": "tamia server --lang en & npm run build:watch",
-    "start:ru": "tamia server --lang ru & npm run build:watch",
-    "test": "npm run lint:js && npm run lint:css && npm run lint:md && npm run format:md",
-    "lint:js": "eslint . --fix --ext .js,.jsx",
-    "lint:css": "stylelint '**/*.pcss'",
-    "lint:md": "remark --quiet source",
-    "format:md": "prettier --write 'source/**/*.md'",
-    "bundle": "tamia bundle",
-    "build": "BABEL_DISABLE_CACHE=1 babel-node src",
-    "build:watch": "chokidar source 'templates/**/*.jsx' -c 'BABEL_DISABLE_CACHE=1 babel-node src'"
-  },
-  "dependencies": {
-    "social-share-services": "^1.0.0",
-    "tamia": "3.0.0-aplha.13"
-  },
-  "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-eslint": "^8.0.2",
-    "chokidar-cli": "^1.2.0",
-    "classnames": "^2.2.5",
-    "eslint": "^4.11.0",
-    "eslint-config-tamia": "^4.2.3",
-    "eslint-plugin-prettier": "^2.3.1",
-    "eslint-plugin-react": "^7.4.0",
-    "fledermaus": "^6.0.0",
-    "lodash": "^4.17.4",
-    "prettier": "^1.8.2",
-    "remark-cli": "^3.0.0",
-    "remark-lint": "^6.0.1",
-    "stylelint": "^7.9.0",
-    "stylelint-config-standard": "^16.0.0",
-    "tamia-build": "^1.3.0",
-    "unist-util-visit": "^1.1.3"
+    "start": "npx --node-arg '-r esm' gatsby develop",
+    "build": "npx --node-arg '-r esm' gatsby build",
+    "serve": "npx --node-arg '-r esm' gatsby serve",
+    "test": "npm run lint:js && npm run lint:css && npm run lint:md",
+    "posttest": "npm run format",
+    "lint:js": "eslint . --cache --fix",
+    "lint:css": "stylelint 'src/**/*.js'",
+    "lint:md": "remark --quiet \"content/**/*.md\"",
+    "format": "prettier --write '**/*.{js,md}'",
+    "styleguide": "styleguidist server",
+    "styleguide:build": "styleguidist build"
   },
   "engines": {
-    "node": ">=7"
+    "node": ">=8.9"
+  },
+  "browserslist": [
+    ">1%",
+    "last 1 version",
+    "Firefox ESR",
+    "not dead"
+  ],
+  "dependencies": {
+    "@emotion/core": "^10.0.7",
+    "@emotion/styled": "^10.0.7",
+    "date-fns": "^1.30.1",
+    "emotion-theming": "^10.0.7",
+    "mri": "^1.1.4",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
+    "react-group": "^3.0.0",
+    "react-helmet": "^5.2.0",
+    "tamia": "^4.0.0-alpha.48",
+    "tamia-gatsby-link": "^1.0.2"
+  },
+  "devDependencies": {
+    "@babel/preset-flow": "^7.0.0",
+    "babel-eslint": "^10.0.1",
+    "emotion-server": "^10.0.7",
+    "eslint": "^5.15.0",
+    "eslint-config-tamia": "^6.0.2",
+    "eslint-plugin-react": "^7.12.4",
+    "esm": "^3.2.9",
+    "gatsby": "^2.1.19",
+    "gatsby-plugin-emotion": "^4.0.4",
+    "gatsby-plugin-feed": "^2.0.14",
+    "gatsby-plugin-flow": "^1.0.2",
+    "gatsby-plugin-lodash": "^3.0.4",
+    "gatsby-plugin-netlify": "^2.0.11",
+    "gatsby-plugin-react-helmet": "^3.0.7",
+    "gatsby-plugin-remove-trailing-slashes": "^2.0.9",
+    "gatsby-remark-prismjs": "^3.2.4",
+    "gatsby-source-filesystem": "^2.0.23",
+    "gatsby-transformer-remark": "^2.3.0",
+    "husky": "^1.3.1",
+    "lint-staged": "^8.1.5",
+    "lodash": "^4.17.11",
+    "prettier": "^1.16.4",
+    "react-styleguidist": "^9.0.1",
+    "remark-cli": "^6.0.1",
+    "remark-lint": "^6.0.4",
+    "richtypo": "^4.0.1",
+    "richtypo-rules-en": "^4.0.1",
+    "stylelint": "^9.10.1",
+    "stylelint-config-recommended": "^2.1.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-processor-styled-components": "^1.5.2"
+  },
+  "husky": {
+    "hooks": {
+      "precommit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,md}": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.{js,jsx}": [
+      "eslint --fix",
+      "stylelint --fix",
+      "git add"
+    ]
   }
 }

@@ -1,4 +1,3 @@
-node_modules
 .DS_Store
 Thumbs.db
 .idea
@@ -18,3 +17,7 @@ node_modules/
 /public/build/*.css
 !/public/build/ptserif.woff.css
 !/public/build/ptserif.woff2.css
+yarn.lock
+.eslintcache
+.cache/
+public/
