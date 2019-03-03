@@ -36,8 +36,8 @@ function typo(markdown) {
 		return markdown;
 	}
 
-	const richtypo = require('richtypo');
-	const rules = require('richtypo-rules-en');
+	const richtypo = require('richtypo').default;
+	const rules = require('richtypo-rules-en').default;
 	const { frontmatter, rest } = splitFrontmatter(markdown);
 	return frontmatter + richtypo(rules, rest);
 }
