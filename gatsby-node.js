@@ -32,7 +32,7 @@ function splitFrontmatter(markdown) {
 
 function typo(markdown) {
 	// Skip typography enhancement on older Node versions
-	if (parseInt(process.versions.node) < 8) {
+	if (parseInt(process.versions.node) < 9) {
 		return markdown;
 	}
 
