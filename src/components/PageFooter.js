@@ -1,23 +1,4 @@
 import React from 'react';
-
-class ProfilePage extends React.Component {
-	showMessage = () => {
-		// eslint-disable-next-line no-alert
-		alert('Followed ' + this.props.user);
-	};
-
-	handleClick = () => {
-		setTimeout(this.showMessage, 3000);
-	};
-
-	render() {
-		return <button onClick={this.handleClick}>Follow</button>;
-	}
-}
-
-export default ProfilePage;
-
-/* import React from 'react';
 import { Box, Row, Column } from 'tamia';
 import About from './About';
 import Subscription from './Subscription';
@@ -44,4 +25,3 @@ const PostFooter = () => (
 );
 
 export default PostFooter;
-*/
