@@ -150,4 +150,4 @@ Check out the [Effective Snapshot Testing](https://blog.kentcdodds.com/effective
 
 P. S. [Jest cheat sheet](https://github.com/sapegin/jest-cheat-sheet) and [React Testing Examples](https://react-testing-examples.com/) will answer most questions you may have when writing Jest tests.
 
-❤️ Thanks to Oliver Joseph Ash, Ovidiu Cherecheș, Manjula Dube, Matt Hamlin, Patrick Hund, Oleg Isonen, Morgan Packard, Oliver Turner and Andy Wermke for their feedback.
+Thanks to Oliver Joseph Ash, Ovidiu Cherecheș, Manjula Dube, Matt Hamlin, Patrick Hund, Oleg Isonen, Morgan Packard, Oliver Turner and Andy Wermke for their feedback.
