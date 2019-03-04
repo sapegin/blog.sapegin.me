@@ -336,6 +336,6 @@ import 'raf/polyfill';
 - [Migrating to Jest](https://medium.com/@kentcdodds/migrating-to-jest-881f75366e7e#.pc4s5ut6z) by Kent C. Dodds
 - [Migrating AVA to Jest](http://browniefed.com/blog/migrating-ava-to-jest/) by Jason Brown
 
----
+***
 
 Thanks to [Chris Pojer](http://cpojer.net/), [Max Stoiber](http://mxstbr.com/) and Anna Gerus for proofreading and comments.

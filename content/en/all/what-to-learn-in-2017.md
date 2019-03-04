@@ -81,10 +81,10 @@ This, however, means that it’s time to learn from all wisdom that non-frontend
 - [Learn To Think Like A Computer Scientist](https://www.coursera.org/specializations/algorithms) course at Coursera.
 - [The five programming books that meant most to me](https://signalvnoise.com/posts/3375-the-five-programming-books-that-meant-most-to-me) by David Heinemeier Hansson.
 
----
+***
 
 What would you recommend? What are you going to learn in 2017?
 
----
+***
 
 Thanks to [Henrique Alves](http://alves.im/), [Nicolás Bevacqua](https://ponyfoo.com/), [Alexander Burtsev](http://burtsev.me/), [Nataliya Karatkova](https://twitter.com/meuwka), [Oliver Turner](https://twitter.com/oliverturner), [Juho Vepsäläinen](https://survivejs.com/) and [Anton Zhiyanov](https://antonz.ru/) for feedback and suggestions.

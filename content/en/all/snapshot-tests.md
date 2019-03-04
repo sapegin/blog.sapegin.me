@@ -146,7 +146,7 @@ Snapshots are useful in _some rare_ cases, but often they give you a false sense
 
 Check out the [Effective Snapshot Testing](https://blog.kentcdodds.com/effective-snapshot-testing-e0d1a2c28eca) article by Kent C. Dodds for more ideas on how to use snapshot tests.
 
----
+***
 
 P. S. [Jest cheat sheet](https://github.com/sapegin/jest-cheat-sheet) and [React Testing Examples](https://react-testing-examples.com/) will answer most questions you may have when writing Jest tests.
 
