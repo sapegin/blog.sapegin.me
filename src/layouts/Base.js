@@ -13,7 +13,7 @@ export default function Base({ children }) {
 		<>
 			<Helmet>
 				<html lang={lang} />
-				<meta name="theme-color" content={theme.colors.primary} />
+				<meta name="theme-color" content={theme.colors.accent} />
 			</Helmet>
 			<Global styles={prismStyles} />
 			<Provider>{children}</Provider>
