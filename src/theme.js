@@ -5,7 +5,8 @@ const font = 'Georgia, serif';
 const theme = getTheme({
 	baseFontSize: '1.125em',
 	page: {
-		maxWidth: '44rem',
+		maxWidth: null,
+		contentMaxWidth: '44rem',
 		textMaxWidth: '44rem',
 		yPadding: '1rem',
 	},
