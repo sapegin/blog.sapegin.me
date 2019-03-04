@@ -34,7 +34,7 @@ export default function PostMeta({ slug, date, dateTime }) {
 			</Item>
 			<Item as="span" size="s">
 				<Link
-					href={`https://github.com/sapegin/blog.sapegin.me/edit/master/source/${slug}`}
+					href={`https://github.com/sapegin/blog.sapegin.me/edit/master/content${slug}`}
 				>
 					{editPost}
 				</Link>
