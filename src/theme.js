@@ -8,7 +8,7 @@ const theme = getTheme({
 		maxWidth: null,
 		contentMaxWidth: '44rem',
 		textMaxWidth: '44rem',
-		xPadding: 0,
+		xPadding: '1rem',
 		yPadding: '1rem',
 	},
 	fonts: {

@@ -3,7 +3,6 @@ import Helmet from 'react-helmet';
 import { Global } from '@emotion/core';
 import Provider from './Provider';
 import theme from '../theme';
-import { globalStyles } from '../styles/globalStyles';
 import { prismStyles } from '../styles/prismStyles';
 import config from '../../config';
 
@@ -16,7 +15,6 @@ export default function Base({ children }) {
 				<html lang={lang} />
 				<meta name="theme-color" content={theme.colors.primary} />
 			</Helmet>
-			<Global styles={globalStyles} />
 			<Global styles={prismStyles} />
 			<Provider>{children}</Provider>
 		</>
