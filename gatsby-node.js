@@ -3,9 +3,6 @@ import { sortBy } from 'lodash';
 import { createFilePath } from 'gatsby-source-filesystem';
 
 const MAX_RELATED = 5;
-const FRONTMATTER_REGEXP = /[+-]{3}[\s\S]*[+-]{3}/;
-
-const stripFrontmatter = markdown => markdown.replace(FRONTMATTER_REGEXP, '');
 
 function getRelatedPosts(posts, { slug, tags }) {
 	const weighted = posts
@@ -22,14 +19,6 @@ function getRelatedPosts(posts, { slug, tags }) {
 	return sorted.slice(0, MAX_RELATED);
 }
 
-function splitFrontmatter(markdown) {
-	const rest = stripFrontmatter(markdown);
-	return {
-		frontmatter: markdown.substring(0, markdown.length - rest.length),
-		rest,
-	};
-}
-
 function typo(markdown) {
 	// Skip typography enhancement on older Node versions
 	if (parseInt(process.versions.node) < 9) {
@@ -38,8 +27,7 @@ function typo(markdown) {
 
 	const richtypo = require('richtypo').default;
 	const rules = require('richtypo-rules-en').default;
-	const { frontmatter, rest } = splitFrontmatter(markdown);
-	return frontmatter + richtypo(rules, rest);
+	return richtypo(rules, markdown);
 }
 
 export const onCreateWebpackConfig = ({ actions }) => {
@@ -56,9 +44,7 @@ export const onCreateNode = ({
 		const slug = createFilePath({ node, getNode, trailingSlash: false });
 
 		// Typography
-		if (!slug.startsWith('/albums/')) {
-			node.rawMarkdownBody = typo(node.rawMarkdownBody);
-		}
+		node.internal.content = typo(node.internal.content);
 
 		createNodeField({
 			node,
