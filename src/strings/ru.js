@@ -6,7 +6,7 @@ export const lang = 'ru';
 export const title = 'Наноблог Артёма Сапегина';
 export const description =
 	'Блог фронтенд-разработчика, который живёт в Берлине, работает в Вейфейре, фотографирует, пишет, гладит собак и пьёт кофе.';
-export const siteUrl = 'https://blog.sapegin.me/';
+export const siteUrl = 'https://nano.sapegin.ru/';
 export const author = 'Артём Сапегин';
 export const twitter = '@iamsapegin';
 export const aboutTitle = 'Обо мне';
@@ -18,6 +18,13 @@ export const discussPost = 'Обсудить в твитере';
 export const editPost = 'Отредактировать на Гитхабе';
 export const subscriptionEmailLabel = 'Эл. почта';
 export const subscriptionSubmitLabel = 'Подписаться';
+
+export const Intro = () => (
+	<>
+		Новые посты будут выходить только{' '}
+		<Link href="https://blog.sapegin.me/">на английском языке</Link>.
+	</>
+);
 
 export const LongDescription = () => (
 	<>

@@ -1,10 +1,11 @@
 import React from 'react';
 import groupBy from 'lodash/groupBy';
 import { graphql } from 'gatsby';
-import { Box, Heading, VisuallyHidden } from 'tamia';
+import { Box, Heading, Text, VisuallyHidden } from 'tamia';
 import Page from './Page';
 import PostList from '../components/PostList';
 import Metatags from '../components/Metatags';
+import { Intro } from '@strings';
 
 const getYears = postsByYear => {
 	const years = Object.keys(postsByYear);
@@ -28,6 +29,13 @@ const Index = ({
 	return (
 		<Page url={pathname}>
 			<Metatags slug={pathname} />
+			{Intro && (
+				<Box mb="l">
+					<Text style="italic">
+						<Intro />
+					</Text>
+				</Box>
+			)}
 			<VisuallyHidden as="h2">Blog posts</VisuallyHidden>
 			{years.map(year => (
 				<Box key={year} as="section" mb="l">

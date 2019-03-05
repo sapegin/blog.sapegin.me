@@ -6,7 +6,7 @@ export const lang = 'en';
 export const title = 'Artem Sapegin’s Blog';
 export const description =
 	'Blog of a Berlin based frontend developer who works at Here, makes photos, writes, hangs out with his dogs and drinks coffee.';
-export const siteUrl = 'https://nano.sapegin.ru/';
+export const siteUrl = 'https://blog.sapegin.me/';
 export const author = 'Artem Sapegin';
 export const twitter = '@iamsapegin';
 export const aboutTitle = 'About me';
@@ -17,6 +17,8 @@ export const discussPost = 'Discuss on Twitter';
 export const editPost = 'Edit on GitHub';
 export const subscriptionEmailLabel = 'Your email';
 export const subscriptionSubmitLabel = 'Subscribe';
+
+export const Intro = null;
 
 export const LongDescription = () => (
 	<>
