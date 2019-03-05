@@ -1,17 +1,15 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import config from '../../config';
-
-const {
-	title: siteTitle,
+import {
+	title as siteTitle,
 	siteUrl,
-	description: defaultDescription,
+	description as defaultDescription,
 	twitter,
-} = config;
+} from '@strings';
 
 export default ({
 	slug,
-	title,
+	title = siteTitle,
 	description = defaultDescription,
 	image,
 	noIndex,

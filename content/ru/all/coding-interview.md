@@ -73,10 +73,10 @@ tags:
 
 ## Полезные ссылки
 
-- [Grammarly](https://www.grammarly.com/) — проверка английского языка.
-- [Главред](https://glvrd.ru/) — чистка текста от словесного мусора.
-- [Canned Emails](http://www.cannedemails.com/) — шаблоны писем на все случаи жизни.
-- [Codewars](https://www.codewars.com/) — маленькие задачки для программистов.
+- [Grammarly](https://www.grammarly.com/), проверка английского языка.
+- [Главред](https://glvrd.ru/), чистка текста от словесного мусора.
+- [Canned Emails](http://www.cannedemails.com/), шаблоны писем на все случаи жизни.
+- [Codewars](https://www.codewars.com/), маленькие задачки для программистов.
 
 ## Сходите на собеседование
 

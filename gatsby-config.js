@@ -1,7 +1,20 @@
-const lang = require('./src/lang');
+import lang from './src/lang';
 
 module.exports = {
-	siteMetadata: require('./config'),
+	siteMetadata: {
+		en: {
+			title: 'Artem Sapegin’s Blog',
+			description:
+				'Blog of a Berlin based frontend developer who works at Here, makes photos, writes, hangs out with his dogs and drinks coffee.',
+			siteUrl: 'https://nano.sapegin.ru/',
+		},
+		ru: {
+			title: 'Наноблог Артёма Сапегина',
+			description:
+				'Блог фронтенд-разработчика, который живёт в Берлине, работает в Вейфейре, фотографирует, пишет, гладит собак и пьёт кофе.',
+			siteUrl: 'https://blog.sapegin.me/',
+		},
+	}[lang],
 	plugins: [
 		'gatsby-plugin-react-helmet',
 		'gatsby-plugin-emotion',
@@ -30,20 +43,8 @@ module.exports = {
 			},
 		},
 		{
-			resolve: `gatsby-plugin-feed`,
+			resolve: 'gatsby-plugin-feed',
 			options: {
-				query: `
-					{
-					site {
-						siteMetadata {
-						title
-						description
-						siteUrl
-						site_url: siteUrl
-						}
-					}
-					}
-				`,
 				feeds: [
 					{
 						serialize: ({ query: { site, allMarkdownRemark } }) => {

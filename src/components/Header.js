@@ -2,7 +2,7 @@ import React from 'react';
 import { themeGet } from 'tamia';
 import { Link } from 'tamia-gatsby-link';
 import styled from '@emotion/styled';
-import { title } from '../strings';
+import { title } from '@strings';
 
 const Container = styled.header`
 	text-align: center;

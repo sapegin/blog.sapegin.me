@@ -5,9 +5,6 @@ import { Box, Heading, VisuallyHidden } from 'tamia';
 import Page from './Page';
 import PostList from '../components/PostList';
 import Metatags from '../components/Metatags';
-import config from '../../config';
-
-const { title } = config;
 
 const getYears = postsByYear => {
 	const years = Object.keys(postsByYear);
@@ -29,8 +26,8 @@ const Index = ({
 	const postsByYear = groupBy(posts, 'year');
 	const years = getYears(postsByYear);
 	return (
-		<Page url={pathname} title={title}>
-			<Metatags slug={pathname} title={title} />
+		<Page url={pathname}>
+			<Metatags slug={pathname} />
 			<VisuallyHidden as="h2">Blog posts</VisuallyHidden>
 			{years.map(year => (
 				<Box key={year} as="section" mb="l">

@@ -4,9 +4,7 @@ import { Global } from '@emotion/core';
 import Provider from './Provider';
 import theme from '../theme';
 import { prismStyles } from '../styles/prismStyles';
-import config from '../../config';
-
-const { lang } = config;
+import { lang } from '@strings';
 
 export default function Base({ children }) {
 	return (

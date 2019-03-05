@@ -1,7 +1,7 @@
 import React from 'react';
 import { Heading } from 'tamia';
 import PostList from './PostList';
-import { relatedTitle } from '../strings';
+import { relatedTitle } from '@strings';
 
 const RelatedPosts = ({ posts }) => (
 	<>

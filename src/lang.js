@@ -1,5 +1,3 @@
-const mri = require('mri');
+console.log('LANG!', process.env.LANG || 'en');
 
-const args = process.argv.slice(2);
-
-module.exports = mri(args).lang || 'en';
+module.exports = process.env.LANG || 'en';

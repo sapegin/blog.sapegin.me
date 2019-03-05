@@ -7,13 +7,14 @@ import Footer from '../components/Footer';
 import PageFooter from '../components/PageFooter';
 import PageContainer from '../components/PageContainer';
 import Base from './Base';
+import { title as siteTitle } from '@strings';
 
-const Page = ({ children, url, title, pageTitle }) => {
+const Page = ({ children, url, title }) => {
 	return (
 		<Base>
 			<PageContainer>
 				<Container>
-					<Helmet title={pageTitle || title} />
+					<Helmet title={title ? `${title} — ${siteTitle}` : siteTitle} />
 					<Box mb="l">
 						<Header url={url} />
 					</Box>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Heading, Text } from 'tamia';
 import SubscriptionForm from './SubscriptionForm';
-import { subscribeTitle, subscribeInfo } from '../strings';
+import { subscribeTitle, subscribeInfo } from '@strings';
 
 export default function Subscription() {
 	return (

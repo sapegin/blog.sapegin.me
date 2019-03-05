@@ -1,6 +1,6 @@
 import React from 'react';
 import { Heading } from 'tamia';
-import { aboutTitle, LongDescription } from '../strings';
+import { aboutTitle, LongDescription } from '@strings';
 
 const About = () => (
 	<>

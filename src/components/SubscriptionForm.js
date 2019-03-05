@@ -1,6 +1,7 @@
 import React from 'react';
 import { VisuallyHidden, themeGet } from 'tamia';
 import styled from '@emotion/styled';
+import { subscriptionEmailLabel, subscriptionSubmitLabel } from '@strings';
 
 const Form = styled.form`
 	display: flex;
@@ -67,7 +68,7 @@ export default function() {
 				target="_blank"
 			>
 				<Column as="label">
-					<VisuallyHidden>Your email:</VisuallyHidden>
+					<VisuallyHidden>{subscriptionEmailLabel}</VisuallyHidden>
 					<EmailInput
 						name="email"
 						type="email"
@@ -75,12 +76,12 @@ export default function() {
 						autocomplete="home email"
 						autocapitalize="off"
 						autocorrect="off"
-						placeholder="Your email"
+						placeholder={subscriptionEmailLabel}
 						defaultValue=""
 					/>
 				</Column>
 				<Column>
-					<SubmitButton type="submit">Subscribe</SubmitButton>
+					<SubmitButton type="submit">{subscriptionSubmitLabel}</SubmitButton>
 				</Column>
 			</Form>
 		</>

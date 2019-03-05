@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text } from 'tamia';
 import { Link } from 'tamia-gatsby-link';
-import { author, PoweredBy } from '../strings';
+import { author, PoweredBy } from '@strings';
 
 export default function Footer() {
 	return (

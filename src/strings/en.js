@@ -1,20 +1,22 @@
 import React from 'react';
 import { Text } from 'tamia';
 import { Link } from 'tamia-gatsby-link';
-import config from '../../gatsby-config';
 
-export const lang = config.siteMetadata.lang;
-export const title = config.siteMetadata.title;
-export const description = config.siteMetadata.description;
-export const siteUrl = config.siteMetadata.siteUrl;
-
+export const lang = 'en';
+export const title = 'Artem Sapegin’s Blog';
+export const description =
+	'Blog of a Berlin based frontend developer who works at Here, makes photos, writes, hangs out with his dogs and drinks coffee.';
+export const siteUrl = 'https://nano.sapegin.ru/';
 export const author = 'Artem Sapegin';
+export const twitter = '@iamsapegin';
 export const aboutTitle = 'About me';
 export const relatedTitle = 'You may also like';
 export const subscribeTitle = 'Join the newsletter';
 export const subscribeInfo = 'Subscribe to get my latest posts by email.';
 export const discussPost = 'Discuss on Twitter';
 export const editPost = 'Edit on GitHub';
+export const subscriptionEmailLabel = 'Your email';
+export const subscriptionSubmitLabel = 'Subscribe';
 
 export const LongDescription = () => (
 	<>

@@ -1,8 +1,13 @@
 import path from 'path';
 import { sortBy } from 'lodash';
 import { createFilePath } from 'gatsby-source-filesystem';
+import lang from './src/lang';
 
 const MAX_RELATED = 5;
+const DATE_FORMAT = {
+	en: 'MMMM D, YYYY',
+	ru: 'D.MM.YYYY',
+}[lang];
 
 function getRelatedPosts(posts, { slug, tags }) {
 	const weighted = posts
@@ -31,8 +36,16 @@ function typo(markdown) {
 }
 
 export const onCreateWebpackConfig = ({ actions }) => {
-	// Turn off source maps
-	actions.setWebpackConfig({ devtool: false });
+	actions.setWebpackConfig({
+		// Turn off source maps
+		devtool: false,
+		resolve: {
+			alias: {
+				// Translation strings
+				'@strings': path.resolve(__dirname, 'src/strings', lang),
+			},
+		},
+	});
 };
 
 export const onCreateNode = ({
@@ -89,8 +102,10 @@ export const createPages = ({ graphql, actions: { createPage } }) => {
 					path: slug,
 					component: path.resolve(`${__dirname}/src/layouts/${layout}.js`),
 					context: {
+						lang,
 						slug,
 						related: getRelatedPosts(docs, { slug, tags }),
+						dateFormat: DATE_FORMAT,
 					},
 				});
 			});
