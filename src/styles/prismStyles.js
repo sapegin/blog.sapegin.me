@@ -12,6 +12,7 @@ const color7 = '#008035';
 export const prismStyles = css`
 	code[class*='language-'] {
 		font-style: italic;
+		white-space: nowrap;
 	}
 
 	pre[class*='language-'] {
