@@ -5,7 +5,6 @@ date: 2016-12-06
 lang: en
 medium: testing-react-components-with-jest-and-enzyme-41d592c174f
 tags:
-  - tools
   - javascript
   - jest
   - enzyme
