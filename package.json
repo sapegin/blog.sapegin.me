@@ -14,7 +14,7 @@
     "lint:js": "eslint . --cache --fix",
     "lint:css": "stylelint 'src/**/*.js'",
     "lint:md": "remark --quiet \"content/**/*.md\"",
-    "format": "prettier --write '**/*.{js,md}'",
+    "format": "prettier --write \"**/*.{js,md}\"",
     "styleguide": "styleguidist server",
     "styleguide:build": "styleguidist build"
   },
@@ -75,7 +75,7 @@
   },
   "husky": {
     "hooks": {
-      "precommit": "lint-staged"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
@@ -83,7 +83,7 @@
       "prettier --write",
       "git add"
     ],
-    "*.{js,jsx}": [
+    "*.js": [
       "eslint --fix",
       "stylelint --fix",
       "git add"
