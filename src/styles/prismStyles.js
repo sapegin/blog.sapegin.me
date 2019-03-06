@@ -10,7 +10,8 @@ const color6 = '#b71818';
 const color7 = '#008035';
 
 export const prismStyles = css`
-	code[class*='language-'] {
+	p code,
+	li code {
 		font-style: italic;
 		white-space: nowrap;
 	}
@@ -18,16 +19,11 @@ export const prismStyles = css`
 	pre[class*='language-'] {
 		color: ${color0};
 		background: none;
-		white-space: inherit;
 		word-spacing: normal;
 		word-break: normal;
 		word-wrap: normal;
 		hyphens: none;
 		overflow: auto;
-	}
-
-	pre[class*='language-'] code[class*='language-'] {
-		font-style: inherit;
 	}
 
 	.token.punctuation,
