@@ -23,20 +23,28 @@ export const Intro = null;
 export const LongDescription = () => (
 	<>
 		<Text mb="m" size="s">
-			I’m a frontend developer living in Berlin, Germany. I work at{' '}
-			<Link href="https://www.wayfair.com/">Wayfair</Link>, and in my spare time
-			I love making photos, writing, hanging out with my dogs and drinking lots
-			of coffee. I’m interested in design systems, testings and accessibility.
+			I’m a frontend developer living in&nbsp;Berlin, Germany. I&nbsp;work
+			at&nbsp;
+			<Link href="https://www.wayfair.com/">Wayfair</Link>,
+			and&nbsp;in&nbsp;my&nbsp;spare time I&nbsp;love making photos, writing,
+			hanging out with my&nbsp;dogs and&nbsp;drinking lots of coffee.
+			I’m&nbsp;interested in&nbsp;design systems, testings
+			and&nbsp;accessibility.
 		</Text>
 		<Text mb="m" size="s">
-			<Link href="https://sapegin.me/">Check out</Link> my projects,{' '}
-			<Link href="https://twitter.com/iamsapegin">follow me</Link> on Twitter or{' '}
-			<Link href="https://github.com/sapegin/ama">ask me</Link> anything.
+			<Link href="https://sapegin.me/">Check out</Link> my&nbsp;projects,{' '}
+			<Link href="https://twitter.com/iamsapegin">follow&nbsp;me</Link>{' '}
+			on&nbsp;Twitter or&nbsp;
+			<Link href="https://github.com/sapegin/ama">ask&nbsp;me</Link> anything.
 		</Text>
 	</>
 );
 
-export const PublishedOn = ({ date }) => <>Published on {date}</>;
+export const PublishedOn = ({ date }) => (
+	<>
+		Published <nobr>on {date}</nobr>
+	</>
+);
 
 export const PoweredBy = () => (
 	<>
