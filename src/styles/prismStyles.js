@@ -18,6 +18,7 @@ export const prismStyles = css`
 	pre[class*='language-'] {
 		color: ${color0};
 		background: none;
+		white-space: inherit;
 		word-spacing: normal;
 		word-break: normal;
 		word-wrap: normal;
