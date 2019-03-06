@@ -2,7 +2,7 @@ import React from 'react';
 import { Text, themeGet } from 'tamia';
 import styled from '@emotion/styled';
 import { Link } from 'tamia-gatsby-link';
-import { discussPost, editPost, PublishedOn, siteUrl } from '@strings';
+import { discussPost, editPost, PublishedOn, lang, siteUrl } from '@strings';
 
 const List = styled.p`
 	@media (min-width: ${themeGet('breakpoints.medium')}) {
@@ -34,7 +34,7 @@ export default function PostMeta({ slug, date, dateTime }) {
 			</Item>
 			<Item as="span" size="s">
 				<Link
-					href={`https://github.com/sapegin/blog.sapegin.me/edit/master/content${slug}`}
+					href={`https://github.com/sapegin/blog.sapegin.me/edit/master/content/${lang}${slug}.md`}
 				>
 					{editPost}
 				</Link>
