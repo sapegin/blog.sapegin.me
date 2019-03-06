@@ -24,7 +24,7 @@ const Item = styled(Text)`
 `;
 
 export default function PostMeta({ slug, date, dateTime }) {
-	const searchQuery = encodeURIComponent(`${siteUrl}/${slug}`);
+	const searchQuery = encodeURIComponent(siteUrl + slug);
 	return (
 		<List>
 			<Item as="span" size="s">

@@ -6,7 +6,7 @@ export const lang = 'ru';
 export const title = 'Наноблог Артёма Сапегина';
 export const description =
 	'Блог фронтенд-разработчика, который живёт в Берлине, работает в Вейфейре, фотографирует, пишет, гладит собак и пьёт кофе.';
-export const siteUrl = 'https://nano.sapegin.ru/';
+export const siteUrl = 'https://nano.sapegin.ru';
 export const author = 'Артём Сапегин';
 export const twitter = '@iamsapegin';
 export const aboutTitle = 'Обо мне';
