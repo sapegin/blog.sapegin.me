@@ -7,7 +7,7 @@ export default function Footer() {
 	return (
 		<>
 			<Text size="xs" mb="xs">
-				© <Link href="http://sapegin.me">{author}</Link>
+				© <Link href="https://sapegin.me/">{author}</Link>
 				{', '}
 				2006…{new Date().getFullYear()}
 			</Text>

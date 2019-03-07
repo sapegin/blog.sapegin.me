@@ -34,10 +34,10 @@ export const LongDescription = () => (
 			фотографирую, глажу своих собак и пью кофе.
 		</Text>
 		<Text mb="m" size="s">
-			Читайте обо мне <Link href="http://sapegin.me/">на моём сайте</Link> и
+			Читайте обо мне <Link href="https://sapegin.me/">на моём сайте</Link> и
 			подписывайтесь{' '}
-			<Link href="http://birdwatcher.ru/">на мой блог о фотографии</Link> и{' '}
-			<Link href="http://twitter.com/iamsapegin">твитер</Link>.
+			<Link href="https://morning.photos/">на мой блог о фотографии</Link> и{' '}
+			<Link href="https://twitter.com/iamsapegin">твитер</Link>.
 		</Text>
 	</>
 );

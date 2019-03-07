@@ -22,7 +22,7 @@ npm start
 
 ## Author
 
-- [Artem Sapegin](http://sapegin.me)
+- [Artem Sapegin](https://sapegin.me)
 
 ## License
 
