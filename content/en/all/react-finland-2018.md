@@ -166,7 +166,7 @@ Eemeli has created a [new YAML library](https://github.com/eemeli/yaml) that sup
 - React has great developer experience, could be optimized (speed and size) without breaking the API.
 - React is evolving: async rendering, suspense and time slicing.
 
-Check out [Ken’s slides](https://reactfinland.surge.sh/#/10) — they are awesome.
+Check out [Ken’s slides](https://reactfinland.surge.sh/#/10), they are awesome.
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">How <a href="https://twitter.com/hashtag/React?src=hash&amp;ref_src=twsrc%5Etfw">#React</a> changed everything (for better) talk by <a href="https://twitter.com/ken_wheeler?ref_src=twsrc%5Etfw">@ken_wheeler</a> at <a href="https://twitter.com/hashtag/ReactFinland?src=hash&amp;ref_src=twsrc%5Etfw">#ReactFinland</a> started the 2nd day. Nice reality check to history of web tech and why React is great. Also shortly what comes next. But remember &quot;Web is not suited for application development&quot;. <a href="https://t.co/7o0MfXOVp8">pic.twitter.com/7o0MfXOVp8</a></p>&mdash; Marko Wallin (@walokra) <a href="https://twitter.com/walokra/status/989398496561201153?ref_src=twsrc%5Etfw">April 26, 2018</a></blockquote>
 
@@ -208,7 +208,7 @@ _(It wasn’t as easy as I thought.)_
 - Don’t allow user to interact with the UI for two seconds before transition to a new state.
 - Use objects to represent states.
 - Generate analytics and integration tests.
-- [xstate](https://github.com/davidkpiano/xstate) — functional, stateless JS finite state machines and statecharts.
+- [xstate](https://github.com/davidkpiano/xstate), a functional, stateless JS finite state machines and statecharts.
 - Statechart visualization from code.
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Great talk by <a href="https://twitter.com/DavidKPiano?ref_src=twsrc%5Etfw">@DavidKPiano</a> on the benefits of using state machines in the ui. I know a few places where we should use this 😊 <a href="https://twitter.com/hashtag/reactfinland?src=hash&amp;ref_src=twsrc%5Etfw">#reactfinland</a> <a href="https://t.co/l7Q3x8rwbw">pic.twitter.com/l7Q3x8rwbw</a></p>&mdash; michel.codes (@mweststrate) <a href="https://twitter.com/mweststrate/status/989443355980558336?ref_src=twsrc%5Etfw">April 26, 2018</a></blockquote>
@@ -235,7 +235,7 @@ _(It wasn’t as easy as I thought.)_
 
 [Slides](http://infinite-red.slides.com/gantlaborde/bowser#/)
 
-[Ignite](https://infinite.red/ignite) — boilerplate and command-line tool to create React Native apps.
+[Ignite](https://infinite.red/ignite), boilerplate and command-line tool to create React Native apps.
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Ignite for React Native looks incredible <a href="https://twitter.com/hashtag/ReactFinland?src=hash&amp;ref_src=twsrc%5Etfw">#ReactFinland</a> <a href="https://twitter.com/infinite_red?ref_src=twsrc%5Etfw">@infinite_red</a> <a href="https://t.co/mRd2hltsWM">pic.twitter.com/mRd2hltsWM</a></p>&mdash; Barry McGee (@barrymcgee) <a href="https://twitter.com/barrymcgee/status/989494531753238528?ref_src=twsrc%5Etfw">April 26, 2018</a></blockquote>
 
