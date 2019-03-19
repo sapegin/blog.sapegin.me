@@ -268,8 +268,10 @@ function Counter() {
   const [count, setCount] = React.useState(0);
   return (
     <>
-      <p>You clicked {count} times.</p>
-      <button onClick={() => setCount(count + 1)}>More!</button>
+      <p>You’ve eaten {count} croissants.</p>
+      <button onClick={() => setCount(count + 1)}>
+        Eat a croissant!
+      </button>
     </>
   );
 }
