@@ -285,7 +285,7 @@ Other hooks are:
 - [useRef](https://reactjs.org/docs/hooks-reference.html#useref) to persist values between renders;
 - [useImperativeHandle](https://reactjs.org/docs/hooks-reference.html#useimperativehandle) to forward imperative methods;
 - [useLayoutEffect](https://reactjs.org/docs/hooks-reference.html#uselayouteffect) to manage side effects synchronously;
-- [useDebugValue](https://reactjs.org/docs/hooks-reference.html#usedebugvalue) to debug custom hooks;
+- [useDebugValue](https://reactjs.org/docs/hooks-reference.html#usedebugvalue) to debug custom hooks.
 
 And you can [create your own hooks](https://reactjs.org/docs/hooks-custom.html) to share logic between function components.
 
