@@ -28,7 +28,7 @@ export default function PostMeta({ slug, date, dateTime }) {
 	return (
 		<List>
 			<Item as="span" size="s">
-				<Link href={`https://mobile.twitter.com/search?q=${searchQuery}`}>
+				<Link href={`https://twitter.com/search?q=${searchQuery}`}>
 					{discussPost}
 				</Link>
 			</Item>
