@@ -256,7 +256,7 @@ class App extends React.Component {
 }
 ```
 
-## Using state in function components with hooks
+## Using state in function components with hooks (16.8)
 
 [Hooks](https://reactjs.org/docs/hooks-overview.html) allows you to use state and other React features in function components. Often code with hooks is simpler than with classes.
 
@@ -274,6 +274,8 @@ function Counter() {
   );
 }
 ```
+
+[Check out this example](https://codesandbox.io/s/o9pz6q3z8y) on CodeSandbox.
 
 Other hooks are:
 
