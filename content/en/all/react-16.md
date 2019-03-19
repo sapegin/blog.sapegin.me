@@ -1,6 +1,6 @@
 ---
 layout: Post
-title: 'React 16.0—16.6 new features for every day use'
+title: 'React 16.0—16.8 new features for every day use'
 date: 2018-05-15
 lang: en
 tags:
@@ -8,7 +8,7 @@ tags:
   - react
 ---
 
-This is a short cheat sheet for developers migrating from React 15 to React 16, or from earlier 16.x versions to 16.6. It focuses on features you’ll use often.
+This is a short cheat sheet for developers migrating from React 15 to React 16, or from earlier 16.x versions to 16.8. It focuses on features you’ll use often.
 
 ## Returning multiple elements from components with fragments
 
@@ -255,6 +255,39 @@ class App extends React.Component {
   }
 }
 ```
+
+## Using state in function components with hooks
+
+[Hooks](https://reactjs.org/docs/hooks-overview.html) allows you to use state and other React features in function components. Often code with hooks is simpler than with classes.
+
+For example, we can use state with the [useState](https://reactjs.org/docs/hooks-reference.html#usestate) hook:
+
+```jsx
+function Counter() {
+  // A counter with the default value of 0
+  const [count, setCount] = React.useState(0);
+  return (
+    <>
+      <p>You clicked {count} times.</p>
+      <button onClick={() => setCount(count + 1)}>More!</button>
+    </>
+  );
+}
+```
+
+Other hooks are:
+
+- [useEffect](https://reactjs.org/docs/hooks-reference.html#useeffect) to manage side effects;
+- [useContext](https://reactjs.org/docs/hooks-reference.html#usecontext) to access React context;
+- [useReducer](https://reactjs.org/docs/hooks-reference.html#usereducer) to manage complex state;
+- [useCallback](https://reactjs.org/docs/hooks-reference.html#usecallback) to memoize functions;
+- [useMemo](https://reactjs.org/docs/hooks-reference.html#usememo) to memoize values.
+- [useRef](https://reactjs.org/docs/hooks-reference.html#useref) to persist values between renders;
+- [useImperativeHandle](https://reactjs.org/docs/hooks-reference.html#useimperativehandle) to forward imperative methods;
+- [useLayoutEffect](https://reactjs.org/docs/hooks-reference.html#uselayouteffect) to manage side effects synchronously;
+- [useDebugValue](https://reactjs.org/docs/hooks-reference.html#usedebugvalue) to debug custom hooks;
+
+And you can [create your own hooks](https://reactjs.org/docs/hooks-custom.html) to share logic between function components.
 
 ## Other new features
 
