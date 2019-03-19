@@ -55,7 +55,7 @@ Check out Jani’s article, [The Present Future of User Interface Development](h
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/christianalfoni?ref_src=twsrc%5Etfw">@christianalfoni</a> sharing the story of refactoring @codesandboxapp to <a href="https://twitter.com/cerebraljs?ref_src=twsrc%5Etfw">@cerebraljs</a>. The high level orchestration of logic and the debugger are really impressive! <a href="https://twitter.com/hashtag/reactfinland?src=hash&amp;ref_src=twsrc%5Etfw">#reactfinland</a> <a href="https://t.co/AIjbEY35rf">pic.twitter.com/AIjbEY35rf</a></p>&mdash; michel.codes (@mweststrate) <a href="https://twitter.com/mweststrate/status/989043014990487552?ref_src=twsrc%5Etfw">April 25, 2018</a></blockquote>
 
-### <span aria-label="Lightning talk" title="Lightning talk">⚡<️/span> Immer by [Michel Weststrate](https://twitter.com/mweststrate)
+### <span aria-label="Lightning talk" title="Lightning talk">⚡️</span> Immer by [Michel Weststrate](https://twitter.com/mweststrate)
 
 [Slides](http://immer.surge.sh/#1)
 
@@ -67,7 +67,7 @@ I’ve seen Immer before and the API looks pretty nice. Examples in the talk sho
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Immer is a great little helper for Redux, developed by <a href="https://twitter.com/mweststrate?ref_src=twsrc%5Etfw">@mweststrate</a>. He just gave a very entertaining talk about it at <a href="https://twitter.com/hashtag/ReactFinland?src=hash&amp;ref_src=twsrc%5Etfw">#ReactFinland</a>! 😁 <a href="https://t.co/pUqW5tTZGq">pic.twitter.com/pUqW5tTZGq</a></p>&mdash; ⚡ Daniel Dunderfelt (@ddunderfelt) <a href="https://twitter.com/ddunderfelt/status/989051598105186305?ref_src=twsrc%5Etfw">April 25, 2018</a></blockquote>
 
-### <span aria-label="Lightning talk" title="Lightning talk">⚡<️/span> Get Rich Quick With React Context by [Patrick Hund](https://twitter.com/wiekatz)
+### <span aria-label="Lightning talk" title="Lightning talk">⚡️</span> Get Rich Quick With React Context by [Patrick Hund](https://twitter.com/wiekatz)
 
 [Slides](https://technology-ebay-de.github.io/get-rich-quick-with-react-context/)
 
@@ -75,7 +75,7 @@ React context can be useful in some cases, like showing third-party ads in your 
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">&quot;Get Rich Quick With <a href="https://twitter.com/hashtag/React?src=hash&amp;ref_src=twsrc%5Etfw">#React</a> Context&quot; lightning talk at <a href="https://twitter.com/hashtag/ReactFinland?src=hash&amp;ref_src=twsrc%5Etfw">#ReactFinland</a> by <a href="https://twitter.com/wiekatz?ref_src=twsrc%5Etfw">@wiekatz</a> didn&#39;t tell how good job opportunities you have when doing React 😅 But how to insert ads. Also other use cases like localizations. <a href="https://t.co/Zrp00fZwG6">pic.twitter.com/Zrp00fZwG6</a></p>&mdash; Marko Wallin (@walokra) <a href="https://twitter.com/walokra/status/989059779254538240?ref_src=twsrc%5Etfw">April 25, 2018</a></blockquote>
 
-### <span aria-label="Lightning talk" title="Lightning talk">⚡<️/span> There’s always a better way to handle localization by [Eemeli Aro](https://twitter.com/Eemeli_Aro)
+### <span aria-label="Lightning talk" title="Lightning talk">⚡️</span> There’s always a better way to handle localization by [Eemeli Aro](https://twitter.com/Eemeli_Aro)
 
 [Slides](https://docs.google.com/presentation/d/e/2PACX-1vTnz2eogdCs9XG8tOsXEJw4CRBncm_ZJ1uGLoN3aqwXjIF5cL_P9KvNYRYpJfaUQNVW4JYUOjzroicp/pub?start=false&loop=false&delayms=3000#slide=id.p)
 
@@ -140,7 +140,7 @@ I’m a huge fan of lint-staged and recommend it to everyone.
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Use 🚫💩 lint-staged and Mrm — great advice by <a href="https://twitter.com/okonetchnikov?ref_src=twsrc%5Etfw">@okonetchnikov</a> <a href="https://twitter.com/hashtag/reactfinland?src=hash&amp;ref_src=twsrc%5Etfw">#reactfinland</a> <a href="https://t.co/INAzzw8aud">https://t.co/INAzzw8aud</a><a href="https://t.co/oZLHPZqJeb">https://t.co/oZLHPZqJeb</a> <a href="https://t.co/ZOnI9EV2GJ">pic.twitter.com/ZOnI9EV2GJ</a></p>&mdash; Artem Sapegin ☕ (@iamsapegin) <a href="https://twitter.com/iamsapegin/status/989143288887283712?ref_src=twsrc%5Etfw">April 25, 2018</a></blockquote>
 
-### <span aria-label="Lightning talk" title="Lightning talk">⚡<️/span> Understanding the differences is accepting by [Sven Sauleau](https://twitter.com/svensauleau)
+### <span aria-label="Lightning talk" title="Lightning talk">⚡️</span> Understanding the differences is accepting by [Sven Sauleau](https://twitter.com/svensauleau)
 
 [Slides](http://understanding-the-differences-is-accepting.ralf.cc/)
 
@@ -148,7 +148,7 @@ JavaScript is weird.
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">It does not but I&#39;ll allow it. <a href="https://twitter.com/hashtag/ReactFinland?src=hash&amp;ref_src=twsrc%5Etfw">#ReactFinland</a> <a href="https://t.co/mSIAX8Mbsy">pic.twitter.com/mSIAX8Mbsy</a></p>&mdash; ⚡ Daniel Dunderfelt (@ddunderfelt) <a href="https://twitter.com/ddunderfelt/status/989145479907872768?ref_src=twsrc%5Etfw">April 25, 2018</a></blockquote>
 
-### <span aria-label="Lightning talk" title="Lightning talk">⚡<️/span> Why I YAML by [Eemeli Aro](https://twitter.com/Eemeli_Aro)
+### <span aria-label="Lightning talk" title="Lightning talk">⚡️</span> Why I YAML by [Eemeli Aro](https://twitter.com/Eemeli_Aro)
 
 [Slides](https://docs.google.com/presentation/d/e/2PACX-1vRFz5W8H1CavTWgQvPMRG6gud5ZXxy4TT9QNL82Zy8radlIGKhDps6cHMkCpjr1rP0t4j-Ofhceq6_M/pub?start=false&loop=false&delayms=3000#slide=id.p)
 
@@ -170,7 +170,7 @@ Check out [Ken’s slides](https://reactfinland.surge.sh/#/10) — they are awes
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">How <a href="https://twitter.com/hashtag/React?src=hash&amp;ref_src=twsrc%5Etfw">#React</a> changed everything (for better) talk by <a href="https://twitter.com/ken_wheeler?ref_src=twsrc%5Etfw">@ken_wheeler</a> at <a href="https://twitter.com/hashtag/ReactFinland?src=hash&amp;ref_src=twsrc%5Etfw">#ReactFinland</a> started the 2nd day. Nice reality check to history of web tech and why React is great. Also shortly what comes next. But remember &quot;Web is not suited for application development&quot;. <a href="https://t.co/7o0MfXOVp8">pic.twitter.com/7o0MfXOVp8</a></p>&mdash; Marko Wallin (@walokra) <a href="https://twitter.com/walokra/status/989398496561201153?ref_src=twsrc%5Etfw">April 26, 2018</a></blockquote>
 
-### <span aria-label="Lightning talk" title="Lightning talk">⚡<️/span> Static Websites The Final Frontier by [Juho Vepsäläinen](https://twitter.com/bebraw)
+### <span aria-label="Lightning talk" title="Lightning talk">⚡️</span> Static Websites The Final Frontier by [Juho Vepsäläinen](https://twitter.com/bebraw)
 
 [Slides](https://docs.google.com/presentation/d/1dYwzzByKugHIrfA48cdhV0N-b2S2Ms_Ojd8I4ux_QRg/edit)
 
@@ -239,7 +239,7 @@ _(It wasn’t as easy as I thought.)_
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Ignite for React Native looks incredible <a href="https://twitter.com/hashtag/ReactFinland?src=hash&amp;ref_src=twsrc%5Etfw">#ReactFinland</a> <a href="https://twitter.com/infinite_red?ref_src=twsrc%5Etfw">@infinite_red</a> <a href="https://t.co/mRd2hltsWM">pic.twitter.com/mRd2hltsWM</a></p>&mdash; Barry McGee (@barrymcgee) <a href="https://twitter.com/barrymcgee/status/989494531753238528?ref_src=twsrc%5Etfw">April 26, 2018</a></blockquote>
 
-### <span aria-label="Lightning talk" title="Lightning talk">⚡<️/span> How to use React, webpack and other buzzwords if there is no need by [Varya Stepanova](https://twitter.com/varya_en)
+### <span aria-label="Lightning talk" title="Lightning talk">⚡️</span> How to use React, webpack and other buzzwords if there is no need by [Varya Stepanova](https://twitter.com/varya_en)
 
 [Slides](http://varya.me/react-finland-2018/#)
 
