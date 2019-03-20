@@ -307,4 +307,4 @@ React 16 has many other features that are useful in some cases:
 - [React.lazy](https://reactjs.org/blog/2018/10/23/react-v-16-6.html#reactlazy-code-splitting-with-suspense) (16.6);
 - [static getDerivedStateFromError()](https://reactjs.org/blog/2018/10/23/react-v-16-6.html#static-getderivedstatefromerror) (16.6).
 
-I also highly recommend Nik Graf’s [course on React 16](https://egghead.io/courses/leverage-new-features-of-react-16) at Egghead.
+I also highly recommend Nik Graf’s [course on React 16](https://egghead.io/courses/leverage-new-features-of-react-16) and Kent C. Dodds’s [course on hooks](https://egghead.io/courses/simplify-react-apps-with-react-hooks) on Egghead.
