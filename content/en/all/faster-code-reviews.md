@@ -75,7 +75,7 @@ Writing a short comment like “Ready for another iteration” will make it clea
 
 Development is an iterative process, so is code reviewing. Code review suggestions are possible improvements to the current state of the code, not its final state. Often one improvement makes another improvement obvious, and a good reviewer will suggest that improvement.
 
-But you don’t have to wait and loose another iteration: do one more self-review and see what could be the next thing.
+But you don’t have to wait and lose another iteration: do one more self-review and see what could be the next thing.
 
 For example a reviewer has asked you to simplify three functions and make code more consistent. But after you’ve done it, it’s now clear that all three functions are doing the same thing, and you can replace them with a single function.
 
