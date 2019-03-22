@@ -41,7 +41,7 @@ These kinds of changes and comments will help everyone who’s going to read the
 
 It helps a lot to see what the code in the diff is actually doing. Explain why the code is needed, what issue it’s trying to fix. Mention related tickets, add screenshots or even GIFs for all your changes.
 
-_Tip: [Kap](https://getkap.co/) is a nice free app to record GIFs on macOs._
+_Tip: [Kap](https://getkap.co/) is a nice free app to record GIFs on macOS._
 
 ## Ask questions
 
