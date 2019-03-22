@@ -8,6 +8,7 @@ tags:
   - thoughts
   - work
   - education
+  - soft skills
 ---
 
 Some unorganized tips from current me to last year’s me when I started to look for a job in Europe (I’m from Russia).
