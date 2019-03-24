@@ -9,9 +9,9 @@ tags:
   - work
 ---
 
-Developers and code reviewers have seemingly conflicting goals: developers want to ship their code fast, reviewers want high code quality. But in my opinion these are two sides of the same goal: keep development velocity high by shipping high quality and maintainable code. Reviewers want to help developers to ship less bugs to production and make code easier to understand so feature improvements can be done faster.
+Developers and code reviewers have seemingly conflicting goals: developers want to ship their code fast, reviewers want high code quality. But I think these are two sides of the same goal: keep development velocity high by shipping high quality and maintainable code. Reviewers want to help developers to ship less bugs to production and make code easier to understand so feature improvements can be done faster.
 
-By following these recommendations you’ll be able to reduce number of code review iterations and ship better code faster.
+By following these recommendations you could reduce number of code review iterations and ship better code faster.
 
 ## Before you start
 
