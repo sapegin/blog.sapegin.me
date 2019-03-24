@@ -96,7 +96,7 @@ module.exports = {
 			resolve: 'gatsby-plugin-fathom',
 			options: {
 				trackingUrl: 'stats.sapegin.me',
-				siteId: 'JQWYF',
+				siteId: { en: 'JQWYF', ru: 'SOOAQ' }[lang],
 			},
 		},
 	],
