@@ -1,25 +1,26 @@
 import lang from './src/lang';
 
+const siteMetadata = {
+	en: {
+		title: 'Artem Sapegin’s Blog',
+		description:
+			'Blog of a Berlin based frontend developer who works at Here, makes photos, writes, hangs out with his dogs and drinks coffee.',
+		siteUrl: 'https://blog.sapegin.me/',
+	},
+	ru: {
+		title: 'Наноблог Артёма Сапегина',
+		description:
+			'Блог фронтенд-разработчика, который живёт в Берлине, работает в Вейфейре, фотографирует, пишет, гладит собак и пьёт кофе.',
+		siteUrl: 'https://nano.sapegin.ru/',
+	},
+}[lang];
+
 module.exports = {
-	siteMetadata: {
-		en: {
-			title: 'Artem Sapegin’s Blog',
-			description:
-				'Blog of a Berlin based frontend developer who works at Here, makes photos, writes, hangs out with his dogs and drinks coffee.',
-			siteUrl: 'https://nano.sapegin.ru/',
-		},
-		ru: {
-			title: 'Наноблог Артёма Сапегина',
-			description:
-				'Блог фронтенд-разработчика, который живёт в Берлине, работает в Вейфейре, фотографирует, пишет, гладит собак и пьёт кофе.',
-			siteUrl: 'https://blog.sapegin.me/',
-		},
-	}[lang],
+	siteMetadata,
 	plugins: [
 		'gatsby-plugin-react-helmet',
 		'gatsby-plugin-emotion',
 		'gatsby-plugin-lodash',
-		'gatsby-plugin-remove-trailing-slashes',
 		{
 			resolve: 'gatsby-source-filesystem',
 			options: {
@@ -92,6 +93,12 @@ module.exports = {
 		},
 		'gatsby-plugin-netlify',
 		'gatsby-plugin-flow',
+		{
+			resolve: `gatsby-plugin-canonical-urls`,
+			options: {
+				siteUrl: siteMetadata.siteUrl,
+			},
+		},
 		{
 			resolve: 'gatsby-plugin-fathom',
 			options: {
