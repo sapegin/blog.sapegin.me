@@ -5,13 +5,13 @@ const siteMetadata = {
 		title: 'Artem Sapegin’s Blog',
 		description:
 			'Blog of a Berlin based frontend developer who works at Here, makes photos, writes, hangs out with his dogs and drinks coffee.',
-		siteUrl: 'https://blog.sapegin.me/',
+		siteUrl: 'https://blog.sapegin.me',
 	},
 	ru: {
 		title: 'Наноблог Артёма Сапегина',
 		description:
 			'Блог фронтенд-разработчика, который живёт в Берлине, работает в Вейфейре, фотографирует, пишет, гладит собак и пьёт кофе.',
-		siteUrl: 'https://nano.sapegin.ru/',
+		siteUrl: 'https://nano.sapegin.ru',
 	},
 }[lang];
 
