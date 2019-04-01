@@ -14,7 +14,7 @@ tags:
 
 Пример. Откройте несколько копий этой страницы и попробуйте изменить поле в одной из них — изменения тут же отобразятся во всех копиях страницы.
 
-<iframe style="width: 100%; height: 80px" src="http://jsfiddle.net/sapegin/zkxGB/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+<iframe style="width: 100%; height: 80px" src="https://jsfiddle.net/sapegin/zkxGB/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 (Если вместо окна с примером вы видите пустое пространство — откройте [исходный пост](http://nano.sapegin.ru/all/obmen-dannymi-mezhdu-oknami-s-pomoschyu-localstorage).)
 

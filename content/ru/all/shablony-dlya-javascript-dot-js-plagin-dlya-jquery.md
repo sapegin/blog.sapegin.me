@@ -64,4 +64,4 @@ $.fn.tmpl = function(tmplId, data) {
 $('#container').tmpl('photo', photos);
 ```
 
-Смотрите [живой пример](http://jsfiddle.net/sapegin/VGwqK/) на Фидле.
+Смотрите [живой пример](https://jsfiddle.net/sapegin/VGwqK/) на Фидле.

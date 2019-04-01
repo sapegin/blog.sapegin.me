@@ -38,6 +38,6 @@ function getCssString(elem) {
 alert(getCssString($('#pony')));
 ```
 
-Можно посмотреть [живой пример](http://jsfiddle.net/sapegin/aSpwC/).
+Можно посмотреть [живой пример](https://jsfiddle.net/sapegin/aSpwC/).
 
 <small>P. S. Спасибо коллеге Егору Дыдыкину за указание на этот метод.</small>

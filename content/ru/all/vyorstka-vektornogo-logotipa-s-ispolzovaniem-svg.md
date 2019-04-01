@@ -96,6 +96,6 @@ tags:
 
 Получается вот так:
 
-<iframe style="width: 100%; height: 120px" src="http://jsfiddle.net/sapegin/LGkqP/embedded/result/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+<iframe style="width: 100%; height: 120px" src="https://jsfiddle.net/sapegin/LGkqP/embedded/result/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 P. S. Горячо рекомендую статью Вадима Макеева «[Непростая простая кнопка](https://pepelsbey.net/2012/07/uneasy-easy-button/)», которая и сподвигла меня на эксперименты с логотипом.

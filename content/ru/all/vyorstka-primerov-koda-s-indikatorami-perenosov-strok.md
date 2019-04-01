@@ -12,7 +12,7 @@ tags:
 
 <!--more-->
 
-<iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/sapegin/fZPdb/embedded/result,css,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+<iframe style="width: 100%; height: 300px" src="https://jsfiddle.net/sapegin/fZPdb/embedded/result,css,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 <small>(Если вместо окна с примером вы видите пустое пространство — откройте [исходный пост](http://nano.sapegin.ru/all/vyorstka-primerov-koda-s-indikatorami-perenosov-strok).)</small>
 
