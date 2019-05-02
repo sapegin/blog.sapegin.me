@@ -8,6 +8,7 @@ tags:
   - javascript
   - education
   - events
+  - conferences
   - react
 ---
 
