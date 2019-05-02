@@ -23,7 +23,7 @@ React Finland is one of my favorite conferences. It was my second time and both 
 
 ### MobX — The Journey by [Michel Weststrate](https://twitter.com/mweststrate)
 
-[Slides](https://docs.google.com/presentation/d/12Dd8iYxcA8Wl2yaOE_FNb-MaB7cktUE82JFXVlrO-6U/edit#slide=id.p).
+[Slides](https://docs.google.com/presentation/d/12Dd8iYxcA8Wl2yaOE_FNb-MaB7cktUE82JFXVlrO-6U/edit#slide=id.p), [video](https://www.youtube.com/watch?v=MIh1qSHi_Fc).
 
 - If you can’t sell the library, sell the problem.
 - “MobX […] tries to enable you to go home early each day.”
@@ -38,7 +38,7 @@ React Finland is one of my favorite conferences. It was my second time and both 
 
 ### Append-only development with React: An intro to Behavioral programming by [Luca Matteis](https://twitter.com/lmatteis)
 
-[Slides](https://lmatteis.github.io/finland-talk/assets/player/KeynoteDHTMLPlayer.html#0).
+[Slides](https://lmatteis.github.io/finland-talk/assets/player/KeynoteDHTMLPlayer.html), [video](https://www.youtube.com/watch?v=cXuvCMG21Ss).
 
 - “Programming language are practically irrelevant in making products.”
 - Code maintenance is the root of the problem.
@@ -47,6 +47,8 @@ React Finland is one of my favorite conferences. It was my second time and both 
 - [Behavioral programming for JavaScript](https://github.com/lmatteis/behavioral).
 
 ### Mind-Reading with Adaptive and Intelligent UIs in React by [David Khourshid](https://twitter.com/DavidKPiano)
+
+[Video](https://www.youtube.com/watch?v=ppvi09LIUnU).
 
 - Adapt to people, not just devices.
 - Microsoft Clippy is the first adaptive UI.
@@ -58,6 +60,8 @@ React Finland is one of my favorite conferences. It was my second time and both 
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 ### A Common Design Language. Let Designers and Developers talk to each other by [Andrey Okonetchnikov](https://twitter.com/okonetchnikov)
+
+[Video](https://www.youtube.com/watch?v=a6DtiGhKMdk).
 
 - Design: typography, color and spacing.
 - Developers talk in code.
@@ -71,7 +75,7 @@ React Finland is one of my favorite conferences. It was my second time and both 
 
 ### A practical guide to building your design system infrastructure by [Varya Stepanova](https://twitter.com/varya_en)
 
-[Slides](http://varya.me/react-finland-2019/).
+[Slides](http://varya.me/react-finland-2019/), [video](https://www.youtube.com/watch?v=5_lYTicLUbk).
 
 - Design system is shared practices, tools, processes and community.
 - Living style guides: [React Styleguidist](https://react-styleguidist.js.org/), [Storybook](https://storybook.js.org/).
@@ -88,7 +92,7 @@ React Finland is one of my favorite conferences. It was my second time and both 
 
 ### ~~12~~ 8 Tips for More Accessible React Apps by [Manuel Matuzovic](https://twitter.com/mmatuzo)
 
-[Slides](https://www.matuzo.at/blog/12-tips-for-more-accessible-react-apps-slides-react-finland-2019/).
+[Slides](https://www.matuzo.at/blog/12-tips-for-more-accessible-react-apps-slides-react-finland-2019/), [video](https://www.youtube.com/watch?v=NL6XKcX4sxc).
 
 1. Create a sound document outline: start with `h1` and don’t skip levels.
 2. Hide content correctly: `display: none`, `visibility: hidden` and `hidden` are hiding content from screen readers, use [a combination of CSS properties](https://medium.com/@matuzo/writing-css-with-accessibility-in-mind-8514a0007939) that hides content only visually or [VisuallyHidden](https://github.com/reach/reach-ui/tree/master/packages/visually-hidden) component from Reach UI.
@@ -104,6 +108,8 @@ React Finland is one of my favorite conferences. It was my second time and both 
 
 ### Delightful UI animations by understanding the brain by [Bruno Lourenço](https://twitter.com/brunnolou)
 
+[Video](https://www.youtube.com/watch?v=TszRBCc6DQ4).
+
 - Animation — an illusion of movement.
 - [React Morph](https://github.com/brunnolou/react-morph): morphing UI transitions.
 - Creates a clone of an element and uses [FLIP technique](https://aerotwist.com/blog/flip-your-animations/) to do the morphing animation.
@@ -113,7 +119,7 @@ React Finland is one of my favorite conferences. It was my second time and both 
 
 ### Custom CSS is the path to inconsistent UI by [Artem Sapegin](https://twitter.com/iamsapegin)
 
-[Slides](https://stopwritingcss.netlify.com/).
+[Slides](https://stopwritingcss.netlify.com/), [video](https://www.youtube.com/watch?v=_CsBRkRTzIA).
 
 - We use custom styles mostly for typography, whitespace and layout.
 - This leads to inconsistent UI because CSS is too expressive.
@@ -129,6 +135,8 @@ React Finland is one of my favorite conferences. It was my second time and both 
 
 ### Creating layouts that last by [Artem Zakharchenko](https://twitter.com/kettanaito)
 
+[Video](https://www.youtube.com/watch?v=_HrXUB97xQs).
+
 - Spacing is important to build maintainable layout.
 - Defining margins and padding directly on components isn’t the most maintainable way.
 - [Atomic layout](https://github.com/kettanaito/atomic-layout) is a library to create declarative layouts with CSS Grid.
@@ -141,7 +149,7 @@ React Finland is one of my favorite conferences. It was my second time and both 
 
 ### Scalable (Design) Systems with TypeScript by [Tejas Kumar](https://twitter.com/TejasKumar_)
 
-[Slides](https://tejaskumar.com/static/talks/react-finland-typescript-design-systems.pdf)
+[Slides](https://tejaskumar.com/static/talks/react-finland-typescript-design-systems.pdf), [video](https://www.youtube.com/watch?v=ZsBW4S8hYMU).
 
 - TypeScript is a good choice for design systems: enforces contracts, confidence to make changes, allows you to scale.
 - Uses [React Styleguidist](https://react-styleguidist.js.org/) and TypeScript for their design system.
@@ -152,7 +160,7 @@ React Finland is one of my favorite conferences. It was my second time and both 
 
 ### Building resilient frontend architecture by [Monica Lent](https://twitter.com/monicalent)
 
-[Slides](https://monicalent.com/building-resilient-frontend-architecture.pdf).
+[Slides](https://monicalent.com/building-resilient-frontend-architecture.pdf), [video](https://www.youtube.com/watch?v=brMZLmZ1HR0).
 
 - Refactoring only temporarily helps with technical debt.
 - Second system effect: the tendency of small, elegant, and successful systems to be succeeded by over-engineered, bloated systems because of inflated expectations and overconfidence.
@@ -173,7 +181,7 @@ Three constraints you can use today for more resilient frontend architecture:
 
 ### “Intuitive” Tooling by [Carolyn Stransky](https://twitter.com/carolstran)
 
-[Slides](https://speakerdeck.com/carolstran/intuitive-tooling).
+[Slides](https://speakerdeck.com/carolstran/intuitive-tooling), [video](https://www.youtube.com/watch?v=nBy8y39Pvp4).
 
 - Hard to learn things: TypeScript, Redux, GraphQL, Gatsby, Flexbox.
 - “We mistake familiarity for simplicity” — [Jim Fisher](https://www.youtube.com/watch?v=1vvjiJFsT-Y&t=2367s).
