@@ -48,7 +48,7 @@ React Finland is one of my favorite conferences. It was my second time and both 
 
 ### Mind-Reading with Adaptive and Intelligent UIs in React by [David Khourshid](https://twitter.com/DavidKPiano)
 
-[Video](https://www.youtube.com/watch?v=ppvi09LIUnU).
+[Slides](https://slides.com/davidkhourshid/mind-reading-react-finland#/), [video](https://www.youtube.com/watch?v=ppvi09LIUnU).
 
 - Adapt to people, not just devices.
 - Microsoft Clippy is the first adaptive UI.
@@ -61,7 +61,7 @@ React Finland is one of my favorite conferences. It was my second time and both 
 
 ### A Common Design Language. Let Designers and Developers talk to each other by [Andrey Okonetchnikov](https://twitter.com/okonetchnikov)
 
-[Video](https://www.youtube.com/watch?v=a6DtiGhKMdk).
+[Slides](https://speakerdeck.com/okonet/a-common-design-language), [video](https://www.youtube.com/watch?v=a6DtiGhKMdk).
 
 - Design: typography, color and spacing.
 - Developers talk in code.
