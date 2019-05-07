@@ -157,7 +157,26 @@ const tableData =
   );
 ```
 
-But is it really more readable? I don’t think so. Common sense should always win over applying “rules” everywhere (see the “Cargo cult programming” section below).
+But is it really more readable?
+
+After a cup of coffee and a chat with a colleague, I’ve ended up with a much cleaner code:
+
+```js
+const tableData =
+  props.item &&
+  props.item.details &&
+  props.item.details.clients.reduce((acc, client) =>
+    acc.concat(
+      ...client.errorConfigurations.map(config => ({
+        errorMessage: config.error.message,
+        errorLevel: config.error.level,
+        usedIn: client.client.name
+      }))
+    )
+  );
+```
+
+I think I still prefer the double `for` version, but I’ll be happy with both versions, the original and the second rewrite, if I had to review such code.
 
 _(Though `tableData` is a really bad variable name.)_
 
