@@ -48,11 +48,9 @@ module.exports = {
 			options: {
 				feeds: [
 					{
-						serialize: ({ query: { site, allMarkdownRemark } }) => {
+						serialize: ({ query: { allMarkdownRemark } }) => {
 							return allMarkdownRemark.edges.map(edge => {
-								const url = `${site.siteMetadata.siteUrl}/${
-									edge.node.fields.slug
-								}`;
+								const url = `${siteMetadata.siteUrl}/${edge.node.fields.slug}`;
 								return {
 									...edge.node.frontmatter,
 									description: edge.node.excerpt,
