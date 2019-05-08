@@ -136,9 +136,9 @@ Now you need to `git push` your changes and make some coffee.
 
 - If you forget to do that and want to make a PATCH release:
 
-  ```bash
-  git commit -m "Fix: Proper commit message" --allow-empty
-  ```
+```bash
+git commit -m "Fix: Proper commit message" --allow-empty
+```
 
 ## Links
 
