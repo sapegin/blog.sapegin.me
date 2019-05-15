@@ -37,7 +37,7 @@ Nobody likes to find a project that seems useful but has no documentation or eve
 
 ## I can send a link to show my code
 
-Often someone asks how I do this or that. If this or that is open sourced I could just send a link to a file on GitHub. I can even select particular lines in that file.
+Often someone asks how I do this or that. If this or that is open sourced I could send a link to a file on GitHub. I can even select particular lines in that file.
 
 ## I receive pull requests with grammar fixes
 

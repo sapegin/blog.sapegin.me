@@ -52,7 +52,7 @@ value="$(prompt 'Enter:' '42')"
 
 ![AppleScript prompt](/images/mac__shell_dialog_prompt.png)
 
-Or you can just download [dlg-error](https://github.com/sapegin/dotfiles/blob/master/bin/dlg-error) and [dlg-prompt](https://github.com/sapegin/dotfiles/blob/master/bin/dlg-prompt) and put them somewhere in `$PATH`:
+Or you can download [dlg-error](https://github.com/sapegin/dotfiles/blob/master/bin/dlg-error) and [dlg-prompt](https://github.com/sapegin/dotfiles/blob/master/bin/dlg-prompt) and put them somewhere in `$PATH`:
 
 ```bash
 #!/usr/bin/env bash

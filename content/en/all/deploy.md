@@ -155,7 +155,7 @@ node -e "require('grunt').cli()" _ deploy
 
 And save it as `.shipit` in a project root folder.
 
-Shipit is very simple: it just connects to a server via SSH, goes to a project folder and runs all commands contained after `[deploy]` line. (In fact it’s [much more flexible](https://github.com/sapegin/shipit/blob/master/Readme.md).)
+Shipit connects to a server via SSH, goes to a project folder and runs all commands contained after `[deploy]` line. (In fact it’s [much more flexible](https://github.com/sapegin/shipit/blob/master/Readme.md).)
 
 That’s all, now deploy is as easy as this:
 

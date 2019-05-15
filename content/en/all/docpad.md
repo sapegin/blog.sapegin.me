@@ -21,7 +21,7 @@ But in 2013 I became tired again. Aegea wasn’t the best engine for coder’s b
 
 So I spent few days to replace Aegea for [DocPad](http://docpad.org/). It was much simpler than I thought and I like the result very much. DocPad is a static site generator. And it’s much more flexible than WordPress and Aegea.
 
-Now I can write text using the simplest format available (Markdown) in the best text editor ([iA Writer](https://ia.net/writer/)). Then share drafts on [Draft](https://draftin.com/). Then just copy file to local blog repository, add simple YAML header (title, tags, etc.), commit it, push to GitHub and deploy to server (using [Fabric](http://www.fabfile.org/)).
+Now I can write text using the simplest format available (Markdown) in the best text editor ([iA Writer](https://ia.net/writer/)). Then share drafts on [Draft](https://draftin.com/). Then copy file to local blog repository, add simple YAML header (title, tags, etc.), commit it, push to GitHub and deploy to server (using [Fabric](http://www.fabfile.org/)).
 
 ## Good parts
 

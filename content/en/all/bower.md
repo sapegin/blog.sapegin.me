@@ -52,7 +52,7 @@ We don’t have a file like that yet, which is what the line “No bower.json fi
 bower init
 ```
 
-Bower will ask many questions, but until we want to register our package, answers to most of them don’t matter, you can just press Enter.
+Bower will ask many questions, but until we want to register our package, answers to most of them don’t matter, you can press Enter.
 
 The question “Set currently installed components as dependencies?” should be answered with “yes”—all previously installed components (in our case it’s jQuery) will be automatically placed in the created JSON file. The question “Would you like to mark this package as private which prevents it from being accidentally published to the registry?” should also be answered “yes”—this will prevent accidental publication of the package into the Bower registry.
 
@@ -158,7 +158,7 @@ Normal: open [bower.io/search](https://bower.io/search/) in a browser.
 
 ## Automatic builds
 
-Bower puts the problem of project builds on the shoulders of the developer. The simplest method is just to concatenate the JS files with Grunt, Gulp or any other task runner that you use.
+Bower puts the problem of project builds on the shoulders of the developer. The simplest method is to concatenate the JS files with Grunt, Gulp or any other task runner that you use.
 
 I use Grunt, so I’ll describe how to concatenate the packages with Grunt. There was a [big article](http://nano.sapegin.ru/all/grunt-0-4) on using Grunt in the June issue of last year, so I’ll show my config of the `grunt-contrib-concat` plugin right away:
 
@@ -278,6 +278,6 @@ Now you can register your package:
 bower register jquery-awesomeplugin git://github.com/sapegin/jquery-awesomeplugin.git
 ```
 
-From now on, Bower will check package updates, you just have to create git tags for each new version.
+From now on, Bower will check package updates, you only need to create Git tags for each new version.
 
 To make updating your packages easier you can use tools like [grunt-bump](https://github.com/vojtajina/grunt-bump) or [mversion](https://github.com/mikaelbr/mversion).

@@ -57,4 +57,4 @@ npm install --save-dev grunt load-grunt-tasks grunt-contrib-stylus grunt-contrib
 
 I use [autoprefixer](https://github.com/jescalan/autoprefixer-stylus) and [csso](https://github.com/sapegin/csso-stylus) as Stylus plugins. I could achieve the same with [autoprefixer](https://github.com/nDmitry/grunt-autoprefixer) and [csso](https://github.com/t32k/grunt-csso) plugins for Grunt but Grunt plugins work with files while Stylus plugins work with variables in memory. So we have just one disk write operation instead of three and configuration is also much simpler.
 
-I also use [CSSO](https://github.com/css/csso) because Autoprefixer do not minify its output. But we don’t need minified code for debugging—that’s why `debug` variable is here. Just run `grunt watch --debug` and start working.
+I also use [CSSO](https://github.com/css/csso) because Autoprefixer do not minify its output. But we don’t need minified code for debugging—that’s why `debug` variable is here. Run `grunt watch --debug` and start working.
