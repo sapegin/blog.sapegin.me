@@ -1,6 +1,7 @@
 ---
 layout: Post
 title: 'Washing your code: avoid loops'
+description: Traditional loops, like for or while, are too low-level for common tasks. Array methods like .map() or .find() are more readable and have clear semantics.
 date: 2019-05-07
 lang: en
 tags:
@@ -309,4 +310,4 @@ Start thinking about:
 
 ---
 
-_If you have any feedback, [tweet me](https://twitter.com/iamsapegin), [open an issue](https://github.com/sapegin/washingcode-book/issues) on GitHub, or email me at [artem@sapegin.ru](mailto:artem@sapegin.ru)._
+_If you have any feedback, [tweet me](https://twitter.com/iamsapegin), [open an issue](https://github.com/sapegin/washingcode-book/issues) on GitHub, or email me at [artem@sapegin.ru](mailto:artem@sapegin.ru). [Preorder the book on Leanpub](https://leanpub.com/washingcode/) or [read a draft online](https://github.com/sapegin/washingcode-book/blob/master/manuscript/book.md)._
