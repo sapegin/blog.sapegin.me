@@ -13,6 +13,12 @@ tags:
 
 _You’re reading an excerpt of my upcoming book on clean code, “Washing your code: write once, read seven times.” [Preorder it on Leanpub](https://leanpub.com/washingcode/) or [read a draft online](https://github.com/sapegin/washingcode-book/blob/master/manuscript/book.md)._
 
+_Book table of contents:_
+
+- [Avoid loops](/all/avoid-loops/)
+- _Avoid conditions (*this post*)_
+- To be continued
+
 Conditions make code harder to read and test. They add nesting and make lines of code longer, so you have to split them into several lines. Each condition increases the minimum number of test cases you need to write for a certain module or function, because instead of a single code path you now have two or more.
 
 ## Unnecessary conditions
