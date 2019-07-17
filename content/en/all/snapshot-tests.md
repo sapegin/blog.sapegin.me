@@ -133,6 +133,33 @@ expect(user).toMatchSnapshot({
 });
 ```
 
+- Use descriptive snapshot names to make it easier to spot when a snapshot is incorrect.
+
+For example, compare:
+
+```js
+exports[`<Animal /> should handle some test case`] = `null`;
+exports[
+  `<Animal /> should handle some other test case`
+] = `<strong>dog</strong>`;
+```
+
+To:
+
+```js
+exports[`<Animal /> should render null`] = `null`;
+exports[
+  `<Animal /> should render an animal name`
+] = `<strong>dog</strong>`;
+```
+
+With the latter it’s clear when a snapshot is wrong, like this:
+
+```js
+exports[`<Animal /> should render null`] = `<strong>dog</strong>`;
+exports[`<Animal /> should render an animal name`] = `null`;
+```
+
 _Hint: [eslint-plugin-jest](https://github.com/jest-community/eslint-plugin-jest) have two rules, [prefer-inline-snapshots](https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/prefer-inline-snapshots.md) and [no-large-snapshots](https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-large-snapshots.md), that may help you keep your snapshots healthy._
 
 ## Snapshot don’ts
@@ -146,7 +173,7 @@ Snapshots are useful in _some rare_ cases, but often they give you a false sense
 
 Check out the [Effective Snapshot Testing](https://blog.kentcdodds.com/effective-snapshot-testing-e0d1a2c28eca) article by Kent C. Dodds for more ideas on how to use snapshot tests.
 
-***
+---
 
 P. S. [Jest cheat sheet](https://github.com/sapegin/jest-cheat-sheet) and [React Testing Examples](https://react-testing-examples.com/) will answer most questions you may have when writing Jest tests.
 
