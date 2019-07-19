@@ -100,6 +100,6 @@ I’ve added `display: flex` to the `ul` to make it independent from possible 
 
 ## Conclusion
 
-Both solutions don’t look great on small screens, when items can’t fit on a single line. I don’t know a _perfect_ solution to this, so I’ll keep it as homework for you, the reader.
+Both solutions don’t look great on small screens, when items can’t fit on a single line. I don’t know a _perfect_ way to this, so consider it a homework. [Let me know](https://twitter.com/iamsapegin) if you have find something good.
 
 This case is a good reminder for us to be more mindful about [accessibility of our sites and apps](https://web.dev/accessible). We should do at least [the basic accessibility testing](https://daverupert.com/2018/07/assistive-technologies-i-test-with/) and don’t always trust our intuition, like I did with this list, was wrong, and shipped inaccessible feature to production.
