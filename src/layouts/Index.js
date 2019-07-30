@@ -31,6 +31,7 @@ const Index = ({
 			<Metatags slug={pathname} />
 			{Intro && (
 				<Box mb="l">
+					{/* eslint-disable-next-line */}
 					<Text style="italic">
 						<Intro />
 					</Text>
