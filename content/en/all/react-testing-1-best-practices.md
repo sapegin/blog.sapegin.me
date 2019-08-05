@@ -64,11 +64,7 @@ _End-to-end tests_ in the trophy mostly correspond to UI tests in the pyramid. _
 
 Even if integration tests are more expensive to write, they have several benefits over unit tests:
 
-| Unit tests | Integration tests |
-| :-- | :-- |
-| One test covers only one module | One test covers a whole feature or a page |
-| Often require rewrite after refactoring | Survive refactoring most of the time |
-| Hard to avoid testing implementation details | Better resemble how users are using your app |
+| Unit tests | Integration tests | | \- | \- | | One test covers only one module | One test covers a whole feature or a page | | Often require rewrite after refactoring | Survive refactoring most of the time | | Hard to avoid testing implementation details | Better resemble how users are using your app |
 
 _The last point is important: integration tests give us the most confidence that our app works as expected. But it doesn’t mean, that we should only write integration tests. Other tests have their place but we should focus our efforts on tests, that are the most useful._
 
