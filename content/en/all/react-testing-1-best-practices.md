@@ -20,6 +20,8 @@ I’ve written [a similar article](https://blog.sapegin.me/all/react-jest/) thre
 - Modern React testing: Jest and Enzyme (coming soon!)
 - Modern React testing: Jest and React Testing Library (coming soon!)
 
+Subscribe at the bottom of the page to know about the send and the third articles.
+
 ## Why automate testing
 
 There are many reasons why automated tests are useful but my favorite reason is: _you’re already testing_.
