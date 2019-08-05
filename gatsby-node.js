@@ -25,6 +25,9 @@ function getRelatedPosts(posts, { slug, tags }) {
 }
 
 function typo(markdown) {
+	return markdown;
+
+	/*
 	// Skip typography enhancement on older Node versions
 	if (parseInt(process.versions.node) < 9) {
 		return markdown;
@@ -33,6 +36,7 @@ function typo(markdown) {
 	const richtypo = require('richtypo').default;
 	const rules = require(`richtypo-rules-${lang}`).default;
 	return richtypo(rules, markdown);
+	*/
 }
 
 export const onCreateWebpackConfig = ({ actions }) => {
