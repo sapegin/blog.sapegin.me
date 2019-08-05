@@ -6,6 +6,27 @@ import PostContent from '../components/PostContent';
 import PostMeta from '../components/PostMeta';
 import RelatedPosts from '../components/RelatedPosts';
 import Metatags from '../components/Metatags';
+import { Post } from '../types';
+
+type Props = {
+	data: {
+		markdownRemark: {
+			html: string;
+			excerpt: string;
+			frontmatter: {
+				title: string;
+				date: string;
+				dateTime: string;
+			};
+		};
+	};
+	pageContext: {
+		related: Post[];
+	};
+	location: {
+		pathname: string;
+	};
+};
 
 export default function PostPage({
 	data: {
@@ -17,7 +38,7 @@ export default function PostPage({
 	},
 	pageContext: { related },
 	location: { pathname },
-}) {
+}: Props) {
 	return (
 		<PageWithTitle url={pathname} title={title}>
 			<Metatags slug={pathname} title={title} description={excerpt} />

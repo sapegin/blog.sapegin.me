@@ -1,6 +1,6 @@
 import React from 'react';
-import { VisuallyHidden, themeGet } from 'tamia';
-import styled from '@emotion/styled';
+import { VisuallyHidden } from 'tamia';
+import styled from 'styled-components';
 import { subscriptionEmailLabel, subscriptionSubmitLabel } from '@strings';
 
 const Form = styled.form`
@@ -11,7 +11,7 @@ const Form = styled.form`
 const Column = styled.div`
 	width: 100%;
 
-	@media (min-width: ${themeGet('breakpoints.small')}) {
+	@media (min-width: ${p => p.theme.breakpoints[0]}) {
 		width: auto;
 	}
 `;
@@ -19,38 +19,38 @@ const Column = styled.div`
 const EmailInput = styled.input`
 	width: 100%;
 	height: 2em;
-	padding: ${themeGet('space.xs')} ${themeGet('space.s')};
-	background-color: ${themeGet('colors.bg')};
-	color: ${themeGet('colors.base')};
-	border: 2px solid ${themeGet('colors.primary')};
+	padding: ${p => p.theme.space.xs} ${p => p.theme.space.s};
+	background-color: ${p => p.theme.colors.bg};
+	color: ${p => p.theme.colors.base};
+	border: 2px solid ${p => p.theme.colors.primary};
 	border-radius: 0;
-	font-size: ${themeGet('fontSizes.m')};
-	font-family: ${themeGet('fonts.base')};
+	font-size: ${p => p.theme.fontSizes.m};
+	font-family: ${p => p.theme.fonts.base};
 	appearance: none;
 
 	&:focus {
 		outline: 0;
-		border-color: ${themeGet('colors.hover')};
+		border-color: ${p => p.theme.colors.hover};
 	}
 `;
 
 const SubmitButton = styled.button`
 	width: 100%;
 	height: 2em;
-	padding: ${themeGet('space.xs')} ${themeGet('space.m')};
-	background-color: ${themeGet('colors.base')};
-	color: ${themeGet('colors.bg')};
-	border: 2px solid ${themeGet('colors.primary')};
-	font-size: ${themeGet('fontSizes.m')};
-	font-family: ${themeGet('fonts.base')};
+	padding: ${p => p.theme.space.xs} ${p => p.theme.space.m};
+	background-color: ${p => p.theme.colors.base};
+	color: ${p => p.theme.colors.bg};
+	border: 2px solid ${p => p.theme.colors.primary};
+	font-size: ${p => p.theme.fontSizes.m};
+	font-family: ${p => p.theme.fonts.base};
 	user-select: none;
 
 	&:hover,
 	&:active,
 	&:focus {
 		outline: 0;
-		background-color: ${themeGet('colors.hover')};
-		border-color: ${themeGet('colors.hover')};
+		background-color: ${p => p.theme.colors.hover};
+		border-color: ${p => p.theme.colors.hover};
 		cursor: pointer;
 	}
 
@@ -73,9 +73,9 @@ export default function() {
 						name="email"
 						type="email"
 						required
-						autocomplete="home email"
-						autocapitalize="off"
-						autocorrect="off"
+						autoComplete="home email"
+						autoCapitalize="off"
+						autoCorrect="off"
 						placeholder={subscriptionEmailLabel}
 						defaultValue=""
 					/>

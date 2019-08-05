@@ -2,12 +2,12 @@ const path = require('path');
 const babelConfig = {
 	plugins: [
 		require.resolve('@babel/plugin-proposal-class-properties'),
-		require.resolve('babel-plugin-emotion'),
+		require.resolve('babel-plugin-styled-components'),
 	],
 	presets: [
 		require.resolve('@babel/preset-env'),
 		[require.resolve('@babel/preset-react'), { development: true }],
-		require.resolve('@babel/preset-flow'),
+		require.resolve('@babel/preset-typescript'),
 	],
 	cacheDirectory: true,
 };

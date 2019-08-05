@@ -19,7 +19,7 @@ module.exports = {
 	siteMetadata,
 	plugins: [
 		'gatsby-plugin-react-helmet',
-		'gatsby-plugin-emotion',
+		'gatsby-plugin-styled-components',
 		'gatsby-plugin-lodash',
 		{
 			resolve: 'gatsby-source-filesystem',
@@ -57,6 +57,7 @@ module.exports = {
 									date: edge.node.frontmatter.date,
 									url,
 									guid: url,
+									// eslint-disable-next-line @typescript-eslint/camelcase
 									custom_elements: [{ 'content:encoded': edge.node.html }],
 								};
 							});
@@ -90,7 +91,7 @@ module.exports = {
 			},
 		},
 		'gatsby-plugin-netlify',
-		'gatsby-plugin-flow',
+		'gatsby-plugin-typescript',
 		{
 			resolve: `gatsby-plugin-canonical-urls`,
 			options: {

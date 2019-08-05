@@ -1,4 +1,4 @@
-import { css } from '@emotion/core';
+import { createGlobalStyle } from 'styled-components';
 
 const color0 = '#485e76';
 const color1 = '#343741';
@@ -9,7 +9,7 @@ const color5 = '#0a768a';
 const color6 = '#b71818';
 const color7 = '#008035';
 
-export const prismStyles = css`
+export const PrismStyles = createGlobalStyle`
 	p code,
 	li code {
 		font-style: italic;

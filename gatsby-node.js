@@ -100,7 +100,7 @@ export const createPages = ({ graphql, actions: { createPage } }) => {
 			docs.forEach(({ layout, tags, slug }) => {
 				createPage({
 					path: slug,
-					component: path.resolve(`${__dirname}/src/layouts/${layout}.js`),
+					component: path.resolve(`${__dirname}/src/layouts/${layout}.tsx`),
 					context: {
 						lang,
 						slug,

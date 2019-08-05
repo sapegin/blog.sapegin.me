@@ -1,6 +1,11 @@
 import React from 'react';
 import { Text } from 'tamia';
 import { Link } from 'tamia-gatsby-link';
+import styled from 'styled-components';
+
+const Nobr = styled.span`
+	white-space: nowrap;
+`;
 
 export const lang = 'en';
 export const title = 'Artem Sapegin’s Blog';
@@ -18,11 +23,11 @@ export const editPost = 'Edit on GitHub';
 export const subscriptionEmailLabel = 'Your email';
 export const subscriptionSubmitLabel = 'Subscribe';
 
-export const Intro = null;
+export const Intro = () => null;
 
 export const LongDescription = () => (
 	<>
-		<Text mb="m" size="s">
+		<Text mb="m" variant="small">
 			I’m a frontend developer living in&nbsp;Berlin, Germany. I&nbsp;work
 			at&nbsp;
 			<Link href="https://www.wayfair.com/">Wayfair</Link>,
@@ -31,8 +36,8 @@ export const LongDescription = () => (
 			I’m&nbsp;interested in&nbsp;design systems, testings
 			and&nbsp;accessibility.
 		</Text>
-		<Text mb="m" size="s">
-			<Link href="https://sapegin.me/">Check out</Link> my&nbsp;projects,{' '}
+		<Text variant="small">
+			<Link href="https://sapegin.me/">Check&nbsp;out</Link> my&nbsp;projects,{' '}
 			<Link href="https://twitter.com/iamsapegin">follow&nbsp;me</Link>{' '}
 			on&nbsp;Twitter or&nbsp;
 			<Link href="https://github.com/sapegin/ama">ask&nbsp;me</Link> anything.
@@ -40,16 +45,16 @@ export const LongDescription = () => (
 	</>
 );
 
-export const PublishedOn = ({ date }) => (
+export const PublishedOn = ({ date }: { date: string }) => (
 	<>
-		Published <nobr>on {date}</nobr>
+		Published <Nobr>on {date}</Nobr>
 	</>
 );
 
 export const PoweredBy = () => (
 	<>
 		Powered by <Link href="https://www.gatsbyjs.org/">Gatsby</Link> and{' '}
-		<Link href="https://emotion.sh/">Emotion</Link>, hosted on{' '}
+		<Link href="http://tamiadev.github.io/tamia/">Tâmia</Link>, hosted on{' '}
 		<Link href="https://www.netlify.com/">Netlify</Link>
 	</>
 );

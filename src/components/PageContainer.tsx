@@ -1,7 +1,5 @@
 import React from 'react';
-import { Global, css } from '@emotion/core';
-import styled from '@emotion/styled';
-import { themeGet } from 'tamia';
+import styled, { createGlobalStyle } from 'styled-components';
 import theme from '../theme';
 
 /*
@@ -11,12 +9,12 @@ import theme from '../theme';
  */
 
 const Container = styled.div`
-	margin: ${themeGet('space.s')} 0;
-	padding: ${themeGet('space.s')} ${themeGet('space.m')};
-	background-color: ${themeGet('colors.bg')};
+	margin: ${p => p.theme.space.s} 0;
+	padding: ${p => p.theme.space.s} ${p => p.theme.space.m};
+	background-color: ${p => p.theme.colors.bg};
 `;
 
-const globalStyles = css`
+const GlobalStyles = createGlobalStyle`
 	:root body {
 		/* Override default styles */
 		padding: 0;
@@ -24,10 +22,14 @@ const globalStyles = css`
 	}
 `;
 
-export default function PageContainer({ children }) {
+type Props = {
+	children: React.ReactNode;
+};
+
+export default function PageContainer({ children }: Props) {
 	return (
 		<Container>
-			<Global styles={globalStyles} />
+			<GlobalStyles />
 			{children}
 		</Container>
 	);

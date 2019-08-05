@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text } from 'tamia';
+import { Box, Text } from 'tamia';
 import { Link } from 'tamia-gatsby-link';
 
 export const lang = 'ru';
@@ -20,20 +20,22 @@ export const subscriptionEmailLabel = 'Эл. почта';
 export const subscriptionSubmitLabel = 'Подписаться';
 
 export const Intro = () => (
-	<>
-		Новые посты будут выходить только{' '}
-		<Link href="https://blog.sapegin.me/">на английском языке</Link>.
-	</>
+	<Box mb="l">
+		<Text variant="italic">
+			Новые посты будут выходить только{' '}
+			<Link href="https://blog.sapegin.me/">на английском языке</Link>.
+		</Text>
+	</Box>
 );
 
 export const LongDescription = () => (
 	<>
-		<Text mb="m" size="s">
+		<Text mb="m" variant="small">
 			Я живу в Берлине и работаю фронтенд-разработчиком в{' '}
 			<Link href="https://www.wayfair.com/">Вэйфейре</Link>, а в свободное время
 			фотографирую, глажу своих собак и пью кофе.
 		</Text>
-		<Text mb="m" size="s">
+		<Text mb="m" variant="small">
 			Читайте обо мне <Link href="https://sapegin.me/">на моём сайте</Link> и
 			подписывайтесь{' '}
 			<Link href="https://morning.photos/">на мой блог о фотографии</Link> и{' '}
@@ -42,12 +44,14 @@ export const LongDescription = () => (
 	</>
 );
 
-export const PublishedOn = ({ date }) => <>Опубликовано {date}</>;
+export const PublishedOn = ({ date }: { date: string }) => (
+	<>Опубликовано {date}</>
+);
 
 export const PoweredBy = () => (
 	<>
 		Работает на <Link href="https://www.gatsbyjs.org/">Гетсби</Link> и{' '}
-		<Link href="https://emotion.sh/">Эмоушене</Link>, хостится на{' '}
+		<Link href="http://tamiadev.github.io/tamia/">Тамии</Link>, хостится на{' '}
 		<Link href="https://www.netlify.com/">Нетлифае</Link>
 	</>
 );

@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { Container, Box } from 'tamia';
 import Header from '../components/Header';
@@ -9,7 +8,13 @@ import PageContainer from '../components/PageContainer';
 import Base from './Base';
 import { title as siteTitle } from '@strings';
 
-const Page = ({ children, url, title }) => {
+type Props = {
+	children: React.ReactNode;
+	url: string;
+	title?: string;
+};
+
+const Page = ({ children, url, title }: Props) => {
 	return (
 		<Base>
 			<PageContainer>
@@ -29,13 +34,6 @@ const Page = ({ children, url, title }) => {
 			</PageContainer>
 		</Base>
 	);
-};
-
-Page.propTypes = {
-	children: PropTypes.node.isRequired,
-	url: PropTypes.string.isRequired,
-	title: PropTypes.string.isRequired,
-	pageTitle: PropTypes.string,
 };
 
 export default Page;

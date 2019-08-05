@@ -9,7 +9,7 @@ export default function Subscription() {
 			<Heading as="h2" level={3} mb="m">
 				{subscribeTitle}
 			</Heading>
-			<Text size="s" mb="m">
+			<Text variant="small" mb="m">
 				{subscribeInfo}
 			</Text>
 			<SubscriptionForm />

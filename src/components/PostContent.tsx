@@ -1,14 +1,14 @@
 import React from 'react';
-import styled from '@emotion/styled';
-import { Box, TextContent, themeGet } from 'tamia';
+import styled from 'styled-components';
+import { Box, TextContent } from 'tamia';
 
 const Container = styled(Box)`
 	/* Bigger font size on desktop */
-	line-height: ${themeGet('lineHeights.small')};
-	font-size: ${themeGet('fontSizes.m')};
-	@media (min-width: ${themeGet('breakpoints.small')}) {
-		line-height: ${themeGet('lineHeights.base')};
-		font-size: ${themeGet('fontSizes.mplus')};
+	line-height: ${p => p.theme.lineHeights.small};
+	font-size: ${p => p.theme.fontSizes.m};
+	@media (min-width: ${p => p.theme.breakpoints[0]}) {
+		line-height: ${p => p.theme.lineHeights.base};
+		font-size: ${p => p.theme.fontSizes.mplus};
 	}
 
 	/* Normalize use bolder which doesn't work with Georgia for some reason */
@@ -28,6 +28,10 @@ const Container = styled(Box)`
 	}
 `;
 
-export default function PostContent({ children }) {
+type Props = {
+	children: React.ReactNode;
+};
+
+export default function PostContent({ children }: Props) {
 	return <Container as={TextContent}>{children}</Container>;
 }

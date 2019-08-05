@@ -7,14 +7,23 @@ import {
 	twitter,
 } from '@strings';
 
-export default ({
+type Props = {
+	slug: string;
+	title?: string;
+	description?: string;
+	image?: string;
+	noIndex?: boolean;
+	children?: React.ReactNode;
+};
+
+export default function Metatags({
 	slug,
 	title = siteTitle,
 	description = defaultDescription,
 	image,
-	noIndex,
+	noIndex = false,
 	children,
-}) => {
+}: Props) {
 	const isBlogPost = slug.startsWith('/all/');
 	const imageUrl = image && `${siteUrl}${image}`;
 	return (
@@ -33,4 +42,4 @@ export default ({
 			{children}
 		</Helmet>
 	);
-};
+}

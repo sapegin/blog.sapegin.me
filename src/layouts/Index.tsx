@@ -1,17 +1,45 @@
 import React from 'react';
 import groupBy from 'lodash/groupBy';
 import { graphql } from 'gatsby';
-import { Box, Heading, Text, VisuallyHidden } from 'tamia';
+import { Box, Heading, VisuallyHidden } from 'tamia';
 import Page from './Page';
 import PostList from '../components/PostList';
 import Metatags from '../components/Metatags';
 import { Intro } from '@strings';
+import { Post } from '../types';
 
-const getYears = postsByYear => {
+type GroupedPosts = {
+	[year: string]: Post[];
+};
+
+const getYears = (postsByYear: GroupedPosts): string[] => {
 	const years = Object.keys(postsByYear);
 	years.sort();
 	years.reverse();
 	return years;
+};
+
+type Props = {
+	data: {
+		allMarkdownRemark: {
+			edges: {
+				node: {
+					fields: {
+						slug: string;
+					};
+					frontmatter: {
+						title: string;
+						tags: string[];
+						year: string;
+						dateTime: string;
+					};
+				};
+			}[];
+		};
+	};
+	location: {
+		pathname: string;
+	};
 };
 
 const Index = ({
@@ -19,7 +47,7 @@ const Index = ({
 		allMarkdownRemark: { edges },
 	},
 	location: { pathname },
-}) => {
+}: Props) => {
 	const posts = edges.map(({ node }) => ({
 		...node.fields,
 		...node.frontmatter,
@@ -29,14 +57,7 @@ const Index = ({
 	return (
 		<Page url={pathname}>
 			<Metatags slug={pathname} />
-			{Intro && (
-				<Box mb="l">
-					{/* eslint-disable-next-line */}
-					<Text style="italic">
-						<Intro />
-					</Text>
-				</Box>
-			)}
+			<Intro />
 			<VisuallyHidden as="h2">Blog posts</VisuallyHidden>
 			{years.map(year => (
 				<Box key={year} as="section" mb="l">
@@ -67,7 +88,7 @@ export const pageQuery = graphql`
 						title
 						tags
 						year: date(formatString: "YYYY")
-						datetime: date(formatString: "YYYY-MM-DD")
+						dateTime: date(formatString: "YYYY-MM-DD")
 					}
 				}
 			}
