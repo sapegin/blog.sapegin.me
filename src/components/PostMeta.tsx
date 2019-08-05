@@ -28,8 +28,6 @@ const Item = styled(Text)`
 	}
 `;
 
-const ItemTime = Item.withComponent('time');
-
 type Props = {
 	slug: string;
 	date: string;
@@ -47,9 +45,11 @@ export default function PostMeta({ slug, date, dateTime }: Props) {
 			<Item as="span" variant="small">
 				<Link href={`${GITHUB_PREFIX}${lang}${filename}`}>{editPost}</Link>
 			</Item>
-			<ItemTime variant="small" dateTime={dateTime}>
-				<PublishedOn date={date} />
-			</ItemTime>
+			<Item variant="small">
+				<time dateTime={dateTime}>
+					<PublishedOn date={date} />
+				</time>
+			</Item>
 		</List>
 	);
 }
