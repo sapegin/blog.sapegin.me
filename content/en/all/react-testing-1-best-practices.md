@@ -12,7 +12,7 @@ tags:
 
 This series of articles is an in-depth snapshot of the current state of testing React components and frontend in general, explaining many _whys_, not just _hows_. We’ll discuss why to write automated tests, what tests to write and how to write them. In practical articles we’ll learn how to use Jest, Enzyme and React Testing Library to test React components.
 
-I’ve written [a similar article](https://blog.sapegin.me/all/react-jest/) three years ago, and now I look at it like at a handbook of bad practices. Almost everything I was recommending back then, I don’t do anymore.
+I wrote [a similar article](https://blog.sapegin.me/all/react-jest/) three years ago, and now I look at it like at a handbook of bad practices. Almost everything I was recommending back then, I don’t do anymore.
 
 **This is the first article in a series**, where we learn why test automation is useful, which types of tests to write, and testing best practices.
 
@@ -20,15 +20,15 @@ I’ve written [a similar article](https://blog.sapegin.me/all/react-jest/) thre
 - Modern React testing: Jest and Enzyme (coming soon!)
 - Modern React testing: Jest and React Testing Library (coming soon!)
 
-Subscribe at the bottom of the page to know about the send and the third articles.
+Subscribe at the bottom of the page to know about the second and the third articles.
 
 ## Why automate testing
 
 There are many reasons why automated tests are useful but my favorite reason is: _you’re already testing_.
 
-For example, you’re adding a new button to a page. Then you open this page in a browser and click this button to check that it works — this is a _manual test_. By automating this process you can be sure that features that used to work will always work as they should.
+For example, you’re adding a new button to a page. Then you open this page in a browser and click this button to check whether it works — this is a _manual test_. By automating this process you can be sure that features that used to work will always work as they should.
 
-Automated tests are especially useful for rarely used features: we always test that the button submits the form with all fields filled correctly, but we tend to forget to test that checkbox hidden in a modal and only used by the boss of your boss. Automated tests will make sure it still works.
+Automated tests are especially useful for rarely used features: we always test whether the button submits the form with all fields filled correctly, but we tend to forget to test that checkbox hidden in a modal and only used by the boss of your boss. Automated tests will make sure it still works.
 
 Other reasons to automate tests are:
 
