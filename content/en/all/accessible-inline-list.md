@@ -1,6 +1,7 @@
 ---
 layout: Post
 title: 'Accessible inline list with bullets between items'
+description: 'Making lists with bullets between items (like · this · one) accessible can be surprisingly hard.'
 date: 2019-07-19
 lang: en
 tags:
