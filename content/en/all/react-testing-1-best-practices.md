@@ -8,6 +8,7 @@ tags:
   - tools
   - react
   - testing
+  - testing-series
 ---
 
 This series of articles is an in-depth snapshot of the current state of testing React components and frontend in general, explaining many _whys_, not just _hows_. We’ll discuss why to write automated tests, what tests to write and how to write them. In practical articles we’ll learn how to use Jest, Enzyme and React Testing Library to test React components.
@@ -17,7 +18,7 @@ I wrote [a similar article](https://blog.sapegin.me/all/react-jest/) three years
 **This is the first article in a series**, where we learn why test automation is useful, which types of tests to write, and testing best practices.
 
 - **Modern React testing: best practices (_this post_)**
-- Modern React testing: Jest and Enzyme (coming soon!)
+- [Modern React testing: Jest and Enzyme](/all/react-testing-2-jest-and-enzyme/)
 - Modern React testing: Jest and React Testing Library (coming soon!)
 
 Subscribe at the bottom of the page to know about the second and the third articles.
@@ -194,4 +195,4 @@ Now we’re ready to start writing our own tests. Next two articles in these ser
 
 ---
 
-Thanks to Joe Boyle, Kent C. Dodds, Patrick Hund, Monica Lent, Morgan Packard, Alexander Plavinski, Giorgio Polvara, Juho Vepsäläinen.
+Thanks to Joe Boyle, Kent C. Dodds, Anna Gerus, Patrick Hund, Monica Lent, Morgan Packard, Alexander Plavinski, Giorgio Polvara, Juho Vepsäläinen.

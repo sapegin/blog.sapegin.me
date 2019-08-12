@@ -12,7 +12,13 @@ tags:
   - testing
 ---
 
+\*\*August 2019: This article is out of date, check [my new article about testing React components with Jest and Enzyme](/all/react-testing-2-jest-and-enzyme/).
+
+---
+
 **October 2017: the article was updated to React 16 and Enzyme 3.**
+
+---
 
 Some people say that testing React components is useless and in many cases it is, but there are a few cases when I think it’s useful:
 
