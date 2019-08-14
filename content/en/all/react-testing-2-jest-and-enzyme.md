@@ -747,7 +747,7 @@ I usually don’t reuse any queries in my tests, and write little helper functio
 
 Wrap “units” of interaction, like rendering, user events, or data fetching, with the [act()](https://reactjs.org/docs/test-utils.html#act) method from React Test Utilities to make your tests better resemble how your users will interact with your app.
 
-Enzymes calls the `act()` method for you in some of its methods, like `simulate()`, but in some cases you need to use it manually in your tests.
+Enzyme calls the `act()` method for you in some of its methods, like `simulate()`, but in some cases you need to use it manually in your tests.
 
 [Testing recipes page](https://reactjs.org/docs/testing-recipes.html) has a better explanation of the `act()` method and more examples of its usage.
 
