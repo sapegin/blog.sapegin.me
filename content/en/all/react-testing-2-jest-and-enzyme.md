@@ -680,9 +680,9 @@ const Button = props => <button className="Button" {...props} />;
 
 You have a form:
 
-```html
+```jsx
 <form>
-  <button data-testid="pizzaForm-submit">Cook pizza!</button>
+  <Button data-testid="pizzaForm-submit">Cook pizza!</button>
 </form>
 ```
 
@@ -694,9 +694,9 @@ wrapper.find('[data-testid="pizzaForm-submit"]').simulate('click');
 
 This won’t work because `find()` returns two nodes: one for the `Button` React component, and one for the `button` HTML element, because the component tree would look like this:
 
-```html
-<button data-testid="pizzaForm-submit">
-  <button data-testid="pizzaForm-submit">Cook pizza!</button>
+```jsx
+<Button data-testid="pizzaForm-submit">
+  <button className="Button" data-testid="pizzaForm-submit">Cook pizza!</button>
 </button>
 ```
 
