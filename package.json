@@ -15,10 +15,10 @@
     "typecheck": "tsc",
     "lint:css": "stylelint 'src/**/*.tsx'",
     "lint:md": "remark --quiet \"content/**/*.md\"",
+    "lint:js": "eslint . --cache --fix --ext .ts,.tsx",
     "format": "prettier --write \"**/*.{js,tsx,md}\"",
     "styleguide": "styleguidist server",
-    "styleguide:build": "styleguidist build",
-    "lint": "eslint . --cache --fix --ext .ts,.tsx"
+    "styleguide:build": "styleguidist build"
   },
   "engines": {
     "node": ">=8.9"
