@@ -697,7 +697,7 @@ This won’t work because `find()` returns two nodes: one for the `Button` Reac
 ```jsx
 <Button data-testid="pizzaForm-submit">
   <button className="Button" data-testid="pizzaForm-submit">Cook pizza!</button>
-</button>
+</Button>
 ```
 
 To avoid that, you need to use the Enzyme’s [hostNodes()](https://airbnb.io/enzyme/docs/api/ReactWrapper/hostNodes.html) method:
