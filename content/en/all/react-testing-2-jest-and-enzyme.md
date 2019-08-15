@@ -682,7 +682,7 @@ You have a form:
 
 ```jsx
 <form>
-  <Button data-testid="pizzaForm-submit">Cook pizza!</button>
+  <Button data-testid="pizzaForm-submit">Cook pizza!</Button>
 </form>
 ```
 
