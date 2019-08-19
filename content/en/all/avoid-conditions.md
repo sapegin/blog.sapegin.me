@@ -410,7 +410,7 @@ const sessionGet = (key, isHornsAndHooves, sku) =>
   Session.get(getSessionKey(key, isHornsAndHooves, sku));
 
 const sessionSet = (key, sku, isHornsAndHooves, value) =>
-  Session.get(getSessionKey(key, isHornsAndHooves, sku), value);
+  Session.set(getSessionKey(key, isHornsAndHooves, sku), value);
 
 function getSpecialOffersArray(sku, isHornsAndHooves) {
   const cachedOffers = sessionGet(
@@ -456,7 +456,7 @@ const sessionGet = (key, brand, sku) =>
   Session.get(getSessionKey(key, brand, sku));
 
 const sessionSet = (key, sku, brand, value) =>
-  Session.get(getSessionKey(key, brand, sku), value);
+  Session.set(getSessionKey(key, brand, sku), value);
 
 function getSpecialOffersArray(sku, brand) {
   const cachedOffers = sessionGet(
@@ -492,7 +492,7 @@ const sessionGet = (key, brand, sku) =>
   Session.get(getSessionKey(key, brand, sku));
 
 const sessionSet = (key, brand, sku, value) =>
-  Session.get(getSessionKey(key, brand, sku), value);
+  Session.set(getSessionKey(key, brand, sku), value);
 
 const withSessionCache = (key, fn) => (brand, sku, ...args) => {
   const cachedValue = sessionGet(key, brand, sku);
