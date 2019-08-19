@@ -70,7 +70,7 @@
     "react-styleguidist": "^9.1.14",
     "remark-cli": "^7.0.0",
     "remark-lint": "^6.0.5",
-    "richtypo": "^4.0.6",
+    "richtypo": "^4.0.7",
     "richtypo-rules-en": "^4.0.4",
     "richtypo-rules-ru": "^4.0.2",
     "stylelint": "^10.1.0",
