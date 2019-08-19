@@ -1,8 +1,8 @@
 ---
 layout: Post
-title: 'Modern React testing, part 2: Jest and Enzyme'
-description: 'You’ll learn how to test React components with Jest and Enzyme and how to apply the best practices we’ve learned in the first article.'
-date: 2019-08-12
+title: 'Modern React testing, part 3: Jest and React Testing Library'
+description: 'You’ll learn how to test React components with Jest and React Testing Library and how to apply the best practices we’ve learned in the first article.'
+date: 2019-08-19
 lang: en
 tags:
   - tools
@@ -11,22 +11,22 @@ tags:
   - testing-series
 ---
 
-Enzyme is probably the most popular tool to test React components. And though it has good competition now (see the next article!), it’s still used by many teams.
+React Testing Library is a small library to test React components, that makes applying best practices, we’ve learned in the first article, easy.
 
-**This is the second article in a series**, where we learn how to test React components with Jest and Enzyme and how to apply the best practices we’ve learned in the first article.
+**This is the third article in a series**, where we learn how to test React component with Jest and React Testing Library.
 
 - [Modern React testing: best practices](/all/react-testing-1-best-practices/)
-- **Modern React testing: Jest and Enzyme (_this post_)**
-- [Modern React testing: Jest and React Testing Library](/all/react-testing-3-jest-and-react-testing-library/)
+- [Modern React testing: Jest and Enzyme](/all/react-testing-2-jest-and-enzyme/)
+- **Modern React testing: Jest and React Testing Library (_this post_)**
 
-## Getting started with Jest and Enzyme
+## Getting started with Jest and React Testing Library
 
 We’ll set up and use these tools:
 
 - [Jest](https://jestjs.io/), a test runner;
-- [Enzyme](https://airbnb.io/enzyme/), a testing utility for React;
+- [React Testing Library](https://testing-library.com/react), a testing utility for React;
 
-### Why Jest and Enzyme
+### Why Jest and React Testing Library
 
 **Jest** has many benefits over other test runners:
 
@@ -38,20 +38,28 @@ We’ll set up and use these tools:
 - Coverage reports.
 - [Rich matchers API](https://github.com/sapegin/jest-cheat-sheet#matchers).
 
-**Enzyme** gives you jQuery-like API to find elements, trigger event handler, and so on. It used to be the de facto tool for testing React components and still very popular. Here I’m not trying to convince you to use Enzyme, but merely sharing my experience with it. We’ll explore a popular alternative, [React Testing Library](https://testing-library.com/react), in the next article in this series.
+**React Testing Library** has some benefits over Enzyme:
 
-Some of the Enzyme cons are:
+- Much simpler API.
+- Convenient queries (form label, image alt, ARIA role).
+- Async queries and utilities.
+- Better error messages.
+- Easier setup.
+- [Recommended by React team](https://reactjs.org/docs/test-utils.html#overview).
 
-- The API surface is too big, you need to know which methods are good and which are not.
-- Too easy to access component internals.
-- The API isn’t optimized for modern testing best practices.
+React Testing Library helps you write good tests and makes writing bad test hard.
 
-### Setting up Jest and Enzyme
+Some of the cons could be:
+
+- If you disagree with some of the best practices in this articles, Enzyme may be a better choice for you, since its API isn’t opinionated.
+- React Testing Library is a new tool: it’s less mature and the community is smaller than Enzyme.
+
+### Setting up Jest and React Testing Library
 
 First, install all the dependencies including peer dependencies:
 
 ```bash
-npm install --save-dev jest react-test-renderer enzyme enzyme-adapter-react-16 node-fetch
+npm install --save-dev jest @testing-library/react node-fetch
 ```
 
 You’ll also need [babel-jest](https://github.com/facebook/jest/tree/master/packages/babel-jest) for Babel and [ts-jest](https://github.com/kulshekhar/ts-jest) for TypeScript. If you’re using webpack, make sure to enable ECMAScript modules transformation for the `test` environment.
@@ -59,12 +67,6 @@ You’ll also need [babel-jest](https://github.com/facebook/jest/tree/master/pac
 Create a `src/setupTests.js` file to customize the Jest environment:
 
 ```js
-import Enzyme from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-
-// Configure Enzyme with React 16 adapter
-Enzyme.configure({ adapter: new Adapter() });
-
 // If you're using the fetch API
 import fetch from 'node-fetch';
 global.fetch = fetch;
@@ -77,15 +79,13 @@ Then update your `package.json` like this:
   "name": "pizza",
   "version": "1.0.0",
   "dependencies": {
-    "react": "16.8.3",
-    "react-dom": "16.8.3"
+    "react": "16.9.0",
+    "react-dom": "16.9.0"
   },
   "devDependencies": {
-    "enzyme": "3.9.0",
-    "enzyme-adapter-react-16": "1.11.2",
-    "jest": "24.6.0",
-    "node-fetch": "2.6.0",
-    "react-test-renderer": "16.8.6"
+    "@testing-library/react": "^9.1.3",
+    "jest": "24.9.0",
+    "node-fetch": "2.6.0"
   },
   "scripts": {
     "test": "jest",
@@ -104,39 +104,29 @@ The `setupFilesAfterEnv` option tells Jest about our setup file, that we’ve c
 
 The best location for a test is close to the source code. For example, if you have a component at `src/components/Button.js`, a test for this component could be at `src/components/__tests__/Button.spec.js`. Jest will find and run this test automatically.
 
-So, let’s create our first test:
+So, let’s create out first test:
 
 ```jsx
 import React from 'react';
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
 
 test('hello world', () => {
-  const wrapper = mount(<p>Hello Jest!</p>);
-  expect(wrapper.text()).toMatch('Hello Jest!');
+  const { getByText } = render(<p>Hello Jest!</p>);
+  expect(getByText('Hello Jest!')).toBeTruthy();
 });
 ```
 
-Here we’re rendering a paragraph of text using the Enzyme’s [mount()](https://airbnb.io/enzyme/docs/api/ReactWrapper/mount.html) method, then testing that a rendered tree contains “Hello Jest!” text using the Enzyme’s `text()` method and Jest’s `toMatch()` assert.
+Here we’re rendering a paragraph of text using the React Testing Library’s [render()](https://testing-library.com/docs/react-testing-library/api#render) method, then testing that a paragraph containing “Hello Jest!” was rendered using React Testing Library’s [getByText()](https://testing-library.com/docs/dom-testing-library/api-queries#bytext) method and Jest’s `toBeTruthy()` assert.
 
 ### Running tests
 
 Run `npm test` (or `npm t`) to run all tests. You’ll see something like this:
 
-![Running Jest and Enzyme tests in the terminal](/images/jest-enzyme.png)
+![Running Jest and React Testing Library tests in the terminal](/images/jest-react-testing-library.png)
 
 Run `npm run test:watch` to run Jest in watch mode: Jest will run only tests that are related to files changed since the last commit, and Jest will rerun these test any time you change the code. This is how I usually run Jest. Watch mode is fast enough even in large projects, where running all test takes many minutes.
 
 Run `npm run test:coverage` to run all tests and generate coverage report. You can find it in the `coverage` folder.
-
-### mount() vs shallow() vs render()
-
-Enzyme has three rendering methods:
-
-- `mount()` renders the whole DOM tree and gives you jQuery-like API to access DOM elements inside this tree, simulate events and read text content. _I prefer this method most of the time._
-
-- `render()` returns a string with rendered HTML code, similar to the `renderToString()` method from `react-dom`. _It’s useful_ when you need to test HTML output. For example, a component that renders Markdown.
-
-- `shallow()` renders only the component itself without its children. _I never use it._ Imagine, you want to click a button in your feature and see that text somewhere changes, but likely both, the button and the text, will be inside children components, so you’ll end up testing internals like props or state, which should be avoided. See Kent C. Dodds’ article [Why I never use shallow rendering](https://kentcdodds.com/blog/why-i-never-use-shallow-rendering) for more details.
 
 ### Snapshot testing
 
@@ -173,8 +163,8 @@ For example, instead of snapshotting the whole component output:
 
 ```jsx
 test('shows out of cheese error message', () => {
-  const wrapper = mount(<Pizza />);
-  expect(wrapper.debug()).toMatchSnapshot();
+  const { container } = render(<Pizza />);
+  expect(container.firstChild).toMatchSnapshot();
 });
 ```
 
@@ -182,8 +172,8 @@ Only snapshot a part you’re testing:
 
 ```jsx
 test('shows out of cheese error message', () => {
-  const wrapper = mount(<Pizza />);
-  const error = wrapper.find('[data-testid="errorMessage"]').text();
+  const { getByRole } = render(<Pizza />);
+  const error = getByRole('alert').textContent;
   expect(error).toMatchInlineSnapshot(`Error: Out of cheese!`);
 });
 ```
@@ -205,11 +195,30 @@ Let’s compare different methods of selecting DOM elements:
 
 To summarise:
 
-- Prefer queries that rely on information visible to the user, like button labels, or to assistive technologies, like image `alt` attributes or ARIA `role`s.
-- Use `data-testid` when none of the above works.
-- Avoid implementation details like HTML element or React component names, CSS class names or IDs.
+- Text content may change and you’ll need to update your tests. This may not be a problem if your translation library only render string IDs in tests, or if you want your test to work with the actual text users see in the app.
+- Test IDs clutter your markup with props you only need in tests. Test IDs are also something that users of your app don’t see: if you remove a label from a button, a test with test ID will still pass. You may want to set up something to remove them from the markup you send to your users.
 
-For example, to select this button in a test:
+React Testing Library has methods for all good queries. There are [six variants of query methods](https://testing-library.com/docs/dom-testing-library/api-queries#variants):
+
+- `getBy*()` returns the first matching element and throws when an element not found or more than one element found;
+- `queryBy*()` returns the first matching element but doesn’t throw;
+- `findBy*()` returns a promise that resolves with a matching element, or rejects when an element not found after a default timeout or more than one element found;
+- `getAllBy*()`, `queryAllBy*()`, `findAllBy*()`: same as above but return all found elements, not just the first one.
+
+And [the queries](https://testing-library.com/docs/dom-testing-library/api-queries#queries) are:
+
+- `getByLabelText()` finds a form element by its `<label>`;
+- `getByPlaceholderText()` finds a form element by its placeholder text;
+- `getByText()` finds an element by its text content;
+- `getByAltText()` finds an image by its alt text;
+- `getByTitle()` finds an element by its `title` attribute;
+- `getByDisplayValue()` finds a form element by its value;
+- `getByRole()` finds an element by its ARIA role;
+- `getByTestId()` finds an element by its test ID.
+
+All queries are available in all variants. For example, besides `getByLabelText()` there are also `queryByLabelText()`, `getAllByLabelText()`, `queryAllByLabelText()`, `findByLabelText()` and `findAllByLabelText()`.
+
+Let’s see how to use query methods. To select this button in a test:
 
 ```jsx
 <button data-testid="cookButton">Cook pizza!</button>
@@ -218,47 +227,29 @@ For example, to select this button in a test:
 We can either query it by its text content:
 
 ```jsx
-const wrapper = mount(<Pizza />);
-wrapper.find({children: "Cook pizza!"]})
+const { getByText } = render(<Pizza />);
+getByText(/cook pizza!/i);
 ```
+
+Note that I’m using a regular expression (`/cook pizza!/i`) instead of a string literal (`’Cook pizza!’`) to make queries more resilient to small tweaks and changes in the content.
 
 Or query it by the test ID:
 
 ```jsx
-const wrapper = mount(<Pizza />);
-wrapper.find({'data-testid': "cookButton"]})
+const { getByTestId } = render(<Pizza />);
+getByTestId('cookButton');
 ```
 
-Both are valid, and both have their downsides:
+Both are valid, and both have their own downsides:
 
-- Text content may change and you’ll need to update your tests. This may not be a problem if your translation library only render string IDs in tests, or if you want your test to work with the actual text users see in the app.
-- Test IDs clutter your markup with props you only need in tests. Test IDs are also something that users of your app don’t see: if you remove a label from a button, a test with test ID will still pass. You may want to set up something to remove them from the markup you send to your users.
+- After all insignificant content changes you’ll need to update your tests. This may not be a problem if your translation library only render string IDs in tests, so then they stay the same even after changing the text, as long as the overall meaning is the same.
+- Test IDs clutter your markup with props you only need in tests. You may want to set up something to remove them from the markup you send to your users.
 
 There’s no single perfect method of selecting elements in tests, but some methods are better than some others.
 
-### To `simulate()` or not
-
-There are two ways to fire an event in Enzyme:
-
-- using `simulate()` method, like `wrapper.simulate('click')`;
-- calling an event handler prop directly, like `wrapper.props().onClick()`.
-
-Which method to use is a big debate in the Enzyme community.
-
-[The name `simulate()` is misleading](https://github.com/airbnb/enzyme/issues/1606): it doesn’t really simulate an event but calls the prop the same way we’d do it manually. These two lines will do almost the same:
-
-```js
-wrapper.simulate('click');
-wrapper.props().onClick();
-```
-
-[There’s one difference](https://github.com/airbnb/enzyme#reacttestutilsact-wrap) when you use Hooks in your components: [simulate()](https://airbnb.io/enzyme/docs/api/ReactWrapper/simulate.html) will call [act()](https://reactjs.org/docs/test-utils.html#act) method from Test Utilities to “make your test run closer to how React works in the browser”. You’ll see a warning from React when you call an event handler directly on a component with Hooks.
-
-Most of the time difference between calling an event handler directly (either by calling a prop or with `simulate()` method) and the real browser behavior isn’t important but in some cases this difference may lead you to misunderstanding of your tests’ behavior. For example, if you `simulate()` a click on a submit button in a form, it won’t submit the form, like a real submit button would do.
-
 ## Testing React components
 
-Check out all the examples [on CodeSandbox](https://codesandbox.io/s/github/sapegin/enzyme-article-2019). Unfortunately, CodeSandbox doesn’t fully support Jest and some tests fail there, unless you clone [the GitHub repository](https://github.com/sapegin/enzyme-article-2019) and run tests locally.
+Check out all the examples [on CodeSandbox](https://codesandbox.io/s/github/sapegin/rtl-article-2019). Unfortunately, CodeSandbox doesn’t fully support Jest and some tests fail there, unless you clone [the GitHub repository](https://github.com/sapegin/rtl-article-2019) and run tests locally.
 
 ### Testing rendering
 
@@ -266,15 +257,15 @@ This kind of test can be useful when your component has several variations and y
 
 ```jsx
 import React from 'react';
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
 import Pizza from '../Pizza';
 
 test('contains all ingredients', () => {
   const ingredients = ['bacon', 'tomato', 'mozzarella', 'pineapples'];
-  const wrapper = mount(<Pizza ingredients={ingredients} />);
+  const { getByText } = render(<Pizza ingredients={ingredients} />);
 
   ingredients.forEach(ingredient => {
-    expect(wrapper.text()).toMatch(ingredient);
+    expect(getByText(ingredient)).toBeTruthy();
   });
 });
 ```
@@ -283,37 +274,36 @@ Here we’re testing that our `Pizza` component renders all ingredients passed t
 
 ### Testing user interaction
 
-To “simulate” (see “To `simulate()` or not” above) an event like `click` or `change`, call this event’s prop directly and then test the output:
+To simulate an event like `click` or `change`, use `fireEvent.*()` methods and then test the output:
 
 ```jsx
 import React from 'react';
-import { mount } from 'enzyme';
+import { render, fireEvent } from '@testing-library/react';
 import ExpandCollapse from '../ExpandCollapse';
 
 test('button expands and collapses the content', () => {
   const children = 'Hello world';
-  const wrapper = mount(
+  const { getByText, queryByText } = render(
     <ExpandCollapse excerpt="Information about dogs">
       {children}
     </ExpandCollapse>
   );
 
-  expect(wrapper.text()).not.toMatch(children);
+  expect(queryByText(children)).not.toBeTruthy();
 
-  wrapper.find({ children: 'Expand' }).simulate('click');
+  fireEvent.click(getByText(/expand/i));
 
-  expect(wrapper.text()).toMatch(children);
+  expect(queryByText(children)).toBeTruthy();
 
-  wrapper.update();
-  wrapper.find({ children: 'Collapse' }).simulate('click');
+  fireEvent.click(getByText(/collapse/i));
 
-  expect(wrapper.text()).not.toMatch(children);
+  expect(queryByText(children)).not.toBeTruthy();
 });
 ```
 
 Here we have a component that shows some text when you click the “Expand” button and hides it when you click the “Collapse” button. Our test verifies this behavior.
 
-_See “Enzyme caveats” section below for more information on the `wrapper.update()` method._
+We’re using `queryByText()` method instead of `getByText()` because the former doesn’t throw when an element not found: this way we can test that an element doesn’t exist.
 
 _See the next section for a more complex example of testing events._
 
@@ -325,27 +315,26 @@ When you unit test a single component, event handlers are often defined in the p
 
 ```jsx
 import React from 'react';
-import { mount } from 'enzyme';
+import { render, fireEvent } from '@testing-library/react';
 import Login from '../Login';
 
 test('submits username and password', () => {
   const username = 'me';
   const password = 'please';
   const onSubmit = jest.fn();
-  const wrapper = mount(<Login onSubmit={onSubmit} />);
+  const { getByLabelText, getByText } = render(
+    <Login onSubmit={onSubmit} />
+  );
 
-  wrapper
-    .find({ 'data-testid': 'loginForm-username' })
-    .simulate('change', { target: { value: username } });
-
-  wrapper
-    .find({ 'data-testid': 'loginForm-password' })
-    .simulate('change', { target: { value: password } });
-
-  wrapper.update();
-  wrapper.find({ 'data-testid': 'loginForm' }).simulate('submit', {
-    preventDefault: () => {}
+  fireEvent.change(getByLabelText(/username/i), {
+    target: { value: username }
   });
+
+  fireEvent.change(getByLabelText(/password/i), {
+    target: { value: password }
+  });
+
+  fireEvent.click(getByText(/log in/i));
 
   expect(onSubmit).toHaveBeenCalledTimes(1);
   expect(onSubmit).toHaveBeenCalledWith({
@@ -355,9 +344,9 @@ test('submits username and password', () => {
 });
 ```
 
-Here we’re using `jest.fn()` to define a spy for `onSubmit` prop of our `Login` component, then we’re filling the form using a technique, described in the previous section, then we’re calling the `onSubmit` prop on a `<form>` element and check that the `onSubmit` function was called only once and it has received login and password.
+Here we’re using `jest.fn()` to define a spy for `onSubmit` prop of our `Login` component, then we’re filling the form using a technique, described in the previous section, then we simulate a click on the submit button and check that the `onSubmit` function was called only once and it has received login and password.
 
-Firing a form submit handler directly is not ideal, because it may lead to false positives in our test, but that’s the only way we can submit a form with Enzyme. For example, we can’t test that a submit button actually submits the form. Some people think such tests are testing the browser, not our code, and should be avoided. But they are not: there are many ways you can mess up a submit button, like placing it outside of the form or with `type="button"`.
+In comparison to Enzyme we don’t have to call a form submit handler directly. React Testing Library’s `fireEvent.click()` method will dispatch a click event on the DOM node which is captured and handled by React the same way a normal click would be handled. For example, it will dispatch a form submit event when we “click” a `<button type="submit">`, and won’t dispatch it when we “click” a `<button type="button">`, which makes our tests more reliable.
 
 ### Async tests
 
@@ -372,24 +361,33 @@ const wait = (time = 0) =>
 test('something async', async () => {
   // Run an async operation...
   await wait(100).then(() => {
-    expect(wrapper.text()).toMatch('Done!');
+    expect(getByText('Done!')).toBeTruthy();
   });
 });
 ```
 
 This approach is problematic. The delay will always be a random number. A number that is good enough on a developer’s machine at the time of writing the code. But it can be too long or too short at any other time and on any other machine. When it’s too long, our test will run longer than necessary. When it’s too short, our test will break.
 
-A better approach would be polling: waiting for the desired result, like new text on a page, by checking it multiple times with short intervals, until the expectation is true. The [wait-for-expect](https://github.com/TheBrainFamily/wait-for-expect) library does exactly that:
+A better approach would be polling: waiting for the desired result, like new text on a page, by checking it multiple times with short intervals, until the expectation is true. React Testing Library has a few tools for that. First is a generic [`wait()` method](https://testing-library.com/docs/dom-testing-library/api-async#wait) (there are also a few others for more specific use cases):
 
 ```js
-import waitForExpect from 'wait-for-expect';
+import { wait } from '@testing-library/react';
 
+test('something async', async () => {
+  // Run an async operation...
+  await wait(() => {
+    expect(getByText('Done!')).toBeTruthy();
+  });
+});
+```
+
+But for querying elements we can use `findBy*()` and `findAllBy*()` methods that will wait for an element to appear:
+
+```js
 test('something async', async () => {
   expect.assertions(1);
   // Run an async operation...
-  await waitForExpect(() => {
-    expect(wrapper.text()).toMatch('Done!');
-  });
+  expect(await findByText('Done!')).toBeTruthy();
 });
 ```
 
@@ -408,7 +406,7 @@ There are many ways to test components, that send network requests:
 - mocking a high-level network API, like `fetch`;
 - mocking a low-level network API, that catches all ways of making network requests.
 
-I’m not mentioning sending a real network request to a real API as an option here, because it’s slow and fragile. Every network problem or change of the data, returned by the API, may break our tests. Also, you’ll need to have the right data for all test cases — hard to achieve with a real API or a database.
+I’m not mentioning sending a real network request to a real API as an option here, because it’s slow and fragile. Every network problem or change of the data, returned by the API, may break our tests. Also, you’ll need to have the right data for all test cases — hard to achieve with a real API or a database.
 
 **Dependency injection** is when you pass a dependency as a function parameter or a component prop, instead of hardcoding it inside a module. This allows you to pass another implementation in a test. Use default function parameters or default component props to define the default implementation, one that should be used in non-test code. That way you won’t have to pass the dependency every time you use a function or a component:
 
@@ -455,9 +453,7 @@ But in tests we’ll pass a custom implementation, that returns mock data instea
 
 ```jsx
 import React from 'react';
-import { mount } from 'enzyme';
-import { act } from 'react-dom/test-utils';
-import waitForExpect from 'wait-for-expect';
+import { render, fireEvent, wait } from '@testing-library/react';
 import RemotePizza from '../RemotePizza';
 
 const ingredients = ['bacon', 'tomato', 'mozzarella', 'pineapples'];
@@ -469,24 +465,19 @@ test('download ingredients from internets', async () => {
     Promise.resolve({
       args: { ingredients }
     });
-  const wrapper = mount(
+  const { getByText } = render(
     <RemotePizza fetchIngredients={fetchIngredients} />
   );
 
-  await act(async () => {
-    wrapper.find({ children: 'Cook' }).simulate('click');
-  });
+  fireEvent.click(getByText(/cook/i));
 
-  await waitForExpect(() => {
-    wrapper.update();
+  await wait(() => {
     ingredients.forEach(ingredient => {
-      expect(wrapper.text()).toMatch(ingredient);
+      expect(getByText(ingredient)).toBeTruthy();
     });
   });
 });
 ```
-
-Note that we’re wrapping async operations in the `act()` method here.
 
 Dependency injection is great for unit tests, when you’re rendering a component that accepts an injection directly, but for integration tests need too much boilerplate to pass dependencies to deeply nested components.
 
@@ -518,9 +509,7 @@ And now we can mock it in our test:
 
 ```jsx
 import React from 'react';
-import { mount } from 'enzyme';
-import { act } from 'react-dom/test-utils';
-import waitForExpect from 'wait-for-expect';
+import { render, fireEvent, wait } from '@testing-library/react';
 import RemotePizza from '../RemotePizza';
 import { fetchIngredients } from '../../services';
 
@@ -537,16 +526,13 @@ test('download ingredients from internets', async () => {
 
   fetchIngredients.mockResolvedValue({ args: { ingredients } });
 
-  const wrapper = mount(<RemotePizza />);
+  const { getByText } = render(<RemotePizza />);
 
-  await act(async () => {
-    wrapper.find({ children: 'Cook' }).simulate('click');
-  });
+  fireEvent.click(getByText(/cook/i));
 
-  await waitForExpect(() => {
-    wrapper.update();
+  await wait(() => {
     ingredients.forEach(ingredient => {
-      expect(wrapper.text()).toMatch(ingredient);
+      expect(getByText(ingredient)).toBeTruthy();
     });
   });
 });
@@ -560,10 +546,8 @@ We’ll use [fetch-mock](http://www.wheresrhys.co.uk/fetch-mock/) to mock the AP
 
 ```jsx
 import React from 'react';
-import { mount } from 'enzyme';
+import { render, fireEvent, wait } from '@testing-library/react';
 import fetchMock from 'fetch-mock';
-import { act } from 'react-dom/test-utils';
-import waitForExpect from 'wait-for-expect';
 import RemotePizza from '../RemotePizza';
 
 const ingredients = ['bacon', 'tomato', 'mozzarella', 'pineapples'];
@@ -579,16 +563,13 @@ test('download ingredients from internets', async () => {
     body: { args: { ingredients } }
   });
 
-  const wrapper = mount(<RemotePizza />);
+  const { getByText } = render(<RemotePizza />);
 
-  await act(async () => {
-    wrapper.find({ children: 'Cook' }).simulate('click');
-  });
+  fireEvent.click(getByText(/cook/i));
 
-  await waitForExpect(() => {
-    wrapper.update();
+  await wait(() => {
     ingredients.forEach(ingredient => {
-      expect(wrapper.text()).toMatch(ingredient);
+      expect(getByText(ingredient)).toBeTruthy();
     });
   });
 });
@@ -602,10 +583,8 @@ We’ll use [Nock](https://github.com/nock/nock) to mock the network request:
 
 ```jsx
 import React from 'react';
-import { mount } from 'enzyme';
+import { render, fireEvent, wait } from '@testing-library/react';
 import nock from 'nock';
-import { act } from 'react-dom/test-utils';
-import waitForExpect from 'wait-for-expect';
 import RemotePizza from '../RemotePizza';
 
 const ingredients = ['bacon', 'tomato', 'mozzarella', 'pineapples'];
@@ -622,17 +601,15 @@ test('download ingredients from internets', async () => {
     .query(true)
     .reply(200, { args: { ingredients } });
 
-  const wrapper = mount(<RemotePizza />);
+  const { getByText } = render(<RemotePizza />);
 
-  await act(async () => {
-    wrapper.find({ children: 'Cook' }).simulate('click');
-  });
+  fireEvent.click(getByText(/cook/i));
 
-  await waitForExpect(() => {
-    wrapper.update();
-    expect(scope.isDone()).toBe(true);
+  expect(scope.isDone()).toBe(true);
+
+  await wait(() => {
     ingredients.forEach(ingredient => {
-      expect(wrapper.text()).toMatch(ingredient);
+      expect(getByText(ingredient)).toBeTruthy();
     });
   });
 });
@@ -649,129 +626,25 @@ I’d choose between `jest.mock()` and Nock:
 - `jest.mock()` is already available with Jest and you don’t need to set up and learn anything new — it works the same way as mocking any other modules.
 - Nock has slightly more convenient API than fetch-mock, and debugging tools. It can also record real network request, so you don’t have to hand-craft mock responses.
 
-## Enzyme caveats
-
-### `update()` method
-
-Enzyme’s [update()](https://airbnb.io/enzyme/docs/api/ReactWrapper/update.html) is a magical thing. That’s how the docs describe it:
-
-> Forces a re-render. Useful to run before checking the render output if something external may be updating the state of the component somewhere.
-
-Someone doing something somewhere. I couldn’t find any logic on when you need to use it. So my rule of thumb is: write tests without it until you see stale render output. Then add `update()` before your `expect()`.
-
-Note, that you can only call `update()` on the wrapper instance:
-
-```jsx
-const wrapper = mount(<Pizza />);
-// Someone doing something somewhere...
-wrapper.update();
-expect(wrapper.text()).toMatch('wow much updates');
-```
-
-### `hostNodes()` method
-
-Imagine you have a button component:
-
-```jsx
-const Button = props => <button className="Button" {...props} />;
-```
-
-You have a form:
-
-```jsx
-<form>
-  <Button data-testid="pizzaForm-submit">Cook pizza!</Button>
-</form>
-```
-
-And you try to simulate a click on this button in your test:
-
-```js
-wrapper.find('[data-testid="pizzaForm-submit"]').simulate('click');
-```
-
-This won’t work because `find()` returns two nodes: one for the `Button` React component, and one for the `button` HTML element, because the component tree would look like this:
-
-```jsx
-<Button data-testid="pizzaForm-submit">
-  <button className="Button" data-testid="pizzaForm-submit">
-    Cook pizza!
-  </button>
-</Button>
-```
-
-To avoid that, you need to use the Enzyme’s [hostNodes()](https://airbnb.io/enzyme/docs/api/ReactWrapper/hostNodes.html) method:
-
-```js
-wrapper
-  .find('[data-testid="pizzaForm-submit"]')
-  .hostNodes()
-  .simulate('click');
-```
-
-`hostNodes()` method returns only _host nodes_: in React DOM host nodes are HTML elements.
-
-### Reusing `find()` queries
-
-Be careful with caching and reusing `find()` queries in your test like so:
-
-```js
-const input = wrapper.find('[data-testid="quantity"]');
-expect(input.prop('value')).toBe('0'); // -> Pass
-```
-
-It will fail if you change the input’s value and try to reuse the `input` variable to test it:
-
-```js
-input.simulate('change', { target: { value: '42' } });
-expect(input.prop('value')).toBe('42'); // -> Fail!
-expect(input.prop('value')).toBe('0'); // -> Pass
-```
-
-This happens because the `input` variable still keeps the reference to the initial component tree.
-
-To fix this we need to run the `find()` query again after we change input’s value:
-
-```js
-const findInput = wrapper => wrapper.find('[data-testid="quantity"]');
-
-expect(findInput(wrapper).prop('value')).toBe('0'); // -> Pass
-
-findInput(wrapper).simulate('change', { target: { value: '42' } });
-expect(findInput(wrapper).prop('value')).toBe('42'); // -> Pass
-```
-
-I usually don’t reuse any queries in my tests, and write little helper functions, like the `findInput` above, instead. This saves me a lot of debugging time.
-
-### `act()` helper
-
-Wrap “units” of interaction, like rendering, user events, or data fetching, with the [act()](https://reactjs.org/docs/test-utils.html#act) method from React Test Utilities to make your tests better resemble how your users will interact with your app.
-
-Enzyme calls the `act()` method for you in some of its methods, like `simulate()`, but in some cases you need to use it manually in your tests.
-
-[Testing recipes page](https://reactjs.org/docs/testing-recipes.html) has a better explanation of the `act()` method and more examples of its usage.
-
 ### Debugging
 
-Sometimes you want to check the rendered React tree, use the [debug()](https://airbnb.io/enzyme/docs/api/ReactWrapper/debug.html) method:
+Sometimes you want to check the rendered React tree, use the [debug()](https://testing-library.com/docs/react-testing-library/api#debug) method:
 
 ```jsx
-const wrapper = mount(<p>Hello Jest!</p>);
-console.log('LOL', wrapper.debug());
+const { debug } = render(<p>Hello Jest!</p>);
+debug();
 // -> <p>Hello Jest!</p>
 ```
 
 You can also print an element:
 
 ```jsx
-console.log('LOL', wrapper.find({ children: 'Expand' }).debug());
+debug(getByText(/expand/i));
 ```
 
 ## Conclusion
 
-We’ve learned how to set up Enzyme and how to test different React components.
-
-In the next article we’ll look at React Testing Library and how it compares to Enzyme.
+We’ve learned how to set up React Testing Library and how to test different React components.
 
 ---
 

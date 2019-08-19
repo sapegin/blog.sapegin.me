@@ -19,9 +19,7 @@ I wrote [a similar article](https://blog.sapegin.me/all/react-jest/) three years
 
 - **Modern React testing: best practices (_this post_)**
 - [Modern React testing: Jest and Enzyme](/all/react-testing-2-jest-and-enzyme/)
-- Modern React testing: Jest and React Testing Library (coming soon!)
-
-Subscribe at the bottom of the page to know about the second and the third articles.
+- [Modern React testing: Jest and React Testing Library](/all/react-testing-3-jest-and-react-testing-library/)
 
 ## Why automate testing
 
