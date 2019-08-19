@@ -23,7 +23,7 @@ Traditional loops, like `for` or `while`, are too low-level for common tasks.
 
 ## Replacing loops with array methods
 
-Modern languages have better ways to express iterative operations. [JavaScript has may useful methods](http://exploringjs.com/impatient-js/ch_arrays.html#methods-iteration-and-transformation-.find-.map-.filter-etc) to transform and iterate over arrays, like `.map()` or `.find()`.
+Modern languages have better ways to express iterative operations. [JavaScript has many useful methods](http://exploringjs.com/impatient-js/ch_arrays.html#methods-iteration-and-transformation-.find-.map-.filter-etc) to transform and iterate over arrays, like `.map()` or `.find()`.
 
 For example, let’s convert an array of strings to `kebab-case` with a `for` loop:
 
