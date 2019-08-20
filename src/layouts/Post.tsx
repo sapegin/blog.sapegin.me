@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { Box, Html } from 'tamia';
+import { Box } from 'tamia';
 import PageWithTitle from './PageWithTitle';
 import PostContent from '../components/PostContent';
 import PostMeta from '../components/PostMeta';
@@ -44,7 +44,7 @@ export default function PostPage({
 			<Metatags slug={pathname} title={title} description={excerpt} />
 			<Box mb="l">
 				<PostContent>
-					<Html>{html}</Html>
+					<div dangerouslySetInnerHTML={{ __html: html }} />
 				</PostContent>
 			</Box>
 			<Box as="footer" mb="xl">
