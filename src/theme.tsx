@@ -1,4 +1,5 @@
 const baseFont = 'Georgia, serif';
+const monospaceFont = 'Monaco, "DejaVu Sans Mono", "Lucida Console", monospace';
 const space = {
 	xxs: '0.125rem', // 2px
 	xs: '0.25rem', // 4px
@@ -18,6 +19,7 @@ const breakpoints = [
 const fonts = {
 	base: baseFont,
 	heading: baseFont,
+	pre: monospaceFont,
 	code: 'inherit',
 };
 const fontSizes = {
