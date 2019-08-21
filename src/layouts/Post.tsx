@@ -15,6 +15,7 @@ type Props = {
 			excerpt: string;
 			frontmatter: {
 				title: string;
+				description: string;
 				date: string;
 				dateTime: string;
 			};
@@ -33,7 +34,7 @@ export default function PostPage({
 		markdownRemark: {
 			html,
 			excerpt,
-			frontmatter: { title, date, dateTime },
+			frontmatter: { title, description, date, dateTime },
 		},
 	},
 	pageContext: { related },
@@ -41,7 +42,11 @@ export default function PostPage({
 }: Props) {
 	return (
 		<PageWithTitle url={pathname} title={title}>
-			<Metatags slug={pathname} title={title} description={excerpt} />
+			<Metatags
+				slug={pathname}
+				title={title}
+				description={description || excerpt}
+			/>
 			<Box mb="l">
 				<PostContent>
 					<div dangerouslySetInnerHTML={{ __html: html }} />
@@ -64,6 +69,7 @@ export const pageQuery = graphql`
 			excerpt
 			frontmatter {
 				title
+				description
 				date(formatString: $dateFormat, locale: $lang)
 				dateTime: date(formatString: "YYYY-MM-DD")
 			}
