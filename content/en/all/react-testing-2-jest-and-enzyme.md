@@ -283,7 +283,7 @@ Here we’re testing that our `Pizza` component renders all ingredients passed t
 
 ### Testing user interaction
 
-To “simulate” (see “To `simulate()` or not” above) an event like `click` or `change`, call this event’s prop directly and then test the output:
+To “simulate” (see “To `simulate()` or not” above) an event like `click` or `change`, call the `simulate` method and then test the output:
 
 ```jsx
 import React from 'react';
