@@ -15,7 +15,7 @@
     "typecheck": "tsc",
     "lint:css": "stylelint 'src/**/*.tsx'",
     "lint:md": "remark --quiet \"content/**/*.md\"",
-    "lint:js": "eslint . --cache --fix --ext .ts,.tsx",
+    "lint:js": "eslint . --cache --fix --ext .js,.tsx",
     "format": "prettier --write \"**/*.{js,tsx,md}\"",
     "styleguide": "styleguidist server",
     "styleguide:build": "styleguidist build"
@@ -90,14 +90,6 @@
     ],
     "*.{js,tsx}": [
       "eslint --fix",
-      "stylelint --fix",
-      "git add"
-    ],
-    "*.{ts,tsx}": [
-      "eslint --fix",
-      "git add"
-    ],
-    "*.tsx": [
       "stylelint --fix",
       "git add"
     ]
