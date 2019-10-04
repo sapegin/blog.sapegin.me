@@ -1,6 +1,5 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
-import theme from '../theme';
 
 /*
  * Stripes at the top and the bottom of the page.
@@ -9,16 +8,37 @@ import theme from '../theme';
  */
 
 const Container = styled.div`
-	margin: ${p => p.theme.space.s} 0;
-	padding: ${p => p.theme.space.s} ${p => p.theme.space.m};
-	background-color: ${p => p.theme.colors.bg};
+	padding: ${p => p.theme.page.xPadding} ${p => p.theme.page.yPadding};
+
+	::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: ${p => p.theme.space.s};
+		background-color: ${p => p.theme.colors.accent};
+	}
 `;
 
 const GlobalStyles = createGlobalStyle`
 	:root body {
-		/* Override default styles */
-		padding: 0;
-		background-color: ${theme.colors.accent};
+		position: relative;
+	}
+	:root body::before,
+	:root body::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		right: 0;
+		height: ${p => p.theme.space.s};
+		background-color: ${p => p.theme.colors.accent};
+	}
+	:root body::before {
+		top: 0;
+	}
+	:root body::after {
+		bottom: 0;
 	}
 `;
 
