@@ -124,7 +124,7 @@ Run `npm test` (or `npm t`) to run all tests. You’ll see something like this:
 
 ![Running Jest and Enzyme tests in the terminal](/images/jest-enzyme.png)
 
-Run `npm run test:watch` to run Jest in watch mode: Jest will run only tests that are related to files changed since the last commit, and Jest will rerun these test any time you change the code. This is how I usually run Jest. Watch mode is fast enough even in large projects, where running all test takes many minutes.
+Run `npm run test:watch` to run Jest in watch mode: Jest will run only tests that are related to files changed since the last commit, and Jest will rerun these test any time you change the code. This is how I usually run Jest. Watch mode is fast enough even in large projects, where running all tests takes many minutes.
 
 Run `npm run test:coverage` to run all tests and generate coverage report. You can find it in the `coverage` folder.
 
