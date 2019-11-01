@@ -1,6 +1,6 @@
 ---
 layout: Post
-title: 'React 16.0—16.8 new features for every day use'
+title: 'React 16.0—16.9 new features for every day use'
 date: 2018-05-15
 lang: en
 tags:
@@ -8,7 +8,7 @@ tags:
   - react
 ---
 
-This is a short cheat sheet for developers migrating from React 15 to React 16, or from earlier 16.x versions to 16.8. It focuses on features you’ll use often.
+This is a short cheat sheet for developers migrating from React 15 to React 16, or from earlier 16.x versions to 16.9. It focuses on features you’ll use often.
 
 ## Returning multiple elements from components with fragments
 
@@ -306,5 +306,7 @@ React 16 has many other features that are useful in some cases:
 - [profiler](https://reactjs.org/blog/2018/09/10/introducing-the-react-profiler.html) (16.5);
 - [React.lazy](https://reactjs.org/blog/2018/10/23/react-v-16-6.html#reactlazy-code-splitting-with-suspense) (16.6);
 - [static getDerivedStateFromError()](https://reactjs.org/blog/2018/10/23/react-v-16-6.html#static-getderivedstatefromerror) (16.6).
+- [act()](https://reactjs.org/blog/2019/02/06/react-v16.8.0.html#testing-hooks) and [async act()](https://reactjs.org/blog/2019/08/08/react-v16.9.0.html#async-act-for-testing) for testing (16.8 and 16.9).
+- [<React.Profiler> component](https://reactjs.org/blog/2019/08/08/react-v16.9.0.html#performance-measurements-with-reactprofiler) for performance measurements (16.9).
 
 I also highly recommend Nik Graf’s [course on React 16](https://egghead.io/courses/leverage-new-features-of-react-16) and Kent C. Dodds’s [course on hooks](https://egghead.io/courses/simplify-react-apps-with-react-hooks) on Egghead.
