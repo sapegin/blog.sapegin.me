@@ -28,9 +28,9 @@ export const Intro = () => null;
 export const LongDescription = () => (
 	<>
 		<Text mb="m" variant="small">
-			I’m a frontend developer living in&nbsp;Berlin, Germany. I&nbsp;work
+			I’m a frontend engineer living in&nbsp;Berlin, Germany. I&nbsp;work
 			at&nbsp;
-			<Link href="https://www.wayfair.com/">Wayfair</Link>,
+			<Link href="https://omio.com/">Omio</Link>,
 			and&nbsp;in&nbsp;my&nbsp;spare time I&nbsp;love making photos, writing,
 			hanging out with my&nbsp;dogs and&nbsp;drinking lots of coffee.
 			I’m&nbsp;interested in&nbsp;design systems, testings
