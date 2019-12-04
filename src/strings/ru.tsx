@@ -32,7 +32,7 @@ export const LongDescription = () => (
 	<>
 		<Text mb="m" variant="small">
 			Я живу в Берлине и работаю фронтенд-разработчиком в{' '}
-			<Link href="https://www.wayfair.com/">Вэйфейре</Link>, а в свободное время
+			<Link href="https://omio.com/">Омио</Link>, а в свободное время
 			фотографирую, глажу своих собак и пью кофе.
 		</Text>
 		<Text mb="m" variant="small">
