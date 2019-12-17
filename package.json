@@ -86,7 +86,7 @@
     ],
     "*.{js,tsx}": [
       "eslint --fix",
-      "stylelint --fix",
+      "stylelint",
       "git add"
     ]
   }

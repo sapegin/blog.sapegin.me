@@ -8,10 +8,6 @@ const TWITTER_PREFIX = 'https://twitter.com/search';
 const GITHUB_PREFIX =
 	'https://github.com/sapegin/blog.sapegin.me/edit/master/content/';
 
-const Nobr = styled.span`
-	white-space: nowrap;
-`;
-
 const List = styled.p`
 	@media (min-width: ${p => p.theme.breakpoints[1]}) {
 		display: flex;
@@ -53,7 +49,7 @@ export default function PostMeta({ slug, date, dateTime }: Props) {
 			</Item>
 			<Item as="span" variant="small">
 				<time dateTime={dateTime}>
-					Published <Nobr>on {date}</Nobr>
+					Published <nobr>on {date}</nobr>
 				</time>
 			</Item>
 		</List>
