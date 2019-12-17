@@ -1,22 +1,12 @@
-import lang from './src/lang';
+const siteUrl = 'https://blog.sapegin.me';
 
-const siteMetadata = {
-	en: {
+module.exports = {
+	siteMetadata: {
 		title: 'Artem Sapegin’s Blog',
 		description:
 			'Blog of a Berlin based frontend developer who works at Here, makes photos, writes, hangs out with his dogs and drinks coffee.',
-		siteUrl: 'https://blog.sapegin.me',
+		siteUrl,
 	},
-	ru: {
-		title: 'Наноблог Артёма Сапегина',
-		description:
-			'Блог фронтенд-разработчика, который живёт в Берлине, работает в Вейфейре, фотографирует, пишет, гладит собак и пьёт кофе.',
-		siteUrl: 'https://nano.sapegin.ru',
-	},
-}[lang];
-
-module.exports = {
-	siteMetadata,
 	plugins: [
 		'gatsby-plugin-react-helmet',
 		'gatsby-plugin-styled-components',
@@ -24,7 +14,7 @@ module.exports = {
 		{
 			resolve: 'gatsby-source-filesystem',
 			options: {
-				path: `${__dirname}/content/${lang}`,
+				path: `${__dirname}/content`,
 				name: 'pages',
 			},
 		},
@@ -50,7 +40,7 @@ module.exports = {
 					{
 						serialize: ({ query: { allMarkdownRemark } }) => {
 							return allMarkdownRemark.edges.map(edge => {
-								const url = `${siteMetadata.siteUrl}/${edge.node.fields.slug}`;
+								const url = `${siteUrl}/${edge.node.fields.slug}`;
 								return {
 									...edge.node.frontmatter,
 									description: edge.node.excerpt,
@@ -58,7 +48,11 @@ module.exports = {
 									url,
 									guid: url,
 									// eslint-disable-next-line @typescript-eslint/camelcase
-									custom_elements: [{ 'content:encoded': edge.node.html }],
+									custom_elements: [
+										{
+											'content:encoded': edge.node.html,
+										},
+									],
 								};
 							});
 						},
@@ -95,14 +89,14 @@ module.exports = {
 		{
 			resolve: `gatsby-plugin-canonical-urls`,
 			options: {
-				siteUrl: siteMetadata.siteUrl,
+				siteUrl,
 			},
 		},
 		{
 			resolve: 'gatsby-plugin-fathom',
 			options: {
 				trackingUrl: 'stats.sapegin.me',
-				siteId: { en: 'JQWYF', ru: 'SOOAQ' }[lang],
+				siteId: 'JQWYF',
 			},
 		},
 	],

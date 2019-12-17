@@ -5,7 +5,6 @@ import { Box, Heading, VisuallyHidden } from 'tamia';
 import Page from './Page';
 import PostList from '../components/PostList';
 import Metatags from '../components/Metatags';
-import { Intro } from '@strings';
 import { Post } from '../types';
 
 type GroupedPosts = {
@@ -57,7 +56,6 @@ const Index = ({
 	return (
 		<Page url={pathname}>
 			<Metatags slug={pathname} />
-			<Intro />
 			<VisuallyHidden as="h2">Blog posts</VisuallyHidden>
 			{years.map(year => (
 				<Box key={year} as="section" mb="l">

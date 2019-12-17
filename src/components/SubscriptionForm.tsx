@@ -1,7 +1,6 @@
 import React from 'react';
 import { VisuallyHidden } from 'tamia';
 import styled from 'styled-components';
-import { subscriptionEmailLabel, subscriptionSubmitLabel } from '@strings';
 
 const Form = styled.form`
 	display: flex;
@@ -59,6 +58,7 @@ const SubmitButton = styled.button`
 		border: 0;
 	}
 `;
+
 export default function() {
 	return (
 		<>
@@ -68,7 +68,7 @@ export default function() {
 				target="_blank"
 			>
 				<Column as="label">
-					<VisuallyHidden>{subscriptionEmailLabel}</VisuallyHidden>
+					<VisuallyHidden>Your email</VisuallyHidden>
 					<EmailInput
 						name="email"
 						type="email"
@@ -76,12 +76,12 @@ export default function() {
 						autoComplete="home email"
 						autoCapitalize="off"
 						autoCorrect="off"
-						placeholder={subscriptionEmailLabel}
+						placeholder="Your email"
 						defaultValue=""
 					/>
 				</Column>
 				<Column>
-					<SubmitButton type="submit">{subscriptionSubmitLabel}</SubmitButton>
+					<SubmitButton type="submit">Subscribe</SubmitButton>
 				</Column>
 			</Form>
 		</>

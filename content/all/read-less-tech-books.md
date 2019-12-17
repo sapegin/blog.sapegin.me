@@ -12,7 +12,7 @@ Vladimir Starkov [suggests](http://vstarkov.com/monthbook/) to read at least two
 
 It’s very important to be up-to-date with latest trends, especially in so fast changing industry as frontend development. But there are so many interesting subjects besides programming languages and new frameworks.
 
-I love to [read](http://bibla.ru/sapegin/read/) about design, typography, photography (more about philosophy than technique), languages, writing, people and other subjects.
+I love to [read](https://www.goodreads.com/user/show/2982572-artem-sapegin) about design, typography, photography (more about philosophy than technique), languages, writing, people and other subjects.
 
 Reading for me isn’t merely source of a new information but by and large it’s a pleasure of a good language. People who write about tech stuff usually aren’t the best writers and their books often are just boring.
 

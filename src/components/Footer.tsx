@@ -1,18 +1,19 @@
 import React from 'react';
 import { Text } from 'tamia';
 import { Link } from 'tamia-gatsby-link';
-import { author, PoweredBy } from '@strings';
 
 export default function Footer() {
 	return (
 		<>
 			<Text variant="xsmall" mb="xs">
-				© <Link href="https://sapegin.me/">{author}</Link>
+				© <Link href="https://sapegin.me/">Artem Sapegin</Link>
 				{', '}
 				2006…{new Date().getFullYear()}
 			</Text>
 			<Text variant="xsmall">
-				<PoweredBy />
+				Powered by <Link href="https://www.gatsbyjs.org/">Gatsby</Link> and{' '}
+				<Link href="https://tamiadev.github.io/tamia/">Tâmia</Link>, hosted on{' '}
+				<Link href="https://www.netlify.com/">Netlify</Link>
 			</Text>
 		</>
 	);

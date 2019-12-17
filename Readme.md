@@ -1,4 +1,4 @@
-# Artem Sapegin’s Blog: [English](http://blog.sapegin.me/) and [Russian](http://nano.sapegin.ru/)
+# [Artem Sapegin’s Blog](https://blog.sapegin.me/)
 
 [![Build Status](https://travis-ci.org/sapegin/blog.sapegin.me.png)](https://travis-ci.org/sapegin/blog.sapegin.me)
 

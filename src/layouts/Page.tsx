@@ -1,12 +1,10 @@
 import React from 'react';
-import Helmet from 'react-helmet';
 import { Container, Box } from 'tamia';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import PageFooter from '../components/PageFooter';
 import PageContainer from '../components/PageContainer';
 import Base from './Base';
-import { title as siteTitle } from '@strings';
 
 type Props = {
 	children: React.ReactNode;
@@ -14,12 +12,11 @@ type Props = {
 	title?: string;
 };
 
-const Page = ({ children, url, title }: Props) => {
+const Page = ({ children, url }: Props) => {
 	return (
 		<Base>
 			<PageContainer>
 				<Container>
-					<Helmet title={title ? `${title} — ${siteTitle}` : siteTitle} />
 					<Box mb="l">
 						<Header url={url} />
 					</Box>

@@ -19,12 +19,6 @@ Run dev server (it will refresh the page after any changes in JS, styles or cont
 npm start
 ```
 
-Or for the [Russian version](https://nano.sapegin.ru/):
-
-```bash
-npm run start:ru
-```
-
 Run linters and format code:
 
 ```bash

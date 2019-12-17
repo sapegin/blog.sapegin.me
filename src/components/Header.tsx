@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'tamia-gatsby-link';
 import styled from 'styled-components';
-import { title } from '@strings';
 
 const Container = styled.header`
 	text-align: center;
@@ -17,10 +16,11 @@ const Logo = styled.h1`
 `;
 
 type Props = {
+	title?: string;
 	url: string;
 };
 
-export default function Header({ url }: Props) {
+export default function Header({ title = 'Artem Sapegin’s Blog', url }: Props) {
 	return (
 		<Container>
 			{url === '/' ? <Logo>{title}</Logo> : <Link href="/">{title}</Link>}

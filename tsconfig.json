@@ -9,10 +9,7 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "types": ["react"],
-    "baseUrl": "src",
-    "paths": {
-      "@strings": ["strings/en.tsx"]
-    }
+    "baseUrl": "src"
   },
   "include": [
     "src"

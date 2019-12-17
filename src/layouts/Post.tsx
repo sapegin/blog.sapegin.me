@@ -63,14 +63,14 @@ export default function PostPage({
 }
 
 export const pageQuery = graphql`
-	query PostPage($slug: String!, $lang: String!, $dateFormat: String!) {
+	query PostPage($slug: String!, $dateFormat: String!) {
 		markdownRemark(fields: { slug: { eq: $slug } }) {
 			html
 			excerpt
 			frontmatter {
 				title
 				description
-				date(formatString: $dateFormat, locale: $lang)
+				date(formatString: $dateFormat)
 				dateTime: date(formatString: "YYYY-MM-DD")
 			}
 		}

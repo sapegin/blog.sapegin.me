@@ -1,44 +1,38 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import {
-	title as siteTitle,
-	siteUrl,
-	description as defaultDescription,
-	twitter,
-} from '@strings';
+
+const SITE_URL = 'https://blog.sapegin.me';
+const SITE_TITLE = 'Artem Sapegin’s Blog';
 
 type Props = {
 	slug: string;
 	title?: string;
 	description?: string;
 	image?: string;
-	noIndex?: boolean;
 	children?: React.ReactNode;
 };
 
 export default function Metatags({
 	slug,
-	title = siteTitle,
-	description = defaultDescription,
+	title,
+	description = 'Blog of a Berlin based frontend developer who works at Here, makes photos, writes, hangs out with his dogs and drinks coffee.',
 	image,
-	noIndex = false,
 	children,
 }: Props) {
 	const isBlogPost = slug.startsWith('/all/');
-	const imageUrl = image && `${siteUrl}${image}`;
+	const imageUrl = image && `${SITE_URL}${image}`;
 	return (
-		<Helmet>
-			{noIndex && <meta name="robots" content="noindex follow" />}
+		<Helmet title={title ? `${title} — ${SITE_TITLE}` : SITE_TITLE}>
 			<meta name="description" content={description} />
 			{imageUrl && <meta property="og:image" content={imageUrl} />}
 			<meta property="og:type" content={isBlogPost ? 'article' : 'website'} />
 			<meta property="og:title" content={title} />
-			<meta property="og:url" content={`${siteUrl}${slug}`} />
-			<meta property="og:site_name" content={siteTitle} />
+			<meta property="og:url" content={`${SITE_URL}${slug}`} />
+			<meta property="og:site_name" content={SITE_TITLE} />
 			<meta property="og:description" content={description} />
 			{imageUrl && <meta name="twitter:card" content="summary_large_image" />}
 			{imageUrl && <meta name="twitter:image" content={imageUrl} />}
-			<meta name="twitter:creator" content={twitter} />
+			<meta name="twitter:creator" content="@iamsapegin" />
 			{children}
 		</Helmet>
 	);
