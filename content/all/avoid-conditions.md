@@ -17,7 +17,10 @@ _Book table of contents:_
 
 - [Avoid loops](/all/avoid-loops/)
 - _Avoid conditions (*this post*)_
+- [Avoid reassigning variables](/all/avoid-reassigning-variables/)
 - To be continued
+
+---
 
 Conditions make code harder to read and test. They add nesting and make lines of code longer, so you have to split them into several lines. Each condition increases the minimum number of test cases you need to write for a certain module or function, because instead of a single code path you now have two or more.
 

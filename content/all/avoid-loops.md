@@ -17,7 +17,10 @@ _Book table of contents:_
 
 - _Avoid loops (*this post*)_
 - [Avoid conditions](/all/avoid-conditions/)
+- [Avoid reassigning variables](/all/avoid-reassigning-variables/)
 - To be continued
+
+---
 
 Traditional loops, like `for` or `while`, are too low-level for common tasks. They are verbose and prone to [off-by-one error](https://en.wikipedia.org/wiki/Off-by-one_error). You have to manage the index variable yourself, and I always make typos with `lenght`. They don’t have any particular semantic value except that you’re doing some operation probably more than once.
 
