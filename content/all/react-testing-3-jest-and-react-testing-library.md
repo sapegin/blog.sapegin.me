@@ -59,10 +59,12 @@ Some of the cons could be:
 First, install all the dependencies including peer dependencies:
 
 ```bash
-npm install --save-dev jest @testing-library/react node-fetch
+npm install --save-dev jest @testing-library/react @testing-library/jest-dom node-fetch
 ```
 
-You’ll also need [babel-jest](https://github.com/facebook/jest/tree/master/packages/babel-jest) for Babel and [ts-jest](https://github.com/kulshekhar/ts-jest) for TypeScript. If you’re using webpack, make sure to enable ECMAScript modules transformation for the `test` environment.
+[jest-dom](https://github.com/testing-library/jest-dom) isn’t required to use React Testing Library but it makes writing tests more convenient.
+
+You’ll also need [babel-jest](https://github.com/facebook/jest/tree/master/packages/babel-jest) for Babel or [ts-jest](https://github.com/kulshekhar/ts-jest) for TypeScript. If you’re using webpack, make sure to enable ECMAScript modules transformation for the `test` environment in your Babel config.
 
 Create a `src/setupTests.js` file to customize the Jest environment:
 
@@ -93,7 +95,10 @@ Then update your `package.json` like this:
     "test:coverage": "jest --coverage"
   },
   "jest": {
-    "setupFilesAfterEnv": ["<rootDir>/src/setupTests.js"]
+    "setupFilesAfterEnv": [
+      "@testing-library/jest-dom/extend-expect",
+      "<rootDir>/src/setupTests.js"
+    ]
   }
 }
 ```
