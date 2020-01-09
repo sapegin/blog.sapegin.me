@@ -7,6 +7,7 @@ tags:
   - tools
   - docpad
   - blog
+  - internationalization
 ---
 
 I write my blog in two languages. But they’re just two builds of the same [DocPad](http://docpad.org/) installation with different settings.

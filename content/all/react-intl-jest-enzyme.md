@@ -11,7 +11,8 @@ tags:
   - enzyme
   - react
   - testing
-  - i18n
+  - internationalization
+  - react-intl
 ---
 
 There are two problems with testing components that use [React Intl](https://github.com/yahoo/react-intl) with [Enzyme](https://github.com/airbnb/enzyme) and [Jest](https://facebook.github.io/jest/):
