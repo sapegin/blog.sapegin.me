@@ -117,11 +117,11 @@ import { render } from '@testing-library/react';
 
 test('hello world', () => {
   const { getByText } = render(<p>Hello Jest!</p>);
-  expect(getByText('Hello Jest!')).toBeTruthy();
+  expect(getByText('Hello Jest!')).toBeInTheDocument();
 });
 ```
 
-Here we’re rendering a paragraph of text using the React Testing Library’s [render()](https://testing-library.com/docs/react-testing-library/api#render) method, then testing that a paragraph containing “Hello Jest!” was rendered using React Testing Library’s [getByText()](https://testing-library.com/docs/dom-testing-library/api-queries#bytext) method and Jest’s `toBeTruthy()` assert.
+Here we’re rendering a paragraph of text using the React Testing Library’s [render()](https://testing-library.com/docs/react-testing-library/api#render) method, then testing that a paragraph containing “Hello Jest!” was rendered using React Testing Library’s [getByText()](https://testing-library.com/docs/dom-testing-library/api-queries#bytext) method to find it and jest-dom’s [toBeInTheDocument()](https://github.com/testing-library/jest-dom#tobeinthedocument) assert.
 
 ### Running tests
 
@@ -270,7 +270,7 @@ test('contains all ingredients', () => {
   const { getByText } = render(<Pizza ingredients={ingredients} />);
 
   ingredients.forEach(ingredient => {
-    expect(getByText(ingredient)).toBeTruthy();
+    expect(getByText(ingredient)).toBeInTheDocument();
   });
 });
 ```
@@ -294,15 +294,15 @@ test('button expands and collapses the content', () => {
     </ExpandCollapse>
   );
 
-  expect(queryByText(children)).not.toBeTruthy();
+  expect(queryByText(children)).not.toBeInTheDocument();
 
   fireEvent.click(getByText(/expand/i));
 
-  expect(queryByText(children)).toBeTruthy();
+  expect(queryByText(children)).toBeInTheDocument();
 
   fireEvent.click(getByText(/collapse/i));
 
-  expect(queryByText(children)).not.toBeTruthy();
+  expect(queryByText(children)).not.toBeInTheDocument();
 });
 ```
 
@@ -366,7 +366,7 @@ const wait = (time = 0) =>
 test('something async', async () => {
   // Run an async operation...
   await wait(100).then(() => {
-    expect(getByText('Done!')).toBeTruthy();
+    expect(getByText(/done!/i)).toBeInTheDocument();
   });
 });
 ```
@@ -381,7 +381,7 @@ import { wait } from '@testing-library/react';
 test('something async', async () => {
   // Run an async operation...
   await wait(() => {
-    expect(getByText('Done!')).toBeTruthy();
+    expect(getByText(/done!/i)).toBeInTheDocument();
   });
 });
 ```
@@ -392,7 +392,7 @@ But for querying elements we can use `findBy*()` and `findAllBy*()` methods that
 test('something async', async () => {
   expect.assertions(1);
   // Run an async operation...
-  expect(await findByText('Done!')).toBeTruthy();
+  expect(await findByText(/done!/i)).toBeInTheDocument();
 });
 ```
 
@@ -478,7 +478,7 @@ test('download ingredients from internets', async () => {
 
   await wait(() => {
     ingredients.forEach(ingredient => {
-      expect(getByText(ingredient)).toBeTruthy();
+      expect(getByText(ingredient)).toBeInTheDocument();
     });
   });
 });
@@ -537,7 +537,7 @@ test('download ingredients from internets', async () => {
 
   await wait(() => {
     ingredients.forEach(ingredient => {
-      expect(getByText(ingredient)).toBeTruthy();
+      expect(getByText(ingredient)).toBeInTheDocument();
     });
   });
 });
@@ -574,7 +574,7 @@ test('download ingredients from internets', async () => {
 
   await wait(() => {
     ingredients.forEach(ingredient => {
-      expect(getByText(ingredient)).toBeTruthy();
+      expect(getByText(ingredient)).toBeInTheDocument();
     });
   });
 });
@@ -614,7 +614,7 @@ test('download ingredients from internets', async () => {
 
   await wait(() => {
     ingredients.forEach(ingredient => {
-      expect(getByText(ingredient)).toBeTruthy();
+      expect(getByText(ingredient)).toBeInTheDocument();
     });
   });
 });
