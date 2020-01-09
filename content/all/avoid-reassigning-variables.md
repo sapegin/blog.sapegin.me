@@ -149,7 +149,7 @@ function VideoUploader() {
           <Text variation="error">Nooooo, upload failed:</Text>
           <ul>
             {errors.map(error => (
-              <Text as="li" variation="error">
+              <Text key={error} as="li" variation="error">
                 {error}
               </Text>
             ))}
