@@ -1,6 +1,6 @@
 ---
 layout: Post
-title: 'Five donts of web app internationalization'
+title: 'Six donts of web app internationalization'
 date: 2020-01-09
 lang: en
 tags:
@@ -144,7 +144,51 @@ Create unique localization strings for your features, instaed of reusing phrases
 
 _Example: “Bookmark” heading and “Bookmark” button label in English would be “Закладка” and “Добавить в закладки” in Russian._
 
-## 5. Don’t inject HTML into your pages
+## 5. Don’t hardcode pluralization
+
+Many languages have more complicated pluralization rules than English, and have more than two plural forms.
+
+Use your internationalization library pluralization functions, instead of adding _s_ at the end of the word.
+
+**Bad:**
+
+```jsx
+<p>
+  {resultCount > 1 ? (
+    <FormattedMessage id="NumberResults">
+      {resultCount} dogs found
+    </FormattedMessage>
+  ) : (
+    <FormattedMessage id="NumberResult">
+      {resultCount} dog found
+    </FormattedMessage>
+  )}
+</p>
+```
+
+**Bad:**
+
+```jsx
+<p>
+  <FormattedMessage id="NumberResults">
+    {resultCount} dog(s)
+  </FormattedMessage>
+</p>
+```
+
+**Good:**
+
+```jsx
+<p>
+  <FormattedMessage id="search.numberResults">
+    {resultCount, plural, one {# dog} other {# dogs}} found
+  </FormattedMessage>
+</p>
+```
+
+_Example: “1 dog, 2 dogs, 5 dogs” in English and “1 собака, 2 собаки, 5 собак” in Russian._
+
+## 6. Don’t inject HTML into your pages
 
 Injecting HTML from third-parties directly into your pages may break your app or even give hackers the opportunity to get access to your users’ data.
 
