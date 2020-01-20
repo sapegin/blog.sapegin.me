@@ -1,6 +1,7 @@
 ---
 layout: Post
 title: 'Six donts of web app internationalization'
+description: 'By avoiding these problems in your app you allow translators do their best job and significantly improve quality of translations on your project'
 date: 2020-01-09
 lang: en
 tags:
