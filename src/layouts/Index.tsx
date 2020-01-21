@@ -1,7 +1,7 @@
 import React from 'react';
-import groupBy from 'lodash/groupBy';
 import { graphql } from 'gatsby';
 import { Box, Heading, VisuallyHidden } from 'tamia';
+import groupBy from '../util/groupBy';
 import Page from './Page';
 import PostList from '../components/PostList';
 import Metatags from '../components/Metatags';
@@ -10,6 +10,8 @@ import { Post } from '../types';
 type GroupedPosts = {
 	[year: string]: Post[];
 };
+
+const groupByYear = groupBy('year');
 
 const getYears = (postsByYear: GroupedPosts): string[] => {
 	const years = Object.keys(postsByYear);
@@ -51,7 +53,7 @@ const Index = ({
 		...node.fields,
 		...node.frontmatter,
 	}));
-	const postsByYear = groupBy(posts, 'year');
+	const postsByYear = groupByYear(posts);
 	const years = getYears(postsByYear);
 	return (
 		<Page url={pathname}>
