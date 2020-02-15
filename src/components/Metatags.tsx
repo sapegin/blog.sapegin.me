@@ -15,7 +15,7 @@ type Props = {
 export default function Metatags({
 	slug,
 	title,
-	description = 'Blog of a Berlin based frontend developer who works at Here, makes photos, writes, hangs out with his dogs and drinks coffee.',
+	description = 'Blog of a Berlin based coffee first frontend engineer, who makes photos and hangs out with his dogs.',
 	image,
 	children,
 }: Props) {
