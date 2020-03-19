@@ -18,6 +18,7 @@ _Book table of contents:_
 - _Avoid loops (*this post*)_
 - [Avoid conditions](/all/avoid-conditions/)
 - [Avoid reassigning variables](/all/avoid-reassigning-variables/)
+- [Avoid mutations](/all/avoid-mutations/)
 - To be continued
 
 ---
