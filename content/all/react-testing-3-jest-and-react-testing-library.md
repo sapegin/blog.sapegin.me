@@ -9,6 +9,7 @@ tags:
   - react
   - testing
   - testing-series
+  - testing-library
 ---
 
 **March 2020:** Updated to [React Testing Library 10](https://github.com/testing-library/react-testing-library/releases/tag/v10.0.0) and [DOM Testing Library 7](https://github.com/testing-library/dom-testing-library/releases/tag/v7.0.0).
@@ -26,7 +27,7 @@ React Testing Library is a small library to test React components, that makes ap
 We’ll set up and use these tools:
 
 - [Jest](https://jestjs.io/), a test runner;
-- [React Testing Library](https://testing-library.com/react), a testing utility for React;
+- [React Testing Library](https://testing-library.com/react), a testing utility for React.
 
 ### Why Jest and React Testing Library
 
@@ -50,7 +51,7 @@ We’ll set up and use these tools:
 - Libraries for other frameworks with the same queries.
 - [Recommended by React team](https://reactjs.org/docs/test-utils.html#overview).
 
-React Testing Library helps you write good tests and makes writing bad test hard. It allows you to query elements similat to how user would do that: for example, query form elements and buttons by their labels.
+React Testing Library helps you write good tests and makes writing bad test hard. It allows you to query elements similar to how a user would do that: for example, query form elements and buttons by their labels.
 
 Some of the cons could be:
 
