@@ -18,7 +18,7 @@ _Book table of contents:_
 - [Avoid loops](/all/avoid-loops/)
 - [Avoid conditions](/all/avoid-conditions/)
 - _Avoid reassigning variables (*this post*)_
-- [Avoid mutations](/all/avoid-mutations/)
+- [Avoid mutation](/all/avoid-mutation/)
 - To be continued
 
 ---
@@ -36,7 +36,7 @@ You can’t be sure that your pizza will always have salami and mozzarella in it
 
 Knowing that both things are possible makes you think, every time you see `pizza` in the code, which value it has _now_. That’s a huge and unnecessary cognitive load that we should avoid.
 
-And most of the time you can avoid both. Let’s start with reassigning and come back to mutation in [the next chapter](/all/avoid-mutations/).
+And most of the time you can avoid both. Let’s start with reassigning and come back to mutation in [the next chapter](/all/avoid-mutation/).
 
 ## Don’t reuse variables
 
@@ -402,7 +402,7 @@ There’s an important difference between a variable defined with the `const` k
 
 Both conventions reduce cognitive load a little bit and make code easier to understand.
 
-Unfortunately JavaScript has no true constants, and _mutation_ is still possible even when you define a variable with the `const` keyword. We’ll talk about mutations in [the next chapter](/all/avoid-mutations/).
+Unfortunately JavaScript has no true constants, and _mutation_ is still possible even when you define a variable with the `const` keyword. We’ll talk about mutations in [the next chapter](/all/avoid-mutation/).
 
 ---
 
