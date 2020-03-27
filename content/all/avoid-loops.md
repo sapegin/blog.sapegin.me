@@ -199,14 +199,16 @@ After a cup of coffee and a chat with a colleague, I’ve ended up with a much c
 const tableData =
   props.item &&
   props.item.details &&
-  props.item.details.clients.reduce((acc, client) =>
-    acc.concat(
-      ...client.errorConfigurations.map(config => ({
-        errorMessage: config.error.message,
-        errorLevel: config.error.level,
-        usedIn: client.client.name
-      }))
-    )
+  props.item.details.clients.reduce(
+    (acc, client) =>
+      acc.concat(
+        ...client.errorConfigurations.map(config => ({
+          errorMessage: config.error.message,
+          errorLevel: config.error.level,
+          usedIn: client.client.name
+        }))
+      ),
+    []
   );
 ```
 
