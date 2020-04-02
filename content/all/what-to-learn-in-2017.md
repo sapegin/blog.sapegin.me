@@ -46,6 +46,7 @@ As frontend developers we’re closer to users than anybody else in the team, ma
 
 - Design for Hackers: [a book](https://www.amazon.com/Design-Hackers-Reverse-Engineering-Beauty-ebook/dp/B005J578EW/?tag=artesapesphot-20) and [a free course](https://designforhackers.com/).
 - [Hello Web Design](https://hellowebbooks.com/learn-design/) book by Tracy Osborn.
+- [Refactoring UI](https://refactoringui.com/book/) book by Adam Wathan and Steve Schoger.
 - [Design of Web Applications](http://nathanbarry.com/webapps/) book by Nathan Barry.
 - [On Web Typography](https://abookapart.com/products/on-web-typography) book by Jason Santa Maria.
 - [The Inmates Are Running the Asylum: Why High Tech Products Drive Us Crazy and How to Restore the Sanity](https://www.amazon.com/Inmates-Are-Running-Asylum-Products-ebook/dp/B000OZ0N62/?tag=artesapesphot-20) by Alan Cooper
@@ -84,6 +85,10 @@ This, however, means that it’s time to learn from all wisdom that non-frontend
 ---
 
 What would you recommend? What are you going to learn in 2017?
+
+---
+
+<small>Some of the links above are affiliate, so if you buy something using one of these links, I’ll receive a small comission.</small>
 
 ---
 
