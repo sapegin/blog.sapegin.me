@@ -9,6 +9,14 @@ const space = {
 	xl: '4rem', // 64px
 	xxl: '8rem', // 128px
 	xxxl: '16rem', // 256px
+	'-xxs': '-0.125rem', // 2px
+	'-xs': '-0.25rem', // 4px
+	'-s': '-0.5rem', // 8px
+	'-m': '-1rem', // 16px
+	'-l': '-2rem', // 32px
+	'-xl': '-4rem', // 64px
+	'-xxl': '-8rem', // 128px
+	'-xxxl': '-16rem', // 256px
 };
 const breakpoints = [
 	'38rem', // 608px
@@ -55,21 +63,21 @@ const letterSpacings = {
 	heading: 0,
 };
 const headingBaseStyles = {
-	color: colors.base,
-	fontFamily: fonts.heading,
-	fontWeight: fontWeights.heading,
-	lineHeight: lineHeights.heading,
-	letterSpacing: letterSpacings.heading,
+	color: 'base',
+	fontFamily: 'heading',
+	fontWeight: 'heading',
+	lineHeight: 'heading',
+	letterSpacing: 'heading',
 };
 const textBaseStyles = {
-	color: colors.base,
-	fontFamily: fonts.base,
-	fontWeight: fontWeights.base,
-	lineHeight: lineHeights.base,
-	letterSpacing: letterSpacings.base,
+	color: 'base',
+	fontFamily: 'base',
+	fontWeight: 'base',
+	lineHeight: 'base',
+	letterSpacing: 'base',
 };
 
-export default {
+const theme = {
 	baseFontSize: '1.125em',
 	blockMarginBottom: space.m,
 	headingMarginTop: space.l,
@@ -92,15 +100,15 @@ export default {
 	headingStyles: {
 		1: {
 			...headingBaseStyles,
-			fontSize: fontSizes.xxl,
+			fontSize: 'xxl',
 		},
 		2: {
 			...headingBaseStyles,
-			fontSize: fontSizes.xl,
+			fontSize: 'xl',
 		},
 		3: {
 			...headingBaseStyles,
-			fontSize: fontSizes.l,
+			fontSize: 'l',
 		},
 	},
 	textStyles: {
@@ -109,15 +117,29 @@ export default {
 		},
 		small: {
 			...textBaseStyles,
-			fontSize: fontSizes.s,
+			fontSize: 's',
 		},
 		xsmall: {
 			...textBaseStyles,
-			fontSize: fontSizes.xs,
+			fontSize: 'xs',
 		},
 		italic: {
 			...textBaseStyles,
 			fontStyle: 'italic',
 		},
+	},
+} as const;
+
+export default theme;
+
+export const inverted = {
+	...theme,
+	colors: {
+		...theme.colors,
+		bg: colors.accent,
+		base: colors.bg,
+		primary: colors.bg,
+		hover: '#fff',
+		accent: '#fff',
 	},
 } as const;

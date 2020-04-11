@@ -59,7 +59,7 @@ const SubmitButton = styled.button`
 	}
 `;
 
-export default function() {
+export default function SubscriptionForm() {
 	return (
 		<>
 			<Form

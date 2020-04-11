@@ -1,7 +1,8 @@
 import React from 'react';
-import { Container, Box } from 'tamia';
+import { Container, Box, QuotedLink } from 'tamia';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Banner from '../components/Banner';
 import PageFooter from '../components/PageFooter';
 import PageContainer from '../components/PageContainer';
 import Base from './Base';
@@ -15,18 +16,26 @@ type Props = {
 const Page = ({ children, url }: Props) => {
 	return (
 		<Base>
+			<Box as="aside" aria-label="Current offers" mx="-m">
+				<Banner>
+					<QuotedLink href="http://leanpub.com/washingcode/c/stayathome-blog">
+						<span aria-hidden="true">☛</span>&nbsp;Wash your&nbsp;hands
+						and&nbsp;your&nbsp;code:{' '}
+						<u>start reading my&nbsp;upcoming book on&nbsp;clean code</u> with
+						a&nbsp;discount
+					</QuotedLink>
+				</Banner>
+			</Box>
 			<PageContainer>
 				<Container>
 					<Box mb="l">
 						<Header url={url} />
 					</Box>
-					<Box as="main" role="main" mb="l">
+					<Box as="main" mb="l">
 						{children}
 					</Box>
-					<footer>
-						<PageFooter />
-						<Footer />
-					</footer>
+					<PageFooter />
+					<Footer />
 				</Container>
 			</PageContainer>
 		</Base>
