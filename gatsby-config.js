@@ -1,11 +1,12 @@
+const title = 'Artem Sapegin’s Blog';
 const siteUrl = 'https://blog.sapegin.me';
 
 module.exports = {
 	siteMetadata: {
-		title: 'Artem Sapegin’s Blog',
+		siteUrl,
+		title,
 		description:
 			'Blog of a Berlin based frontend developer who works at Here, makes photos, writes, hangs out with his dogs and drinks coffee.',
-		siteUrl,
 	},
 	plugins: [
 		'gatsby-plugin-react-helmet',
@@ -79,6 +80,7 @@ module.exports = {
 							}
 							`,
 						output: '/atom.xml',
+						title,
 					},
 				],
 			},

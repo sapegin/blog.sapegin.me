@@ -13,9 +13,9 @@ const babelConfig = {
 };
 
 module.exports = {
-	components: 'src/components/**/[A-Z]*.js',
+	components: 'src/components/**/[A-Z]*.tsx',
 	styleguideComponents: {
-		Wrapper: path.join(__dirname, 'src/layouts/Provider.js'),
+		Wrapper: path.join(__dirname, 'src/layouts/Provider.tsx'),
 	},
 	webpackConfig: {
 		resolve: {
@@ -26,7 +26,7 @@ module.exports = {
 		module: {
 			rules: [
 				{
-					test: /\.js$/,
+					test: /\.(js|ts|tsx)$/,
 					exclude: /node_modules/,
 					loader: 'babel-loader',
 					options: babelConfig,
