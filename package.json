@@ -32,7 +32,7 @@
     "react-group": "^3.0.2",
     "react-helmet": "^5.2.1",
     "styled-components": "^5.1.0",
-    "tamia": "^5.5.2",
+    "tamia": "^5.8.0",
     "tamia-gatsby-link": "^1.0.6"
   },
   "devDependencies": {
