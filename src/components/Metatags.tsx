@@ -1,5 +1,5 @@
 import React from 'react';
-import Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet';
 
 const SITE_URL = 'https://blog.sapegin.me';
 const SITE_TITLE = 'Artem Sapegin’s Blog';

@@ -1,5 +1,5 @@
 import React from 'react';
-import Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet';
 import Provider from './Provider';
 import theme from '../theme';
 import { PrismStyles } from '../styles/prismStyles';

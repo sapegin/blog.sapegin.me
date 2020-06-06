@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Text } from 'tamia';
+import { Text } from 'tamia';
 import Invert from './Invert';
 
 interface Props {

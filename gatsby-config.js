@@ -47,7 +47,6 @@ module.exports = {
 									date: edge.node.frontmatter.date,
 									url,
 									guid: url,
-									// eslint-disable-next-line @typescript-eslint/camelcase
 									custom_elements: [
 										{
 											'content:encoded': edge.node.html,

@@ -49,6 +49,7 @@ export default function PostPage({
 			/>
 			<Box mb="l">
 				<PostContent>
+					{/* eslint-disable-next-line @typescript-eslint/naming-convention */}
 					<div dangerouslySetInnerHTML={{ __html: html }} />
 				</PostContent>
 			</Box>
