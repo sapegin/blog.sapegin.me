@@ -24,7 +24,7 @@ define([
   'backboneLocalStorage',
   'reactBackbone',
   'util/react-extras'
-], function(Backbone, React) {
+], function (Backbone, React) {
   // ...
 });
 ```
@@ -50,7 +50,7 @@ require([
   'backboneLocalStorage',
   'reactBackbone',
   'util/react-extras'
-], function(Router, Backbone) {
+], function (Router, Backbone) {
   // ...
 });
 ```
@@ -70,7 +70,7 @@ Put all the extensions in a separate module and require it from your main module
 
 ```javascript
 // main.js
-require(['bootstrap', 'router', 'backbone'], function(
+require(['bootstrap', 'router', 'backbone'], function (
   _,
   Router,
   Backbone
@@ -140,7 +140,7 @@ require.config({
 });
 
 // react-with-extras.js
-define(['reactOriginal', 'util/react-extras'], function(React) {
+define(['reactOriginal', 'util/react-extras'], function (React) {
   return React;
 });
 ```

@@ -3,6 +3,7 @@
   "singleQuote": true,
   "trailingComma": "es5",
   "useTabs": true,
+  "endOfLine": "lf",
   "overrides": [
     {
       "files": "*.md",
@@ -10,6 +11,7 @@
         "printWidth": 70,
         "useTabs": false,
         "trailingComma": "none",
+        "arrowParens": "avoid",
         "proseWrap": "never"
       }
     }

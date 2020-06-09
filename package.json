@@ -13,7 +13,7 @@
     "lint:css": "stylelint 'src/**/*.tsx'",
     "lint:md": "remark --quiet \"content/**/*.md\"",
     "lint:js": "eslint . --cache --fix --ext .js,.tsx",
-    "format": "prettier --write \"**/*.{js,tsx,md}\"",
+    "format": "prettier --loglevel warn --write \"**/*.{js,md}\"",
     "styleguide": "styleguidist server",
     "styleguide:build": "styleguidist build"
   },
@@ -63,7 +63,7 @@
     "husky": "^4.2.5",
     "lint-staged": "^10.2.9",
     "lodash": "^4.17.15",
-    "prettier": "^1.19.1",
+    "prettier": "^2.0.5",
     "react-styleguidist": "^11.0.8",
     "remark-cli": "^8.0.0",
     "remark-lint": "^7.0.0",
