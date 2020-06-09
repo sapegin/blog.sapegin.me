@@ -47,7 +47,7 @@ export const onCreateNode: GatsbyNode['onCreateNode'] = ({
 			node.internal.content = richtypo(rules, node.internal.content);
 		}
 
-		if (!(node as MakdownNode)?.fields?.slug) {
+		if (!((node as unknown) as MakdownNode)?.fields?.slug) {
 			createNodeField({
 				node,
 				name: 'slug',
