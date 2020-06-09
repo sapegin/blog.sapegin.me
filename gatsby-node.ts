@@ -1,11 +1,18 @@
 import path from 'path';
 import { sortBy } from 'lodash';
+import { GatsbyNode } from 'gatsby';
 import { createFilePath } from 'gatsby-source-filesystem';
+import richtypo from 'richtypo';
+import rules from 'richtypo-rules-en';
+import { MakdownNode, PostsQuery } from './src/types/GraphQL';
 
 const MAX_RELATED = 5;
 const DATE_FORMAT = 'MMMM D, YYYY';
 
-function getRelatedPosts(posts, { slug, tags }) {
+function getRelatedPosts(
+	posts: { slug: string; tags: string[]; timestamp: string }[],
+	{ slug, tags }: { slug: string; tags: string[] }
+) {
 	const weighted = posts
 		.filter(d => d.slug !== slug)
 		.map(d => {
@@ -20,49 +27,45 @@ function getRelatedPosts(posts, { slug, tags }) {
 	return sorted.slice(0, MAX_RELATED);
 }
 
-function typo(markdown) {
-	// Skip typography enhancement on older Node versions
-	if (parseInt(process.versions.node) < 9) {
-		return markdown;
-	}
-
-	const richtypo = require('richtypo').default;
-	const rules = require(`richtypo-rules-en`).default;
-	return richtypo(rules, markdown);
-}
-
-export const onCreateWebpackConfig = ({ actions }) => {
+export const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({
+	actions,
+}) => {
 	actions.setWebpackConfig({
 		// Turn off source maps
 		devtool: false,
 	});
 };
 
-export const onCreateNode = ({
+export const onCreateNode: GatsbyNode['onCreateNode'] = ({
 	node,
 	getNode,
 	actions: { createNodeField },
 }) => {
 	if (node.internal.type === 'MarkdownRemark') {
-		const slug = createFilePath({
-			node,
-			getNode,
-		});
-
 		// Typography
-		node.internal.content = typo(node.internal.content);
+		if (node.internal.content) {
+			node.internal.content = richtypo(rules, node.internal.content);
+		}
 
-		createNodeField({
-			node,
-			name: 'slug',
-			value: slug,
-		});
+		if (!(node as MakdownNode)?.fields?.slug) {
+			createNodeField({
+				node,
+				name: 'slug',
+				value: createFilePath({
+					node,
+					getNode,
+				}),
+			});
+		}
 	}
 };
 
-export const createPages = ({ graphql, actions: { createPage } }) => {
+export const createPages: GatsbyNode['createPages'] = ({
+	graphql,
+	actions: { createPage },
+}) => {
 	return new Promise((resolve, reject) => {
-		graphql(`
+		graphql<PostsQuery>(`
 			{
 				allMarkdownRemark(limit: 1000) {
 					edges {
@@ -83,6 +86,11 @@ export const createPages = ({ graphql, actions: { createPage } }) => {
 		`).then(result => {
 			if (result.errors) {
 				reject(result.errors);
+				return;
+			}
+			if (!result.data) {
+				reject();
+				return;
 			}
 
 			const docs = result.data.allMarkdownRemark.edges.map(e => ({
