@@ -9,7 +9,7 @@ tags:
   - washingcode
 ---
 
-<a href="https://leanpub.com/washingcode/"><img src="/images/washing-your-code-cover-small.jpg" width="150" height="194" align="right" /></a>
+<a href="https://leanpub.com/washingcode/"><img src="/images/washing-your-code-cover-small.jpg" width="150" height="194" align="right" style="margin:0 0 0 0.5rem" /></a>
 
 _You’re reading an excerpt of my upcoming book on clean code, “Washing your code: write once, read seven times.” [Preorder it on Leanpub](https://leanpub.com/washingcode/) or [read a draft online](https://github.com/sapegin/washingcode-book/blob/master/manuscript/book.md)._
 

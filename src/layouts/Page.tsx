@@ -16,7 +16,7 @@ type Props = {
 const Page = ({ children, url }: Props) => {
 	return (
 		<Base>
-			<Box as="aside" aria-label="Current offers" mx="-m">
+			<Box as="aside" aria-label="Current offers">
 				<Banner>
 					<QuotedLink href="http://leanpub.com/washingcode/c/stayathome-blog">
 						<span aria-hidden="true">☛</span>&nbsp;Wash your&nbsp;hands
