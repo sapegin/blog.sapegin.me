@@ -44,7 +44,7 @@ export default {
 						}: {
 							query: PostsQuery;
 						}) => {
-							return allMarkdownRemark.edges.map(edge => {
+							return allMarkdownRemark.edges.map((edge) => {
 								const url = `${siteUrl}/${edge.node.fields.slug}`;
 								return {
 									...edge.node.frontmatter,
@@ -96,13 +96,6 @@ export default {
 			resolve: `gatsby-plugin-canonical-urls`,
 			options: {
 				siteUrl,
-			},
-		},
-		{
-			resolve: 'gatsby-plugin-fathom',
-			options: {
-				trackingUrl: 'stats.sapegin.me',
-				siteId: 'JQWYF',
 			},
 		},
 	],
