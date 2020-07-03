@@ -98,5 +98,12 @@ export default {
 				siteUrl,
 			},
 		},
+		{
+			resolve: 'gatsby-plugin-goatcounter',
+			options: {
+				code: 'sapegin-blog',
+				allowLocal: false,
+			},
+		},
 	],
 };

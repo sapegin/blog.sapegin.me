@@ -50,6 +50,7 @@
     "gatsby": "^2.23.3",
     "gatsby-plugin-canonical-urls": "^2.3.4",
     "gatsby-plugin-feed": "^2.5.5",
+    "gatsby-plugin-goatcounter": "^0.3.1",
     "gatsby-plugin-netlify": "^2.3.5",
     "gatsby-plugin-react-helmet": "^3.3.4",
     "gatsby-plugin-sitemap": "^2.4.5",
