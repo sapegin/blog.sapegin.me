@@ -8,7 +8,8 @@ import styled, { createGlobalStyle } from 'styled-components';
  */
 
 const Container = styled.div`
-	padding: ${p => p.theme.page.xPadding} ${p => p.theme.page.yPadding};
+	padding: ${(p) => p.theme.page.contentPaddingX}
+		${(p) => p.theme.page.contentPaddingY};
 
 	::before {
 		content: '';
@@ -16,8 +17,8 @@ const Container = styled.div`
 		top: 0;
 		left: 0;
 		right: 0;
-		height: ${p => p.theme.space.s};
-		background-color: ${p => p.theme.colors.accent};
+		height: ${(p) => p.theme.space.s};
+		background-color: ${(p) => p.theme.colors.accent};
 	}
 `;
 
@@ -31,8 +32,8 @@ const GlobalStyles = createGlobalStyle`
 		position: absolute;
 		left: 0;
 		right: 0;
-		height: ${p => p.theme.space.s};
-		background-color: ${p => p.theme.colors.accent};
+		height: ${(p) => p.theme.space.s};
+		background-color: ${(p) => p.theme.colors.accent};
 	}
 	:root body::before {
 		top: 0;
