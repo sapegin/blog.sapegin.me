@@ -130,9 +130,9 @@ import '@testing-library/cypress/add-commands';
 
 We’re going to use [Mock Service Worker](https://mswjs.io/) (MSW) for mocking network requests in our integration tests, and in the app during development. Cypress has [its way of mocking network](https://docs.cypress.io/api/commands/server.html), but I think MSW has several benefits:
 
-- Uses Service Workers, so it intercepts all network requests, no matter how there are made.
+- It uses Service Workers, so it intercepts all network requests, no matter how there are made.
 - A single place to define mocks for the project, with the ability to [override responses](https://mswjs.io/docs/api/setup-server/use) for particular tests.
-- Ability to reuse mocks in integration tests and during development.
+- An ability to reuse mocks in integration tests and during development.
 - Requests are still visible in the browser developer tools.
 - Supports REST API and GraphQL.
 
@@ -602,4 +602,4 @@ I’ll be super happy if you share the article, and [let me know](https://twitte
 
 ---
 
-Thanks to [Artem Zakharchenko](https://redd.one/).
+Thanks to [Artem Zakharchenko](https://redd.one/), [Alexei Crecotun](https://crecotun.com/).
