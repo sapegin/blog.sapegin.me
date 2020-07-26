@@ -34,7 +34,7 @@ const fontSizes = {
 	base: '1rem',
 	xxl: '2.2rem',
 	xl: '1.7rem',
-	l: '1.25rem',
+	l: '1.4rem',
 	mplus: '1.1rem', // TODO
 	m: '1rem',
 	s: '0.85rem',
@@ -46,12 +46,13 @@ const colors = {
 	primary: '#331f06',
 	hover: '#b15400',
 	accent: '#8c5410',
+	highlight: '#f9f2dc',
 	selection: 'rgb(255,237,117)',
 	selectionAlpha: 'rgba(255,237,117,0.25)',
 };
 const fontWeights = {
 	base: 300,
-	heading: 300,
+	heading: 700,
 };
 const lineHeights = {
 	base: 1.5,
@@ -102,6 +103,7 @@ const theme = {
 	headingStyles: {
 		1: {
 			...headingBaseStyles,
+			fontWeight: 'base',
 			fontSize: 'xxl',
 		},
 		2: {
