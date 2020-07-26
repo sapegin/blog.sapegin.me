@@ -598,6 +598,8 @@ Good tests interact with the app similar to how a real user would do that, they 
 
 However, Cypress has many more features that we haven’t covered in the article, and that may be useful one day.
 
+I’ll be super happy if you share the article, and [let me know](https://twitter.com/iamsapegin) what you think!
+
 ---
 
 Thanks to [Artem Zakharchenko](https://redd.one/).
