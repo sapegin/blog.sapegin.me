@@ -15,9 +15,10 @@ Enzyme is probably the most popular tool to test React components. And though it
 
 **This is the second article in a series**, where we learn how to test React components with Jest and Enzyme and how to apply the best practices we’ve learned in the first article.
 
-- [Modern React testing: best practices](/all/react-testing-1-best-practices/)
-- **Modern React testing: Jest and Enzyme (_this post_)**
-- [Modern React testing: Jest and React Testing Library](/all/react-testing-3-jest-and-react-testing-library/)
+- [Modern React testing, part 1: best practices](/all/react-testing-1-best-practices/)
+- **Modern React testing, part 2: Jest and Enzyme (_this post_)**
+- [Modern React testing, part 3: Jest and React Testing Library](/all/react-testing-3-jest-and-react-testing-library/)
+- [Modern React testing, part 4: Cypress and Cypress Testing Library](/all/react-testing-4-cypress/)
 
 ## Getting started with Jest and Enzyme
 

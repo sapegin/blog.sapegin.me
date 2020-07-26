@@ -18,9 +18,10 @@ React Testing Library is a small library to test React components, that makes ap
 
 **This is the third article in a series**, where we learn how to test React components with Jest and React Testing Library.
 
-- [Modern React testing: best practices](/all/react-testing-1-best-practices/)
-- [Modern React testing: Jest and Enzyme](/all/react-testing-2-jest-and-enzyme/)
-- **Modern React testing: Jest and React Testing Library (_this post_)**
+- [Modern React testing, part 1: best practices](/all/react-testing-1-best-practices/)
+- [Modern React testing, part 2: Jest and Enzyme](/all/react-testing-2-jest-and-enzyme/)
+- **Modern React testing, part 3: Jest and React Testing Library (_this post_)**
+- [Modern React testing, part 4: Cypress and Cypress Testing Library](/all/react-testing-4-cypress/)
 
 ## Getting started with Jest and React Testing Library
 
@@ -51,11 +52,11 @@ We’ll set up and use these tools:
 - Libraries for other frameworks with the same queries.
 - [Recommended by React team](https://reactjs.org/docs/test-utils.html#overview).
 
-React Testing Library helps you write good tests and makes writing bad test hard. It allows you to query elements similar to how a user would do that: for example, query form elements and buttons by their labels.
+React Testing Library helps you write [good tests](/all/react-testing-1-best-practices/) and makes writing bad tests difficult. It allows you to query elements similar to how a user would do that: for example, query form elements and buttons by their labels.
 
 Some of the cons could be:
 
-- If you disagree with some of the best practices in this articles, Enzyme may be a better choice for you, since its API isn’t opinionated.
+- If you disagree with some of the best practices in this article, Enzyme may be a better choice for you, since its API isn’t opinionated.
 - React Testing Library is a new tool: it’s less mature and the community is smaller than Enzyme, though Testing Library development is more alive than Enzyme’s.
 
 ### Setting up Jest and React Testing Library
@@ -196,7 +197,7 @@ Let’s compare different methods of querying DOM elements:
 
 | Selector | Recommended | Notes |
 | --- | --- | --- |
-| `button`, `Button` | Never | Worst: too generic |
+| `button` | Never | Worst: too generic |
 | `.btn.btn-large` | Never | Bad: coupled to styles |
 | `#main` | Never | Bad: avoid IDs in general |
 | `[data-testid="cookButton"]` | Sometimes | Okay: not visible to the user, but not an implementation detail, use when better options aren’t available |
@@ -429,7 +430,7 @@ There are many ways to test components, that send network requests:
 
 I’m not mentioning sending a real network request to a real API as an option here, because it’s slow and fragile. Every network problem or change of the data, returned by the API, may break our tests. Also, we’ll need to have the right data for all test cases — hard to achieve with a real API or a database.
 
-Let’s look at some of the methos in more detail.
+Let’s look at some of the methods in more detail.
 
 **Dependency injection** is when we pass a dependency as a function parameter or a component prop, instead of hardcoding it inside a module. This allows us to pass another implementation in a test. Use default function parameters or default component props to define the default implementation, one that should be used in non-test code. That way we don’t have to pass the dependency every time we use a function or a component:
 
@@ -606,7 +607,7 @@ Here we’re defining _a Nock scope_: a mapping of request URLs and mock respons
 To summarize the difference between `jest.mock()` and Nock:
 
 - `jest.mock()` is already available with Jest and we don’t need to set up and learn anything new — it works the same way as mocking any other module.
-- Nock has a specilized API to describe network requests and responses, and debugging tools to help us when something isn’t working. It can also record real network requests, so we don’t have to hand-craft mock responses.
+- Nock has a specialized API to describe network requests and responses, and debugging tools to help us when something isn’t working. It can also record real network requests, so we don’t have to hand-craft mock responses.
 
 ### Debugging
 
