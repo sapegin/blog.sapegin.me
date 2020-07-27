@@ -17,9 +17,10 @@ I wrote [a similar article](https://blog.sapegin.me/all/react-jest/) three years
 
 **This is the first article in a series**, where we learn why test automation is useful, which types of tests to write, and testing best practices.
 
-- **Modern React testing: best practices (_this post_)**
-- [Modern React testing: Jest and Enzyme](/all/react-testing-2-jest-and-enzyme/)
-- [Modern React testing: Jest and React Testing Library](/all/react-testing-3-jest-and-react-testing-library/)
+- **Modern React testing, part 1: best practices (_this post_)**
+- [Modern React testing, part 2: Jest and Enzyme](/all/react-testing-2-jest-and-enzyme/)
+- [Modern React testing, part 3: Jest and React Testing Library](/all/react-testing-3-jest-and-react-testing-library/)
+- [Modern React testing, part 4: Cypress and Cypress Testing Library](/all/react-testing-4-cypress/)
 
 ## Why automate testing
 

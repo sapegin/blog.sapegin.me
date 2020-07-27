@@ -15,8 +15,10 @@ export default function Base({ children }: Props) {
 				<html lang="en" />
 				<meta name="theme-color" content={theme.colors.accent} />
 			</Helmet>
-			<PrismStyles />
-			<Provider>{children}</Provider>
+			<Provider>
+				<PrismStyles />
+				{children}
+			</Provider>
 		</>
 	);
 }

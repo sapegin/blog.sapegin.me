@@ -16,7 +16,21 @@ export const PrismStyles = createGlobalStyle`
 		white-space: nowrap;
 	}
 
+	.gatsby-highlight-code-line {
+		display: block;
+		margin-right: -1rem;
+		margin-left: -1rem;
+		padding-right: 1rem;
+		padding-left: 0.85rem;
+		background-color: ${(props) => props.theme.colors.highlight};
+		border-left: 0.15rem solid ${(props) => props.theme.colors.accent};
+	}
+
 	pre[class*='language-'] {
+		margin-right: -1rem;
+		margin-left: -1rem;
+		padding-right: 1rem;
+		padding-left: 1rem;
 		color: ${color0};
 		background: none;
 		word-spacing: normal;
