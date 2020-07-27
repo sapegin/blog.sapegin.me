@@ -1,7 +1,7 @@
 ---
 layout: Post
 title: 'Modern React testing, part 4: Cypress and Cypress Testing Library'
-description: 'You’ll learn how to test React apps end-to-end with Cypress and Cypres Testing Library, how to mock network requests with Mock Service Worker, and how to apply testing best practices to write integration tests.'
+description: 'Learn how to test React apps end-to-end with Cypress and Cypres Testing Library, how to mock network requests with Mock Service Worker, and how to apply testing best practices to write integration tests, that are good and resilient to changes.'
 date: 2020-07-27
 lang: en
 tags:
