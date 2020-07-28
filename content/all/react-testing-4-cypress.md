@@ -130,7 +130,7 @@ import '@testing-library/cypress/add-commands';
 
 We’re going to use [Mock Service Worker](https://mswjs.io/) (MSW) for mocking network requests in our integration tests, and in the app during development. Cypress has [its way of mocking network](https://docs.cypress.io/api/commands/server.html), but I think MSW has several benefits:
 
-- It uses Service Workers, so it intercepts all network requests, no matter how there are made.
+- It uses Service Workers, so it intercepts all network requests, no matter how they are made.
 - A single place to define mocks for the project, with the ability to [override responses](https://mswjs.io/docs/api/setup-server/use) for particular tests.
 - An ability to reuse mocks in integration tests and during development.
 - Requests are still visible in the browser developer tools.
@@ -195,7 +195,7 @@ function App() {
 // ...
 ```
 
-Now, every time we run our app in development mode or integration tests, network requests will be mocked, without any changes to the application code or tests, except four lines of code in the root module.
+Now, when we run integration tests, or the app in development mode, all network requests will be mocked. We don’t need to do anything special when we make a request, except these four lines of code in the root module.
 
 ### Creating our first test
 
@@ -241,7 +241,7 @@ Let’s compare different methods of querying DOM elements:
 | `[alt="Chuck Norris"]`, `[role="banner"]` | Often | Good: still not visible to users, but already part of the app UI |
 | `[children="Cook pizza!"]` | Always | Best: visible to the user part of the app UI |
 
-To summarise:
+To summarize:
 
 - Text content may change and we’ll need to update our tests. This may not be a problem if our translation library only render string IDs in tests, or if we want our test to work with the actual text users see in the app.
 - Test IDs clutter the markup with props we only need in tests. Test IDs are also something that users of our app don’t see: if we remove a label from a button, a test with test ID will still pass.
@@ -594,7 +594,7 @@ This is still better than increasing the global timeout.
 
 ## Conclusion
 
-Good tests interact with the app similar to how a real user would do that, they don’t test implementation details, and they are resilient to code changes that don’t change the behavior. We’ve learned how to write good end-to-end tests using Cypress and Cypress Testing Library, how to set it app, and how to mock network requests using Mock Service Worker.
+Good tests interact with the app similar to how a real user would do that, they don’t test implementation details, and they are resilient to code changes that don’t change the behavior. We’ve learned how to write good end-to-end tests using Cypress and Cypress Testing Library, how to set it up, and how to mock network requests using Mock Service Worker.
 
 However, Cypress has many more features that we haven’t covered in the article, and that may be useful one day.
 
@@ -602,4 +602,4 @@ I’ll be super happy if you share the article, and [let me know](https://twitte
 
 ---
 
-Thanks to [Artem Zakharchenko](https://redd.one/), [Alexei Crecotun](https://crecotun.com/).
+Thanks to [Artem Zakharchenko](https://redd.one/), [Alexei Crecotun](https://crecotun.com/), Troy Giunipero.
