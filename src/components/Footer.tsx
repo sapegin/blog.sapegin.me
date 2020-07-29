@@ -13,8 +13,8 @@ export default function Footer() {
 			<Text variant="xsmall">
 				Powered by <Link href="https://www.gatsbyjs.org/">Gatsby</Link> and{' '}
 				<Link href="https://tamiadev.github.io/tamia/">Tâmia</Link>, hosted on{' '}
-				<Link href="https://www.netlify.com/">Netlify</Link>.
-				<Link href="/atom.xml">RSS</Link>.
+				<Link href="https://www.netlify.com/">Netlify</Link>.{' '}
+				<Link href="/atom.xml">RSS</Link>
 			</Text>
 		</footer>
 	);
