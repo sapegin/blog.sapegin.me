@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text } from 'tamia';
 import { Link } from 'tamia-gatsby-link';
+import romanize from 'romanize';
 
 export default function Footer() {
 	return (
@@ -8,7 +9,7 @@ export default function Footer() {
 			<Text variant="xsmall" mb="xs">
 				© <Link href="https://sapegin.me/">Artem Sapegin</Link>
 				{', '}
-				2006…{new Date().getFullYear()}
+				{romanize(2006)}—{romanize(new Date().getFullYear())}
 			</Text>
 			<Text variant="xsmall">
 				Powered by <Link href="https://www.gatsbyjs.org/">Gatsby</Link> and{' '}
