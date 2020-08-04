@@ -101,6 +101,15 @@ And two scripts to run Create React App development server and Cypress together:
 - `npm run test:e2e` to run dev server and Cypress ready for local development;
 - `npm run test:e2e:ci` to run dev server and all Cypress tests in headless Chrome, ideal for CI.
 
+_Tip:_ for projects using Yarn, change the start-server-and-test commands like so:
+
+```diff
+-    "test:e2e": "start-server-and-test start 3000 cypress",
+-    "test:e2e:ci": "start-server-and-test start 3000 cypress:headless"
++    "test:e2e": "start-server-and-test 'yarn start' 3000 'yarn cypress'",
++    "test:e2e:ci": "start-server-and-test 'yarn start' 3000 'yarn cypress:headless'"
+```
+
 Then, create a Cypress config file, [cypress.json](https://github.com/sapegin/cypress-article-2020/blob/master/cypress.json) in the project root folder:
 
 ```json
