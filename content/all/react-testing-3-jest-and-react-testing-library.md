@@ -637,6 +637,7 @@ DEBUG=nock.* npm test
 
 - [Jest cheat sheet](https://github.com/sapegin/jest-cheat-sheet/blob/master/Readme.md)
 - [Common mistakes with React Testing Library](https://kentcdodds.com/blog/common-mistakes-with-react-testing-library)
+- [Which query should I use?](https://testing-library.com/docs/guide-which-query)
 
 ## Conclusion
 
