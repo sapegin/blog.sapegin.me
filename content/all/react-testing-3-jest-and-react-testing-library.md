@@ -89,7 +89,7 @@ global.fetch = fetch;
 
 Then update the [package.json](https://github.com/sapegin/rtl-article-2019/blob/master/package.json) like this:
 
-```json {14-24}
+```json {15-25}
 {
   "name": "pizza",
   "version": "1.0.0",
