@@ -120,6 +120,8 @@ Then update the [package.json](https://github.com/sapegin/rtl-article-2019/blob/
 
 The `setupFilesAfterEnv` option tells Jest to load `jest-dom` matchers and the location of our setup file.
 
+**Tip:** two ESLint plugins [eslint-plugin-testing-library](https://github.com/testing-library/eslint-plugin-testing-library) and [eslint-plugin-jest-dom](https://github.com/testing-library/eslint-plugin-jest-dom) helps to avoid common mistakes when using Testing Library. Many of their rules are fixable.
+
 ### Creating our first test
 
 The best location for a test is close to the source code. For example, if we have a component at `src/components/Button.js`, a test for this component could be at `src/components/__tests__/Button.spec.js`. Jest will find and run this file automatically.
@@ -322,7 +324,7 @@ test('button expands and collapses the content', () => {
 
   userEvent.click(screen.getByRole('button', { name: /expand/i }));
 
-  expect(screen.queryByText(children)).toBeInTheDocument();
+  expect(screen.getByText(children)).toBeInTheDocument();
 
   userEvent.click(screen.getByRole('button', { name: /collapse/i }));
 
