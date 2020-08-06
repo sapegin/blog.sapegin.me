@@ -275,7 +275,7 @@ Benefits of the last method are:
 - doesn’t give false positives when the same text is used in non-interactive content;
 - makes sure that the button is an actual `button` element or at least have the `button` ARIA role.
 
-Check the Testing Library docs for more details on [which query to use](https://testing-library.com/docs/guide-which-query).
+Check the Testing Library docs for more details on [which query to use](https://testing-library.com/docs/guide-which-query) and [inherent roles of HTML elements](https://github.com/A11yance/aria-query#elements-to-roles).
 
 ## Testing React components
 
@@ -638,6 +638,7 @@ DEBUG=nock.* npm test
 - [Jest cheat sheet](https://github.com/sapegin/jest-cheat-sheet/blob/master/Readme.md)
 - [Common mistakes with React Testing Library](https://kentcdodds.com/blog/common-mistakes-with-react-testing-library)
 - [Which query should I use?](https://testing-library.com/docs/guide-which-query)
+- [Inherent roles of HTML elements](https://github.com/A11yance/aria-query#elements-to-roles)
 
 ## Conclusion
 

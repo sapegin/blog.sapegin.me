@@ -305,7 +305,7 @@ Benefits of the last method are:
 - doesn’t give false positives when the same text is used in non-interactive content;
 - makes sure that the button is an actual `button` element or at least have the `button` ARIA role.
 
-Check the Testing Library docs for more details on [which query to use](https://testing-library.com/docs/guide-which-query).
+Check the Testing Library docs for more details on [which query to use](https://testing-library.com/docs/guide-which-query), and [inherent roles of HTML elements](https://github.com/A11yance/aria-query#elements-to-roles).
 
 ## Testing React apps end-to-end
 
