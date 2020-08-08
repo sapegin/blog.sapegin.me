@@ -1,5 +1,7 @@
 const baseFont = 'Georgia, serif';
-const monospaceFont = 'Monaco, "DejaVu Sans Mono", "Lucida Console", monospace';
+const headingFont = '"Playfair Display", Georgia, serif';
+const monospaceFont =
+	'MonoLisa, Monaco, "DejaVu Sans Mono", "Lucida Console", monospace';
 const space = {
 	xxs: '0.125rem', // 2px
 	xs: '0.25rem', // 4px
@@ -26,7 +28,7 @@ const breakpoints = [
 ];
 const fonts = {
 	base: baseFont,
-	heading: baseFont,
+	heading: headingFont,
 	pre: monospaceFont,
 	code: 'inherit',
 };
@@ -52,7 +54,7 @@ const colors = {
 };
 const fontWeights = {
 	base: 300,
-	heading: 700,
+	heading: 800,
 };
 const lineHeights = {
 	base: 1.5,
