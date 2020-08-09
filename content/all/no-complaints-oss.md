@@ -20,8 +20,8 @@ There are many ways you can make folks in the open source community happier:
 
 - new feature specs (better than just ideas because they’re often not actionable);
 - detailed easily reproducible bug reports;
-- any maintenance help, like answering questions on GitHub, Stack Overflow or Twitter.
-- bugfixes;
+- any maintenance help, like answering questions on GitHub, Stack Overflow or Twitter;
+- bugfixes;<!-- HACK: It’s not rendered as a list item if there’s just a single word -->
 - new features;
 - docs improvements.
 
