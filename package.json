@@ -33,7 +33,7 @@
     "react-helmet": "^6.1.0",
     "romanize": "^1.1.1",
     "styled-components": "^5.1.1",
-    "tamia": "^5.9.3",
+    "tamia": "^5.9.5",
     "tamia-gatsby-link": "^1.0.6"
   },
   "devDependencies": {

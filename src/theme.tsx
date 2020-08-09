@@ -1,5 +1,5 @@
 const baseFont = 'Georgia, serif';
-const headingFont = '"Playfair Display", Georgia, serif';
+const headingFont = 'PlayfairDisplay, Georgia, serif';
 const monospaceFont =
 	'MonoLisa, Monaco, "DejaVu Sans Mono", "Lucida Console", monospace';
 const space = {
@@ -53,8 +53,8 @@ const colors = {
 	selectionAlpha: 'rgba(255,237,117,0.25)',
 };
 const fontWeights = {
-	base: 300,
-	heading: 800,
+	base: 'normal',
+	heading: 'bold',
 };
 const lineHeights = {
 	base: 1.5,
@@ -63,7 +63,7 @@ const lineHeights = {
 };
 const letterSpacings = {
 	base: 0,
-	heading: 0,
+	heading: '0.05ex',
 };
 const headingBaseStyles = {
 	color: 'base',
@@ -107,6 +107,7 @@ const theme = {
 			...headingBaseStyles,
 			fontWeight: 'base',
 			fontSize: 'xxl',
+			letterSpacing: 'base',
 		},
 		2: {
 			...headingBaseStyles,

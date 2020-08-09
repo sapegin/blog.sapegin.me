@@ -4,9 +4,10 @@ import styled from 'styled-components';
 
 const Container = styled.header`
 	text-align: center;
-	font-size: ${p => p.theme.fontSizes.m};
-	@media (min-width: ${p => p.theme.breakpoints[0]}) {
-		font-size: ${p => p.theme.fontSizes.l};
+	font-family: ${(p) => p.theme.fonts.heading};
+	font-size: ${(p) => p.theme.fontSizes.m};
+	@media (min-width: ${(p) => p.theme.breakpoints[0]}) {
+		font-size: ${(p) => p.theme.fontSizes.l};
 	}
 `;
 
