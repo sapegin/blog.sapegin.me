@@ -35,9 +35,9 @@ li + li::before {
 </p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
-**Pros:** simple.
+**Pros.** Simple.
 
-**Cons:** not accessible. Screen readers will pronounce each bullet as _middle dot_ or something similar.
+**Cons.** Not accessible. Screen readers will pronounce each bullet as _middle dot_ or something similar.
 
 ## Right solution: markup
 
@@ -58,9 +58,9 @@ A naïve solution to accessibility problems could be moving bullets to the marku
 </p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
-**Pros:** works fine in screen readers.
+**Pros.** works fine in screen readers.
 
-**Cons:** I don’t like keeping things like list bullets in the markup if I can avoid that, but to use a text character as a bullet, this may be your only solution.
+**Cons.** I don’t like keeping things like list bullets in the markup if I can avoid that, but to use a text character as a bullet, this may be your only solution.
 
 ## Right solution: image or CSS in pseudo elements
 
@@ -95,9 +95,9 @@ I’ve added `display: flex` to the `ul` to make it independent from possible 
 </p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
-**Pros:** works fine in screen readers, clean markup.
+**Pros.** works fine in screen readers, clean markup.
 
-**Cons:** a lot more CSS. Need to draw a bullet using CSS or SVG.
+**Cons.** a lot more CSS. Need to draw a bullet using CSS or SVG.
 
 ## Conclusion
 

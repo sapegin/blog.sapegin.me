@@ -120,7 +120,7 @@ Then update the [package.json](https://github.com/sapegin/rtl-article-2019/blob/
 
 The `setupFilesAfterEnv` option tells Jest to load `jest-dom` matchers and the location of our setup file.
 
-**Tip:** two ESLint plugins [eslint-plugin-testing-library](https://github.com/testing-library/eslint-plugin-testing-library) and [eslint-plugin-jest-dom](https://github.com/testing-library/eslint-plugin-jest-dom) helps to avoid common mistakes when using Testing Library. Many of their rules are fixable.
+**Tip:** Two ESLint plugins [eslint-plugin-testing-library](https://github.com/testing-library/eslint-plugin-testing-library) and [eslint-plugin-jest-dom](https://github.com/testing-library/eslint-plugin-jest-dom) helps to avoid common mistakes when using Testing Library. Many of their rules are fixable.
 
 ### Creating our first test
 

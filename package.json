@@ -74,7 +74,8 @@
     "stylelint-config-recommended": "^3.0.0",
     "stylelint-config-styled-components": "^0.1.1",
     "stylelint-processor-styled-components": "^1.10.0",
-    "typescript": "^3.9.5"
+    "typescript": "^3.9.5",
+    "unist-util-visit": "^2.0.3"
   },
   "husky": {
     "hooks": {

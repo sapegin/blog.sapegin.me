@@ -1,6 +1,8 @@
+import path from 'path';
+import { PostsQuery } from './src/types/GraphQL';
+
 const title = 'Artem Sapegin’s Blog';
 const siteUrl = 'https://blog.sapegin.me';
-import { PostsQuery } from './src/types/GraphQL';
 
 export default {
 	siteMetadata: {
@@ -31,6 +33,7 @@ export default {
 							},
 						},
 					},
+					'remark-tips',
 				],
 			},
 		},

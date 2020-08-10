@@ -27,6 +27,24 @@ const Container = styled(Box)`
 		content: '···';
 		letter-spacing: 0.7em;
 	}
+
+	/* Tips */
+	.tip {
+		margin: ${(p) => p.theme.space.l} 0;
+		font-size: ${(p) => p.theme.fontSizes.s};
+		font-style: italic;
+	}
+	.tip:first-child {
+		margin-top: 0;
+	}
+	.tip + .tip {
+		margin-top: -${(p) => p.theme.space.m};
+	}
+	.tip__title {
+		display: block;
+		margin-bottom: ${(p) => p.theme.space.xxs};
+		font-style: normal;
+	}
 `;
 
 type Props = {

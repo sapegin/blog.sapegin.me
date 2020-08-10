@@ -72,6 +72,6 @@ It could also be because many popular open source projects are old but in the su
 
 So if you’re starting a new JavaScript project [AirBnb preset](https://github.com/airbnb/javascript) (2 spaces, semicolons, etc.) will be a good choice: your code style will be familiar for many developers.
 
-_Note: two projects of 100 are written in CoffeeScript. CoffeeScript itself is one of them. They and one with only native code were excluded from the results._
+**Note:** Two projects of 100 are written in CoffeeScript. CoffeeScript itself is one of them. They and one with only native code were excluded from the results.
 
-_All data and chart sources are [on GitHub](https://github.com/sapegin/jscodestyle)._
+**Source:** All data and chart sources are [on GitHub](https://github.com/sapegin/jscodestyle).
