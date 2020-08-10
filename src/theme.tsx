@@ -43,11 +43,11 @@ const fontSizes = {
 	xs: '0.7rem',
 };
 const colors = {
-	bg: '#f9f8f6',
-	base: '#331f06',
-	primary: '#331f06',
-	hover: '#b15400',
-	accent: '#8c5410',
+	bg: '#fdfbf7',
+	base: '#362a1b',
+	primary: '#362a1b',
+	hover: '#a2672f',
+	accent: '#906e46',
 	highlight: '#f9f2dc',
 	selection: 'rgb(255,237,117)',
 	selectionAlpha: 'rgba(255,237,117,0.25)',
