@@ -1,11 +1,12 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { Box } from 'tamia';
+import { Stack } from 'tamia';
 import PageWithTitle from './PageWithTitle';
 import PostContent from '../components/PostContent';
 import PostMeta from '../components/PostMeta';
 import RelatedPosts from '../components/RelatedPosts';
 import Metatags from '../components/Metatags';
+import Fleuron from '../components/Fleuron';
 import { Post } from '../types';
 
 type Props = {
@@ -47,18 +48,23 @@ export default function PostPage({
 				title={title}
 				description={description || excerpt}
 			/>
-			<Box mb="l">
-				<PostContent>
-					{/* eslint-disable-next-line @typescript-eslint/naming-convention */}
-					<div dangerouslySetInnerHTML={{ __html: html }} />
-				</PostContent>
-			</Box>
-			<Box as="footer" mb="xl">
-				<PostMeta slug={pathname} date={date} dateTime={dateTime} />
-			</Box>
-			<Box as="aside" mb="l">
-				<RelatedPosts posts={related} />
-			</Box>
+			<Stack gap="xl">
+				<Stack gap="l">
+					<PostContent>
+						{/* eslint-disable-next-line @typescript-eslint/naming-convention */}
+						<div dangerouslySetInnerHTML={{ __html: html }} />
+					</PostContent>
+					<footer>
+						<PostMeta slug={pathname} date={date} dateTime={dateTime} />
+					</footer>
+					<Fleuron />
+				</Stack>
+				<Stack gap="l">
+					<aside>
+						<RelatedPosts posts={related} />
+					</aside>
+				</Stack>
+			</Stack>
 		</PageWithTitle>
 	);
 }
