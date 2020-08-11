@@ -611,4 +611,4 @@ I’ll be super happy if you share the article, and [let me know](https://twitte
 
 ---
 
-Thanks to [Artem Zakharchenko](https://redd.one/), [Alexei Crecotun](https://crecotun.com/).
+Thanks to [Artem Zakharchenko](https://redd.one/), [Alexei Crecotun](https://crecotun.com/), Troy Giunipero.
