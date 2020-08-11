@@ -14,15 +14,15 @@ function getRelatedPosts(
 	{ slug, tags }: { slug: string; tags: string[] }
 ) {
 	const weighted = posts
-		.filter(d => d.slug !== slug)
-		.map(d => {
-			const common = (d.tags || []).filter(t => (tags || []).includes(t));
+		.filter((d) => d.slug !== slug)
+		.map((d) => {
+			const common = (d.tags || []).filter((t) => (tags || []).includes(t));
 			return {
 				...d,
 				weight: common.length * Number(d.timestamp),
 			};
 		})
-		.filter(d => d.weight > 0);
+		.filter((d) => d.weight > 0);
 	const sorted = sortBy(weighted, 'weight').reverse();
 	return sorted.slice(0, MAX_RELATED);
 }
@@ -41,22 +41,24 @@ export const onCreateNode: GatsbyNode['onCreateNode'] = ({
 	getNode,
 	actions: { createNodeField },
 }) => {
-	if (node.internal.type === 'MarkdownRemark') {
+	if (
+		node.internal.type === 'MarkdownRemark' &&
+		// Don't process the same document twice
+		!((node as unknown) as MakdownNode)?.fields?.slug
+	) {
 		// Typography
 		if (node.internal.content) {
 			node.internal.content = richtypo(rules, node.internal.content);
 		}
 
-		if (!((node as unknown) as MakdownNode)?.fields?.slug) {
-			createNodeField({
+		createNodeField({
+			node,
+			name: 'slug',
+			value: createFilePath({
 				node,
-				name: 'slug',
-				value: createFilePath({
-					node,
-					getNode,
-				}),
-			});
-		}
+				getNode,
+			}),
+		});
 	}
 };
 
@@ -83,7 +85,7 @@ export const createPages: GatsbyNode['createPages'] = ({
 					}
 				}
 			}
-		`).then(result => {
+		`).then((result) => {
 			if (result.errors) {
 				reject(result.errors);
 				return;
@@ -93,7 +95,7 @@ export const createPages: GatsbyNode['createPages'] = ({
 				return;
 			}
 
-			const docs = result.data.allMarkdownRemark.edges.map(e => ({
+			const docs = result.data.allMarkdownRemark.edges.map((e) => ({
 				...e.node.frontmatter,
 				...e.node.fields,
 			}));
