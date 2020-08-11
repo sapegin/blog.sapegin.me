@@ -22,7 +22,7 @@ const ITEMS: Item[] = [
 	},
 	{
 		title: 'Speaking',
-		href: '/speaking/',
+		href: 'https://sapegin.me/speaking/',
 	},
 	{
 		title: 'Photography',

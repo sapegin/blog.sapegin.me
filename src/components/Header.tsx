@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'tamia-gatsby-link';
 import { Stack, Text } from 'tamia';
 import Menu from './Menu';
 
@@ -10,8 +11,8 @@ type Props = {
 export default function Header({ title = 'Artem Sapegin', url }: Props) {
 	return (
 		<Stack gap="l" justifyContent="space-between" direction={['column', 'row']}>
-			<Text as="h1" variant="menu" fontWeight="bold">
-				{title}
+			<Text variant="menu" fontWeight="bold">
+				<Link href="https://sapegin.me/">{title}</Link>
 			</Text>
 			<Menu current={url} />
 		</Stack>
