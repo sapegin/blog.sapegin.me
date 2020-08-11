@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-const fontDisplay = 'swap';
+const fontDisplay = 'fallback';
 
 export const Fonts = createGlobalStyle`
 	@font-face {
