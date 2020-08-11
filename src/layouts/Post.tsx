@@ -4,6 +4,7 @@ import { Stack } from 'tamia';
 import PageWithTitle from './PageWithTitle';
 import PostContent from '../components/PostContent';
 import PostMeta from '../components/PostMeta';
+import Subscription from '../components/Subscription';
 import RelatedPosts from '../components/RelatedPosts';
 import Metatags from '../components/Metatags';
 import Fleuron from '../components/Fleuron';
@@ -60,7 +61,10 @@ export default function PostPage({
 					<Fleuron />
 				</Stack>
 				<Stack gap="l">
-					<aside>
+					<aside aria-label="Newsletter">
+						<Subscription />
+					</aside>
+					<aside aria-label="Related posts">
 						<RelatedPosts posts={related} />
 					</aside>
 				</Stack>

@@ -1,9 +1,8 @@
 import React from 'react';
-import { Container, Box, Text, QuotedLink } from 'tamia';
+import { Container, Box, Stack, Text, QuotedLink } from 'tamia';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Banner from '../components/Banner';
-import PageFooter from '../components/PageFooter';
 import PageContainer from '../components/PageContainer';
 import Base from './Base';
 
@@ -36,14 +35,11 @@ const Page = ({ children, url }: Props) => {
 			</Box>
 			<PageContainer>
 				<Container>
-					<Box mb="l">
+					<Stack gap="l">
 						<Header url={url} />
-					</Box>
-					<Box as="main" mb="l">
-						{children}
-					</Box>
-					<PageFooter />
-					<Footer />
+						<main>{children}</main>
+						<Footer />
+					</Stack>
 				</Container>
 			</PageContainer>
 		</Base>

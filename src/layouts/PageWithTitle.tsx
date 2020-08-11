@@ -11,7 +11,7 @@ type Props = {
 export default function PageWithTitle({ children, ...props }: Props) {
 	return (
 		<Page {...props}>
-			<Heading level={1} mb="l">
+			<Heading level={1} mb="m">
 				{props.title}
 			</Heading>
 			{children}

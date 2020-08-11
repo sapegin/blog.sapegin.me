@@ -8,9 +8,6 @@ import styled, { createGlobalStyle } from 'styled-components';
  */
 
 const Container = styled.div`
-	padding: ${(p) => p.theme.page.contentPaddingX}
-		${(p) => p.theme.page.contentPaddingY};
-
 	::before {
 		content: '';
 		position: absolute;

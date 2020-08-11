@@ -3,6 +3,7 @@ const headingFont = 'PlayfairDisplay, Georgia, serif';
 const monospaceFont =
 	'MonoLisa, Monaco, "DejaVu Sans Mono", "Lucida Console", monospace';
 const space = {
+	0: 0,
 	xxs: '0.125rem', // 2px
 	xs: '0.25rem', // 4px
 	s: '0.5rem', // 8px
@@ -91,7 +92,7 @@ const theme = {
 		bodyPaddingY: 0,
 		contentMaxWidth: '44rem',
 		contentPaddingX: space.m,
-		contentPaddingY: space.m,
+		contentPaddingY: space.l,
 		textMaxWidth: '44rem',
 	},
 	fonts,
@@ -121,6 +122,7 @@ const theme = {
 	textStyles: {
 		base: {
 			...textBaseStyles,
+			fontSize: 'm',
 		},
 		small: {
 			...textBaseStyles,
@@ -133,6 +135,11 @@ const theme = {
 		italic: {
 			...textBaseStyles,
 			fontStyle: 'italic',
+		},
+		menu: {
+			...headingBaseStyles,
+			fontSize: 'mplus',
+			fontWeight: 'normal',
 		},
 	},
 } as const;
