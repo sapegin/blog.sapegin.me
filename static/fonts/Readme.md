@@ -1,4 +1,4 @@
 # Fonts
 
-- [Playfair Display](https://github.com/clauseggers/Playfair-Display)
+- [Sabon by Monotype](https://fonts.adobe.com/fonts/sabon)
 - [MonoLisa](https://monolisa.dev/)
