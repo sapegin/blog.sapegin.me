@@ -15,7 +15,9 @@
     "lint:js": "eslint . --cache --fix --ext .js,.tsx",
     "format": "prettier --loglevel warn --write \"**/*.{js,md}\"",
     "styleguide": "styleguidist server",
-    "styleguide:build": "styleguidist build"
+    "styleguide:build": "styleguidist build",
+    "sync": "node scripts/sync.js",
+    "deploy": "npm run sync && npm run build"
   },
   "engines": {
     "node": ">=8.9"
@@ -48,6 +50,7 @@
     "eslint": "^7.2.0",
     "eslint-config-tamia": "^7.2.5",
     "eslint-plugin-react": "^7.20.0",
+    "fs-extra": "^9.0.1",
     "gatsby": "^2.23.3",
     "gatsby-plugin-canonical-urls": "^2.3.4",
     "gatsby-plugin-feed": "^2.5.5",
@@ -61,6 +64,7 @@
     "gatsby-remark-prismjs": "^3.5.4",
     "gatsby-source-filesystem": "^2.3.11",
     "gatsby-transformer-remark": "^2.8.15",
+    "glob": "^7.1.6",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.9",
     "lodash": "^4.17.15",
