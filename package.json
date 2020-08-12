@@ -67,7 +67,7 @@
     "glob": "^7.1.6",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.9",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "prettier": "^2.0.5",
     "react-styleguidist": "^11.0.8",
     "remark-cli": "^8.0.0",
