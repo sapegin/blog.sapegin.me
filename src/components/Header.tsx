@@ -10,7 +10,12 @@ type Props = {
 
 export default function Header({ title = 'Artem Sapegin', url }: Props) {
 	return (
-		<Stack gap="l" justifyContent="space-between" direction={['column', 'row']}>
+		<Stack
+			as="header"
+			gap="l"
+			justifyContent="space-between"
+			direction={['column', 'row']}
+		>
 			<Text variant="menu" fontWeight="bold">
 				<Link href="https://sapegin.me/">{title}</Link>
 			</Text>

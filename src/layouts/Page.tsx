@@ -37,7 +37,7 @@ const Page = ({ children, url }: Props) => {
 				<Container>
 					<Stack gap="l">
 						<Header url={url} />
-						<main>{children}</main>
+						{children}
 						<Footer />
 					</Stack>
 				</Container>

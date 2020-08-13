@@ -13,23 +13,36 @@ type Fields = {
 type Frontmatter = {
 	title: string;
 	tags: string[];
-	year: string;
 	dateTime: string;
 };
 
 type Post = Fields & Frontmatter;
 
 type GroupedPosts = {
-	[year: string]: Post[];
+	[category: string]: Post[];
 };
 
-const groupByYear = (posts: Post[]) => groupBy(posts, (post) => post.year);
+const CATEGORY_TITLES: Record<string, string> = {
+	typescript: 'TypeScript',
+};
 
-const getYears = (postsByYear: GroupedPosts): string[] => {
-	const years = Object.keys(postsByYear);
-	years.sort();
-	years.reverse();
-	return years;
+const getCategoryTitle = (key: string) => {
+	if (CATEGORY_TITLES[key]) {
+		return CATEGORY_TITLES[key];
+	}
+
+	const [firstLetter, ...restLetters] = key;
+	return `${firstLetter.toUpperCase()}${restLetters}`;
+};
+
+const groupByCategory = (posts: Post[]) =>
+	// Get category from the slug: /til/react/bla-bla-bla → react
+	groupBy(posts, (post) => post.slug.split('/')[2]);
+
+const getCategories = (postsByCategory: GroupedPosts): string[] => {
+	const categories = Object.keys(postsByCategory);
+	categories.sort();
+	return categories;
 };
 
 type Props = {
@@ -48,7 +61,7 @@ type Props = {
 	};
 };
 
-const Index = ({
+const Til = ({
 	data: {
 		allMarkdownRemark: { edges },
 	},
@@ -58,20 +71,20 @@ const Index = ({
 		...node.fields,
 		...node.frontmatter,
 	}));
-	const postsByYear = groupByYear(posts);
-	const years = getYears(postsByYear);
+	const postsByCategory = groupByCategory(posts);
+	const categories = getCategories(postsByCategory);
 	return (
 		<Page url={pathname}>
 			<Metatags slug={pathname} />
 			<main>
-				<VisuallyHidden as="h1">Artem Sapegin’s blog posts</VisuallyHidden>
+				<VisuallyHidden as="h1">Today I learned posts</VisuallyHidden>
 				<Stack gap="l">
-					{years.map((year) => (
-						<Stack key={year} as="section" gap="m">
+					{categories.map((category) => (
+						<Stack key={category} as="section" gap="m">
 							<Heading as="h2" level={2}>
-								{year}
+								{getCategoryTitle(category)}
 							</Heading>
-							<PostList posts={postsByYear[year]} />
+							<PostList posts={postsByCategory[category]} />
 						</Stack>
 					))}
 				</Stack>
@@ -80,13 +93,13 @@ const Index = ({
 	);
 };
 
-export default Index;
+export default Til;
 
 export const pageQuery = graphql`
-	query IndexPage {
+	query TilPage {
 		allMarkdownRemark(
-			filter: { fileAbsolutePath: { regex: "/all/.*/" } }
-			sort: { fields: [frontmatter___date], order: DESC }
+			filter: { fileAbsolutePath: { regex: "/til/.*/" } }
+			sort: { fields: [frontmatter___title], order: ASC }
 		) {
 			edges {
 				node {
@@ -96,7 +109,6 @@ export const pageQuery = graphql`
 					frontmatter {
 						title
 						tags
-						year: date(formatString: "YYYY")
 						dateTime: date(formatString: "YYYY-MM-DD")
 					}
 				}

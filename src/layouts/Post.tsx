@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { Stack } from 'tamia';
-import PageWithTitle from './PageWithTitle';
+import { Stack, Heading } from 'tamia';
+import Page from './Page';
 import PostContent from '../components/PostContent';
 import PostMeta from '../components/PostMeta';
 import Subscription from '../components/Subscription';
@@ -43,14 +43,15 @@ export default function PostPage({
 	location: { pathname },
 }: Props) {
 	return (
-		<PageWithTitle url={pathname} title={title}>
+		<Page url={pathname}>
 			<Metatags
 				slug={pathname}
 				title={title}
 				description={description || excerpt}
 			/>
 			<Stack gap="xl">
-				<Stack gap="l">
+				<Stack as="main" gap="m">
+					<Heading level={1}>{title}</Heading>
 					<PostContent>
 						{/* eslint-disable-next-line @typescript-eslint/naming-convention */}
 						<div dangerouslySetInnerHTML={{ __html: html }} />
@@ -69,7 +70,7 @@ export default function PostPage({
 					</aside>
 				</Stack>
 			</Stack>
-		</PageWithTitle>
+		</Page>
 	);
 }
 
