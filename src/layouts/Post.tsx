@@ -65,9 +65,11 @@ export default function PostPage({
 					<aside aria-label="Newsletter">
 						<Subscription />
 					</aside>
-					<aside aria-label="Related posts">
-						<RelatedPosts posts={related} />
-					</aside>
+					{related.length > 0 && (
+						<aside aria-label="Related posts">
+							<RelatedPosts posts={related} />
+						</aside>
+					)}
 				</Stack>
 			</Stack>
 		</Page>
