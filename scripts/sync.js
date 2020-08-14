@@ -55,7 +55,6 @@ docs.forEach((filepath) => {
 	const contents = read(filepath);
 	const [, title] = getTitle(contents);
 	const [, date, tags] = getMeta(contents);
-	console.log('🦆', date, tags);
 	write(
 		filepath.replace(`${REPO_DIR}/`, ''),
 		template({

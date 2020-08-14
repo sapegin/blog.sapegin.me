@@ -1,4 +1,3 @@
-import path from 'path';
 import { PostsQuery } from './src/types/GraphQL';
 
 const title = 'Artem Sapegin’s Blog';
