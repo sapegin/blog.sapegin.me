@@ -4,12 +4,24 @@ import styled from 'styled-components';
 import { Link } from 'tamia-gatsby-link';
 
 const SITE_URL = 'https://blog.sapegin.me';
-const TWITTER_PREFIX = 'https://twitter.com/search';
-const GITHUB_PREFIX =
-	'https://github.com/sapegin/blog.sapegin.me/edit/master/content/';
+
+const getTwitterLink = (slug: string) => {
+	const searchQuery = encodeURIComponent(`${SITE_URL}${slug}`);
+	return `https://twitter.com/search?q=${searchQuery}`;
+};
+
+const getGitHubLink = (slug: string) => {
+	const filename = `${slug.slice(0, -1)}.md`;
+	return slug.startsWith('/til/')
+		? `https://github.com/sapegin/til/edit/master/${filename.replace(
+				/^\/til\//,
+				''
+		  )}`
+		: `https://github.com/sapegin/blog.sapegin.me/edit/master/content/${filename}`;
+};
 
 const List = styled.p`
-	@media (min-width: ${p => p.theme.breakpoints[1]}) {
+	@media (min-width: ${(p) => p.theme.breakpoints[1]}) {
 		display: flex;
 	}
 `;
@@ -18,9 +30,9 @@ const List = styled.p`
 const Item = styled(Text)`
 	display: block;
 	font-style: italic;
-	margin-bottom: ${p => p.theme.space.xs};
+	margin-bottom: ${(p) => p.theme.space.xs};
 
-	@media (min-width: ${p => p.theme.breakpoints[1]}) {
+	@media (min-width: ${(p) => p.theme.breakpoints[1]}) {
 		&:not(:last-child)::after {
 			content: '·';
 			margin: 0 1ch;
@@ -35,17 +47,13 @@ type Props = {
 };
 
 export default function PostMeta({ slug, date, dateTime }: Props) {
-	const searchQuery = encodeURIComponent(SITE_URL + slug);
-	const filename = `${slug.slice(0, -1)}.md`;
 	return (
 		<List>
 			<Item as="span" variant="small">
-				<Link href={`${TWITTER_PREFIX}?q=${searchQuery}`}>
-					Discuss on Twitter
-				</Link>
+				<Link href={getTwitterLink(slug)}>Discuss on Twitter</Link>
 			</Item>
 			<Item as="span" variant="small">
-				<Link href={`${GITHUB_PREFIX}${filename}`}>Edit on GitHub</Link>
+				<Link href={getGitHubLink(slug)}>Edit on GitHub</Link>
 			</Item>
 			<Item as="span" variant="small">
 				<time dateTime={dateTime}>
