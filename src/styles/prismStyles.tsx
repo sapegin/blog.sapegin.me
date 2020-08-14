@@ -60,7 +60,6 @@ export const PrismStyles = createGlobalStyle`
 
 	.token.boolean,
 	.token.number,
-	.token.property,
 	.token.attr-name {
 		color: ${color2};
 	}
@@ -80,6 +79,7 @@ export const PrismStyles = createGlobalStyle`
 	.token.placeholder,
 	.token.variable,
 	.token.function,
+	.token.property,
 	.token.selector,
 	.token.tag,
 	.token.tag .token.punctuation,
