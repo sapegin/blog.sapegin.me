@@ -23,6 +23,7 @@ type GroupedPosts = {
 };
 
 const CATEGORY_TITLES: Record<string, string> = {
+	javascript: 'JavaScript',
 	typescript: 'TypeScript',
 };
 
