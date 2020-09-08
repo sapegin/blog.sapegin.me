@@ -94,7 +94,7 @@ Keep a complete phrase as a single localization string, and use tag interpolatio
 
 Different languages may use punctuation differently: for example, different spacing around characters or even different characters.
 
-Put punctuation inside localization strings, instaed of adding it in the code.
+Put punctuation inside localization strings, instead of adding it in the code.
 
 **Bad:**
 
