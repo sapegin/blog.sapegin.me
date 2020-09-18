@@ -185,11 +185,14 @@ npx msw init public/
 Create another JavaScript module that will register our Service Worker with our mocks, [src/mocks/browser.js](https://github.com/sapegin/cypress-article-2020/blob/master/src/mocks/browser.js):
 
 ```js
-import { setupWorker } from 'msw';
+import { setupWorker, rest } from 'msw';
 import { handlers } from './handlers';
 
 // This configures a Service Worker with the given request handlers
 export const worker = setupWorker(...handlers);
+
+// Expose methods globally to make them available in integration tests
+window.msw = { worker, rest };
 ```
 
 And the last step is to start the worker function when we run our app in development mode. Add these lines to our app root module ([src/index.js](https://github.com/sapegin/cypress-article-2020/blob/master/src/index.js) for Create React App):
