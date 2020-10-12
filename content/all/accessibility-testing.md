@@ -17,7 +17,7 @@ Shipping accessible features is as important for a frontend developer as shippin
 
 ## Getting started with accessibility testing
 
-If you haven’t done accessibility testing before or you’ve got a project that’s build without accessibility in mind, I’d recommend to start with the following steps to asses the project’s accessibility and start improving it:
+If you haven’t done accessibility testing before or you’ve got a project that’s build without accessibility in mind, I’d recommend to start with the following steps to assess the project’s accessibility and start improving it:
 
 1. (For React projects) Install the React ESLint plugin, and fix all reported issues.
 2. Run automated accessibility checks using the Axe browser extension.
@@ -118,7 +118,7 @@ For all other cases, use [Contrast app](https://usecontrast.com/), and pick any 
 
 ## Tab key
 
-By _tabbing_ through the app, meaning pressing the Tab key on the keyboard to navigate between interactive elements on the page, we can check that all interactive elements are focusable, have visible focus state, and the tab order makes sense. Focus should be [trapped inside modals](https://www.w3.org/TR/wai-aria-practices-1.1/examples/dialog-modal/dialog.html), meaning we shouldn’t be able to tab back to the page behind the modal until we close it, and once we close the modal, the focus should go back to the element that opened the modal. Skip navigation link is another thing we can test here: it should appear when we press Tab for the first time:
+By _tabbing_ through the app, meaning pressing the Tab key on the keyboard to navigate between interactive elements on the page, we can check that all interactive elements are focusable and have visible focus state. The tab order [should make sense](https://webaim.org/techniques/keyboard/), usually it should follow the visual order of elements on the page. Focus should be [trapped inside modals](https://www.w3.org/TR/wai-aria-practices-1.1/examples/dialog-modal/dialog.html), meaning we shouldn’t be able to tab back to the page behind the modal until we close it, and once we close the modal, the focus should go back to the element that opened the modal. Skip navigation link is another thing we can test here: it should appear when we press Tab for the first time:
 
 ![Skip navigation link on GitHub](/images/accessibility-skip-link.png)
 
@@ -180,7 +180,7 @@ A few more things that’s worth testing:
 - [Testing web accessibility](https://www.adrianbolonio.com/testing-web-accessibility-part-1/) by Adrián Bolonio
 - [16 things to improve your website accessibility (checklist)](https://websitesetup.org/web-accessibility-checklist/) by Bruce Lawson
 - [The business case for digital accessibility](https://www.w3.org/WAI/business-case/)
-- [Getting Started with VoiceOver & Accessibility](https://bocoup.com/blog/getting-started-with-voiceover-accessibility)
+- [Getting Started with VoiceOver & Accessibility](https://bocoup.com/blog/getting-started-with-voiceover-accessibility) by Sue Lockwood
 
 ## Conclusion
 
@@ -194,4 +194,4 @@ Share your favorite accessibility testing tools and techniques [with me](https:/
 
 ---
 
-Thanks to [Eldar Amantay](https://twitter.com/steppe_fox), Anita Kiss, [Manuel Matuzovic](https://www.matuzo.at/).
+Thanks to [Eldar Amantay](https://twitter.com/steppe_fox), Anita Kiss, [Manuel Matuzovic](https://www.matuzo.at/), [Patrick Smith](https://icing.space/).
