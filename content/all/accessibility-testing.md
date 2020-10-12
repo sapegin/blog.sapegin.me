@@ -15,6 +15,16 @@ tags:
 
 Shipping accessible features is as important for a frontend developer as shipping features without bugs. Here is a list of tools I regularly use to make sure everything I do is accessible for folks with different abilities, whether they are blind or holding a sandwich in their hand. I’ll start with tools that will give us immediate feedback when we’re writing code, and continue with tools that we have to run ourselves, or that guide us how to test things manually. This article will be useful not only for developers but also for designers, project managers and other team members — many of the tools could be used directly in the browser, and don’t require any technical knowledge.
 
+## Getting started with accessibility testing
+
+If you haven’t done accessibility testing before or you’ve got a project that’s build without accessibility in mind, I’d recommend to start with the following steps to asses the project’s accessibility and start improving it:
+
+1. (For React projects) Install the React ESLint plugin, and fix all reported issues.
+2. Run automated accessibility checks using the Axe browser extension.
+3. Tab throught the site or app with a keyboard to test keyboard navigation and focus states.
+
+We’ll talk about each tool and technique in more detail in the rest of the article.
+
 ## React ESLint plugin
 
 I like when someone tells me when I'm doing something wrong as soon as possible, without having to ask myself. And the linter is a perfect tool for that because it gives me an immediate feedback when I’m writing code, right in the editor.
@@ -100,13 +110,15 @@ For all other cases, use [Contrast app](https://usecontrast.com/), and pick any 
 
 ## Spectrum Chrome extension
 
-[Spectrum extension](https://chrome.google.com/webstore/detail/spectrum/ofclemegkcmilinpcimpjkfhjfgmhieb/related) allows us to check how folks with different types of color vision deficiency (color blindness) see or site or app, and make there there’s enough contrast between different elements.
+[Spectrum extension](https://chrome.google.com/webstore/detail/spectrum/ofclemegkcmilinpcimpjkfhjfgmhieb/related) allows us to check how folks with different types of color vision deficiency (color blindness) see or site or app, and make sure there’s enough contrast between different elements.
 
 ![Simulating tritanopia with Spectrum Chrome extension](/images/accessibility-spectrum.jpg)
 
+**Bonus:** Chrome DevTools can emulate some of these vision deficiencies. Press Escape, enable the Rendering tab from the three-dot menu button, and scroll to the Emulate vision deficiencies section.
+
 ## Tab key
 
-By _tabbing_ though the app, meaning pressing the Tab key on the keyboard to navigate between interactive elements on the page, we can check that all interactive elements are focusable, have visible focus state, and the tab order makes sense. Skip navigation link is another thing we can test here: it should appear when we press Tab for the first time:
+By _tabbing_ through the app, meaning pressing the Tab key on the keyboard to navigate between interactive elements on the page, we can check that all interactive elements are focusable, have visible focus state, and the tab order makes sense. Focus should be [trapped inside modals](https://www.w3.org/TR/wai-aria-practices-1.1/examples/dialog-modal/dialog.html), meaning we shouldn’t be able to tab back to the page behind the modal until we close it, and once we close the modal, the focus should go back to the element that opened the modal. Skip navigation link is another thing we can test here: it should appear when we press Tab for the first time:
 
 ![Skip navigation link on GitHub](/images/accessibility-skip-link.png)
 
@@ -136,9 +148,25 @@ Testing with a screen reader is in many ways similar to testing with a keyboard.
 
 On macOS, we already have VoiceOver. On Windows there are built-in Narrator, free [NVDA](https://www.nvaccess.org/) or paid [JAWS](https://www.freedomscientific.com/products/software/jaws/). There’s also [ChromeVox](https://chrome.google.com/webstore/detail/chromevox-classic-extensi/kgejglhpjiefppelpmljglcjbhoiplfn/related) that we can install as a Chrome extension.
 
+**Tip:** To get started with VoiceOver checkout [this article](https://bocoup.com/blog/getting-started-with-voiceover-accessibility) and [keep this cheat sheet](https://interactiveaccessibility.com/education/training/downloads/VoiceOver-CommandReference.pdf).
+
 **Bonus:** Use Accessibility tab in Chrome DevTools to quickly check how assisting technologies see a particular element:
 
 ![Chrome DevTools Accessibility tab](/images/accessibility-devtools.png)
+
+## There’s always more
+
+A few more things that’s worth testing:
+
+- **Browser reading mode** is an accessibility tool itself: it helps readers concentrate on the main content, or make colors readable. Also, we could use it as a quick way to test semantic markup of our pages: we should see main page heading, complete main content, all content images but nothig extra like decorative image or banners.
+
+  ![Reading mode in Microsoft Edge](/images/accessibility-reading-more.png)
+
+- **Reduced motion** is an operating system option that tells sites and apps (via [`prefers-reduced-motion`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion) media query) that the user prefers to minimize non-essential motion on screen. We could use it to disable animation on things like reveal on scroll or carousels.
+
+- **Dark mode** could be a site or app option, or could be an operating system option that we could read via [`prefers-color-scheme`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme) media query. We should make sure that our site or app, especially colors, is still still accessible in dark mode.
+
+**Tip:** We could you Cypress and cypress-axe [to test accessibility of our site or app in dark mode](https://www.cypress.io/blog/2019/12/13/test-your-web-app-in-dark-mode/).
 
 ## Resources
 
@@ -151,6 +179,8 @@ On macOS, we already have VoiceOver. On Windows there are built-in Narrator, fre
 - [Assistive technologies I test with](https://daverupert.com/2018/07/assistive-technologies-i-test-with/) by Dave Rupert
 - [Testing web accessibility](https://www.adrianbolonio.com/testing-web-accessibility-part-1/) by Adrián Bolonio
 - [16 things to improve your website accessibility (checklist)](https://websitesetup.org/web-accessibility-checklist/) by Bruce Lawson
+- [The business case for digital accessibility](https://www.w3.org/WAI/business-case/)
+- [Getting Started with VoiceOver & Accessibility](https://bocoup.com/blog/getting-started-with-voiceover-accessibility)
 
 ## Conclusion
 
@@ -161,3 +191,7 @@ Keep in mind that tools can only detect a limited number of issues, and we shoul
 **Automated accessibility testing** is cheap to run, and it keeps the site or app from regressions. However, automated testing could only find certain types of issues.
 
 Share your favorite accessibility testing tools and techniques [with me](https://twitter.com/iamsapegin)!
+
+---
+
+Thanks to [Eldar Amantay](https://twitter.com/steppe_fox), Anita Kiss, [Manuel Matuzovic](https://www.matuzo.at/).
