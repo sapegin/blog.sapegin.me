@@ -27,7 +27,7 @@ We’ll talk about each tool and technique in more detail in the rest of the art
 
 ## React ESLint plugin
 
-I like it when someone tells me when I’m doing something wrong as soon as possible without asking myself. And the linter is a perfect tool for that because it gives me immediate feedback when I’m writing code, right in the editor.
+I like it when someone tells me when I’m doing something wrong as soon as possible without asking myself. The linter is a perfect tool for that because it gives us immediate feedback when I’m writing code, right in the editor.
 
 For React projects, [eslint-plugin-jsx-a11y](https://github.com/evcohen/eslint-plugin-jsx-a11y) checks many accessibility issues, like missing alternative text on images or incorrect ARIA attributes and roles.
 
@@ -35,40 +35,40 @@ For React projects, [eslint-plugin-jsx-a11y](https://github.com/evcohen/eslint-p
 
 Unfortunately, this plugin is somewhat limited:
 
-- there’s a limited number of problems that’s possible to find by analyzing source code without running it;
+- static analysis of the code could only find [few problems](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y#supported-rules);
 - it only works with plain HTML elements but doesn’t know anything about our custom components.
 
-However, we’re likely already using ESLint on a project, so the cost of having this plugin is minimal, and occasionally it finds issues before we even look at our code in the browser.
+However, we’re likely already using ESLint on a project, so the cost of having this plugin is minimal, and occasionally it finds issues before we even look at our site or app in the browser.
 
 ## Axe-core
 
-[Axe-core](https://github.com/dequelabs/axe-core) is a library that checks the accessibility of the rendered HTML in the browser. This is better than static code analysis, like with ESLint, because it can find [more problems](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md), like checking that text has sufficient color contrast.
+[Axe-core](https://github.com/dequelabs/axe-core) is a library that checks the accessibility of the rendered HTML in the browser. This is more powerful than static code analysis, like ESLint, because it can find [more problems](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md), like checking that text has sufficient color contrast.
 
 There are many tools based on axe-core.
 
-If you’re using [Storybook](https://storybook.js.org/), there’s a [a11y addon](https://github.com/storybookjs/storybook/tree/master/addons/a11y):
+For [Storybook](https://storybook.js.org/), there’s a [a11y addon](https://github.com/storybookjs/storybook/tree/master/addons/a11y):
 
 ![Storybook a11y addon reports a missing label on a checkbox](/images/accessibility-storybook.png)
 
-If you’re using [React Styleguidist](https://react-styleguidist.js.org/), you can [add react-axe to it too](https://react-styleguidist.js.org/docs/cookbook#how-to-use-react-axe-to-test-accessibility-of-components):
+For [React Styleguidist](https://react-styleguidist.js.org/), we could [add react-axe manually](https://react-styleguidist.js.org/docs/cookbook#how-to-use-react-axe-to-test-accessibility-of-components):
 
 ![Axe in React Styleguidist reports insufficient color contrast on a button](/images/accessibility-styleguidist.png)
 
-Both don’t check things like the document outline or landmark regions, which would require rendering a complete app. However, we have quick feedback when you [develop new components in isolation](https://egghead.io/playlists/component-driven-development-in-react-e0bf). We could check each component variant’s accessibility; that’s hard to do using the actual site or app.
+Both don’t check things like the document outline or landmark regions, which would require rendering a complete page. However, we could have quick feedback when we [develop new components in isolation](https://egghead.io/playlists/component-driven-development-in-react-e0bf). We could check each component variant’s accessibility, which is hard to do using the actual site or app.
 
 ## Cypress-axe
 
-Unless we test our site or app’s accessibility every time we change them, we’ll eventually introduce regressions. That’s why it’s essential to make accessibility testing a part of the continuous integration (CI) process. We should never merge the code to the codebase without testing its accessibility.
+Unless we test our site or app’s accessibility after every change, we’ll eventually introduce regressions. That’s why it’s essential to make accessibility testing a part of the continuous integration (CI) process. We should never merge the code to the codebase without testing its accessibility.
 
-[Cypress-axe](https://github.com/avanslaars/cypress-axe) is based on axe-core. It allows us to run accessibility checks inside [end-to-end Cypress tests](https://blog.sapegin.me/all/react-testing-4-cypress/), which is good because we already run end-to-end tests during continuous integration, and we render all our pages there. We could also run checks multiple times to test pages in different states. For example, with an open modal or an expanded content section.
+[Cypress-axe](https://github.com/avanslaars/cypress-axe) is based on axe-core. It allows us to run accessibility checks inside [end-to-end Cypress tests](https://blog.sapegin.me/all/react-testing-4-cypress/), which is good because we likely already run end-to-end tests during continuous integration, and we render all our pages there. We could also run checks multiple times to test pages in different states. For example, with an open modal or an expanded content section.
 
 ![Cypress-axe prints accessibility violations in the terminal](/images/cypress-axe-violations.png)
 
-Such tests could be a good kind of _smoke tests_ that make sure we’re not breaking our site or app. However, cypress-axe is inconvenient to analyze pages that already have accessibility issues. For that, a browser extension, like Axe or Accessibility Insights, would be more convenient.
+Such tests could be a good accessibility _smoke test_ that makes sure we’re not breaking our site or app. However, cypress-axe is inconvenient to analyze pages that already have accessibility issues. For that, a browser extension, like Axe or Accessibility Insights, would be more convenient.
 
 Read more about [setting up and using cypress-axe](https://blog.sapegin.me/til/testing/detecting-accessibility-issues-on-ci-with-cypress-axe/).
 
-**Tip:** For testing the accessibility of separate components, [jest-axe](https://github.com/nickcolley/jest-axe) could be a good option.
+**Tip:** For automated accessibility testing of separate components, [jest-axe](https://github.com/nickcolley/jest-axe) could be a good option.
 
 ## Axe browser extension
 
