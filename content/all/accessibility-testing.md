@@ -20,10 +20,10 @@ Shipping accessible features is as essential for a frontend developer as shippin
 If you haven’t done accessibility testing before or you’ve got a project that’s build without accessibility in mind, I’d recommend to start with the following steps to assess the project’s accessibility and start improving it:
 
 1. (For React projects) Install the React ESLint plugin, and fix all reported issues.
-2. Run automated accessibility checks using the Axe browser extension.
+2. Run FastPass in the Accessibility Insights browser extension to find two most common accessibility issues, and fix them.
 3. Tab through the site or app with a keyboard to test keyboard navigation and focus states.
 
-We’ll talk about each tool and technique in more detail in the rest of the article.
+This won’t make your site or app fully accessible but it’s a good first step in that direction. We’ll talk about each tool and technique in more detail in the rest of the article.
 
 ## React ESLint plugin
 
@@ -72,11 +72,11 @@ Read more about [setting up and using cypress-axe](https://blog.sapegin.me/til/t
 
 ## Axe browser extension
 
-Axe browser extension is available for [Chrome](https://chrome.google.com/webstore/detail/axe-web-accessibility-tes/lhdoppojpmngadmnindnejefpokejbdd) and [Firefox](https://addons.mozilla.org/en-US/firefox/addon/axe-devtools/), and based on axe-core. However, we run them on an actual site or app, so they find issues that are impossible to find by checking a single component, like correct headings structure or landmark regions.
+Axe browser extension for [Chrome](https://chrome.google.com/webstore/detail/axe-web-accessibility-tes/lhdoppojpmngadmnindnejefpokejbdd) and [Firefox](https://addons.mozilla.org/en-US/firefox/addon/axe-devtools/) is based on axe-core. However, we run this extension on an actual site or app, so it could find issues that are impossible to find by checking a single component, like correct headings structure or landmark regions.
 
 ![Axe Chrome extensions site analysis results](/images/accessibility-axe.png)
 
-These extensions are great for quick testing, but we have to remember to run them every time we add or change something on our site or app. Sometimes, they have false negatives, for example, when Axe can’t determine the background color and reports text as having insufficient contrast.
+This extension is great to do an accessibility audit but we have to remember to run it every time we add or change something on our site or app. Sometimes, it has false negatives, for example, when Axe can’t determine the background color and reports text as having insufficient color contrast.
 
 ## Accessibility Insights browser extension
 
@@ -90,13 +90,15 @@ Accessibility Insights also has instructions for many manual checks that can’t
 
 ![Accessibility Insights manual checks](/images/accessibility-insights-manual-checks.png)
 
-And it could highlight headings, landmark regions, and tab stops (see “Tab key” below) on a page:
+The FastPass feature finds two most common accessibility issues, and is a good first step in improving site or app’s accessibility.
+
+Finally, it could highlight headings, landmark regions, and tab stops (see “Tab key” below) on a page:
 
 ![Accessibility Insights highlights highlight headings, landmark regions, and tab stops on a page](/images/accessibility-insights-highlights.jpg)
 
 ## Contrast app and Chrome DevTools contrast checker
 
-Sometimes we need to check the color contrast on a mockup or somewhere else, where running Axe is inconvenient or impossible.
+Sometimes we need to check the color contrast on a mockup or somewhere else, where running a browser extension is inconvenient or impossible.
 
 To check color contrast in the browser, Chrome DevTools contrast checker is a good option (inspect an element, and click a color swatch in the Styles tab):
 
@@ -110,7 +112,7 @@ For all other cases, use [Contrast app](https://usecontrast.com/), and pick any 
 
 ## Spectrum Chrome extension
 
-[Spectrum extension](https://chrome.google.com/webstore/detail/spectrum/ofclemegkcmilinpcimpjkfhjfgmhieb/related) allows us to check how folks with different types of color vision deficiency (color blindness) see our site or app, and make sure there’s enough contrast between different elements.
+[Spectrum browser extension](https://chrome.google.com/webstore/detail/spectrum/ofclemegkcmilinpcimpjkfhjfgmhieb/related) allows us to check how folks with different types of color vision deficiency (color blindness) see our site or app, and make sure there’s enough contrast between different elements.
 
 ![Simulating tritanopia with Spectrum Chrome extension](/images/accessibility-spectrum.jpg)
 
@@ -118,9 +120,14 @@ For all other cases, use [Contrast app](https://usecontrast.com/), and pick any 
 
 ## Tab key
 
-By _tabbing_ through the app, meaning pressing the Tab key on the keyboard to navigate between interactive elements on the page, we can check that all interactive elements are focusable and have a visible focus state. The tab order [should make sense](https://webaim.org/techniques/keyboard/); usually, it should follow the visual order of elements on the page. The focus should be [trapped inside modals](https://www.w3.org/TR/wai-aria-practices-1.1/examples/dialog-modal/dialog.html), meaning we shouldn’t be able to tab back to the page behind the modal until we close it, and once we close the modal, the focus should go back to the element that opened the modal. Skip navigation link is another thing we can test here: it should appear when we press Tab key for the first time:
+By _tabbing_ through the app, meaning pressing the Tab key on the keyboard to navigate between interactive elements on the page, we can check that:
 
-![Skip navigation link on GitHub](/images/accessibility-skip-link.png)
+- all interactive elements are focusable and have a visible focus state;
+- the tab order [should make sense](https://webaim.org/techniques/keyboard/); usually, it should follow the visual order of elements on the page;
+- the focus should be [trapped inside modals](https://www.w3.org/TR/wai-aria-practices-1.1/examples/dialog-modal/dialog.html), meaning we shouldn’t be able to tab back to the page behind the modal until we close it, and once we close the modal, the focus should go back to the element that opened the modal;
+- skip navigation link should appear when we press the Tab key for the first time:
+
+  ![Skip navigation link on GitHub](/images/accessibility-skip-link.png)
 
 Along with the Tab key, it’s worth checking that other keys work as expected: for example, we can navigate lists using arrow keys, or some validation code doesn’t block arrows and Backspace in text fields.
 
@@ -130,7 +137,7 @@ We should be able to complete all important actions in our site or app without t
 
 ![Using Chrome DevTools live expression to check which element is in focus](/images/accessibility-live-expression.png)
 
-**Bonus:** [No Mouse Days](https://github.com/marcysutton/no-mouse-days) npm package by Marcy Sutton disables the mouse cursor to encourage better keyboard support in our site or app.
+**Bonus:** [No Mouse Days](https://github.com/marcysutton/no-mouse-days) npm package by Marcy Sutton disables the mouse cursor to encourage better keyboard support in a site or app.
 
 ## Zoom
 
@@ -138,19 +145,23 @@ By zooming in our site or app, we can check how it handles, well, zooming. Try t
 
 ![A page on 200% zoom still looks good](/images/accessibility-zoom.jpg)
 
-**Tip:** Using `rem`s for all sizes in CSS, including media query breakpoints, is usually enough to handle zooming well.
+**Tip:** Using `rem`s for all sizes in CSS, including media query breakpoints, is usually enough to avoid problems with zooming.
 
 ## Screen reader
 
-By using our site or app with a screen reader, we can check that all interactive elements are focusable and have accessible labels; tab order, semantic markup, and textual content make sense. The skip navigation link should bring us directly to the main page content, so we don’t have to listen through all navigation links again and again.
+By using our site or app with a screen reader, we can check that:
 
-Testing with a screen reader is in many ways similar to testing with a keyboard. Since we can’t see the screen (and I’d recommend turning it off or closing your eyes during testing), we can’t use a mouse or a trackpad to _select_ items on a page, we can only tab to them with a keyboard.
+- all interactive elements are focusable and have accessible labels;
+- tab order, semantic markup, and textual content make sense;
+- the skip navigation link brings us directly to the main page content, so we don’t have to listen through all navigation links again and again.
 
-On macOS, we already have VoiceOver. On Windows, there are built-in Narrator, free [NVDA](https://www.nvaccess.org/) or paid [JAWS](https://www.freedomscientific.com/products/software/jaws/). There’s also [ChromeVox](https://chrome.google.com/webstore/detail/chromevox-classic-extensi/kgejglhpjiefppelpmljglcjbhoiplfn/related) that we can install as a Chrome extension.
+Testing with a screen reader is in many ways similar to testing with a keyboard. Since we can’t see the screen (and I’d recommend turning it off or closing your eyes during testing), we can’t use a mouse or a trackpad to _select_ items on a page, we can only tab to them with a keyboard. The main difference is that we can’t recognize elements like buttons by their look, or can’t connect form inputs with labels by their location. We should define these relationships [using semantic markup or ARIA attributes](https://www.ovl.design/text/inclusive-inputs/).
+
+On macOS, we already have VoiceOver. On Windows, there are built-in Narrator, free [NVDA](https://www.nvaccess.org/), or paid [JAWS](https://www.freedomscientific.com/products/software/jaws/). There’s also [ChromeVox](https://chrome.google.com/webstore/detail/chromevox-classic-extensi/kgejglhpjiefppelpmljglcjbhoiplfn/related) that we can install as a Chrome extension.
 
 **Tip:** To get started with VoiceOver, check out [this article](https://bocoup.com/blog/getting-started-with-voiceover-accessibility) and [keep this cheat sheet](https://interactiveaccessibility.com/education/training/downloads/VoiceOver-CommandReference.pdf).
 
-**Bonus:** Use Accessibility tab in Chrome DevTools to quickly check how assisting technologies see a particular element:
+**Bonus:** Use Accessibility tab in Chrome DevTools to check how assisting technologies see a particular element:
 
 ![Chrome DevTools Accessibility tab](/images/accessibility-devtools.png)
 
@@ -158,13 +169,17 @@ On macOS, we already have VoiceOver. On Windows, there are built-in Narrator, fr
 
 A few more things that are worth testing:
 
-- **Browser reading mode** is an accessibility tool itself: it helps readers concentrate on the main content, or make colors readable. We could also use it as a quick way to test the semantic markup of our pages: we should see the main page heading, complete main content, all content images but nothing extra like decorative image or banners.
+- **Browser reading mode** is an accessibility tool itself: it helps readers concentrate on the main content, or make colors readable. We could also use it as a quick way to test the semantic markup of our pages: we should see the main page heading, complete main content, all content images but nothing extra like decorative images or banners.
 
   ![Reading mode in Microsoft Edge](/images/accessibility-reading-more.png)
 
 - **Reduced motion** is an operating system option that tells sites and apps (via [`prefers-reduced-motion`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion) media query) that the user prefers to minimize non-essential motion on the screen. We could use it to disable animation on things like reveal on scroll or carousels.
 
 - **The dark mode** could be a site or app option or an operating system option that we could read via [`prefers-color-scheme`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme) media query. We should ensure that our site or app, especially colors, is still accessible in the dark mode.
+
+- **Hover alternatives** for keyboard and touchscreens: hover shouldn’t be the only way to reveal some content or an interactive element. A common example is a menu that appears on hover on an item in a long list. [A tooltip](https://inclusive-components.design/tooltips-toggletips/) is another example. We could show these elements when the container is in focus for keyboard users, and always show them on touchscreens.
+
+**Tip** Use CSS [`@supports`](https://developer.mozilla.org/en-US/docs/Web/CSS/@supports) at-rule to test hover support on the device.
 
 **Tip:** We could you Cypress and cypress-axe [to test the accessibility of our site or app in the dark mode](https://www.cypress.io/blog/2019/12/13/test-your-web-app-in-dark-mode/).
 
