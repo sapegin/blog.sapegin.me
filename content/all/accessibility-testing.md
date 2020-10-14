@@ -42,7 +42,7 @@ However, we’re likely already using ESLint on a project, so the cost of having
 
 ## Axe-core
 
-[Axe-core](https://github.com/dequelabs/axe-core) is a library that checks the accessibility of the rendered HTML in the browser. This is more powerful than static code analysis, like ESLint, because it can find [more problems](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md), like checking that text has sufficient color contrast.
+[Axe-core](https://github.com/dequelabs/axe-core) is a library that checks the accessibility of the rendered HTML in the browser. This is more powerful than static code analysis, like ESLint, because it can find [more problems](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md), like checking if the text has sufficient color contrast.
 
 There are many tools based on axe-core.
 
@@ -110,7 +110,7 @@ For all other cases, use [Contrast app](https://usecontrast.com/), and pick any 
 
 ## Spectrum Chrome extension
 
-[Spectrum extension](https://chrome.google.com/webstore/detail/spectrum/ofclemegkcmilinpcimpjkfhjfgmhieb/related) allows us to check how folks with different types of color vision deficiency (color blindness) see or site or app, and make sure there’s enough contrast between different elements.
+[Spectrum extension](https://chrome.google.com/webstore/detail/spectrum/ofclemegkcmilinpcimpjkfhjfgmhieb/related) allows us to check how folks with different types of color vision deficiency (color blindness) see our site or app, and make sure there’s enough contrast between different elements.
 
 ![Simulating tritanopia with Spectrum Chrome extension](/images/accessibility-spectrum.jpg)
 
@@ -196,4 +196,4 @@ Please share your favorite accessibility testing tools and techniques [with me](
 
 ---
 
-Thanks to [Eldar Amantay](https://twitter.com/steppe_fox), Anita Kiss, [Manuel Matuzovic](https://www.matuzo.at/), [Patrick Smith](https://icing.space/).
+Thanks to [Eldar Amantay](https://twitter.com/steppe_fox), Anna Gerus, Anita Kiss, [Manuel Matuzovic](https://www.matuzo.at/), [Patrick Smith](https://icing.space/).
