@@ -201,7 +201,7 @@ A few more things that are worth testing:
 
 We’ve covered a lot of different tools and techniques, many of which I use not only to test my work but to be able to use some sites, like zooming in on a site with tiny fonts or using the reading mode on a site with a dark background.
 
-Keep in mind that tools can only detect a limited number of issues, and we should find a balance between automated and manual accessibility testing.
+Keep in mind that tools can only detect a some issues, and we should find a balance between automated and manual accessibility testing.
 
 **Manual accessibility testing**, when done right, allows us to find most of the problems. However, it’s time-consuming, and we have to redo it for every new feature of our site or app.
 
