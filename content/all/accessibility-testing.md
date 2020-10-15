@@ -190,6 +190,9 @@ A few more things that are worth testing:
 - [Accessibility for teams](https://accessibility-for-teams.com/)
 - [Web accessibility course](https://www.udacity.com/course/web-accessibility--ud891) by Google
 - [The a11y project accessibility checklist](https://www.a11yproject.com/checklist/)
+- [Writing HTML with accessibility in mind](https://medium.com/alistapart/writing-html-with-accessibility-in-mind-a62026493412) by Manuel Matuzovic
+- [Writing JavaScript with accessibility in mind](https://medium.com/@matuzo/writing-javascript-with-accessibility-in-mind-a1f6a5f467b9) by Manuel Matuzovic
+- [Writing CSS with accessibility in mind](https://medium.com/@matuzo/writing-css-with-accessibility-in-mind-8514a0007939) by Manuel Matuzovic
 - [Beyond automatic accessibility testing: 6 things I check on every website I build](https://www.matuzo.at/blog/beyond-automatic-accessibility-testing-6-things-i-check-on-every-website-i-build/) by Manuel Matuzovic
 - [Assistive technologies I test with](https://daverupert.com/2018/07/assistive-technologies-i-test-with/) by Dave Rupert
 - [Testing web accessibility](https://www.adrianbolonio.com/testing-web-accessibility-part-1/) by Adrián Bolonio
