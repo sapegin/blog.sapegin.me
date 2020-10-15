@@ -63,6 +63,7 @@
     "gatsby-plugin-ts-config": "^0.2.2",
     "gatsby-plugin-typescript": "^2.4.6",
     "gatsby-remark-prismjs": "^3.5.4",
+    "gatsby-remark-twitter-cards": "^0.6.1",
     "gatsby-source-filesystem": "^2.3.11",
     "gatsby-transformer-remark": "^2.8.15",
     "glob": "^7.1.6",

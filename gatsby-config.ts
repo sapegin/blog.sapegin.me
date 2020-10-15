@@ -1,4 +1,5 @@
 import { PostsQuery } from './src/types/GraphQL';
+import theme from './src/theme';
 
 const title = 'Artem Sapegin’s Blog';
 const siteUrl = 'https://blog.sapegin.me';
@@ -30,6 +31,21 @@ export default {
 							aliases: {
 								coffee: 'coffeescript',
 							},
+						},
+					},
+					{
+						resolve: `gatsby-remark-twitter-cards`,
+						options: {
+							title,
+							separator: '',
+							author: '',
+							background: require.resolve(
+								'./assets/twitter-card-background.png'
+							),
+							fontColor: theme.colors.base,
+							titleFontSize: 96,
+							subtitleFontSize: 60,
+							fontFile: require.resolve('./assets/SabonBold.ttf'),
 						},
 					},
 					'remark-tips',

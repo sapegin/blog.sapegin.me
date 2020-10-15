@@ -8,7 +8,6 @@ type Props = {
 	slug: string;
 	title?: string;
 	description?: string;
-	image?: string;
 	children?: React.ReactNode;
 };
 
@@ -16,11 +15,10 @@ export default function Metatags({
 	slug,
 	title,
 	description = 'Blog of a Berlin based coffee first frontend engineer, who makes photos and hangs out with his dogs.',
-	image,
 	children,
 }: Props) {
 	const isBlogPost = slug.startsWith('/all/');
-	const imageUrl = image && `${SITE_URL}${image}`;
+	const imageUrl = isBlogPost && `${SITE_URL}${slug}twitter-card.jpg`;
 	return (
 		<Helmet title={title ? `${title} — ${SITE_TITLE}` : SITE_TITLE}>
 			<meta name="description" content={description} />
