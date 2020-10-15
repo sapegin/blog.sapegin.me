@@ -211,4 +211,4 @@ Please share your favorite accessibility testing tools and techniques [with me](
 
 ---
 
-Thanks to [Eldar Amantay](https://twitter.com/steppe_fox), Anna Gerus, Anita Kiss, [Manuel Matuzovic](https://www.matuzo.at/), [Patrick Smith](https://icing.space/).
+Thanks to [Eldar Amantay](https://twitter.com/steppe_fox), [Wendy Fox](https://twitter.com/drwendyfox), Anna Gerus, Anita Kiss, [Manuel Matuzovic](https://www.matuzo.at/), [Patrick Smith](https://icing.space/).
