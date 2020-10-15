@@ -1,6 +1,6 @@
 ---
 layout: Post
-title: 'Accessibility testing tools I use'
+title: 'The most useful accessibility testing tools and techniques'
 description: 'Shipping accessible features is as important for a frontend developer as shipping features without bugs, learn about tools and techniques that will help you achieve that.'
 date: 2020-10-07
 lang: en
