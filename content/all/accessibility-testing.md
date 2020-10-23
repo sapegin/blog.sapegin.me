@@ -106,7 +106,7 @@ To check color contrast in the browser, Chrome DevTools contrast checker is a go
 
 For all other cases, use [Contrast app](https://usecontrast.com/), and pick any two colors using an eyedropper:
 
-![Contrast app shows the contrast ratio or two colors](/images/accessibility-contrast.png)
+![Contrast app shows the contrast ratio of two colors](/images/accessibility-contrast.png)
 
 **Bonus:** [Contrast ratio](https://contrast-ratio.com/) web app by Lea Verou is another option when you want to [share a link](https://contrast-ratio.com/#%23fa6b6b-on-white) with the check results.
 
@@ -133,7 +133,7 @@ Along with the Tab key, it’s worth checking that other keys work as expected: 
 
 We should be able to complete all important actions in our site or app without touching a mouse, trackpad, or touchscreen. At any time, we should know which element is in focus.
 
-**Tip:** I often use a live expression on `document.activeElement` in Chrome DevTools to see which element is in focus (“Create live expression” button in the Console tab’s toolbar). It helps to find elements without visible focus state, or invisible elements that can be focused.
+**Tip:** I often use a live expression on `document.activeElement` in Chrome DevTools to see which element is in focus (“Create live expression” button in the Console tab’s toolbar). It helps to find elements without a visible focus state, or invisible elements that can be focused.
 
 ![Using Chrome DevTools live expression to check which element is in focus](/images/accessibility-live-expression.png)
 
@@ -161,7 +161,7 @@ On macOS, we already have VoiceOver. On Windows, there are built-in Narrator, fr
 
 **Tip:** To get started with VoiceOver, check out [this article](https://bocoup.com/blog/getting-started-with-voiceover-accessibility) and [keep this cheat sheet](https://interactiveaccessibility.com/education/training/downloads/VoiceOver-CommandReference.pdf).
 
-**Bonus:** Use Accessibility tab in Chrome DevTools to check how assisting technologies see a particular element:
+**Bonus:** Use the Accessibility tab in Chrome DevTools to check how assisting technologies see a particular element:
 
 ![Chrome DevTools Accessibility tab](/images/accessibility-devtools.png)
 
@@ -204,7 +204,7 @@ A few more things that are worth testing:
 
 We’ve covered a lot of different tools and techniques, many of which I use not only to test my work but to be able to use some sites, like zooming in on a site with tiny fonts or using the reading mode on a site with a dark background.
 
-Keep in mind that tools can only detect a some issues, and we should find a balance between automated and manual accessibility testing.
+Keep in mind that tools can only detect some issues, and we should find a balance between automated and manual accessibility testing.
 
 **Manual accessibility testing**, when done right, allows us to find most of the problems. However, it’s time-consuming, and we have to redo it for every new feature of our site or app.
 
