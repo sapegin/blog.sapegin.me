@@ -44,7 +44,7 @@ export const onCreateNode: GatsbyNode['onCreateNode'] = ({
 	if (
 		node.internal.type === 'MarkdownRemark' &&
 		// Don't process the same document twice
-		!((node as unknown) as MakdownNode)?.fields?.slug
+		!(node as unknown as MakdownNode)?.fields?.slug
 	) {
 		// Typography
 		if (node.internal.content) {

@@ -9,7 +9,7 @@ type Props = {
 
 const PostList = ({ posts }: Props) => (
 	<Box as="ul" mb="m">
-		{posts.map(post => (
+		{posts.map((post) => (
 			<Box key={post.slug} as="li" mb="s">
 				<Link href={post.slug}>{post.title}</Link>
 			</Box>

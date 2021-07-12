@@ -6,18 +6,18 @@
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "pretest": "npm run lint:js && npm run lint:css && npm run lint:md",
+    "pretest": "npm run lint:js && npm run lint:md",
     "test": "npm run typecheck",
     "posttest": "npm run format",
     "typecheck": "tsc",
-    "lint:css": "stylelint 'src/**/*.tsx'",
     "lint:md": "remark --quiet \"content/**/*.md\"",
-    "lint:js": "eslint . --cache --fix --ext .js,.tsx",
-    "format": "prettier --loglevel warn --write \"**/*.{js,md}\"",
+    "lint:js": "eslint . --cache --fix --ext .js,.ts,.tsx",
+    "format": "prettier --loglevel warn --write \"**/*.{js,ts,tsx,md}\"",
     "styleguide": "styleguidist server",
     "styleguide:build": "styleguidist build",
     "sync": "node scripts/sync.js",
-    "deploy": "npm run sync && npm run build"
+    "deploy": "npm run sync && npm run build",
+    "prepare": "husky install"
   },
   "engines": {
     "node": ">=8.9"
@@ -67,8 +67,8 @@
     "gatsby-source-filesystem": "^3.9.0",
     "gatsby-transformer-remark": "^4.6.0",
     "glob": "^7.1.7",
-    "husky": "^4.2.5",
-    "lint-staged": "^10.2.9",
+    "husky": "^7.0.1",
+    "lint-staged": "^11.0.0",
     "lodash": "^4.17.21",
     "prettier": "^2.3.2",
     "react-styleguidist": "^11.1.7",
@@ -76,27 +76,11 @@
     "remark-lint": "^7.0.0",
     "richtypo": "^4.1.1",
     "richtypo-rules-en": "^4.0.7",
-    "stylelint": "^13.13.1",
-    "stylelint-config-recommended": "^5.0.0",
-    "stylelint-config-styled-components": "^0.1.1",
-    "stylelint-processor-styled-components": "^1.10.0",
     "typescript": "^4.3.5",
     "unist-util-visit": "^2.0.3"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
-    "*.{js,tsx,md}": [
-      "prettier --write",
-      "git add"
-    ],
-    "*.{js,tsx}": [
-      "eslint --fix",
-      "stylelint",
-      "git add"
-    ]
+    "*.{js,ts,tsx,md}": "prettier --write",
+    "*.{js,ts,tsx}": "eslint --fix"
   }
 }
