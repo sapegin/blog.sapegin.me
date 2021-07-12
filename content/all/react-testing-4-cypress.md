@@ -509,17 +509,11 @@ We should avoid test IDs wherever possible, and use more semantic queries instea
 The markup would look [like so](https://github.com/sapegin/cypress-article-2020/blob/master/src/components/Profile.js):
 
 ```html
-<button type="button">
-  Delete profile
-</button>
+<button type="button">Delete profile</button>
 <div data-testid="delete-profile-modal">
   <h1>Delete profile</h1>
-  <button type="button">
-    Delete profile
-  </button>
-  <button type="button">
-    Cancel
-  </button>
+  <button type="button">Delete profile</button>
+  <button type="button">Cancel</button>
 </div>
 ```
 
