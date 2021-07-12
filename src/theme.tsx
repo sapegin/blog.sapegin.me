@@ -53,6 +53,9 @@ const colors = {
 	selection: 'rgb(255,237,117)',
 	selectionAlpha: 'rgba(255,237,117,0.25)',
 };
+const borders = {
+	focus: '3px solid',
+};
 const fontWeights = {
 	base: 'normal',
 	heading: 'bold',
@@ -102,6 +105,7 @@ const theme = {
 	lineHeights,
 	letterSpacings,
 	colors,
+	borders,
 	breakpoints,
 	headingStyles: {
 		1: {
