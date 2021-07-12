@@ -30,8 +30,8 @@
   ],
   "dependencies": {
     "just-group-by": "^1.1.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-group": "^3.0.2",
     "react-helmet": "^6.1.0",
     "romanize": "^1.1.1",
@@ -40,8 +40,8 @@
     "tamia-gatsby-link": "^1.0.6"
   },
   "devDependencies": {
-    "@types/react": "^16.9.35",
-    "@types/react-dom": "^16.9.8",
+    "@types/react": "^17.0.14",
+    "@types/react-dom": "^17.0.9",
     "@types/react-helmet": "^6.1.2",
     "@types/styled-components": "^5.1.11",
     "@typescript-eslint/eslint-plugin": "^4.28.2",
