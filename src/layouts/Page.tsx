@@ -17,7 +17,7 @@ const Page = ({ children, url }: Props) => {
 		<Base>
 			<Box as="aside" aria-label="Current offers">
 				<Banner>
-					<QuotedLink href="http://leanpub.com/washingcode/c/stayathome-blog">
+					<QuotedLink href="http://leanpub.com/washingcode/c/blog-reader">
 						<Text
 							as="span"
 							aria-hidden="true"
@@ -29,7 +29,7 @@ const Page = ({ children, url }: Props) => {
 						</Text>
 						&nbsp;Wash your&nbsp;hands and&nbsp;your&nbsp;code:{' '}
 						<u>start reading my&nbsp;upcoming book on&nbsp;clean code</u> with
-						a&nbsp;discount
+						20%&nbsp;discount
 					</QuotedLink>
 				</Banner>
 			</Box>
