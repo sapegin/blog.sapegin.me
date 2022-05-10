@@ -1,6 +1,7 @@
 ---
 layout: Post
 title: 'Writing cross-platform components for web and React Native'
+description: 'One of the selling points of React Native is code sharing between web, iOS, and Android — “seamless cross-platform” as they say on the homepage. Unfortunately, React Native gives us very few tools to write components that work on web and native, and the experience is far from seamless.'
 date: 2022-04-12
 lang: en
 tags:
