@@ -71,7 +71,7 @@ If you’re not going to do a particular suggestion or have tried and it didn’
 
 Every developer works differently: some will commit all the changes at once, some will commit each change separately. It’s hard for a reviewer to know when you’re done with all their feedback and ready for another iteration.
 
-Writing a short comment like “Ready for another iteration” will make it clear, and you’ll get that another iteration sooner.
+Writing a short comment like “Ready for another iteration” will make it clear, and you’ll get that another iteration sooner. However, don't write "Done" on each code review comment — this will only spam reviews' inboxes but don't give them a clear indication when the code could be reviwed again.
 
 ## Make the next step
 
