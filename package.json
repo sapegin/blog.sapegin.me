@@ -20,7 +20,7 @@
     "prepare": "husky install"
   },
   "engines": {
-    "node": ">=14"
+    "node": ">=16"
   },
   "browserslist": [
     ">1%",
