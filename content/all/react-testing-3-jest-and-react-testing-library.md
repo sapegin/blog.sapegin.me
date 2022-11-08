@@ -365,7 +365,7 @@ test('submits username and password', async () => {
   expect(onSubmit).toHaveBeenCalledTimes(1);
   expect(onSubmit).toHaveBeenCalledWith({
     username,
-    password,
+    password
   });
 });
 ```
@@ -380,7 +380,7 @@ Asynchronous operations are the most tricky to test. Often developers give up an
 
 ```js
 const wait = (time = 0) =>
-  new Promise((resolve) => {
+  new Promise(resolve => {
     setTimeout(resolve, time);
   });
 
@@ -444,15 +444,15 @@ Let’s look at some of the methods in more detail.
 import React from 'react';
 
 const defaultFetchIngredients = () =>
-  fetch('https://...').then((r) => r.json());
+  fetch('https://...').then(r => r.json());
 
 export default function RemotePizza({
-  fetchIngredients = defaultFetchIngredients,
+  fetchIngredients = defaultFetchIngredients
 }) {
   const [ingredients, setIngredients] = React.useState([]);
 
   const handleCook = () => {
-    fetchIngredients().then((response) => {
+    fetchIngredients().then(response => {
       setIngredients(response.args.ingredients);
     });
   };
@@ -463,7 +463,7 @@ export default function RemotePizza({
       <button onClick={handleCook}>Cook</button>
       {ingredients.length > 0 && (
         <ul>
-          {ingredients.map((ingredient) => (
+          {ingredients.map(ingredient => (
             <li key={ingredient}>{ingredient}</li>
           ))}
         </ul>
@@ -492,7 +492,7 @@ const ingredients = ['bacon', 'tomato', 'mozzarella', 'pineapples'];
 test('download ingredients from internets', async () => {
   const fetchIngredients = () =>
     Promise.resolve({
-      args: { ingredients },
+      args: { ingredients }
     });
   render(<RemotePizza fetchIngredients={fetchIngredients} />);
 
@@ -516,7 +516,7 @@ That’s where request mocking comes in.
 export const fetchIngredients = () =>
   fetch(
     'https://httpbin.org/anything?ingredients=bacon&ingredients=mozzarella&ingredients=pineapples'
-  ).then((r) => r.json());
+  ).then(r => r.json());
 ```
 
 Then import it in a component:
@@ -572,16 +572,11 @@ export const fetchIngredients = [
     return res(
       ctx.json({
         args: {
-          ingredients: [
-            'bacon',
-            'tomato',
-            'mozzarella',
-            'pineapples',
-          ],
-        },
+          ingredients: ['bacon', 'tomato', 'mozzarella', 'pineapples']
+        }
       })
     );
-  }),
+  })
 ];
 ```
 

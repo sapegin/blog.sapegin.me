@@ -55,10 +55,10 @@ When I merge pull requests, I always squash all commits into a single commit, an
 
 This has several benefits:
 
-* **Clean and readable project history:** developers merge dozens or even hundreds of pull requests every day on a typical project, keeping each commit will make the history enormous and unusable. Also, commit messages will be too low-level to be useful.
-* **No time wasted on managing commits inside a pull request:** discard all the separate commits, so developers don’t have to bother keeping the branch history clean and force pushing.
-* **Easier debugging:** each commit corresponds to a pull request, so once we find where the bug was introduced, we know which pull request is responsible for it.
-* **Easier reverts:** we revert a complete feature, so the author could fix it, retest, and submit it as a new pull request. Reverting a whole pull request brings the project back to a previous known working state, reverting atomic commits will have unpredictable consequences, and likely break something.
+- **Clean and readable project history:** developers merge dozens or even hundreds of pull requests every day on a typical project, keeping each commit will make the history enormous and unusable. Also, commit messages will be too low-level to be useful.
+- **No time wasted on managing commits inside a pull request:** discard all the separate commits, so developers don’t have to bother keeping the branch history clean and force pushing.
+- **Easier debugging:** each commit corresponds to a pull request, so once we find where the bug was introduced, we know which pull request is responsible for it.
+- **Easier reverts:** we revert a complete feature, so the author could fix it, retest, and submit it as a new pull request. Reverting a whole pull request brings the project back to a previous known working state, reverting atomic commits will have unpredictable consequences, and likely break something.
 
 **Tip:** Allow only squash merging on GitHub, and aisable other merge types. Also, disable force pushing to prevent various problems, like overwriting someone else’s work.
 

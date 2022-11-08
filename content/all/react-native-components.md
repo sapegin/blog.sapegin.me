@@ -18,8 +18,8 @@ One of the selling points of React Native is code sharing between web, iOS, and 
 
 The main obstacles to writing cross-platform components with React Native are:
 
-* **Different elements for the web and native**: on web we use `p` and `div`, whereas on native we should use `Text` and `View` from `react-native` package. React Native is also picky about rendering text: we should always wrap it in the `Text` component, and it should be a direct parent.
-* **Unforgiving styling**: there’s a custom way of doing [styles on React Native](https://reactnative.dev/docs/style) which looks like CSS but doesn’t behave like CSS. In CSS, if a browser doesn’t understand a certain property, it would ignore it, but React Native will throw an exception, and it supports a very limited number of CSS properties.
+- **Different elements for the web and native**: on web we use `p` and `div`, whereas on native we should use `Text` and `View` from `react-native` package. React Native is also picky about rendering text: we should always wrap it in the `Text` component, and it should be a direct parent.
+- **Unforgiving styling**: there’s a custom way of doing [styles on React Native](https://reactnative.dev/docs/style) which looks like CSS but doesn’t behave like CSS. In CSS, if a browser doesn’t understand a certain property, it would ignore it, but React Native will throw an exception, and it supports a very limited number of CSS properties.
 
 [Styled-components](https://styled-components.com/docs/basics#react-native) solve some of the problems on the low level: primarily, it allows us to use the same syntax to write styles for web and native. However, it doesn’t solve the problem of breaking on unsupported properties.
 
@@ -54,7 +54,7 @@ For a consumer, it doesn’t matter that the `Stack` has completely different im
 I’ve implemented [a very primitive React Native support](https://gist.github.com/sapegin/991704a876057393efe3a3f74d4c8c47) by keeping only the first value (for the narrowest screen) of responsive props. So code like this:
 
 ```tsx
-<Box width={[1, 1/2, 1/4]}>...</Box>
+<Box width={[1, 1 / 2, 1 / 4]}>...</Box>
 ```
 
 Will be rendered like this on React Native:
@@ -71,11 +71,17 @@ Customizing HTML elements of components is a common practice for writing semanti
 
 ```tsx
 // Web
-<Stack as="form">...</Stack>
+const Container = ({ children }) => (
+  <Stack as="form">{children}</Stack>
+);
+```
 
+```tsx
 // React Native
-import {View} from 'react-native';
-<Stack as={View}>...</Stack>
+import { View } from 'react-native';
+const Container = ({ children }) => (
+  <Stack as={View}>{children}</Stack>
+);
 ```
 
 The same problem when we use the styled-components factory:
@@ -85,7 +91,7 @@ The same problem when we use the styled-components factory:
 const Heading = styled.p`...`;
 
 // React Native
-import {Text} from 'react-native';
+import { Text } from 'react-native';
 const Heading = styled(Text)`...`;
 ```
 
@@ -106,7 +112,7 @@ export const Elements = {
   main: 'main',
   aside: 'aside',
   p: 'p',
-  span: 'span',
+  span: 'span'
 } as const;
 
 // elements.native.ts
@@ -124,12 +130,14 @@ export const Elements = {
   main: View,
   aside: View,
   p: Text,
-  span: Text,
+  span: Text
 } as const;
 
 // Cross-platform component
-import {Elements} from './elements';
-<Stack as={Elements.form}>...</Stack>
+import { Elements } from './elements';
+const Container = ({ children }) => (
+  <Stack as={Elements.form}>{children}</Stack>
+);
 ```
 
 It’s slightly more verbose but the code is split at a lower level and only once, we don’t need to code-split each component and duplicate the code.
@@ -144,15 +152,21 @@ To split code between web and native, we could use [platform-specific extensions
 
 ```tsx
 // Link.tsx
-export const Link = ({href, children}) =>
+export const Link = ({ href, children }) => (
   <a href={href}>{children}</a>
+);
 
 // Link.native.tsx
-import { Text, Linking, TouchableWithoutFeedback } from 'react-native';
-export const Link = ({href, children}) =>
+import {
+  Text,
+  Linking,
+  TouchableWithoutFeedback
+} from 'react-native';
+export const Link = ({ href, children }) => (
   <TouchableWithoutFeedback onPress={() => Linking.openURL(href)}>
     <Text>{children}</Text>
   </TouchableWithoutFeedback>
+);
 ```
 
 This allows us to import platform-specific modules that would break on one of the platforms.
