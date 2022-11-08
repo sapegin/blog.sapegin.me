@@ -12,11 +12,13 @@ tags:
   - testing-library
 ---
 
+**November 2022:** Updated to [React Testing Library 10](https://github.com/testing-library/react-testing-library/releases/tag/v10.0.0). Replaced Nock with Mock Service Worker. Replace node-fetch with whatwg-fetch.
+
 **August 2020:** Updated to the [latest Testing Library best practices and recommendations](https://kentcdodds.com/blog/common-mistakes-with-react-testing-library).
 
 **March 2020:** Updated to [React Testing Library 10](https://github.com/testing-library/react-testing-library/releases/tag/v10.0.0) and [DOM Testing Library 7](https://github.com/testing-library/dom-testing-library/releases/tag/v7.0.0).
 
-React Testing Library is a small library to test React components, that makes applying testing best practices, we’ve learned in [the first article](/all/react-testing-1-best-practices/), natural.
+React Testing Library is a library to test React components, that makes applying testing best practices, we’ve learned in [the first article](/all/react-testing-1-best-practices/), natural.
 
 **This is the third article in a series**, where we learn how to test React components with Jest and React Testing Library.
 
@@ -25,7 +27,7 @@ React Testing Library is a small library to test React components, that makes ap
 - **Modern React testing, part 3: Jest and React Testing Library (_this post_)**
 - [Modern React testing, part 4: Cypress and Cypress Testing Library](/all/react-testing-4-cypress/)
 
-Check out [the GitHub repository](https://github.com/sapegin/rtl-article-2019) with all the examples.
+**Examples:** Check out [the GitHub repository](https://github.com/sapegin/rtl-article-2019) with all the examples.
 
 ## Getting started with Jest and React Testing Library
 
@@ -33,8 +35,9 @@ We’ll set up and use these tools:
 
 - [Jest](https://jestjs.io/), a test runner;
 - [React Testing Library](https://testing-library.com/react), a testing utility for React;
-- [jest-dom](https://github.com/testing-library/jest-dom), Jest matchers for testing the DOM;
-- [@testing-library/user-event](https://github.com/testing-library/user-event), testing user events.
+- [jest-dom](https://testing-library.com/docs/ecosystem-jest-dom/), Jest matchers for testing the DOM;
+- [@testing-library/user-event](https://testing-library.com/docs/user-event/intro/), testing user events.
+- [Mock Service Worker](https://mswjs.io/), mocking network.
 
 ### Why Jest and React Testing Library
 
@@ -48,29 +51,24 @@ We’ll set up and use these tools:
 - Coverage reports.
 - [Rich matchers API](https://github.com/sapegin/jest-cheat-sheet#matchers).
 
-**React Testing Library** has some benefits over Enzyme:
+**React Testing Library** has many benefits over Enzyme:
 
 - Much simpler API.
-- Convenient queries (form label, image alt, ARIA role).
+- Convenient semantic queries (like form label, image alt, ARIA role).
 - Async queries and utilities.
 - Better error messages.
 - Easier setup.
 - Libraries for other frameworks with the same queries.
 - [Recommended by React team](https://reactjs.org/docs/test-utils.html#overview).
 
-React Testing Library helps us write [good tests](/all/react-testing-1-best-practices/) and makes writing bad tests difficult. It allows us to find elements similar to how a user would do that: for example, find form elements and buttons by their labels.
-
-Some of the cons could be:
-
-- If you disagree with some of the best practices in this article, Enzyme may be a better choice for you since its API isn’t opinionated.
-- React Testing Library is a new tool: it’s less mature and the community is smaller than Enzyme, though Testing Library development is more active than Enzyme’s.
+React Testing Library helps us write [good tests](/all/react-testing-1-best-practices/) and makes writing bad tests difficult. It allows us to find elements in a way similar to how a user would do that: for example, find form elements and buttons by their labels.
 
 ### Setting up Jest and React Testing Library
 
 First, install all the dependencies, including peer dependencies:
 
 ```bash
-npm install --save-dev jest @testing-library/react @testing-library/jest-dom @testing-library/user-event node-fetch
+npm install --save-dev jest jest-environment-jsdom whatwg-fetch @testing-library/react @testing-library/jest-dom @testing-library/user-event
 ```
 
 [jest-dom](https://github.com/testing-library/jest-dom) isn’t required to use React Testing Library but it makes tests more readable.
@@ -79,30 +77,24 @@ npm install --save-dev jest @testing-library/react @testing-library/jest-dom @te
 
 We’ll also need [babel-jest](https://github.com/facebook/jest/tree/master/packages/babel-jest) for Babel or [ts-jest](https://github.com/kulshekhar/ts-jest) for TypeScript. For projects with webpack, make sure to enable ECMAScript modules transformation for [the `test` environment in the Babel config](https://github.com/styleguidist/react-styleguidist/blob/99d880674b62569a486a1d128b576f2ee91b39c7/babel.config.js#L36-L56).
 
-Create a [src/setupTests.js](https://github.com/sapegin/rtl-article-2019/blob/master/src/setupTests.js) file to customize the Jest environment:
-
-```js
-// If you're using the fetch API
-import fetch from 'node-fetch';
-global.fetch = fetch;
-```
-
-Then update the [package.json](https://github.com/sapegin/rtl-article-2019/blob/master/package.json) like this:
+Update the [package.json](https://github.com/sapegin/rtl-article-2019/blob/master/package.json) like this:
 
 ```json {15-25}
 {
   "name": "pizza",
   "version": "1.0.0",
   "dependencies": {
-    "react": "16.9.0",
-    "react-dom": "16.9.0"
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^5.11.2",
-    "@testing-library/react": "^10.4.8",
-    "@testing-library/user-event": "^12.1.0",
-    "jest": "26.2.2",
-    "node-fetch": "2.6.0"
+    "@testing-library/jest-dom": "5.16.0",
+    "@testing-library/react": "13.4.0",
+    "@testing-library/user-event": "14.4.0",
+    "jest": "29.2.0",
+    "jest-environment-jsdom": "29.2.0",
+    "msw": "0.47.0",
+    "whatwg-fetch": "3.6.0"
   },
   "scripts": {
     "test": "jest",
@@ -110,17 +102,20 @@ Then update the [package.json](https://github.com/sapegin/rtl-article-2019/blob/
     "test:coverage": "jest --coverage"
   },
   "jest": {
-    "setupFilesAfterEnv": [
-      "@testing-library/jest-dom/extend-expect",
-      "<rootDir>/src/setupTests.js"
-    ]
+    "setupFiles": ["whatwg-fetch"],
+    "setupFilesAfterEnv": ["@testing-library/jest-dom/extend-expect"],
+    "testEnvironment": "jest-environment-jsdom"
   }
 }
 ```
 
-The `setupFilesAfterEnv` option tells Jest to load `jest-dom` matchers and the location of our setup file.
+The `setupFiles` option tells Jest to load `whatwg-fetch`, otherwise any call to the `fetch()` will fail.
 
-**Tip:** Two ESLint plugins [eslint-plugin-testing-library](https://github.com/testing-library/eslint-plugin-testing-library) and [eslint-plugin-jest-dom](https://github.com/testing-library/eslint-plugin-jest-dom) helps to avoid common mistakes when using Testing Library. Many of their rules are fixable.
+The `setupFilesAfterEnv` option tells Jest to load `jest-dom` matchers.
+
+The `testEnvironment` option tells Jest to load `jest-environment-jsdom` that adds support for browser APIs.
+
+**Tip:** Two ESLint plugins [eslint-plugin-testing-library](https://github.com/testing-library/eslint-plugin-testing-library) and [eslint-plugin-jest-dom](https://github.com/testing-library/eslint-plugin-jest-dom) helps to avoid common mistakes when using the Testing Library. Many of their rules are fixable.
 
 ### Creating our first test
 
@@ -138,9 +133,9 @@ test('hello world', () => {
 });
 ```
 
-Here we’re rendering a paragraph of text using the Testing Library’s [render()](https://testing-library.com/docs/react-testing-library/api#render) method, then testing that a paragraph containing “Hello Jest!” is present on the page using Testing Library’s [getByText()](https://testing-library.com/docs/dom-testing-library/api-queries#bytext) method and jest-dom’s [toBeInTheDocument()](https://github.com/testing-library/jest-dom#tobeinthedocument) matcher.
+Here we’re rendering a paragraph of text using the Testing Library’s [render()](https://testing-library.com/docs/react-testing-library/api#render) method, then testing that a paragraph containing “Hello Jest!” is present on the page using Testing Library’s [getByText()](https://testing-library.com/docs/queries/bytext) method and jest-dom’s [toBeInTheDocument()](https://github.com/testing-library/jest-dom#tobeinthedocument) matcher.
 
-We’re also using the [screen](https://testing-library.com/docs/dom-testing-library/api-queries#screen) namespace to access queries.
+We’re also using the [screen](https://testing-library.com/docs/queries/about/#screen) namespace to access the queries.
 
 ### Running tests
 
@@ -177,7 +172,8 @@ Snapshot testing sounds like a good idea, but has [several problems](https://blo
 - we tend to update snapshots without thinking;
 - coupling with low-level modules;
 - test intentions are hard to understand;
-- they give a false sense of security.
+- they give a false sense of security
+- they don’t prove that the app work or even look as exepected.
 
 Avoid snapshot testing except testing short output with clear intent, like class names or error messages, or when we _really_ want to verify that the output is the same.
 
@@ -219,17 +215,17 @@ Let’s compare different methods of querying DOM elements:
 
 To summarise:
 
-- Text content may change and we’ll need to update our tests. This may not be a problem if our translation library only render string IDs in tests, or if we want our test to work with the actual text users see in the app.
+- Text content may change and we’ll need to update our tests. This is good: we want our test to work with the actual text users see in the app.
 - Test IDs clutter the markup with props we only need in tests. Test IDs are also something that users of our app don’t see: if we remove a label from a button, a test with test ID will still pass.
 
-Testing Library has methods for all good queries. There are [six variants of query methods](https://testing-library.com/docs/dom-testing-library/api-queries#variants):
+Testing Library has methods for all good queries, they are called _sematic queries_. There are [six variants of query methods](https://testing-library.com/docs/queries/about/#types-of-queries):
 
 - `getBy*()` returns the first matching element and throws when an element not found or more than one element found;
 - `queryBy*()` returns the first matching element but doesn’t throw;
 - `findBy*()` returns a promise that resolves with a matching element, or rejects when an element not found after a default timeout or more than one element found;
 - `getAllBy*()`, `queryAllBy*()`, `findAllBy*()`: same as above but return all found elements, not just the first one.
 
-And [the queries](https://testing-library.com/docs/dom-testing-library/api-queries#queries) are:
+And [the queries](https://testing-library.com/docs/queries/about/) are:
 
 - `getByLabelText()` finds a form element by its `<label>`;
 - `getByPlaceholderText()` finds a form element by its placeholder text;
@@ -248,7 +244,7 @@ Let’s see how to use query methods. To select this button in a test:
 <button data-testid="cookButton">Cook pizza!</button>
 ```
 
-We can either query it by the test ID:
+We can either query it by its test ID:
 
 ```jsx
 render(<Pizza />);
@@ -277,13 +273,13 @@ Benefits of the last method are:
 - doesn’t give false positives when the same text is used in non-interactive content;
 - makes sure that the button is an actual `button` element or at least have the `button` ARIA role.
 
-Check the Testing Library docs for more details on [which query to use](https://testing-library.com/docs/guide-which-query) and [inherent roles of HTML elements](https://github.com/A11yance/aria-query#elements-to-roles).
+Check the Testing Library docs for more details on [which query to use](https://testing-library.com/docs/queries/about/#priority) and [inherent roles of HTML elements](https://github.com/A11yance/aria-query#elements-to-roles).
 
 ## Testing React components
 
 ### Testing rendering
 
-This kind of test can be useful when our component has several variations and we want to test that a certain prop renders the correct variation.
+These tests can be useful when our component has several variations and we want to test that a certain combinnation of props renders the correct variation.
 
 ```jsx
 import React from 'react';
@@ -300,7 +296,7 @@ test('contains all ingredients', () => {
 });
 ```
 
-Here we’re testing that our `Pizza` component renders all ingredients passed to a component as a prop.
+[Here we’re testing](https://github.com/sapegin/rtl-article-2019/blob/master/src/components/__tests__/Pizza.spec.js) that our `Pizza` component renders all ingredients passed to a component as a prop.
 
 ### Testing user interaction
 
@@ -312,7 +308,9 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import ExpandCollapse from '../ExpandCollapse';
 
-test('button expands and collapses the content', () => {
+test('button expands and collapses the content', async () => {
+  const user = userEvent.setup();
+
   const children = 'Hello world';
   render(
     <ExpandCollapse excerpt="Information about dogs">
@@ -322,11 +320,11 @@ test('button expands and collapses the content', () => {
 
   expect(screen.queryByText(children)).not.toBeInTheDocument();
 
-  userEvent.click(screen.getByRole('button', { name: /expand/i }));
+  await user.click(screen.getByRole('button', { name: /expand/i }));
 
   expect(screen.getByText(children)).toBeInTheDocument();
 
-  userEvent.click(screen.getByRole('button', { name: /collapse/i }));
+  await user.click(screen.getByRole('button', { name: /collapse/i }));
 
   expect(screen.queryByText(children)).not.toBeInTheDocument();
 });
@@ -334,7 +332,7 @@ test('button expands and collapses the content', () => {
 
 Here, we have a component that shows some text on the “Expand” button click, and hides it on the “Collapse” button click. Our test verifies this behavior.
 
-We’re using `queryByText()` method instead of `getByText()` because the former doesn’t throw when an element isn’t found, so we can test that an element doesn’t exist.
+We’re using `queryByText()` method instead of `getByText()` because the former doesn’t throw when an element can’t be found, so we can test that an element doesn’t exist.
 
 _See the next section for a more complex example of testing events._
 
@@ -350,29 +348,31 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import Login from '../Login';
 
-test('submits username and password', () => {
+test('submits username and password', async () => {
+  const user = userEvent.setup();
   const username = 'me';
   const password = 'please';
   const onSubmit = jest.fn();
+
   render(<Login onSubmit={onSubmit} />);
 
-  userEvent.type(screen.getByLabelText(/username/i), username);
+  await user.type(screen.getByLabelText(/username/i), username);
 
-  userEvent.type(screen.getByLabelText(/password/i), password);
+  await user.type(screen.getByLabelText(/password/i), password);
 
-  userEvent.click(screen.getByRole('button', { name: /log in/i }));
+  await user.click(screen.getByRole('button', { name: /log in/i }));
 
   expect(onSubmit).toHaveBeenCalledTimes(1);
   expect(onSubmit).toHaveBeenCalledWith({
     username,
-    password
+    password,
   });
 });
 ```
 
-Here, we’re using `jest.fn()` to define a spy for the `onSubmit` prop of our [Login](https://github.com/sapegin/rtl-article-2019/blob/master/src/components/Login.js) component, then we’re filling the form by [typing](https://github.com/testing-library/user-event#typeelement-text-options) text into input fields, then we [click](https://github.com/testing-library/user-event#clickelement-eventinit-options) the submit button, and check that the `onSubmit` function was called only once and it has received login and password.
+Here, we’re using `jest.fn()` to define a spy for the `onSubmit` prop of our [Login](https://github.com/sapegin/rtl-article-2019/blob/master/src/components/Login.js) component, then we’re filling the form by [typing](https://testing-library.com/docs/user-event/utility#type) text into input fields, then we [click](https://testing-library.com/docs/user-event/convenience#click) the submit button, and check that the `onSubmit` function was called only once and it has received login and password.
 
-In comparison [to Enzyme](/all/react-testing-2-jest-and-enzyme/), we don’t have to call a form `submit` handler directly, which would be testing the implementation. user-event’s `click()` method will dispatch a click event on the DOM node which is captured and handled by React the same way a real click in a browser would be handled. For example, it will dispatch a form submit event when we “click” a `<button type="submit">`, and won’t dispatch it when we “click” a `<button type="button">`, which makes our tests more reliable.
+In comparison [to Enzyme](/all/react-testing-2-jest-and-enzyme/), we don’t have to call a form `submit` handler directly, which would be testing the implementation. User-event’s `click()` method will dispatch a click event on the DOM node which is captured and handled by React the same way a real click in a browser would be handled. For example, it will dispatch a form submit event when we “click” a `<button type="submit">`, and won’t dispatch it when we “click” a `<button type="button">`, which makes our tests more reliable.
 
 ### Async tests
 
@@ -380,7 +380,7 @@ Asynchronous operations are the most tricky to test. Often developers give up an
 
 ```js
 const wait = (time = 0) =>
-  new Promise(resolve => {
+  new Promise((resolve) => {
     setTimeout(resolve, time);
   });
 
@@ -392,7 +392,7 @@ test('something async', async () => {
 });
 ```
 
-This approach is problematic. The delay will always be a random number. A number that is good enough on a developer’s machine at the time of writing the code. But it can be too long or too short at any other time and in any other environment. When it’s too long, our test will run longer than necessary. When it’s too short, our tests will break. This makes tests flaky.
+This approach is problematic. The delay will always be a random number. A number that is good enough on a developer’s machine at the time of writing the code. But it can be too long or too short at any other time and in any other environment. When it’s too long, our tests will run longer than necessary. When it’s too short, our tests will break. This makes tests flaky.
 
 A better approach would be _polling_: waiting for something, like a new text on a page, by checking it multiple times with short intervals, until it’s there. Testing Library has the [`waitFor()` method](https://testing-library.com/docs/dom-testing-library/api-async#waitfor):
 
@@ -400,7 +400,8 @@ A better approach would be _polling_: waiting for something, like a new text on 
 import { waitFor } from '@testing-library/react';
 
 test('something async', async () => {
-  // Run an async operation...
+  await runAnAsyncOperation();
+
   await waitFor(() => {
     expect(onUpdate).toHaveBeenCalledTimes(1);
   });
@@ -411,8 +412,8 @@ For querying elements we can use `findBy*()` and `findAllBy*()` methods that cou
 
 ```js
 test('something async', async () => {
-  expect.assertions(1);
-  // Run an async operation...
+  await runAnAsyncOperation();
+
   expect(await screen.findByText(/done!/i)).toBeInTheDocument();
 });
 ```
@@ -420,8 +421,6 @@ test('something async', async () => {
 Now our tests wait as long as necessary but not more.
 
 [waitForElementToBeRemoved()](https://testing-library.com/docs/dom-testing-library/api-async#waitforelementtoberemoved) is another useful method: it waits until an element is removed from the DOM.
-
-[expect.assertions()](https://jestjs.io/docs/en/expect#expectassertionsnumber) method is useful for writing async tests: we tell Jest how many assertions we have in the test, and if we mess up something, like forget to return a Promise from `test()`, this test will fail.
 
 _See the next section for more realistic examples._
 
@@ -439,19 +438,21 @@ I’m not mentioning sending a real network request to a real API as an option h
 
 Let’s look at some of the methods in more detail.
 
-**Dependency injection** is when we pass a dependency as a function parameter or a component prop, instead of hardcoding it inside a module. This allows us to pass another implementation in a test. Use default function parameters or default component props to define the default implementation, one that should be used in non-test code. That way we don’t have to pass the dependency every time we use a function or [a component](https://github.com/sapegin/rtl-article-2019/blob/master/src/components/RemotePizza.js):
+**Dependency injection** is when we pass a dependency as a function parameter or a component prop, instead of hardcoding it inside of a module. This allows us to pass another implementation in a test. Use default function parameters or default component props to define the default implementation, one that should be used in non-test code. That way we don’t have to pass the dependency every time we use a function or [a component](https://github.com/sapegin/rtl-article-2019/blob/master/src/components/RemotePizza.js):
 
 ```jsx
 import React from 'react';
 
 const defaultFetchIngredients = () =>
-  fetch('https://...').then(r => r.json());
+  fetch('https://...').then((r) => r.json());
 
-export default function RemotePizza({ fetchIngredients }) {
+export default function RemotePizza({
+  fetchIngredients = defaultFetchIngredients,
+}) {
   const [ingredients, setIngredients] = React.useState([]);
 
   const handleCook = () => {
-    fetchIngredients().then(response => {
+    fetchIngredients().then((response) => {
       setIngredients(response.args.ingredients);
     });
   };
@@ -462,7 +463,7 @@ export default function RemotePizza({ fetchIngredients }) {
       <button onClick={handleCook}>Cook</button>
       {ingredients.length > 0 && (
         <ul>
-          {ingredients.map(ingredient => (
+          {ingredients.map((ingredient) => (
             <li key={ingredient}>{ingredient}</li>
           ))}
         </ul>
@@ -470,19 +471,15 @@ export default function RemotePizza({ fetchIngredients }) {
     </>
   );
 }
-
-RemotePizza.defaultProps = {
-  fetchIngredients: defaultFetchIngredients
-};
 ```
 
-When we use our component without passing the `fetchIngredients` prop, it’ll use the default implementation:
+When we use our component without passing the `fetchIngredients` prop, it’ll use the default implementation, that makes an actual network request:
 
 ```jsx
 <RemotePizza />
 ```
 
-But [in a test](https://github.com/sapegin/rtl-article-2019/blob/master/src/components/__tests__/RemotePizza_di.spec.js) we’re passing a custom implementation, that returns mock data instead of making an actual network request:
+But [in a test](https://github.com/sapegin/rtl-article-2019/blob/master/src/components/__tests__/RemotePizza_di.spec.js) we’re passing a custom implementation, that returns mock data instead:
 
 ```jsx
 import React from 'react';
@@ -493,11 +490,9 @@ import RemotePizza from '../RemotePizza';
 const ingredients = ['bacon', 'tomato', 'mozzarella', 'pineapples'];
 
 test('download ingredients from internets', async () => {
-  expect.assertions(4);
-
   const fetchIngredients = () =>
     Promise.resolve({
-      args: { ingredients }
+      args: { ingredients },
     });
   render(<RemotePizza fetchIngredients={fetchIngredients} />);
 
@@ -521,7 +516,7 @@ That’s where request mocking comes in.
 export const fetchIngredients = () =>
   fetch(
     'https://httpbin.org/anything?ingredients=bacon&ingredients=mozzarella&ingredients=pineapples'
-  ).then(r => r.json());
+  ).then((r) => r.json());
 ```
 
 Then import it in a component:
@@ -549,8 +544,6 @@ afterEach(() => {
 const ingredients = ['bacon', 'tomato', 'mozzarella', 'pineapples'];
 
 test('download ingredients from internets', async () => {
-  expect.assertions(4);
-
   fetchIngredients.mockResolvedValue({ args: { ingredients } });
 
   render(<RemotePizza />);
@@ -567,51 +560,77 @@ We’re using Jest’s [mockResolvedValue](https://jestjs.io/docs/en/mock-functi
 
 **Mocking the network** is similar to mocking a method, but instead of importing a method and mocking it with `jest.mock()`, we’re matching a URL and giving a mock response. And it works on the lowest level, so network requests, sent using `fetch` or `XMLHttpRequest`, will be mocked.
 
-We’ll use [Nock](https://github.com/nock/nock) to [mock the network request](https://github.com/sapegin/rtl-article-2019/blob/master/src/components/__tests__/RemotePizza_nock.spec.js):
+We’ll use [Mock Service Worker](https://mswjs.io/) to mock the network requests. It works in the browser and in Node.js, which makes it possible to reuse the same mocks in unit tests, React Styleguidist or Storybook.
+
+To setup Mock Service Worker, we need to [define mock handlers](https://github.com/sapegin/rtl-article-2019/blob/master/src/mocks/fetchIngredients.js) for all our network endpoints:
+
+```js
+import { rest } from 'msw';
+
+export const fetchIngredients = [
+  rest.get('https://httpbin.org/anything', (req, res, ctx) => {
+    return res(
+      ctx.json({
+        args: {
+          ingredients: [
+            'bacon',
+            'tomato',
+            'mozzarella',
+            'pineapples',
+          ],
+        },
+      })
+    );
+  }),
+];
+```
+
+Then [setup a server](https://github.com/sapegin/rtl-article-2019/blob/master/src/mocks/server.js) that imports all our mock handlers:
+
+```ts
+import { rest } from 'msw';
+import { setupServer } from 'msw/node';
+import { fetchIngredients } from './mocks/fetchIngredients';
+
+const server = setupServer(...fetchIngredients);
+
+export { server, rest };
+```
+
+And then we can [use this mock server in our tests](https://github.com/sapegin/rtl-article-2019/blob/master/src/components/__tests__/RemotePizza_msw.spec.js)):
 
 ```jsx
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import nock from 'nock';
+import { server } from '../../mocks/server';
 import RemotePizza from '../RemotePizza';
 
 const ingredients = ['bacon', 'tomato', 'mozzarella', 'pineapples'];
 
-afterEach(() => {
-  nock.restore();
-});
+beforeAll(() => server.listen());
+afterEach(() => server.resetHandlers());
+afterAll(() => server.close());
 
 test('download ingredients from internets', async () => {
-  expect.assertions(5);
-
-  const scope = nock('https://httpbin.org')
-    .get('/anything')
-    .query(true)
-    .reply(200, { args: { ingredients } });
+  const user = userEvent.setup();
 
   render(<RemotePizza />);
 
-  userEvent.click(screen.getByRole('button', { name: /cook/i }));
+  await user.click(screen.getByRole('button', { name: /cook/i }));
 
   for (const ingredient of ingredients) {
     expect(await screen.findByText(ingredient)).toBeInTheDocument();
   }
-
-  expect(scope.isDone()).toBe(true);
 });
 ```
 
-Here we’re defining _a Nock scope_: a mapping of request URLs and mock responses.
+Here we’re starting the mock server before running the first test and stopping it after running the last one. We’re also resetting mock handlers before each test, so we could customize handlers in a particular test to verify different scenarios, for example, and error case.
 
-`query(true)` means we’re matching a request with any query parameters, otherwise we can define a specific parameters, like `query({quantity: 42})`.
+To summarize the difference between `jest.mock()` and Mock Service Worker:
 
-`scope.isDone()` is `true` when all requests, defined in the scope, were made.
-
-To summarize the difference between `jest.mock()` and Nock:
-
-- `jest.mock()` is already available with Jest and we don’t need to set up and learn anything new — it works the same way as mocking any other module.
-- Nock has a specialized API to describe network requests and responses, and debugging tools to help us when something isn’t working. It can also record real network requests, so we don’t have to hand-craft mock responses.
+- `jest.mock()` is already available with Jest and we don’t need to set up and learn anything new — it works the same way as mocking any other module, however it dependes on the implementation of service modules and may break tests when the implementaiton changes.
+- Mock Service Worker has a specialized API to describe network requests and responses, and debugging tools to help us when something isn’t working. It’s easier to customize responses for particular tests. It also works the same way in the browser and Node.js so we could reuse mocks.
 
 ### Debugging
 
@@ -629,22 +648,17 @@ We can also print an specific element:
 screen.debug(getByText(/expand/i));
 ```
 
-And to [debug Nock](https://github.com/nock/nock#debugging), run tests like so:
-
-```
-DEBUG=nock.* npm test
-```
-
 ## Resources
 
 - [Jest cheat sheet](https://github.com/sapegin/jest-cheat-sheet/blob/master/Readme.md)
 - [Common mistakes with React Testing Library](https://kentcdodds.com/blog/common-mistakes-with-react-testing-library)
-- [Which query should I use?](https://testing-library.com/docs/guide-which-query)
+- [Stop mocking fetch](https://kentcdodds.com/blog/stop-mocking-fetch)
+- [Which query should I use?](https://testing-library.com/docs/queries/about/#priority)
 - [Inherent roles of HTML elements](https://github.com/A11yance/aria-query#elements-to-roles)
 
 ## Conclusion
 
-We’ve learned how to set up React Testing Library and how to test different React components.
+We’ve learned how to set up React Testing Library and how to test different React components. We’ve learned how to setup Mock Service Worker, and use it to test components that make network requests.
 
 ---
 
