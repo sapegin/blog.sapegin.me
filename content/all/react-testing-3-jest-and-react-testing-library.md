@@ -81,7 +81,7 @@ We’ll also need [babel-jest](https://github.com/facebook/jest/tree/master/pack
 
 Update the [package.json](https://github.com/sapegin/rtl-article-2019/blob/master/package.json) like this:
 
-```json {15-25}
+```json {17-26}
 {
   "name": "pizza",
   "version": "1.0.0",
