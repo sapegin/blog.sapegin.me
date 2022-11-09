@@ -68,12 +68,14 @@ React Testing Library helps us write [good tests](/all/react-testing-1-best-prac
 First, install all the dependencies, including peer dependencies:
 
 ```bash
-npm install --save-dev jest jest-environment-jsdom whatwg-fetch @testing-library/react @testing-library/jest-dom @testing-library/user-event
+npm install --save-dev jest jest-environment-jsdom whatwg-fetch msw @testing-library/react @testing-library/jest-dom @testing-library/user-event
 ```
 
-[jest-dom](https://github.com/testing-library/jest-dom) isn’t required to use React Testing Library but it makes tests more readable.
+Some of these modules aren’t required for React Testing Library but we’ll use them in the article:
 
-[@testing-library/user-event](https://github.com/testing-library/user-event) isn’t required, too, but makes testing user interaction closer to how an actual user would interact with the app.
+* [jest-dom](https://github.com/testing-library/jest-dom) makes tests more readable by adding useful assertions.
+* [@testing-library/user-event](https://github.com/testing-library/user-event) makes testing user interaction closer to how an actual user would interact with the app.
+* [msw](https://mswjs.io/) is a great way to test component that make network requests.
 
 We’ll also need [babel-jest](https://github.com/facebook/jest/tree/master/packages/babel-jest) for Babel or [ts-jest](https://github.com/kulshekhar/ts-jest) for TypeScript. For projects with webpack, make sure to enable ECMAScript modules transformation for [the `test` environment in the Babel config](https://github.com/styleguidist/react-styleguidist/blob/99d880674b62569a486a1d128b576f2ee91b39c7/babel.config.js#L36-L56).
 
