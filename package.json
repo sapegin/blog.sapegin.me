@@ -64,7 +64,7 @@
     "gatsby-plugin-typescript": "^3.9.0",
     "gatsby-remark-prismjs": "^5.6.0",
     "gatsby-remark-twitter-cards": "^0.6.1",
-    "gatsby-source-filesystem": "^3.9.0",
+    "gatsby-source-filesystem": "^5.2.0",
     "gatsby-transformer-remark": "^6.0.0",
     "glob": "^7.1.7",
     "husky": "^7.0.1",
