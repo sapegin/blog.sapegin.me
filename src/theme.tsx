@@ -89,8 +89,8 @@ const theme = {
 	blockMarginBottom: space.m,
 	headingMarginTop: space.l,
 	listMargin: '1.3em',
+	focusOutlineOffset: '2px',
 	page: {
-		bodyMaxWidth: null,
 		bodyPaddingX: 0,
 		bodyPaddingY: 0,
 		contentMaxWidth: '44rem',

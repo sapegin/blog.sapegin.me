@@ -33,7 +33,7 @@ const getCategoryTitle = (key: string) => {
 	}
 
 	const [firstLetter, ...restLetters] = key;
-	return `${firstLetter.toUpperCase()}${restLetters}`;
+	return `${firstLetter.toUpperCase()}${restLetters.join('')}`;
 };
 
 const groupByCategory = (posts: Post[]) =>

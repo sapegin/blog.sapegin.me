@@ -21,9 +21,8 @@ const Page = ({ children, url }: Props) => {
 						<Text
 							as="span"
 							aria-hidden="true"
-							fontSize="l"
-							lineHeight={1}
 							verticalAlign="middle"
+							sx={{ fontSize: 'l', lineHeight: 1 }}
 						>
 							☞
 						</Text>

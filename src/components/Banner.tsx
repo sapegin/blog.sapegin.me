@@ -9,7 +9,7 @@ interface Props {
 export default function Banner({ children }: Props) {
 	return (
 		<Invert>
-			<Text p="s" bg="bg" color="base" textAlign="center">
+			<Text p="s" textAlign="center" sx={{ bg: 'bg', color: 'base' }}>
 				{children}
 			</Text>
 		</Invert>
