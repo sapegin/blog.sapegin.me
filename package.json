@@ -52,7 +52,7 @@
     "eslint-config-tamia": "^7.2.6",
     "eslint-plugin-react": "^7.24.0",
     "fs-extra": "^10.0.0",
-    "gatsby": "3.15",
+    "gatsby": "5.5",
     "gatsby-plugin-canonical-urls": "^3.13",
     "gatsby-plugin-feed": "^3.13",
     "gatsby-plugin-goatcounter": "^0.4.0",
