@@ -3,24 +3,11 @@ layout: Post
 title: 'Washing your code: avoid mutation'
 description: Mutations happen when we change a JavaScript object or array without creating a new variable or reassigning an existing one. Mutations make code harder to understand and can lead to hard-to-find bugs.
 date: 2020-03-19
+source: washing-code/Avoid_mutation
 lang: en
 tags:
   - javascript
   - washingcode
----
-
-<a href="https://leanpub.com/washingcode/"><img src="/images/washing-your-code-cover-small.jpg" width="150" height="194" align="right" style="margin:0 0 0 0.5rem" /></a>
-
-_You’re reading an excerpt of my upcoming book on clean code, “Washing your code: write once, read seven times.” [Preorder it on Leanpub](https://leanpub.com/washingcode/) or [read a draft online](https://github.com/sapegin/washingcode-book/blob/master/manuscript/book.md)._
-
-_Book table of contents:_
-
-- [Avoid loops](/all/avoid-loops/)
-- [Avoid conditions](/all/avoid-conditions/)
-- [Avoid reassigning variables](/all/avoid-reassigning-variables)
-- _Avoid mutation (*this post*)_
-- To be continued
-
 ---
 
 Mutations happen when we change a JavaScript object or array without creating a new variable or reassigning an existing one:
@@ -33,9 +20,13 @@ const puppy = {
 puppy.age = 10;
 ```
 
+<!-- expect(puppy).toEqual({name: 'Dessi', age: 10}) -->
+
 Here we’re _mutating_ the original `puppy` object by changing its `age` property.
 
 Mutations are often problematic. Consider this function:
+
+<!-- const console = { log: jest.fn() } -->
 
 ```js
 function printSortedArray(array) {
@@ -46,19 +37,24 @@ function printSortedArray(array) {
 }
 ```
 
+<!--
+printSortedArray([3, 1, 2])
+expect(console.log.mock.calls).toEqual([[1], [2], [3]])
+-->
+
 The problem here is that the `.sort()` array method mutates the array we’re passing into our function, likely not what we’d expect when calling a function named `printSortedArray`.
 
 Some of the problems with mutation:
 
 - Mutation may lead to unexpected and hard-to-debug issues, where data becomes incorrect somewhere, and you have no idea where it happens.
 - Mutation makes code harder to understand: at any time, an array or object may have a different value, so we need to be very careful when reading the code.
-- Mutation of function arguments makes the behavior of a function surprising.
+- Mutation of function parameters makes the behavior of a function surprising.
 
 _Immutability_ or _immutable data structures_, meaning that to change a value we have to create a new array or object, would solve this problem. Unfortunately, JavaScript doesn’t support immutability natively, and all solutions are more crutches than actual solutions. But even just _avoiding_ mutations in our code makes it easier to understand.
 
-Also, don’t forget that `const` in JavaScript only prevents reassignments — not mutations. We’ve discussed reassignments in the previous chapter, [Avoid reassigning variables](/all/avoid-reassigning-variables).
+Also, don’t forget that `const` in JavaScript only prevents reassignments — not mutations. We’ve discussed reassignments in the previous chapter, [Avoid reassigning variables](/all/avoid-reassigning-variables/).
 
-### Avoid mutating operations
+## Avoid mutating operations
 
 One of the most common use cases for mutation is updating an object:
 
@@ -151,7 +147,7 @@ expect(parseExample('pizza', 'js', 'foo bar')).toEqual({content: 'pizza', lang: 
 
 Now it’s easier to understand what the code does, and the possible shapes of the return object are clear. We’ve also removed all mutations and reduced nesting a little.
 
-### Beware of the mutating array methods
+## Beware of the mutating array methods
 
 Not all methods in JavaScript return a new array or object. [Some methods mutate](https://doesitmutate.xyz/) the original value in place. For example, `push()` is one of the most commonly used.
 
@@ -160,6 +156,7 @@ Replacing imperative code, full of loops and conditions, with declarative code i
 Consider this code:
 
 <!--
+const Text = ({children}) => <p>{children}</p>
 const ProductOptions = () => null
 const product1 = {name: 'pizza', colors: [], sizes: []}
 const product2 = {name: 'pizza', colors: [], sizes: []}
@@ -199,6 +196,10 @@ const rows = [
 ];
 ```
 
+<!--
+expect(rows).toEqual([{"product1": <Text>pizza</Text>, "product2": <Text>pizza</Text>, "row": "Name"}])
+-->
+
 Here we have two ways of defining table rows: a plain array with always visible rows, and a function that returns optional rows. The latter mutates the original array using the `.push()` method.
 
 Array mutation itself isn’t the most significant issue of this code. However, code with mutations likely hides other issues — mutation is a good sign to look closer. Here the main problem is imperative array building and different ways for handling required and optional rows. Replacing imperative code with declarative and eliminating conditions often makes code more readable and maintainable.
@@ -206,6 +207,7 @@ Array mutation itself isn’t the most significant issue of this code. However, 
 Let’s merge all possible rows into a single declarative array:
 
 <!--
+const Text = ({children}) => <p>{children}</p>
 const ProductOptions = () => null
 const product1 = {name: 'pizza', colors: [], sizes: []}
 const product2 = {name: 'pizza', colors: [], sizes: []}
@@ -242,6 +244,10 @@ const visibleRows = rows.filter(row => {
   return true;
 });
 ```
+
+<!--
+expect(visibleRows).toEqual([{"product1": <Text>pizza</Text>, "product2": <Text>pizza</Text>, "row": "Name"}])
+-->
 
 Now we’re defining all rows in a single array. All rows are visible by default unless they have the `isVisible` function that returns `false`. We’ve improved code readability and maintainability:
 
@@ -324,7 +330,7 @@ Other [mutating array methods](https://doesitmutate.xyz/) to watch out for are:
 - [.splice()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice)
 - [.unshift()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift)
 
-### Avoid mutation of function arguments
+## Avoid mutation of function parameters
 
 Objects or arrays that are passed to a function can be mutated inside that function, and this affects the original object:
 
@@ -342,10 +348,10 @@ mutate(person);
 
 Here the `person` object is mutated inside the `mutate` function.
 
-Function argument mutation can be intentional and accidental, and both are problematic:
+Function parameter mutation can be intentional and accidental, and both are problematic:
 
-- It’s harder to understand how a function works and how to use it because it doesn’t return a value but changes one of the incoming arguments.
-- Accidental argument mutation is even worse because function consumers don’t expect it. And it can lead to hard-to-find bugs when a value that is mutated inside a function is later used somewhere else.
+- It’s harder to understand how a function works and how to use it because it doesn’t return a value but changes one of the incoming parameters.
+- Accidental parameter mutation is even worse because function consumers don’t expect it. And it can lead to hard-to-find bugs when a value that is mutated inside a function is later used somewhere else.
 
 Consider this example:
 
@@ -483,7 +489,7 @@ expect(getMessageProps(1, 5, 0, 2, 0)).toEqual([
 ])
 -->
 
-But this makes the function API less discoverable and can make editor autocomplete less useful. It also gives the wrong impression that the function accepts any number of arguments and that the count order is unimportant — the number and order of arguments were clear in the previous iteration.
+But this makes the function API less discoverable and can make editor autocomplete less useful. It also gives the wrong impression that the function accepts any number of parameters and that the count order is unimportant — the number and order of parameters were clear in the previous iteration.
 
 We can also use `.reduce()` method instead of `.map()` / `.filter()` chaining:
 
@@ -518,9 +524,9 @@ I’m not a huge fan of `.reduce()` because it often makes code harder to read a
 
 So I’d stop two steps ago with this refactoring.
 
-Probably the only valid reason to mutate function arguments is performance optimization: when you work with a huge piece of data, and creating a new object or array would be too slow. But like with all performance optimizations: measure first to know whether you actually have a problem, and avoid premature optimization.
+Probably the only valid reason to mutate function parameters is performance optimization: when you work with a huge piece of data, and creating a new object or array would be too slow. But like with all performance optimizations: measure first to know whether you actually have a problem, and avoid premature optimization.
 
-### Make mutations explicit if you have to use them
+## Make mutations explicit if you have to use them
 
 Sometimes we can’t avoid mutations, for example, because of an unfortunate language API that does mutation.
 
@@ -569,7 +575,7 @@ const puppies = _.sortBy(counts).map(n => `${n} puppies`);
 
 <!-- expect(puppies).toEqual(['2 puppies', '3 puppies', '6 puppies']) -->
 
-### Updating objects
+## Updating objects
 
 Modern JavaScript makes it easier to do immutable data updates thanks to [the spread syntax](http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax). Before the spread syntax we had to write something like:
 
@@ -581,7 +587,7 @@ const next = Object.assign({}, prev, { pizza: 42 });
 
 <!-- expect(next).toEqual({coffee: 1, pizza: 42}) -->
 
-Note the empty object as the first argument: it was necessary; otherwise, `Object.assign` would mutate the initial object: it considers the first argument as a target. It mutates the first argument and also returns it — this is a very unfortunate API.
+Note the empty object as the first parameter: it was necessary; otherwise, `Object.assign` would mutate the initial object: it considers the first parameter as a target. It mutates the first parameter and also returns it — this is a very unfortunate API.
 
 Now we can write:
 
@@ -675,10 +681,17 @@ type Point = Readonly<{
 And similar for arrays:
 
 ```ts
-function sort(array: readonly any[]) {
-  return [...counts].sort();
+function sort(array: readonly unknown[]) {
+  return [...array].sort();
 }
 ```
+
+<!--
+const source = [3, 2, 1];
+const result = sort(source);
+expect(source).toEqual([3, 2, 1])
+expect(result).toEqual([1, 2, 3])
+-->
 
 Note that both `readonly` modifier and `Readonly` utility type are shallow, so we need to add them to all nested objects too.
 
@@ -694,7 +707,7 @@ I don’t think freezing is worth it on its own unless it is part of another lib
 
 **Simplifying object updates** is another option that we can combine with mutation prevention.
 
-The most popular way to simplify object updates is to use the [Immutable.js](https://immutable-js.github.io/immutable-js/) library:
+One of the ways to simplify object updates is to use a library like [Immutable.js](https://immutable-js.github.io/immutable-js/):
 
 ```js
 import { Map } from 'immutable';
@@ -702,6 +715,8 @@ const map1 = Map({ food: 'pizza', drink: 'coffee' });
 const map2 = map1.set('drink', 'vodka');
 // -> Map({ food: 'pizza', drink: 'vodka' })
 ```
+
+<!-- expect(map2.toJS()).toEqual({ food: 'pizza', drink: 'vodka' }) -->
 
 I’m not a big fan of it because it has completely custom API that one has to learn. Also, converting arrays and objects from plain JavaScript to Immutable.js and back every time we need to work with any native JavaScript API or almost any third-party API, is annoying and feels like Immutable.js creates more problems than it solves.
 
@@ -716,15 +731,17 @@ const map2 = produce(map1, draftState => {
 // -> { food: 'pizza', drink: 'vodka' }
 ```
 
+<!-- expect(map2).toEqual({ food: 'pizza', drink: 'vodka' }) -->
+
 And Immer will freeze the resulting object in development.
 
-### Even mutation is not so bad sometimes
+## Even mutation is not so bad sometimes
 
 In rare cases, imperative code with mutations isn’t so bad, and rewriting it in a declarative way without mutations doesn’t make it better.
 
 Consider this example:
 
-<!-- // TODO import adddays from date-fns? -->
+<!-- const addDays = x => x + 1 -->
 
 ```js
 const getDateRange = (startDate, endDate) => {
@@ -738,7 +755,7 @@ const getDateRange = (startDate, endDate) => {
 };
 ```
 
-<!-- // TODO -->
+<!-- expect(getDateRange(4, 14)).toEqual([4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]) -->
 
 Here we’re making an array of dates to fill a given date range.
 
@@ -747,9 +764,11 @@ I don’t have good ideas on how to rewrite this code without an imperative loop
 - all “bad” things are isolated in a small function;
 - the function has a meaningful name;
 - the code is clear enough;
-- the function is pure: it doesn’t have any internal state and avoids mutating its arguments.
+- the function is pure: it doesn’t have any internal state and avoids mutating its parameters.
 
 It’s better to have simple and clear code with mutations than complex and messy code without them. But if you do use mutations, it’s wise to isolate them to a small function with a meaningful name and clear API.
+
+Also, avoiding mutation could [significantly reduce performance](https://tkdodo.eu/blog/why-i-dont-like-reduce) if we work with large amounts of data and create a new object on each iteration:
 
 ---
 
@@ -758,11 +777,16 @@ Start thinking about:
 - Rewriting imperative code with mutations in a pure declarative way to improve its readability.
 - Keeping the complete object shape in a single place; when you create a new object, make its shape as clear as possible.
 - Deduplicating logic and separating “what” from “how.”
-- Avoiding mutation of function arguments to prevent hard-to-find bugs.
+- Avoiding mutation of function parameters to prevent hard-to-find bugs.
 - Using `.map()` / `.filter()` chaining instead of `.reduce()`.
 - Making mutations explicit if you have to use them.
 - Preventing mutations in your code using a linter or read-only types.
 
 ---
 
-_If you have any feedback, [tweet me](https://twitter.com/iamsapegin), [open an issue](https://github.com/sapegin/washingcode-book/issues) on GitHub, or email me at [artem@sapegin.ru](mailto:artem@sapegin.ru). [Preorder the book on Leanpub](https://leanpub.com/washingcode/) or [read a draft online](https://github.com/sapegin/washingcode-book/blob/master/manuscript/book.md)._
+Read other sample chapters of the book:
+
+- [Avoid conditions](/all/avoid-conditions/)
+- [Avoid loops](/all/avoid-loops/)
+- _Avoid mutation (*this post*)_
+- [Avoid reassigning variables](/all/avoid-reassigning-variables/)

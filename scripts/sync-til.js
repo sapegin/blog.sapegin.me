@@ -41,17 +41,18 @@ tags:
 
 ${stripTitle(contents)}`;
 
-console.log('Downloading source files...');
+console.log('[TIL] Downloading source files...');
 
 execSync(`curl "${REPO_TAR_GZ}" | tar xz`);
 
 emptyDirSync(DEST_DIR);
 
-console.log('Syncing files...');
+console.log();
+console.log('[TIL] Syncing files...');
 
 const docs = glob.sync(`${REPO_DIR}/*/*.md`);
 docs.forEach((filepath) => {
-	console.log(`👉 ${filepath}`);
+	console.log(`[TIL] 👉 ${filepath}`);
 	const contents = read(filepath);
 	const [, title] = getTitle(contents);
 	const [, date, tags] = getMeta(contents);
@@ -65,3 +66,5 @@ docs.forEach((filepath) => {
 		})
 	);
 });
+
+console.log('[TIL] Done 🦜');

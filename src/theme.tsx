@@ -140,6 +140,11 @@ const theme = {
 			...textBaseStyles,
 			fontStyle: 'italic',
 		},
+		intro: {
+			...textBaseStyles,
+			fontSize: 'mplus',
+			fontStyle: 'italic',
+		},
 		menu: {
 			...headingBaseStyles,
 			fontSize: 'mplus',

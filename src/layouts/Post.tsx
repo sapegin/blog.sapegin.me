@@ -8,6 +8,8 @@ import Subscription from '../components/Subscription';
 import RelatedPosts from '../components/RelatedPosts';
 import Metatags from '../components/Metatags';
 import Fleuron from '../components/Fleuron';
+import { BookPostHeader } from '../components/BookPostHeader';
+import { BookPostFooter } from '../components/BookPostFooter';
 import { Post } from '../types';
 
 type Props = {
@@ -20,6 +22,7 @@ type Props = {
 				description: string;
 				date: string;
 				dateTime: string;
+				source: string;
 			};
 		};
 	};
@@ -36,7 +39,7 @@ export default function PostPage({
 		markdownRemark: {
 			html,
 			excerpt,
-			frontmatter: { title, description, date, dateTime },
+			frontmatter: { title, description, date, dateTime, source },
 		},
 	},
 	pageContext: { related },
@@ -51,11 +54,26 @@ export default function PostPage({
 			/>
 			<Stack gap="xl">
 				<Stack as="main" gap="m">
-					<Heading level={1}>{title}</Heading>
-					<PostContent>
-						{/* eslint-disable-next-line @typescript-eslint/naming-convention */}
-						<div dangerouslySetInnerHTML={{ __html: html }} />
-					</PostContent>
+					<Stack gap="l">
+						<Heading level={1}>{title}</Heading>
+						<Stack gap="m">
+							<PostContent>
+								{source && (
+									<>
+										<BookPostHeader />
+										<hr />
+									</>
+								)}
+								<div dangerouslySetInnerHTML={{ __html: html }} />
+								{source && (
+									<>
+										<hr />
+										<BookPostFooter />
+									</>
+								)}
+							</PostContent>
+						</Stack>
+					</Stack>
 					<footer>
 						<PostMeta slug={pathname} date={date} dateTime={dateTime} />
 					</footer>
@@ -86,6 +104,7 @@ export const pageQuery = graphql`
 				description
 				date(formatString: $dateFormat)
 				dateTime: date(formatString: "YYYY-MM-DD")
+				source
 			}
 		}
 	}
