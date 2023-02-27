@@ -1,5 +1,5 @@
 import React from 'react';
-import { Stack, Heading, Text, Image, Link } from 'tamia';
+import { Stack, Text, Link } from 'tamia';
 
 export function BookPostHeader() {
 	return (
@@ -11,8 +11,8 @@ export function BookPostHeader() {
 					times.”
 				</Text>
 				<Text>
-					<Link href="https://leanpub.com/washingcode/">
-						Preorder it on Leanpub
+					<Link href="http://leanpub.com/washingcode/c/blog-reader">
+						Preorder it on Leanpub (with 20% discount!)
 					</Link>{' '}
 					or{' '}
 					<Link href="https://github.com/sapegin/washingcode-book/blob/master/manuscript/book.md">
@@ -21,7 +21,7 @@ export function BookPostHeader() {
 					.
 				</Text>
 			</Stack>
-			<Link href="https://leanpub.com/washingcode/">
+			<Link href="http://leanpub.com/washingcode/c/blog-reader">
 				<img
 					src="/images/washing-your-code-cover-small.jpg"
 					width={150}

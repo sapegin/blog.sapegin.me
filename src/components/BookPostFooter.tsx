@@ -16,8 +16,8 @@ export function BookPostFooter() {
 					<Link href="mailto:artem@sapegin.ru">artem@sapegin.ru</Link>
 				</Text>
 				<Text>
-					<Link href="https://leanpub.com/washingcode/">
-						Preorder it on Leanpub
+					<Link href="http://leanpub.com/washingcode/c/blog-reader">
+						Preorder it on Leanpub (with 20% discount!)
 					</Link>{' '}
 					or{' '}
 					<Link href="https://github.com/sapegin/washingcode-book/blob/master/manuscript/book.md">
@@ -26,7 +26,7 @@ export function BookPostFooter() {
 					.
 				</Text>
 			</Stack>
-			<Link href="https://leanpub.com/washingcode/">
+			<Link href="http://leanpub.com/washingcode/c/blog-reader">
 				<img
 					src="/images/washing-your-code-cover-small.jpg"
 					width={150}
