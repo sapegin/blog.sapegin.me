@@ -5,6 +5,10 @@ import { Link } from 'tamia-gatsby-link';
 
 const SITE_URL = 'https://blog.sapegin.me';
 
+const getMastodonLink = (slug: string) => {
+	return `https://mastodon.cloud/@sapegin`;
+};
+
 const getTwitterLink = (slug: string) => {
 	const searchQuery = encodeURIComponent(`${SITE_URL}${slug}`);
 	return `https://twitter.com/search?q=${searchQuery}`;
@@ -50,7 +54,8 @@ export default function PostMeta({ slug, date, dateTime }: Props) {
 	return (
 		<List>
 			<Item as="span" variant="small">
-				<Link href={getTwitterLink(slug)}>Discuss on Twitter</Link>
+				Discuss on <Link href={getMastodonLink(slug)}>Mastodon</Link> or{' '}
+				<Link href={getTwitterLink(slug)}>Twitter</Link>
 			</Item>
 			<Item as="span" variant="small">
 				<Link href={getGitHubLink(slug)}>Edit on GitHub</Link>
