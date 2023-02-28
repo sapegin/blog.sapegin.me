@@ -12,9 +12,9 @@ export function BookPostHeader() {
 				</Text>
 				<Text>
 					<Link href="http://leanpub.com/washingcode/c/blog-reader">
-						Preorder it on Leanpub (with 20% discount!)
+						Preorder it on Leanpub
 					</Link>{' '}
-					or{' '}
+					(with 20% discount!) or{' '}
 					<Link href="https://github.com/sapegin/washingcode-book/blob/master/manuscript/book.md">
 						read a draft online
 					</Link>
