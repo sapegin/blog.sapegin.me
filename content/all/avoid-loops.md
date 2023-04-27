@@ -513,6 +513,7 @@ Start thinking about:
 
 Read other sample chapters of the book:
 
+- [Avoid comments](/all/avoid-comments/)
 - [Avoid conditions](/all/avoid-conditions/)
 - _Avoid loops (*this post*)_
 - [Avoid mutation](/all/avoid-mutation/)

@@ -786,6 +786,7 @@ Start thinking about:
 
 Read other sample chapters of the book:
 
+- [Avoid comments](/all/avoid-comments/)
 - [Avoid conditions](/all/avoid-conditions/)
 - [Avoid loops](/all/avoid-loops/)
 - _Avoid mutation (*this post*)_
