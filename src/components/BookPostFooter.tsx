@@ -20,7 +20,7 @@ export function BookPostFooter() {
 						Preorder it on Leanpub
 					</Link>{' '}
 					(with 20% discount!) or{' '}
-					<Link href="https://github.com/sapegin/washingcode-book/blob/master/manuscript/book.md">
+					<Link href="https://github.com/sapegin/washingcode-book/blob/master/manuscript">
 						read a draft online
 					</Link>
 					.
