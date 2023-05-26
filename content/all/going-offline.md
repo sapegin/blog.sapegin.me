@@ -9,6 +9,7 @@ tags:
   - open source
   - hobbies
   - work
+  - mental health
 ---
 
 I don’t know whether I should blame the Coronavirus for the changes in my life and the way I see work, open source, hobbies, and social networks over the past two years, or I’m just getting old. In any case, the Coronavirus allowed me to reflect on what’s important to me, and to see my life from a different point of view.

@@ -8,6 +8,7 @@ tags:
   - jest
   - react
   - testing
+  - grumbles
 ---
 
 When Jest [announced snapshot tests](https://jestjs.io/blog/2016/07/27/jest-14) in 2016, I was [very excited](/all/react-jest). It felt like a perfect solution for testing React components. Since then I’ve written fewer and fewer snapshot tests. In this article I’ll try to explain why.

@@ -6,7 +6,7 @@ lang: en
 medium: automate-npm-releases-with-semantic-release-and-human-written-change-logs-2adb1dce487
 tags:
   - tools
-  - oss
+  - open source
   - projects
 ---
 

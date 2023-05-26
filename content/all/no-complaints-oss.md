@@ -5,9 +5,10 @@ date: 2018-01-27
 lang: en
 medium: no-complaints-policy-b5a537b86aec
 tags:
-  - oss
+  - open source
   - thoughts
   - grumbles
+  - mental health
 ---
 
 I love the open source community, especially the React ecosystem. Most of the folks there are supernice and helping each other. But sometimes something goes wrong.

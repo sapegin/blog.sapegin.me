@@ -7,7 +7,7 @@ medium: why-i-open-source-my-personal-code-2151e5071bbc
 tags:
   - tools
   - thoughts
-  - oss
+  - open source
   - projects
 ---
 

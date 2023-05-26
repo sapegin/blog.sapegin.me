@@ -5,8 +5,8 @@ title: 'Open source for everyone'
 date: 2014-04-09
 tags:
   - tools
-  - oss
   - github
+  - open source
 ---
 
 Everyone can help an open source project: you don’t have to be a programmer or a terminal guru. There are other stuff besides code in open source projects: documentation, for example. And there are a lot of projects without code at all: [books](https://github.com/showcases/writing) and some others.

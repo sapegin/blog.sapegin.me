@@ -7,7 +7,7 @@ medium: automating-open-source-project-configuration-with-mrm-7f67fd55a9b0
 lang: en
 tags:
   - tools
-  - oss
+  - open source
   - javascript
 ---
 
