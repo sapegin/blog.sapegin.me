@@ -5,6 +5,8 @@ title: 'Going wavy'
 date: 2014-11-27
 tags:
   - thoughts
+  - mental health
+  - productivity
 ---
 
 Often when I have something to get done, I can’t get myself started for a few days. Even if the week before I was very productive.
