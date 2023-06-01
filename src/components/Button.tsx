@@ -7,7 +7,7 @@ type Props = {
 export const Button = styled.button<Props>`
 	padding: ${(p) =>
 			p.variant === 'large' ? p.theme.space.s : p.theme.space.xs}
-		${(p) => (p.variant === 'large' ? p.theme.space.l : p.theme.space.m)};
+		${(p) => p.theme.space.m};
 	background-color: ${(p) => p.theme.colors.base};
 	color: ${(p) => p.theme.colors.bg};
 	border: 2px solid ${(p) => p.theme.colors.primary};
@@ -16,6 +16,13 @@ export const Button = styled.button<Props>`
 	font-family: ${(p) => p.theme.fonts.base};
 	text-decoration: none;
 	user-select: none;
+
+	@media (min-width: ${(p) => p.theme.breakpoints[0]}) {
+		padding-left: ${(p) =>
+			p.variant === 'large' ? p.theme.space.l : p.theme.space.m};
+		padding-right: ${(p) =>
+			p.variant === 'large' ? p.theme.space.l : p.theme.space.m};
+	}
 
 	&:hover,
 	&:active,
