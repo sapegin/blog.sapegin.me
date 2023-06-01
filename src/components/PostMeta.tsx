@@ -3,15 +3,12 @@ import { Text } from 'tamia';
 import styled from 'styled-components';
 import { Link } from 'tamia-gatsby-link';
 
-const SITE_URL = 'https://blog.sapegin.me';
-
-const getMastodonLink = (slug: string) => {
+const getMastodonLink = () => {
 	return `https://mastodon.cloud/@sapegin`;
 };
 
-const getTwitterLink = (slug: string) => {
-	const searchQuery = encodeURIComponent(`${SITE_URL}${slug}`);
-	return `https://twitter.com/search?q=${searchQuery}`;
+const getTwitterLink = () => {
+	return `https://twitter.com/iamsapegin`;
 };
 
 const getGitHubLink = (slug: string) => {

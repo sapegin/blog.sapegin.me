@@ -14,11 +14,19 @@ export default {
 	plugins: [
 		'gatsby-plugin-react-helmet',
 		'gatsby-plugin-styled-components',
+		`gatsby-transformer-json`,
 		{
 			resolve: 'gatsby-source-filesystem',
 			options: {
 				path: `${__dirname}/content`,
 				name: 'pages',
+			},
+		},
+		{
+			resolve: 'gatsby-source-filesystem',
+			options: {
+				path: `${__dirname}/data`,
+				name: 'data',
 			},
 		},
 		{

@@ -56,6 +56,9 @@ const colors = {
 const borders = {
 	focus: '3px solid',
 };
+const radii = {
+	round: '100%',
+};
 const fontWeights = {
 	base: 'normal',
 	heading: 'bold',
@@ -106,6 +109,7 @@ const theme = {
 	letterSpacings,
 	colors,
 	borders,
+	radii,
 	breakpoints,
 	headingStyles: {
 		1: {

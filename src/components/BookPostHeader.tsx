@@ -1,5 +1,7 @@
 import React from 'react';
-import { Stack, Text, Link } from 'tamia';
+import { Stack, Text } from 'tamia';
+import { Link } from 'tamia-gatsby-link';
+import { BookCover } from './BookCover';
 
 export function BookPostHeader() {
 	return (
@@ -7,27 +9,14 @@ export function BookPostHeader() {
 			<Stack gap="m">
 				<Text variant="intro">
 					You’re reading an excerpt of my upcoming book on clean code for
-					frontend developers, “Washing your code: write once, read seven
-					times.”
+					frontend developers, “Washing your code.”
 				</Text>
 				<Text>
-					<Link href="http://leanpub.com/washingcode/c/blog-reader">
-						Preorder it on Leanpub
-					</Link>{' '}
-					(with 20% discount!) or{' '}
-					<Link href="https://github.com/sapegin/washingcode-book/">
-						read a draft online
-					</Link>
-					.
+					<Link href="/book/">Preorder the book now</Link> with 20% discount!
 				</Text>
 			</Stack>
-			<Link href="http://leanpub.com/washingcode/c/blog-reader">
-				<img
-					src="/images/washing-your-code-cover-small.jpg"
-					width={150}
-					height={194}
-					alt=""
-				/>
+			<Link href="/book/">
+				<BookCover variant="small" />{' '}
 			</Link>
 		</Stack>
 	);

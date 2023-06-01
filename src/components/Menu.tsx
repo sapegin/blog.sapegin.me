@@ -26,11 +26,11 @@ const ITEMS: Item[] = [
 	{
 		title: 'TIL',
 		hint: 'Today I learned',
-		href: '/til',
+		href: '/til/',
 	},
 	{
-		title: 'Speaking',
-		href: 'https://sapegin.me/speaking/',
+		title: 'Book',
+		href: '/book/',
 	},
 	{
 		title: 'Photography',

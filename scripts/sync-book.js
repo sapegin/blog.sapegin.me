@@ -12,12 +12,15 @@ const REPO_TAR_GZ =
 	'https://codeload.github.com/sapegin/washingcode-book/tar.gz/master';
 const REPO_DIR = 'washingcode-book-master';
 const DEST_DIR = 'content/all';
+const DATA_DIR = 'data';
 
 const read = (file) => readFileSync(file, 'utf8');
 
+const readChapter = (file) => read(`${REPO_DIR}/manuscript/${file}.md`);
+
 const getFrontmatter = (contents) => contents.match(/^---[\S\s]*?---/)[0];
 
-const getTitle = (post) =>
+const getPostTitle = (post) =>
 	upperFirst(post.data.title.replace('Washing your code: ', ''));
 
 const getSlug = (post) =>
@@ -26,6 +29,8 @@ const getSlug = (post) =>
 const getUrl = (post) => `/all/${getSlug(post)}/`;
 
 const stripTitle = (contents) => contents.replace(/^#+ .*?$/m, '');
+
+const getTitle = (contents) => contents.match(/^###+ (.*?)$/m)[1];
 
 const downgradeHeadings = (contents) => contents.replace(/^##(#+) /gm, '$1 ');
 
@@ -50,7 +55,7 @@ console.log('[BOOK] Reading files...');
 
 const files = glob.sync(`${DEST_DIR}/*.md`);
 const allPosts = files.map((filepath) => {
-	console.log(`[BOOK] 👉 ${filepath}`);
+	console.log(`[BOOK] 🤜 ${filepath}`);
 	const contents = read(filepath);
 	const post = matter(contents);
 	return {
@@ -64,12 +69,16 @@ const bookPosts = allPosts.filter((x) => x.data.source);
 console.log();
 console.log('[BOOK] Syncing files...');
 
+const postLinks = {};
+
 bookPosts.forEach((post) => {
 	console.log(`[BOOK] 👉 ${post.file}`);
 
-	const bookContent = read(
-		`${REPO_DIR}/manuscript/${post.data.source.replace('washing-code/', '')}.md`
-	);
+	const chapterFile = post.data.source.replace('washing-code/', '');
+
+	postLinks[chapterFile] = getUrl(post);
+
+	const bookContent = readChapter(chapterFile);
 
 	const contents = `${getFrontmatter(post.source)}
 
@@ -86,13 +95,47 @@ Read other sample chapters of the book:
 ${bookPosts
 	.map((p) =>
 		p.file === post.file
-			? `- _${getTitle(p)} (*this post*)_`
-			: `- [${getTitle(p)}](${getUrl(p)})`
+			? `- _${getPostTitle(p)} (*this post*)_`
+			: `- [${getPostTitle(p)}](${getUrl(p)})`
 	)
 	.join('\n')}
 `;
 
 	writeFileSync(post.file, contents);
 });
+
+console.log();
+console.log('[BOOK] Syncing table of contents...');
+
+const toc = [{ title: '***', chapters: [] }];
+let currentGroupIndex = 0;
+
+const tocRaw = read(`${REPO_DIR}/manuscript/Book.txt`);
+const tocLines = tocRaw.split('\n').filter((x) => x.trim());
+
+tocLines.forEach((line) => {
+	if (line.startsWith('# ')) {
+		return;
+	}
+
+	if (line.startsWith('## ')) {
+		const title = line.replace(/^## /, '');
+		currentGroupIndex++;
+		toc[currentGroupIndex] = { title, chapters: [] };
+		return;
+	}
+
+	const fileName = line.replace(/\.md$/, '');
+	const content = readChapter(fileName);
+	const title = getTitle(content);
+
+	toc[currentGroupIndex].chapters.push({
+		fileName,
+		title,
+		slug: postLinks[fileName],
+	});
+});
+
+writeFileSync(`${DATA_DIR}/book.json`, JSON.stringify(toc, null, 2));
 
 console.log('[BOOK] Done 🦜');
