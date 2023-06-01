@@ -164,7 +164,7 @@ printVideoErrors({videoFiles: [], title: 'Cat on Roomba', id: 'X-13'})
 expect(console.log.mock.calls).toEqual([['Invalid ID']])
 -->
 
-We’ve separated validations, validation logic and formatting. Flies separately, cutlets separately, as we say in Russia. Each piece of code has a single responsibility and a single reason to change. Validations now are defined declaratively and read like a table, not mixed with conditions and string concatenation. We’ve also changed negative conditions (_is invalid?_) to positive (_is valid?_). All this improves readability and maintainability of the code: it’s easier to see all validations and add new ones, because you don’t need to know implementation details of running validations or formatting.
+We’ve separated validations, validation logic and formatting. Flies separately, kebabs separately, as we say in Russia. Each piece of code has a single responsibility and a single reason to change. Validations now are defined declaratively and read like a table, not mixed with conditions and string concatenation. We’ve also changed negative conditions (_is invalid?_) to positive (_is valid?_). All this improves readability and maintainability of the code: it’s easier to see all validations and add new ones, because you don’t need to know implementation details of running validations or formatting.
 
 And now it’s clear that the original code had a bug: there were no space between error messages.
 
@@ -416,7 +416,7 @@ expect(areEventsValid([{fromDate: 4, toDate: 14}, {fromDate: 1, toDate: 2}])).to
 expect(areEventsValid([{fromDate: 4, toDate: 1}, {fromDate: 1, toDate: 2}])).toBe(false)
 -->
 
-Here we’re checking that _every_ event is valid, which would be more clear with the `.every()` array method:
+Here we’re checking that _every_ event is valid, which would be more clear with the `every()` array method:
 
 ```js
 function areEventsValid(events) {
