@@ -7,20 +7,34 @@ const SITE_TITLE = 'Artem Sapegin’s Blog';
 type Props = {
 	slug: string;
 	title?: string;
+	pageTitle?: string;
 	description?: string;
 	children?: React.ReactNode;
+};
+
+const getTitle = ({ title, pageTitle }: Pick<Props, 'title' | 'pageTitle'>) => {
+	if (pageTitle) {
+		return pageTitle;
+	}
+
+	if (title) {
+		return `${title} — ${SITE_TITLE}`;
+	}
+
+	return SITE_TITLE;
 };
 
 export default function Metatags({
 	slug,
 	title,
+	pageTitle,
 	description = 'Blog of a Berlin based coffee first frontend engineer, who makes photos and hangs out with his dogs.',
 	children,
 }: Props) {
 	const isBlogPost = slug.startsWith('/all/');
 	const imageUrl = isBlogPost && `${SITE_URL}${slug}twitter-card.jpg`;
 	return (
-		<Helmet title={title ? `${title} — ${SITE_TITLE}` : SITE_TITLE}>
+		<Helmet title={getTitle({ title, pageTitle })}>
 			<meta name="description" content={description} />
 			{imageUrl && <meta property="og:image" content={imageUrl} />}
 			<meta property="og:type" content={isBlogPost ? 'article' : 'website'} />

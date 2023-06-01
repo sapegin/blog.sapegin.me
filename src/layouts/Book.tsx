@@ -37,7 +37,11 @@ const Book = ({
 }: Props) => {
 	return (
 		<Page url={pathname}>
-			<Metatags slug={pathname} />
+			<Metatags
+				slug={pathname}
+				pageTitle="Washing your code: a book on clean code for frontend developers by Artem Sapegin"
+				description="Learn how to make your code more readable and maintainable, and how to avoid hard-to-track bugs."
+			/>
 			<main>
 				<Stack gap="l">
 					<Stack gap="s">
