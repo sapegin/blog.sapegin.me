@@ -78,10 +78,14 @@ const Book = ({
 										variant="large"
 										href="http://leanpub.com/washingcode/c/blog-reader"
 									>
-										Preorder it on Leanpub
+										Preorder now!{' '}
+										<Box as="span" verticalAlign="middle">
+											・
+										</Box>{' '}
+										<del>$20</del> $12
 									</Button>
 								</Box>
-								<Text>or read selected chapters below</Text>
+								<Text>Or read selected chapters below</Text>
 							</Stack>
 						</Stack>
 						<Box mx={['auto', 0, 0]} order={[-1, null, 0]} minWidth="auto">
