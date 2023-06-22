@@ -46,6 +46,9 @@ const updateLinks = (contents, post, allPosts) =>
 		return title;
 	});
 
+const updateImages = (contents) =>
+	contents.replace(/]\(images\//, '](/images/');
+
 console.log('[BOOK] Downloading source files...');
 
 execSync(`curl "${REPO_TAR_GZ}" | tar xz`);
@@ -83,7 +86,7 @@ bookPosts.forEach((post) => {
 	const contents = `${getFrontmatter(post.source)}
 
 ${updateLinks(
-	downgradeHeadings(stripTitle(bookContent)),
+	downgradeHeadings(stripTitle(updateImages(bookContent))),
 	post,
 	bookPosts
 ).trim()}

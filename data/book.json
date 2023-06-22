@@ -100,7 +100,8 @@
       },
       {
         "fileName": "Naming_is_hard",
-        "title": "Naming is hard"
+        "title": "Naming is hard",
+        "slug": "/all/naming/"
       },
       {
         "fileName": "Constants",
