@@ -23,7 +23,7 @@ We can’t be sure that our pizza will always have salami and jalapeños on it, 
 
 Knowing that both things are possible makes us think, every time we see `pizza` in the code, which value it has _now_. That’s a huge and unnecessary cognitive load that we should avoid.
 
-And most of the time we can avoid both. Let’s start with reassigning and come back to mutation in the next chapter.
+And most of the time we can avoid both. Let’s start with reassigning and come back to mutation in the [next chapter](/all/avoid-mutation/).
 
 ## Don’t reuse variables
 

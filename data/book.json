@@ -1,166 +1,116 @@
 [
   {
-    "title": "***",
-    "chapters": [
-      {
-        "fileName": "Preface",
-        "title": "Preface"
-      },
-      {
-        "fileName": "Acknowledgments",
-        "title": "Acknowledgments"
-      }
-    ]
+    "fileName": "Preface",
+    "title": "Preface"
   },
   {
-    "title": "Code odours (?)",
-    "chapters": [
-      {
-        "fileName": "Avoid_loops",
-        "title": "Avoid loops",
-        "slug": "/all/avoid-loops/"
-      },
-      {
-        "fileName": "Avoid_conditions",
-        "title": "Avoid conditions",
-        "slug": "/all/avoid-conditions/"
-      },
-      {
-        "fileName": "Avoid_reassigning_variables",
-        "title": "Avoid reassigning variables",
-        "slug": "/all/avoid-reassigning-variables/"
-      },
-      {
-        "fileName": "Avoid_mutation",
-        "title": "Avoid mutation",
-        "slug": "/all/avoid-mutation/"
-      },
-      {
-        "fileName": "Avoid_comments",
-        "title": "Avoid comments",
-        "slug": "/all/avoid-comments/"
-      }
-    ]
+    "fileName": "Acknowledgments",
+    "title": "Acknowledgments"
   },
   {
-    "title": "Techniques",
-    "chapters": [
-      {
-        "fileName": "Simplify_simplify_simplify",
-        "title": "Simplify, simplify, simplify"
-      },
-      {
-        "fileName": "Dont_surprise_me",
-        "title": "Don’t surprise me"
-      },
-      {
-        "fileName": "Separate_what_and_how",
-        "title": "Separate “what” and “how”"
-      },
-      {
-        "fileName": "Dont_waste_energy",
-        "title": "Don’t waste energy (= save energy for important things)"
-      },
-      {
-        "fileName": "Dont_be_clever",
-        "title": "Don’t be clever"
-      },
-      {
-        "fileName": "Divide_and_conquer",
-        "title": "Divide and conquer, or merge and relax"
-      },
-      {
-        "fileName": "Dont_make_me_think",
-        "title": "Don’t make me think"
-      },
-      {
-        "fileName": "Make_impossible_states_impossible",
-        "title": "Make impossible states impossible"
-      },
-      {
-        "fileName": "Dont_try_to_predict_the_future",
-        "title": "Don’t try to predict the future"
-      },
-      {
-        "fileName": "Become_a_code_scout",
-        "title": "Become a code scout"
-      },
-      {
-        "fileName": "Make_the_code_greppable",
-        "title": "Make the code greppable"
-      }
-    ]
+    "fileName": "Avoid_loops",
+    "title": "Avoid loops",
+    "slug": "/all/avoid-loops/"
   },
   {
-    "title": "Misc. (?)",
-    "chapters": [
-      {
-        "fileName": "Code_style",
-        "title": "Code style"
-      },
-      {
-        "fileName": "Naming_is_hard",
-        "title": "Naming is hard",
-        "slug": "/all/naming/"
-      },
-      {
-        "fileName": "Constants",
-        "title": "Constants"
-      },
-      {
-        "fileName": "Too_many_conventions",
-        "title": "Too many conventions"
-      },
-      {
-        "fileName": "Cargo_cult_programming",
-        "title": "Cargo cult programming"
-      },
-      {
-        "fileName": "Not_invented_here_syndrome",
-        "title": "Not invented here syndrome"
-      },
-      {
-        "fileName": "Size_isnt_important",
-        "title": "Size isn’t important"
-      },
-      {
-        "fileName": "Refactoring_is_inevitable",
-        "title": "Refactoring is inevitable"
-      },
-      {
-        "fileName": "Code_is_evil",
-        "title": "Code is evil"
-      }
-    ]
+    "fileName": "Avoid_conditions",
+    "title": "Avoid conditions",
+    "slug": "/all/avoid-conditions/"
   },
   {
-    "title": "Tooling",
-    "chapters": [
-      {
-        "fileName": "Tooling",
-        "title": "Tooling"
-      },
-      {
-        "fileName": "Linters",
-        "title": "Linters"
-      },
-      {
-        "fileName": "Other_tools",
-        "title": "Other tools"
-      }
-    ]
+    "fileName": "Avoid_reassigning_variables",
+    "title": "Avoid reassigning variables",
+    "slug": "/all/avoid-reassigning-variables/"
   },
   {
-    "title": "***",
-    "chapters": [
-      {
-        "fileName": "Resources",
-        "title": "Resources"
-      },
-      {
-        "fileName": "Conclusion",
-        "title": "Conclusion"
-      }
-    ]
+    "fileName": "Avoid_mutation",
+    "title": "Avoid mutation",
+    "slug": "/all/avoid-mutation/"
+  },
+  {
+    "fileName": "Avoid_comments",
+    "title": "Avoid comments",
+    "slug": "/all/avoid-comments/"
+  },
+  {
+    "fileName": "Naming_is_hard",
+    "title": "Naming is hard",
+    "slug": "/all/naming/"
+  },
+  {
+    "fileName": "Code_style",
+    "title": "Code style"
+  },
+  {
+    "fileName": "Constants",
+    "title": "Constants"
+  },
+  {
+    "fileName": "Separate_what_and_how",
+    "title": "Separate “what” and “how”"
+  },
+  {
+    "fileName": "Dont_be_clever",
+    "title": "Don’t be clever"
+  },
+  {
+    "fileName": "Divide_and_conquer",
+    "title": "Divide and conquer, or merge and relax"
+  },
+  {
+    "fileName": "Dont_make_me_think",
+    "title": "Don’t make me think"
+  },
+  {
+    "fileName": "Make_impossible_states_impossible",
+    "title": "Make impossible states impossible"
+  },
+  {
+    "fileName": "Dont_try_to_predict_the_future",
+    "title": "Don’t try to predict the future"
+  },
+  {
+    "fileName": "Become_a_code_scout",
+    "title": "Become a code scout"
+  },
+  {
+    "fileName": "Make_the_code_greppable",
+    "title": "Make the code greppable"
+  },
+  {
+    "fileName": "Cargo_cult_programming",
+    "title": "Cargo cult programming"
+  },
+  {
+    "fileName": "Not_invented_here_syndrome",
+    "title": "Not invented here syndrome"
+  },
+  {
+    "fileName": "Refactoring_is_inevitable",
+    "title": "Refactoring is inevitable"
+  },
+  {
+    "fileName": "Code_is_evil",
+    "title": "Code is evil"
+  },
+  {
+    "fileName": "Tooling",
+    "title": "Tooling"
+  },
+  {
+    "fileName": "Linters",
+    "title": "Linters"
+  },
+  {
+    "fileName": "Other_tools",
+    "title": "Other tools"
+  },
+  {
+    "fileName": "Resources",
+    "title": "Resources"
+  },
+  {
+    "fileName": "Conclusion",
+    "title": "Conclusion"
   }
 ]

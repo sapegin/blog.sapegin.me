@@ -17,10 +17,7 @@ type Props = {
 	data: {
 		allBookJson: {
 			edges: {
-				node: {
-					title: string;
-					chapters: Chapter[];
-				};
+				node: Chapter;
 			}[];
 		};
 	};
@@ -35,6 +32,7 @@ const Book = ({
 	},
 	location: { pathname },
 }: Props) => {
+	const chapters = edges.map((x) => x.node);
 	return (
 		<Page url={pathname}>
 			<Metatags
@@ -98,11 +96,7 @@ const Book = ({
 					</Stack>
 					<Heading level={2}>Table of contents</Heading>
 					<Stack>
-						{edges.map((group, index) => (
-							<Stack key={index} as="section" gap="m">
-								<PostList posts={group.node.chapters} />
-							</Stack>
-						))}
+						<PostList posts={chapters} />
 					</Stack>
 					<Stack direction={['column', null, 'row']} gap="l">
 						<Box mx={['auto', 0, 0]} minWidth="auto">
@@ -160,10 +154,7 @@ export const pageQuery = graphql`
 			edges {
 				node {
 					title
-					chapters {
-						title
-						slug
-					}
+					slug
 				}
 			}
 		}

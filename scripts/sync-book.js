@@ -28,9 +28,11 @@ const getSlug = (post) =>
 
 const getUrl = (post) => `/all/${getSlug(post)}/`;
 
-const stripTitle = (contents) => contents.replace(/^#+ .*?$/m, '');
+const stripIds = (contents) => contents.replace(/^\{#.*\}$/gm, '');
 
-const getTitle = (contents) => contents.match(/^###+ (.*?)$/m)[1];
+const stripTitle = (contents) => contents.replace(/^#+ .*$/m, '');
+
+const getTitle = (contents) => contents.match(/^#+ (.*?)$/m)[1];
 
 const downgradeHeadings = (contents) => contents.replace(/^##(#+) /gm, '$1 ');
 
@@ -86,7 +88,7 @@ bookPosts.forEach((post) => {
 	const contents = `${getFrontmatter(post.source)}
 
 ${updateLinks(
-	downgradeHeadings(stripTitle(updateImages(bookContent))),
+	downgradeHeadings(stripTitle(stripIds(updateImages(bookContent)))),
 	post,
 	bookPosts
 ).trim()}
@@ -110,29 +112,17 @@ ${bookPosts
 console.log();
 console.log('[BOOK] Syncing table of contents...');
 
-const toc = [{ title: '***', chapters: [] }];
-let currentGroupIndex = 0;
+const toc = [];
 
 const tocRaw = read(`${REPO_DIR}/manuscript/Book.txt`);
 const tocLines = tocRaw.split('\n').filter((x) => x.trim());
 
 tocLines.forEach((line) => {
-	if (line.startsWith('# ')) {
-		return;
-	}
-
-	if (line.startsWith('## ')) {
-		const title = line.replace(/^## /, '');
-		currentGroupIndex++;
-		toc[currentGroupIndex] = { title, chapters: [] };
-		return;
-	}
-
 	const fileName = line.replace(/\.md$/, '');
 	const content = readChapter(fileName);
-	const title = getTitle(content);
+	const title = getTitle(stripIds(content));
 
-	toc[currentGroupIndex].chapters.push({
+	toc.push({
 		fileName,
 		title,
 		slug: postLinks[fileName],
