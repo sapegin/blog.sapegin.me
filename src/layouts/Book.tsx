@@ -7,6 +7,7 @@ import PostList from '../components/PostList';
 import Metatags from '../components/Metatags';
 import { Button } from '../components/Button';
 import { BookCover } from '../components/BookCover';
+import { BookFeedback } from '../components/BookFeedback';
 
 type Chapter = {
 	title: string;
@@ -130,15 +131,7 @@ const Book = ({
 					</Stack>
 					<Stack gap="m">
 						<Heading level={2}>Have a question?</Heading>
-						<Text>
-							Drop me a line at{' '}
-							<Link href="mailto:artem@sapegin.ru">artem@sapegin.ru</Link>,{' '}
-							<Link href="https://twitter.com/iamsapegin">@iamsapegin</Link>, or{' '}
-							<Link href="https://mastodon.cloud/@sapegin" rel="me">
-								@sapegin@mastodon.cloud
-							</Link>
-							.
-						</Text>
+						<BookFeedback>Drop me a line at</BookFeedback>
 					</Stack>
 				</Stack>
 			</main>
