@@ -1,6 +1,6 @@
-# [Artem Sapegin’s Blog](https://blog.sapegin.me/)
+# [DEPRECATED] [Artem Sapegin’s Blog](https://blog.sapegin.me/)
 
-[![Build Status](https://travis-ci.org/sapegin/blog.sapegin.me.png)](https://travis-ci.org/sapegin/blog.sapegin.me)
+# Moved to https://github.com/sapegin/sapegin.me/
 
 [WordPress](https://wordpress.org/) (2008) → [Aegea](http://blogengine.ru/) (2012) → [DocPad](http://docpad.org/) (2013) → [Hexo](https://hexo.io/) (2015, unpublished) → [Fledermaus](https://github.com/sapegin/fledermaus) (2015) → [Gatsby](https://www.gatsbyjs.org/) (2018).
 
